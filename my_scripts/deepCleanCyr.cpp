@@ -11,11 +11,15 @@ std::string deep_clean_Cyr(std::string form_cell)
     //  int q = 0;
     int y;
 
-    for (int letno = -43; letno < 119; letno++)
+    for (int letno = -44; letno < 120; letno++)
     {
 
         switch (letno)
         {
+        case -44:
+            str1.assign("̀");
+            str2.assign("");
+            break;
         case -43:
             str1.assign(">");
             str2.assign("");
@@ -666,6 +670,11 @@ std::string deep_clean_Cyr(std::string form_cell)
             str1.assign("’");
             str2.assign("");
             break;
+        //////////////////////////////
+        case 119:
+            str1.assign("Ө");
+            str2.assign("ѳ");
+            break;
         }
 
         do
@@ -692,7 +701,6 @@ int main()
     while(std::getline(inFile, line)) {
         outFile << deep_clean_Cyr(line) << "\n";
     }
-    
     outFile.close();
     inFile.close();
     return 0;
