@@ -1,0 +1,381 @@
+%% TnT statistically tagged file, Sat Oct 15 22:08:21 2022
+%% lexicon     : chu_combined.lex
+%% ngrams      : chu_combined.123
+%% corpus      : ps138.txt
+%% model       : trigrams
+%% sparse data : linear interpolation
+%%   lambda1 = 2.056465e-01   lambda2 = 3.412964e-01   lambda3 = 4.530570e-01
+%% unknown mode: statistics of singletons
+%% case of characters is significant
+%% using suffix trie up to length 10
+%% suffix backoff with theta = 2.817465e-02
+%% Thorsten Brants, thorsten@brants.net
+%%309585
+р			Ma---------n
+г			Ma---------n
+ѕ			Ma---------n
+%%312582
+вь			R----------n
+конць		Nb-s---ma--i
+%%309586
+псаломъ		Nb-p---md--i
+давъ		V--supamn-si
+%%309587
+ги			Nb-s---mg--i
+искоусилъ	V--sspamn-si
+мѩ			Pk3s---qa--i
+еси			V-2spia----i
+%%309588
+и			C----------n
+позналъ		V--sspamn-si
+мѩ			Pk3s---qa--i
+еси			V-2spia----i
+%%309589
+ив			Ma---------n
+тъи			Pd-s---ma--i
+позна		V-3saia----i
+вѣдѣние		Nb-s---na--i
+мое			Ps1s---na--i
+%%309590
+и			C----------n
+въстаание	Nb-s---nn--i
+мое			Ps1s---nn--i
+%%309591
+тъи			Pp2s---qn--i
+разоумѣ		V-2saia----i
+помъишлениѣ	Nb-p---nn--i
+моѣ			Ps1p---nn--i
+издалече	Df---------n
+%%309592
+стьѕѫ		Nb-s---fa--i
+моѭ			Ps1s---fa--i
+и			C----------n
+непротлаченѫѭ	Nb-s---fa--i
+моѭ			Ps1s---fa--i
+тъ			Pd-s---mn--i
+еси			V-2spia----i
+ислѣдовалъ	V--sspamn-si
+%%309593
+І			Nb-s---mn--i
+вьсѩ		V--pppama-wi
+пѫти		Nb-p---ma--i
+моѩ			Ps1p---pa--i
+прѣзьрѣ		V-3saia----i
+%%309594
+ѣко			G----------n
+нѣстъ		V-3spia----i
+льсти		Nb-s---fg--i
+въ			R----------n
+ѩзъицѣ		Nb-s---ml--i
+моемь		Ps1s---ol--i
+%%309595
+се			I----------n
+ги			Nb-s---mv--i
+тъи			Pp2s---qn--i
+позна		V-2saia----i
+вьсѣ		Px-p---nn--i
+послѣдьнѣ	A--p---nnpsi
+моѣ			Ps1p---nn--i
+%%309596
+І			Nb-s---mn--i
+древльнѣа	A--p---nnpwi
+%%309597
+тъи			Pd-s---ma--i
+созъда		V-3saia----i
+мѩ			V--sppamn-si
+и			C----------n
+положи		V-3saia----i
+на			R----------n
+мнѣ			Pp1s---md--i
+рѫкѫ		Nb-s---fa--i
+твоѭ		Ps2s---fa--i
+%%309598
+оУдивилъ	V--sspamn-si
+сѩ			Pk3s---qa--i
+естъ		V-3spia----i
+разоумъ		Nb-s---ma--i
+твои		Ps2s---ma--i
+о			R----------n
+мнѣ			Pp1s---md--i
+оУтвръди	V-2spma----i
+сѩ			Pk3s---qa--i
+и			C----------n
+не			Df---------n
+възмогѫ		V-3paia----i
+къ			R----------n
+немоу		Pp3s---md--i
+%%309599
+камо		Du---------n
+идѫ			V-1spia----i
+отъ			R----------n
+дха			Nb-s---mg--i
+твоего		Ps2s---mg--i
+%%309600
+І			Nb-s---mn--i
+отъ			R----------n
+лица		Nb-s---ng--i
+твоего		Ps2s---og--i
+камо		Du---------n
+бѣжѫ		Nb-s---fa--i
+%%309601
+ѣште		G----------n
+вьзидѫ		V-1spia----i
+на			R----------n
+нбо			Nb-s---na--i
+тъи			Pp2s---qn--i
+еси			V-2spia----i
+тоу			Df---------n
+%%309602
+ѣште		G----------n
+сънидѫ		V-3paia----i
+въ			R----------n
+адъ			Nb-s---ma--i
+тоу			Df---------n
+еси			V-2spia----i
+%%309603
+ѣште		G----------n
+возъмѫ		V-1spia----i
+крилѣ		Nb-d---na--i
+свои		Pt3d---na--i
+%%309604
+І			Nb-s---mn--i
+вьселѭ		V-1spia----i
+сѩ			Pk3s---qa--i
+въ			R----------n
+послѣдьниихъ	A--p---mgpwi
+морю		Nb-s---nd--i
+%%309605
+Ібо			Df---------n
+тоу			Df---------n
+рѫка		Nb-s---fn--i
+твоѣ		Ps2s---fn--i
+наставитъ	V-3spia----i
+мѩ			V--sppamn-si
+%%309606
+І			Nb-s---mn--i
+оудръжитъ	V-3spia----i
+мѩ			A--p---mapwi
+десница		Nb-s---fn--i
+твоѣ		Ps2s---fn--i
+%%309607
+І			Nb-s---mn--i
+рѣхъ		V-1saia----i
+оубо		Df---------n
+тъма		Nb-s---fn--i
+поперетъ	V-3spia----i
+мѩ			Nb-s---fg--i
+%%309608
+и			C----------n
+нощь		Nb-s---fa--i
+просвѣштение	Nb-s---na--i
+пишти		Nb-s---fd--i
+моеи		Ps1s---fd--i
+%%309609
+ѣко			G----------n
+тъма		Nb-s---fn--i
+еѩ			Pp3s---fg--i
+не			Df---------n
+омрачитъ	V-3spia----i
+сѩ			Pk3s---qa--i
+отъ			R----------n
+тебе		Pp2s---mg--i
+%%309610
+и			C----------n
+ношть		Nb-s---fa--i
+ѣко			G----------n
+день		Nb-s---ma--i
+просвѣтитъ	V-3spia----i
+сѩ			Pk3s---qa--i
+%%309611
+ѣко			G----------n
+тъма		Nb-s---fn--i
+еѩ			Pp3s---fg--i
+тако		Df---------n
+свѣтъ		Nb-s---mn--i
+еѩ			Pp3s---fg--i
+%%309612
+ѣко			G----------n
+тъи			Pp2s---mn--i
+сътѩжа		Nb-s---mg--i
+ѫтробѫ		Nb-s---fa--i
+моѭ			Ps1s---fa--i
+%%309613
+приѩтъ		V-3saia----i
+мѩ			Nb-s---fg--i
+ичрѣва		Nb-s---ng--i
+мре			Nb-s---fg--i
+моеѩ		Ps1s---fg--i
+%%309614
+Ісповѣмь	V-1spia----i
+сѩ			Pk3s---qa--i
+тебѣ		Pp2s---md--i
+ѣко			G----------n
+страшьно	A--s---napsi
+оудивихъ	V-1saia----i
+сѩ			Pk3s---qa--i
+%%309615
+чюдесьна	A--s---ngpsi
+дѣла		Nb-s---ng--i
+твоѣ		Ps2s---fn--i
+%%309616
+и			C----------n
+дша			Nb-s---fn--i
+моѣ			Ps1s---fn--i
+знаетъ		V-3spia----i
+ѣ			Pp3d---ma--i
+ѕѣло		Df---------n
+%%309617
+не			Df---------n
+оутаи		V-3saia----i
+сѩ			Pk3s---qa--i
+кость		Nb-s---fn--i
+моѣ			Ps1s---fn--i
+отъ			R----------n
+тебе		Pp2s---mg--i
+%%309618
+ѭже			Pr-s---fa--i
+сътвори		V-3saia----i
+въ			R----------n
+таинѣ		Nb-s---fl--i
+%%309619
+І			Nb-s---mn--i
+упостась	Nb---------n
+моѣ			Ps1s---fn--i
+%%309620
+вь			R----------n
+прѣисподьниихъ	A--p---mgpwi
+земли		Nb-s---fl--i
+%%309621
+несъдѣланое	A--s---napwi
+мое			Ps1s---na--i
+видѣсте		V-3daia----i
+очи			Nb-d---na--i
+твои		Ps2d---na--i
+%%309622
+І			Nb-s---mn--i
+въ			R----------n
+кънигахъ	Nb-p---fl--i
+твоихъ		Ps2p---fl--i
+вьси		Px-p---mn--i
+напишѫтъ	V-3ppia----i
+сѩ			Pk3s---qa--i
+%%309623
+вь			R----------n
+день		Nb-s---ma--i
+съзиждѫтъ	V-3ppia----i
+сѩ			Pk3s---qa--i
+и			C----------n
+никътоже	Px-s---qn--i
+вь			R----------n
+нихъ		Pp3p---mg--i
+%%309624
+мнѣ			Pp1s---md--i
+же			Df---------n
+ѕѣло		Df---------n
+честьни		A--p---mnpsi
+бъишѩ		A--p---mapwi
+дроуѕи		Nb-p---mn--i
+твои		Ps2p---mn--i
+бже			Nb-s---mv--i
+%%309625
+Ѕѣло		A--s---nnpsi
+оутвръдишѩ	V--sppaon-si
+сѩ			Pk3s---qa--i
+зачѩла		Nb-s---fn--i
+ихъ			Pp3p---mg--i
+%%309626
+Іщьтѫ		V-3paia----i
+ѩ			Pp3p---ma--i
+и			C----------n
+паче		Df-------c-i
+пѣсъка		Nb-s---mg--i
+оумьножѩтъ	V-3saia----i
+сѩ			Pk3s---qa--i
+%%309627
+въстахъ		Nb-p---fl--i
+и			Df---------n
+пакъи		Df-------p-i
+есмь		V-1spia----i
+съ			R----------n
+тобоѭ		Pp2s---mi--i
+%%309628
+ѣште		G----------n
+избиеши		V-2spia----i
+грѣшьникъи	Nb-p---mi--i
+бже			Nb-s---mv--i
+%%309629
+мѫжь		Nb-s---mn--i
+кръвеи		Ne-s---mn--i
+оуклонити	V---pna----i
+сѩ			Pk3s---qa--i
+отъ			R----------n
+мене		Pp1s---qg--i
+%%309630
+ѣ			Pp3d---ma--i
+ѣште		G----------n
+речете		V-2ppia----i
+въ			R----------n
+помъишлениихъ	Nb-p---nl--i
+своихъ		Pt3p---ql--i
+%%309631
+приимѫтъ	V-3ppia----i
+въ			R----------n
+соуетѣ		V-3saia----i
+градъи		Nb-p---fn--i
+твоѩ		Ps2p---fn--i
+%%309632
+не			Df---------n
+ненавидѩштѩѩ	V--sppamn-si
+ли			C----------n
+тѩ			V--sppamn-si
+ги			Nb-s---md--i
+възненавидѣхъ	V-1saia----i
+%%309633
+І			Nb-s---mn--i
+о			R----------n
+враѕѣхъ		Nb-p---fl--i
+твоихъ		Ps2p---fl--i
+истаахъ		V-1siia----i
+%%309634
+съвръшеноѭ	V--suppfi-ti
+ненавистьѭ	Nb-s---fi--i
+ненавидѣахъ	V-1siia----i
+ихъ			Pp3p---mg--i
+%%309635
+враѕи		A--p---mnpsi
+бъишѩ		V--pupapa-wi
+мьнѣ		Pp1s---qd--i
+%%309636
+Іскоуси		V-2spma----i
+мѩ			V--sppamn-si
+ги			Nb-s---mg--i
+и			C----------n
+разоумѣи	V-2spma----i
+cрце			Nb-s---na--i
+мое			Ps1s---na--i
+%%309637
+Іспъитаи	Df---------n
+мѩ			Nb-p---fa--i
+и			C----------n
+познаи		V-2spma----i
+стьѕѩ		Nb-p---fa--i
+моѩ			Ps1p---pa--i
+%%309638
+І			Nb-s---mn--i
+виждь		V-2spma----i
+ѣште		G----------n
+пѫть		Nb-s---ma--i
+безаконениѣ	Nb-p---nn--i
+%%309639
+во			R----------n
+мнѣ			Pp1s---ql--i
+естъ		V-3spia----i
+%%309640
+І			Nb-s---mn--i
+настави		V-2spma----i
+мѩ			V--sppamn-si
+на			R----------n
+пѫть		Nb-s---ma--i
+вѣчьнъии	A--s---mapwi
+%% 82 (26.45%) unknown tokens
+%% avg. 22.52 tags/token, 2.87 tags/known token

@@ -1,0 +1,29 @@
+- title @source.author_and_title
+- breadcrumbs ['Home', root_path], @source
+!= link_to_resources @source, :edit
+
+%table.table.is-narrow
+  %tbody
+    - metadata_fields_and_labels(@source).each do |header, fields_and_values|
+      - unless fields_and_values.empty?
+        %tr
+          %td{colspan: 2}
+            %h3.subtitle
+              = header
+        - fields_and_values.each do |(field, value)|
+          %tr
+            %td= field
+            %td= value
+
+%h3.subtitle Table of contents
+
+%p
+  != paginate @source_divisions
+
+%table.table
+  %tbody
+    - @source_divisions.each do |source_division|
+      %tr
+        %td
+          != completion_rate source_division.cached_status_tag
+          != link_to "#{source_division.title} (#{source_division.cached_citation})", source_division
