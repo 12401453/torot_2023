@@ -127,6 +127,49 @@ std::uint16_t unmergeShortsSecond(std::uint32_t merged_shorts) {
     return static_cast<std::uint16_t>(merged_shorts & 65535);
 }
 
+void calculatePairFrequencies(const std::vector<std::pair<std::list<std::uint16_t>, int>>& word_lists_vec, std::unordered_map<std::uint32_t, int>& pair_frequencies) {
+    pair_frequencies.clear();
+    for(const auto& vec_pair : word_lists_vec) {
+        std::uint16_t char_code_first = 0;
+        std::uint16_t char_code_second = 0;
+        int word_frequency = vec_pair.second;
+        for(auto char_code : vec_pair.first) {
+            char_code_first = char_code_second;
+            char_code_second = char_code;
+
+            if(char_code_first && char_code_second) {
+                std::uint32_t char_code_pair = shortIntPair(char_code_first, char_code_second);
+                auto iter = pair_frequencies.find(char_code_pair);
+                if(iter != pair_frequencies.end()) iter->second += word_frequency;
+                else pair_frequencies.insert({char_code_pair, word_frequency});
+            }
+        }
+    }
+}
+
+void updateWordCodes(std::vector<std::pair<std::list<std::uint16_t>, int>>& word_lists_vec, std::uint16_t most_freq_first, std::uint16_t most_freq_second, std::uint16_t base_vocab_count) {
+    for(auto &vec_pair : word_lists_vec) {
+        std::uint16_t char_code_first = 0;
+        std::uint16_t char_code_second = 0;
+        
+        auto list_iter = vec_pair.first.begin();
+        auto list_end_iter = vec_pair.first.end();
+        
+        while(list_iter != list_end_iter) {
+            char_code_first = char_code_second;
+            char_code_second = *list_iter;
+
+            if(char_code_first == most_freq_first && char_code_second == most_freq_second) {
+                //std::cout << "In erase loop\n";
+                vec_pair.first.insert(std::next(list_iter, 1), base_vocab_count);
+                list_iter++;
+                vec_pair.first.erase(std::prev(list_iter, 2), list_iter);
+            }
+            list_iter++;
+        }
+        
+    }
+}
 
 
 
@@ -187,26 +230,39 @@ int main(int argc, char** argv)
         word_lists_vec.emplace_back(word_list_pair);
     }
 
-    ///////All of the shit above this line take 0.8s of the 0.84s taken to do two iterations of the actual algorithm, so most of the time is spent in shit that could be worked-out ahead of compile-time///
+    ///////All of the shit above this line takes 0.8s of the total 0.84s which includes two iterations of the actual
+    //algorithm, so most of the time is spent in shit that could be worked-out ahead of compile-time///
 
     std::unordered_map<std::uint32_t, int> pair_frequencies;
-
-    for(const auto& vec_pair : word_lists_vec) {
-        std::uint16_t char_code_first = 0;
-        std::uint16_t char_code_second = 0;
-        int word_frequency = vec_pair.second;
-        for(auto char_code : vec_pair.first) {
-            char_code_first = char_code_second;
-            char_code_second = char_code;
-
-            if(char_code_first && char_code_second) {
-                std::uint32_t char_code_pair = shortIntPair(char_code_first, char_code_second);
-                auto iter = pair_frequencies.find(char_code_pair);
-                if(iter != pair_frequencies.end()) iter->second += word_frequency;
-                else pair_frequencies.insert({char_code_pair, word_frequency});
+    
+    for(int i = 0; i < 100; i++) {
+        calculatePairFrequencies(word_lists_vec, pair_frequencies);
+    
+        auto highest_count_pf_it = pair_frequencies.begin();
+        int highest_pair_freq_so_far = 0;
+        for(auto pf_it = pair_frequencies.begin(); pf_it != pair_frequencies.end(); ++pf_it) {
+            int pair_freq = pf_it->second;
+            if(pair_freq > highest_pair_freq_so_far) {
+                highest_pair_freq_so_far = pair_freq;
+                highest_count_pf_it = pf_it;
             }
         }
+        std::uint16_t most_freq_first = unmergeShortsFirst(highest_count_pf_it->first);
+        std::uint16_t most_freq_second = unmergeShortsSecond(highest_count_pf_it->first);
+        std::string merged_char = base_vocab_reversed.at(most_freq_first) + base_vocab_reversed.at(most_freq_second);
+
+        std::cout << "Highest frequency pair is: " << most_freq_first << "|" << most_freq_second << " corresponding to: " << merged_char << " which occurs " << highest_count_pf_it->second << " times.\n";
+
+        base_vocab_count++;
+        //outFile << most_freq_first << "|" << most_freq_second << "," << base_vocab_count << "\n";
+        
+        base_vocab.insert({merged_char, base_vocab_count});
+        base_vocab_reversed.insert({base_vocab_count, merged_char});
+
+        updateWordCodes(word_lists_vec, most_freq_first, most_freq_second, base_vocab_count);
     }
+
+    /*calculatePairFrequencies(word_lists_vec, pair_frequencies);
     
     auto highest_count_pf_it = pair_frequencies.begin();
     int highest_pair_freq_so_far = 0;
@@ -226,51 +282,14 @@ int main(int argc, char** argv)
     base_vocab_count++;
     //outFile << most_freq_first << "|" << most_freq_second << "," << base_vocab_count << "\n";
     
-    
-    
     base_vocab.insert({merged_char, base_vocab_count});
     base_vocab_reversed.insert({base_vocab_count, merged_char});
 
-    for(auto &vec_pair : word_lists_vec) {
-        std::uint16_t char_code_first = 0;
-        std::uint16_t char_code_second = 0;
-        
-        auto list_iter = vec_pair.first.begin();
-        auto list_end_iter = vec_pair.first.end();
-        
-        while(list_iter != list_end_iter) {
-            char_code_first = char_code_second;
-            char_code_second = *list_iter;
+    updateWordCodes(word_lists_vec, most_freq_first, most_freq_second, base_vocab_count);
 
-            if(char_code_first == most_freq_first && char_code_second == most_freq_second) {
-                //std::cout << "In erase loop\n";
-                vec_pair.first.insert(std::next(list_iter, 1), base_vocab_count);
-                list_iter++;
-                vec_pair.first.erase(std::prev(list_iter, 2), list_iter);
-            }
-            list_iter++;
-        }
-        
-    }
+    
     ////////////////////
-    pair_frequencies.clear();
-
-    for(auto vec_pair : word_lists_vec) {
-        std::uint16_t char_code_first = 0;
-        std::uint16_t char_code_second = 0;
-        int word_frequency = vec_pair.second;
-        for(auto char_code : vec_pair.first) {
-            char_code_first = char_code_second;
-            char_code_second = char_code;
-
-            if(char_code_first && char_code_second) {
-                std::uint32_t char_code_pair = shortIntPair(char_code_first, char_code_second);
-                auto iter = pair_frequencies.find(char_code_pair);
-                if(iter != pair_frequencies.end()) iter->second += word_frequency;
-                else pair_frequencies.insert({char_code_pair, word_frequency});
-            }
-        }
-    }
+    calculatePairFrequencies(word_lists_vec, pair_frequencies);
     
     highest_count_pf_it = pair_frequencies.begin();
     highest_pair_freq_so_far = 0;
@@ -287,7 +306,7 @@ int main(int argc, char** argv)
 
     std::cout << "Highest frequency pair is: " << most_freq_first << "|" << most_freq_second << " corresponding to: " << merged_char << " which occurs " << highest_count_pf_it->second << " times.\n";
 
-
+*/
 
 
 
