@@ -1,0 +1,38 @@
+/*for(const auto& vec_pair : word_lists_vec) {
+        std::uint16_t char_code_first = 0;
+        std::uint16_t char_code_second = 0;
+        int word_frequency = vec_pair.second;
+        for(auto char_code : vec_pair.first) {
+            char_code_first = char_code_second;
+            char_code_second = char_code;
+
+            if(char_code_first && char_code_second) {
+                std::uint32_t char_code_pair = shortIntPair(char_code_first, char_code_second);
+                auto iter = pair_frequencies.find(char_code_pair);
+                if(iter != pair_frequencies.end()) iter->second += word_frequency;
+                else pair_frequencies.insert({char_code_pair, word_frequency});
+            }
+        }
+    } */
+
+    /*for(auto &vec_pair : word_lists_vec) {
+        std::uint16_t char_code_first = 0;
+        std::uint16_t char_code_second = 0;
+
+        auto list_iter = vec_pair.first.begin();
+        auto list_end_iter = vec_pair.first.end();
+
+        while(list_iter != list_end_iter) {
+            char_code_first = char_code_second;
+            char_code_second = *list_iter;
+
+            if(char_code_first == most_freq_first && char_code_second == most_freq_second) {
+                //std::cout << "In erase loop\n";
+                vec_pair.first.insert(std::next(list_iter, 1), base_vocab_count);
+                list_iter++;
+                vec_pair.first.erase(std::prev(list_iter, 2), list_iter);
+            }
+            list_iter++;
+        }
+
+    }*/
