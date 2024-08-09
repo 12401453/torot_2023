@@ -30,11 +30,13 @@ saxParser.on('opentag', function(node) {
  
     if(node.name == "token" && can_parse) {
         const text_word = node.attributes.form;
-        const morph_tag = node.attributes.morphology;
+        //const morph_tag = node.attributes.morphology;
+        //const pos = node.attributes['part-of-speech'];
+
 
         if(text_word != undefined) {
             
-            csv_string += text_word + "," + morph_tag + "\n";
+            csv_string += text_word + "\n";
             word_count++;   
         }
     }
