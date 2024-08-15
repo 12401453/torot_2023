@@ -109,6 +109,46 @@ struct ListEqual {
     }
 };
 
+bool unknownChars(std::string infile_name)
+{
+    std::string str1;
+    std::string str2;
+    int x = 0;
+    //  int q = 0;
+    int y;
+
+    std::ifstream inFile(infile_name);
+    
+    std::string line;
+    while(std::getline(inFile, line)) {
+        
+        for(int i = 1; i < 39; i++)
+        {
+            str1.assign(base_vocab_reversed.at(i));
+            str2.assign("");
+
+            do
+            {
+                x = line.find(str1);
+                if (x == -1)
+                {
+                    break;
+                }
+
+                y = str1.length();
+                line.replace(x, y, str2);
+            } while (x != -1);            
+        }
+        if(line.size() > 0) {
+                inFile.close();
+                return true;
+        }
+
+    }
+    inFile.close();
+    return false;
+}
+
 std::uint32_t shortIntPair(std::uint16_t first, std::uint16_t second) {
     //e.g. first = 4 = 0000000000000100
     //    second = 5 = 0000000000000101
@@ -182,6 +222,11 @@ int main(int argc, char** argv)
     int num_iterations = std::stoi(argv[2]);
 
     std::string input_filename(argv[1]);
+
+    if(unknownChars(input_filename)) {
+        std::cout << "File contains characters beyond the specified base_vocab, aborting...\n";
+        return -1;
+    }
 
     std::ifstream inFile(input_filename);
     std::ofstream outFile("merge_rules.csv");

@@ -11,7 +11,7 @@ std::string deep_clean_Cyr(std::string form_cell)
     //  int q = 0;
     int y;
 
-    for (int letno = -44; letno < 120; letno++)
+    for (int letno = -44; letno < 133; letno++)
     {
 
         switch (letno)
@@ -648,14 +648,13 @@ std::string deep_clean_Cyr(std::string form_cell)
             str1.assign("Ⱉ");
             str2.assign("о");
             break;
-         ///////////////////////those below should not be used except when aggressive harmonisation is desired
         case 114:
-            str1.assign("ꙗ"); //this destroys a lot of information but it's necessary to harmonise with the Glagolitic texts
-            str2.assign("ѣ");
+            str1.assign("Ө"); 
+            str2.assign("ѳ");
             break;
         case 115:
-            str1.assign("ѕ");
-            str2.assign("з");
+            str1.assign("є");
+            str2.assign("е");
             break;       
         ///////////////these ones can stand for either jer so ideally it'd be replaced in any real script with /[ъ,ь]/
         case 116:
@@ -670,10 +669,63 @@ std::string deep_clean_Cyr(std::string form_cell)
             str1.assign("’");
             str2.assign("");
             break;
-        //////////////////////////////
+        //////////////////////////////those below should not be used except when aggressive harmonisation is desired
         case 119:
-            str1.assign("Ө");
-            str2.assign("ѳ");
+            str1.assign("ꙗ"); //this destroys a lot of information but it's necessary to harmonise with the Glagolitic texts
+            str2.assign("ѣ");
+            break;
+        case 120:
+            str1.assign("ѕ");
+            str2.assign("з");
+            break;
+            ////////////front-rounded vowel-letters after soft-consonants
+        case 121:
+            str1.assign("шю");
+            str2.assign("шоу");
+            break;
+        case 122:
+            str1.assign("чю");
+            str2.assign("чоу");
+            break;
+        case 123:
+            str1.assign("жю");
+            str2.assign("жоу");
+            break;
+        case 124:
+            str1.assign("ждю");
+            str2.assign("ждоу");
+            break;  
+        case 125:
+            str1.assign("штю");
+            str2.assign("штоу");
+            break;
+        case 126:
+            str1.assign("цю");
+            str2.assign("цоу");
+            break;
+        case 127:
+            str1.assign("шѭ");
+            str2.assign("шѫ");
+            break;
+        case 128:
+            str1.assign("чѭ");
+            str2.assign("чѫ");
+            break;
+        case 129:
+            str1.assign("жѭ");
+            str2.assign("жѫ");
+            break;
+        case 130:
+            str1.assign("ждѭ");
+            str2.assign("ждѫ");
+            break;
+        case 131:
+            str1.assign("цѭ");
+            str2.assign("цѫ");
+            break;
+        case 132:
+            str1.assign("штѭ");
+            str2.assign("штѫ");
             break;
         }
 
@@ -693,10 +745,16 @@ std::string deep_clean_Cyr(std::string form_cell)
     return form_cell;
 }
 
-int main()
+int main(int argc, char** argv)
 {
-    std::ifstream inFile("chu_words.csv");
-    std::ofstream outFile("chu_words_deepCleaned.csv");
+    if(argc != 2) {
+        std::cout << "Usage: ./deepCleanChu <file_to_clean>\n";
+        return 0;
+    }
+    std::string infileName = argv[1];
+    std::ifstream inFile(infileName);
+    int in_len = infileName.size();
+    std::ofstream outFile(infileName.substr(0, in_len-4) + "_deepCleaned" + infileName.substr(in_len-4, 4));
     std::string line;
     while(std::getline(inFile, line)) {
         outFile << deep_clean_Cyr(line) << "\n";
