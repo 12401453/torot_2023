@@ -37,7 +37,7 @@ std::string deleteTest(std::string form_cell)
             str2.assign("");
             break;
         case -32:
-            str1.assign("н"); // these are barely-visible diacritics that need getting rid of
+            str1.assign("н");
             str2.assign("");
             break;
         case -31:

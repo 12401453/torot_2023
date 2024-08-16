@@ -1,4 +1,52 @@
-case -32:
+        case -44:
+            str1.assign("̀");
+            str2.assign("");
+            break;
+        case -43:
+            str1.assign(">");
+            str2.assign("");
+            break;
+        case -42:
+            str1.assign("/");
+            str2.assign("");
+            break;
+        case -41:
+            str1.assign("\"");
+            str2.assign("");
+            break;
+        case -40:
+            str1.assign("͡");
+            str2.assign("");
+            break;
+        case -39:
+            str1.assign("·");
+            str2.assign("");
+            break;
+        case -38:
+            str1.assign("̏");
+            str2.assign("");
+            break;
+        case -37:
+            str1.assign(" ");
+            str2.assign("");
+            break;
+        case -36:
+            str1.assign("+");
+            str2.assign("");
+            break;
+        case -35:
+            str1.assign("⁜");
+            str2.assign("");
+            break;
+        case -34:
+            str1.assign("͠");
+            str2.assign("");
+            break;
+        case -33:
+            str1.assign("!");
+            str2.assign("");
+            break;
+        case -32:
             str1.assign("҅");
             str2.assign("");
             break;
@@ -124,15 +172,15 @@ case -32:
             break;
         case -1:
             str1.assign("Ꙋ");
-            str2.assign("ѹ");
+            str2.assign("оу");
             break;
         case 0:
             str1.assign("ОУ");
-            str2.assign("ѹ");
+            str2.assign("оу");
             break;
         case 1:
             str1.assign("о҄у");
-            str2.assign("ѹ");
+            str2.assign("оу");
             break;
         case 2:
             str1.assign("ꙑ");
@@ -140,19 +188,19 @@ case -32:
             break;
         case 3:
             str1.assign("Оу");
-            str2.assign("ѹ");
+            str2.assign("оу");
             break;
         case 4:
-            str1.assign("оу");
-            str2.assign("ѹ");
+            str1.assign("ѹ");
+            str2.assign("оу");
             break;
         case 5:
             str1.assign("о̑у");
-            str2.assign("ѹ");
+            str2.assign("оу");
             break;
         case 6:
             str1.assign("ꙋ");
-            str2.assign("ѹ");
+            str2.assign("оу");
             break;
         case 7:
             str1.assign("A");
@@ -191,8 +239,8 @@ case -32:
             str2.assign("ьі");
             break;
         case 16:
-            str1.assign("У");
-            str2.assign("ѵ");
+            str1.assign("ѵ");
+            str2.assign("у");
             break;
         case 17:
             str1.assign("Ꙃ");
@@ -203,8 +251,8 @@ case -32:
             str2.assign("ꙉ");
             break;
         case 19:
-            str1.assign("у");
-            str2.assign("ѵ");
+            str1.assign("y");
+            str2.assign("у");
             break;
         case 20:
             str1.assign("ꙃ");
@@ -388,7 +436,7 @@ case -32:
             break;
         case 65:
             str1.assign("Ѹ");
-            str2.assign("ѹ");
+            str2.assign("оу");
             break;
         case 66:
             str1.assign("Ф");
@@ -436,7 +484,7 @@ case -32:
             break;
         case 77:
             str1.assign("Ѵ");
-            str2.assign("ѵ");
+            str2.assign("у");
             break;
         case 78:
             str1.assign("Ѳ");
@@ -465,4 +513,196 @@ case -32:
         case 84:
             str1.assign("Ѥ");
             str2.assign("е");
+            break;
+        case 85:
+            str1.assign("ꙉ");
+            str2.assign("г");
+            break;
+        case 86:
+            str1.assign("ӱ");
+            str2.assign("у");
+            break;
+        case 87:
+            str1.assign("ӑ");
+            str2.assign("а");
+            break;
+        case 88:
+            str1.assign("У");
+            str2.assign("у");
+            break;
+        case 89:
+            str1.assign("ѿ");
+            str2.assign("от");
+            break;
+        case 90:
+            str1.assign("ѱ");
+            str2.assign("пс");
+            break;
+        case 91:
+            str1.assign("Ѱ");
+            str2.assign("пс");
+            break;
+        case 92:
+            str1.assign("ѻ");
+            str2.assign("о");
+            break;
+        case 93:
+            str1.assign("ⷠ");
+            str2.assign("б");
+            break;
+        case 94:
+            str1.assign("ⷡ");
+            str2.assign("в");
+            break;
+        case 95:
+            str1.assign("ⷢ");
+            str2.assign("г");
+            break;
+        case 96:
+            str1.assign("ⷣ");
+            str2.assign("д");
+            break;
+        case 97:
+            str1.assign("ⷦ");
+            str2.assign("к");
+            break;
+        case 98:
+            str1.assign("ⷧ");
+            str2.assign("л");
+            break;
+        case 99:
+            str1.assign("ⷩ");
+            str2.assign("н");
+            break;
+        case 100:
+            str1.assign("ⷪ");
+            str2.assign("о");
+            break;
+        case 101:
+            str1.assign("ⷫ");
+            str2.assign("п");
+            break;
+        case 102:
+            str1.assign("ⷬ");
+            str2.assign("р");
+            break;
+        case 103:
+            str1.assign("ⷭ");
+            str2.assign("с");
+            break;
+        case 104:
+            str1.assign("ⷮ");
+            str2.assign("т");
+            break;
+        case 105:
+            str1.assign("ⷯ");
+            str2.assign("х");
+            break;
+        case 106:
+            str1.assign("ⷰ");
+            str2.assign("ц");
+            break;
+        case 107:
+            str1.assign("ⷱ");
+            str2.assign("ч");
+            break;
+        case 108:
+            str1.assign("ⷸ");
+            str2.assign("г");
+            break;
+        case 109:
+            str1.assign("ȥ");
+            str2.assign("з");
+            break;
+        case 110:
+            str1.assign("й");
+            str2.assign("і");
+            break;
+        case 111:
+            str1.assign("ѷ");
+            str2.assign("у");
+            break;
+        case 112:
+            str1.assign("ⱔ");
+            str2.assign("ѧ");
+            break;
+        case 113:
+            str1.assign("Ⱉ");
+            str2.assign("о");
+            break;
+        case 114:
+            str1.assign("Ө");
+            str2.assign("ѳ");
+            break;
+        case 115:
+            str1.assign("є");
+            str2.assign("е");
+            break;
+        case 116:
+            str1.assign("ʼ");
+            str2.assign("");
+            break;
+        case 117:
+            str1.assign("ⸯ");
+            str2.assign("");
+            break;
+        case 118:
+            str1.assign("’");
+            str2.assign("");
+            break;
+        case 119:
+            str1.assign("ꙗ");
+            str2.assign("ѣ");
+            break;
+        case 120:
+            str1.assign("ѕ");
+            str2.assign("з");
+            break;
+        case 121:
+            str1.assign("шю");
+            str2.assign("шоу");
+            break;
+        case 122:
+            str1.assign("чю");
+            str2.assign("чоу");
+            break;
+        case 123:
+            str1.assign("жю");
+            str2.assign("жоу");
+            break;
+        case 124:
+            str1.assign("ждю");
+            str2.assign("ждоу");
+            break;
+        case 125:
+            str1.assign("штю");
+            str2.assign("штоу");
+            break;
+        case 126:
+            str1.assign("цю");
+            str2.assign("цоу");
+            break;
+        case 127:
+            str1.assign("шѭ");
+            str2.assign("шѫ");
+            break;
+        case 128:
+            str1.assign("чѭ");
+            str2.assign("чѫ");
+            break;
+        case 129:
+            str1.assign("жѭ");
+            str2.assign("жѫ");
+            break;
+        case 130:
+            str1.assign("ждѭ");
+            str2.assign("ждѫ");
+            break;
+        case 131:
+            str1.assign("цѭ");
+            str2.assign("цѫ");
+            break;
+        case 132:
+            str1.assign("штѭ");
+            str2.assign("штѫ");
             break;
