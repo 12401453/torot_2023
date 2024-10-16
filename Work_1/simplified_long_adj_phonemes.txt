@@ -1,0 +1,33 @@
+Adjectives:
+6 omьjimь
+11 omajima
+13 omajima
+18 omъjimъ
+19 ěxъjixъ
+32 amajima
+34 amajima
+39 amъjimъ
+40 axъjixъ
+41 amijimi
+48 omьjimь
+53 omajima
+55 omajima
+60 omъjimъ
+61 ěxъjixъ
+
+Participles:
+6 emьjimь
+11 emajima
+13 emajima
+18 emъjimъ
+19 ixъjixъ
+32 Ǟmajima
+34 Ǟmajima
+39 Ǟmъjimъ
+40 Ǟxъjixъ
+41 Ǟmijimi
+48 emьjimь
+53 emajima
+55 emajima
+60 emъjimъ
+61 ixъjixъ
