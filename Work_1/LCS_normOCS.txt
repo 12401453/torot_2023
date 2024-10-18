@@ -1,22 +1,22 @@
 sk+FV > ц
 šč,šћ > щ
 žǯ,žђ > жд
-omъjimъ
-emъjimъ
-omьjimь
-emьjimь
-ěxъjixъ
-ixъjixъ
-omajima
-emajima
-amajima
-Ǟmajima
-amъjimъ
-Ǟmъjimъ
-axъjixъ
-Ǟxъjixъ
-amijimi
-Ǟmijimi
+omъjimъ > ъіимъ
+emъjimъ > иимъ
+omьjimь > ъіимь
+emьjimь > иимь
+ěxъjixъ > ъіихъ
+ixъjixъ > иихъ
+omajima > ъіима
+emajima > иима
+amajima > ъіима
+Ǟmajima > иима
+amъjimъ > ъіимъ
+Ǟmъjimъ > иимъ
+axъjixъ > ъіихъ
+Ǟxъjixъ > иихъ
+amijimi > ъіими
+Ǟmijimi > иими
 
 
 
