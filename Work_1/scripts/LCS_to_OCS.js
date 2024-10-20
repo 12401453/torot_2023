@@ -1,7 +1,18 @@
 #!/usr/bin/node
 const fs = require('node:fs');
+const { exit } = require('node:process');
 const readline = require('readline');
-const read_stream = fs.createReadStream("mar_lcs.csv");
+
+if(process.argv.length < 3) {
+  console.log("Must specify filename");
+  exit(-1);
+}
+const filename = process.argv[2];
+const read_stream = fs.createReadStream(filename);
+read_stream.on('error', () => {
+  console.log("file doesn't exist");
+  exit(-1);
+})
 
 const input_file = readline.createInterface({input: read_stream});
 
@@ -10,6 +21,7 @@ const front_vowels = ['i', 'e', 'ę', 'ь', 'ŕ̥', 'ĺ̥'];
 const ORT_regex = /[eo][rl]([tŕrpsšdfgћђklĺzžxčvbnńmǯ]|$)/
 const PV2_regex = /[kgx](?:[ěęeiь]|ŕ̥|ĺ̥)/;
 const PV3_regex = /[ьi][kgx][auǫ]/;
+const tense_jer_regex = /[ьъ]j[Ǟeiьęǫu]/;
 
 const PV2_map = new Map();
 PV2_map.set('k', 'c');
@@ -23,12 +35,22 @@ const applyPV3 = (lcs_form) => {
     lcs_form = lcs_form.slice(0, PV3_pos + 1) + PV2_map.get(velar) + lcs_form.slice(PV3_pos + 2);
     PV3_pos = lcs_form.search(PV3_regex);
   }
-
   return lcs_form;
-
 };
 
-const mappings = {
+//this is a purely orthographic choice to regularise with the long-vowel letters rather than the jer letters; I actually think pre-jer-shift OCS would've had archiphonemes here (see Winslow 2022:314), hence why we still get jer-spellings in the mss. Tense-front-jer in weak position fell completely but continued (even to this day in Ru. ChSl. words) to be written with <и> as a signifier of /j/, and the picture regarding weak-back-jer is pretty murky because everywhere in Mar. we have въіѭ, ѹмъіѭ, ѹмъіи, отъкръіетъ spellings, Ru. моет etc.
+const lengthenTenseJers = (lcs_form) => {
+  let tense_jer_pos = lcs_form.search(tense_jer_regex);
+  while(tense_jer_pos != -1) {
+    const jer = lcs_form.at(tense_jer_pos);
+    const lengthened_jer = jer == 'ъ' ? 'y' : 'i';
+    lcs_form = lcs_form.slice(0, tense_jer_pos) + lengthened_jer + lcs_form.slice(tense_jer_pos + 1);
+    tense_jer_pos = lcs_form.search(tense_jer_regex);
+  }
+  return lcs_form;
+};
+
+const long_adj_map = {
   'omъjimъ' : 'ъіимъ',
   'emъjimъ' : 'иимъ',
   'omьjimь' : 'ъіимь',
@@ -44,7 +66,43 @@ const mappings = {
   'axъjixъ' : 'ъіихъ',
   'Ǟxъjixъ' : 'иихъ',
   'amijimi' : 'ъіими',
-  'Ǟmijimi' : 'иими',
+  'Ǟmijimi' : 'иими'
+}
+
+const simplifyLongAdj = (lcs_form) => {
+  for(const key in long_adj_map) {
+    lcs_form = lcs_form.replaceAll(key, long_adj_map[key]);
+  }
+  return lcs_form;
+};
+
+const mappings = {
+  /*'omъjimъ' : 'ъіимъ',
+  'emъjimъ' : 'иимъ',
+  'omьjimь' : 'ъіимь',
+  'emьjimь' : 'иимь',
+  'ěxъjixъ' : 'ъіихъ',
+  'ixъjixъ' : 'иихъ',
+  'omajima' : 'ъіима',
+  'emajima' : 'иима',
+  'amajima' : 'ъіима',
+  'Ǟmajima' : 'иима',
+  'amъjimъ' : 'ъіимъ',
+  'Ǟmъjimъ' : 'иимъ',
+  'axъjixъ' : 'ъіихъ',
+  'Ǟxъjixъ' : 'иихъ',
+  'amijimi' : 'ъіими',
+  'Ǟmijimi' : 'иими', */
+  /*'ъjixъ' : 'ъіихъ',
+  '' : '',
+  '' : '',
+  '' : '',
+  '' : '',
+  '' : '',
+  '' : '',
+  '' : '',  
+  '' : '',
+  'ъjь' : 'ъі', */ //this slightly fucks up прѣдъидеши | perdъjьdeši, because it will not correctly produce an и (прѣдъідеши), but given that the variants of <и> used in OCS don't really have any phonological basis I don't think I deserve to be punished too harshly
   'ŕǞ' : 'рꙗ',
   'ńǞ' : 'нꙗ',
   'ĺǞ' : 'лꙗ',
@@ -132,16 +190,6 @@ const mappings = {
   '' : '',
   '' : '',
   '' : '',
-  '' : '',
-  '' : '',
-  '' : '',  
-  '' : '',
-  '' : '',
-  '' : '',
-  '' : '',
-  '' : '',
-  '' : '',
-  '' : '',
   '' : '',  
   '' : '',
   '' : '',
@@ -177,6 +225,10 @@ const convertToOCS = (lcs_word) => {
     PV2_pos = lcs_word.search(PV2_regex);
   }
   lcs_word = applyPV3(lcs_word);
+
+  lcs_word = simplifyLongAdj(lcs_word);
+
+  lcs_word = lengthenTenseJers(lcs_word);
   
   for(const key in mappings) {
     lcs_word = lcs_word.replaceAll(key, mappings[key]);
@@ -188,7 +240,7 @@ const convertToOCS = (lcs_word) => {
 input_file.on('line', line => {
  // if(line.search(ORT_regex) != -1) line += "|TORT";
  // if(line.search(PV2_regex) != -1) line += "|PV2";
-  console.log(convertToOCS(line));
+  console.log(line + "|" + convertToOCS(line));
 });
 
 // let line = "";
