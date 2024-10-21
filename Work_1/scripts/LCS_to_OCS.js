@@ -18,7 +18,7 @@ const input_file = readline.createInterface({input: read_stream});
 
 const front_vowels = ['i', 'e', 'ę', 'ь', 'ŕ̥', 'ĺ̥'];
 
-const ORT_regex = /[eo][rl]([tŕrpsšdfgћђklĺzžxčvbnńmǯ]|$)/
+const ORT_regex = /[eo][rl]([tŕrpsšdfgћђklĺzžxčvbnńmǯ\+]|$)/
 const PV2_regex = /[kgx](?:[ěęeiь]|ŕ̥|ĺ̥)/;
 const PV3_regex = /[ьi][kgx][auǫ]/;
 const tense_jer_regex = /[ьъ]j[Ǟeiьęǫu]/;
@@ -167,7 +167,7 @@ const mappings = {
   'n' : 'н',
   'm' : 'м',
   'r' : 'р',  
-  '' : '',
+  '+' : '',
   '' : '',
   '' : '',
   '' : '',
@@ -201,7 +201,6 @@ const convertToOCS = (lcs_word) => {
     ORT_pos = lcs_word.search(ORT_regex);
   }
   while(PV2_pos != -1) {
-    const PV2_vowel = lcs_word.at(PV2_pos + 1);
     const PV2_cons = lcs_word.at(PV2_pos);
     lcs_word = lcs_word.slice(0, PV2_pos) + PV2_map.get(PV2_cons) + lcs_word.slice(PV2_pos + 1);
     PV2_pos = lcs_word.search(PV2_regex);
@@ -225,22 +224,5 @@ input_file.on('line', line => {
   console.log(line + "|" + convertToOCS(line));
 });
 
-// let line = "";
-// read_stream.on('data', chunk => {
-//   console.log(chunk.toString());
-// });
-
-// async function logChunks(readable) {
-//     for await (const chunk of readable) {
-//       console.log(chunk.toString());
-//     }
-//   }
-
-// logChunks(read_stream);
-
-
-
 // fs.appendFileSync(morph_tags_filename, csv_string);
 // fs.writeFileSync(`${lang_name}_morph_tag_counts.csv`, tags_counts_array.join('\n'));
-
-
