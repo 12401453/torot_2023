@@ -25,7 +25,8 @@ let csv_string = "";
 saxParser.on('opentag', function(node) {
 
     if(node.name == "source") {
-        can_parse = node.attributes.language == lang_id ? true : false;
+        console.log("reading xml file");
+	can_parse = node.attributes.language == lang_id ? true : false;
         if(!can_parse) console.log(list_of_xml_files[current_file_number], `is not a ${lang_id.toUpperCase()} text, ignoring...`);
     }
     
