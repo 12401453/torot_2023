@@ -6,21 +6,21 @@ const readline = require('readline');
 
 if(process.argv.length < 4) {
   console.log("Must specify both an existing lemmatised corpus-file and an unlemmatised file");
-  exit(-1);
+  process.exit(-1);
 }
 const chu_corpus_filename = process.argv[2];
 const autotagged_pos_filename = process.argv[3];
 const read_stream1 = fs.createReadStream(chu_corpus_filename);
 const read_stream2 = fs.createReadStream(autotagged_pos_filename);
+const read_stream3 = fs.createReadStream("chu_lemmas.csv");
 read_stream1.on('error', () => {
   console.log("first file doesn't exist");
-  exit(-1);
+  process.exit(-1);
 })
 read_stream2.on('error', () => {
   console.log("second file doesn't exist");
-  exit(-1);
+  process.exit(-1);
 })
-
 
 const output_filename = "chu_untagged_autolemmatised.csv";
 
@@ -28,9 +28,8 @@ let csv_string = "";
 
 const existing_normalised_map = new Map();
 const existing_raw_map = new Map();
+const existing_normalised_jersame_map = new Map();
 const lemmas_array = new Array();
-
-
 
 async function readCorpusFile() {
   const chu_corpus_file = readline.createInterface({input: read_stream1});
@@ -43,11 +42,10 @@ async function readCorpusFile() {
   
     existing_normalised_map.set(pos+word_form_normalised, lemma_id);
     existing_raw_map.set(pos+word_form_raw, lemma_id);
+    existing_normalised_jersame_map.set(pos+word_form_normalised.replaceAll("ь", "ъ"), lemma_id);
   };
   chu_corpus_file.close();
 }
-
-const read_stream3 = fs.createReadStream("chu_lemmas.csv");
 
 async function readLemmasFile() {
   const lemmas_file = readline.createInterface({input: read_stream3});
@@ -62,6 +60,7 @@ async function readLemmasFile() {
 
 let unmatched_form_count = 0;
 let matched_by_lemmalist_count = 0;
+
 async function readAutotaggedFile() {
   const autotagged_pos_file = readline.createInterface({input: read_stream2});
 
@@ -71,10 +70,6 @@ async function readAutotaggedFile() {
     const word_form_normalised = row[0];
     const pos = row[1];
     let auto_lemma_id = 0;
-
-    
-  
-    //console.log(line);
   
     if(existing_normalised_map.has(pos+word_form_normalised)) {
       auto_lemma_id = existing_normalised_map.get(pos+word_form_normalised);
@@ -82,24 +77,27 @@ async function readAutotaggedFile() {
     else if(existing_raw_map.has(pos+word_form_raw)) {
       auto_lemma_id = existing_raw_map.get(pos+word_form_raw);
     }
+    else if(existing_normalised_jersame_map.has(pos+word_form_normalised.replaceAll("ь", "ъ"))) {
+      auto_lemma_id = existing_normalised_jersame_map.get(pos+word_form_normalised.replaceAll("ь", "ъ"));
+      console.log(`${word_form_raw} was normalised with ${auto_lemma_id} by neutralising the jers and checking in the existing corpus`)
+    }
     else {
       unmatched_form_count++;
-      //console.log(`No matching form was found for ${word_form_raw} in the existing tagged corpus, chopping and checking against lemma-list...`)
       let match_found = false;
-      let chopped_word_normalised = word_form_normalised;
+      let chopped_word_normalised = word_form_normalised.replaceAll("ь", "ъ");
 
-      let filtered_lemmas = lemmas_array.filter(row => row[2] == pos && row[3].startsWith(chopped_word_normalised))
+      let filtered_lemmas = lemmas_array.filter(row => row[2] == pos && row[3].replaceAll("ь", "ъ").startsWith(chopped_word_normalised))
       
       //should also check against the unnormalised forms
       //it might be better to first check against the existing forms to catch things like пришьд- which is too dissimilar from прити to ever get correctly lemmatised this way
       while(chopped_word_normalised.length > 3 && filtered_lemmas.length == 0) {
-
-        filtered_lemmas = lemmas_array.filter(row => row[2] == pos && row[3].startsWith(chopped_word_normalised));
+        
+        filtered_lemmas = lemmas_array.filter(row => row[2] == pos && row[3].replaceAll("ь", "ъ").startsWith(chopped_word_normalised));
 
         if(filtered_lemmas.length > 0) {
           auto_lemma_id = filtered_lemmas[0][0];
           match_found = true;
-          console.log(`${word_form_raw} was matched against the lemma-list with ${filtered_lemmas[0][1]}`);
+          console.log(`${word_form_raw} was matched against the lemma-list with ${filtered_lemmas[0][1]} with lemma_id ${auto_lemma_id}`);
           matched_by_lemmalist_count++;
           break;
         }
