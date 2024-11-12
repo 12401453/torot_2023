@@ -1,25 +1,23 @@
 #!/usr/bin/node
 const fs = require('node:fs');
-const { exit } = require('node:process');
 const readline = require('readline');
 
 if(process.argv.length < 3) {
   console.log("Must specify filename");
-  exit(-1);
+  process.exit(-1);
 }
 const filename = process.argv[2];
 const read_stream = fs.createReadStream(filename);
 read_stream.on('error', () => {
   console.log("file doesn't exist");
-  exit(-1);
+  process.exit(-1);
 })
 
 const input_file = readline.createInterface({input: read_stream});
 
-const front_vowels = ['i', 'e', 'ę', 'ь', 'ŕ̥', 'ĺ̥'];
-
+const dl_tl_regex = /[dt][ĺl][^̥]/;
 const ORT_regex = /[eo][rl]([tŕrpsšdfgћђklĺzžxčvbnńmǯ\+]|$)/
-const PV2_regex = /[kgx](?:[ěęeiь]|ŕ̥|ĺ̥)/;
+const PV2_regex = /[kgx]v?(?:[ěęeiь]|ŕ̥|ĺ̥)/;
 const PV3_regex = /[ьi][kgx][auǫ]/;
 const tense_jer_regex = /[ьъ]j[Ǟeiьęǫu]/;
 
@@ -27,6 +25,15 @@ const PV2_map = new Map();
 PV2_map.set('k', 'c');
 PV2_map.set('g', 'ʒ');
 PV2_map.set('x', 'ś');
+
+const yeetTlDl = (lcs_form) => {
+  let dl_tl_pos = lcs_form.search(dl_tl_regex);
+  while(dl_tl_pos != -1) {
+    lcs_form = lcs_form.slice(0, dl_tl_pos) + lcs_form.slice(dl_tl_pos + 1);
+    dl_tl_pos = lcs_form.search(dl_tl_regex);
+  }
+  return lcs_form;
+}
 
 const applyPV3 = (lcs_form) => {
   let PV3_pos = lcs_form.search(PV3_regex);
@@ -77,11 +84,6 @@ const simplifyLongAdj = (lcs_form) => {
 };
 
 const mappings = {
-  '' : '',
-  '' : '',
-  '' : '',
-  '' : '',
-  '' : '',
   'sš' : 'ш',  
   'bv' : 'б',
   'ŕǞ' : 'рꙗ',
@@ -127,8 +129,6 @@ const mappings = {
   'šћ' : 'щ',
   'žǯ' : 'жд',
   'žђ' : 'жд',
-  'dl' : 'л',
-  'tl' : 'л',
   'zr' : 'здр',
   'ǵ' : 'ꙉ',
   'ḱ' : 'к҄',
@@ -173,28 +173,15 @@ const mappings = {
   'ń' : 'н҄',
   'ĺ' : 'л҄',
   'ŕ' : 'р҄',
-  '' : '',
-  '' : '',  
-  '' : '',
-  '' : '',
-  '' : '',
-  '' : '',
-  '' : '',
-  '' : '',
-  '' : '',
-  '' : '',  
-  '' : '',
-  '' : '',
-  '' : '',
-  '' : '',
-  '' : '',
-  '' : '',
-  '' : '',
 }
 
 const convertToOCS = (lcs_word) => {
+
+  lcs_word = yeetTlDl(lcs_word);
+
   let ORT_pos =  lcs_word.search(ORT_regex);
   let PV2_pos = lcs_word.search(PV2_regex);
+
   while(ORT_pos != -1) {
     const ort_vowel = lcs_word.at(ORT_pos);
     const ort_liquid = lcs_word.at(ORT_pos + 1);
@@ -219,12 +206,7 @@ const convertToOCS = (lcs_word) => {
   return lcs_word;
 };
 
-// input_file.on('line', line => fs.appendFileSync("copy.csv", line+'\n'));
 input_file.on('line', line => {
- // if(line.search(ORT_regex) != -1) line += "|TORT";
- // if(line.search(PV2_regex) != -1) line += "|PV2";
   console.log(line + "|" + convertToOCS(line));
 });
 
-// fs.appendFileSync(morph_tags_filename, csv_string);
-// fs.writeFileSync(`${lang_name}_morph_tag_counts.csv`, tags_counts_array.join('\n'));
