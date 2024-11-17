@@ -216,6 +216,7 @@ const deepClean = (dirty_word) => {
 
 let can_parse = false;
 let annotated = false;
+let sentence_id = 0;
 
 let csv_string = "";
 
@@ -229,6 +230,8 @@ saxParser.on('opentag', function(node) {
 
     if(node.name == 'sentence' && can_parse) {
         annotated = node.attributes.status == 'unannotated' ? false : true;
+        sentence_id = node.attributes.id;
+
     }
  
     if(can_parse && annotated && node.name == "token") {
@@ -252,7 +255,7 @@ saxParser.on('opentag', function(node) {
                 csv_string += "," + lemma_count;
                 lemma_count++;
             }
-            csv_string += "\n";
+            csv_string += "," + sentence_id + "\n";
             word_count++;
             if(pos == undefined) console.log(text_word, "apparently doesn't have any assigned POS.");
         }
