@@ -61,22 +61,21 @@ int main () {
             int parameter_no = 1;
             while(std::getline(ss_line, field, ',')) {
                 switch(parameter_no) {
-		    case 2:
-			pos_key = pos_map.at(field);
-			sqlite3_bind_int(statement, parameter_no, pos_key);		
-			break;
-		    case 5:
-			sqlite3_bind_int(statement, parameter_no, std::stoi(field));
-			break;
-		    case 6:
-			sqlite3_bind_int(statement, parameter_no, std::stoi(field));
-			break;
-		    default:
-			sqlite3_bind_text(statement, parameter_no, field.c_str(), -1, SQLITE_TRANSIENT); //SQLITE_STATIC doesnt work and makes every field get filled with some permutation of >
-                        break;	
-		}
+                    case 2:
+                        pos_key = pos_map.at(field);
+                        sqlite3_bind_int(statement, parameter_no, pos_key);		
+                        break;
+                    case 5:
+                        sqlite3_bind_int(statement, parameter_no, std::stoi(field));
+                        break;
+                    case 6:
+                        sqlite3_bind_int(statement, parameter_no, std::stoi(field));
+                        break;
+                    default:
+                        sqlite3_bind_text(statement, parameter_no, field.c_str(), -1, SQLITE_TRANSIENT); //SQLITE_STATIC doesnt work and makes every field get filled with some permutation of sentence_no
+		        }
                 parameter_no++;
-            }  
+            } 
             sqlite3_step(statement);
             sqlite3_reset(statement);
             sqlite3_clear_bindings(statement);
