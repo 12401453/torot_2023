@@ -13,3 +13,32 @@ As came to light from your TnT-normalised ps138.txt file, /y/ in Psal. seems to 
 
 Mar. Mat 23 ⱄⱘⱎⱅⰻⰻⰿⰻ is wrongly tagged as dative
 Supr. has домаштьнѧѩ which I need to check because I dont think it ever uses the jotated ję and instead differentiates by the shape of the non-jotated small jus
+
+There's a third родити lemma that only occurs in Supr. and seems to mean the same as родити#1
+Needless second кръмити that only occurs once in Supr. as кръмивъши,V-,-supafn-si.
+Needless second чародѣи that also only occurs once in Supr.
+Your съписати#1 lemma seems to me not to be needed ontop of сьпьсати, because yes one infinitive with a lengthened-stem does occur (unless this has just been badly annotated and was not motivated by a perfective-aspect reading), but that is just an expected deviance. съписати#2 on the other hand is a straight secondary-imperfective class 5.4 and so does have a reason to exist
+въстѧѕати#1 and въстѧѕати#2 are both used for perf. 5.2 and imperf. 5.4 forms of this verb in Supr., making a mockery of your differentiation of them
+Needless second срѣда that only occurs once in Supr.
+
+Of the lemmas I had add to differentiate, you've only added 2 (dojiti and urězati); the full list is:
+тѫдѣ|750000|Df|tǫdě||||||||||||||||||99||||||||
+достати|750002|V-|dostati|||||||||||||||||stati|1||||||||
+привѧзати|750003|V-|privęzati|||||||||||||||||54|99||||||||
+доити#2|750004|V-|dojьti|||||||||||||||došьd|dojьd|jьti|1||||||||
+съказати|750005|V-|sъkazati|||||||||||||||||52|1||||||||
+съвѧзати|750006|V-|sъvęzati|||||||||||||||||54|1||||||||
+въметати|750007|V-|vъmetati|||||||||||||||||51|1||||||||
+отъкръвениѥ|750008|Nb|otъkrъvenьje|||||||||||||||||nt_jo|2||||||||
+оклеветати|750009|V-|oklevetati|||||||||||||||||52|1||||||||
+прѣлиꙗти|750010|V-|perlьjǞti|||||||||||||||||53_abl|99||||||||
+прѣпоꙗсати|750011|V-|perpojǞsati|||||||||||||||||54|1||||||||
+подвиѕати|750012|V-|podvigati||podviʒati|||||||||||||||52|1||||||||
+исꙑпати|750013|V-|jьssypati|||||||||||||||||54|1||||||||
+притѧжати|750014|V-|pritęžǞti|||||||||||||||||54|1||||||||
+осѧѕати|750015|V-|osęgati||osęʒati|||||touch, feel||||||||||54|1||||||||
+расꙑпати|750016|V-|orssypati|||||||||||||||||54|1||||||||
+въждѧдати|750017|V-|vъžǯędati|||||||||||||||||54|1||||||||
+жѧдати|750018|V-|žędati|||||||||||||||||54|1||||||||
+оурѣзати#2|750019|V-|urězati|||||||||||||||||54|1||||||||
+(плачь и скрьжьтъ зѫбомъ)
