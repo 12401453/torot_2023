@@ -48,7 +48,7 @@ async function readAutolemmatisedFile() {
 async function addLemmaForms() {
   await readLemmasFile();
   await readAutolemmatisedFile();
-  fs.appendFileSync(output_filename, csv_string);
+  fs.writeFileSync(output_filename, csv_string);
 
 }
 

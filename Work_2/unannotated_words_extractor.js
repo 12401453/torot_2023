@@ -232,7 +232,7 @@ saxParser.on('opentag', function(node) {
 saxParser.on('end', () => {
 
     console.log(`${unannotated_word_count} unannotated words were found in ${input_xml_filename}`);
-    fs.appendFileSync(output_filename, csv_string);
+    fs.writeFileSync(output_filename, csv_string);
 });
 
 const xml_stream = fs.createReadStream(input_xml_filename);

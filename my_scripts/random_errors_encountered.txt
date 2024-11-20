@@ -1,6 +1,5 @@
 Most *pomoћi words seem to be lemmatised with the OCS verb помощи, though you also have помочи listed and occuring twice.
 Similarly рещи in RusPrav
-уборокъ ? RusPrav spellings indicate a jer
 коньчьныи in RusPrav looks soft
 
 There are two ⱖ in Suprasliensis, and if you look at whatsisname's version he has:
@@ -17,11 +16,11 @@ Supr. has домаштьнѧѩ which I need to check because I dont think it eve
 There's a third родити lemma that only occurs in Supr. and seems to mean the same as родити#1
 Needless second кръмити that only occurs once in Supr. as кръмивъши,V-,-supafn-si.
 Needless second чародѣи that also only occurs once in Supr.
-Your съписати#1 lemma seems to me not to be needed ontop of сьпьсати, because yes one infinitive with a lengthened-stem does occur (unless this has just been badly annotated and was not motivated by a perfective-aspect reading), but that is just an expected deviance. съписати#2 on the other hand is a straight secondary-imperfective class 5.4 and so does have a reason to exist
+Your съписати#1 lemma seems to me not to be needed ontop of сьпьсати, because yes one infinitive with a lengthened-stem does occur (unless this has just been badly annotated and was not motivated by a perfective-aspect reading), but that is just an expectable deviance. съписати#2 on the other hand is a straight secondary-imperfective class 5.4 and so does have a reason to exist
 въстѧѕати#1 and въстѧѕати#2 are both used for perf. 5.2 and imperf. 5.4 forms of this verb in Supr., making a mockery of your differentiation of them
 Needless second срѣда that only occurs once in Supr.
 
-Of the lemmas I had add to differentiate, you've only added 2 (dojiti and urězati); the full list is:
+Of the lemmas I had add to differentiate, you've only added 2 (dojiti and urězati); the full list is (I gave the news ones lemma_ids starting from 750000):
 тѫдѣ|750000|Df|tǫdě||||||||||||||||||99||||||||
 достати|750002|V-|dostati|||||||||||||||||stati|1||||||||
 привѧзати|750003|V-|privęzati|||||||||||||||||54|99||||||||

@@ -5,7 +5,7 @@ const fs = require('node:fs');
 const readline = require('readline');
 
 if(process.argv.length < 4) {
-  console.log("Must specify both an existing lemmatised corpus-file and an unlemmatised file");
+  console.log("Must specify both an existing lemmatised corpus-file and an unlemmatised but POS-tagged file");
   process.exit(-1);
 }
 const chu_corpus_filename = process.argv[2];
@@ -116,7 +116,7 @@ async function guessLemmas() {
   console.log(lemmas_array.length);
   await readAutotaggedFile();
   
-  fs.appendFileSync(output_filename, csv_string);
+  fs.writeFileSync(output_filename, csv_string);
   
   console.log(unmatched_form_count, `words could not be matched against the existing corpus-words`);
   console.log(matched_by_lemmalist_count, `of those were matched against the lemma-list`);
