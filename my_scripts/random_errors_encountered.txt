@@ -7,7 +7,7 @@ There are two ⱖ in Suprasliensis, and if you look at whatsisname's version he 
     1.) тоⱘ [ⱖ] for the first occurence, but the manuscript has ѩ (and admittedly jotated front-nasal is rare in Supr. because usually that distinction is carried by using that weird front-nasal for the non-jotated version) with a possible ⱖ underneath it which has been corrected
     2.) глѫбокъⱖ for the second one, yet when you look at the manuscript there's no hint of the Glagolitic letter and it instead just has глѫбокъѩ (which could easily just be the standard letter for /y/ and the standard letter for Supr-jotated-front-nasal but with a horizontal line connecting them that makes it look like ъ plus another Supr-atypical ѩ occurence).
 
-Why is there a fully-annotated sentence in Psal. in modern Russian from the 1800s? Get fookin rid
+Why is there a fully-annotated sentence in Psal. in modern Russian from the 1800s? Get rid
 
 As came to light from your TnT-normalised ps138.txt file, /y/ in Psal. seems to have been spelt with the two Cyrillic letters <ъі>, whereas normally you render this digraph with the single Cyrillic letter <ꙑ>. I actually always render this letter with the two Cyrillic letters as you seem to have done in Psal., because it is more accurate to the digraphic nature of the underlying Glagolitic and it makes things like normalising the <ъи> spellings of /y/ in Kiev. easier, but you generally do the opposite so this messes up your normalising routines. (Conversely, I used to change all digraphic <оу> into the single letter to more accureately reflect the clearly fused Glagolitic monograph, but I think the way you do it, changing them all to <оу>, is better because of issues around ѵ and single-use of <у>)
 
@@ -41,4 +41,5 @@ Of the lemmas I had add to differentiate, you've only added 2 (dojiti and urěza
 въждѧдати|750017|V-|vъžǯędati|||||||||||||||||54|1||||||||
 жѧдати|750018|V-|žędati|||||||||||||||||54|1||||||||
 оурѣзати#2|750019|V-|urězati|||||||||||||||||54|1||||||||
+
 (плачь и скрьжьтъ зѫбомъ)
