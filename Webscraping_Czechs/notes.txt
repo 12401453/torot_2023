@@ -1,0 +1,4 @@
+Some times when a result object contains no EngTrl field it's because it's an entry which just says "see [actual entry]", so I need a strategy for dealing with those if I want to recreate the functionality of the actual dictionary
+
+
+The response-json data contains just lists of english / russian / ocs  words without any indication of how they should be broken up into subsections in the HTML, and the displayed HTML is not hierarchically structured in any way. Given that the json response also contains html strings, my assumption is that only via a combination of this response html-string template and the unstructured lists of english / russian / ocs words can one work out how to hierarchically structure the data more sensible, splitting into subsections etc.
