@@ -1,30 +1,4 @@
 #!/usr/bin/node
-
-const sax = require('sax');
-const fs = require('node:fs');
-
-if(process.argv.length < 3) {
-    console.log("Must specify lang-code");
-    process.exit(0);
-}
-
-let list_of_xml_files = fs.readdirSync(".").filter(x => x.slice(-4) == ".xml");
-const number_of_files = list_of_xml_files.length;
-
-let current_file_number = 0;
-let word_count = 0;
-
-const lang_id = process.argv[2];
-
-const words_filename = lang_id+"_words_full_with_titles_untagged.csv";
-
-const saxParser = sax.createStream(true);
-
-const pos_set = new Set();
-const morph_set = new Set();
-const lemma_map = new Map();
-let lemma_count = 1;
-
 const chu_deepClean_map = {
     "̀" : "",
     ">" : "",
@@ -206,6 +180,31 @@ const chu_deepClean_map = {
     
 };
 
+const sax = require('sax');
+const fs = require('node:fs');
+
+if(process.argv.length < 3) {
+    console.log("Must specify lang-code");
+    process.exit(0);
+}
+
+let list_of_xml_files = fs.readdirSync(".").filter(x => x.slice(-4) == ".xml");
+const number_of_files = list_of_xml_files.length;
+
+let current_file_number = 0;
+let word_count = 0;
+
+const lang_id = process.argv[2];
+
+const words_filename = lang_id+"_words_full_with_titles_untagged.csv";
+
+const saxParser = sax.createStream(true);
+
+const pos_set = new Set();
+const morph_set = new Set();
+const lemma_map = new Map();
+let lemma_count = 1;
+
 const deepClean = (dirty_word) => {
     let cleaned_word = dirty_word;
     for(const key in chu_deepClean_map) {
@@ -255,13 +254,19 @@ saxParser.on('closetag', function(node) {
     tag_stack.pop();
 });
 
+saxParser.on('error', (e) => {
+    console.log("Error: ", e);
+})
+
 saxParser.on('opentag', function(node) {
 
     tag_stack.push(node.name);
 
     if(node.name == "source") {
         can_parse = node.attributes.language == lang_id ? true : false;
-        if(!can_parse) console.log(list_of_xml_files[current_file_number], `is not a ${lang_id.toUpperCase()} text, ignoring...`);
+        if(!can_parse) {
+            console.log(list_of_xml_files[current_file_number], `is not a ${lang_id.toUpperCase()} text, ignoring...`);
+        }
         else console.log(list_of_xml_files[current_file_number], `is a ${lang_id.toUpperCase()} text, extracting words...`);
     }
     if(node.name == 'title' && can_parse) title_text_flag = true;
@@ -275,27 +280,32 @@ saxParser.on('opentag', function(node) {
  
     if(can_parse && node.name == "token") {
         const text_word = node.attributes.form;
-        const morph_tag = node.attributes.morphology;
-        const pos = node.attributes['part-of-speech'];
+        let morph_tag = "";
+        let pos = "";
+        let lemma_id = 0;
         
         if(text_word != undefined) {
 
-            const lemma = node.attributes.lemma;
-            const lemma_pos_combo = lemma.concat(pos);
-
-            pos_set.add(pos);
-            morph_set.add(morph_tag);
+            if(annotated) {
+                morph_tag = node.attributes.morphology;
+                pos = node.attributes['part-of-speech'];
+                const lemma = node.attributes.lemma;
+                const lemma_pos_combo = lemma.concat(pos);
+                pos_set.add(pos);
+                morph_set.add(morph_tag);
+                if(lemma_map.has(lemma_pos_combo)) {
+                    lemma_id = lemma_map.get(lemma_pos_combo);
+                }
+                else {
+                    lemma_map.set(lemma_pos_combo, lemma_count);
+                    lemma_id = lemma_count;
+                    lemma_count++;
+                }
+            } 
             
             csv_string += text_word + "|" + pos + "|" + morph_tag + "|" + deepClean(text_word);
-            
-            if(lemma_map.has(lemma_pos_combo)) {
-                csv_string += "|" + lemma_map.get(lemma_pos_combo);
-            }
-            else {
-                lemma_map.set(lemma_pos_combo, lemma_count);
-                csv_string += "|" + lemma_count;
-                lemma_count++;
-            }
+
+            csv_string += "|" + lemma_id;
             
             csv_string += "|" + sentence_id;
             word_count++;
@@ -341,6 +351,7 @@ saxParser.on('end', () => {
 
 
 });
+
 
 const xml_stream = fs.createReadStream(list_of_xml_files[current_file_number]);
 xml_stream.pipe(saxParser);
