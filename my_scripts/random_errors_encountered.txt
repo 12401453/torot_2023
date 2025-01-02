@@ -47,3 +47,5 @@ You can't have the word негасимъꙇмь lemmatised as гасити; you 
 
 
 There's a pipe-character in the "presentation-before" field of Psal., which I was using as a .csv separator, so I've changed it to ¬
+
+Zographensis is still full of Latin <x>

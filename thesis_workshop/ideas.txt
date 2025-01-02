@@ -1,3 +1,12 @@
 Take that page of Shevelov Konsonanten vor e, i where he talks about the examples from the Izborniki and van Wijk and use it as an example of something that should be made easily checkable by my phonologically-annotated online editions
 
 The Bulgarians have """"ditigised"""" these Izborniki but the PDFs they have made accessible are encoded in such a way that it's literally impossible to convert the underlying text in them to unicode; they may as well have just taken photographs of printed-out paper
+
+Psalterium Sinaiticum лицѣ, apparently Lsg. (-s---nl--i) but without the expected (analogical?) jo-stem ending. Either this is mis-tagged and should be NApl. with jat' spelling of /a/ (cf. чѣшѣ etc. in this ms.), or it's vindication of the traditional and Kortlandt-supported PV3-last theory, because it shows that the (strictly-speaking non-phonologically motivated) adoption of the jo-stem endings was analogical and thus liable not wholly consistently carried out. If Lunt (the shit) was right, the Lsg. ending here would've been fronted before the monophthongisation of diphthongs during the CS 'Umlaut' (*oi > *ei > /i/) and there'd be no possibility of a jat' here.
+
+и҅ꙁдъхнѫ                  іздъхнѫ               3saia----i  2377      254555                            ·                   jьzdъxnǫ                  24                  jьzdъše (Suprs.)
+
+Flex-box at the top with a bunch of buttons for different view-modes
+Get the Greek token-level alignment data and have an option to just view those as tooltips
+
+So it's also about holding projects like Dr Eckhoff's to account by
