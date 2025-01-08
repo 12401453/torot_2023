@@ -1,0 +1,5 @@
+We know about the morphological changes that tend to occur in the development of these languages and we know roughly about the phonological changes, but if we can say in precise detail exactly how much and which words in each page of the manuscript have undergone some morphological shifts, and we work out exactly how often signs of phonological change come through in each text, then we can start to correlate these facts and see whether or not the intuitions and theories of previous scholars (e.g. Shevelov's theory about nominal morphology reshaping in East Slavic differing between Ukr. and Russian due to differences in extent of phonemic consonant palatalisation) are true at the level of each individual text
+
+
+Vita Constantini 12 on my system has loads of good examples of bad lemmatisations that show up when you regenerate their LCS from autoreconstructions: почрьпⸯше же ѡбрѣтоше
+
