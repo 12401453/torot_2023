@@ -1,5 +1,17 @@
+Psalm 21 іштрѣва < *jьz_červa and similar forms are interesting because they show that the clitic bounding of the preposition to the following word comes from a time either 1.) before PV1, i.e. *iz_kervaa -> *is_kervaa -> *iščervaa -> *jьščerva -> (Bulgarian *šč -> /št/) /ištrěva/; or 2.) from a time when the underlying lexical sequence
+    -Use this and other similar examples to talk about the difficulties with clitics and what to recosntruct them as: is it better to leave them in their underlying lexical forms but mark them as clitically bound to the following word so that one can search for the extent of levelling which separates them out again, or should a properly correct "rollign back" of the phonology to LCS annotate all such sequences as *jьšč-?
+Some mod. Ru. words like исчезнуть are pronouned with the fully etymological reflex of PV1 */zke/, but when I asked a native speaker how they'd pronounce из чрева they said
+
 We know about the morphological changes that tend to occur in the development of these languages and we know roughly about the phonological changes, but if we can say in precise detail exactly how much and which words in each page of the manuscript have undergone some morphological shifts, and we work out exactly how often signs of phonological change come through in each text, then we can start to correlate these facts and see whether or not the intuitions and theories of previous scholars (e.g. Shevelov's theory about nominal morphology reshaping in East Slavic differing between Ukr. and Russian due to differences in extent of phonemic consonant palatalisation) are true at the level of each individual text
 
 
 Vita Constantini 12 on my system has loads of good examples of bad lemmatisations that show up when you regenerate their LCS from autoreconstructions: почрьпⸯше же ѡбрѣтоше
 
+Mention Florian Wandl's new visualisation of Slavic sound changes as an example of the opposite of what I'm doing, because he can restrict himself purely to idealised theoretical ancestor-forms of a limited set of single lexemes, whereas my goal is to
+
+"From what I remember of historical-philology exams, both here and when I did my undergraduate, the standards are extremely low and you can get high marks by talking almost exclusively about phonology, which often boils down to just comparing the text-form to some kind of idealised historical or 'regular' form, and thereby to diagnose dialect-specific sound-changes; well my LCS phonological annotation can get you extremely far in that regard, as you can see here where I have displayed both the LCS reconstruction and a "normalised" OCS form on top of the text-forms""
+
+I want to hold the academics who teach these papers' feet to the fire with regards to upholding high standards of teaching and assessment by
+(Get picture of past exam paper commentary question and then show the same passage on my webpage and just demonstrate how easy it would be to use it to answer said question)
+
+Problems in regenerating the normalised OCS point to actually difficult problems in reconstructing the pre-forms: PV3, оутро/ютро but only ever оухо, even though most etymologies of *utro do not derive it from a PIE *j- and so we'd expect its sporadic j-epenthesis to be the same within the same dialect across different words, but it aint
