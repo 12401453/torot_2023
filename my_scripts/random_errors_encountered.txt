@@ -48,8 +48,10 @@ You can't have the word негасимъꙇмь lemmatised as гасити; you 
 
 There's a pipe-character in the "presentation-before" field of Psal., which I was using as a .csv separator, so I've changed it to ¬
 
-For some reason there is an "￼ " character in the "presentation-after" field of a token in chrabr.xml
+For some reason there is an "￼ " character in the "presentation-after" field of a token in chrabr.xml (I read on the Syntacticus documentation Unicode code-points from the Private Use Area can be used to encode formatting information, so maybe it's that, but I doubt it)
 
 Zographensis is still full of Latin <x>
 
 There's no subtitle <title> element in the pskov.xml or luk-koloc.xml, which fucks up my subtitle-extracting script
+
+Loads of long-adjectives in your Kiev Folia are marked as strong
