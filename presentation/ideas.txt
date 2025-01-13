@@ -15,3 +15,16 @@ I want to hold the academics who teach these papers' feet to the fire with regar
 (Get picture of past exam paper commentary question and then show the same passage on my webpage and just demonstrate how easy it would be to use it to answer said question)
 
 Problems in regenerating the normalised OCS point to actually difficult problems in reconstructing the pre-forms: PV3, оутро/ютро but only ever оухо, even though most etymologies of *utro do not derive it from a PIE *j- and so we'd expect its sporadic j-epenthesis to be the same within the same dialect across different words, but it aint
+
+
+Marinaus Matt 7 pg 2 Mar. опьрѣшѧ vs auto-OR опереша is a good example of how forcing regularity across the whole manuscripts makes you confront forms like this which appear to have an unetymological front-jer in them: this form is based on the infinitive stem which
+
+
+Jotated/Fronted vriants of back-vowels after <шчжщ> etc. consonants -> possibly an area where systematic differences could be detectable between Northeastern and Southwestern Old East Slavic, because the modern Russian consonant system is so strongly bifurcated between hard/soft consonants that even unpaired hushers behave as if they are one or the other: they force the front/back allophone of /i/ and soft /č/ causes strong fronting of following back-vowels (when they are also followed by a soft-consontant), часть
+
+
+Marianus Matt 7 p.2 храминѫ своѭ҄ на камене, the last word is tagged as neuter instead of masculine, and my inflection-table for that type of N-stem only includes masculine endings because those are the only ones which actually exist, so it gets wrongly reconstructed with no-ending at all, and thus wrongly reconverted to normalised-OCS, so you can see how just as a practical tool for checking over TOROT annotations my stuff can be useful. [One could probably to a certain extent automate such checking by calculating something like the Levenshtein distance between the text-form and automatically regenerated forms in a number of possible dialects, and then flagging forms which are too deviant from what should be expected [though obviously certain things, like abbreviated words, would make a mockery of such a process, so it would need refinement])
+
+Vita Methodii 1, вьсемогаи wrongly lemmatised as a hapax adj. (?) вьсемогаи when this <а> spelling is actually fully expected as the Old Ru. reflex of the PRAP ending *y̨ (this text is written in some later form of Russian Ch.Sl. and has no business being in an OCS corpus; the Treatise on the Letters is at least Middle Bulgarian but similarly shouldn't be there)
+
+Kiev Folia - Mass for every day of the year - подась wrongly given as an imperative (presumably with word-final devoicing due to loss of jers [which arent lsot in this ms.]), though Schaeken convincingly argues it to be an archaic 2sg. athematic present
