@@ -28,3 +28,5 @@ Marianus Matt 7 p.2 храминѫ своѭ҄ на камене, the last word i
 Vita Methodii 1, вьсемогаи wrongly lemmatised as a hapax adj. (?) вьсемогаи when this <а> spelling is actually fully expected as the Old Ru. reflex of the PRAP ending *y̨ (this text is written in some later form of Russian Ch.Sl. and has no business being in an OCS corpus; the Treatise on the Letters is at least Middle Bulgarian but similarly shouldn't be there)
 
 Kiev Folia - Mass for every day of the year - подась wrongly given as an imperative (presumably with word-final devoicing due to loss of jers [which arent lsot in this ms.]), though Schaeken convincingly argues it to be an archaic 2sg. athematic present
+
+Could use бездранътѣхъ (for some reason not space-separated) in Supr. Encomion on the 40 Matryrs of Sebasteia as an example of clitic jьz needing to be marked so that the disallowed *zr sequence can get properly replaced across the word-boundary when reproducing normalised OCS or OR forms
