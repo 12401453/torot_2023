@@ -1,4 +1,4 @@
-Take that page of Shevelov Konsonanten vor e, i where he talks about the examples from the Izborniki and van Wijk and use it as an example of something that should be made easily checkable by my phonologically-annotated online editions
+
 
 The Bulgarians have """"ditigised"""" these Izborniki but the PDFs they have made accessible are encoded in such a way that it's literally impossible to convert the underlying text in them to unicode; they may as well have just taken photographs of printed-out paper
 

@@ -16,8 +16,14 @@ I want to hold the academics who teach these papers' feet to the fire with regar
 
 Problems in regenerating the normalised OCS point to actually difficult problems in reconstructing the pre-forms: PV3, оутро/ютро but only ever оухо, even though most etymologies of *utro do not derive it from a PIE *j- and so we'd expect its sporadic j-epenthesis to be the same within the same dialect across different words, but it aint
 
+If you just use /[ьię][kgx][auǫ]/ as the PV3 regex then it will massively over-apply itself, because masc. nouns with stems in *ik will apply it to their Gsg. and Dsg., NAdual., GLdual., and there's no trace in the texts of such forms; either they were all levelled extremely quickly and consistently, or the view of PV3 has occurring after or simultaneously with PV2 (and so after the monophthongisation of diphthongs) is just wrong (sometimes people, e.g. Korlandt 2003:216, who advocate late PV3 try solve the problem of unpalatalised *ik- groups by positing a diphthongal source of LCS /i/ (<*ei), which initially became a close /e/, distinct from LCS /i/ < *ii, and thus not a conditioning vowel for PV3)
 
-Marinaus Matt 7 pg 2 Mar. опьрѣшѧ vs auto-OR опереша is a good example of how forcing regularity across the whole manuscripts makes you confront forms like this which appear to have an unetymological front-jer in them: this form is based on the infinitive stem which
+It's an interesting exercise to try to autoconvert my reconstructions to Old Russian, and particularly with regard to the denasalisation of *ę and its role in secondarily-palatalising preceding consonants and thus in the development of Russian-style hard-soft consonant pairings:
+(Birchbark letter 142 тęžę (f. Nsg.), 109 възалъ, just use as evidence of the OR renderings of these forms)
+
+OCS/Mid. Bg. вьса, княза (?) spellings with no preserved softness
+
+Marinaus Matt 7 pg 2 Mar. опьрѣшѧ vs auto-OR опереша is a good example of how forcing regularity across the whole manuscripts makes you confront forms like this which appear to have an unetymological front-jer in them: the aorist is based on the infinitive stem which is LCS *oper-ti (as evidenced by the lengthened jat' vowel), but very often forms of this class have an unetymological jer which comes frmo the present stem, which is reduced-grade ablaut ŕ̥ (and the more common оумьрѣти)
 
 
 Jotated/Fronted vriants of back-vowels after <шчжщ> etc. consonants -> possibly an area where systematic differences could be detectable between Northeastern and Southwestern Old East Slavic, because the modern Russian consonant system is so strongly bifurcated between hard/soft consonants that even unpaired hushers behave as if they are one or the other: they force the front/back allophone of /i/ and soft /č/ causes strong fronting of following back-vowels (when they are also followed by a soft-consontant), часть
@@ -26,7 +32,18 @@ Jotated/Fronted vriants of back-vowels after <шчжщ> etc. consonants -> possi
 Marianus Matt 7 p.2 храминѫ своѭ҄ на камене, the last word is tagged as neuter instead of masculine, and my inflection-table for that type of N-stem only includes masculine endings because those are the only ones which actually exist, so it gets wrongly reconstructed with no-ending at all, and thus wrongly reconverted to normalised-OCS, so you can see how just as a practical tool for checking over TOROT annotations my stuff can be useful. [One could probably to a certain extent automate such checking by calculating something like the Levenshtein distance between the text-form and automatically regenerated forms in a number of possible dialects, and then flagging forms which are too deviant from what should be expected [though obviously certain things, like abbreviated words, would make a mockery of such a process, so it would need refinement])
 
 Vita Methodii 1, вьсемогаи wrongly lemmatised as a hapax adj. (?) вьсемогаи when this <а> spelling is actually fully expected as the Old Ru. reflex of the PRAP ending *y̨ (this text is written in some later form of Russian Ch.Sl. and has no business being in an OCS corpus; the Treatise on the Letters is at least Middle Bulgarian but similarly shouldn't be there)
+Schaeken 1987:134-5 that the present-participle form of this word makes it "eindeutig eine Lehnübersetzung aus dem lat. omnipotens", and then quotes Wiehl 1974:31, claiming that the use of вьсемогy vs вьседрьжитель (the latter apparently loan-translation from Gk. pantokratoor instead), is an important distinguishing feature between Western and Eastern church-languages, so it's rather surprising that Vita Methodii would use this word with a fully native East Slavic reflex of the participle-ending (excluding the possibility of borrowing it from texts like the Kiev Folia, where teh SSl. -y ending would surely have just been reanalaysed as an adjective)
 
 Kiev Folia - Mass for every day of the year - подась wrongly given as an imperative (presumably with word-final devoicing due to loss of jers [which arent lsot in this ms.]), though Schaeken convincingly argues it to be an archaic 2sg. athematic present
+нaслѣдьнкъ --> нaслѣдьнікъ (St. Clement) (ms. p.11)
+МЬШҌ НА ВЬСѦ ДЬНꙆ ВСЕГО ЛѢТА ОБꙆДѪЦѢ:. --> ВЬСЕГО (ms. p.12)
+ꙇже есмь възѧлі --> есмъ (Second Mass) (ms. p.14) (how did this ever get through?)
+МЬШҌ. в. О ТОМЗЕ --> ТОМЬЗЕ (Third Mass) (ms. p.15)
+МЬШҌ: Г:. О ТОМЗЕ --> ТОМЬЗЕ (Fourth Mass) (ms. p.16)
+МЬШҌ: E:. О ТОМЗЕ --> ТОМЬЗЕ (Sixth Mass) (ms. p.18)
+МЬШҌ О ВЬСХЪ НЕБЕССКЪИ]ХЪ --> ВЬСѢХЪ НЕБЕСЬСКЪ[И]ХЪ (ms. p.21)
+si = Apl. fem. arch. i-stem form pronoun, not dative shortform of себе (as annotated for чьсти сі)
 
 Could use бездранътѣхъ (for some reason not space-separated) in Supr. Encomion on the 40 Matryrs of Sebasteia as an example of clitic jьz needing to be marked so that the disallowed *zr sequence can get properly replaced across the word-boundary when reproducing normalised OCS or OR forms
+
+Take that page of Shevelov Konsonanten vor e, i where he talks about the examples from the Izborniki and van Wijk and use it as an example of something that should be made easily checkable by my phonologically-annotated online editions
