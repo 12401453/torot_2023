@@ -1,0 +1,7 @@
+1.) Introduction to Slavic and the early texts; why is Slavic a good language-family to apply such a technique to?
+    The dawn of the written tradition is close enough to the break-up of Slavic unity that they called it "
+
+2.) Trying to do phonological investigations with the currently-available digital tools:
+    corpora which are just digitised texts are no good because the aim of phonological investigations is to find out how the reflexes of certain sound-groups actually appear in the text, thus you can't
+
+TOROT has many digitised texts but is annotated primarily for the purposes of syntax and even higher-level linguistic domains like """information status""": this means
