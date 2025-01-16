@@ -47,3 +47,9 @@ si = Apl. fem. arch. i-stem form pronoun, not dative shortform of себе (as a
 Could use бездранътѣхъ (for some reason not space-separated) in Supr. Encomion on the 40 Matryrs of Sebasteia as an example of clitic jьz needing to be marked so that the disallowed *zr sequence can get properly replaced across the word-boundary when reproducing normalised OCS or OR forms
 
 Take that page of Shevelov Konsonanten vor e, i where he talks about the examples from the Izborniki and van Wijk and use it as an example of something that should be made easily checkable by my phonologically-annotated online editions
+
+
+Automatic lemmatisation and tagging - can be much improved by more intelligent normalisation of spellings, taking into account the sound-systems of the dialects and removing things like variants of back-vowel spellings after shipjashchi
+
+Luke 6 has an non-torot-tagged sentence in the middle of tagged ones, I can use my second database and show that I have successfully fully autoreocnsrtucted it (it should show up pink).
+Zogr. John 21 is a good one to show completely auto-converting to Old Russian, because it's fully autotagged and contains nice *elk and *ert groups
