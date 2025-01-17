@@ -3,7 +3,7 @@
 
 
 1.) Introduction to Slavic and the early texts; why is Slavic a good language-family to apply such a technique to?
-    The dawn of the written tradition is close enough to the break-up of Slavic unity that they called it "językъ slověnьskъ", and they thought it acceptable to get a speaker from Thessaloniki (who spoke an extremely peripheral Southern Bulgarian dialect) to translate the Bible etc. for the Moravian king ( Vita Constantini 14: Растиславⸯ бо моравⸯскꙑ кнеѕь богомь ѹстимь съвѣть сътвори съ кнеѕꙑ своими моравлꙗни и посла къ царѹ Михаилꙋ глаголѥ. | людемь нашимь поганⸯства се ѡтврьгⸯшимь и по христїанⸯскꙑ се законь дрьжещемь. ѹчителꙗ не имамꙑ такого. иже ни бꙑ въ свои ѥзꙑкь истѹю вѣрꙋ христїанⸯскꙋю сказаль), for inhabitants who would've spoken some West Slavic dialect (the evidence of the Kiev Folia, which is the only piece of evidence we have from this original Moravian mission, lead Schaeken to conclude that it reflects a "verlorengegangenen slovakisch-kroatischen Übergangsdialekt" (Schaeken 1987:117-118). I think it more likely to reflect the original dialect of Konstantin, but hastily adapted to the local Moravian dialect only in the most conspicuous features, like *ћ > /c/ (Winslow 2022:320))
+    The dawn of the written tradition is close enough to the break-up of Slavic unity that they called it "językъ slověnьskъ", and they thought it acceptable to get a speaker from Thessaloniki (who spoke an extremely peripheral Southern Bulgarian dialect) to translate the Bible etc. for the Moravian king ( Vita Constantini 14:), for inhabitants who would've spoken some West Slavic dialect (the evidence of the Kiev Folia, which is the only piece of evidence we have from this original Moravian mission, lead Schaeken to conclude that it reflects a "verlorengegangenen slovakisch-kroatischen Übergangsdialekt" (Schaeken 1987:117-118). I think it more likely to reflect the original dialect of Konstantin, but hastily adapted to the local Moravian dialect only in the most conspicuous features, like *ћ > /c/ (Winslow 2022:320))
 
 (Make a point when referring to the map that Slavic is actually no longer spoken either in Thessaloniki or the Hungarian/Austrian bit of Moravia, so we shouldn't expect the dialects reflected by manuscripts to be simple ancestors of modern varieties and thus the manuscripts are of paramount importance in uncovering the linguistic facts about the past, because only in them can be found indications of how people spoke; the varieties reflected therein could have no modern descendants, like West Saxon Old English)
 
@@ -17,6 +17,8 @@
 
 
 3.) Solution? We need a way of indexing the words in a text that is regular and predictable, and retains all the information necessary to give rise to the surface-forms: the obvious choice is some reconstructed proto-stage
+
+3.) slides about the *Ǟ archiphoneme and and
 
 4.) Morphological innovations:
 
