@@ -57,3 +57,5 @@ There's no subtitle <title> element in the pskov.xml or luk-koloc.xml, which fuc
 Loads of long-adjectives in your Kiev Folia are marked as strong
 
 камꙑ is marked as neuter in a few places which means it gets reconstructed with no endings, because it should be masculine
+
+Psalm 140 ОУслъішѩтъ сѩ г҃лі моі ѣко възмогѫ. , the last word is tagged as 3rdpl indicative, but isnt it both formally and syntactically a subjunctive / optative?
