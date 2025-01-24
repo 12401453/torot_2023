@@ -1,0 +1,4 @@
+0xcc 0x85
+0xcc 0x84
+0xce 0x87 //seems to only be used as punctuation and not within words so should probably be kept as part of the "presentation-after" bullshit
+0xe1 0xbe 0xbd

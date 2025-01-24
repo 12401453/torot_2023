@@ -1,25 +1,4 @@
-#!/usr/bin/node
-
-const sax = require('sax');
-const fs = require('node:fs');
-
-let list_of_xml_files = fs.readdirSync(".").filter(x => x.slice(-4) == ".xml");
-const number_of_files = list_of_xml_files.length;
-
-let current_file_number = 0;
-let word_count = 0;
-
-const lang_id = process.argv[2];
-
-const words_filename = lang_id+"_words_POS.csv";
-
-const saxParser = sax.createStream(true);
-
-let can_parse = false;
-
-const pos_set = new Set();
-
-const chu_deepClean_map = {
+const orv_deepClean_map = {
     "῾" : "",
     "᾽" : "",
     "̅" : "",
@@ -32,6 +11,7 @@ const chu_deepClean_map = {
     "·" : "",
     "̏" : "",
     " " : "",
+    " ꙽" : "",
     "+" : "",
     "⁜" : "",
     "͠" : "",
@@ -66,8 +46,6 @@ const chu_deepClean_map = {
     "?" : "",
     "[" : "",
     "]" : "",
-    "{" : "",
-    "}" : "",
     "̂" : "",
     "Ꙋ" : "оу",
     "ОУ" : "оу",
@@ -102,10 +80,10 @@ const chu_deepClean_map = {
     "ї" : "і",
     "X" : "х",
     "x" : "х",
-    "ѩ" : "ѧ",
-    "Ѩ" : "ѧ",
-    "щ" : "шт",
-    "Щ" : "шт",
+    // "ѩ" : "ѧ",
+    "Ѩ" : "ѩ",
+    // "щ" : "шт",
+    // "Щ" : "шт",
     "и" : "і",
     "И" : "і",
     "ꙇ" : "і",
@@ -142,6 +120,7 @@ const chu_deepClean_map = {
     "Х" : "х",
     "Ч" : "ч",
     "Ш" : "ш",
+    "Щ" : "щ",
     "Ъ" : "ъ",
     "Ь" : "ь",
     "Ѣ" : "ѣ",
@@ -193,82 +172,26 @@ const chu_deepClean_map = {
     "ʼ" : "",
     "ⸯ" : "",
     "’" : "",
-    "ꙗ" : "ѣ",
     "ѕ" : "з",
+
+    //Old Russian-specific and very aggresive normalisations
+    "ѩ" : "ꙗ",
+    "ѧ" : "а",
+    "ѭ" : "ю",
+    "ѫ" : "оу",
     "шю" : "шоу",
     "чю" : "чоу",
     "жю" : "жоу",
     "ждю" : "ждоу",
     "штю" : "штоу",
+    "щю" : "щоу",
     "цю" : "цоу",
-    "шѭ" : "шѫ",
-    "чѭ" : "чѫ",
-    "жѭ" : "жѫ",
-    "ждѭ" : "ждѫ",
-    "цѭ" : "цѫ",
-    "штѭ" : "штѫ",
+    "шꙗ" : "ша",
+    "чꙗ" : "ча",
+    "жꙗ" : "жа",
+    "ждꙗ" : "жда",
+    "цꙗ" : "ца",
+    "штꙗ" : "шта",
+    "щꙗ" : "ща",
 
 };
-
-let csv_string = "";
-
-saxParser.on('opentag', function(node) {
-
-    if(node.name == "source") {
-        can_parse = node.attributes.language == lang_id ? true : false;
-        if(!can_parse) console.log(list_of_xml_files[current_file_number], `is not a ${lang_id.toUpperCase()} text, ignoring...`);
-    }
-
-    if(node.name == 'sentence' && can_parse) {
-        const sentence_id = node.attributes['id'];
-        csv_string += "%%"+sentence_id+",\n";
-    }
-    
- 
-    if(node.name == "token" && can_parse) {
-        let text_word = node.attributes.form;
-        //const morph_tag = node.attributes.morphology;
-        const pos = node.attributes['part-of-speech'];
-
-        if(text_word != undefined) {
-            for(const key in chu_deepClean_map) {
-                text_word = text_word.replaceAll(key, chu_deepClean_map[key]);
-            }
-            pos_set.add(pos);
-            
-            csv_string += text_word + "," + pos + "\n";
-            word_count++;
-            if(pos == undefined) console.log(text_word, "apparently doesn't have any assigned POS.");
-        }
-    }
-});
-
-saxParser.on('end', () => {
-
-    if(can_parse) {
-        console.log(`${word_count} words were found in ${list_of_xml_files[current_file_number]}`);
-        fs.appendFileSync(words_filename, csv_string);
-    }
-    
-    csv_string = "";
-    word_count = 0;
-    current_file_number++;
-
-    if(current_file_number < number_of_files) {
-        const xml_stream = fs.createReadStream(list_of_xml_files[current_file_number]);
-        xml_stream.pipe(saxParser);
-    }
-    else {
-        console.log("No more xml files to parse\n\nPOSes which occur in the OCS texts are:\n");
-
-        for(let pos of pos_set) {
-            console.log(pos);
-        }
-        console.log("Number of unique POSes: ", pos_set.size);
-    }
-
-
-});
-
-const xml_stream = fs.createReadStream(list_of_xml_files[current_file_number]);
-xml_stream.pipe(saxParser);

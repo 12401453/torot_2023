@@ -1,0 +1,1 @@
+There's one Latin 'h' letter in both the Cyr. and Glag. versions, where Mar. has "хълмъ", so I've replaced it with Cyrillic 'х'.

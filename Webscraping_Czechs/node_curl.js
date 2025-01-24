@@ -17,6 +17,7 @@ let record_id = 18080;
 function makeRequest(record_id) {
     const req_url = "http://castor.gorazd.org:8080/gorazd/show_record_id;jsessionid=CC2E5311CE705F8E1F7780DD9095BF4F?value="+record_id+"&xslFile=0&fields=&_=1732327903110";
     http.get(req_url, dict_response => {
+        dict_response.setEncoding('utf8'); //forces the data to come back as strings instead of node.js Buffer objects, which prevents some possibly problems of weird characters being read as random ? bytes
 
         let response_data_string = "";
 
