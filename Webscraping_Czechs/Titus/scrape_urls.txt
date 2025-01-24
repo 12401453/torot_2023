@@ -1,0 +1,4 @@
+curl 'https://titus.uni-frankfurt.de/texte/etcs/slav/aksl/asseman/assem001.htm'
+curl 'https://titus.uni-frankfurt.de/texte/etcs/slav/aksl/asseman/assem002.htm'
+
+etc.
