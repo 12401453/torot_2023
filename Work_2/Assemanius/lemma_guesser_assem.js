@@ -81,15 +81,16 @@ async function readAutotaggedFile() {
     const pos = row[1];
     let auto_lemma_id = 0;
   
-    if(existing_normalised_map.has(pos+word_form_normalised)) {
+    
+    if(existing_raw_map.has(pos+word_form_raw)) {
+      auto_lemma_id = existing_raw_map.get(pos+word_form_raw);
+      raw_corpus_matches_count++;
+      total_corpus_matches_count++
+    }
+    else if(existing_normalised_map.has(pos+word_form_normalised)) {
       auto_lemma_id = existing_normalised_map.get(pos+word_form_normalised);
 
       normalised_corpus_matches_count++;
-      total_corpus_matches_count++
-    }
-    else if(existing_raw_map.has(pos+word_form_raw)) {
-      auto_lemma_id = existing_raw_map.get(pos+word_form_raw);
-      raw_corpus_matches_count++;
       total_corpus_matches_count++
     }
     else if(existing_normalised_jersame_map.has(pos+word_form_normalised.replaceAll("ь", "ъ"))) {
@@ -140,13 +141,13 @@ async function guessLemmas() {
   
   fs.writeFileSync(output_filename, csv_string);
   
+  console.log(total_corpus_matches_count, "forms were matched against the existing tagged corpus:\n", normalised_corpus_matches_count, "were matched by normalising forms\n", raw_corpus_matches_count, "were matched by just raw forms\n", jersame_normalised_corpus_matches_count, "were matched by normalising AND neutralising the jers\n");
+
   console.log(unmatched_form_count, `words could not be matched against the existing corpus-words`);
   console.log(matched_by_chopping_against_corpus_count, "of those were matched by chopping them against the existing corpus-forms");
   console.log(matched_by_lemmalist_count, `of those were matched against the lemma-list`);
   
   console.log('This leaves',unmatched_form_count - matched_by_chopping_against_corpus_count - matched_by_lemmalist_count, 'words with no lemma-guess at all');
-
-  console.log(total_corpus_matches_count, "forms were matched against the existing tagged corpus:\n", normalised_corpus_matches_count, "were matched by normalising forms\n", raw_corpus_matches_count, "were matched by just raw forms\n", jersame_normalised_corpus_matches_count, "were matched by normalising AND neutralising the jers");
 }
 guessLemmas();
 
@@ -161,11 +162,23 @@ const chopAgainstForms = (pos, word_form_normalised, word_form_raw) => {
   const jersame_map_array = Array.from(existing_normalised_jersame_map);
   let filtered_jersame_array = jersame_map_array.filter(form_and_id_pair => form_and_id_pair[0].startsWith(pos+chopped_word_normalised));
   
-  //should also check against the unnormalised forms
-  //it might be better to first check against the existing forms to catch things like пришьд- which is too dissimilar from прити to ever get correctly lemmatised this way
-  while(chopped_word_normalised.length > 3 && filtered_jersame_array.length == 0) {
+  // if(filtered_jersame_array.length > 0) {
+  //   auto_lemma_id = filtered_jersame_array[0][1];
+  //   match_found = true;
+  //   console.log(`${word_form_raw} was matched by chopping against the jer-neutralised normalised corpus form ${filtered_jersame_array[0][0].slice(2)} with lemma_id ${auto_lemma_id}`);
+  //   matched_by_chopping_against_corpus_count++;
+  // }
+  
+  while(chopped_word_normalised.length > 3 /* && filtered_jersame_array.length == 0 */) {
+    
+    
     
     filtered_jersame_array = jersame_map_array.filter(form_and_id_pair => form_and_id_pair[0].startsWith(pos+chopped_word_normalised));
+
+    // console.log("pos+chopped_form:", pos+chopped_word_normalised);
+    // console.log("filtered array of candidates:", filtered_jersame_array);
+
+    debugger;
 
     if(filtered_jersame_array.length > 0) {
       auto_lemma_id = filtered_jersame_array[0][1];

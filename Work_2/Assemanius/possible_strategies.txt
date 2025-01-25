@@ -1,0 +1,3 @@
+The set of POS tags used could be collapsed to only those ones relevant to morphology, because TnT has tagged e.g. зеведеом as a Nb instead of a Ne and thus won't lemmatise it even though such forms are common in the corpus.
+Collapsing Nb and Ne shouldn't cause problems with completely incompatible morphology-tags, which is what would happen if you ignored the POS tag assigned by TnT completely and assigned something that TnT thought was a verb to a noun, because then the morph tag would be completely unsuitable.
+Under such a strategy the final POS tag assigned would have to be the one from the matching corpus form
