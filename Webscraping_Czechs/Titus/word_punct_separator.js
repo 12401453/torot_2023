@@ -211,48 +211,49 @@ const deepClean = (dirty_word) => {
 
 
 
-async function writeTnTString() {
+async function writeWordsString() {
     let tnt_file_string = "";
     const assem_file = createInterface({input: read_stream1});
-    let rowno = 1;
-    let my_db_tokno;
     for await(const line of assem_file) {
-        let word_count = 0;
-        let interword_shit_count = 0;
-
-        const split_line_arr = line.split(/\s+/);
+        
         let presentation_after = " ";
-        for(let i = 0; i < split_line_arr.length; i++) {
-            const chunk = split_line_arr[i];
-            if(chunk == "") continue;
-            
-            if(deepClean(chunk).trim() == "") {
-                presentation_after += " " + chunk;
-                if(interword_shit_count == 0) {
-                    console.log(split_line_arr[i - 1]);
-                    tnt_file_string += split_line_arr[i - 1];
-                }
-                interword_shit_count++;
+        let presentation_before = "";
+        let non_word_count = 1;
+        let first_word_index = 0;
+        const split_line = line.split(/\s+/);
+        while(split_line[first_word_index] !== undefined && deepClean(split_line[first_word_index]).trim() == "") {
+            presentation_before += split_line[first_word_index] + " ";
+            first_word_index++;
+        }      
+        for(let i = first_word_index + 1 /*have to move it ahead of the first word because we always write the word only after having built the entire sequence of bullshit that comes after it and arriving at the subsequent word*/; i < split_line.length; i++) {
+            const chunk = split_line[i];
+            if(chunk.trim() == "") continue;
+            if(deepClean(chunk) != "") {
+                tnt_file_string += split_line[i - non_word_count] + "|" + presentation_before + "|" + presentation_after + "\n";
+                //console.log(split_line[i - non_word_count] + "|" + presentation_after + "|" + non_word_count);
+                presentation_after = " ";
+                presentation_before = "";
+                non_word_count = 1;
             }
             else {
-                if(interword_shit_count > 0) {
-                    console.log(presentation_after);
-                    tnt_file_string += "|" + presentation_after + "\n";
-                    presentation_after = " ";
-                    interword_shit_count = 0;
-                }
-                else if(i > 0){
-                    console.log(split_line_arr[i - 1]);
-                    console.log(presentation_after);
-                    tnt_file_string += split_line_arr[i - 1] + "|" + presentation_after;
-                }
-                if(i + 1 == split_line_arr.length) {
-                    console.log(split_line_arr[i]);
-                    console.log(presentation_after);
-                    tnt_file_string += split_line_arr[i]
-                }
+                presentation_after += chunk + " ";
+                non_word_count++;
             }
         }
+        if(split_line[split_line.length - 1].trim() == "") {;} 
+        else if(deepClean(split_line[split_line.length - non_word_count]) != "") {
+            tnt_file_string += split_line[split_line.length - non_word_count] + "|" + presentation_before + "|" + presentation_after + "\n";
+            //console.log(split_line[split_line.length - non_word_count] + "|" + presentation_after + "|" + non_word_count);
+            presentation_after = " ";
+            non_word_count = 1;
+        }
+        else {
+            presentation_after += split_line[split_line.length - 1] + " ";
+            non_word_count++;
+            console.log(split_line[split_line.length - 1] + "|" + presentation_before + "|" + presentation_after + "|" + non_word_count);
+            tnt_file_string += split_line[split_line.length - 1] + "|" + presentation_before + "|" + presentation_after + "\n";
+        }
+        //console.log(split_line);
     }
 
     assem_file.close();
@@ -260,5 +261,5 @@ async function writeTnTString() {
 }
 
 
-const file_string = await writeTnTString();
-//writeFileSync("assem_words_presentation_after.csv", file_string);
+const file_string = await writeWordsString();
+writeFileSync("assem_words_presentation_after.csv", file_string);
