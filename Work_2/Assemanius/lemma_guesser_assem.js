@@ -149,6 +149,7 @@ const chopAgainstForms = (pos, word_form_normalised, word_form_raw) => {
     debugger;
 
     if(filtered_jersame_array.length > 0) {
+      filtered_jersame_array.sort((jersame_row_a, jersame_row_b) => jersame_row_a[0].length - jersame_row_b[0].length); //reorder the results array by ascending length so that the first member is most similar in length to the target word (prevents problems like симон being matched to симонидъ instead of симонъ)
       auto_lemma_id = filtered_jersame_array[0][1];
       match_found = true;
       console.log(`${chalk.yellowBright(word_form_raw)} was matched with ${chalk.red(lemmas_map.get(Number(auto_lemma_id)))} by chopping against the jer-neutralised normalised corpus form ${chalk.greenBright(filtered_jersame_array[0][0].slice(2))} with lemma_id ${chalk.redBright(auto_lemma_id)}`);
@@ -174,6 +175,7 @@ const chopAgainstLemmas = (pos, word_form_normalised, word_form_raw) => {
     filtered_lemmas = lemmas_array.filter(row => row[2] == pos && row[3].replaceAll("ь", "ъ").startsWith(chopped_word_normalised));
 
     if(filtered_lemmas.length > 0) {
+      filtered_lemmas.sort((lemma_row_a, lemma_row_b) => jersame_row_a[1].length - jersame_row_b[1].length); //reorder the results array by ascending length so that the first member is most similar in length to the target word (prevents problems like симон being matched to симонидъ instead of симонъ)
       auto_lemma_id = filtered_lemmas[0][0];
       match_found = true;
       console.log(`${chalk.cyan(word_form_raw)} was matched against the lemma-list with ${chalk.magenta(filtered_lemmas[0][1])} with lemma_id ${chalk.red(auto_lemma_id)}`);

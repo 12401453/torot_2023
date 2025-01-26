@@ -13,6 +13,10 @@ const output_filename = "untagged_words.csv";
 const saxParser = sax.createStream(true);
 
 const chu_deepClean_map = {
+    "῾" : "",
+    "᾽" : "",
+    "̅" : "",
+    "̄" : "",
     "̀" : "",
     ">" : "",
     "/" : "",
@@ -55,6 +59,8 @@ const chu_deepClean_map = {
     "?" : "",
     "[" : "",
     "]" : "",
+    "{" : "",
+    "}" : "",
     "̂" : "",
     "Ꙋ" : "оу",
     "ОУ" : "оу",
@@ -113,6 +119,8 @@ const chu_deepClean_map = {
     "З" : "з",
     "І" : "і",
     "Ꙉ" : "ꙉ",
+    "ђ" : "г",
+    "Ђ" : "г",
     "К" : "к",
     "Л" : "л",
     "М" : "м",
@@ -167,6 +175,8 @@ const chu_deepClean_map = {
     "ⷱ" : "ч",
     "ⷸ" : "г",
     "ȥ" : "з",
+    "ӡ" : "з",
+    "Ӡ" : "з",
     "й" : "і",
     "ѷ" : "у",
     "ⱔ" : "ѧ",
@@ -190,11 +200,14 @@ const chu_deepClean_map = {
     "ждѭ" : "ждѫ",
     "цѭ" : "цѫ",
     "штѭ" : "штѫ",
-    
+
 };
+
 
 let csv_string = "";
 let unannotated = false;
+
+let tokno = 0;
 
 const deepClean = (dirty_word) => {
     let cleaned_word = dirty_word;
@@ -218,14 +231,19 @@ saxParser.on('opentag', function(node) {
     
  
     if(node.name == "token" && unannotated) {
+
         const text_word = node.attributes.form;
 
         if(text_word != undefined) {
+             tokno++;
             
-            csv_string += text_word+ "," + deepClean(text_word) + "\n";
+            csv_string += text_word+ "," + deepClean(text_word) + "," + String(tokno) + "\n";
             unannotated_word_count++;
         }
 
+    }
+    else if(node.name == "token" && unannotated == false && node.attributes.form != undefined) {
+        tokno++;
     }
 });
 

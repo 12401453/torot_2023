@@ -13,6 +13,10 @@ const output_filename = "untagged_sentences.csv";
 const saxParser = sax.createStream(true);
 
 const chu_deepClean_map = {
+    "῾" : "",
+    "᾽" : "",
+    "̅" : "",
+    "̄" : "",
     "̀" : "",
     ">" : "",
     "/" : "",
@@ -55,6 +59,8 @@ const chu_deepClean_map = {
     "?" : "",
     "[" : "",
     "]" : "",
+    "{" : "",
+    "}" : "",
     "̂" : "",
     "Ꙋ" : "оу",
     "ОУ" : "оу",
@@ -113,6 +119,8 @@ const chu_deepClean_map = {
     "З" : "з",
     "І" : "і",
     "Ꙉ" : "ꙉ",
+    "ђ" : "г",
+    "Ђ" : "г",
     "К" : "к",
     "Л" : "л",
     "М" : "м",
@@ -167,6 +175,8 @@ const chu_deepClean_map = {
     "ⷱ" : "ч",
     "ⷸ" : "г",
     "ȥ" : "з",
+    "ӡ" : "з",
+    "Ӡ" : "з",
     "й" : "і",
     "ѷ" : "у",
     "ⱔ" : "ѧ",
@@ -190,8 +200,9 @@ const chu_deepClean_map = {
     "ждѭ" : "ждѫ",
     "цѭ" : "цѫ",
     "штѭ" : "штѫ",
-    
+
 };
+
 
 
 let csv_string = "";

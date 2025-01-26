@@ -207,6 +207,7 @@ let word_count = 0;
 const lang_id = process.argv[2];
 
 const words_filename = lang_id+"_words_full_with_titles_untagged.csv";
+const just_untagged_words_filename = lang_id+"untagged_words.csv";
 
 const saxParser = sax.createStream(true);
 
@@ -241,6 +242,9 @@ const main_title_map = new Map();
 let subtitles_list = "";
 
 let csv_string = "";
+
+let untagged_csv_string = "";
+let tokno = 0;
 
 saxParser.on('text', function(t) {
     if(can_parse && tag_stack[tag_stack.length -1] == "title" && tag_stack[tag_stack.length -2] == "source") {
@@ -295,7 +299,7 @@ saxParser.on('opentag', function(node) {
         let lemma_id = 0;
         
         if(text_word != undefined) {
-
+            tokno++;
             if(annotated) {
                 morph_tag = node.attributes.morphology;
                 pos = node.attributes['part-of-speech'];
@@ -311,7 +315,10 @@ saxParser.on('opentag', function(node) {
                     lemma_id = lemma_count;
                     lemma_count++;
                 }
-            } 
+            }
+            else {
+                untagged_csv_string += text_word+ "," + deepClean(text_word) + "," + String(tokno) + "\n";
+            }
             
             csv_string += text_word + "|" + pos + "|" + morph_tag + "|" + deepClean(text_word);
 
@@ -337,9 +344,11 @@ saxParser.on('end', () => {
     if(can_parse) {
         console.log(`${word_count} words were found in ${list_of_xml_files[current_file_number]}`);
         fs.appendFileSync(words_filename, csv_string);
+        fs.appendFileSync(just_untagged_words_filename, untagged_csv_string);
     }
     
     csv_string = "";
+    untagged_csv_string = "";
     word_count = 0;
     current_file_number++;
 
