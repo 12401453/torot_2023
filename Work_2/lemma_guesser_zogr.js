@@ -25,7 +25,7 @@ read_stream2.on('error', () => {
   process.exit(-1);
 })
 
-const output_filename = "assemananius_untagged_autolemmatised.csv";
+const output_filename = "zogr_untagged_autolemmatised_improved.csv";
 
 let csv_string = "";
 
@@ -35,7 +35,7 @@ const existing_normalised_jersame_map = new Map();
 const lemmas_array = new Array();
 
 const lemmas_map = new Map();
-lemmas_map.set(0, "FIXME"); //so I don't have to bother with bullshit checking before just getting the values out of it
+lemmas_map.set(0, ""); //so I don't have to bother with bullshit checking before just getting the values out of it
 
 async function readCorpusFile() {
   const chu_corpus_file = readline.createInterface({input: read_stream1});
