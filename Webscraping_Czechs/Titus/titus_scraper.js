@@ -41,18 +41,48 @@ const makeRequest = (record_id, script, text) => {
 
             let selector_str = script == "glag" ? "span#rgabx16" : "span#cyab16";
 
-            document.querySelectorAll(selector_str).forEach(verse => {
+            const book_header = document.getElementById("h2");
+            const chapt_header = document.getElementById("h3");
+
+            if(book_header !== null) {
+                text += "%%%%%%" + book_header.textContent + "\n";
+            }
+            if(chapt_header !== null) {
+                text += "%%%%" + chapt_header.textContent + "\n";
+            }
+
+            document.querySelectorAll(selector_str).forEach((verse, i) => {
+                
+                let verse_number = "";
+                if(i == 0) {
+                    //the html on the first chapter of each book is slightly different on the first verse, so I'm just going to manually select the first verse from all the pages
+                    verse_number = document.querySelector("#h4").textContent;
+                }
+                else {
+                    if(script == "cyr") {
+                        // console.log(i, verse.outerHTML);
+                        verse_number = verse.previousElementSibling.querySelector("#h4").textContent;
+                    }
+                    else {
+                        // console.log(i, verse.previousElementSibling.previousElementSibling.previousElementSibling);
+                        verse_number = verse.previousElementSibling.previousElementSibling.previousElementSibling.querySelector("#h4").textContent;
+                    }
+                }
+                //  
+                
+                text += "%%" + verse_number + "\n";
                 text += verse.textContent + "\n";
             });
-            text += "\n";
+            //text += "\n";
 
             if(record_id < 91) {
                 makeRequest(record_id+1, script, text);
             }
             else {
-                fs.writeFileSync(`assem_${script}.txt`, text);
+                fs.writeFileSync(`assem_${script}_with_headers.txt`, text);
                 console.log(script, "scraping finished");
             }
+            
             
             
         });
