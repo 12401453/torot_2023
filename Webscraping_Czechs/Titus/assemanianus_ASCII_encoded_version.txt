@@ -830,7 +830,7 @@
 1134120 bezakoni/e .
 1134200 /i v&vr&gOt /jE v& peSt$ /ogn$nO . *tu bOde!t
 1134210 plaC$ /i skr/&Zet& zObom& .
-1134300 *togda praved$nI/i prosv$tEt/ sjE /@ko sl&n/ce
+1134300 *togda praved$nI/i prosv$tE/t sjE /@ko sl&n/ce
 1134310 v& !crstvI !/oca . */im@/jE/i /uSi sl&ISatI da
 1134320 sl&iSit& :: .. -
 1134500 *podob$no /est& !crstvo !nbsno/e !Cku kup(cu .
@@ -1391,7 +1391,7 @@
 1240911 bOdete nenavidImi v/s@mi /jEz&ik&i . /imene
 1240920 mo/ego radI .
 1240921 mo/ego radI .
-1241000 */i t$g/da s&blaznEt& sE mn/oDI( */i drug$ druga
+1241000 */i t$g/da s&blaznEt& sE mn/oD(I */i drug$ druga
 1241001 *//i t!ogda s&blaznEt& sE m(noDi . /i drug& druga
 1241010 pr@dast& . */i v&znenavIdIt& drug$ druga .
 1241011 pr@dast& . /i v$znenavidIt& dr/ug$ druga .
@@ -1700,7 +1700,7 @@
 1263120 /i razidOt& sE /ovec$ stada .
 1263200 *po v&skr&seni/i Ze mo(em& var/jO v&I {v&I} v& galIle/i .
 1263300 *((wt&v@qav& Ze petr& reCe /emu . */aSte /i v$si
-1263310 s$blaznEt( sE /o teb@ . */a /az$ nikolIZe ne
+1263310 s$blaznE(t sE /o teb@ . */a /az$ nikolIZe ne
 1263320 s&blaZ/njO sE .
 1263400 reCe /emu !/is& . */ami!n !gljO teb@ . /@ko v$ sI/jO
 1263410 noq& pr@Zde . daZe kur& ne v&zglasIt . trI krat&I
@@ -2565,7 +2565,7 @@
 3013901 !vs/tav/Si m/ari/@ :: ko!c .
 3013902 v/stavSi mari/@ :: ko!c
 3013910 v& grad& /i/judov& .
-3014000 /i v&nide v& dom& zaxari/in& . ((i`` c@lova /eli/saveT$ .
+3014000 /i v&nide v& dom& zaxari/in& . ((i``c@lova /eli/saveT$ .
 3014100 */i b&i!s /@ko /usl&iSa /elisaveT$ . c@lovani/e mari/ino .
 3014110 v&zIgra sE m!l/ad&nec$ radoqamI v& /Otrob@ /e/jE .
 3014120 /i /isp(l&ni sE !dxm& !st&im& /elIsaveT$ .

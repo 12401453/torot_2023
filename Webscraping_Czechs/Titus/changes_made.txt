@@ -1,1 +1,5 @@
 There's one Latin 'h' letter in both the Cyr. and Glag. versions, where Mar. has "хълмъ", so I've replaced it with Cyrillic 'х'.
+Line 2568 took the space out of ((i`` c@lova because it was fucking up my punctuation-adding routine (плачь и скрьжьтъ зѫбомъ)
+Line 833 moved the position of the slash back one space because it was clearly wrong (prosv$tEt/ => prosv$tE/t)
+similarly line 1394 mn/oDI( and 1703 s$blaznEt(
+
