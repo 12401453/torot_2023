@@ -10,7 +10,7 @@ ascii_file_stream.on('error', () => {
     process.exit(-1);
 });
 
-const capitalisation_regex = new RegExp(/^\*[\/`~\(]*/u);
+const capitalisation_regex = new RegExp(/^\*[\/`~\(\\]*/u);
 //const leftover_asterisk_regex = new RegExp(/\*\p{L}/u);
 
 const applyCapitalisation = (word) => {
@@ -26,13 +26,14 @@ const applyCapitalisation = (word) => {
     return word;
 };
 
-const punctuation_regex = new RegExp(/[~\(`\/]+/u);
+const punctuation_regex = new RegExp(/[~\(`\/\\]+/u);
 
 const punctuation_map = {
     "~": "̆",
     "(": "҅",
     "`": "̀",
-    "/": "̄"
+    "/": "̄",
+    "\\": "̇"
 };
 
 const applyPunctuationAfter = (word) => {
@@ -53,6 +54,52 @@ const applyPunctuationAfter = (word) => {
     }
     return word;
 };
+
+
+const titlo_regex = new RegExp(/^!+/u);
+
+const applyTitlo = (word) => {
+    word = word.trim();
+    let match_array;
+    
+    if((match_array = titlo_regex.exec(word)) !== null) {
+        const bullshit = match_array[0];
+        const titlo_number = bullshit.length;
+
+        word = word.slice(titlo_number);
+        word = word.replaceAll("!", ""); //for testing purposes; 
+        const word_length = word.length;
+
+        const title_start_pos = titlo_number*Math.floor(word_length / (2 *titlo_number));
+        const title_end_pos = title_start_pos + titlo_number - 1;
+
+        //console.log(titlo_number, word_length, title_start_pos, title_end_pos);
+        let titloed_word = "";
+        for(let i = 0; i < word_length; i++) {
+            if(title_start_pos <= i && i <= title_end_pos) {
+                titloed_word += word[i] + "҃";
+            }
+            else titloed_word += word[i];
+        }
+        word = titloed_word;
+    }
+    else word = word.replaceAll("!", "");
+    return word;
+};
+
+const supralinear_regex = new RegExp(/(?<!^!*)!/u);
+
+const applySupralinears = (word) => {
+    word = word.trim();
+    let match_array;
+
+    while((match_array = supralinear_regex.exec(word)) !== null) {
+        const exclam_pos = match_array.index;
+        const supralinear_letter = word.slice(exclam_pos + 1, exclam_pos + 2);
+        word = word.slice(0, exclam_pos) + supralinear_cyr_map.get(supralinear_letter) + word.slice(exclam_pos + 2);
+    }
+    return word;
+}
 
 const cyr_map = new Map([
     ["ju","ю"],
@@ -89,7 +136,7 @@ const cyr_map = new Map([
     ["Z","ж"],
     ["C","ч"],
     ["x","х"],
-    ["h", "x"], //one instance of хлъмъ spelt with Latin 'h', that is also present in the TITUS Cyrillic and Glag.
+    ["h", "ⱒ"], //Lindstedt used Latin 'h' for Kurz's "spidery <cha> (p.XI)", and there's a Unicode letter for it now, but no Cyrillic equivalent so I will just use the Glag. for both (Kempgen 2016 suggests a Cyrillic form but it is not a separate Unicode letter)
     ["q","щ"],
     ["G","ꙉ"], //this is different to the ђ letter used in TITUS, but that letter doesn't render differently in the OCS fonts so it looks worse.
     ["T","ѳ"],
@@ -104,6 +151,89 @@ const cyr_map = new Map([
     
 ]);
 
+const glag_map = new Map([
+    ["ju","ю"],
+    ["jO","ѭ"],
+    ["je","ѥ"],
+    ["jE","ѩ"],
+    ["k","к"],
+    ["$","ь"],
+    ["n","н"],
+    ["I","і"],
+    ["i","и"],
+    ["J","ꙇ"],
+    ["g","г"],
+    ["&","ъ"],
+    ["r","р"],
+    ["o","о"],
+    ["w", "ѡ"],
+    ["d","д"],
+    ["s","с"],
+    ["t","т"],
+    ["v","в"],
+    ["a","а"],
+    ["U","ѵ"], 
+    ["u", "ѹ"],//this is the single-letter digraph, kept to make capitalisation and glagoliticisation work, but other TOROT texts use оу here and I do as well when deep-cleaning, so a final decision on the cyrillic representation of this letter has yet to be taken
+    ["x","х"],
+    ["m","м"],
+    ["l","л"],
+    ["@","ѣ"],
+    ["S","ш"],
+    ["E","ѧ"],
+    ["O","ѫ"],
+    ["D","ѕ"],
+    ["c","ц"],
+    ["Z","ж"],
+    ["C","ч"],
+    ["x","х"],
+    ["h", "ⱒ"], //Lindstedt used Latin 'h' for Kurz's "spidery <cha> (p.XI)", and there's a Unicode letter for it now 
+    ["q","щ"],
+    ["G","ꙉ"], //this is different to the ђ letter used in TITUS, but that letter doesn't render differently in the OCS fonts so it looks worse.
+    ["T","ѳ"],
+    ["z","з"],
+    ["p", "п"],
+    ["e", "е"],
+    ["b", "б"],
+    ["f", "ф"],
+
+    //<!> immediately before a whole word means just that a titlo is placed somehwere over the word, usually near the middle
+    //<!> immediately before a letter in the middle of a word on the other hand means that the letter is supralinear
+    
+]);
+
+const supralinear_cyr_map = new Map([
+    ["б", "ⷠ"],
+    ["в", "ⷡ"],
+    ["г", "ⷢ"],
+    ["д", "ⷣ"],
+    ["ж", "ⷤ"],
+    ["з", "ⷥ"],
+    ["к", "ⷦ"],
+    ["л", "ⷧ"],
+    ["м", "ⷨ"],
+    ["н", "ⷩ"],
+    ["о", "ⷪ"],
+    ["п", "ⷫ"],
+    ["р", "ⷬ"],
+    ["с", "ⷭ"],
+    ["т", "ⷮ"],
+    ["х", "ⷯ"],
+    ["ц", "ⷰ"],
+    ["ч", "ⷱ"],
+    ["ш", "ⷲ"],
+    ["щ", "ⷳ"],
+    ["ѳ", "ⷴ"],
+    ["а", "ⷶ"],
+    ["е", "ⷷ"],
+    ["ꙉ", "ⷸ"],
+    ["ѹ", "ⷹ"],
+    ["ѣ", "ⷺ"],
+    ["ю", "ⷻ"],
+    ["ѧ", "ⷽ"],
+    ["ѫ", "ⷾ"],
+    ["ѭ", "ⷿ"] //for some reason no jotated combining jus-malyj in the Unicode table
+]);
+
 const toCyr = (text) => {
     const cyr_map_iter = cyr_map.entries();
     for(const cyr_map_entry of cyr_map_iter) {
@@ -115,28 +245,14 @@ const toCyr = (text) => {
     return text;
 }
 
-// const applyPunctuation = (text) => {
-//     const punct_map_iter = punctuation_map.entries();
-
-//     for(const punct_map_entry of punct_map_iter) {
-//         text = text.replaceAll(punct_map_entry[0], punct_map_entry[1]);
-//     }
-
-//     let slash_pos;
-//     while((slash_pos = text.indexOf("/")) != -1) {
-//         text = text.slice(0, slash_pos) + text.slice(slash_pos + 1, slash_pos + 2) + "̄" + text.slice(slash_pos + 2);
-//     }
-//     return text;
-// }
-
-
 let converted_text = "";
 async function convertASCII(script="cyr") {
 
     const ascii_file = readline.createInterface({input: ascii_file_stream});
 
     for await(const line of ascii_file) {
-        const cyr_line = toCyr(line.slice(7)) + "\n";
+        let cyr_line = line.replaceAll("w!t", "ѿ").replaceAll("o!t", "оⷮ");
+        cyr_line = toCyr(cyr_line.slice(7)) + "\n";
         let capitalised_line = "";
         for(const word of cyr_line.split(" ")) {
             capitalised_line += applyCapitalisation(word).trim() + " ";
@@ -144,9 +260,23 @@ async function convertASCII(script="cyr") {
         capitalised_line = capitalised_line.trim();
         
         capitalised_line = applyPunctuationAfter(capitalised_line);
+        
+        let supralinear_line = "";
+        for(const word of capitalised_line.split(" ")) {
+            supralinear_line += applySupralinears(word).trim() + " ";
+        }
+        supralinear_line = supralinear_line.trim();
 
-        converted_text += capitalised_line + "\n";
+        let titloed_line = "";
+        for(const word of supralinear_line.split(" ")) {
+            titloed_line += applyTitlo(word).trim() + " ";
+        }
+        titloed_line = titloed_line.trim();
+
+        converted_text += titloed_line + "\n";
     }
+
+    converted_text = converted_text.replaceAll(".", "·")
 
 }
 
