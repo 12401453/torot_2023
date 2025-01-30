@@ -2,7 +2,7 @@
 import fs from 'fs';
 import readline from 'readline';
 
-const script = process.argv[2];
+const mark_supralinears = process.argv[2];
 
 const ascii_file_stream = fs.createReadStream("assemanianus_ASCII_encoded_version.txt");
 ascii_file_stream.on('error', () => {
@@ -26,14 +26,15 @@ const applyCapitalisation = (word) => {
     return word;
 };
 
-const punctuation_regex = new RegExp(/[~\(`\/\\]+/u);
+const punctuation_regex = new RegExp(/[~\("`\/\\]+/u);
 
 const punctuation_map = {
     "~": "̆",
     "(": "҅",
     "`": "̀",
     "/": "̄",
-    "\\": "̇"
+    "\\": "̇",
+    "\"": "\u0308" //combining diaeresis above
 };
 
 const applyPunctuationAfter = (word) => {
@@ -67,20 +68,27 @@ const applyTitlo = (word) => {
         const titlo_number = bullshit.length;
 
         word = word.slice(titlo_number);
-        word = word.replaceAll("!", ""); //for testing purposes; 
+        //word = word.replaceAll("!", ""); //for testing purposes; 
         const word_length = word.length;
 
-        const title_start_pos = titlo_number*Math.floor(word_length / (2 *titlo_number));
-        const title_end_pos = title_start_pos + titlo_number - 1;
-
-        //console.log(titlo_number, word_length, title_start_pos, title_end_pos);
         let titloed_word = "";
-        for(let i = 0; i < word_length; i++) {
-            if(title_start_pos <= i+1 && i+1 <= title_end_pos) {
-                titloed_word += word[i] + "҃";
-            }
-            else titloed_word += word[i];
+        //for now I am just adding them starting from the beginning; there surely is an easy solution for putting them 30% of the way into a word but I can't get it right (we assume the titlo number is variable because it can definitely be at least 2)
+        for(const char of word.slice(0, titlo_number)) {
+            titloed_word += char + "҃";
         }
+        titloed_word += word.slice(titlo_number);
+
+        // const title_start_pos = titlo_number*Math.floor(word_length / (2 *titlo_number));
+        // const title_end_pos = title_start_pos + titlo_number - 1;
+
+        // //console.log(titlo_number, word_length, title_start_pos, title_end_pos);
+        // let titloed_word = "";
+        // for(let i = 0; i < word_length; i++) {
+        //     if(title_start_pos <= i+1 && i+1 <= title_end_pos) {
+        //         titloed_word += word[i] + "҃";
+        //     }
+        //     else titloed_word += word[i];
+        // }
         word = titloed_word;
     }
     else word = word.replaceAll("!", "");
@@ -89,19 +97,37 @@ const applyTitlo = (word) => {
 
 const supralinear_regex = new RegExp(/(?<!^!*)!/u);
 
+const proiel_superscript_start = mark_supralinears == "supr" ? "\uF002" : "";
+const proiel_superscript_end = mark_supralinears == "supr" ? "\uF102" : "";
 const applySupralinears = (word) => {
+
+    if(word == "!⁛") {
+        word = proiel_superscript_start + word.slice(1) + proiel_superscript_end;
+        return word;
+    }
+    
     word = word.trim();
     let match_array;
 
     while((match_array = supralinear_regex.exec(word)) !== null) {
         const exclam_pos = match_array.index;
         const supralinear_letter = word.slice(exclam_pos + 1, exclam_pos + 2);
-        word = word.slice(0, exclam_pos) + supralinear_cyr_map.get(supralinear_letter) + word.slice(exclam_pos + 2);
+        if(supralinear_letter == "[") {
+            const supralinear_bracketed_letter = word.slice(exclam_pos + 1, exclam_pos + 4);
+            word = word.slice(0, exclam_pos) + proiel_superscript_start + supralinear_bracketed_letter + word.slice(exclam_pos + 4);
+        }
+        else word = word.slice(0, exclam_pos) + proiel_superscript_start + supralinear_letter + proiel_superscript_end + word.slice(exclam_pos + 2);
     }
     return word;
 }
 
 const cyr_map = new Map([
+    //first a few general things
+    ["::","⁛"],
+    ["-","—"],
+    ["{",""],
+    ["}",""],
+    ["%", ""],
     ["ju","ю"],
     ["jO","ѭ"],
     ["je","ѥ"],
@@ -257,7 +283,7 @@ async function convertASCII(script="cyr") {
 
     for await(const line of ascii_file) {
         let cyr_line = line.replaceAll("w!t", "ѿ").replaceAll("o!t", "оⷮ");
-        cyr_line = toCyr(cyr_line.slice(7)) + "\n";
+        cyr_line = toCyr(cyr_line.slice(7));
         let capitalised_line = "";
         for(const word of cyr_line.split(" ")) {
             capitalised_line += applyCapitalisation(word).trim() + " ";
@@ -265,6 +291,8 @@ async function convertASCII(script="cyr") {
         capitalised_line = capitalised_line.trim();
         
         capitalised_line = applyPunctuationAfter(capitalised_line);
+
+
         
         let supralinear_line = "";
         for(const word of capitalised_line.split(" ")) {
