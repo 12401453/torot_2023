@@ -76,7 +76,7 @@ const applyTitlo = (word) => {
         //console.log(titlo_number, word_length, title_start_pos, title_end_pos);
         let titloed_word = "";
         for(let i = 0; i < word_length; i++) {
-            if(title_start_pos <= i && i <= title_end_pos) {
+            if(title_start_pos <= i+1 && i+1 <= title_end_pos) {
                 titloed_word += word[i] + "҃";
             }
             else titloed_word += word[i];
@@ -231,7 +231,12 @@ const supralinear_cyr_map = new Map([
     ["ю", "ⷻ"],
     ["ѧ", "ⷽ"],
     ["ѫ", "ⷾ"],
-    ["ѭ", "ⷿ"] //for some reason no jotated combining jus-malyj in the Unicode table
+    ["ѭ", "ⷿ"], //for some reason no jotated combining jus-malyj in the Unicode table
+    ["и", "ꙵ"],
+    ["ъ", "ꙸ"],
+    ["ь", "ꙺ"],
+    ["ѡ", "ꙻ"]
+
 ]);
 
 const toCyr = (text) => {
