@@ -25,7 +25,7 @@ read_stream2.on('error', () => {
   process.exit(-1);
 })
 
-const output_filename = "assemananius_untagged_autolemmatised.csv";
+const output_filename = "assemananius_untagged_autolemmatised_mergetags.csv";
 
 let csv_string = "";
 
@@ -79,10 +79,10 @@ async function readAutotaggedFile() {
   const autotagged_pos_file = readline.createInterface({input: read_stream2});
 
   for await(const line of autotagged_pos_file) {
-    const row = line.split(",");
+    const row = line.split("|");
     const word_form_raw = row[2];
     const word_form_normalised = row[0];
-    const pos = row[1];
+    const pos = row[1].slice(0, 2);
     let auto_lemma_id = 0;
   
     

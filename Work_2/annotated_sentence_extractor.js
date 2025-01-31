@@ -13,6 +13,7 @@ const output_filename = "tagged_sentences.csv";
 const saxParser = sax.createStream(true);
 
 const chu_deepClean_map = {
+    "·" : "",
     "̇" : "",
     "\u0308" : "",
     "ѿ" : "от",

@@ -4,13 +4,16 @@
 import { createInterface } from 'readline';
 import { createReadStream, writeFileSync } from 'node:fs';
 
-const read_stream1 = createReadStream("assem_words_raw.txt");
+const read_stream1 = createReadStream("assem_converted.txt");
 read_stream1.on('error', () => {
   console.log("first file doesn't exist");
   process.exit(-1);
 })
 
 const chu_deepClean_map = {
+    "⁛" : "",
+    "—" : "",
+    "·" : "",
     "̇" : "",
     "\u0308" : "",
     "ѿ" : "от",
@@ -215,6 +218,10 @@ const deepClean = (dirty_word) => {
     return cleaned_word;
 };
 
+const assem_punct = new RegExp(/[⁛—:·\)\(\.\+]+/ug);
+const non_word_regex = new RegExp(/[⁛—:·\)\(\.\+\s]+/ug);
+const only_assem_punct = new RegExp(/^[⁛—:·\)\(\.\+]+$/ug);
+
 
 
 async function writeWordsString() {
@@ -222,43 +229,37 @@ async function writeWordsString() {
     const assem_file = createInterface({input: read_stream1});
     for await(const line of assem_file) {
         
-        let presentation_after = " ";
+        let presentation_after = "";
         let presentation_before = "";
-        let non_word_count = 1;
-        let first_word_index = 0;
-        const split_line = line.split(/\s+/);
-        while(split_line[first_word_index] !== undefined && deepClean(split_line[first_word_index]).trim() == "") {
-            presentation_before += split_line[first_word_index] + " ";
-            first_word_index++;
-        }      
-        for(let i = first_word_index + 1 /*have to move it ahead of the first word because we always write the word only after having built the entire sequence of bullshit that comes after it and arriving at the subsequent word*/; i < split_line.length; i++) {
-            const chunk = split_line[i];
-            if(chunk.trim() == "") continue;
-            if(deepClean(chunk) != "") {
-                tnt_file_string += split_line[i - non_word_count] + "|" + presentation_before + "|" + presentation_after + "\n";
-                //console.log(split_line[i - non_word_count] + "|" + presentation_after + "|" + non_word_count);
-                presentation_after = " ";
+
+        const words_array = line.split(non_word_regex);
+        const words_array_length = words_array.length;
+        
+        let counter = 0;
+        for(const match of line.matchAll(non_word_regex)) {
+            if(counter == 0 && words_array[0] == "") {
+                presentation_before = match[0];
+            }
+            else if(counter + 1 == words_array_length && words_array[counter] == "") {
                 presentation_before = "";
-                non_word_count = 1;
+                presentation_after = match[0];
             }
             else {
-                presentation_after += chunk + " ";
-                non_word_count++;
+                const actual_word = words_array[counter];
+                presentation_after = match[0];
+
+                tnt_file_string += actual_word + "|" + presentation_before + "|" + presentation_after + "\n";
+                presentation_before = "";
             }
+            counter++;
         }
-        if(split_line[split_line.length - 1].trim() == "") {;} 
-        else if(deepClean(split_line[split_line.length - non_word_count]) != "") {
-            tnt_file_string += split_line[split_line.length - non_word_count] + "|" + presentation_before + "|" + presentation_after + "\n";
-            //console.log(split_line[split_line.length - non_word_count] + "|" + presentation_after + "|" + non_word_count);
-            presentation_after = " ";
-            non_word_count = 1;
+        console.log(line, counter, words_array_length);
+        if(words_array[counter] != "") {
+            tnt_file_string += words_array[counter] + "||\n";
         }
-        else {
-            presentation_after += split_line[split_line.length - 1] + " ";
-            non_word_count++;
-            console.log(split_line[split_line.length - 1] + "|" + presentation_before + "|" + presentation_after + "|" + non_word_count);
-            tnt_file_string += split_line[split_line.length - 1] + "|" + presentation_before + "|" + presentation_after + "\n";
-        }
+
+
+        
         //console.log(split_line);
     }
 
@@ -268,4 +269,4 @@ async function writeWordsString() {
 
 
 const file_string = await writeWordsString();
-writeFileSync("assem_words_presentation_after.csv", file_string);
+writeFileSync("assem_words_presentation_after_new.csv", file_string);
