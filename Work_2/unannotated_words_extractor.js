@@ -13,6 +13,11 @@ const output_filename = "untagged_words.csv";
 const saxParser = sax.createStream(true);
 
 const chu_deepClean_map = {
+    "̇" : "",
+    "\u0308" : "",
+    "ѿ" : "от",
+    "оⷮ" : "от",
+    "⁛" : "",
     "῾" : "",
     "᾽" : "",
     "̅" : "",
@@ -176,6 +181,8 @@ const chu_deepClean_map = {
     "ⷸ" : "г",
     "ȥ" : "з",
     "ӡ" : "з",
+    "Ⱒ" : "х",
+    "ⱒ" : "х",
     "Ӡ" : "з",
     "й" : "і",
     "ѷ" : "у",

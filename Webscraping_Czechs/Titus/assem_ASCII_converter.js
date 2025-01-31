@@ -26,21 +26,24 @@ const applyCapitalisation = (word) => {
     return word;
 };
 
-const punctuation_regex = new RegExp(/[~\("`\/\\]+/u);
+const diacritics_regex = new RegExp(/[~\("`'^)\/\\]+/u);
 
-const punctuation_map = {
+const diacritics_map = {
     "~": "̆",
     "(": "҅",
     "`": "̀",
     "/": "̄",
     "\\": "̇",
-    "\"": "\u0308" //combining diaeresis above
+    "\"": "\u0308", //combining diaeresis above
+    "\'": "ʼ", //modified letter apostrophe, \u02bc
+    "^": "҄", //this is combining cyrillic palatalisation \u0484 and I'm not pleased with it because it has a phonemic meaning in Zogr., whereas Kurz is using it just as a decorative thing, but it is consistent with what Eckhoff's done so Lindstedt must've chosen to use ^ for both things with some reason
+    ")": "҆"
 };
 
-const applyPunctuationAfter = (word) => {
+const applyDiacriticsAfter = (word) => {
     let match_array;
     
-    while((match_array = punctuation_regex.exec(word)) !== null) {
+    while((match_array = diacritics_regex.exec(word)) !== null) {
 
         const bullshit = match_array[0];
         const bullshit_pos = word.indexOf(bullshit);
@@ -49,7 +52,7 @@ const applyPunctuationAfter = (word) => {
 
         word = word_copy.slice(0, bullshit_pos) + word_copy.slice(bullshit_pos + bullshit.length)[0];
         for(const key of bullshit) {
-            word += punctuation_map[key];
+            word += diacritics_map[key];
         }
         word += word_copy.slice(bullshit_pos + bullshit.length + 1);
     }
@@ -128,6 +131,7 @@ const cyr_map = new Map([
     ["{",""],
     ["}",""],
     ["%", ""],
+
     ["ju","ю"],
     ["jO","ѭ"],
     ["je","ѥ"],
@@ -290,7 +294,7 @@ async function convertASCII(script="cyr") {
         }
         capitalised_line = capitalised_line.trim();
         
-        capitalised_line = applyPunctuationAfter(capitalised_line);
+        capitalised_line = applyDiacriticsAfter(capitalised_line);
 
 
         
@@ -308,9 +312,11 @@ async function convertASCII(script="cyr") {
 
         converted_text += titloed_line + "\n";
     }
+    ascii_file.close();
 
-    converted_text = converted_text.replaceAll(".", "·")
-
+    converted_text = converted_text.replaceAll(".", "·").replaceAll(",", "·").replaceAll("[", "(").replaceAll("]", ")"); //in Kurz this is a middle-comma, but no similar Unicode symbol exists so I'm replacing with middle-dot;
+    converted_text = converted_text.replaceAll("?", "."); //presumably the fullstops in the edition represent unknown characters, so maybe keeping it as ? would be better
+    //the plus sign is used for a bunch of weird shit like horizontal lines inbetween dots, not worth bothering to change it 
 }
 
 await convertASCII();

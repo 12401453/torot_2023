@@ -4777,7 +4777,7 @@
 4084220 prid& :: . -
 4084201 */aqe !b& !/oc& vaS$ bI b&Il& . ljubIlI mE biste .
 4084211 *(az& b!o /ot& !ba (izId& /i prId$ : ne /o seb@
-4084221 prid& n& /i)% t& mE pos&la .
+4084221 prid& n& /i]% t& mE pos&la .
 4084300 po C$to bes@d&i %:: mo/e/jE ne razu{zu}m@/ete .
 4084310 /@ko ne moZete sl&ISati slovese %:: mo/ego .
 4084400 v&I o!t !(oca di/avol!a /este . /i poxoti !/oca

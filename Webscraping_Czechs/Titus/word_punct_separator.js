@@ -11,8 +11,11 @@ read_stream1.on('error', () => {
 })
 
 const chu_deepClean_map = {
-    "·" : "",
-    
+    "̇" : "",
+    "\u0308" : "",
+    "ѿ" : "от",
+    "оⷮ" : "от",
+    "⁛" : "",
     "῾" : "",
     "᾽" : "",
     "̅" : "",
@@ -176,6 +179,8 @@ const chu_deepClean_map = {
     "ⷸ" : "г",
     "ȥ" : "з",
     "ӡ" : "з",
+    "Ⱒ" : "х",
+    "ⱒ" : "х",
     "Ӡ" : "з",
     "й" : "і",
     "ѷ" : "у",
@@ -200,6 +205,7 @@ const chu_deepClean_map = {
     "ждѭ" : "ждѫ",
     "цѭ" : "цѫ",
     "штѭ" : "штѫ",
+
 };
 const deepClean = (dirty_word) => {
     let cleaned_word = dirty_word;

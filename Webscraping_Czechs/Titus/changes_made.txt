@@ -3,3 +3,4 @@ Line 2568 took the space out of ((i`` c@lova because it was fucking up my punctu
 Line 833 moved the position of the slash back one space because it was clearly wrong (prosv$tEt/ => prosv$tE/t)
 similarly line 1394 mn/oDI( and 1703 s$blaznEt(
 Lines 46-49: changed three !g!J to !!gJ because there is a titlo on both letters and Lindstedt has broken his own conventions
+Line 4780, ) changed to ] because Kurz uses an actual round bracket here
