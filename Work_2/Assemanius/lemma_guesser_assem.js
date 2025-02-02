@@ -83,6 +83,7 @@ async function readAutotaggedFile() {
     const word_form_raw = row[2];
     const word_form_normalised = row[0];
     const pos = row[1].slice(0, 2);
+    const morph_tag = row[1].slice(2);
     let auto_lemma_id = 0;
   
     
@@ -110,7 +111,7 @@ async function readAutotaggedFile() {
         auto_lemma_id = chopAgainstLemmas(pos, word_form_normalised, word_form_raw);
       }
     }
-    csv_string += word_form_raw + "," + pos + "," + auto_lemma_id + "," + lemmas_map.get(Number(auto_lemma_id)) + "\n";
+    csv_string += word_form_raw + "|" + pos + "|" + morph_tag + "|" + word_form_normalised + "|" + auto_lemma_id + "|" + lemmas_map.get(Number(auto_lemma_id)) + "\n";
   }
   autotagged_pos_file.close();
 }
@@ -175,7 +176,7 @@ const chopAgainstLemmas = (pos, word_form_normalised, word_form_raw) => {
     filtered_lemmas = lemmas_array.filter(row => row[2] == pos && row[3].replaceAll("ь", "ъ").startsWith(chopped_word_normalised));
 
     if(filtered_lemmas.length > 0) {
-      filtered_lemmas.sort((lemma_row_a, lemma_row_b) => jersame_row_a[1].length - jersame_row_b[1].length); //reorder the results array by ascending length so that the first member is most similar in length to the target word (prevents problems like симон being matched to симонидъ instead of симонъ)
+      filtered_lemmas.sort((lemma_row_a, lemma_row_b) => lemma_row_a[1].length - lemma_row_b[1].length); //reorder the results array by ascending length so that the first member is most similar in length to the target word (prevents problems like симон being matched to симонидъ instead of симонъ)
       auto_lemma_id = filtered_lemmas[0][0];
       match_found = true;
       console.log(`${chalk.cyan(word_form_raw)} was matched against the lemma-list with ${chalk.magenta(filtered_lemmas[0][1])} with lemma_id ${chalk.red(auto_lemma_id)}`);

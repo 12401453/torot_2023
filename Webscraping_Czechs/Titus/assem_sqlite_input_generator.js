@@ -3,13 +3,14 @@ import fs from 'fs';
 import readline from 'readline';
 
 const mark_supralinears = process.argv[3];
-const script = process.argv[2];
+let script = process.argv[2];
 
 if(process.argv.length < 3) {
     console.log("Must specify script, either 'cyr' or 'glag'");
 }
 if(script != "glag" && script != "cyr") {
     console.log("Unrecognised script given, defaulting to Cyrillic...");
+    script = "cyr";
 }
 
 const ascii_file_stream = fs.createReadStream("assemanianus_ASCII_encoded_version.txt");
@@ -242,43 +243,16 @@ const glag_map = new Map([
     
 ]);
 
-const supralinear_cyr_map = new Map([
-    ["б", "ⷠ"],
-    ["в", "ⷡ"],
-    ["г", "ⷢ"],
-    ["д", "ⷣ"],
-    ["ж", "ⷤ"],
-    ["з", "ⷥ"],
-    ["к", "ⷦ"],
-    ["л", "ⷧ"],
-    ["м", "ⷨ"],
-    ["н", "ⷩ"],
-    ["о", "ⷪ"],
-    ["п", "ⷫ"],
-    ["р", "ⷬ"],
-    ["с", "ⷭ"],
-    ["т", "ⷮ"],
-    ["х", "ⷯ"],
-    ["ц", "ⷰ"],
-    ["ч", "ⷱ"],
-    ["ш", "ⷲ"],
-    ["щ", "ⷳ"],
-    ["ѳ", "ⷴ"],
-    ["а", "ⷶ"],
-    ["е", "ⷷ"],
-    ["ꙉ", "ⷸ"],
-    ["ѹ", "ⷹ"],
-    ["ѣ", "ⷺ"],
-    ["ю", "ⷻ"],
-    ["ѧ", "ⷽ"],
-    ["ѫ", "ⷾ"],
-    ["ѭ", "ⷿ"], //for some reason no jotated combining jus-malyj in the Unicode table
-    ["и", "ꙵ"],
-    ["ъ", "ꙸ"],
-    ["ь", "ꙺ"],
-    ["ѡ", "ꙻ"]
+const book_name_map = {
+    1 : "MATT",
+    2 : "MARK",
+    3 : "LUKE",
+    4 : "JOHN"
+};
 
-]);
+const toTitleCase = (str) => {
+    return str.slice(0, 1).toUpperCase() + str.slice(1).toLowerCase();
+}
 
 const toCyr = (text) => {
     const cyr_map_iter = cyr_map.entries();
@@ -303,14 +277,69 @@ const toGlag = (text) => {
 
 const convertFunction = script == "glag" ? toGlag : toCyr;
 
+const non_word_regex = new RegExp(/[⁛—:·\)\(\.\+\s\$@]+/ug);
+
+const extractPunct = (line, verse_index) => {
+    let processed_text = "";
+    let presentation_after = "";
+    let presentation_before = "";
+
+    line = line.replaceAll("коц", "$").replaceAll("к҃оц", "@"); //I've checked and this sequence doesn't occur outside of the коц end-of-verse indicator, which is excluded in TOROT texts from the actual words
+    const words_array = line.split(non_word_regex);
+    const words_array_length = words_array.length;
+    
+    
+    let counter = 0;
+    for(const match of line.matchAll(non_word_regex)) {
+        if(counter == 0 && words_array[0] == "") {
+            presentation_before = match[0].replaceAll("$", "коц").replaceAll("@", "к҃оц");
+        }
+        else if(counter + 1 == words_array_length && words_array[counter] == "") {
+            presentation_before = "";
+            presentation_after = match[0].replaceAll("$", "коц").replaceAll("@", "к҃оц");
+        }
+        else {
+            const actual_word = words_array[counter];
+            presentation_after = match[0].replaceAll("$", "коц").replaceAll("@", "к҃оц");
+
+            processed_text += actual_word + "|" + presentation_before + "|" + presentation_after;
+            presentation_before = "";
+        }
+        counter++;
+    }
+    if(words_array[counter] != "") {
+        processed_text += words_array[counter] + "||";
+    }
+
+    
+
+    processed_text += "10|";
+
+
+    processed_text += "\n";
+    return processed_text;
+}
+
 let converted_text = "";
+let csv_text = "";
 async function convertASCII() {
 
     const ascii_file = readline.createInterface({input: ascii_file_stream});
+    
+    let subtitle_no = 0;
+    let book_code_prev = 1;
+    let chap_code_prev = 1;
+    let verse_code_prev = 1;
+    let line_code_prev = 0;
+    let variant_code_prev = 0;
+    const verse_text_variants = new Array();
+    verse_text_variants.push([]);
 
     for await(const line of ascii_file) {
         //let cyr_line = line.replaceAll("w!t", "ѿ").replaceAll("o!t", "оⷮ");
+        let converted_line = "";
         let cyr_line = line;
+        const verse_index = cyr_line.slice(0, 7);
         cyr_line = convertFunction(cyr_line.slice(7));
         let capitalised_line = "";
         for(const word of cyr_line.split(" ")) {
@@ -334,14 +363,59 @@ async function convertASCII() {
         }
         titloed_line = titloed_line.trim();
 
-        converted_text += titloed_line + "\n";
-    }
-    ascii_file.close();
+        converted_line += titloed_line + "\n";
 
-    converted_text = converted_text.replaceAll(".", "·").replaceAll(",", "·").replaceAll("[", "(").replaceAll("]", ")"); //in Kurz this is a middle-comma, but no similar Unicode symbol exists so I'm replacing with middle-dot;
-    converted_text = converted_text.replaceAll("?", "."); //presumably the fullstops in the edition represent unknown characters, so maybe keeping it as ? would be better
-    //the plus sign is used for a bunch of weird shit like horizontal lines inbetween dots, not worth bothering to change it 
+        converted_line = converted_line.replaceAll(".", "·").replaceAll(",", "·").replaceAll("[", "(").replaceAll("]", ")"); //in Kurz this is a middle-comma, but no similar Unicode symbol exists so I'm replacing with middle-dot;
+        converted_line = converted_line.replaceAll("?", "."); //presumably the fullstops in the edition represent unknown characters, so maybe keeping it as ? would be better
+    //the plus sign is used for a bunch of weird shit like horizontal lines inbetween dots, not worth bothering to change it
+
+        const book_code = Number(verse_index.slice(0, 1));
+        const chap_code = Number(verse_index.slice(1,3));
+        const verse_code = Number(verse_index.slice(3,5));
+        const line_code = Number(verse_index.slice(5,6));
+        const variant_code = Number(verse_index.slice(6, 7));
+        let new_verse = false;
+
+        if(book_code != book_code_prev || chap_code != chap_code_prev || verse_code != verse_code_prev) new_verse = true;
+
+        //console.log(line, new_verse, verse_text_variants);
+        debugger;
+        if(chap_code != chap_code_prev) {
+            subtitle_no++;
+        }
+        if(new_verse) {
+            verse_text_variants.forEach(variant => {
+                const full_verse_text = variant.join(" ").trim();
+                converted_text += full_verse_text + "\n";
+
+            });
+            verse_text_variants.length = 0;
+            verse_text_variants.push([converted_line.trim()]);
+        }
+        else if(verse_text_variants[variant_code] === undefined) {
+            verse_text_variants.push([converted_line.trim()]);
+        }
+        else {
+            //console.log(variant_code, variant_code_prev);
+            //console.log(verse_text_variants);
+            verse_text_variants[variant_code].push(converted_line.trim());
+        }
+        
+
+        book_code_prev = book_code;
+        chap_code_prev = chap_code;
+        verse_code_prev = verse_code;
+        line_code_prev = line_code;
+        variant_code_prev = variant_code;
+    }
+    verse_text_variants.forEach(variant => {
+        const full_verse_text = variant.join(" ").trim();
+        converted_text += full_verse_text + "\n";
+
+    });
+    ascii_file.close();
 }
 
 await convertASCII();
-fs.writeFileSync("assem_converted_"+script+".txt", converted_text);
+fs.writeFileSync("assem_"+script+"_verse_per_line.txt", converted_text);
+//fs.writeFileSync("assem_"+script+"_presentation_after_titles.csv", csv_text);

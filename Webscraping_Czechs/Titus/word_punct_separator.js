@@ -4,7 +4,7 @@
 import { createInterface } from 'readline';
 import { createReadStream, writeFileSync } from 'node:fs';
 
-const read_stream1 = createReadStream("assem_converted.txt");
+const read_stream1 = createReadStream("assem_converted_cyr.txt");
 read_stream1.on('error', () => {
   console.log("first file doesn't exist");
   process.exit(-1);
@@ -219,7 +219,7 @@ const deepClean = (dirty_word) => {
 };
 
 const assem_punct = new RegExp(/[⁛—:·\)\(\.\+]+/ug);
-const non_word_regex = new RegExp(/[⁛—:·\)\(\.\+\s]+/ug);
+const non_word_regex = new RegExp(/[⁛—:·\)\(\.\+\s\$@]+/ug);
 const only_assem_punct = new RegExp(/^[⁛—:·\)\(\.\+]+$/ug);
 
 
@@ -227,33 +227,33 @@ const only_assem_punct = new RegExp(/^[⁛—:·\)\(\.\+]+$/ug);
 async function writeWordsString() {
     let tnt_file_string = "";
     const assem_file = createInterface({input: read_stream1});
-    for await(const line of assem_file) {
+    for await(let line of assem_file) {
         
         let presentation_after = "";
         let presentation_before = "";
 
+        line = line.replaceAll("коц", "$").replaceAll("к҃оц", "@"); //I've checked and this sequence doesn't occur outside of the коц end-of-verse indicator, which is excluded in TOROT texts from the actual words
         const words_array = line.split(non_word_regex);
         const words_array_length = words_array.length;
         
         let counter = 0;
         for(const match of line.matchAll(non_word_regex)) {
             if(counter == 0 && words_array[0] == "") {
-                presentation_before = match[0];
+                presentation_before = match[0].replaceAll("$", "коц").replaceAll("@", "к҃оц");
             }
             else if(counter + 1 == words_array_length && words_array[counter] == "") {
                 presentation_before = "";
-                presentation_after = match[0];
+                presentation_after = match[0].replaceAll("$", "коц").replaceAll("@", "к҃оц");
             }
             else {
                 const actual_word = words_array[counter];
-                presentation_after = match[0];
+                presentation_after = match[0].replaceAll("$", "коц").replaceAll("@", "к҃оц");
 
                 tnt_file_string += actual_word + "|" + presentation_before + "|" + presentation_after + "\n";
                 presentation_before = "";
             }
             counter++;
         }
-        console.log(line, counter, words_array_length);
         if(words_array[counter] != "") {
             tnt_file_string += words_array[counter] + "||\n";
         }

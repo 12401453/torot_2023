@@ -4,7 +4,7 @@
 import { createInterface } from 'readline';
 import { createReadStream, writeFileSync } from 'node:fs';
 
-const read_stream1 = createReadStream("assem_converted.txt");
+const read_stream1 = createReadStream("assem_converted_cyr.txt");
 read_stream1.on('error', () => {
   console.log("first file doesn't exist");
   process.exit(-1);
@@ -219,7 +219,7 @@ const deepClean = (dirty_word) => {
 };
 
 const assem_punct = new RegExp(/[⁛—:·\)\(\.\+]+/ug);
-const non_word_regex = new RegExp(/[⁛—:·\)\(\.\+\s]+/ug);
+const non_word_regex = new RegExp(/[⁛—:·\)\(\.\+\s\$@]+/ug);
 const only_assem_punct = new RegExp(/^[⁛—:·\)\(\.\+]+$/ug);
 
 
@@ -228,13 +228,14 @@ async function writeWordsString() {
     let sentence_no = 5000000;
     let tnt_file_string = "";
     const assem_file = createInterface({input: read_stream1});
-    for await(const line of assem_file) {
+    for await(let line of assem_file) {
 
         tnt_file_string += "%%" + sentence_no + "\n";
         
         let presentation_after = "";
         let presentation_before = "";
 
+        line = line.replaceAll("коц", "$").replaceAll("к҃оц", "@"); //I've checked and this sequence doesn't occur outside of the коц end-of-verse indicator, which is excluded in TOROT texts from the actual words
         const words_array = line.split(non_word_regex);
         const words_array_length = words_array.length;
         
@@ -260,9 +261,9 @@ async function writeWordsString() {
             tnt_file_string += deepClean(words_array[counter]) + "\n";
         }
 
-
+        if(line.includes("коц")) console.log(line);
         
-        //console.log(split_line);
+        sentence_no++;
     }
 
     assem_file.close();
