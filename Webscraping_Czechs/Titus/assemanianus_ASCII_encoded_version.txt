@@ -565,7 +565,7 @@
 1090800 vid@v$Se Ze narodI CjudISE sE . */i proslavISE
 1090810 !ba . *dav&Sa(ago takO vlast$ !Clkm& .:% -
 1090900 !:: - *pr@xodE !is vId@ !Clka . s@dEq& na m&It$nicI .
-1090901 pr@xodE !/is& vid@ !Cka . [k]o[!c]
+1090901 pr@xodE !/is& vid@ !Cka . ko!c
 1090910 *(imenem& maTe/a . */i !gla emu po m$n@ grEdI .
 1090920 /i v&stav po nem& /ide .
 1091000 /i b&i!s /emu v&zleZEqu v& domu /i se m(noDI
@@ -2991,7 +2991,7 @@
 3070820 /i drugumu pridI /i prIdet . /i rabu mo/emu . s$tvorI se /i
 3070830 s&tvorit& .
 3070900 sl&ISav& Ze se !/is& . CjudI sE /emu . /i (obraSt& sE
-3970910 posl@du/jOqumu narodu reCe . *(ami!n !gljO vam . ni v& !/izlI
+3070910 posl@du/jOqumu narodu reCe . *(ami!n !gljO vam . ni v& !/izlI
 3070920 tolik&I v@r&I /obr@t& .
 3071000 */i v&zvraq&Se sE v& dom& pos$lanI/i . /obr@tO bolEqa/ago
 3071010 raba /ic@l@v&Sa :: . -
@@ -5213,7 +5213,7 @@
 4122110 vid/sa\id&i . gali{li}le/isk&I/jE . \i m!l@/axO
 4122120 /i !glqe . !gi xoqem !/isa vid@tI .
 4122200 *pride filip$ /i !gla /an/dre(ovi . /i pak&i
-4112210 an/drea (i filip$ . !glasta !(isvi .
+4122210 an/drea (i filip$ . !glasta !(isvi .
 4122300 !(is& Ze o!t/ot&v@qa /ima !glE . *pride godina
 4122310 da proslavit& sE !sn$ !ClC&sk&i .
 4122400 */ami!n : (ami!n !gljO vam& . */aqe

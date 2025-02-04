@@ -115,7 +115,7 @@ const proiel_superscript_end = mark_supralinears == "supr" ? "\uF102" : "";
 //const proiel_superscript_end = mark_supralinears == "supr" ? "@" : "";
 const applySupralinears = (word) => {
 
-    if(word == "!⁛") {
+    if(word == "!⁛" || word == "!:" || word == "!???") {
         word = proiel_superscript_start + word.slice(1) + proiel_superscript_end;
         return word;
     }
@@ -250,8 +250,18 @@ const book_name_map = {
     4 : "JOHN"
 };
 
+const book_longname_map = {
+    1 : "Matthew",
+    2 : "Mark",
+    3 : "Luke",
+    4 : "John"
+};
+
 const citationPartGenerator = (book, chapter, verse) => {
     return book_name_map[book] + " " + chapter + "." + verse;
+};
+const subtitleGenerator = (book, chapter) => {
+    return book_longname_map[book] + " Chapter " + chapter;
 };
 
 const toTitleCase = (str) => {
@@ -282,11 +292,21 @@ let sentence_no = 5000000;
 let subtitle_id = 0;
 let chapter_prev = 0;
 
-const non_word_regex = new RegExp(/[⁛—:·\)\(\.\+\$@£¬\s]+/ug);
-//this doesn't work because there can be punctuation completely WITHIN words, so this splits those words up. Unfortunately bullshit can only be separated from the recorded database-words if it occurs at the beginning or end of the real world; everything else will shit up the word
-//splitting initially on spaces is thus unavoidable and this quick regex-trick of mine will not work
+let sqlite_subtitles_text = "";
 
-const separateWords2 = (line, bible_index_arr) => {
+const non_word_regex = new RegExp(/[⁛҅—¥қғ=:·\)\(\.\+\$@£¬\s]+/ug);
+
+const separateWords = (line, bible_index_arr) => {
+
+    tnt_input_text += "%%"+sentence_no+"\n";
+    
+    const book = bible_index_arr[0];
+    const chapter = bible_index_arr[1];
+    const verse = bible_index_arr[2];
+    const variant = bible_index_arr[3];
+    const citation_part = citationPartGenerator(book, chapter, verse);
+
+    line = line.replaceAll("коц", "$").replaceAll("к҃оц", "@").replaceAll("коц", "£").replaceAll("⁛", "¬").replaceAll(":", "¥").replaceAll("...", "қ").replaceAll("к҃оц", "ғ");
     const chunks = line.split(/\s+/ug);
 
     const chunks_separated = new Array();
@@ -324,7 +344,7 @@ const separateWords2 = (line, bible_index_arr) => {
     while(dogshit = pure_dogshit_indices.includes(i) == true) {
         final_array[0][1] += " " + chunks_separated[i][0];
         i++
-    }// add all the presentation_befores to the first entry in the array;
+    }
     if(chunks_separated[i] !== undefined) {
         final_array[0][0] = chunks_separated[i][0];
         final_array[0][1] += " " + chunks_separated[i][1];
@@ -339,64 +359,84 @@ const separateWords2 = (line, bible_index_arr) => {
         else {
             final_array[final_array_index][2] += " ";
             final_array_index++;
-            final_array.push([chunks_separated[i][0], "", chunks_separated[i][2]]);
+            final_array.push([chunks_separated[i][0], chunks_separated[i][1], chunks_separated[i][2]]);
         }
 
         i++;
     }
     final_array[final_array_index][2] = final_array[final_array_index][2].trimEnd();
-    return final_array;
-};
-
-const separateWords = (line, bible_index_arr) => {
-    tnt_input_text += "%%"+sentence_no+"\n";
     
-    let presentation_after = "";
-    let presentation_before = "";
-    const book = bible_index_arr[0];
-    const chapter = bible_index_arr[1];
-    if(chapter != chapter_prev) subtitle_id++;
-    const verse = bible_index_arr[2];
-    const variant = bible_index_arr[3];
-    const citation_part = citationPartGenerator(book, chapter, verse);
-
-    line = line.replaceAll("коц", "$").replaceAll("к҃оц", "@").replaceAll("коц", "£").replaceAll("⁛", "¬"); //this is to exclude bullshit that is marked as supralinear and thus not picked up by the non_word_regex
-    const words_array = line.split(non_word_regex);
-    const words_array_length = words_array.length;
-    
-    
-    let counter = 0;
-    for(const match of line.matchAll(non_word_regex)) {
-        if(counter == 0 && words_array[0] == "") {
-            presentation_before = match[0].replaceAll("$", "коц").replaceAll("@", "к҃оц").replaceAll("£", "коц").replaceAll("¬", "⁛");
-        }
-        else if(counter + 1 == words_array_length && words_array[counter] == "") {
-            presentation_before = "";
-            presentation_after = match[0].replaceAll("$", "коц").replaceAll("@", "к҃оц").replaceAll("£", "коц").replaceAll("¬", "⁛");
-        }
-        else {
-            const actual_word = words_array[counter];
-            const cleaned_actual_word = deepCleanChuWord(actual_word);
-            presentation_after = match[0].replaceAll("$", "коц").replaceAll("@", "к҃оц").replaceAll("£", "коц").replaceAll("¬", "⁛");
-
-            csv_text += actual_word/*.replaceAll("\uF002", "$").replaceAll("\uF102", "@")*/ + "|||" + cleaned_actual_word + "||" + sentence_no + "|" + presentation_before + "|" + presentation_after + "|10|" + subtitle_id + "|1|" + citation_part + "|" + book + "|" + chapter + "|" + verse + "|" + variant + "\n";
-            presentation_before = "";
-
-            tnt_input_text += cleaned_actual_word + "\n";
-        }
-        counter++;
+    if(chapter != chapter_prev) {
+        sqlite_subtitles_text += "10|" + subtitleGenerator(book, chapter) + "\n";
+        subtitle_id++;
     }
-    if(words_array[counter] != "") {
-        const actual_word = words_array[counter];
+
+    for(const word_arr of final_array) {
+        const actual_word = word_arr[0];
+        const presentation_before = word_arr[1].replaceAll("$", "коц").replaceAll("@", "к҃оц").replaceAll("£", "коц").replaceAll("¬", "⁛").replaceAll("¥", ":").replaceAll("қ", "...").replaceAll("ғ", "к҃оц");
+        const presentation_after = word_arr[2].replaceAll("$", "коц").replaceAll("@", "к҃оц").replaceAll("£", "коц").replaceAll("¬", "⁛").replaceAll("¥", ":").replaceAll("қ", "...").replaceAll("ғ", "к҃оц");
         const cleaned_actual_word = deepCleanChuWord(actual_word);
+
+        
         csv_text += actual_word/*.replaceAll("\uF002", "$").replaceAll("\uF102", "@")*/ + "|||" + cleaned_actual_word + "||" + sentence_no + "|" + presentation_before + "|" + presentation_after + "|10|" + subtitle_id + "|1|" + citation_part + "|" + book + "|" + chapter + "|" + verse + "|" + variant + "\n";
 
         tnt_input_text += cleaned_actual_word + "\n";
     }
-    
-    sentence_no++;
     chapter_prev = chapter;
-}
+    sentence_no++;
+};
+
+// const separateWords = (line, bible_index_arr) => {
+    //this doesn't work because there can be punctuation completely WITHIN words, so this splits those words up. Unfortunately bullshit can only be separated from the recorded database-words if it occurs at the beginning or end of the real world; everything else will shit up the word
+    //splitting initially on spaces is thus unavoidable and this quick regex-trick of mine does not work
+//     tnt_input_text += "%%"+sentence_no+"\n";
+    
+//     let presentation_after = "";
+//     let presentation_before = "";
+//     const book = bible_index_arr[0];
+//     const chapter = bible_index_arr[1];
+//     if(chapter != chapter_prev) subtitle_id++;
+//     const verse = bible_index_arr[2];
+//     const variant = bible_index_arr[3];
+//     const citation_part = citationPartGenerator(book, chapter, verse);
+
+//     line = line.replaceAll("коц", "$").replaceAll("к҃оц", "@").replaceAll("коц", "£").replaceAll("⁛", "¬"); //this is to exclude bullshit that is marked as supralinear and thus not picked up by the non_word_regex
+//     const words_array = line.split(non_word_regex);
+//     const words_array_length = words_array.length;
+    
+    
+//     let counter = 0;
+//     for(const match of line.matchAll(non_word_regex)) {
+//         if(counter == 0 && words_array[0] == "") {
+//             presentation_before = match[0].replaceAll("$", "коц").replaceAll("@", "к҃оц").replaceAll("£", "коц").replaceAll("¬", "⁛");
+//         }
+//         else if(counter + 1 == words_array_length && words_array[counter] == "") {
+//             presentation_before = "";
+//             presentation_after = match[0].replaceAll("$", "коц").replaceAll("@", "к҃оц").replaceAll("£", "коц").replaceAll("¬", "⁛");
+//         }
+//         else {
+//             const actual_word = words_array[counter];
+//             const cleaned_actual_word = deepCleanChuWord(actual_word);
+//             presentation_after = match[0].replaceAll("$", "коц").replaceAll("@", "к҃оц").replaceAll("£", "коц").replaceAll("¬", "⁛");
+
+//             csv_text += actual_word/*.replaceAll("\uF002", "$").replaceAll("\uF102", "@")*/ + "|||" + cleaned_actual_word + "||" + sentence_no + "|" + presentation_before + "|" + presentation_after + "|10|" + subtitle_id + "|1|" + citation_part + "|" + book + "|" + chapter + "|" + verse + "|" + variant + "\n";
+//             presentation_before = "";
+
+//             tnt_input_text += cleaned_actual_word + "\n";
+//         }
+//         counter++;
+//     }
+//     if(words_array[counter] != "") {
+//         const actual_word = words_array[counter];
+//         const cleaned_actual_word = deepCleanChuWord(actual_word);
+//         csv_text += actual_word/*.replaceAll("\uF002", "$").replaceAll("\uF102", "@")*/ + "|||" + cleaned_actual_word + "||" + sentence_no + "|" + presentation_before + "|" + presentation_after + "|10|" + subtitle_id + "|1|" + citation_part + "|" + book + "|" + chapter + "|" + verse + "|" + variant + "\n";
+
+//         tnt_input_text += cleaned_actual_word + "\n";
+//     }
+    
+//     sentence_no++;
+//     chapter_prev = chapter;
+// }
 
 async function convertASCII() {
 
@@ -413,6 +453,7 @@ async function convertASCII() {
 
     for await(const line of ascii_file) {
         //let cyr_line = line.replaceAll("w!t", "ѿ").replaceAll("o!t", "оⷮ");
+        if(line.trim() == "") continue;
         let converted_line = "";
         let cyr_line = line;
         const verse_index = cyr_line.slice(0, 7);
@@ -476,6 +517,7 @@ async function convertASCII() {
         else {
             verse_text_variants[variant_code].push(converted_line.trim());
         }
+        
         
 
         book_code_prev = book_code;
@@ -709,4 +751,4 @@ await convertASCII();
 fs.writeFileSync("assem_"+script+"_verse_per_line.txt", converted_text);
 fs.writeFileSync("assem_"+script+"_full_words.csv", csv_text);
 fs.writeFileSync("tnt_input_assem.tt", tnt_input_text);
-
+fs.writeFileSync("assem_subtitles.csv", sqlite_subtitles_text);
