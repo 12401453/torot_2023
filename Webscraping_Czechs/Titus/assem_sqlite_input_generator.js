@@ -261,7 +261,7 @@ const citationPartGenerator = (book, chapter, verse) => {
     return book_name_map[book] + " " + chapter + "." + verse;
 };
 const subtitleGenerator = (book, chapter) => {
-    return book_longname_map[book] + " Chapter " + chapter;
+    return book_longname_map[book] + " " + chapter;
 };
 
 const toTitleCase = (str) => {
@@ -294,7 +294,7 @@ let chapter_prev = 0;
 
 let sqlite_subtitles_text = "";
 
-const non_word_regex = new RegExp(/[⁛҅—¥қғ=:·\)\(\.\+\$@£¬\s]+/ug);
+const non_word_regex = new RegExp(/[⁛҅—¥қғ=:·\.\+\$@£¬\s]+/ug);
 
 const separateWords = (line, bible_index_arr) => {
 
