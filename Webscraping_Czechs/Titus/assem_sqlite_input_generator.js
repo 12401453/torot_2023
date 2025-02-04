@@ -109,10 +109,10 @@ const applyTitlo = (word) => {
 
 const supralinear_regex = new RegExp(/(?<!^!*)!/u);
 
-// const proiel_superscript_start = mark_supralinears == "supr" ? "\uF002" : "";
-// const proiel_superscript_end = mark_supralinears == "supr" ? "\uF102" : "";
-const proiel_superscript_start = mark_supralinears == "supr" ? "$" : "";
-const proiel_superscript_end = mark_supralinears == "supr" ? "@" : "";
+const proiel_superscript_start = mark_supralinears == "supr" ? "\uF002" : "";
+const proiel_superscript_end = mark_supralinears == "supr" ? "\uF102" : "";
+//const proiel_superscript_start = mark_supralinears == "supr" ? "$" : "";
+//const proiel_superscript_end = mark_supralinears == "supr" ? "@" : "";
 const applySupralinears = (word) => {
 
     if(word == "!⁛") {
@@ -250,6 +250,10 @@ const book_name_map = {
     4 : "JOHN"
 };
 
+const citationPartGenerator = (book, chapter, verse) => {
+    return book_name_map[book] + " " + chapter + "." + verse;
+};
+
 const toTitleCase = (str) => {
     return str.slice(0, 1).toUpperCase() + str.slice(1).toLowerCase();
 }
@@ -258,9 +262,6 @@ const toCyr = (text) => {
     const cyr_map_iter = cyr_map.entries();
     for(const cyr_map_entry of cyr_map_iter) {
         text = text.replaceAll(cyr_map_entry[0], cyr_map_entry[1]);
-        // for(const word of text.split(" ")) {
-        //     if()
-        // }
     }
     return text;
 };
@@ -268,23 +269,98 @@ const toGlag = (text) => {
     const glag_map_iter = glag_map.entries();
     for(const glag_map_entry of glag_map_iter) {
         text = text.replaceAll(glag_map_entry[0], glag_map_entry[1]);
-        // for(const word of text.split(" ")) {
-        //     if()
-        // }
     }
     return text;
 };
 
 const convertFunction = script == "glag" ? toGlag : toCyr;
 
-const non_word_regex = new RegExp(/[⁛—:·\)\(\.\+\s\$@]+/ug);
+let converted_text = "";
+let csv_text = "";
+let tnt_input_text = "";
+let sentence_no = 5000000;
+let subtitle_id = 0;
+let chapter_prev = 0;
 
-const extractPunct = (line, verse_index) => {
-    let processed_text = "";
+const non_word_regex = new RegExp(/[⁛—:·\)\(\.\+\$@£¬\s]+/ug);
+//this doesn't work because there can be punctuation completely WITHIN words, so this splits those words up. Unfortunately bullshit can only be separated from the recorded database-words if it occurs at the beginning or end of the real world; everything else will shit up the word
+//splitting initially on spaces is thus unavoidable and this quick regex-trick of mine will not work
+
+const separateWords2 = (line, bible_index_arr) => {
+    const chunks = line.split(/\s+/ug);
+
+    const chunks_separated = new Array();
+    const pure_dogshit_indices = [];
+    for(let i = 0; i < chunks.length; i++) {
+        const chunk = chunks[i];
+        const split_chunk = chunk.split(non_word_regex);
+        let chunk_shit_before = "";
+        let chunk_shit_after = "";
+        let stripped_word = chunk;
+
+        if(split_chunk.length == 2 && split_chunk[0] == "" && split_chunk[1] == "") {
+            chunks_separated.push([chunk.match(non_word_regex)[0], "", ""]);
+            pure_dogshit_indices.push(i);
+            continue;
+        }
+        chunk.matchAll(non_word_regex).forEach(match => {
+            if(match.index == 0) {
+                chunk_shit_before = match[0];
+                stripped_word = stripped_word.slice(chunk_shit_before.length);
+            }
+            else if(match.index + 1 == chunk.length) {
+                chunk_shit_after = match[0];
+                stripped_word = stripped_word.slice(0, stripped_word.length - chunk_shit_after.length);
+            }
+        });
+        chunks_separated.push([stripped_word, chunk_shit_before, chunk_shit_after]);
+    }
+
+    let final_array = [["", "", ""]];
+    
+    let final_array_index = 0;
+    let i = 0;
+    let dogshit;
+    while(dogshit = pure_dogshit_indices.includes(i) == true) {
+        final_array[0][1] += " " + chunks_separated[i][0];
+        i++
+    }// add all the presentation_befores to the first entry in the array;
+    if(chunks_separated[i] !== undefined) {
+        final_array[0][0] = chunks_separated[i][0];
+        final_array[0][1] += " " + chunks_separated[i][1];
+        final_array[0][2] = chunks_separated[i][2];
+        i++;
+    }
+    final_array[0][1] = final_array[0][1];
+    while(i < chunks_separated.length) {
+        if(pure_dogshit_indices.includes(i)) {
+            final_array[final_array_index][2] += " " + chunks_separated[i][0];
+        }
+        else {
+            final_array[final_array_index][2] += " ";
+            final_array_index++;
+            final_array.push([chunks_separated[i][0], "", chunks_separated[i][2]]);
+        }
+
+        i++;
+    }
+    final_array[final_array_index][2] = final_array[final_array_index][2].trimEnd();
+    return final_array;
+};
+
+const separateWords = (line, bible_index_arr) => {
+    tnt_input_text += "%%"+sentence_no+"\n";
+    
     let presentation_after = "";
     let presentation_before = "";
+    const book = bible_index_arr[0];
+    const chapter = bible_index_arr[1];
+    if(chapter != chapter_prev) subtitle_id++;
+    const verse = bible_index_arr[2];
+    const variant = bible_index_arr[3];
+    const citation_part = citationPartGenerator(book, chapter, verse);
 
-    line = line.replaceAll("коц", "$").replaceAll("к҃оц", "@"); //I've checked and this sequence doesn't occur outside of the коц end-of-verse indicator, which is excluded in TOROT texts from the actual words
+    line = line.replaceAll("коц", "$").replaceAll("к҃оц", "@").replaceAll("коц", "£").replaceAll("⁛", "¬"); //this is to exclude bullshit that is marked as supralinear and thus not picked up by the non_word_regex
     const words_array = line.split(non_word_regex);
     const words_array_length = words_array.length;
     
@@ -292,36 +368,36 @@ const extractPunct = (line, verse_index) => {
     let counter = 0;
     for(const match of line.matchAll(non_word_regex)) {
         if(counter == 0 && words_array[0] == "") {
-            presentation_before = match[0].replaceAll("$", "коц").replaceAll("@", "к҃оц");
+            presentation_before = match[0].replaceAll("$", "коц").replaceAll("@", "к҃оц").replaceAll("£", "коц").replaceAll("¬", "⁛");
         }
         else if(counter + 1 == words_array_length && words_array[counter] == "") {
             presentation_before = "";
-            presentation_after = match[0].replaceAll("$", "коц").replaceAll("@", "к҃оц");
+            presentation_after = match[0].replaceAll("$", "коц").replaceAll("@", "к҃оц").replaceAll("£", "коц").replaceAll("¬", "⁛");
         }
         else {
             const actual_word = words_array[counter];
-            presentation_after = match[0].replaceAll("$", "коц").replaceAll("@", "к҃оц");
+            const cleaned_actual_word = deepCleanChuWord(actual_word);
+            presentation_after = match[0].replaceAll("$", "коц").replaceAll("@", "к҃оц").replaceAll("£", "коц").replaceAll("¬", "⁛");
 
-            processed_text += actual_word + "|" + presentation_before + "|" + presentation_after;
+            csv_text += actual_word/*.replaceAll("\uF002", "$").replaceAll("\uF102", "@")*/ + "|||" + cleaned_actual_word + "||" + sentence_no + "|" + presentation_before + "|" + presentation_after + "|10|" + subtitle_id + "|1|" + citation_part + "|" + book + "|" + chapter + "|" + verse + "|" + variant + "\n";
             presentation_before = "";
+
+            tnt_input_text += cleaned_actual_word + "\n";
         }
         counter++;
     }
     if(words_array[counter] != "") {
-        processed_text += words_array[counter] + "||";
+        const actual_word = words_array[counter];
+        const cleaned_actual_word = deepCleanChuWord(actual_word);
+        csv_text += actual_word/*.replaceAll("\uF002", "$").replaceAll("\uF102", "@")*/ + "|||" + cleaned_actual_word + "||" + sentence_no + "|" + presentation_before + "|" + presentation_after + "|10|" + subtitle_id + "|1|" + citation_part + "|" + book + "|" + chapter + "|" + verse + "|" + variant + "\n";
+
+        tnt_input_text += cleaned_actual_word + "\n";
     }
-
     
-
-    processed_text += "10|";
-
-
-    processed_text += "\n";
-    return processed_text;
+    sentence_no++;
+    chapter_prev = chapter;
 }
 
-let converted_text = "";
-let csv_text = "";
 async function convertASCII() {
 
     const ascii_file = readline.createInterface({input: ascii_file_stream});
@@ -384,9 +460,11 @@ async function convertASCII() {
             subtitle_no++;
         }
         if(new_verse) {
-            verse_text_variants.forEach(variant => {
+            verse_text_variants.forEach((variant, i) => {
                 const full_verse_text = variant.join(" ").trim();
                 converted_text += full_verse_text + "\n";
+                
+                separateWords(full_verse_text, [book_code_prev, chap_code_prev, verse_code_prev, i+1]); //for the word-per-line master-file
 
             });
             verse_text_variants.length = 0;
@@ -396,8 +474,6 @@ async function convertASCII() {
             verse_text_variants.push([converted_line.trim()]);
         }
         else {
-            //console.log(variant_code, variant_code_prev);
-            //console.log(verse_text_variants);
             verse_text_variants[variant_code].push(converted_line.trim());
         }
         
@@ -408,14 +484,229 @@ async function convertASCII() {
         line_code_prev = line_code;
         variant_code_prev = variant_code;
     }
-    verse_text_variants.forEach(variant => {
+    verse_text_variants.forEach((variant, i) => {
         const full_verse_text = variant.join(" ").trim();
         converted_text += full_verse_text + "\n";
+
+        separateWords(full_verse_text, [book_code_prev, chap_code_prev, verse_code_prev, i+1]); //for the word-per-line master-file
 
     });
     ascii_file.close();
 }
 
+const chu_deepClean_map = {
+    "\uF002" : "",
+    "\uF102" : "",
+    "$" : "", //these four are characters which I may or may not use to indicate supralinears in the database
+    "@" : "",
+    "—" : "",
+    "·" : "",
+    "̇" : "",
+    "\u0308" : "",
+    "Ѿ" : "от",
+    "ѿ" : "от",
+    "оⷮ" : "от",
+    "⁛" : "",
+    "῾" : "",
+    "᾽" : "",
+    "̅" : "",
+    "̄" : "",
+    "̀" : "",
+    ">" : "",
+    "/" : "",
+    "\"" : "",
+    "͡" : "",
+    "·" : "",
+    "̏" : "",
+    //" " : "",
+    "+" : "",
+    "⁜" : "",
+    "͠" : "",
+    "!" : "",
+    "҅" : "",
+    "҆" : "",
+    "҄" : "",
+    "͑" : "",
+    "͗" : "",
+    "̆" : "",
+    "̈" : "",
+    "̑" : "",
+    "̒" : "",
+    "̓" : "",
+    "̔" : "",
+    "̕" : "",
+    "͆" : "",
+    "͛" : "",
+    "͞" : "",
+    "ͨ" : "",
+    "҃" : "",
+    "҇" : "",
+    "ꙿ" : "",
+    "꙯" : "",
+    "'" : "",
+    "(" : "",
+    ")" : "",
+    "-" : "",
+    "." : "",
+    ":" : "",
+    "=" : "",
+    "?" : "",
+    "[" : "",
+    "]" : "",
+    "{" : "",
+    "}" : "",
+    "̂" : "",
+    "Ꙋ" : "оу",
+    "ОУ" : "оу",
+    "о҄у" : "оу",
+    "ꙑ" : "ъі",
+    "Оу" : "оу",
+    "ѹ" : "оу",
+    "о̑у" : "оу",
+    "ꙋ" : "оу",
+    "A" : "а",
+    "O" : "о",
+    "E" : "е",
+    "C" : "с",
+    "a" : "а",
+    "o" : "о",
+    "e" : "е",
+    "c" : "с",
+    "ы" : "ьі",
+    "ѵ" : "у",
+    "Ꙃ" : "ѕ",
+    "Ћ" : "ꙉ",
+    "y" : "у",
+    "ꙃ" : "ѕ",
+    "ћ" : "ꙉ",
+    "Ⱕ" : "ѧ",
+    "Я" : "ꙗ",
+    "ⱕ" : "ѧ",
+    "я" : "ꙗ",
+    "Ҍ" : "ѣ",
+    "ҍ" : "ѣ",
+    "Ї" : "і",
+    "ї" : "і",
+    "X" : "х",
+    "x" : "х",
+    "ѩ" : "ѧ",
+    "Ѩ" : "ѧ",
+    "щ" : "шт",
+    "Щ" : "шт",
+    "и" : "і",
+    "И" : "і",
+    "ꙇ" : "і",
+    "Ꙇ" : "і",
+    "ⰹ" : "і",
+    "ѡ" : "о",
+    "Ѡ" : "о",
+    "ꙙ" : "ѧ",
+    "Ꙙ" : "ѧ",
+    "А" : "а",
+    "Б" : "б",
+    "Ц" : "ц",
+    "Г" : "г",
+    "Д" : "д",
+    "Е" : "е",
+    "Ж" : "ж",
+    "Ѕ" : "ѕ",
+    "З" : "з",
+    "І" : "і",
+    "Ꙉ" : "ꙉ",
+    "ђ" : "г",
+    "Ђ" : "г",
+    "К" : "к",
+    "Л" : "л",
+    "М" : "м",
+    "Н" : "н",
+    "О" : "о",
+    "П" : "п",
+    "Р" : "р",
+    "С" : "с",
+    "Т" : "т",
+    "Ѹ" : "оу",
+    "Ф" : "ф",
+    "Х" : "х",
+    "Ч" : "ч",
+    "Ш" : "ш",
+    "Ъ" : "ъ",
+    "Ь" : "ь",
+    "Ѣ" : "ѣ",
+    "Ю" : "ю",
+    "Ѫ" : "ѫ",
+    "Ѭ" : "ѭ",
+    "В" : "в",
+    "Ѵ" : "у",
+    "Ѳ" : "ѳ",
+    "Ѧ" : "ѧ",
+    "ꙁ" : "з",
+    "Ꙁ" : "з",
+    "ѭ̑" : "ѭ",
+    "ѥ" : "е",
+    "Ѥ" : "е",
+    "ꙉ" : "г",
+    "ӱ" : "у",
+    "ӑ" : "а",
+    "У" : "у",
+    "ѿ" : "от",
+    "ѱ" : "пс",
+    "Ѱ" : "пс",
+    "ѻ" : "о",
+    "ⷠ" : "б",
+    "ⷡ" : "в",
+    "ⷢ" : "г",
+    "ⷣ" : "д",
+    "ⷦ" : "к",
+    "ⷧ" : "л",
+    "ⷩ" : "н",
+    "ⷪ" : "о",
+    "ⷫ" : "п",
+    "ⷬ" : "р",
+    "ⷭ" : "с",
+    "ⷮ" : "т",
+    "ⷯ" : "х",
+    "ⷰ" : "ц",
+    "ⷱ" : "ч",
+    "ⷸ" : "г",
+    "ȥ" : "з",
+    "ӡ" : "з",
+    "Ⱒ" : "х",
+    "ⱒ" : "х",
+    "Ӡ" : "з",
+    "й" : "і",
+    "ѷ" : "у",
+    "ⱔ" : "ѧ",
+    "Ⱉ" : "о",
+    "Ө" : "ѳ",
+    "є" : "е",
+    "ʼ" : "",
+    "ⸯ" : "",
+    "’" : "",
+    "ꙗ" : "ѣ",
+    "ѕ" : "з",
+    "шю" : "шоу",
+    "чю" : "чоу",
+    "жю" : "жоу",
+    "ждю" : "ждоу",
+    "штю" : "штоу",
+    "цю" : "цоу",
+    "шѭ" : "шѫ",
+    "чѭ" : "чѫ",
+    "жѭ" : "жѫ",
+    "ждѭ" : "ждѫ",
+    "цѭ" : "цѫ",
+    "штѭ" : "штѫ",
+};
+
+const deepCleanChuWord = (dirty_word) => {
+    for(const key in chu_deepClean_map) {
+        dirty_word = dirty_word.replaceAll(key, chu_deepClean_map[key]);
+    }
+    return dirty_word;
+};
+
 await convertASCII();
 fs.writeFileSync("assem_"+script+"_verse_per_line.txt", converted_text);
-//fs.writeFileSync("assem_"+script+"_presentation_after_titles.csv", csv_text);
+fs.writeFileSync("assem_"+script+"_full_words.csv", csv_text);
+fs.writeFileSync("tnt_input_assem.tt", tnt_input_text);
+
