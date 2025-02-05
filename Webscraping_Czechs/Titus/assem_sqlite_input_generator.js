@@ -296,6 +296,22 @@ let sqlite_subtitles_text = "";
 
 const non_word_regex = new RegExp(/[⁛҅—¥қғ=:·\.\+\$@£¬\s]+/ug);
 
+const punctuationifyCyrKOC = (text) => {
+    return text.replaceAll("коц", "$").replaceAll("к҃оц", "@").replaceAll("коц", "£").replaceAll("⁛", "¬").replaceAll(":", "¥").replaceAll("...", "қ").replaceAll("к҃оц", "ғ");
+};
+const restoreCyrKOC = (text) => {
+    return text.replaceAll("$", "коц").replaceAll("@", "к҃оц").replaceAll("£", "коц").replaceAll("¬", "⁛").replaceAll("¥", ":").replaceAll("қ", "...").replaceAll("ғ", "к҃оц");
+};
+const punctuationifyGlagKOC = (text) => {
+    return text.replaceAll("ⰽⱁⱌ", "$").replaceAll("ⰽ҃ⱁⱌ", "@").replaceAll("ⰽⱁⱌ", "£").replaceAll("ⰽ҃ⱁⱌ", "ғ").replaceAll("⁛", "¬").replaceAll(":", "¥").replaceAll("...", "қ");
+};
+const restoreGlagKOC = (text) => {
+    return text.replaceAll("$", "ⰽⱁⱌ").replaceAll("@", "ⰽ҃ⱁⱌ").replaceAll("£", "ⰽⱁⱌ").replaceAll("ғ", "ⰽ҃ⱁⱌ").replaceAll("¬", "⁛").replaceAll("¥", ":").replaceAll("қ", "...");
+};
+
+const punctuationifyKOC = script == "glag" ? punctuationifyGlagKOC : punctuationifyCyrKOC;
+const restoreKOC = script == "glag" ? restoreGlagKOC : restoreCyrKOC;
+
 const separateWords = (line, bible_index_arr) => {
 
     tnt_input_text += "%%"+sentence_no+"\n";
@@ -306,7 +322,7 @@ const separateWords = (line, bible_index_arr) => {
     const variant = bible_index_arr[3];
     const citation_part = citationPartGenerator(book, chapter, verse);
 
-    line = line.replaceAll("коц", "$").replaceAll("к҃оц", "@").replaceAll("коц", "£").replaceAll("⁛", "¬").replaceAll(":", "¥").replaceAll("...", "қ").replaceAll("к҃оц", "ғ");
+    line = punctuationifyKOC(line);
     const chunks = line.split(/\s+/ug);
 
     const chunks_separated = new Array();
@@ -373,8 +389,8 @@ const separateWords = (line, bible_index_arr) => {
 
     for(const word_arr of final_array) {
         const actual_word = word_arr[0];
-        const presentation_before = word_arr[1].replaceAll("$", "коц").replaceAll("@", "к҃оц").replaceAll("£", "коц").replaceAll("¬", "⁛").replaceAll("¥", ":").replaceAll("қ", "...").replaceAll("ғ", "к҃оц");
-        const presentation_after = word_arr[2].replaceAll("$", "коц").replaceAll("@", "к҃оц").replaceAll("£", "коц").replaceAll("¬", "⁛").replaceAll("¥", ":").replaceAll("қ", "...").replaceAll("ғ", "к҃оц");
+        const presentation_before = restoreKOC(word_arr[1]);
+        const presentation_after = restoreKOC(word_arr[2]);
         const cleaned_actual_word = deepCleanChuWord(actual_word);
 
         
