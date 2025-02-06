@@ -43,7 +43,7 @@ std::unordered_map <std::string, int> pos_map = {
 int main(int argc, char *argv[]) {
     //std::cout.setstate(std::ios_base::failbit);
     sqlite3* DB;
-    if(!sqlite3_open("chu_corpus_untagged_including_autorecon_autotagged_and_assemanianus.db", &DB)) {
+    if(!sqlite3_open("chu_corpus_assem_glag.db", &DB)) {
 
 
       sqlite3_exec(DB, "DROP TABLE IF EXISTS greek_alignments;CREATE TABLE greek_alignments (chu_tokno INTEGER PRIMARY KEY, gk_word TEXT, gk_lemma_id INTEGER, gk_morph_tag TEXT, gk_pos INTEGER)", nullptr, nullptr, nullptr);
