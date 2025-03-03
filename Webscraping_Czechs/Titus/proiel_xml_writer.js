@@ -56,7 +56,14 @@ async function readAssemFile() {
         const presentation_before = row[6];
         const presentation_after = row[7];
         const subtitle_no = Number(row[9]);
-        const citation_part = row[11];
+        let citation_part = row[11];
+        const variant_number = Number(row[15]);
+
+        if(citation_part.trim() == "") {
+            console.log("Citation-part empty for line: ", line);
+        }
+
+        if(variant_number > 1) citation_part += "." + String(variant_number - 1);
 
         if(sentence_id_prev > 0 && sentence_id > sentence_id_prev) {
            
