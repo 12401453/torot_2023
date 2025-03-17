@@ -1,4 +1,16 @@
 const orv_deepClean_map = {
+    "\uF002" : "",
+    "\uF102" : "",
+    "$" : "", //these four are characters which I may or may not use to indicate supralinears in the database
+    "@" : "",
+    "—" : "",
+    "·" : "",
+    "̇" : "",
+    "\u0308" : "",
+    "Ѿ" : "от",
+    "ѿ" : "от",
+    "оⷮ" : "от",
+    "⁛" : "",
     "῾" : "",
     "᾽" : "",
     "̅" : "",

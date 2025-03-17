@@ -22,6 +22,7 @@ let lems_per_text_count = 0;
 let current_file_number = 0;
 
 const chu_deepClean_map = {
+    "—" : "",
     "̇" : "",
     "\u0308" : "",
     "ѿ" : "от",
