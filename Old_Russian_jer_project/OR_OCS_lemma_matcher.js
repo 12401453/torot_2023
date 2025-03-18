@@ -197,7 +197,7 @@ const fs = require('node:fs');
 const readline = require('readline');
 
 const read_stream1 = fs.createReadStream("lemmas_with_text_occurence_gdrive.csv");
-const read_stream2 = fs.createReadStream("oldest_orv_lemmas.csv");
+const read_stream2 = fs.createReadStream("all_orv_lemmas.csv");
 read_stream1.on('error', () => {
   console.log("first file doesn't exist");
   process.exit(-1);
@@ -211,8 +211,8 @@ const output_filename = "orv_ocs_lemma_matches.csv";
 
 let csv_string = "";
 
-const ocs_lemma_map = new Map();
-const lcs_to_OR_torot_lemma_set = new Set();
+const ocs_lemma_form_map = new Map();
+const lcs_to_OR_torot_lemma_map = new Map();
 
 
 
@@ -220,9 +220,11 @@ async function readLemmasSpreadsheet() {
   const lemma_spreadsheet_file = readline.createInterface({input: read_stream1});
   for await(const line of lemma_spreadsheet_file) {
     const row = line.split("|");
-    const ocs_pos_lemma_combo = row[2]+row[0];
+    const pos = row[2];
+    const ocs_pos_lemma_combo = pos+row[0];
     const ocs_id = Number(row[1]);
-    let ocs_lemma_lcs = row[3];
+    const original_ocs_lemma_lcs = row[3];
+    let ocs_lemma_lcs = original_ocs_lemma_lcs;
     const pv3_lemma_form = row[5];
     const inflection_class = row[20];
     
@@ -231,9 +233,8 @@ async function readLemmasSpreadsheet() {
       else if(inflection_class.includes("PV3")) ocs_lemma_lcs = applyPV3(ocs_lemma_lcs);
       if(row[2] == "A-" && (ocs_lemma_lcs.slice(-1) == "ь" || ocs_lemma_lcs.slice(-1) == "ъ")) ocs_lemma_lcs = ocs_lemma_lcs + "jь";
 
-      ocs_lemma_map.set(ocs_pos_lemma_combo, ocs_id);
-      //lcs_to_OR_torot_lemma_set.add(torotOldRus(ocs_lemma_lcs));
-      console.log(torotOldRus(ocs_lemma_lcs));
+      ocs_lemma_form_map.set(ocs_pos_lemma_combo, [ocs_id, original_ocs_lemma_lcs, inflection_class]);
+      lcs_to_OR_torot_lemma_map.set(pos+torotOldRus(ocs_lemma_lcs), [ocs_id, original_ocs_lemma_lcs, inflection_class]);
     }
 
   };
@@ -245,7 +246,15 @@ async function readORVLemmasFile() {
 
   for await(const line of lemmas_file) {
     const row = line.split(",");
-    new_ids_map.set(row[2]+row[1], Number(row[0]));
+    const orv_lemma_form = row[1];
+    const orv_pos = row[2];
+
+    if(lcs_to_OR_torot_lemma_map.has(orv_pos+orv_lemma_form)) {
+      csv_string += orv_lemma_form + "|" + orv_pos + "|" + lcs_to_OR_torot_lemma_map.get(orv_pos+orv_lemma_form).join("|") + "\n";
+    }
+    else if(ocs_lemma_form_map.has(orv_pos+orv_lemma_form)) {
+      csv_string += orv_lemma_form + "|" + orv_pos + "|" + ocs_lemma_form_map.get(orv_pos+orv_lemma_form).join("|") + "\n";
+    }
   }
   lemmas_file.close();
 }
@@ -254,9 +263,9 @@ async function readORVLemmasFile() {
 
 
 async function createLemmaIdMap() {
-  //await readORVLemmasFile();
   await readLemmasSpreadsheet();
-  //fs.writeFileSync(output_filename, csv_string);
+  await readORVLemmasFile();
+  fs.writeFileSync(output_filename, csv_string);
 
 }
 
