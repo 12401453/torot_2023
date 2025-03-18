@@ -2,7 +2,7 @@
 
 const dl_tl_regex = /[dt][ĺl][^̥]/;
 const ORT_regex = /[eo][rl]([tŕrpsšdfgћђklĺzžxčvbnńmǯ\+]|$)/
-const PV2_regex = /[kgx]v?(?:[ěęeiь]|ŕ̥|ĺ̥)/;
+const PV2_regex = /(?<!s)[kgx]v?([ěęeiь]|ŕ̥|ĺ̥)/;
 const PV3_regex = /[ьię][kgx][auǫ]/;
 const tense_jer_regex = /[ьъ]j[Ǣeiьęǫu]/;
 
@@ -56,6 +56,18 @@ const polnoGlasie = (lcs_word) => {
   }
   return lcs_word;
 };
+const metaThesis = (lcs_word) => {
+  let ORT_pos =  lcs_word.search(ORT_regex);
+
+  while(ORT_pos != -1) {
+    const ort_vowel = lcs_word.at(ORT_pos);
+    const ort_liquid = lcs_word.at(ORT_pos + 1);
+    const lengthened_vowel = ort_vowel == 'e' ? 'ě' : 'a';
+    lcs_word = lcs_word.slice(0, ORT_pos) + ort_liquid + lengthened_vowel + lcs_word.slice(ORT_pos + 2);
+    ORT_pos = lcs_word.search(ORT_regex);
+  }
+  return lcs_word;
+}
 
 const applyPV2 = (lcs_word) => {
   let PV2_pos = lcs_word.search(PV2_regex);
@@ -107,6 +119,11 @@ const orv_torot_mappings = {
   'ьj' : 'и',
   'jo' : 'о',
   'jě' : 'ѣ',
+  'čę' : 'čǢ',
+  'šę' : 'šǢ',
+  'žę' : 'žǢ',
+  'ћę' : 'ћǢ',
+  'ђę' : 'ђǢ',
   '' : '',
   'ŕ̥' : 'ьр',
   'r̥' : 'ър',
@@ -117,7 +134,7 @@ const orv_torot_mappings = {
   'žǯ' : 'жж',
   'žђ' : 'жж',
   'zr' : 'здр',
-  'ǵ' : 'ꙉ',
+  'ǵ' : 'г',
   'ḱ' : 'к',
   'x́' : 'х',
   'ћ' : 'ч',
@@ -161,8 +178,107 @@ const orv_torot_mappings = {
   'ĺ' : 'л',
   'ŕ' : 'р',
 }
+const orv_chSl_torot_mappings = {
+  'egъd' : 'egd',
+  'ъgъd' : 'ъgd',
+  'ьgъd' : 'ьgd',
+  'sš' : 'ш',
+  'bv' : 'б',
+  'ŕǢ' : 'ря',
+  'ńǢ' : 'ня',
+  'ĺǢ' : 'ля',
+  'śa' : 'ся',
+  'jǢ' : 'я',
+  'ŕu' : 'рю',
+  'ńu' : 'ню',
+  'ĺu' : 'лю',
+  'śu' : 'сю',
+  'ju' : 'ю',
+  'ŕǫ' : 'рю',
+  'ńǫ' : 'ню',
+  'ĺǫ' : 'лю',
+  'jǫ' : 'ю',
+  'śǫ' : 'сю',
+  'ŕe' : 'ре',
+  'ŕi' : 'ри',
+  'ŕь' : 'рь',
+  'ŕę' : 'ря',
+  'ńe' : 'не',
+  'ńi' : 'ни',
+  'ńь' : 'нь',
+  'ńę' : 'ня',
+  'ĺe' : 'ле',
+  'ĺi' : 'ли',
+  'ĺь' : 'ль',
+  'ĺę' : 'ля',
+  'ję' : 'я',
+  'je' : 'е',
+  'ji' : 'и',
+  'jь' : 'и',
+  'ьj' : 'и',
+  'jo' : 'о',
+  'jě' : 'ѣ',
+  'čę' : 'čǢ',
+  'šę' : 'šǢ',
+  'žę' : 'žǢ',
+  'ћę' : 'ћǢ',
+  'ђę' : 'ђǢ',
+  '' : '',
+  'ŕ̥' : 'ьр',
+  'r̥' : 'ър',
+  'ĺ̥' : 'ьл',
+  'l̥' : 'ъл',
+  'šč' : 'щ',
+  'šћ' : 'щ',
+  'žǯ' : 'жд',
+  'žђ' : 'жд',
+  'zr' : 'здр',
+  'ǵ' : 'г',
+  'ḱ' : 'к',
+  'x́' : 'х',
+  'ћ' : 'щ',
+  'ђ' : 'жд',
+  'b' : 'б',
+  'p' : 'п',
+  'v' : 'в',
+  'f' : 'ф',
+  't' : 'т',
+  'd' : 'д',
+  's' : 'с',
+  'z' : 'з',
+  'ʒ' : 'з',
+  'ś' : 'с',
+  'c' : 'ц',
+  'k' : 'к',
+  'g' : 'г',
+  'x' : 'х',
+  'ü' : 'ѵ',
+  'y' : 'ы',
+  'č' : 'ч',
+  'š' : 'ш',
+  'ž' : 'ж',
+  'Ǣ' : 'а',
+  'a' : 'а',
+  'e' : 'е',
+  'ę' : 'я',
+  'ě' : 'ѣ',
+  'i' : 'и',
+  'ь' : 'ь',
+  'ъ' : 'ъ',
+  'o' : 'о',
+  'ǫ' : 'у',
+  'u' : 'у',
+  'l' : 'л',
+  'n' : 'н',
+  'm' : 'м',
+  'r' : 'р',
+  '+' : '',
+  'ń' : 'н',
+  'ĺ' : 'л',
+  'ŕ' : 'р',
+}
 
-const torotOldRus = (lcs_lemma, inflection_class, pv3_form=false) => {
+const torotOldRus = (lcs_lemma, ch_sl=false) => {
 
   if(lcs_lemma.includes("čьlově")) {
     lcs_lemma = lcs_lemma.replaceAll("čьlově", "čelově");
@@ -178,18 +294,18 @@ const torotOldRus = (lcs_lemma, inflection_class, pv3_form=false) => {
   lcs_lemma = yeetTlDl(lcs_lemma);
   //PV3 should be dealt with before the lcs_lemma is passed in
 
-  lcs_lemma = lengthenTenseJers(applyPV2(polnoGlasie(lcs_lemma)));
+  const ort_group_converter = ch_sl ? metaThesis : polnoGlasie;
 
-  for(const key in orv_torot_mappings) {
-    lcs_lemma = lcs_lemma.replaceAll(key, orv_torot_mappings[key]);
+  lcs_lemma = lengthenTenseJers(applyPV2(ort_group_converter(lcs_lemma)));
+
+  const orv_mappings = ch_sl ? orv_chSl_torot_mappings : orv_torot_mappings;
+
+  for(const key in orv_mappings) {
+    lcs_lemma = lcs_lemma.replaceAll(key, orv_mappings[key]);
   }
 
   return lcs_lemma;
 }
-
-
-
-
 /////////////////////////////////////////////////////////////////////////OLD RUSSIAN CONVERSION SHIT////////////////////////////////////////^^^^^^^^
 
 const fs = require('node:fs');
@@ -213,6 +329,7 @@ let csv_string = "";
 
 const ocs_lemma_form_map = new Map();
 const lcs_to_OR_torot_lemma_map = new Map();
+const lcs_to_OR_ChSl_torot_lemma_map = new Map();
 
 
 
@@ -235,6 +352,7 @@ async function readLemmasSpreadsheet() {
 
       ocs_lemma_form_map.set(ocs_pos_lemma_combo, [ocs_id, original_ocs_lemma_lcs, inflection_class]);
       lcs_to_OR_torot_lemma_map.set(pos+torotOldRus(ocs_lemma_lcs), [ocs_id, original_ocs_lemma_lcs, inflection_class]);
+      lcs_to_OR_ChSl_torot_lemma_map.set(pos+torotOldRus(ocs_lemma_lcs, true), [ocs_id, original_ocs_lemma_lcs, inflection_class]);
     }
 
   };
@@ -251,6 +369,9 @@ async function readORVLemmasFile() {
 
     if(lcs_to_OR_torot_lemma_map.has(orv_pos+orv_lemma_form)) {
       csv_string += orv_lemma_form + "|" + orv_pos + "|" + lcs_to_OR_torot_lemma_map.get(orv_pos+orv_lemma_form).join("|") + "\n";
+    }
+    else if(lcs_to_OR_ChSl_torot_lemma_map.has(orv_pos+orv_lemma_form)) {
+      csv_string += orv_lemma_form + "|" + orv_pos + "|" + lcs_to_OR_ChSl_torot_lemma_map.get(orv_pos+orv_lemma_form).join("|") + "\n";
     }
     else if(ocs_lemma_form_map.has(orv_pos+orv_lemma_form)) {
       csv_string += orv_lemma_form + "|" + orv_pos + "|" + ocs_lemma_form_map.get(orv_pos+orv_lemma_form).join("|") + "\n";

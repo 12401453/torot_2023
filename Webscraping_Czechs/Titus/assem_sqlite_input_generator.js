@@ -553,6 +553,7 @@ async function convertASCII() {
 }
 
 const chu_deepClean_map = {
+    "j" : "і",
     "\uF002" : "",
     "\uF102" : "",
     "$" : "", //these four are characters which I may or may not use to indicate supralinears in the database
