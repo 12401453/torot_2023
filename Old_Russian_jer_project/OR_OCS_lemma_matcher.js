@@ -1,11 +1,203 @@
 #!/usr/bin/node
 
+const dl_tl_regex = /[dt][ĺl][^̥]/;
+const ORT_regex = /[eo][rl]([tŕrpsšdfgћђklĺzžxčvbnńmǯ\+]|$)/
+const PV2_regex = /[kgx]v?(?:[ěęeiь]|ŕ̥|ĺ̥)/;
+const PV3_regex = /[ьię][kgx][auǫ]/;
+const tense_jer_regex = /[ьъ]j[Ǣeiьęǫu]/;
+
+const PV2_map = new Map();
+PV2_map.set('k', 'c');
+PV2_map.set('g', 'ʒ');
+PV2_map.set('x', 'ś');
+
+const yeetTlDl = (lcs_form) => {
+  let dl_tl_pos = lcs_form.search(dl_tl_regex);
+  while(dl_tl_pos != -1) {
+    lcs_form = lcs_form.slice(0, dl_tl_pos) + lcs_form.slice(dl_tl_pos + 1);
+    dl_tl_pos = lcs_form.search(dl_tl_regex);
+  }
+  return lcs_form;
+}
+
+const applyPV3 = (lcs_form) => {
+  let PV3_pos = lcs_form.search(PV3_regex);
+  while(PV3_pos != -1) {
+    const velar = lcs_form.at(PV3_pos + 1);
+    lcs_form = lcs_form.slice(0, PV3_pos + 1) + PV2_map.get(velar) + lcs_form.slice(PV3_pos + 2);
+    PV3_pos = lcs_form.search(PV3_regex);
+  }
+  return lcs_form;
+};
+
+const lengthenTenseJers = (lcs_form) => {
+  let tense_jer_pos = lcs_form.search(tense_jer_regex);
+  while(tense_jer_pos != -1) {
+    const jer = lcs_form.at(tense_jer_pos);
+    const lengthened_jer = jer == 'ъ' ? 'y' : 'i';
+    lcs_form = lcs_form.slice(0, tense_jer_pos) + lengthened_jer + lcs_form.slice(tense_jer_pos + 1);
+    tense_jer_pos = lcs_form.search(tense_jer_regex);
+  }
+  return lcs_form;
+};
+
+const polnoGlasie = (lcs_word) => {
+  let ORT_pos =  lcs_word.search(ORT_regex);
+  while(ORT_pos != -1) {
+
+    let ort_vowel = lcs_word.at(ORT_pos);
+    let ort_liquid = lcs_word.at(ORT_pos + 1);
+    if(ort_vowel == "e" && ort_liquid == "l") {
+      ort_vowel = "o";
+    }
+    if(ORT_pos == 0) lcs_word = lcs_word.slice(0, ORT_pos) + ort_liquid + ort_vowel + lcs_word.slice(ORT_pos + 2);
+    else lcs_word = lcs_word.slice(0, ORT_pos) + ort_vowel + ort_liquid + ort_vowel + lcs_word.slice(ORT_pos + 2);
+    ORT_pos = lcs_word.search(ORT_regex);
+  }
+  return lcs_word;
+};
+
+const applyPV2 = (lcs_word) => {
+  let PV2_pos = lcs_word.search(PV2_regex);
+  while(PV2_pos != -1) {
+    const PV2_cons = lcs_word.at(PV2_pos);
+    lcs_word = lcs_word.slice(0, PV2_pos) + PV2_map.get(PV2_cons) + lcs_word.slice(PV2_pos + 1);
+    PV2_pos = lcs_word.search(PV2_regex);
+  }
+  return lcs_word;
+};
+
+const orv_torot_mappings = {
+  'egъd' : 'egd',
+  'ъgъd' : 'ъgd',
+  'ьgъd' : 'ьgd',
+  'sš' : 'ш',
+  'bv' : 'б',
+  'ŕǢ' : 'ря',
+  'ńǢ' : 'ня',
+  'ĺǢ' : 'ля',
+  'śa' : 'ся',
+  'jǢ' : 'я',
+  'ŕu' : 'рю',
+  'ńu' : 'ню',
+  'ĺu' : 'лю',
+  'śu' : 'сю',
+  'ju' : 'ю',
+  'ŕǫ' : 'рю',
+  'ńǫ' : 'ню',
+  'ĺǫ' : 'лю',
+  'jǫ' : 'ю',
+  'śǫ' : 'сю',
+  'ŕe' : 'ре',
+  'ŕi' : 'ри',
+  'ŕь' : 'рь',
+  'ŕę' : 'ря',
+  'ńe' : 'не',
+  'ńi' : 'ни',
+  'ńь' : 'нь',
+  'ńę' : 'ня',
+  'ĺe' : 'ле',
+  'ĺi' : 'ли',
+  'ĺь' : 'ль',
+  'ĺę' : 'ля',
+  'ję' : 'я',
+  'je' : 'е',
+  'ji' : 'и',
+  'jь' : 'и',
+  'ьj' : 'и',
+  'jo' : 'о',
+  'jě' : 'ѣ',
+  '' : '',
+  'ŕ̥' : 'ьр',
+  'r̥' : 'ър',
+  'ĺ̥' : 'ьл',
+  'l̥' : 'ъл',
+  'šč' : 'щ',
+  'šћ' : 'щ',
+  'žǯ' : 'жж',
+  'žђ' : 'жж',
+  'zr' : 'здр',
+  'ǵ' : 'ꙉ',
+  'ḱ' : 'к',
+  'x́' : 'х',
+  'ћ' : 'ч',
+  'ђ' : 'ж',
+  'b' : 'б',
+  'p' : 'п',
+  'v' : 'в',
+  'f' : 'ф',
+  't' : 'т',
+  'd' : 'д',
+  's' : 'с',
+  'z' : 'з',
+  'ʒ' : 'з',
+  'ś' : 'с',
+  'c' : 'ц',
+  'k' : 'к',
+  'g' : 'г',
+  'x' : 'х',
+  'ü' : 'ѵ',
+  'y' : 'ы',
+  'č' : 'ч',
+  'š' : 'ш',
+  'ž' : 'ж',
+  'Ǣ' : 'а',
+  'a' : 'а',
+  'e' : 'е',
+  'ę' : 'я',
+  'ě' : 'ѣ',
+  'i' : 'и',
+  'ь' : 'ь',
+  'ъ' : 'ъ',
+  'o' : 'о',
+  'ǫ' : 'у',
+  'u' : 'у',
+  'l' : 'л',
+  'n' : 'н',
+  'm' : 'м',
+  'r' : 'р',
+  '+' : '',
+  'ń' : 'н',
+  'ĺ' : 'л',
+  'ŕ' : 'р',
+}
+
+const torotOldRus = (lcs_lemma, inflection_class, pv3_form=false) => {
+
+  if(lcs_lemma.includes("čьlově")) {
+    lcs_lemma = lcs_lemma.replaceAll("čьlově", "čelově");
+  }
+  if(lcs_lemma.startsWith("jedin")) {
+    lcs_lemma = lcs_lemma.replace("jedin", "odin");
+  }
+  else if(lcs_lemma.startsWith("jezer")) {
+    lcs_lemma = lcs_lemma.replace("jezer", "ozer");
+  }
+
+  lcs_lemma = lcs_lemma.replace(/^ak/, "jǢk").replace(/^av/, "jǢv");
+  lcs_lemma = yeetTlDl(lcs_lemma);
+  //PV3 should be dealt with before the lcs_lemma is passed in
+
+  lcs_lemma = lengthenTenseJers(applyPV2(polnoGlasie(lcs_lemma)));
+
+  for(const key in orv_torot_mappings) {
+    lcs_lemma = lcs_lemma.replaceAll(key, orv_torot_mappings[key]);
+  }
+
+  return lcs_lemma;
+}
+
+
+
+
+/////////////////////////////////////////////////////////////////////////OLD RUSSIAN CONVERSION SHIT////////////////////////////////////////^^^^^^^^
+
 const fs = require('node:fs');
 
 const readline = require('readline');
 
 const read_stream1 = fs.createReadStream("lemmas_with_text_occurence_gdrive.csv");
-const read_stream2 = fs.createReadStream("orv_lemmas.csv");
+const read_stream2 = fs.createReadStream("oldest_orv_lemmas.csv");
 read_stream1.on('error', () => {
   console.log("first file doesn't exist");
   process.exit(-1);
@@ -20,6 +212,7 @@ const output_filename = "orv_ocs_lemma_matches.csv";
 let csv_string = "";
 
 const ocs_lemma_map = new Map();
+const lcs_to_OR_torot_lemma_set = new Set();
 
 
 
@@ -29,14 +222,25 @@ async function readLemmasSpreadsheet() {
     const row = line.split("|");
     const ocs_pos_lemma_combo = row[2]+row[0];
     const ocs_id = Number(row[1]);
+    let ocs_lemma_lcs = row[3];
+    const pv3_lemma_form = row[5];
+    const inflection_class = row[20];
+    
+    if(ocs_lemma_lcs.trim() !== "") {
+      if(pv3_lemma_form.trim() !== "") ocs_lemma_lcs = row[5];
+      else if(inflection_class.includes("PV3")) ocs_lemma_lcs = applyPV3(ocs_lemma_lcs);
+      if(row[2] == "A-" && (ocs_lemma_lcs.slice(-1) == "ь" || ocs_lemma_lcs.slice(-1) == "ъ")) ocs_lemma_lcs = ocs_lemma_lcs + "jь";
 
-    ocs_lemma_map.set(old_pos_lemma_combo, ocs_id);
+      ocs_lemma_map.set(ocs_pos_lemma_combo, ocs_id);
+      //lcs_to_OR_torot_lemma_set.add(torotOldRus(ocs_lemma_lcs));
+      console.log(torotOldRus(ocs_lemma_lcs));
+    }
 
   };
   lemma_spreadsheet_file.close();
 }
 
-async function readORVFile() {
+async function readORVLemmasFile() {
   const lemmas_file = readline.createInterface({input: read_stream2});
 
   for await(const line of lemmas_file) {
@@ -50,9 +254,9 @@ async function readORVFile() {
 
 
 async function createLemmaIdMap() {
-  await readLemmasFile();
+  //await readORVLemmasFile();
   await readLemmasSpreadsheet();
-  fs.appendFileSync(output_filename, csv_string);
+  //fs.writeFileSync(output_filename, csv_string);
 
 }
 

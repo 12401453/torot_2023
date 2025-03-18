@@ -41,10 +41,13 @@ std::unordered_map <std::string, int> pos_map = {
 
 
 int main(int argc, char *argv[]) {
+  if(argc < 2) {
+    std::cout << "Must specify database-file to add allignments to\n";
+    return -1;
+  }
     //std::cout.setstate(std::ios_base::failbit);
     sqlite3* DB;
-    if(!sqlite3_open("chu_corpus_assem_glag.db", &DB)) {
-
+    if(!sqlite3_open(argv[1], &DB)) {
 
       sqlite3_exec(DB, "DROP TABLE IF EXISTS greek_alignments;CREATE TABLE greek_alignments (chu_tokno INTEGER PRIMARY KEY, gk_word TEXT, gk_lemma_id INTEGER, gk_morph_tag TEXT, gk_pos INTEGER)", nullptr, nullptr, nullptr);
       sqlite3_exec(DB, "DROP TABLE IF EXISTS greek_lemmas;CREATE TABLE greek_lemmas (gk_lemma_id INTEGER PRIMARY KEY, gk_lemma_pos INTEGER, gk_lemma_form TEXT)", nullptr, nullptr, nullptr);
@@ -60,8 +63,8 @@ int main(int argc, char *argv[]) {
 
       sqlite3_prepare_v2(DB, sql, -1, &statement, nullptr);
 
-      std::ifstream aligned_greek_file(argv[1]);
-      std::ifstream gk_lemmas_file(argv[2]);
+      std::ifstream aligned_greek_file("zogr_db_gk_align.csv");
+      std::ifstream gk_lemmas_file("grc_lemmas.csv");
       std::string greek_line;
       std::vector<std::string> greek_row;
       greek_row.reserve(5);

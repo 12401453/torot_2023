@@ -59,3 +59,12 @@ Loads of long-adjectives in your Kiev Folia are marked as strong
 камꙑ is marked as neuter in a few places which means it gets reconstructed with no endings, because it should be masculine
 
 Psalm 140 ОУслъішѩтъ сѩ г҃лі моі ѣко възмогѫ. , the last word is tagged as 3rdpl indicative, but isnt it both formally and syntactically a subjunctive / optative?
+
+An incorrect Nb благъ lemma occurs once in Suprs. for what should be the adjective
+An incorrect A- нечьсть occurs once in Supr. and twice in Zogr.; in Supr. it is actually the noun нечьсть and in Zogr. it should be the adj нечистъ
+вьсꙗко A- once in Zogr. for вьсꙗкъ
+мѫчѣница Nb once in Kiev Missal (misspelt lemma)
+въкоупьнь A- in KF (misspelt)
+съ Pd in KF, Vita Const and Vita Meth (and Supr OLD) seems to be a misspelt duplicate of сь
+
+Kiev Missal такозе wrongly lemmatised as такоже
