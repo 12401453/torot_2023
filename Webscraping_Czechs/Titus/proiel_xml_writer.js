@@ -34,6 +34,7 @@ async function readAssemFile() {
 
     xml_string += "  <source id=\"assem\" language=\"chu\">\n";
     xml_string += "    <title>Codex Assemanianus</title>\n";
+    xml_string += "    <citation-part>Assem.</citation-part>\n";
     xml_string += "    <license>CC BY-NC-SA 4.0</license>\n";
     xml_string += "    <license-url>https://creativecommons.org/licenses/by-nc-sa/4.0/</license-url>\n";
     xml_string += "    <annotator>Javascript</annotator>\n";
