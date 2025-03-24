@@ -1,0 +1,1 @@
+Is it worth keeping the tilde-abbreviation character in the deep-cleaned text-forms, since this is pretty consistently used as the abbreviation-character and might be useful to teach the network to recognise abbreviations better?

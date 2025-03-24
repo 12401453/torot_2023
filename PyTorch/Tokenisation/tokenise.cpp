@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include <map>
 #include <cstdint>
+#include <thread>
 #include <list>
 
 std::unordered_map<std::string, std::uint16_t> base_vocab {
@@ -135,13 +136,11 @@ std::vector<std::vector<std::uint16_t>> numerifyWords(std::string cleaned_text_p
     return numerifiedWords;
 }
 
-std::vector<std::uint16_t> tokeniseWord(std::vector<std::uint16_t> source_word_vec) {
+std::vector<std::uint16_t> tokeniseWord(const std::vector<std::uint16_t> &source_word_vec) {
     std::vector<std::uint16_t> word_vec = source_word_vec;
     std::vector<std::uint16_t> merged_word_vec;
     merged_word_vec.reserve(8);
     for(const auto &merge_rule : merge_rules_vec) {
-    //for(int i = 0; i < 1000; i++) {
-        //auto merge_rule = merge_rules_vec[i];
         int word_vec_index_second = 1;
         int word_vec_length = word_vec.size();
         bool merger_happened = false;
@@ -158,26 +157,39 @@ std::vector<std::uint16_t> tokeniseWord(std::vector<std::uint16_t> source_word_v
             else {
                 merged_word_vec.push_back(first_charcode);
                 merger_happened = false;
-                //merged_word_vec.push_back(second_charcode);
             }
             word_vec_index_second++;
-
-            // for(auto &num : merged_word_vec) {
-            //     std::cout << num << " ";
-            // }
-            // std::cout << "\n";
         }
+
         if(!merger_happened) merged_word_vec.push_back(word_vec.back());
         else if(word_vec_index_second == word_vec_length) merged_word_vec.push_back(word_vec.back());
         word_vec = merged_word_vec;
-        // for(auto &num : merged_word_vec) {
-        //     std::cout << num << " ";
-        // }
-        // std::cout << "\n";
         merged_word_vec.clear();
         if(word_vec.size() == 1) break;
     }
     return word_vec;
+}
+
+void tokenisePart(const std::vector<std::uint16_t>& numerified_word, std::ostringstream& csv_text) {
+    std::ostringstream charcode_tokenised, text_tokenised;
+    for(const auto& charcode : tokeniseWord(numerified_word)) {
+        charcode_tokenised << charcode << ' ';
+        text_tokenised << total_vocab_reversed.at(charcode) << '|';
+    }
+    charcode_tokenised.seekp(-1, std::ios_base::cur);
+    charcode_tokenised << '\0';
+    text_tokenised.seekp(-1, std::ios_base::cur);
+    text_tokenised << '\0';
+    //std::cout << charcode_tokenised.str().c_str() << ',' << text_tokenised.str().c_str() << '\n';
+    csv_text << charcode_tokenised.str().c_str() << ',' << text_tokenised.str().c_str() << '\n';
+}
+
+void worker(decltype(std::vector<std::vector<std::uint16_t>>().begin()) start, decltype(std::vector<std::vector<std::uint16_t>>().begin()) end, std::ostringstream& csv_text_oss, int i) {
+    std::cout << "thread " << i + 1 << " has started\n";
+    for(auto iter = start; iter != end; ++iter) {
+        tokenisePart(*iter, csv_text_oss);
+    }
+    std::cout << "thread " << i + 1 << " has finished\n";
 }
 
 int main(int argc, char** argv) {
@@ -200,24 +212,41 @@ int main(int argc, char** argv) {
         merge_pair_first = std::uint16_t(std::stoi(line.substr(0, pipe_pos)));
         merge_pair_second = std::uint16_t(std::stoi(line.substr(pipe_pos + 1, comma_pos - pipe_pos - 1)));
         merged_new = std::uint16_t(std::stoi(line.substr(comma_pos + 1))); //no second-argument in .substr() defaults to just the whole rest
-        //std::cout << merge_pair_first << " + " << merge_pair_second << " --> " << merged_new << "\n";
 
         merge_rules_vec.emplace_back(std::make_pair(shortIntPair(merge_pair_first, merge_pair_second), merged_new));
+        total_vocab_reversed.emplace(std::make_pair(merged_new, total_vocab_reversed.at(merge_pair_first) + total_vocab_reversed.at(merge_pair_second)));
     }
-    // for(const auto &rule_pair : merge_rules_vec) {
-    //     std::cout << unmergeShortsFirst(rule_pair.first) << " + " << unmergeShortsSecond(rule_pair.first) << " --> " << rule_pair.second << "\n";
-    // }
+    std::cout << "total_vocab size after adding all the merges: " << total_vocab_reversed.size() << "\n";
     mergeRulesFile.close();
 
     std::vector<std::vector<std::uint16_t>> numerifiedWords = numerifyWords(cleaned_text_path);
+    int num_words = numerifiedWords.size();
 
-    std::vector<std::uint16_t> tokenised_word = tokeniseWord(numerifiedWords[13357]);
+    int num_hardware_threads = std::thread::hardware_concurrency();
+    int vec_portion_size = num_words / num_hardware_threads;
+    
 
-    for(const auto& word : numerifiedWords) {
-        for(const auto& charcode : tokeniseWord(word)) {
-            std::cout << charcode << " ";
-        }
-        std::cout << "\n";
+    std::vector<std::thread> tokeniser_threads;
+    std::vector<std::ostringstream> csv_text_portions;
+    
+    auto start_iter = numerifiedWords.begin();
+    auto end_iter = numerifiedWords.end();
+    
+    std::cout << vec_portion_size << "\n";
+
+    for(int i = 0; i < num_hardware_threads; i++) {
+        csv_text_portions.emplace_back(std::ostringstream());
     }
+    std::cout << "csv_vec size: " << csv_text_portions.size() << "\n";
+
+    for(int i = 0; i < num_hardware_threads - 1; i++) {
+        tokeniser_threads.emplace_back(worker, start_iter+(vec_portion_size*i), start_iter+(vec_portion_size*(i+1)), std::ref(csv_text_portions[i]), i);
+    }
+    tokeniser_threads.emplace_back(worker, start_iter+(vec_portion_size*(num_hardware_threads - 1)), end_iter, std::ref(csv_text_portions[num_hardware_threads - 1]), num_hardware_threads - 1);
+
+    for(auto& thread : tokeniser_threads) {
+        thread.join();
+    }
+
     return 0;
 } 
