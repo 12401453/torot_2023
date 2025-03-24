@@ -7,6 +7,19 @@
 
 3.) [bit boring] Is Jagić's jer-umlaut real? (there are so many possible environments for it that I doubt a comprehensive study couldve been done in the way that would be piss easy for me)
 
+4.) One possibly dead-end study, but one only possible with my technology, would be one into the three different <i> letters; I use it as a quick demonstration on Marianus
+
+
+3.1.) One advantage to highlight is how palatalised /ŕĺń/ before /i,e/ etc. can be easily found even when often no orthographic marking all distinguishes these from plain /rln/; especially useful when investigating secondary palatalisation (cf. Shevelov 1964 on the Proto-Ukrainian documents)
+
 2X звѣрѣ spellings in Supr. show moving from masc_i > jo-stems (not an ideal example because palatal /r/ existed already in the system, but still not bad)
 
 Why does OCS show PV2 after *sk in words like ӣю̄деӣстѣӣ, ӣцѣлѧтъ but never in о̄скв̄рънѧт < *skvŕ̥n- ?
+
+4.) Assemanianus: why such shit jers, yet preserved root-aorists, extremely conservative orthography (KF spelling of /y/, occasional jat' after shipjashchiy hanging around, nearly flawless /dz/). If the shitty jers point to a more Northwestern location (like Marianus), why is there no trace of ǫ > /o/, but instead signs of a Bulgarian merger (front-nasal spellings after palatals)?
+
+5.) When I solve the neural-network problem, a dedicated article on that method vs both Rabus' and Eckhoff 2016 and my adaption of Eckhoff's methods needs to be written, using Assemanianus as the test-case
+
+6.) similarly an in-depth study on Assemanianus' phonology and morphology needs to be produced with reference to all previous scholarship on it, using my autoreconstructed data as a secret weapon allowing quick and easy testing of previous claims and discovery of new patterns
+
+

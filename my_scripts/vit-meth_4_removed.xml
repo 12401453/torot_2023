@@ -1478,7 +1478,7 @@
           <slash target-id="3618692" relation="xsub"/>
         </token>
         <token id="3618695" form="на" citation-part="4.5" lemma="на" part-of-speech="R-" morphology="---------n" head-id="3618693" relation="adv" presentation-after=" "/>
-        <token id="3618696" form="ч4стьноѥ" citation-part="4.5" lemma="чьстьнъ" part-of-speech="A-" morphology="-s---napwi" head-id="3618697" relation="atr" presentation-after=" "/>
+        <token id="3618696" form="чьстьноѥ" citation-part="4.5" lemma="чьстьнъ" part-of-speech="A-" morphology="-s---napwi" head-id="3618697" relation="atr" presentation-after=" "/>
         <token id="3618697" form="мѣсто" citation-part="4.5" lemma="мѣсто" part-of-speech="Nb" morphology="-s---na--i" head-id="3618695" relation="obl" presentation-after=". "/>
         <token id="3618698" form="идеже" citation-part="4.5" lemma="идеже" part-of-speech="Dq" morphology="---------n" head-id="3618699" relation="adv" presentation-after=" "/>
         <token id="3618699" form="ѥсть" citation-part="4.5" lemma="бꙑти" part-of-speech="V-" morphology="3spia----i" head-id="3618697" relation="apos" presentation-after=" "/>

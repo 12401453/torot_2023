@@ -10,7 +10,7 @@
 #include <list>
 
 std::unordered_map<std::string, u_int16_t> base_vocab {
-    {"4", 1},
+    {"ш", 1},
     {"ѭ", 2},
     {"ѳ", 3},
     {"s", 4},
@@ -40,17 +40,15 @@ std::unordered_map<std::string, u_int16_t> base_vocab {
     {"ⱖ", 28},
     {"ѫ", 29},
     {"б", 30},
-    {"P", 31},
+    {"т", 31},
     {"ѣ", 32},
     {"д", 33},
     {"у", 34},
     {"л", 35},
-    {"п", 36},
-    {"т", 37},
-    {"ш", 38},
+    {"п", 36}
 };
 std::unordered_map<u_int16_t, std::string> base_vocab_reversed {
-    {1, "4"},
+    {1, "ш"},
     {2, "ѭ"},
     {3, "ѳ"},
     {4, "s"},
@@ -80,14 +78,12 @@ std::unordered_map<u_int16_t, std::string> base_vocab_reversed {
     {28, "ⱖ"},
     {29, "ѫ"},
     {30, "б"},
-    {31, "P"},
+    {31, "т"},
     {32, "ѣ"},
     {33, "д"},
     {34, "у"},
     {35, "л"},
     {36, "п"},
-    {37, "т"},
-    {38, "ш"},
 };
 
 //these are both from ChatGPT
@@ -109,7 +105,7 @@ struct ListEqual {
     }
 };
 
-bool unknownChars(std::string infile_name)
+bool unknownChars(std::string infile_name, std::uint16_t base_vocab_count)
 {
     std::string str1;
     std::string str2;
@@ -122,7 +118,7 @@ bool unknownChars(std::string infile_name)
     std::string line;
     while(std::getline(inFile, line)) {
         
-        for(int i = 1; i < 39; i++)
+        for(int i = 1; i <= base_vocab_count; i++)
         {
             str1.assign(base_vocab_reversed.at(i));
             str2.assign("");
@@ -223,7 +219,9 @@ int main(int argc, char** argv)
 
     std::string input_filename(argv[1]);
 
-    if(unknownChars(input_filename)) {
+    std::uint16_t base_vocab_count = (std::uint16_t)base_vocab.size();
+
+    if(unknownChars(input_filename, base_vocab_count)) {
         std::cout << "File contains characters beyond the specified base_vocab, aborting...\n";
         return -1;
     }
@@ -239,8 +237,6 @@ int main(int argc, char** argv)
     std::string base_char;
     base_char.reserve(3);
     base_char.clear();
-
-    std::uint16_t base_vocab_count = 38;
     
     std::list<std::uint16_t> word_list;
     while(std::getline(inFile, line)) {

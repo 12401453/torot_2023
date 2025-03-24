@@ -68,3 +68,6 @@ An incorrect A- нечьсть occurs once in Supr. and twice in Zogr.; in Supr.
 съ Pd in KF, Vita Const and Vita Meth (and Supr OLD) seems to be a misspelt duplicate of сь
 
 Kiev Missal такозе wrongly lemmatised as такоже
+
+Vita Method. ч4стьноѥ. It's tagged as чьстьнъ but could conceivably also be частьнъ (given the Ru. Chu. Sl. reflex of front-nasals in this text), but I'm changing it to a ь because this 4 adds an extra character to my base deep-cleaned Chu letter-vocab, which frankly turns my stomach
+Vita Const. Pалтирь with Latin <P> is also f**king up my deep-cleaned base letter-vocab so I have replaced it with пс in my training-data but not in the XML file
