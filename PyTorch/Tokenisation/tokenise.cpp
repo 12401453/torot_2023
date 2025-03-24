@@ -185,11 +185,11 @@ void tokenisePart(const std::vector<std::uint16_t>& numerified_word, std::ostrin
 }
 
 void worker(decltype(std::vector<std::vector<std::uint16_t>>().begin()) start, decltype(std::vector<std::vector<std::uint16_t>>().begin()) end, std::ostringstream& csv_text_oss, int i) {
-    std::cout << "thread " << i + 1 << " has started\n";
+    std::cout << "thread " << i + 1 << " has started" << std::endl; //force flush so it writes out when we want it to
     for(auto iter = start; iter != end; ++iter) {
         tokenisePart(*iter, csv_text_oss);
     }
-    std::cout << "thread " << i + 1 << " has finished\n";
+    std::cout << "thread " << i + 1 << " has finished" << std::endl;
 }
 
 int main(int argc, char** argv) {
@@ -247,6 +247,13 @@ int main(int argc, char** argv) {
     for(auto& thread : tokeniser_threads) {
         thread.join();
     }
+
+    std::ofstream tokenisedFile("tokenised_" + cleaned_text_path);
+
+    for(const auto& csv_oss : csv_text_portions) {
+        tokenisedFile << csv_oss.str();
+    }
+    tokenisedFile.close();
 
     return 0;
 } 
