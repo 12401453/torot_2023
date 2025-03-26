@@ -1,3 +1,5 @@
+//compile: g++ -O3 -std=c++20 tokeniser.cpp -o tokeniser
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -185,11 +187,11 @@ void tokenisePart(const std::vector<std::uint16_t>& numerified_word, std::ostrin
 }
 
 void worker(decltype(std::vector<std::vector<std::uint16_t>>().begin()) start, decltype(std::vector<std::vector<std::uint16_t>>().begin()) end, std::ostringstream& csv_text_oss, int i) {
-    std::cout << "thread " << i + 1 << " has started" << std::endl; //force flush so it writes out when we want it to
+    std::cout << "thread " << i + 1 << " has started\n";
     for(auto iter = start; iter != end; ++iter) {
         tokenisePart(*iter, csv_text_oss);
     }
-    std::cout << "thread " << i + 1 << " has finished" << std::endl;
+    std::cout << "thread " << i + 1 << " has finished\n";
 }
 
 int main(int argc, char** argv) {
