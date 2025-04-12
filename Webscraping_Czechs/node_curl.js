@@ -14,6 +14,8 @@ const json_eng_trans = new Array();
 
 let record_id = 18080;
 
+const iterations = Number(process.argv[2]);
+
 function makeRequest(record_id) {
     const req_url = "http://castor.gorazd.org:8080/gorazd/show_record_id;jsessionid=CC2E5311CE705F8E1F7780DD9095BF4F?value="+record_id+"&xslFile=0&fields=&_=1732327903110";
     http.get(req_url, dict_response => {
@@ -129,7 +131,7 @@ function makeRequest(record_id) {
                 
             }
             record_id++;
-            if(record_id < 20100) makeRequest(record_id);
+            if(record_id < 18080 + iterations) makeRequest(record_id);
             else {
                 fs.writeFileSync("ocs_dict_headwords.json", JSON.stringify(json_ocs));
                 fs.writeFileSync("ocs_dict_engtrans.json", JSON.stringify(json_eng_trans));
