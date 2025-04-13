@@ -7,13 +7,13 @@ const https = require('https');
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
-const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%BC%D1%8B&pageuntil=%D0%B0%D0%B1%D0%B1%D1%80%D0%B5%D0%B2%D0%B8%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C#mw-pages";
-
+//const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%BC%D1%8B&pageuntil=%D0%B0%D0%B1%D0%B1%D1%80%D0%B5%D0%B2%D0%B8%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C#mw-pages";
+const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%BC%D1%8B&from=%D1%83%D0%BD%D0%B8";
 
 const whole_dict_json = new Array();
 let whole_dict_csv = "";
 
-const punct_shit = /[\s,—\)\()]+/;
+const punct_shit = /[-\s,—\)\()]+/;
 
 async function startScraping() {
     const contents_page = await domifyPage(start_url);
@@ -41,22 +41,24 @@ async function startScraping() {
             }
         }
 
-        // console.log(entry_names);
-        // console.log(entry_links);
-        // console.log("Next page url: ", next_page_url);
+        const entries_per_page = entry_names.length;
 
-        (async () => {for(const entry_link of entry_links) {
-            const entry_page = await domifyPage("https://ru.wiktionary.org" + entry_link);
-            scrapeEntry(entry_page);
+        // (async () => {for(let i = 0; i < entries_per_page; i++) {
+        //     const entry_page = await domifyPage("https://ru.wiktionary.org" + entry_links[i]);
+        //    scrapeEntry(entry_page, entry_names[i]);
 
+        // }
+        // })();
+
+        for(let i = 0; i < entries_per_page; i++) {
+            const entry_page = await domifyPage("https://ru.wiktionary.org" + entry_links[i]);
+            scrapeEntry(entry_page, entry_names[i]);
         }
-        })();
-        //await processLemmas(entry_links);
-        fs.writeFileSync("first_page_parsed_inflection_types.txt", inflection_type_str);
     }
     else {
         console.log("Error finding page-links");
     }
+    fs.writeFileSync("russian_lemmas.json", JSON.stringify(unordered_words_arr));
 }
 
 async function processLemmas(entry_links) {
@@ -100,6 +102,15 @@ async function domifyPage(url, retries = 5) {
             
             throw e;
         }
+    }
+}
+
+class UnorderedWord {
+    constructor(lemma_form) {
+        this.lemma = lemma_form;
+        this.pos = "";
+
+        this.inflections = [];
     }
 }
 
@@ -190,7 +201,7 @@ const getInflectionType = (tbody) => {
 
 let inflection_type_str = "";
 
-const scrapeEntry = (entry_page) => {
+const scrapeEntry = (entry_page, entry_name) => {
     let russian_section = "";
     entry_page.querySelectorAll(".mw-parser-output > section").forEach( section => {
         //if(section.querySelector(".mw-heading.mw-heading1 > h1").id == "Русский") console.log("Found russian");
@@ -214,25 +225,36 @@ const scrapeEntry = (entry_page) => {
         })
     }
 
+    
+
     if(morph_tables.length == 0) {
-        console.log("uninflected");
-        inflection_type_str += "uninflected\n";
+        const unordered_word = new UnorderedWord(entry_name);
+        unordered_word.pos = "uninflected";
+        unordered_words_arr.push(unordered_word);
+
+        console.log(unordered_word.lemma, unordered_word.pos);
     }
     else for(const morph_table of morph_tables) {
-        // morph_table.querySelectorAll("td").forEach(td => {
-        //     const td_bgcolor = td.getAttribute("bgcolor");
-        //     if(td_bgcolor == null || td_bgcolor == "#ffffff") {
-        //         td.childNodes.forEach(node => {
-        //             if(node.nodeType == 3 || node.nodeName == "A" || (node.nodeName == "SPAN" && node.getAttribute("typeof") != "mw:Entity")) {
-        //                !punct_shit.test(node.textContent) && console.log(node.textContent);
-        //             }
-        //         })
-        //     }
-        //     }); 
+        const unordered_word = new UnorderedWord(entry_name);
+        const inflections_set = new Set();
+        morph_table.querySelectorAll("td").forEach(td => {
+            const td_bgcolor = td.getAttribute("bgcolor");
+            if(td_bgcolor == null || td_bgcolor == "#ffffff") {
+                td.childNodes.forEach(node => {
+                    if(node.nodeType == 3 || node.nodeName == "A" || (node.nodeName == "SPAN" && node.getAttribute("typeof") != "mw:Entity")) {
+                       !punct_shit.test(node.textContent) && inflections_set.add(node.textContent);
+                    }
+                })
+            }
+            }); 
         const inflection_type = getInflectionType(morph_table);
-        console.log(inflection_type);
-        inflection_type_str += inflection_type + "\n";
+        unordered_word.pos = inflection_type;
+        unordered_word.inflections = Array.from(inflections_set);
+        unordered_words_arr.push(unordered_word);
+
+        console.log(unordered_word.lemma, unordered_word.pos);
     }
 };
 
+const unordered_words_arr = new Array();
 startScraping();
