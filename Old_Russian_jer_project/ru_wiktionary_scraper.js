@@ -9,55 +9,186 @@ const { JSDOM } = jsdom;
 
 const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%BC%D1%8B&pageuntil=%D0%B0%D0%B1%D0%B1%D1%80%D0%B5%D0%B2%D0%B8%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C#mw-pages";
 
+
 const whole_dict_json = new Array();
 let whole_dict_csv = "";
 
 const punct_shit = /[\s,—\)\()]+/;
 
-https.get(start_url, response => {
-    response.setEncoding('utf-8');
-
-    let response_data_string = "";
-    response.on('error', e => console.log(e));
-
-    response.on('data', piece_of_data => response_data_string += piece_of_data);
-
-    response.on('end', () => {
-        const contents_page = new JSDOM(response_data_string).window.document;
-        const links_block = contents_page.getElementById("mw-pages");
-        let next_page_url = "";
-        let page_links;
-        const entry_links = new Array();
-        const entry_names = new Array();
-        if(links_block) {
-            for(const category of links_block.querySelector("div > div").getElementsByClassName("mw-category-group")) {
-                
-                Array.from(category.getElementsByTagName("li")).forEach(li => {
-                    entry_names.push(li.textContent);
-                    entry_links.push(li.firstElementChild.href);
-                });
-            };
+async function startScraping() {
+    const contents_page = await domifyPage(start_url);
+    const links_block = contents_page.getElementById("mw-pages");
+    let next_page_url = "";
+    let page_links;
+    const entry_links = new Array();
+    const entry_names = new Array();
+    if(links_block) {
+        for(const category of links_block.querySelector("div > div").getElementsByClassName("mw-category-group")) {
+            
+            Array.from(category.getElementsByTagName("li")).forEach(li => {
+                entry_names.push(li.textContent);
+                entry_links.push(li.firstElementChild.href);
+            });
+        };
 
 
 
-            page_links = links_block.querySelectorAll(":scope > a");
-            for(const a_href of page_links) {
-                if(a_href.textContent == "Следующая страница") {
-                    next_page_url = "https://ru.wiktionary.org" + a_href.href;
-                    break;
-                }
+        page_links = links_block.querySelectorAll(":scope > a");
+        for(const a_href of page_links) {
+            if(a_href.textContent == "Следующая страница") {
+                next_page_url = "https://ru.wiktionary.org" + a_href.href;
+                break;
             }
+        }
 
-            console.log(entry_names);
-            console.log(entry_links);
-            console.log("Next page url: ", next_page_url);
+        // console.log(entry_names);
+        // console.log(entry_links);
+        // console.log("Next page url: ", next_page_url);
+
+        (async () => {for(const entry_link of entry_links) {
+            const entry_page = await domifyPage("https://ru.wiktionary.org" + entry_link);
+            scrapeEntry(entry_page);
+
         }
-        else {
-            console.log("Error finding page-links");
-        }
+        })();
+        //await processLemmas(entry_links);
+        fs.writeFileSync("first_page_parsed_inflection_types.txt", inflection_type_str);
+    }
+    else {
+        console.log("Error finding page-links");
+    }
+}
+
+async function processLemmas(entry_links) {
+    for(const entry_link of entry_links) {
+        const entry_page = await domifyPage("https://ru.wiktionary.org" + entry_link);
+        scrapeEntry(entry_page);
+    }
+}
+
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+async function getHTML(url) {
+    return new Promise((resolve, reject) => {
+        const request = https.get(url, response => {
+            response.setEncoding('utf-8');
+            let response_data_string = "";
+
+            response.on('error', e => reject(e));
+
+            response.on('data', piece_of_data => response_data_string += piece_of_data);
+
+            response.on('end', () => resolve(response_data_string));
+        });
+
+        request.on('error', e => reject(e));
     })
+}
 
-});
+async function domifyPage(url, retries = 5) {
+    for(let i = 0; i < retries; i++) {
+        try {
+            const html_string = await getHTML(url);
+            return new JSDOM(html_string).window.document;
+        }
+        catch (e) {
+            if(e.code == "ECONNRESET" && i < retries - 1) {
+                console.log(`Connection reset, retry attempt no. ${i + 2}...`);
+                await sleep(1000);
+                continue;
+            }
+            
+            throw e;
+        }
+    }
+}
+
+
+class VerbInflections {
+    constructor() {
+        this.lemma = "";
+        this.pos = "verb";
+
+        this.present = ["", "", "", "", "", ""];
+        this.past = ["", "", "", ""];
+        this.imper = ["", "", ""];
+        this.prap = "";
+        this.pap = "";
+        this.ger_pres = "";
+        this.ger_past = "";
+        this.prp_pp = "";
+        this.ppp = "";
+    }
+};
+class NounInflections {
+    constructor() {
+        this.lemma = "";
+        this.pos = "noun";
+
+        this.sing = [];
+        this.plural = [];
+    }
+};
+class AdjInflections {
+    constructor() {
+        this.lemma = "";
+        this.pos = "adjective";
+
+        this.sing = [];
+        this.plural = [];
+        this.shorts = [];
+    }
+};
+class PronInflections {
+    constructor() {
+        this.lemma = "";
+        this.pos = "pronominal";
+
+        this.sing = [];
+        this.plural = [];
+    }
+};
+class Uninflected {
+    constructor() {
+        this.lemma = "";
+        this.pos = "uninflected";
+    }
+}
+class UnclearInflections {
+    constructor() {
+        this.lemma = "";
+        this.pos = "unclear";
+
+        this.forms = [];
+    }
+}
+
+const normaliseString = (str) => {
+    if(str) return str.trim().replaceAll(' ', ' '); //non-breaking space, not normal space
+    else return null;
+} 
+
+const getInflectionType = (tbody) => {
+    const first_cell = tbody.querySelector("th");
+    const table_rows = tbody.getElementsByTagName("tr");
+
+    const row1_cell2_text = normaliseString(table_rows[0].getElementsByTagName("th")[1].textContent);
+    if(first_cell.textContent.trim() == "" && (row1_cell2_text == "наст." || row1_cell2_text == "будущ.")) return "verb";
+    
+    if(first_cell.textContent.trim() == "падеж") {
+        
+        const num_rows = table_rows.length;
+        if(normaliseString(table_rows[num_rows - 1].querySelector("td").textContent) == "Кратк. форма") return "adjective";
+        if(normaliseString(table_rows[1].querySelector("th") != null && table_rows[1].querySelector("th").textContent) == 'муж. р.') return "pronominal";
+        if(normaliseString(table_rows[0].getElementsByTagName("th")[1].textContent) == 'ед. ч.') return "noun";
+
+        return "unclear";
+    }
+    return "unclear";
+
+};
+
+let inflection_type_str = "";
 
 const scrapeEntry = (entry_page) => {
     let russian_section = "";
@@ -83,20 +214,25 @@ const scrapeEntry = (entry_page) => {
         })
     }
 
-    for(const morph_table of morph_tables) {
-        morph_table.querySelectorAll("td").forEach(td => {
-            const td_bgcolor = td.getAttribute("bgcolor");
-            if(td_bgcolor == null || td_bgcolor == "#ffffff") {
-                td.childNodes.forEach(node => {
-                    if(node.nodeType == 3 || node.nodeName == "A" || (node.nodeName == "SPAN" && node.getAttribute("typeof") != "mw:Entity")) {
-                       !punct_shit.test(node.textContent) && console.log(node.textContent);
-                    }
-                    // else if(node.nodeName == "A") console.log(node.textContent);
-                    // else if(node.nodeName == "SPAN" && node.getAttribute("typeof") != "mw:Entity") {
-                    //     console.log(node.textContent);
-                    // }
-                })
-            }
-            }); 
+    if(morph_tables.length == 0) {
+        console.log("uninflected");
+        inflection_type_str += "uninflected\n";
+    }
+    else for(const morph_table of morph_tables) {
+        // morph_table.querySelectorAll("td").forEach(td => {
+        //     const td_bgcolor = td.getAttribute("bgcolor");
+        //     if(td_bgcolor == null || td_bgcolor == "#ffffff") {
+        //         td.childNodes.forEach(node => {
+        //             if(node.nodeType == 3 || node.nodeName == "A" || (node.nodeName == "SPAN" && node.getAttribute("typeof") != "mw:Entity")) {
+        //                !punct_shit.test(node.textContent) && console.log(node.textContent);
+        //             }
+        //         })
+        //     }
+        //     }); 
+        const inflection_type = getInflectionType(morph_table);
+        console.log(inflection_type);
+        inflection_type_str += inflection_type + "\n";
     }
 };
+
+startScraping();
