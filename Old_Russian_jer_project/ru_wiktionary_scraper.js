@@ -8,7 +8,7 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
 //const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%BC%D1%8B&pageuntil=%D0%B0%D0%B1%D0%B1%D1%80%D0%B5%D0%B2%D0%B8%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C#mw-pages";
-const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%BC%D1%8B&from=%D1%83%D0%BD%D0%B8";
+const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%BC%D1%8B&from=%D0%BE%D0%B6%D0%B8";
 
 const whole_dict_json = new Array();
 let whole_dict_csv = "";
@@ -50,10 +50,13 @@ async function startScraping() {
         // }
         // })();
 
-        for(let i = 0; i < entries_per_page; i++) {
-            const entry_page = await domifyPage("https://ru.wiktionary.org" + entry_links[i]);
-            scrapeEntry(entry_page, entry_names[i]);
-        }
+        // for(let i = 0; i < entries_per_page; i++) {
+        //     const entry_page = await domifyPage("https://ru.wiktionary.org" + entry_links[i]);
+        //     scrapeEntry(entry_page, entry_names[i]);
+        // }
+
+        const promises = entry_links.map((link, i) => scrapeURL("https://ru.wiktionary.org" + link, entry_names[i]));
+        await Promise.all(promises);
     }
     else {
         console.log("Error finding page-links");
@@ -69,6 +72,11 @@ async function processLemmas(entry_links) {
 }
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+async function scrapeURL(url, entry_name) {
+    const entry_page = await domifyPage(url);
+    scrapeEntry(entry_page, entry_name);
+}
 
 async function getHTML(url) {
     return new Promise((resolve, reject) => {
@@ -94,7 +102,7 @@ async function domifyPage(url, retries = 5) {
             return new JSDOM(html_string).window.document;
         }
         catch (e) {
-            if(e.code == "ECONNRESET" && i < retries - 1) {
+            if(/*e.code == "ECONNRESET" && */i < retries - 1) {
                 console.log(`Connection reset, retry attempt no. ${i + 2}...`);
                 await sleep(1000);
                 continue;
