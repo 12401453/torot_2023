@@ -71,3 +71,6 @@ Kiev Missal такозе wrongly lemmatised as такоже
 
 Vita Method. ч4стьноѥ. It's tagged as чьстьнъ but could conceivably also be частьнъ (given the Ru. Chu. Sl. reflex of front-nasals in this text), but I'm changing it to a ь because this 4 adds an extra character to my base deep-cleaned Chu letter-vocab, which frankly turns my stomach
 Vita Const. Pалтирь with Latin <P> is also f**king up my deep-cleaned base letter-vocab so I have replaced it with пс in my training-data but not in the XML file
+
+Marianus Matt. 21 речета given as 2.dual imperative rather than 2.dual pres. indicative
+Marianus Luke 12 отвръзѫтъ lemmatised as отъврѣщи
