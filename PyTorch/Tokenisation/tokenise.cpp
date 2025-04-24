@@ -1,4 +1,4 @@
-//compile: g++ -O3 -std=c++20 tokeniser.cpp -o tokeniser
+//compile: g++ -O3 -std=c++20 tokenise.cpp -o tokenise
 
 #include <iostream>
 #include <string>
@@ -234,7 +234,7 @@ int main(int argc, char** argv) {
     auto start_iter = numerifiedWords.begin();
     auto end_iter = numerifiedWords.end();
     
-    std::cout << vec_portion_size << "\n";
+    std::cout << "Words processed by each thread: " << vec_portion_size << "\n";
 
     for(int i = 0; i < num_hardware_threads; i++) {
         csv_text_portions.emplace_back(std::ostringstream());
