@@ -74,3 +74,5 @@ Vita Const. Pалтирь with Latin <P> is also f**king up my deep-cleaned base
 
 Marianus Matt. 21 речета given as 2.dual imperative rather than 2.dual pres. indicative
 Marianus Luke 12 отвръзѫтъ lemmatised as отъврѣщи
+
+Diels p.231 cites Psal. отъпадѣмъ with a conditional meaning "I would fall down", i.e. 1sg imper.,  whereas Sykes tags it as 1pl. imper (due to the meaningless back-jer)
