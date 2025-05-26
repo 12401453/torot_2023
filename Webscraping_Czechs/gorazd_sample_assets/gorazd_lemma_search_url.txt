@@ -1,1 +1,31 @@
 http://castor.gorazd.org:8080/gorazd/advanced_search;jsessionid=013373AF9710B0E8728F91826ABBD8DD?queryFields=%7B%221%22%3A%7B%22fieldName%22%3A%22HeaderAll%22%2C%22rawFieldQuery%22%3A%22%D0%B2%D1%8A%D0%B2%D1%80%D1%A3%D1%89%D0%B8%22%2C%22logTerm%22%3A%22%22%7D%7D&aster=false&asterL=false&xslFile=0&toPrev=1&rows=30&fields=&sortFields=%7B%22Header_CU_KCL%22%3A%22asc%22%7D&_=1748204216834
+
+
+function testQuery(headword) {
+  const query_url = "http://castor.gorazd.org:8080/gorazd/advanced_search;jsessionid=013373AF9710B0E8728F91826ABBD8DD?queryFields=%7B%221%22%3A%7B%22fieldName%22%3A%22HeaderAll%22%2C%22rawFieldQuery%22%3A%22" + encodeURIComponent(headword) + "%22%2C%22logTerm%22%3A%22%22%7D%7D&aster=false&asterL=false&xslFile=0&toPrev=1&rows=30&fields=&sortFields=%7B%22Header_CU_KCL%22%3A%22asc%22%7D&_=1748204216834";
+
+  const httpRequest = (method, url) => {
+
+    const xhttp = new XMLHttpRequest();
+    xhttp.open(method, url, true);
+    xhttp.responseType = 'json';
+
+    xhttp.onload = () => {
+
+
+     if(xhttp.readyState == 4) {
+      const result_json = xhttp.response;
+      if(result_json.response.found > 0) {
+          //console.log(result_json.response.result.pageData[0].recordData.EnTrl);
+          result_json.response.result.pageData.forEach(dict_entry => console.log(dict_entry.recordData.EnTrl));
+      }
+      else console.log("No results. CUNT!");
+
+    }
+  }
+    xhttp.send();
+  }
+
+  httpRequest("GET", query_url);
+
+}

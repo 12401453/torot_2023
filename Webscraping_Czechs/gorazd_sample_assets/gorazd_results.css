@@ -1244,7 +1244,8 @@ span[aip-index="dolni"] {
 
 
 /********************FONT-FACES**********************/
-
+/*Not needed because I have downloaded and named the font-files myself and declared these at the top of the page */
+/*
 @font-face {
     font-family: 'FreeSerif';
     src: url(fonts/FreeSerif.otf) format("truetype");
@@ -1259,3 +1260,4 @@ span[aip-index="dolni"] {
     font-family: 'ArialNarrow';
     src: url(fonts/arial_narrow.ttf) format("truetype");
 }
+*/
