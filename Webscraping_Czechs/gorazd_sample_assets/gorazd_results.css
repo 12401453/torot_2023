@@ -446,9 +446,11 @@ figcaption .dict_3{
 }
 
 #viewboxcontent {
-    margin-top: 50px;
-    height: calc(100% - 100px);
+    /*margin-top: 50px;
+    height: calc(100% - 100px);*/
     overflow: auto;
+    scrollbar-width: thin;
+    padding: 4px;
 }
 
 #viewboxcontent div[heslo]{
@@ -1099,10 +1101,10 @@ span.itemRowText div.rsi span {
       text-indent: 0 !important;
 }
 
-#viewboxcontent span :has(> sup),
+/*#viewboxcontent span :has(> sup),
 sup{
-  background: red !important;
-}
+  background: red !important;   this fucks up my Assemanianus supralinears
+}*/
 
 p.odstavec-znak{
   /*background: lime !important;*/
@@ -1184,21 +1186,29 @@ p.podvyznam-znak{
 
 
 /*************************FONTSIZE*******************************/
+
+/*I'm reducing these, original values kept as comments */
  span[aip-size="16"]{
-    margin-top: 14px;
-    font-size: 16px;
-    line-height: 16px;
+    /*margin-top: 14px;*/
+    /*font-size: 16px;*/
+    /*line-height: 16px;*/
+    font-size: 14px;
+    /*line-height: 12px;*/
 }
 
  span[aip-size="24"]{
-    font-size: 24px;
+    /*font-size: 24px;*/
     margin-top: 7px;
-    line-height: 24px;
+    /*line-height: 24px;*/
+    font-size: 18.75px;
+    line-height: 18.75px;
 }
 
  span[aip-size="32"]{
-   font-size: 32px;
-   line-height: 32px;
+   /*font-size: 32px;*/
+   /*line-height: 32px;*/
+   font-size: 25px;
+   line-height: 25px;
 }
 
 /***********************INDEX*****************************/
