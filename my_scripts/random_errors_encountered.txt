@@ -76,3 +76,5 @@ Marianus Matt. 21 речета given as 2.dual imperative rather than 2.dual pre
 Marianus Luke 12 отвръзѫтъ lemmatised as отъврѣщи
 
 Diels p.231 cites Psal. отъпадѣмъ with a conditional meaning "I would fall down", i.e. 1sg imper.,  whereas Sykes tags it as 1pl. imper (due to the meaningless back-jer)
+
+Psal. Sin. 101 оущедрѩтъ is lemmatised as оущѣдрити with a jat' instead of <е>
