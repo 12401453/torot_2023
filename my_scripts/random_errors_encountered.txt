@@ -80,3 +80,5 @@ Diels p.231 cites Psal. отъпадѣмъ with a conditional meaning "I would f
 Psal. Sin. 101 оущедрѩтъ is lemmatised as оущѣдрити with a jat' instead of <е>
 
 Some Suprasliensis words have what seems underlyingly to be <я> that shows up as jotated-a under the Menaion font, which is very misleading
+
+Psal. 16. Ѡбѩсѩ мѩ ѣко левъ готовъ на ловъ:. и ѣко скоуменъ обітаѩ во съкровіштіхъ:- first word is I think 3rd pl. sigmatic aorist, but you've lemmatised it as 3sg aor + refl.
