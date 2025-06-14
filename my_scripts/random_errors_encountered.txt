@@ -19,6 +19,7 @@ Needless second чародѣи that also only occurs once in Supr.
 Your съписати#1 lemma seems to me not to be needed ontop of сьпьсати, because yes one infinitive with a lengthened-stem does occur (unless this has just been badly annotated and was not motivated by a perfective-aspect reading), but that is just an expectable deviance. съписати#2 on the other hand is a straight secondary-imperfective class 5.4 and so does have a reason to exist
 въстѧѕати#1 and въстѧѕати#2 are both used for perf. 5.2 and imperf. 5.4 forms of this verb in Supr., making a mockery of your differentiation of them
 Needless second срѣда that only occurs once in Supr.
+In the master-spreadsheet there's привести#1 привести#2 привести, the latter of which I added myself, and it appears that no-where in the corpus does the #1 lemma occur, suggesting you more recently got rid of it in favour of the plain version. the #2 variant is for the stem ending in -vez instead of -ved, so that's allowed.
 
 Of the lemmas I had add to differentiate, you've only added 2 (dojiti and urězati); the full list is (I gave the news ones lemma_ids starting from 750000):
 тѫдѣ|750000|Df|tǫdě||||||||||||||||||99||||||||
@@ -40,6 +41,7 @@ Of the lemmas I had add to differentiate, you've only added 2 (dojiti and urěza
 въждѧдати|750017|V-|vъžǯędati|||||||||||||||||54|1||||||||
 жѧдати|750018|V-|žędati|||||||||||||||||54|1||||||||
 оурѣзати#2|750019|V-|urězati|||||||||||||||||54|1||||||||
+поꙗсати#2|750021|V-|pojǢsati|||||||||||||||||54|1||||||||
 
 (плачь и скрьжьтъ зѫбомъ)
 
@@ -82,3 +84,11 @@ Psal. Sin. 101 оущедрѩтъ is lemmatised as оущѣдрити with a jat
 Some Suprasliensis words have what seems underlyingly to be <я> that shows up as jotated-a under the Menaion font, which is very misleading
 
 Psal. 16. Ѡбѩсѩ мѩ ѣко левъ готовъ на ловъ:. и ѣко скоуменъ обітаѩ во съкровіштіхъ:- first word is I think 3rd pl. sigmatic aorist, but you've lemmatised it as 3sg aor + refl.
+
+2X одеждѫтъ in Psal. lemmatised as the nonsense одеждѫти. Obviously this is just oděti
+The second noun (Nb) lemma ѩдро is wrong because you use it for what the dict. lists as nt. pl. ꙗдра 'arms, embrace'
+
+The lemma оумрьщвениѥ should have an epenthetic ĺ in it since it transparently the dejotated verbal-noun of *umŕ̥stviti. The dict. here is retarded since it records that form but gives the Russian translation умерщвление that shows
+
+Putting aside the nonsense compromise lemma-form you've given рѫковѩть, this really should be split into 2 lemmas *rǫkojętь and *rǫkovętь, because they are clearly 2 possibilities of consonant-prothesis depending on whether the rounded -o of the first part or the fronted ę- of the second part was considered the more important in occasioning the prothesis. For now I have it as *rǫkovętь because spellings with <в> are more common
+Ditto for съвѫзъ
