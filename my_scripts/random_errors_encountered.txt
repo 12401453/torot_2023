@@ -92,3 +92,5 @@ The lemma оумрьщвениѥ should have an epenthetic ĺ in it since it tra
 
 Putting aside the nonsense compromise lemma-form you've given рѫковѩть, this really should be split into 2 lemmas *rǫkojętь and *rǫkovętь, because they are clearly 2 possibilities of consonant-prothesis depending on whether the rounded -o of the first part or the fronted ę- of the second part was considered the more important in occasioning the prothesis. For now I have it as *rǫkovętь because spellings with <в> are more common
 Ditto for съвѫзъ
+
+Psal. 3 бл҃гословещвенье is wrongly lemmatised as *bolgoslovešћenьje when clearly it should be *bolgoslovešћvĺenьje (which is also in the dict.)
