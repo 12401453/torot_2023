@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include <map>
 #include <cstring>
+#include <unordered_set>
 
 #define NOUN true
 #define VERB false
@@ -74,6 +75,10 @@ class LcsFlecter {
     void Dejotate(std::string& jotated_form);
     
     bool c_strStartsWith(const char* str1, const char* str2);
+
+    void produceUniqueInflections();
+
+    std::unordered_set<std::string> unique_inflections;
 
 
     private:

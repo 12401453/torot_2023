@@ -1,15 +1,15 @@
 #include "LcsFlecter.h"
 
 const std::unordered_map<int, inner_map> LcsFlecter::m_noun_endings = {
-    #include "autoreconstructor/data/noun_inflections.txt"
+    #include "data/noun_inflections.txt"
 };
 
 const std::unordered_map<int, inner_map> LcsFlecter::m_verb_endings = {
-    #include "autoreconstructor/data/verb_inflections.txt"
+    #include "data/verb_inflections.txt"
 };
 
 const std::unordered_map<std::string, int> LcsFlecter::m_conj_type_map {
-    #include "autoreconstructor/data/conj_type_map.txt"
+    #include "data/conj_type_map.txt"
 };
 
 void LcsFlecter::setConjType(std::string conj_type) {
@@ -620,6 +620,15 @@ void LcsFlecter::Dejotate(std::string& jotated_form) {
     replaceAll(jotated_form, "ђъ", "ђь");
 }
 
+
+void LcsFlecter::produceUniqueInflections() {
+    this->unique_inflections.clear();
+    for(const auto& vec : this->getFullParadigm()) {
+        for(const auto& inflection : vec) {
+            this->unique_inflections.insert(inflection.flected_form);
+        }
+    }
+};
 
 // int main() {
 

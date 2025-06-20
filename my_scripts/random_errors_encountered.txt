@@ -1,5 +1,4 @@
-Most *pomoћi words seem to be lemmatised with the OCS verb помощи, though you also have помочи listed and occuring twice.
-Similarly рещи in RusPrav
+
 коньчьныи in RusPrav looks soft
 
 There are two ⱖ in Suprasliensis, and if you look at whatsisname's version he has:
@@ -16,7 +15,7 @@ Supr. has домаштьнѧѩ which I need to check because I dont think it eve
 There's a third родити lemma that only occurs in Supr. and seems to mean the same as родити#1
 Needless second кръмити that only occurs once in Supr. as кръмивъши,V-,-supafn-si.
 Needless second чародѣи that also only occurs once in Supr.
-Your съписати#1 lemma seems to me not to be needed ontop of сьпьсати, because yes one infinitive with a lengthened-stem does occur (unless this has just been badly annotated and was not motivated by a perfective-aspect reading), but that is just an expectable deviance. съписати#2 on the other hand is a straight secondary-imperfective class 5.4 and so does have a reason to exist
+Your съписати#1 lemma seems to me not to be needed ontop of съпьсати, because yes one infinitive with a lengthened-stem does occur (unless this has just been badly annotated and was not motivated by a perfective-aspect reading), but that is just an expectable deviance. съписати#2 on the other hand is a straight secondary-imperfective class 5.4 and so does have a reason to exist
 въстѧѕати#1 and въстѧѕати#2 are both used for perf. 5.2 and imperf. 5.4 forms of this verb in Supr., making a mockery of your differentiation of them
 Needless second срѣда that only occurs once in Supr.
 In the master-spreadsheet there's привести#1 привести#2 привести, the latter of which I added myself, and it appears that no-where in the corpus does the #1 lemma occur, suggesting you more recently got rid of it in favour of the plain version. the #2 variant is for the stem ending in -vez instead of -ved, so that's allowed.
@@ -69,7 +68,7 @@ An incorrect A- нечьсть occurs once in Supr. and twice in Zogr.; in Supr.
 въкоупьнь A- in KF (misspelt)
 съ Pd in KF, Vita Const and Vita Meth (and Supr OLD) seems to be a misspelt duplicate of сь
 
-Kiev Missal такозе wrongly lemmatised as такоже
+Kiev Missal такозе wrongly lemmatised as такоже (it is *takoђe)
 
 Vita Method. ч4стьноѥ. It's tagged as чьстьнъ but could conceivably also be частьнъ (given the Ru. Chu. Sl. reflex of front-nasals in this text), but I'm changing it to a ь because this 4 adds an extra character to my base deep-cleaned Chu letter-vocab, which frankly turns my stomach
 Vita Const. Pалтирь with Latin <P> is also f**king up my deep-cleaned base letter-vocab so I have replaced it with пс in my training-data but not in the XML file
@@ -88,7 +87,7 @@ Psal. 16. Ѡбѩсѩ мѩ ѣко левъ готовъ на ловъ:. и ѣко
 2X одеждѫтъ in Psal. lemmatised as the nonsense одеждѫти. Obviously this is just oděti
 The second noun (Nb) lemma ѩдро is wrong because you use it for what the dict. lists as nt. pl. ꙗдра 'arms, embrace'
 
-The lemma оумрьщвениѥ should have an epenthetic ĺ in it since it transparently the dejotated verbal-noun of *umŕ̥stviti. The dict. here is retarded since it records that form but gives the Russian translation умерщвление that shows
+The lemma оумрьщвениѥ should have an epenthetic ĺ in it since it transparently the dejotated verbal-noun of *umŕ̥stviti. The dict. here is retarded since it records the same incorrect form but gives the Russian translation умерщвление that shows the original epenthetic ĺ.
 
 Putting aside the nonsense compromise lemma-form you've given рѫковѩть, this really should be split into 2 lemmas *rǫkojętь and *rǫkovętь, because they are clearly 2 possibilities of consonant-prothesis depending on whether the rounded -o of the first part or the fronted ę- of the second part was considered the more important in occasioning the prothesis. For now I have it as *rǫkovętь because spellings with <в> are more common
 Ditto for съвѫзъ
