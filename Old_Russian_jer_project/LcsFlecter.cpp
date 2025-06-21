@@ -640,7 +640,20 @@ void LcsFlecter::produceUniqueInflections() {
         for(const auto& inflection : vec) {
             if(!inflection.flected_form.empty()) {
                 //std::cout << inflection.flected_form;
-                m_unique_inflections.insert(inflection.flected_form);
+                
+                if(m_noun_verb == VERB && (inflection.desinence_ix == 38 || (inflection.desinence_ix > 39 && inflection.desinence_ix < 43))) {
+                    std::string jer = inflection.desinence_ix == 38 ? "ь" : "ъ";
+                    m_unique_inflections.insert(inflection.flected_form + jer);
+                    if(inflection.desinence_ix == 40) {
+                        //non-masc l-past tenses for modern Russian comparisons
+                        m_unique_inflections.insert(inflection.flected_form + "a");
+                        m_unique_inflections.insert(inflection.flected_form + "i");
+                        m_unique_inflections.insert(inflection.flected_form + "o");
+                    }
+                }
+                else {
+                    m_unique_inflections.insert(inflection.flected_form);
+                }
             }
         }
     }

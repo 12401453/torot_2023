@@ -615,13 +615,13 @@ async function readORVLemmasFile() {
     const orv_pos = row[2];
 
     if(lcs_to_OR_torot_lemma_map.has(orv_pos+orv_lemma_form)) {
-      csv_string += orv_lemma_form + "|" + orv_pos + "|" + lcs_to_OR_torot_lemma_map.get(orv_pos+orv_lemma_form).join("|") + "\n";
+      csv_string += orv_lemma_form + "|" + orv_pos + "|" + lcs_to_OR_torot_lemma_map.get(orv_pos+orv_lemma_form).join("|") + "|e_sl" + "\n";
     }
     else if(lcs_to_OR_ChSl_torot_lemma_map.has(orv_pos+orv_lemma_form)) {
-      csv_string += orv_lemma_form + "|" + orv_pos + "|" + lcs_to_OR_ChSl_torot_lemma_map.get(orv_pos+orv_lemma_form).join("|") + "\n";
+      csv_string += orv_lemma_form + "|" + orv_pos + "|" + lcs_to_OR_ChSl_torot_lemma_map.get(orv_pos+orv_lemma_form).join("|") + "|ch_sl" + "\n";
     }
     else if(ocs_lemma_form_map.has(orv_pos+orv_lemma_form)) {
-      csv_string += orv_lemma_form + "|" + orv_pos + "|" + ocs_lemma_form_map.get(orv_pos+orv_lemma_form).join("|") + "\n";
+      csv_string += orv_lemma_form + "|" + orv_pos + "|" + ocs_lemma_form_map.get(orv_pos+orv_lemma_form).join("|") + "|ch_sl" + "\n";
     }
   }
   lemmas_file.close();

@@ -9,6 +9,8 @@
 #include <map>
 #include <cstring>
 #include <unordered_set>
+#include <unicode/unistr.h>
+#include <unicode/regex.h>
 
 #define NOUN true
 #define VERB false
@@ -53,7 +55,6 @@ class LcsFlecter {
     std::array<std::vector<Inflection>, 3> getFullParadigm();
 
     void postProcess(std::array<std::vector<Inflection>, 3> &inflected_forms);
-
 
 
     void class1Clean(Inflection& inflection);
