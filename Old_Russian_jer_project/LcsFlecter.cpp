@@ -233,7 +233,8 @@ void LcsFlecter::postProcess(std::array<std::vector<Inflection>, 3> &inflected_f
     //get rid of duplicates caused by things like alternatively jotated and non-jotated verb endings on already-soft stems which end up the same
     int paradigm_length = inflected_forms[0].size();
     for(int i = 1; i < 3; i++) {
-        for(int j = 0; j < paradigm_length; j++) {
+        int max_j_index = inflected_forms[i].size() > paradigm_length ? paradigm_length : inflected_forms[i].size();
+        for(int j = 0; j < max_j_index; ++j) {
             if(inflected_forms[0][j].flected_form == inflected_forms[i][j].flected_form) {
                 inflected_forms[i][j].flected_form = "";
             }
@@ -318,7 +319,7 @@ std::array<std::vector<Inflection>, 3> LcsFlecter::getFullParadigm() {
     
     //for(const auto& ending_pair : m_active_endings.at(m_outer_map_no)) {
     for(;desinences_iter != desinences_iter_end; ++desinences_iter) {
-        Inflection infl = {desinences_iter->first, m_stem + desinences_iter->second};
+        // Inflection infl = {desinences_iter->first, m_stem + desinences_iter->second};
         //inflected_forms.emplace_back(infl);
         inflected_forms[0].emplace_back(desinences_iter->first, m_stem + desinences_iter->second + suffix);
     }
@@ -365,26 +366,37 @@ void replaceAll(std::string &source, const std::string yeeted, const std::string
     }
 }
 
-bool LcsFlecter::c_strStartsWith(const char *str1, const char *str2) {
-    int strcmp_count = 0;
-    int str2_len = strlen(str2);
+// bool LcsFlecter::c_strStartsWith(const char *str1, const char *str2) {
+//     int strcmp_count = 0;
+//     int str2_len = strlen(str2);
  
-    int i = -1;
+//     int i = -1;
    
-    while ((*str1 == *str2 || *str2 == '\0') && i < str2_len)
-    {
-        strcmp_count++;
-        str1++;
-        str2++;
-        i++;
-    }
+//     while ((*str1 == *str2 || *str2 == '\0') && i < str2_len)
+//     {
+//         strcmp_count++;
+//         str1++;
+//         str2++;
+//         i++;
+//     }
  
-    if (strcmp_count == str2_len + 1)
-    {
-        return true;
+//     if (strcmp_count == str2_len + 1)
+//     {
+//         return true;
+//     }
+//     else
+//         return false;
+// }
+
+bool LcsFlecter::c_strStartsWith(const char *haystack, const char *needle) {
+    while(*needle) {
+        if(*haystack != *needle) {
+            return false;
+        }
+        ++haystack;
+        ++needle;
     }
-    else
-        return false;
+    return true;
 }
 
 void LcsFlecter::class1Clean(Inflection& inflection) {
@@ -622,10 +634,14 @@ void LcsFlecter::Dejotate(std::string& jotated_form) {
 
 
 void LcsFlecter::produceUniqueInflections() {
-    this->unique_inflections.clear();
-    for(const auto& vec : this->getFullParadigm()) {
+    m_unique_inflections.clear();
+    auto full_paradigm = getFullParadigm();
+    for(const auto& vec : full_paradigm) {
         for(const auto& inflection : vec) {
-            this->unique_inflections.insert(inflection.flected_form);
+            if(!inflection.flected_form.empty()) {
+                //std::cout << inflection.flected_form;
+                m_unique_inflections.insert(inflection.flected_form);
+            }
         }
     }
 };

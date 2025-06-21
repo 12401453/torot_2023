@@ -1,0 +1,5 @@
+Adjectives and Participals will be stored in Wiktionary in the long-form masc. sg. so need to have those endings added
+The alternation between -oj and -yj endings depending on stress in Ru. adjectival lemma-forms might mean both have to be added
+Chu.Sl. doublets (щ, metathesis etc.) will need to be produced for everything, unless the TOROT lemmas can be marked as being Ch.Sl. somehow (i.e. by marking the ones which my matcher only matched after trying the Ch.Sl. forms)
+    - this might be an unsolvable problem if too many words contain contradictory combinations of Ch.Sl. and native features, and trying every possible combination for each word could quickly spiral
+Reduction of imperative-ending from *-i[te] to *ь[te] in certain verb-classes (убей налей мой готовьте etc.)

@@ -78,7 +78,7 @@ class LcsFlecter {
 
     void produceUniqueInflections();
 
-    std::unordered_set<std::string> unique_inflections;
+    std::unordered_set<std::string> m_unique_inflections;
 
 
     private:
