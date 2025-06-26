@@ -261,6 +261,12 @@ std::array<std::vector<Inflection>, 3> LcsFlecter::getFullParadigm() {
         //add the endings at outer_map_no == 2112 to the possible variants (these are aorists added straight to the nǫ- ending rather than the stem, Mar. оусѣкнѫхъ etc.)
         alternative_map_no = 2112;
     }
+
+    //need to add jo-stem endings for i-stems that end on /nlr/, but also need to jotate the stem by explicitly adding /j/ (which should get yeeted by the Dejotation step)
+    if((m_stem.ends_with("r") || m_stem.ends_with("n") || m_stem.ends_with("l")) && (m_conj_type == "masc_i" || m_conj_type == "fem_i")) {
+        deviances_iter = m_active_endings.find(1401);
+    }
+
     auto alternatives_iter = m_active_endings.find(alternative_map_no);
 
     if(deviances_iter != end_iter) {
@@ -349,7 +355,7 @@ std::array<std::vector<Inflection>, 3> LcsFlecter::getFullParadigm() {
     return inflected_forms;
 }
 
-void replaceAll(std::string &source, const std::string yeeted, const std::string replacement) {
+void LcsFlecter::replaceAll(std::string &source, const std::string yeeted, const std::string replacement) {
     
     size_t yeeted_length = yeeted.length();
     if(yeeted_length == 0) return;
@@ -650,6 +656,13 @@ void LcsFlecter::produceUniqueInflections() {
                         m_unique_inflections.insert(inflection.flected_form + "i");
                         m_unique_inflections.insert(inflection.flected_form + "o");
                     }
+                    else if(inflection.desinence_ix == 38) {
+                        //add masc. Nsg. long-form to PRAPs
+                        m_unique_inflections.insert(inflection.flected_form + "jь");
+                    }
+                }
+                else if(m_noun_verb == NOUN && m_conj_type.find("adj") != -1 && inflection.desinence_ix == 1) {
+                    m_unique_inflections.insert(inflection.flected_form + "jь");
                 }
                 else {
                     m_unique_inflections.insert(inflection.flected_form);

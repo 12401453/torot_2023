@@ -75,6 +75,8 @@ class LcsFlecter {
 
     void Dejotate(std::string& jotated_form);
     
+    static void replaceAll(std::string &source, const std::string yeeted, const std::string replacement);
+
     bool c_strStartsWith(const char* str1, const char* str2);
 
     void produceUniqueInflections();
