@@ -59,9 +59,13 @@ void TOROT(icu::UnicodeString& lcs_form_unicode) {
     int32_t ort_start_pos = ort_matcher.start(status);
     icu::UnicodeString ort_vowel = lcs_form_unicode.tempSubString(ort_start_pos, 1);
     icu::UnicodeString ort_liquid = lcs_form_unicode.tempSubString(ort_start_pos + 1, 1);
+    if(ort_liquid == "l") ort_vowel.setTo("o");
     icu::UnicodeString remainder = lcs_form_unicode.tempSubString(ort_start_pos + 2);
 
-    lcs_form_unicode = lcs_form_unicode.tempSubString(0, ort_start_pos).append(ort_vowel).append(ort_liquid).append(ort_vowel).append(remainder);
+    if(ort_start_pos == 0) {
+      lcs_form_unicode = ort_liquid.append(ort_vowel).append(remainder);
+    }
+    else lcs_form_unicode = lcs_form_unicode.tempSubString(0, ort_start_pos).append(ort_vowel).append(ort_liquid).append(ort_vowel).append(remainder);
 
     ort_matcher.reset(lcs_form_unicode);
   }
@@ -86,7 +90,66 @@ void applyPV3(icu::UnicodeString& lcs_form_unicode) {
     pv3_matcher.reset(lcs_form_unicode);
   }
 }
+void applyPV2(icu::UnicodeString& lcs_form_unicode) {
+  pv2_matcher.reset(lcs_form_unicode);
+  while(pv2_matcher.find()) {
+    int32_t pv2_start_pos = pv2_matcher.start(status);
+    icu::UnicodeString velar = lcs_form_unicode.tempSubString(pv2_start_pos, 1);
+    icu::UnicodeString remainder = lcs_form_unicode.tempSubString(pv2_start_pos + 1);
 
+    //making a hash-map out of icu::UnicodeStrings is a pain in the ass and it's only 3 things so I'm just doing it like this
+    icu::UnicodeString new_velar;
+    if(velar == "k") new_velar = new_velar.fromUTF8("c");
+    else if(velar == "g") new_velar = new_velar.fromUTF8("ʒ");
+    else if(velar == "x") new_velar = new_velar.fromUTF8("ś");
+    
+    
+    lcs_form_unicode = lcs_form_unicode.tempSubString(0, pv2_start_pos).append(new_velar).append(remainder);
+
+    pv2_matcher.reset(lcs_form_unicode);
+  }
+}
+
+void denasaliseORV(std::string& lcs_form) {
+  LcsFlecter::replaceAll(lcs_form, "ǫ", "u");
+
+  //I'm assuming that pre-jer shift in idealised OR we had /a/ after palatals and /ä/ after LCS hard-consonants, which post-Jer Shift became /'a/. This isn't necessary if one assumes that denasalisation of front-jer alone was enough to phonemicise the secondarily-soft consonants, rather than jer-falling
+  LcsFlecter::replaceAll(lcs_form, "šę", "ša");
+  LcsFlecter::replaceAll(lcs_form, "čę", "ča");
+  LcsFlecter::replaceAll(lcs_form, "žę", "ža");
+  LcsFlecter::replaceAll(lcs_form, "ћę", "ћa");
+  LcsFlecter::replaceAll(lcs_form, "ђę", "ћa");
+  LcsFlecter::replaceAll(lcs_form, "ǯę", "ǯa");
+  LcsFlecter::replaceAll(lcs_form, "ję", "ja");
+  LcsFlecter::replaceAll(lcs_form, "ńę", "ńa");
+  LcsFlecter::replaceAll(lcs_form, "ŕę", "ŕa");
+  LcsFlecter::replaceAll(lcs_form, "ĺę", "ĺa");
+  //I don't think the PV3-consonant + /ę/ combos can occur in OR due to them coming exclusively from "ę̌", but I might be wrong
+  LcsFlecter::replaceAll(lcs_form, "śę", "śa");
+  LcsFlecter::replaceAll(lcs_form, "cę", "ca");
+  LcsFlecter::replaceAll(lcs_form, "ʒę", "ʒa");
+  
+  //nothing in LCS should ever start with "ę" so this should only remain after LCS hard-consonants
+  LcsFlecter::replaceAll(lcs_form, "ę", "ä");
+
+}
+
+void dejotationReflexesORV(std::string& lcs_form) {
+  //many of these aren't true for Novgorodian/Pksovian/Ukrainian; I'm targeting CSR
+  LcsFlecter::replaceAll(lcs_form, "šћ", "šč");
+  LcsFlecter::replaceAll(lcs_form, "žђ", "žž");
+  LcsFlecter::replaceAll(lcs_form, "žǯ", "žž");
+  LcsFlecter::replaceAll(lcs_form, "ћ", "č");
+  LcsFlecter::replaceAll(lcs_form, "ђ", "ž");
+}
+void dejotationReflexesOCS(std::string& lcs_form) {
+  //many of these aren't true for Novgorodian/Pksovian/Ukrainian; I'm targeting CSR
+  LcsFlecter::replaceAll(lcs_form, "šћ", "št");
+  LcsFlecter::replaceAll(lcs_form, "žђ", "žd");
+  LcsFlecter::replaceAll(lcs_form, "žǯ", "žd");
+  LcsFlecter::replaceAll(lcs_form, "ћ", "št");
+  LcsFlecter::replaceAll(lcs_form, "ђ", "žd");
+}
 
 
 std::string convertToORV(std::string lcs_form, const std::string& conj_type, bool ch_sl=false) {
@@ -95,7 +158,7 @@ std::string convertToORV(std::string lcs_form, const std::string& conj_type, boo
   LcsFlecter::replaceAll(lcs_form, "Q", "ь");
   LcsFlecter::replaceAll(lcs_form, "ĺ̥", "l̥");
 
-  LcsFlecter::replaceAll(lcs_form, "Ǣ", "a"); //need to fix i-stem's jo-stem deviances to ensure that /nlr/ get palatalised
+  LcsFlecter::replaceAll(lcs_form, "dn", "n");
 
   if(lcs_form.starts_with("ak") || lcs_form.starts_with("av") || lcs_form.starts_with("az")) {
     lcs_form = "jǢ" + lcs_form.substr(1);
@@ -111,16 +174,25 @@ std::string convertToORV(std::string lcs_form, const std::string& conj_type, boo
     LcsFlecter::replaceAll(lcs_form, "jezer", "ozer");
   }
 
+  LcsFlecter::replaceAll(lcs_form, "Ǣ", "a");
+
   icu::UnicodeString lcs_form_unicode;
   lcs_form_unicode = lcs_form_unicode.fromUTF8(lcs_form);
-  yeetTlDl(lcs_form_unicode);
-  ch_sl ? TRAT(lcs_form_unicode) : TOROT(lcs_form_unicode);
-  
+
+  applyPV2(lcs_form_unicode);
+
   if(conj_type.find("PV3") != std::string::npos || conj_type == "vьxь" || lcs_form.starts_with("vьxak")) applyPV3(lcs_form_unicode);
 
-  std::string orv_form;
-  lcs_form_unicode.toUTF8String(orv_form);
-  return orv_form;
+  yeetTlDl(lcs_form_unicode);
+  ch_sl ? TRAT(lcs_form_unicode) : TOROT(lcs_form_unicode);
+
+  lcs_form = "";
+  lcs_form_unicode.toUTF8String(lcs_form); //this appends to a string so need to zero lcs_form first
+  denasaliseORV(lcs_form);
+
+  ch_sl ? dejotationReflexesOCS(lcs_form) : dejotationReflexesORV(lcs_form);
+
+  return lcs_form;
   
 }
 
@@ -142,7 +214,9 @@ int main() {
   verbs_pairs_vec.reserve(2048);
   
   std::ostringstream inflected_forms_json_oss;
+  std::ostringstream inflected_forms_orv_oss;
   inflected_forms_json_oss << "[\n";
+  inflected_forms_orv_oss << "[\n";
 
   std::ifstream orv_ocs_lemma_matches("orv_ocs_lemma_matches.csv");
   if(orv_ocs_lemma_matches.good()) {
@@ -159,6 +233,8 @@ int main() {
       
       std::string field;
       int row_number = 1;
+
+      icu::UnicodeString lcs_lemma_unicode;
       while(std::getline(ss_line, field, '|')) {
             switch(row_number) {
                 case 1:
@@ -196,7 +272,11 @@ int main() {
             verbs_pairs_vec.emplace_back(old_lemma_id, std::array<std::string, 3>{lcs_stem, conj_type, ch_sl});
         }
         else {
-            inflected_forms_json_oss << "[" << old_lemma_id << "," << ch_sl << ",\"" << lcs_lemma << "\"],\n"; 
+          lcs_lemma_unicode.setTo(lcs_lemma.c_str());
+          if(containsNonFinalJer(lcs_lemma_unicode)) {
+            inflected_forms_json_oss << "[" << old_lemma_id << "," << ch_sl << ",\"" << lcs_lemma << "\"],\n";
+            inflected_forms_orv_oss << "[" << old_lemma_id << "," << ch_sl << ",\"" << convertToORV(lcs_lemma, conj_type, (ch_sl == "true")) << "\"],\n";
+          }
       }
       
       
@@ -232,11 +312,17 @@ int main() {
 
     if(noun_flecter.m_unique_inflections.size() > 0) {
       inflected_forms_json_oss << "[" << noun.first << "," << noun.second[2] << ",";
+      inflected_forms_orv_oss << "[" << noun.first << "," << noun.second[2] << ",";
       for(const auto& infl : noun_flecter.m_unique_inflections) {
         inflected_forms_json_oss << "\"" << infl << "\",";
       }
+      for(const auto& orv_infl : orv_noun_inflections) {
+        inflected_forms_orv_oss << "\"" << orv_infl << "\",";
+      }
       inflected_forms_json_oss.seekp(-1, std::ios_base::cur);
       inflected_forms_json_oss << "],\n";
+      inflected_forms_orv_oss.seekp(-1, std::ios_base::cur);
+      inflected_forms_orv_oss << "],\n";
     }
   }
 
@@ -246,6 +332,9 @@ int main() {
     
     verb_flecter.produceUniqueInflections();
 
+    std::vector<std::string> orv_verb_inflections;
+    orv_verb_inflections.reserve(verb_flecter.m_unique_inflections.size());
+
     for(auto inflections_iter = verb_flecter.m_unique_inflections.begin(); inflections_iter != verb_flecter.m_unique_inflections.end();) {
       lcs_form_unicode.setTo((*inflections_iter).c_str());
       if(!containsNonFinalJer(lcs_form_unicode)) {
@@ -253,16 +342,29 @@ int main() {
         inflections_iter = verb_flecter.m_unique_inflections.erase(inflections_iter);
       }
       else {
+        orv_verb_inflections.emplace_back(convertToORV(*inflections_iter, verb.second[1], (verb.second[2] == "true")));
         ++inflections_iter;
       }
     }
+
+    for(const auto& orv_infl : orv_verb_inflections) {
+      std::cout << orv_infl << " | ";
+    }
+    std::cout << "\n";
+
     if(verb_flecter.m_unique_inflections.size() > 0) {
       inflected_forms_json_oss << "[" << verb.first << "," << verb.second[2] << ",";
+      inflected_forms_orv_oss << "[" << verb.first << "," << verb.second[2] << ",";
       for(const auto& infl : verb_flecter.m_unique_inflections) {
         inflected_forms_json_oss << "\"" << infl << "\",";
       }
+      for(const auto& orv_infl : orv_verb_inflections) {
+        inflected_forms_orv_oss << "\"" << orv_infl << "\",";
+      }
       inflected_forms_json_oss.seekp(-1, std::ios_base::cur);
       inflected_forms_json_oss << "],\n";
+      inflected_forms_orv_oss.seekp(-1, std::ios_base::cur);
+      inflected_forms_orv_oss << "],\n";
     }
   }
 
@@ -270,14 +372,22 @@ int main() {
 //std::cout << nouns_map.at(65090)[0] << " : " << nouns_map.at(65090)[1] << "\n";
   inflected_forms_json_oss.seekp(-2, std::ios_base::cur);
   inflected_forms_json_oss << "\n]";
+  inflected_forms_orv_oss.seekp(-2, std::ios_base::cur);
+  inflected_forms_orv_oss << "\n]";
   // std::cout << inflected_forms_json_oss.str() << "\n"; 
 
   std::ofstream lcs_inflections_file("lcs_inflections.json");
+  std::ofstream orv_inflections_file("orv_inflections.json");
 
   if(lcs_inflections_file.good()) {
     lcs_inflections_file << inflected_forms_json_oss.str();
 
     lcs_inflections_file.close();
+  }
+  if(orv_inflections_file.good()) {
+    orv_inflections_file << inflected_forms_orv_oss.str();
+
+    orv_inflections_file.close();
   }
 
 

@@ -656,14 +656,15 @@ void LcsFlecter::produceUniqueInflections() {
                         m_unique_inflections.insert(inflection.flected_form + "i");
                         m_unique_inflections.insert(inflection.flected_form + "o");
                     }
-                    else if(inflection.desinence_ix == 38) {
+                    /*else if(inflection.desinence_ix == 38) {
                         //add masc. Nsg. long-form to PRAPs
                         m_unique_inflections.insert(inflection.flected_form + "jь");
-                    }
+                    } */
                 }
-                else if(m_noun_verb == NOUN && m_conj_type.find("adj") != -1 && inflection.desinence_ix == 1) {
+                //add one long-form nom. masc. sg. adjectival
+                /*else if(m_noun_verb == NOUN && m_conj_type.find("adj") != -1 && inflection.desinence_ix == 1) {
                     m_unique_inflections.insert(inflection.flected_form + "jь");
-                }
+                } */
                 else {
                     m_unique_inflections.insert(inflection.flected_form);
                 }

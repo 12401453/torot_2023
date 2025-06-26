@@ -1,4 +1,4 @@
--- I haven't yet decided how to deal with the North-Slavic o-stem instr. sg. ending *-ъmь, and opposed to *-omь, but I don't think the exclusion of this will matter since it always ends up as -ом anyway.
+-- I haven't yet decided how to deal with the North-Slavic o-stem instr. sg. ending *-ъmь, and opposed to *-omь, but I don't think the exclusion of this will matter since it always ends up as -ом anyway, and it would bloat the number of non-final-jer-containing forms if it were included as *ъmь
 -- One of my alternatives endings for o-stems and similar is the u-stem Instr. pl. *ъmi ending, which I don't think ever survives into modern Russian, so this somewhat inflates the number of lemmas viewed as having a non-final jer "somewhere in the paradigm".
 -- I choose to add one long-form adjectival to the produced paradigms, viz. the nom. masc. sg. by adding *jь, but this then makes basically every single adjective contain a non-final jer, and since the reflexes of these are mostly entirely predictably and morphologically-determined, this could be seen as pointless. It's useful for tracking forms in TOROT texts, though
 
@@ -9,3 +9,5 @@ I should also expand the list of the lexemes that show the Common Slavic *je- *o
 It's in this format because that's easier for me to play with using Javascript in the browser-console
 
 When I automatched my OCS-lemma-based LCS reconstructions to the TOROT lemmas I did mark those which required an OCS conversion to match, and so I have applied a different conversion to those, which means the doublets in TOROT like боронь / брань get converted to my OESl. /boronь/ and /branь/ respectively.
+
+--A disadvantage of this list is that it has applied the Second Velar Palatalisation to inflected-forms, and most PV2-reflexes in endings have been levelled out/replaced with Novgorodian forms by the standard language, so it'd be better for me to apply PV2 to the stems before adding the endings and then just leave them
