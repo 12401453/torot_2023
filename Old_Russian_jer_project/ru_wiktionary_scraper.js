@@ -7,61 +7,68 @@ const https = require('https');
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
-//const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%BC%D1%8B&pageuntil=%D0%B0%D0%B1%D0%B1%D1%80%D0%B5%D0%B2%D0%B8%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C#mw-pages";
-const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%BC%D1%8B&from=%D0%BE%D0%B6%D0%B8";
+// const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%BC%D1%8B&pageuntil=%D0%B0%D0%B1%D0%B1%D1%80%D0%B5%D0%B2%D0%B8%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C#mw-pages";
+
+const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%BC%D1%8B&pagefrom=%D0%BA%D1%80%D0%B0%D1%85%D0%BC%D0%B0%D0%BB%D0%B8%D1%82%D1%8C#mw-pages"; //from крахмалить
 
 const whole_dict_json = new Array();
-let whole_dict_csv = "";
+let failure_csv = "";
 
 const punct_shit = /[-\s,—\)\()]+/;
 
-async function startScraping() {
-    const contents_page = await domifyPage(start_url);
-    const links_block = contents_page.getElementById("mw-pages");
-    let next_page_url = "";
+async function startScraping() {  
+    let next_page_url = start_url;
     let page_links;
-    const entry_links = new Array();
-    const entry_names = new Array();
-    if(links_block) {
-        for(const category of links_block.querySelector("div > div").getElementsByClassName("mw-category-group")) {
-            
-            Array.from(category.getElementsByTagName("li")).forEach(li => {
-                entry_names.push(li.textContent);
-                entry_links.push(li.firstElementChild.href);
-            });
-        };
+    let page_count = 571;
+    while(next_page_url != "LAST PAGE") {
+        const contents_page = await domifyPage(next_page_url);
+        const links_block = contents_page.getElementById("mw-pages");
+        const entry_links = new Array();
+        const entry_names = new Array();
+        if(links_block) {
+            for(const category of links_block.querySelector("div > div").getElementsByClassName("mw-category-group")) {
+                
+                Array.from(category.getElementsByTagName("li")).forEach(li => {
+                    if(li.firstElementChild.href != undefined) {
+                        entry_names.push(li.textContent);
+                        entry_links.push(li.firstElementChild.href);
+                    }
+                    else {
+                        console.log("an entry on the contents-page was some stupid redirect bollocks, skipping");
+                    }
+                });
+            };
 
-
-
-        page_links = links_block.querySelectorAll(":scope > a");
-        for(const a_href of page_links) {
-            if(a_href.textContent == "Следующая страница") {
-                next_page_url = "https://ru.wiktionary.org" + a_href.href;
-                break;
+            page_links = links_block.querySelectorAll(":scope > a");
+            next_page_url = "LAST PAGE";
+            for(const a_href of page_links) {
+                if(a_href.textContent == "Следующая страница") {
+                    next_page_url = "https://ru.wiktionary.org" + a_href.href;
+                    break;
+                }
             }
+
+            const entries_per_page = entry_names.length;
+
+            const promises = entry_links.map((link, i) => scrapeURL("https://ru.wiktionary.org" + link, entry_names[i]));
+            await Promise.all(promises);
         }
+        else {
+            console.log("Error finding page-links");
+        }
+        page_count++;
 
-        const entries_per_page = entry_names.length;
+        if(page_count % 10 === 0) {
+            fs.writeFileSync(`ru_wiktionary_data/russian_lemmas_pg${String(page_count - 9).padStart(5, "0")}-${String(page_count).padStart(5, "0")}.json`, JSON.stringify(unordered_words_arr, null, 2));
+            unordered_words_arr.length = 0;
 
-        // (async () => {for(let i = 0; i < entries_per_page; i++) {
-        //     const entry_page = await domifyPage("https://ru.wiktionary.org" + entry_links[i]);
-        //    scrapeEntry(entry_page, entry_names[i]);
 
-        // }
-        // })();
-
-        // for(let i = 0; i < entries_per_page; i++) {
-        //     const entry_page = await domifyPage("https://ru.wiktionary.org" + entry_links[i]);
-        //     scrapeEntry(entry_page, entry_names[i]);
-        // }
-
-        const promises = entry_links.map((link, i) => scrapeURL("https://ru.wiktionary.org" + link, entry_names[i]));
-        await Promise.all(promises);
+            fs.appendFileSync("failed_scrapes.csv", failure_csv);
+            failure_csv = "";
+        }
     }
-    else {
-        console.log("Error finding page-links");
-    }
-    fs.writeFileSync("russian_lemmas.json", JSON.stringify(unordered_words_arr));
+    //fs.writeFileSync("russian_lemmas.json", JSON.stringify(unordered_words_arr, null, 2));
+    //fs.writeFileSync("failed_scrapes.csv", failure_csv);
 }
 
 async function processLemmas(entry_links) {
@@ -81,10 +88,16 @@ async function scrapeURL(url, entry_name) {
 async function getHTML(url) {
     return new Promise((resolve, reject) => {
         const request = https.get(url, response => {
+            
+            if(response.statusCode !== 200) {
+                reject(new Error(`https.get() did not return status-code 200, but ${response.statusCode}`));
+            }
+            
             response.setEncoding('utf-8');
             let response_data_string = "";
 
             response.on('error', e => reject(e));
+            
 
             response.on('data', piece_of_data => response_data_string += piece_of_data);
 
@@ -92,10 +105,10 @@ async function getHTML(url) {
         });
 
         request.on('error', e => reject(e));
-    })
+    });
 }
 
-async function domifyPage(url, retries = 5) {
+async function domifyPage(url, retries = 500) {
     for(let i = 0; i < retries; i++) {
         try {
             const html_string = await getHTML(url);
@@ -103,8 +116,8 @@ async function domifyPage(url, retries = 5) {
         }
         catch (e) {
             if(/*e.code == "ECONNRESET" && */i < retries - 1) {
-                console.log(`Connection reset, retry attempt no. ${i + 2}...`);
-                await sleep(1000);
+                console.log(e.message,`retry attempt no. ${i + 2}...`);
+                await sleep(500 + Math.floor(Math.random()*1000));
                 continue;
             }
             
@@ -214,8 +227,15 @@ const scrapeEntry = (entry_page, entry_name) => {
     entry_page.querySelectorAll(".mw-parser-output > section").forEach( section => {
         //if(section.querySelector(".mw-heading.mw-heading1 > h1").id == "Русский") console.log("Found russian");
         const header_elem = section.querySelector(".mw-heading.mw-heading1 > h1");
-        if(header_elem !== null && header_elem.id == "Русский") russian_section = section;
+        if(header_elem !== null && header_elem.id == "Русский") {
+            russian_section = section;
+        }
     });
+    if(russian_section == "") {
+        console.log("Scraper failed on", entry_name, "because it thinks there's no Russian section on the page. Sometimes the contents-page entries will be false.");
+        failure_csv += entry_name + "\n";
+        return;
+    }
 
     const page_lemmas = [];
     const morph_tables = [];

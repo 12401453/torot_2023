@@ -263,7 +263,7 @@ std::array<std::vector<Inflection>, 3> LcsFlecter::getFullParadigm() {
     }
 
     //need to add jo-stem endings for i-stems that end on /nlr/, but also need to jotate the stem by explicitly adding /j/ (which should get yeeted by the Dejotation step)
-    if((m_stem.ends_with("r") || m_stem.ends_with("n") || m_stem.ends_with("l")) && (m_conj_type == "masc_i" || m_conj_type == "fem_i")) {
+    if((m_stem.ends_with("r") || m_stem.ends_with("n") || m_stem.ends_with("l")) && m_conj_type == "masc_i") {
         deviances_iter = m_active_endings.find(1401);
     }
 
