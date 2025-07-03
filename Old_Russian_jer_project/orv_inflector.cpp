@@ -18,8 +18,11 @@ lcs_infl.forEach(arr => {
 */
 
 const icu::UnicodeString tl_dl_regex = "[dt][ĺl][^̥]";
-const icu::UnicodeString ORT_regex = "[eo][rl]([tŕrpsšdfgћђklĺzžxčvbnńmǯ\+]|$)";
-const icu::UnicodeString PV2_regex = "[kgx]v?([ěęeiь]|ŕ̥|ĺ̥)";
+const icu::UnicodeString ORT_regex = "[eo][rl](?:[tŕrpsšdfgћђklĺzžxčvbnńmǯ\+]|$)";
+const icu::UnicodeString PV2_regex = "[kgx]v?(?:[ěęeiь]|ŕ̥|ĺ̥)";
+const icu::UnicodeString PV2_regex_PV3 = "[kgx]v?(?:[ęeь]|ŕ̥|ĺ̥)";
+const icu::UnicodeString PV2_regex_CSR = "[kgx]v?[ěi](?!$)";
+const icu::UnicodeString PV2_regex_stem = "[kgx]v?[ěi]";
 const icu::UnicodeString PV3_regex = "[ьię][kgx][auǫ]";
 const icu::UnicodeString tense_jer_regex = "[ьъ]j[Ǣeiьęǫuě]";
 const icu::UnicodeString m_non_final_jer_regex = "[ьъ](?!$)";
@@ -29,7 +32,10 @@ icu::RegexMatcher non_final_jer_matcher(m_non_final_jer_regex, 0, status);
 icu::RegexMatcher tl_dl_matcher(tl_dl_regex, 0, status);
 icu::RegexMatcher ort_matcher(ORT_regex, 0, status);
 icu::RegexMatcher pv3_matcher(PV3_regex, 0, status);
-icu::RegexMatcher pv2_matcher(PV2_regex, 0, status);
+icu::RegexMatcher pv2_full_matcher(PV2_regex, 0, status);
+icu::RegexMatcher pv2_pv3_matcher(PV2_regex_PV3, 0, status);
+icu::RegexMatcher pv2_csr_matcher(PV2_regex_CSR, 0, status);
+icu::RegexMatcher pv2_stem_matcher(PV2_regex_stem, 0, status);
 icu::RegexMatcher tense_jer_matcher(tense_jer_regex, 0, status);
 
 void yeetTlDl(icu::UnicodeString& lcs_form_unicode) {
@@ -90,7 +96,7 @@ void applyPV3(icu::UnicodeString& lcs_form_unicode) {
     pv3_matcher.reset(lcs_form_unicode);
   }
 }
-void applyPV2(icu::UnicodeString& lcs_form_unicode) {
+void applyPV2(icu::UnicodeString& lcs_form_unicode, icu::RegexMatcher& pv2_matcher) {
   pv2_matcher.reset(lcs_form_unicode);
   while(pv2_matcher.find()) {
     int32_t pv2_start_pos = pv2_matcher.start(status);
@@ -108,6 +114,30 @@ void applyPV2(icu::UnicodeString& lcs_form_unicode) {
 
     pv2_matcher.reset(lcs_form_unicode);
   }
+}
+std::string applyPV2Stem(const char* lcs_form_c_str, icu::RegexMatcher& pv2_matcher) {
+  icu::UnicodeString lcs_form_unicode;
+  lcs_form_unicode.setTo(lcs_form_c_str);
+  pv2_matcher.reset(lcs_form_unicode);
+  while(pv2_matcher.find()) {
+    int32_t pv2_start_pos = pv2_matcher.start(status);
+    icu::UnicodeString velar = lcs_form_unicode.tempSubString(pv2_start_pos, 1);
+    icu::UnicodeString remainder = lcs_form_unicode.tempSubString(pv2_start_pos + 1);
+
+    //making a hash-map out of icu::UnicodeStrings is a pain in the ass and it's only 3 things so I'm just doing it like this
+    icu::UnicodeString new_velar;
+    if(velar == "k") new_velar = new_velar.fromUTF8("c");
+    else if(velar == "g") new_velar = new_velar.fromUTF8("ʒ");
+    else if(velar == "x") new_velar = new_velar.fromUTF8("ś");
+    
+    
+    lcs_form_unicode = lcs_form_unicode.tempSubString(0, pv2_start_pos).append(new_velar).append(remainder);
+
+    pv2_matcher.reset(lcs_form_unicode);
+  }
+  std::string pv2_stem_applied_str;
+  lcs_form_unicode.toUTF8String(pv2_stem_applied_str);
+  return pv2_stem_applied_str;
 }
 
 void denasaliseORV(std::string& lcs_form) {
@@ -179,7 +209,7 @@ std::string convertToORV(std::string lcs_form, const std::string& conj_type, boo
   icu::UnicodeString lcs_form_unicode;
   lcs_form_unicode = lcs_form_unicode.fromUTF8(lcs_form);
 
-  applyPV2(lcs_form_unicode);
+  applyPV2(lcs_form_unicode, pv2_full_matcher);
 
   if(conj_type.find("PV3") != std::string::npos || conj_type == "vьxь" || lcs_form.starts_with("vьxak")) applyPV3(lcs_form_unicode);
 
@@ -192,6 +222,11 @@ std::string convertToORV(std::string lcs_form, const std::string& conj_type, boo
 
   ch_sl ? dejotationReflexesOCS(lcs_form) : dejotationReflexesORV(lcs_form);
 
+  LcsFlecter::replaceAll(lcs_form, "+", "");
+  LcsFlecter::replaceAll(lcs_form, "ŕ̥", "ṝ");
+  LcsFlecter::replaceAll(lcs_form, "r̥", "ṛ");
+  LcsFlecter::replaceAll(lcs_form, "ĺ̥", "ḹ");
+  LcsFlecter::replaceAll(lcs_form, "l̥", "ḷ");
   return lcs_form;
   
 }

@@ -205,14 +205,27 @@ const getInflectionType = (tbody) => {
     const table_rows = tbody.getElementsByTagName("tr");
 
     const row1_cell2_text = normaliseString(table_rows[0].getElementsByTagName("th")[1].textContent);
-    if(first_cell.textContent.trim() == "" && (row1_cell2_text == "наст." || row1_cell2_text == "будущ.")) return "verb";
+    if(first_cell.textContent.trim() == "" && (row1_cell2_text == "наст." || row1_cell2_text == "будущ." || row1_cell2_text == "наст./будущ.")) {
+        return "verb";
+    }
     
     if(first_cell.textContent.trim() == "падеж") {
         
         const num_rows = table_rows.length;
-        if(normaliseString(table_rows[num_rows - 1].querySelector("td").textContent) == "Кратк. форма") return "adjective";
-        if(normaliseString(table_rows[1].querySelector("th") != null && table_rows[1].querySelector("th").textContent) == 'муж. р.') return "pronominal";
-        if(normaliseString(table_rows[0].getElementsByTagName("th")[1].textContent) == 'ед. ч.') return "noun";
+        const td_shortform_cell = table_rows[num_rows - 1].querySelector("td");
+        const th_shortform_cell = table_rows[num_rows - 1].querySelector("th");
+        if(normaliseString(td_shortform_cell.textContent) == "Кратк. форма") {
+            return "adjective";
+        }
+        if(th_shortform_cell && normaliseString(table_rows[num_rows - 1].querySelector("th").textContent) == "Кратк. форма") {
+            return "adjective";
+        }
+        if(normaliseString(table_rows[1].querySelector("th") != null && table_rows[1].querySelector("th").textContent) == 'муж. р.') {
+            return "pronominal";
+        }
+        if(normaliseString(table_rows[0].getElementsByTagName("th")[1].textContent) == 'ед. ч.') {
+            return "noun";
+        }
 
         return "unclear";
     }

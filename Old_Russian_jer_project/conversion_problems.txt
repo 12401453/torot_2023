@@ -2,7 +2,14 @@ Adjectives and Participals will be stored in Wiktionary in the long-form masc. s
 The alternation between -oj and -yj endings depending on stress in Ru. adjectival lemma-forms might mean both have to be added
 Chu.Sl. doublets (щ, metathesis etc.) will need to be produced for everything, unless the TOROT lemmas can be marked as being Ch.Sl. somehow (i.e. by marking the ones which my matcher only matched after trying the Ch.Sl. forms)
     - this might be an unsolvable problem if too many words contain contradictory combinations of Ch.Sl. and native features, and trying every possible combination for each word could quickly spiral
-Reduction of imperative-ending from *-i[te] to *ь[te] in certain verb-classes (убей налей мой готовьте etc.)
---the restoration of what was word-initial LCS *ě (before j-prothesis) in non-OCS in words like *jěsti is unetymological and, given its retention in nouns like язва, must be due to analogy with prefixed forms. Thus we can't easily detect it unless the TOROT lemmas already include this replacement.
+
+Reduction of imperative-ending from *-i[te] to *ь[te] in certain verb-classes (убей налей мой готовьте etc.) - indications are that this happened before the jer-shift, otherwises there's no motivation from the rest of the paradigm to give /e,o/ here; they have to be purely phonologically regular strong-jers
+
+
+--the restoration of what was word-initial LCS *ě (before j-prothesis) in non-OCS in words like *jěsti is unetymological and, given its retention in nouns like язва, must be due to analogy with prefixed forms. Thus we can't easily detect it unless the TOROT lemmas already include this replacement (TOROT seems to have both, e.g. ясти and ѣсти, but I doubt it's consistent).
 *bv and other clusters etymologically should be totally simplified in LCS but often get reintroduced, especially by modern Russian
 --Might possibly need to check the TOROT lemma for PV3 signs and use a flag to check whether to do applyPV3, rather than having a big if-statement of all the lexemes I think should do it.
+
+I can't apply PV2 to only stems because certain reflexes of PV3 are actually converted by the PV2 regex (e.g., like > lice), because my grammar basically views these as a morphological-replacement of the -o desinence with -e (seeing as post-PV3 there strictly speaking was no ban on palatal + back-vowel)
+
+Certain /i/ reflexes of jat', i.e. сидеть, двести (dissimilation?)

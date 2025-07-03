@@ -1,6 +1,6 @@
 const dl_tl_regex = /[dt][ĺl][^̥]/;
-const ORT_regex = /[eo][rl]([tŕrpsšdfgћђklĺzžxčvbnńmǯ\+]|$)/
-const PV2_regex = /[kgx]v?([ěęeiь]|ŕ̥|ĺ̥)/;
+const ORT_regex = /[eo][rl](?:[tŕrpsšdfgћђklĺzžxčvbnńmǯ\+]|$)/
+const PV2_regex = /[kgx]v?(?:[ěęeiь]|ŕ̥|ĺ̥)/;
 const PV3_regex = /[ьię][kgx][auǫ]/;
 const tense_jer_regex = /[ьъ]j[Ǣeiьęǫuě]/; //I know that /ě/ cannot follow /j/ etymologically but my current analysis (probably wrong) of dealing with glagoĺěte etc. imperatives after palatal consonants is to assume analogy with the hard-stems, so the alternative 2pl. imperative of покръіти has a theoretical deviant form *pokrъjěte that needs to have its tense back-jer lengthened in accordance with my orthographic policy for normalised OCS
 
