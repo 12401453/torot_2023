@@ -1,0 +1,19 @@
+If the earliest ESl. texts (Izborniki vs Uspensik Sbor. vs Rus. Prav. vs Ostromirovo Ev. etc.) are indexed with LCS reconstructions then we should be able to probe for differences in the extent of the sharping of preceding consonants caused by following /e/ and strong *ь, even if the Jers are assumed not to have fallen yet, and the development of my theorised short /Ä/ archiphoneme
+
+
+I in the footnote am implicitly making a concrete prediction that ikan'je/akan'e is what eliminates the /o/ (or *Ä still?) from the systems, and causes the secondary wave of changes with a reinterpreted conditioning environment of "under stress and not before soft-consnants" (лицо, дёшево)
+
+
+Essay title: structural isoglosses within early East Slavic and the prospects of detecting them in the earliest documents
+    Bethin's prosodic stuff
+    Trubetzkoy's 1924 stuff
+    my idea about loss of a mora in the following vowel being crucial to Ukrainian secondary consonant palatalisation
+
+
+
+We know for a fact that there was a much later Russian-specific reapplication of the o-shift because of cases where it affected jat', i.e. гнёзда, её < *jejě < *jejě/ę, and then cases where it occurs before hardened *š, дёшево, and of course where it occurs word-finally (лицо vs Ukr. лице).
+
+Kazakh шабақ (Tatar чабак) proves that the Turkic source of Russian чебак should had an /a/ in it, and yet the current orthography is <е>, which is only possible under the scenario of unstressed *i,e,a after soft-consonants having merged.
+
+
+Bulakhovskyj 'Pytannja pokhodzhennja...' pg. 33 1349 charter of Kazimir has form 'семьюново', which he interprets as the Ukrainian rendering of a Belarusian Семёново
