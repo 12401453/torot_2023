@@ -233,7 +233,7 @@ let current_file_number = 0;
 const deepClean = (dirty_word) => {
     let cleaned_word = dirty_word;
     for(const key in orv_deepClean_map) {
-        cleaned_word = cleaned_word.replaceAll(key, chu_deepClean_map[key]);
+        cleaned_word = cleaned_word.replaceAll(key, orv_deepClean_map[key]);
     }
     return cleaned_word;
 };

@@ -1,0 +1,6 @@
+1.) Need to get autoreconstruction working for ORV texts
+2.) Current autoreconstruction info comes from a spreadsheet based on OCS lemmas, but ~2500 of the ORV lemmas can be automatically matched to reconstructed lemmas in that, and doubtless many of the remaining unautoreconstructed lemmas in both the OCS and ORV lists point to the same LCS lemma, so some LCS-based master-spreadsheet needs to be made somehow
+3.) Maybe the solution is to manually reconstruct based on either the OCS or the ORV list, but periodically run the automatcher to fill in the other list with any automatches from the manual additions.
+4.) That way, either the OCS or the ORV list can be worked on depending on one's immediate priorities, viz. which texts one is interested in processing, and then all progress is pooled into the master LCS spreadsheet.
+
+5.) In order that autoreconstructions can proceed in the same way for both ORV and OCS texts, the LCS master-list should be used by autoreconstruction-programs, but this would require additional columns containing the ORV lemma-form and POS as well as the OCS ones, so that the lemmatisations from the TOROT texts can be accurately matched to lemmas in the master LCS list without relying on ever-changing lemma_ids ()

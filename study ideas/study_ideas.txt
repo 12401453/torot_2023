@@ -26,3 +26,6 @@ Why does OCS show PV2 after *sk in words like ӣю̄деӣстѣӣ, ӣц
 
 
 8.) Simple study of palatalisation-marks cross-referenced with etymological /ĺŕń/ , to help probe the extent of secondary-palatalisation falling together with LCS palatals in more Eastern dialects
+
+
+9.) An investigations into the extent of the "paradigmatisation" of the hard/soft opposition in East Slavic, specifically by looking at the spellings of vowels after palatal-letters, to see if any sign of the Russian/Belarusian/Polish-type forcing of all consonants into this system as opposed to the Ukrainian allowance of 1.) phonetic softness in otherwise 'hard' post-palatals before /i/ or when geminated, or 2.) phonetic hardness before /e,y/ in otherwise soft /c'/.

@@ -558,11 +558,49 @@ const lcs_to_OR_torot_lemma_map = new Map();
 const lcs_to_OR_ChSl_torot_lemma_map = new Map();
 
 
+class CsvReader {
+
+  constructor(separator=",") {
+    this.m_separator = separator;
+  }
+  
+  setHeaders(first_line) {
+    const headers_arr = first_line.split(this.m_separator);
+    for(const header_idx in headers_arr) {
+      this.m_header_index_map.set(headers_arr[header_idx], header_idx);
+    }
+  }
+ 
+  setLine(line) {
+    this.m_raw_line = line;
+    this.m_fields_array = this.m_raw_line.split(this.m_separator);
+  }
+
+  getField(header) {
+    return this.m_fields_array[this.m_header_index_map.get(header)];
+  }
+
+  m_header_index_map = new Map();
+  m_raw_line = "";
+  m_fields_array = new Array();
+  m_separator = "";
+};
+
 
 async function readLemmasSpreadsheet() {
   const lemma_spreadsheet_file = readline.createInterface({input: read_stream1});
+  let line_index = 0;
+
+  const csv_reader = new CsvReader("|");
   for await(const line of lemma_spreadsheet_file) {
-    const row = line.split("|");
+    
+    if(line_index == 0) {
+      csv_reader.setHeaders(line);
+      line_index++;
+      continue;
+    }
+
+    /*const row = line.split("|");
     const pos = row[2];
     const ocs_pos_lemma_combo = pos+row[0];
     const ocs_id = Number(row[1]);
@@ -574,7 +612,21 @@ async function readLemmasSpreadsheet() {
     const root_1 = row[18];
     const root_2 = row[19];
     const conj_type = row[20];
-    const noun_verb = Number(row[21]);
+    const noun_verb = Number(row[21]); */
+
+    csv_reader.setLine(line);
+
+    const pos = csv_reader.getField("pos");
+    const ocs_pos_lemma_combo = pos+csv_reader.getField("torot_lemma");
+    const ocs_id = csv_reader.getField("lemma_id");
+    const original_ocs_lemma_lcs = csv_reader.getField("lcs_lemma");
+    let ocs_lemma_lcs = original_ocs_lemma_lcs;
+    const pv3_lemma_form = csv_reader.getField("PV2/3");
+    const pre_jot = csv_reader.getField("pre_jot");
+    const root_1 = csv_reader.getField("stem1");
+    const root_2 = csv_reader.getField("stem2");
+    const conj_type = csv_reader.getField("conj_type");
+    const noun_verb = Number(csv_reader.getField("noun_verb"));
 
     let lemma_stem = "";
 
@@ -593,15 +645,15 @@ async function readLemmasSpreadsheet() {
     
     
     if(ocs_lemma_lcs.trim() !== "") {
-      if(pv3_lemma_form.trim() !== "") ocs_lemma_lcs = row[5];
+      if(pv3_lemma_form.trim() !== "") ocs_lemma_lcs = pv3_lemma_form;
       else if(conj_type.includes("PV3")) ocs_lemma_lcs = applyPV3(ocs_lemma_lcs);
-      if(row[2] == "A-" && (ocs_lemma_lcs.slice(-1) == "ь" || ocs_lemma_lcs.slice(-1) == "ъ")) ocs_lemma_lcs = ocs_lemma_lcs + "jь";
+      if(pos == "A-" && (ocs_lemma_lcs.slice(-1) == "ь" || ocs_lemma_lcs.slice(-1) == "ъ")) ocs_lemma_lcs = ocs_lemma_lcs + "jь";
 
       ocs_lemma_form_map.set(ocs_pos_lemma_combo, [ocs_id, original_ocs_lemma_lcs, conj_type, noun_verb, lemma_stem]);
       lcs_to_OR_torot_lemma_map.set(pos+torotOldRus(ocs_lemma_lcs), [ocs_id, original_ocs_lemma_lcs, conj_type, noun_verb, lemma_stem]);
       lcs_to_OR_ChSl_torot_lemma_map.set(pos+torotOldRus(ocs_lemma_lcs, true), [ocs_id, original_ocs_lemma_lcs, conj_type, noun_verb, lemma_stem]);
     }
-
+    line_index++;
   };
   lemma_spreadsheet_file.close();
 }
