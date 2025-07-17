@@ -552,6 +552,7 @@ read_stream2.on('error', () => {
 const output_filename = "orv_ocs_lemma_matches.csv";
 
 let csv_string = "";
+let orv_lemmas_master_string = "";
 
 const ocs_lemma_form_map = new Map();
 const lcs_to_OR_torot_lemma_map = new Map();
@@ -600,20 +601,6 @@ async function readLemmasSpreadsheet() {
       continue;
     }
 
-    /*const row = line.split("|");
-    const pos = row[2];
-    const ocs_pos_lemma_combo = pos+row[0];
-    const ocs_id = Number(row[1]);
-    const original_ocs_lemma_lcs = row[3];
-    let ocs_lemma_lcs = original_ocs_lemma_lcs;
-    const pv3_lemma_form = row[5];
-
-    const pre_jot = row[11];
-    const root_1 = row[18];
-    const root_2 = row[19];
-    const conj_type = row[20];
-    const noun_verb = Number(row[21]); */
-
     csv_reader.setLine(line);
 
     const pos = csv_reader.getField("pos");
@@ -659,9 +646,11 @@ async function readLemmasSpreadsheet() {
 }
 
 async function readORVLemmasFile() {
-  const lemmas_file = readline.createInterface({input: read_stream2});
+  const orv_lemmas_file = readline.createInterface({input: read_stream2});
 
-  for await(const line of lemmas_file) {
+  orv_lemmas_master_string += "torot_lemma|lemma_id|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem2|conj_type|noun_verb|loan_place|long_adj|non_assim|eng_trans|etym_disc|bad_etym|loan_source|clitic|Usp|RusPrav|Mst|MstCol|NovMarg|OstrCol|Varl"; //this retarded system of denoting which lemmas appear in which texts should be replaced by a bit-flag, but this way makes it easier to filter in spreadsheet-programs
+
+  for await(const line of orv_lemmas_file) {
     const row = line.split(",");
     const orv_lemma_form = row[1];
     const orv_pos = row[2];
@@ -676,19 +665,20 @@ async function readORVLemmasFile() {
       csv_string += orv_lemma_form + "|" + orv_pos + "|" + ocs_lemma_form_map.get(orv_pos+orv_lemma_form).join("|") + "|ch_sl" + "\n";
     }
   }
-  lemmas_file.close();
+  orv_lemmas_file.close();
 }
 
 
 
 
-async function createLemmaIdMap() {
+async function matchLemmas() {
   await readLemmasSpreadsheet();
   await readORVLemmasFile();
   fs.writeFileSync(output_filename, csv_string);
+  fs.writeFileSync("orv_lemmas_master.csv", orv_lemmas_master_string);
 
 }
 
-createLemmaIdMap();
+matchLemmas();
 
 

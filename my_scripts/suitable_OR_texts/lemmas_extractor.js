@@ -2,6 +2,7 @@
 
 const sax = require('sax');
 const fs = require('node:fs');
+const { text } = require('node:stream/consumers');
 
 const orv_deepClean_map = {
     "\uF002" : "",
@@ -214,21 +215,34 @@ const orv_deepClean_map = {
 };
 
 
+
+
 let list_of_xml_files = fs.readdirSync(".").filter(x => x.slice(-4) == ".xml");
 const number_of_files = list_of_xml_files.length;
 console.log(list_of_xml_files);
 
 const saxParser = sax.createStream(true);
+saxParser.destroy = function (err) {
+    if (err) this.emit('error', err);
+    this.emit('close');
+  };
 let lang_name = process.argv[2];
 const lemmas_filename = lang_name + "_lemmas_count.csv";
 let can_parse = false;
 let annotated = false;
 
-let csv_string = "";
+fs.writeFileSync(lemmas_filename, "id,lemma,pos,normalised,count,Mst,MstCol,NovMarg,OstrCol,RusPrav,Usp,Varl,bitflag\n");
+
+let csv_string_arr = new Array();
 const key_set = new Set();
+const text_occurence_set = new Set();
+const lemmas_map = new Map();
+
 let lemma_count = 1;
 let lems_per_text_count = 0;
 let current_file_number = 0;
+
+let lemmas_counts_array = new Array();
 
 const deepClean = (dirty_word) => {
     let cleaned_word = dirty_word;
@@ -262,13 +276,30 @@ saxParser.on('opentag', function(node) {
 
         if(lemma_form != undefined) {
             const stringified_combo = lemma_form.concat(lemma_pos);
+            const text_occurence_combo = list_of_xml_files[current_file_number].slice(0, -4)+lemma_form+lemma_pos;
+
             if(key_set.has(stringified_combo) == false){
-                csv_string += String(lemma_count) + "," + lemma_form + "," + lemma_pos + "," + deepClean(lemma_form) + "\n";
+                csv_string_arr.push(String(lemma_count) + "," + lemma_form + "," + lemma_pos + "," + deepClean(lemma_form));
+                lemmas_map.set(stringified_combo, lemma_count);
+
                 lemma_count++;
+                lemmas_counts_array.push([1, 2**current_file_number]);
                 key_set.add(stringified_combo);
+                text_occurence_set.add(text_occurence_combo);
                 lems_per_text_count++;
                 
-            }      
+            }
+            else {
+                lemmas_counts_array[lemmas_map.get(stringified_combo) - 1][0]++;
+                
+            }
+            
+            if(text_occurence_set.has(text_occurence_combo) == false) {
+                text_occurence_set.add(text_occurence_combo);
+                lemmas_counts_array[lemmas_map.get(stringified_combo) - 1][1]+=2**current_file_number;
+            }
+            else {
+            }
         }
     }
 });
@@ -289,7 +320,25 @@ saxParser.on('end', () => {
         xml_stream.pipe(saxParser);
     }
     else {
-        fs.writeFileSync(lemmas_filename, csv_string);
+
+        for(let i = 0; i < csv_string_arr.length; i++) {
+            csv_string_arr[i] = csv_string_arr[i].concat("," + String(lemmas_counts_array[i][0]));
+
+            const bitflag = lemmas_counts_array[i][1].toString(2).padStart(list_of_xml_files.length, '0');
+            let text_occurence_csv = "";
+            for(let j = 0; j < bitflag.length; j++){
+                text_occurence_csv += ",";
+                if(bitflag[bitflag.length - 1 - j] == '1') {
+                    console.log(bitflag);
+                    console.log("j = ", j, "list_of_xml_files.length = ", list_of_xml_files.length);
+
+                    text_occurence_csv += list_of_xml_files[j].slice(0, -4)
+                }
+            }
+            csv_string_arr[i] = csv_string_arr[i].concat(text_occurence_csv + "," + String(lemmas_counts_array[i][1]));
+        }
+
+        fs.appendFileSync(lemmas_filename, csv_string_arr.join("\n"));
         csv_string = "";
         console.log("No more xml files to parse");
     }
