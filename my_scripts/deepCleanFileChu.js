@@ -208,7 +208,7 @@ const chu_deepClean_map = {
     "штѭ" : "штѫ",
 };
 
-const input_filename = "assem_converted.txt";
+const input_filename = process.argv[2];
 
 const input_stream = fs.createReadStream(input_filename);
 input_stream.on('error', () => {
@@ -230,4 +230,4 @@ async function deepClean() {
 
 await deepClean();
 input_file.close();
-fs.writeFileSync("assem_converted_deep_cleaned.txt", cleaned_text);
+fs.writeFileSync(input_filename+"_deep_cleaned.txt", cleaned_text);
