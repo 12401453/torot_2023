@@ -567,6 +567,8 @@ const ocs_lemma_form_map = new Map();
 const lcs_to_OR_torot_lemma_map = new Map();
 const lcs_to_OR_ChSl_torot_lemma_map = new Map();
 
+const new_chu_csv_arr = new Array();
+const new_orv_csv_arr = new Array();
 
 class CsvReader {
 
@@ -624,6 +626,7 @@ async function readLemmasSpreadsheet() {
     const root_2 = csv_reader.getField("stem2");
     const conj_type = csv_reader.getField("conj_type");
     const noun_verb = Number(csv_reader.getField("noun_verb"));
+    const morph_replace = csv_reader.getField("morph_replace");
     const doublet = csv_reader.getField("doublet");
     const loan_place = csv_reader.getField("loan_place");
     const non_assim = csv_reader.getField("non_assim");
@@ -632,7 +635,6 @@ async function readLemmasSpreadsheet() {
     const bad_etym = csv_reader.getField("bad_etym");
     const loan_source = csv_reader.getField("loan_source");
     const clitic = csv_reader.getField("clitic");
-
 
     //torot_lemma|lemma_id|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem2|conj_type|noun_verb|loan_place|long_adj|non_assim|eng_trans|etym_disc|bad_etym|loan_source|clitic|Mar|Euch|KF|Supr|Psal
 
@@ -650,7 +652,12 @@ async function readLemmasSpreadsheet() {
     else {
       lemma_stem = pre_jot.slice(0, pre_jot.length-conj_type_Trunc(conj_type));
     }
+
+    const new_chu_csv_line = [ocs_lemma, "", pos, "0", original_ocs_lemma_lcs, pre_jot, morph_replace, pv3_lemma_form, doublet, root_1, root_2, conj_type, noun_verb, loan_place, non_assim, eng_trans, etym_disc, bad_etym, loan_source, clitic];
+
+    new_chu_csv_arr.push(new_chu_csv_line);
     
+    //chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem2|conj_type|noun_verb|loan_place|non_assim|eng_trans|etym_disc|bad_etym|loan_source|clitic|chrabr|euch|kiev-mis|marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const|vit-meth_4_removed|zogr_complete|bitflag
     
     if(ocs_lemma_lcs.trim() !== "") {
       if(pv3_lemma_form.trim() !== "") ocs_lemma_lcs = pv3_lemma_form;
@@ -658,9 +665,9 @@ async function readLemmasSpreadsheet() {
       if(pos == "A-" && (ocs_lemma_lcs.slice(-1) == "ь" || ocs_lemma_lcs.slice(-1) == "ъ")) ocs_lemma_lcs = ocs_lemma_lcs + "jь";
 
       
-      lcs_to_OR_torot_lemma_map.set(pos+torotOldRus(ocs_lemma_lcs), [ocs_id, original_ocs_lemma_lcs, conj_type, noun_verb, lemma_stem]); //this is lemmas whose lcs-form, when converted to authentic OESl., matches the TOROT ORV lemma
-      lcs_to_OR_ChSl_torot_lemma_map.set(pos+torotOldRus(ocs_lemma_lcs, true), [ocs_id, original_ocs_lemma_lcs, conj_type, noun_verb, lemma_stem]); //this is lemmas whose lcs-form matches the TOROT ORV lemma when converted to the Old Russian Church-Slavonic recension
-      ocs_lemma_form_map.set(ocs_pos_lemma_combo, [ocs_id, original_ocs_lemma_lcs, conj_type, noun_verb, lemma_stem]); //this is for lemmas which are identical in ORV and OCS
+      lcs_to_OR_torot_lemma_map.set(pos+torotOldRus(ocs_lemma_lcs), ocs_lemma); //this is lemmas whose lcs-form, when converted to authentic OESl., matches the TOROT ORV lemma
+      lcs_to_OR_ChSl_torot_lemma_map.set(pos+torotOldRus(ocs_lemma_lcs, true), ocs_lemma); //this is lemmas whose lcs-form matches the TOROT ORV lemma when converted to the Old Russian Church-Slavonic recension
+      ocs_lemma_form_map.set(ocs_pos_lemma_combo, ocs_lemma); //this is for lemmas which are identical in ORV and OCS
     }
     line_index++;
   };
@@ -672,32 +679,55 @@ async function readORVLemmasFile() {
 
   const csv_reader = new CsvReader();
 
-  orv_master_string += "orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem2|conj_type|noun_verb|loan_place|long_adj|non_assim|eng_trans|etym_disc|bad_etym|loan_source|clitic|normalised|afnik|avv|birchbark|bur-alph|const|domo|drac|dux-grjaz|gol-gol|golitsyn|kiev-hyp|klem|kur|lav|luk-koloc_subtitle_added|mikh|mst|mstislav-col|nevsky-treaty|nov-list|nov-marg|nov-sin|novgorod-jaroslav|ostromir-col|paz|peter|pskov-ivan|pskov_subtitle_added|pvl-hyp|rig-smol1281|riga-goth|rusprav|schism|sergrad|shch|smol-pol-lit|spi|stefan|suz-lav|turch|usp-sbor|ust-vlad|varlaam|vest-kur|zadon|bitflag";
+  orv_master_string += "orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem2|conj_type|noun_verb|loan_place|non_assim|eng_trans|etym_disc|bad_etym|loan_source|clitic|ch_sl|afnik|avv|birchbark|bur-alph|const|domo|drac|dux-grjaz|gol-gol|golitsyn|kiev-hyp|klem|kur|lav|luk-koloc_subtitle_added|mikh|mst|mstislav-col|nevsky-treaty|nov-list|nov-marg|nov-sin|novgorod-jaroslav|ostromir-col|paz|peter|pskov-ivan|pskov_subtitle_added|pvl-hyp|rig-smol1281|riga-goth|rusprav|schism|sergrad|shch|smol-pol-lit|spi|stefan|suz-lav|turch|usp-sbor|ust-vlad|varlaam|vest-kur|zadon|bitflag\n";
 
   let line_index = 0;
   for await(const line of orv_lemmas_file) {
     if(line_index == 0) {
       csv_reader.setHeaders(line);
-      line++;
+      line_index++;
       continue;
     }
     csv_reader.setLine(line);
+    //id,lemma,pos,normalised,count,afnik,avv,birchbark,bur-alph,const,domo,drac,dux-grjaz,gol-gol,golitsyn,kiev-hyp,klem,kur,lav,luk-koloc_subtitle_added,mikh,mst,mstislav-col,nevsky-treaty,nov-list,nov-marg,nov-sin,novgorod-jaroslav,ostromir-col,paz,peter,pskov-ivan,pskov_subtitle_added,pvl-hyp,rig-smol1281,riga-goth,rusprav,schism,sergrad,shch,smol-pol-lit,spi,stefan,suz-lav,turch,usp-sbor,ust-vlad,varlaam,vest-kur,zadon,bitflag
 
     const orv_lemma_form = csv_reader.getField("lemma");
+    let chu_lemma_form = "";
     const orv_pos = csv_reader.getField("pos");
+    const count = csv_reader.getField("count");
+
+    let ch_sl = "e_sl";
+
+    const text_occurrence_line = line.split(",").slice(5).join("|");
+
+    orv_master_string += orv_lemma_form + "|";
+
+    let matched_chu_line;
 
     if(lcs_to_OR_torot_lemma_map.has(orv_pos+orv_lemma_form)) {
-      csv_string += orv_lemma_form + "|" + orv_pos + "|" + lcs_to_OR_torot_lemma_map.get(orv_pos+orv_lemma_form).join("|") + "|e_sl" + "\n";
+      chu_lemma_form = lcs_to_OR_torot_lemma_map.get(orv_pos+orv_lemma_form);
+      //console.log(chu_lemma_form, orv_pos);
+      matched_chu_line = new_chu_csv_arr.find(x => x[0] == chu_lemma_form && x[2] == orv_pos);
     }
     else if(lcs_to_OR_ChSl_torot_lemma_map.has(orv_pos+orv_lemma_form)) {
-      csv_string += orv_lemma_form + "|" + orv_pos + "|" + lcs_to_OR_ChSl_torot_lemma_map.get(orv_pos+orv_lemma_form).join("|") + "|ch_sl" + "\n";
+      chu_lemma_form = lcs_to_OR_ChSl_torot_lemma_map.get(orv_pos+orv_lemma_form);
+      //console.log(chu_lemma_form, orv_pos);
+      matched_chu_line = new_chu_csv_arr.find(x => x[0] == chu_lemma_form && x[2] == orv_pos);
+      ch_sl = "ch_sl";
     }
     else if(ocs_lemma_form_map.has(orv_pos+orv_lemma_form)) {
-      csv_string += orv_lemma_form + "|" + orv_pos + "|" + ocs_lemma_form_map.get(orv_pos+orv_lemma_form).join("|") + "|ch_sl" + "\n";
+      chu_lemma_form = ocs_lemma_form_map.get(orv_pos+orv_lemma_form);
+      //console.log(chu_lemma_form, orv_pos);
+      matched_chu_line = new_chu_csv_arr.find(x => x[0] == chu_lemma_form && x[2] == orv_pos);
+      ch_sl = "ch_sl";
     }
     else {
-      
+      matched_chu_line = ["", "", "", "", "", "", "", "", "", "", "", "", "99", "", "", "", "", "", "", ""];
     }
+    
+    orv_master_string += chu_lemma_form + "|" + orv_pos + "|" + count + "|";
+
+    orv_master_string += matched_chu_line.slice(4).join("|") + "|" + ch_sl + "|" + text_occurrence_line + "\n";
 
 
     line_index++;
@@ -710,30 +740,39 @@ async function readCHULemmasFile() {
 
   const csv_reader = new CsvReader();
 
-  chu_master_string += "chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem2|conj_type|noun_verb|loan_place|long_adj|non_assim|eng_trans|etym_disc|bad_etym|loan_source|clitic|normalised|chrabr|euch|kiev-mis|marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const|vit-meth_4_removed|zogr_complete|bitflag";
+  chu_master_string += "chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem2|conj_type|noun_verb|loan_place|non_assim|eng_trans|etym_disc|bad_etym|loan_source|clitic|chrabr|euch|kiev-mis|marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const|vit-meth_4_removed|zogr_complete|bitflag\n";
 
   let line_index = 0;
   for await(const line of chu_lemmas_file) {
     if(line_index == 0) {
       csv_reader.setHeaders(line);
-      line++;
+      line_index++;
       continue;
     }
     csv_reader.setLine(line);
 
     const chu_lemma_form = csv_reader.getField("lemma");
     const chu_pos = csv_reader.getField("pos");
+    const count = csv_reader.getField("count");
 
-    if(lcs_to_OR_torot_lemma_map.has(chu_pos+chu_lemma_form)) {
-      csv_string += chu_lemma_form + "|" + chu_pos + "|" + lcs_to_OR_torot_lemma_map.get(chu_pos+chu_lemma_form).join("|") + "|e_sl" + "\n";
+    const text_occurrence_line = line.split(",").slice(5).join("|");
+
+    const new_chu_csv_line_idx = new_chu_csv_arr.findIndex(x => x[0] == chu_lemma_form && x[2] == chu_pos);
+    if(new_chu_csv_line_idx != -1) {
+      const new_chu_csv_line = new_chu_csv_arr[new_chu_csv_line_idx];
+      new_chu_csv_line[3] = count;
+      chu_master_string += new_chu_csv_line.join("|") + "|" + text_occurrence_line + "\n";
+
+      new_chu_csv_arr.splice(new_chu_csv_line_idx, 1); //remove it so that what's left after going through the XML-file-extracted lemmas is just the additions I added to the lemmas-spreadsheet
     }
-    else if(lcs_to_OR_ChSl_torot_lemma_map.has(chu_pos+chu_lemma_form)) {
-      csv_string += chu_lemma_form + "|" + chu_pos + "|" + lcs_to_OR_ChSl_torot_lemma_map.get(chu_pos+chu_lemma_form).join("|") + "|ch_sl" + "\n";
+    else {
+      chu_master_string += chu_lemma_form + "||" + chu_pos + "|" + count + "|||||||||99||||||||" + text_occurrence_line + "\n";
     }
-    else if(ocs_lemma_form_map.has(chu_pos+chu_lemma_form)) {
-      csv_string += chu_lemma_form + "|" + chu_pos + "|" + ocs_lemma_form_map.get(chu_pos+chu_lemma_form).join("|") + "|ch_sl" + "\n";
-    }
+    
     line_index++;
+  }
+  for(const leftover_chu_line_arr of new_chu_csv_arr) {
+    chu_master_string += leftover_chu_line_arr.join('|') + "||||||||||" + "\n";
   }
   chu_lemmas_file.close();
 };
@@ -744,8 +783,8 @@ async function matchLemmas() {
   await readLemmasSpreadsheet();
   await readORVLemmasFile();
   await readCHULemmasFile();
-  fs.writeFileSync(output_filename, csv_string);
   fs.writeFileSync("orv_lemmas_master.csv", orv_master_string);
+  fs.writeFileSync("chu_lemmas_master.csv", chu_master_string);
 
 }
 
