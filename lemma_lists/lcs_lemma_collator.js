@@ -1008,17 +1008,50 @@ async function updateChuMasterFile() {
   }
 }
 
-function generateLcsMasterArr(chu_master_arr, orv_master_arr) {
+function generateLcsMasterCSV(chu_master_arr, orv_master_arr) {
 
   const lcs_lemma_map = new Map();
 
-  for(const line_arr of chu_master_arr) {
+  for(let i = 1; i < chu_master_arr.length; i++) {
+    const line_arr = chu_master_arr[i];
     if(line_arr[4] != "") {
       let automatched_lang = "";
       if(line_arr[20] == "1") automatched_lang = "chu";
-      lcs_lemma_map.set([line_arr[0], line_arr[1], line_arr[2], line_arr[4], line_arr[9], line_arr[10], line_arr[11]], [line_arr[3], line_arr[5], line_arr[6], line_arr[7], line_arr[8], line_arr[12], line_arr[13], line_arr[14], line_arr[15], line_arr[16], line_arr[17], line_arr[18], line_arr[19], automatched_lang]);
+      const chu_key = line_arr[2]+"|"+ line_arr[4]+"|"+ line_arr[9]+"|"+ line_arr[10]+"|"+ line_arr[11];
+      //console.log("chu_key", chu_key);
+      lcs_lemma_map.set(chu_key, [line_arr[0], line_arr[1], line_arr[5], line_arr[6], line_arr[7], line_arr[8], line_arr[12], line_arr[13], line_arr[14], line_arr[15], line_arr[16], line_arr[17], line_arr[18], line_arr[19], automatched_lang]);
     }
   }
+//orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem2|conj_type|noun_verb|loan_place|non_assim|eng_trans|etym_disc|bad_etym|loan_source|clitic|automatched
+  for(let i = 1; i < orv_master_arr.length; i++) {
+    const line_arr = orv_master_arr[i];
+    if(line_arr[4] != ""){
+      //key consists of pos+lcs_lemma+root1+root2+conj_type. If there are duplicates of all that then it will not matter for autoreconstructions
+      const orv_key = line_arr[2]+"|"+ line_arr[4]+"|"+ line_arr[9]+"|"+ line_arr[10]+"|"+ line_arr[11];
+      //console.log("orv_key", orv_key);
+      let automatched_lang = "";
+      if(line_arr[20] == "1") automatched_lang = "orv";
+      if(lcs_lemma_map.has(orv_key)) {
+        //console.log("chu file already contains CHU lemma", line_arr[1], "corresponding to ORV lemma", line_arr[0], "and lcs lemma", line_arr[4]);
+        if(automatched_lang != "" && lcs_lemma_map.get(orv_key)[13] != automatched_lang) {
+          //console.log("lemma already added to map from CHU table but with different automatched value of", lcs_lemma_map.get(orv_key)[13], "as opposed to", automatched_lang);
+          lcs_lemma_map.set(orv_key, [line_arr[1], line_arr[0], line_arr[5], line_arr[6], line_arr[7], line_arr[8], line_arr[12], line_arr[13], line_arr[14], line_arr[15], line_arr[16], line_arr[17], line_arr[18], line_arr[19], automatched_lang])
+        }
+      }
+      else {
+        lcs_lemma_map.set(orv_key, [line_arr[1], line_arr[0], line_arr[5], line_arr[6], line_arr[7], line_arr[8], line_arr[12], line_arr[13], line_arr[14], line_arr[15], line_arr[16], line_arr[17], line_arr[18], line_arr[19], automatched_lang]);
+      }
+    }
+  }
+  
+  let lcs_master_csv = "chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem2|conj_type|noun_verb|loan_place|non_assim|eng_trans|etym_disc|bad_etym|loan_source|clitic|automatched\n";
+  
+  for(const pair of lcs_lemma_map) {
+    const key_arr = pair[0].split("|");
+    lcs_master_csv += pair[1][0] + "|" + pair[1][1] + "|" + key_arr[0] + "|" + key_arr[1] + "|" + pair[1][2] + "|" + pair[1][3] + "|" + pair[1][4] + "|" + pair[1][5] + "|" + key_arr[2] + "|" + key_arr[3] + "|" + key_arr[4] + "|" + pair[1][6] + "|" + pair[1][7] + "|" + pair[1][8] + "|" + pair[1][9] + "|" + pair[1][10] + "|" + pair[1][11] + "|" + pair[1][12] + "|" + pair[1][13] + "|" + pair[1][14] + "\n";
+  }
+
+  return lcs_master_csv;
 }
 
 
@@ -1028,8 +1061,6 @@ async function matchLemmas() {
   await readCHULemmasFile();
   fs.writeFileSync("orv_lemmas_master.csv", orv_master_string);
   fs.writeFileSync("chu_lemmas_master.csv", chu_master_string);
-
-  let lcs_master_csv = "chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem2|conj_type|noun_verb|loan_place|non_assim|eng_trans|etym_disc|bad_etym|loan_source|clitic|automatched\n";
 
   for await(const line of readline.createInterface({input: fs.createReadStream("chu_lemmas_master_test.csv")})) {
     chu_master_arr.push(line.split("|"));
@@ -1041,7 +1072,7 @@ async function matchLemmas() {
   updateOrvMasterFile();
   updateChuMasterFile();
 
-  const lcs_master_arr = generateLcsMasterArr(chu_master_arr, orv_master_arr);
+  const lcs_master_csv = generateLcsMasterCSV(chu_master_arr, orv_master_arr);
 
   let orv_updated_master_csv = "";
   for(const line_arr of orv_master_arr) {
@@ -1053,6 +1084,7 @@ async function matchLemmas() {
   }
   fs.writeFileSync("orv_lemmas_updated_test.csv", orv_updated_master_csv);
   fs.writeFileSync("chu_lemmas_updated_test.csv", chu_updated_master_csv);
+  fs.writeFileSync("lcs_lemmas_master.csv", lcs_master_csv);
 
 
 
