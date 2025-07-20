@@ -1,4 +1,5 @@
 #!/usr/bin/node
+//this deliberately doesn't match lemmas with #1 #2 etc. because those would risk being inaccurate
 
 function conj_type_Trunc(conj_type) {
 
@@ -500,6 +501,102 @@ const orv_chSl_torot_mappings = {
   'ń' : 'н',
   'ĺ' : 'л',
   'ŕ' : 'р',
+};
+const chu_torot_mappings = {
+  'egъd' : 'egd',
+  'ъgъd' : 'ъgd',
+  'ьgъd' : 'ьgd',
+  'sš' : 'ш',
+  'sc' : 'ц',
+  'bv' : 'б',
+  'ŕǢ' : 'рꙗ',
+  'ńǢ' : 'нꙗ',
+  'ĺǢ' : 'лꙗ',
+  'śa' : 'сꙗ',
+  'jǢ' : 'ꙗ',
+  'ŕu' : 'рю',
+  'ńu' : 'ню',
+  'ĺu' : 'лю',
+  'śu' : 'сю',
+  'ju' : 'ю',
+  'ŕǫ' : 'рѭ',
+  'ńǫ' : 'нѭ',
+  'ĺǫ' : 'лѭ',
+  'jǫ' : 'ѭ',
+  'śǫ' : 'сѭ',
+  'ŕe' : 'рѥ',
+  'ŕi' : 'ри',
+  'ŕь' : 'рь',
+  'ŕę' : 'рѩ',
+  'ńe' : 'нѥ',
+  'ńi' : 'ни',
+  'ńь' : 'нь',
+  'ńę' : 'нѩ',
+  'ĺe' : 'лѥ',
+  'ĺi' : 'ли',
+  'ĺь' : 'ль',
+  'ĺę' : 'лѩ',
+  'ję' : 'ѩ',
+  'je' : 'ѥ',
+  'ji' : 'и',
+  'jь' : 'и',
+  'ьj' : 'и',
+  'jo' : 'о',
+  'jě' : 'ѣ',
+  '' : '',
+  'ŕ̥' : 'рь',
+  'r̥' : 'ръ',
+  'ĺ̥' : 'ль',
+  'l̥' : 'лъ',
+  'šč' : 'щ',
+  'šћ' : 'щ',
+  'žǯ' : 'жд',
+  'žђ' : 'жд',
+  'zr' : 'здр',
+  'dn' : 'n',
+  'ǵ' : 'г',
+  'ḱ' : 'к',
+  'x́' : 'х',
+  'ћ' : 'щ',
+  'ђ' : 'жд',
+  'b' : 'б',
+  'p' : 'п',
+  'v' : 'в',
+  'f' : 'ф',
+  't' : 'т',
+  'd' : 'д',
+  's' : 'с',
+  'z' : 'з',
+  'ʒ' : 'ѕ',
+  'c' : 'ц',
+  'ś' : 'с',
+  'k' : 'к',
+  'g' : 'г',
+  'x' : 'х',
+  'ü' : 'ѵ',
+  'y' : 'ꙑ',
+  'č' : 'ч',
+  'š' : 'ш',
+  'ž' : 'ж',
+  'Ǣ' : 'а',
+  'a' : 'а',
+  'e' : 'е',
+  'ę' : 'ѧ',
+  'ě' : 'ѣ',
+  'i' : 'и',
+  'ь' : 'ь',
+  'ъ' : 'ъ',
+  'o' : 'о',
+  'ǫ' : 'ѫ',
+  'u' : 'оу',
+  'l' : 'л',
+  'n' : 'н',
+  'm' : 'м',
+  'r' : 'р',
+  '+' : '',
+  'ń' : 'н',
+  'ĺ' : 'л',
+  'ŕ' : 'р',
 }
 
 const torotOldRus = (lcs_lemma, ch_sl=false) => {
@@ -518,7 +615,7 @@ const torotOldRus = (lcs_lemma, ch_sl=false) => {
 
   lcs_lemma = lcs_lemma.replace(/^ak/, "jǢk").replace(/^av/, "jǢv");
   lcs_lemma = yeetTlDl(lcs_lemma);
-  //PV3 should be dealt with before the lcs_lemma is passed in
+  //PV3 is dealt with before the lcs_lemma is passed in
 
   const ort_group_converter = ch_sl ? metaThesis : polnoGlasie;
 
@@ -532,7 +629,29 @@ const torotOldRus = (lcs_lemma, ch_sl=false) => {
 
   return lcs_lemma;
 }
-/////////////////////////////////////////////////////////////////////////OLD RUSSIAN CONVERSION SHIT////////////////////////////////////////^^^^^^^^
+//^^^^^///////////////////////////////////////////////////////////////////////OLD RUSSIAN CONVERSION SHIT////////////////////////////////////////^^^^^^^^
+
+const torotOCS = (lcs_lemma) => {
+
+  if(lcs_lemma.includes("čьlově")) {
+    lcs_lemma = lcs_lemma.replaceAll("čьlově", "člově");
+  }
+
+  lcs_lemma = yeetTlDl(lcs_lemma);
+  //PV3 is dealt with before the lcs_lemma is passed in
+
+  const ort_group_converter = metaThesis;
+
+  lcs_lemma = lengthenTenseJers(applyPV2(ort_group_converter(lcs_lemma)));
+
+  for(const key in chu_torot_mappings) {
+    lcs_lemma = lcs_lemma.replaceAll(key, chu_torot_mappings[key]);
+  }
+
+  return lcs_lemma;
+}
+
+//^^^^^^^^///////////////////////////////////////////////////////////////////////OCS CONVERSION SHIT////////////////////////////////////////^^^^^^^^
 
 const fs = require('node:fs');
 
@@ -590,6 +709,24 @@ class CsvReader {
 
   getField(header) {
     return this.m_fields_array[this.m_header_index_map.get(header)];
+  }
+
+  setField(header, new_value) {
+    if(this.m_header_index_map.has(header)) {
+      this.m_fields_array[this.m_header_index_map.get(header)] = new_value;
+      this.m_raw_line = this.m_fields_array.join(m_separator);
+    }
+    else {
+      console.log("CsvReader.setField() failed because the header-value is wrong");
+    }    
+  }
+
+  getRawLine(){
+    return this.m_raw_line;
+  }
+
+  getFieldsArray() {
+    return this.m_fields_array;
   }
 
   m_header_index_map = new Map();
@@ -679,7 +816,7 @@ async function readORVLemmasFile() {
 
   const csv_reader = new CsvReader();
 
-  orv_master_string += "orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem2|conj_type|noun_verb|loan_place|non_assim|eng_trans|etym_disc|bad_etym|loan_source|clitic|ch_sl|afnik|avv|birchbark|bur-alph|const|domo|drac|dux-grjaz|gol-gol|golitsyn|kiev-hyp|klem|kur|lav|luk-koloc_subtitle_added|mikh|mst|mstislav-col|nevsky-treaty|nov-list|nov-marg|nov-sin|novgorod-jaroslav|ostromir-col|paz|peter|pskov-ivan|pskov_subtitle_added|pvl-hyp|rig-smol1281|riga-goth|rusprav|schism|sergrad|shch|smol-pol-lit|spi|stefan|suz-lav|turch|usp-sbor|ust-vlad|varlaam|vest-kur|zadon|bitflag\n";
+  orv_master_string += "orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem2|conj_type|noun_verb|loan_place|non_assim|eng_trans|etym_disc|bad_etym|loan_source|clitic|automatched|ch_sl|afnik|avv|birchbark|bur-alph|const|domo|drac|dux-grjaz|gol-gol|golitsyn|kiev-hyp|klem|kur|lav|luk-koloc_subtitle_added|mikh|mst|mstislav-col|nevsky-treaty|nov-list|nov-marg|nov-sin|novgorod-jaroslav|ostromir-col|paz|peter|pskov-ivan|pskov_subtitle_added|pvl-hyp|rig-smol1281|riga-goth|rusprav|schism|sergrad|shch|smol-pol-lit|spi|stefan|suz-lav|turch|usp-sbor|ust-vlad|varlaam|vest-kur|zadon|bitflag\n";
 
   let line_index = 0;
   for await(const line of orv_lemmas_file) {
@@ -703,22 +840,26 @@ async function readORVLemmasFile() {
     orv_master_string += orv_lemma_form + "|";
 
     let matched_chu_line;
+    let automatched = "0";
 
     if(lcs_to_OR_torot_lemma_map.has(orv_pos+orv_lemma_form)) {
       chu_lemma_form = lcs_to_OR_torot_lemma_map.get(orv_pos+orv_lemma_form);
       //console.log(chu_lemma_form, orv_pos);
       matched_chu_line = new_chu_csv_arr.find(x => x[0] == chu_lemma_form && x[2] == orv_pos);
+      automatched = "1";
     }
     else if(lcs_to_OR_ChSl_torot_lemma_map.has(orv_pos+orv_lemma_form)) {
       chu_lemma_form = lcs_to_OR_ChSl_torot_lemma_map.get(orv_pos+orv_lemma_form);
       //console.log(chu_lemma_form, orv_pos);
       matched_chu_line = new_chu_csv_arr.find(x => x[0] == chu_lemma_form && x[2] == orv_pos);
+      automatched = "1";
       ch_sl = "ch_sl";
     }
     else if(ocs_lemma_form_map.has(orv_pos+orv_lemma_form)) {
       chu_lemma_form = ocs_lemma_form_map.get(orv_pos+orv_lemma_form);
       //console.log(chu_lemma_form, orv_pos);
       matched_chu_line = new_chu_csv_arr.find(x => x[0] == chu_lemma_form && x[2] == orv_pos);
+      automatched = "1";
       ch_sl = "ch_sl";
     }
     else {
@@ -727,7 +868,7 @@ async function readORVLemmasFile() {
     
     orv_master_string += chu_lemma_form + "|" + orv_pos + "|" + count + "|";
 
-    orv_master_string += matched_chu_line.slice(4).join("|") + "|" + ch_sl + "|" + text_occurrence_line + "\n";
+    orv_master_string += matched_chu_line.slice(4).join("|") + "|" + automatched + "|" + ch_sl + "|" + text_occurrence_line + "\n";
 
 
     line_index++;
@@ -740,7 +881,7 @@ async function readCHULemmasFile() {
 
   const csv_reader = new CsvReader();
 
-  chu_master_string += "chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem2|conj_type|noun_verb|loan_place|non_assim|eng_trans|etym_disc|bad_etym|loan_source|clitic|chrabr|euch|kiev-mis|marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const|vit-meth_4_removed|zogr_complete|bitflag\n";
+  chu_master_string += "chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem2|conj_type|noun_verb|loan_place|non_assim|eng_trans|etym_disc|bad_etym|loan_source|clitic|automatched|chrabr|euch|kiev-mis|marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const|vit-meth_4_removed|zogr_complete|bitflag\n";
 
   let line_index = 0;
   for await(const line of chu_lemmas_file) {
@@ -761,22 +902,111 @@ async function readCHULemmasFile() {
     if(new_chu_csv_line_idx != -1) {
       const new_chu_csv_line = new_chu_csv_arr[new_chu_csv_line_idx];
       new_chu_csv_line[3] = count;
-      chu_master_string += new_chu_csv_line.join("|") + "|" + text_occurrence_line + "\n";
+      chu_master_string += new_chu_csv_line.join("|") + "|" + "0|" + text_occurrence_line + "\n";
 
       new_chu_csv_arr.splice(new_chu_csv_line_idx, 1); //remove it so that what's left after going through the XML-file-extracted lemmas is just the additions I added to the lemmas-spreadsheet
     }
     else {
-      chu_master_string += chu_lemma_form + "||" + chu_pos + "|" + count + "|||||||||99||||||||" + text_occurrence_line + "\n";
+      chu_master_string += chu_lemma_form + "||" + chu_pos + "|" + count + "|||||||||99||||||||0|" + text_occurrence_line + "\n";
     }
     
     line_index++;
   }
   for(const leftover_chu_line_arr of new_chu_csv_arr) {
-    chu_master_string += leftover_chu_line_arr.join('|') + "||||||||||" + "\n";
+    chu_master_string += leftover_chu_line_arr.join('|') + "|0||||||||||" + "\n";
   }
   chu_lemmas_file.close();
-};
+}
 
+const chu_master_arr = new Array();
+const orv_master_arr = new Array();
+
+function updateOrvMasterFile () {
+  
+  const chu_csv_reader = new CsvReader('|');
+  const orv_csv_reader = new CsvReader('|');
+
+  chu_csv_reader.setHeaders(chu_master_arr[0].join("|"));
+  orv_csv_reader.setHeaders(orv_master_arr[0].join("|"));
+ 
+  for (let i = 1; i < chu_master_arr.length; i++) {
+    chu_csv_reader.setLine(chu_master_arr[i].join("|"));
+    let lemma_lcs = chu_csv_reader.getField("lcs_lemma");
+    if(lemma_lcs != "") {
+      const pv3_lemma_form = chu_csv_reader.getField("PV2/3");
+      const conj_type = chu_csv_reader.getField("conj_type");
+      const pos = chu_csv_reader.getField("pos");
+      const chu_lemma = chu_csv_reader.getField("chu_lemma");
+
+      if(pv3_lemma_form.trim() !== "") lemma_lcs = pv3_lemma_form;
+      else if(conj_type.includes("PV3")) lemma_lcs = applyPV3(lemma_lcs);
+      if(pos == "A-" && (lemma_lcs.slice(-1) == "ь" || lemma_lcs.slice(-1) == "ъ")) lemma_lcs = lemma_lcs + "jь";
+
+      const orv_esl_converted = torotOldRus(lemma_lcs);
+      const orv_chsl_converted = torotOldRus(lemma_lcs, true);
+
+      const esl_match_idx = orv_master_arr.findIndex(x => x[4] == "" && x[2] == pos && x[0] == orv_esl_converted);
+      if(esl_match_idx != -1) {
+        orv_csv_reader.setLine(orv_master_arr[esl_match_idx].join("|"));
+        orv_master_arr[esl_match_idx] = (orv_csv_reader.getField("orv_lemma") + "|" + chu_lemma + "|" + pos + "|" + orv_csv_reader.getField("count") + "|" + chu_csv_reader.getFieldsArray().slice(4, 20).join("|") + "|" + "1|e_sl|" + orv_csv_reader.getFieldsArray().slice(22).join("|")).split("|");
+        continue;
+      }
+      const chsl_match_dx = orv_master_arr.findIndex(x => x[4] == "" && x[2] == pos && x[0] == orv_chsl_converted);
+      if(chsl_match_dx != -1) {
+        orv_csv_reader.setLine(orv_master_arr[chsl_match_dx].join("|"));
+        orv_master_arr[chsl_match_dx] = (orv_csv_reader.getField("orv_lemma") + "|" + chu_lemma + "|" + pos + "|" + orv_csv_reader.getField("count") + "|" + chu_csv_reader.getFieldsArray().slice(4, 20).join("|") + "|" + "1|ch_sl|" + orv_csv_reader.getFieldsArray().slice(22).join("|")).split("|");
+        continue;
+      }
+      const plain_match_idx = orv_master_arr.findIndex(x => x[4] == "" && x[2] == pos && x[0] == chu_lemma);
+      if(plain_match_idx != -1) {
+        orv_csv_reader.setLine(orv_master_arr[plain_match_idx].join("|"));
+        orv_master_arr[plain_match_idx] = (orv_csv_reader.getField("orv_lemma") + "|" + chu_lemma + "|" + pos + "|" + orv_csv_reader.getField("count") + "|" + chu_csv_reader.getFieldsArray().slice(4, 20).join("|") + "|" + "1|ch_sl|" + orv_csv_reader.getFieldsArray().slice(22).join("|")).split("|");
+        continue;
+      }
+    }
+
+  }
+}
+
+async function updateChuMasterFile() {
+  const chu_csv_reader = new CsvReader('|');
+  const orv_csv_reader = new CsvReader('|');
+
+  chu_csv_reader.setHeaders(chu_master_arr[0].join("|"));
+  orv_csv_reader.setHeaders(orv_master_arr[0].join("|"));
+ 
+  for (let i = 1; i < orv_master_arr.length; i++) {
+    orv_csv_reader.setLine(orv_master_arr[i].join("|"));
+    let lemma_lcs = orv_csv_reader.getField("lcs_lemma");
+    if(lemma_lcs != "") {
+      const pv3_lemma_form = orv_csv_reader.getField("PV2/3");
+      const conj_type = orv_csv_reader.getField("conj_type");
+      const pos = orv_csv_reader.getField("pos");
+      const orv_lemma = orv_csv_reader.getField("orv_lemma");
+
+      if(pv3_lemma_form.trim() !== "") lemma_lcs = pv3_lemma_form;
+      else if(conj_type.includes("PV3")) lemma_lcs = applyPV3(lemma_lcs);
+
+      const chu_converted = torotOCS(lemma_lcs);
+
+      const chu_match_idx = chu_master_arr.findIndex(x => x[4] == "" && x[2] == pos && x[0] == chu_converted);
+      if(chu_match_idx != -1) {
+        chu_csv_reader.setLine(chu_master_arr[chu_match_idx].join("|"));
+        chu_master_arr[chu_match_idx] = (chu_csv_reader.getField("chu_lemma") + "|" + orv_lemma + "|" + pos + "|" + chu_csv_reader.getField("count") + "|" + orv_csv_reader.getFieldsArray().slice(4, 20).join("|") + "|" + "1|" + chu_csv_reader.getFieldsArray().slice(21).join("|")).split("|");
+        continue;
+      }
+
+      //this can match some absolute bollocks OCS lemmas which have erroneos ESl. forms
+      const plain_match_idx = chu_master_arr.findIndex(x => x[4] == "" && x[2] == pos && x[0] == orv_lemma);
+      if(plain_match_idx != -1) {
+        chu_csv_reader.setLine(chu_master_arr[plain_match_idx].join("|"));
+        chu_master_arr[plain_match_idx] = (chu_csv_reader.getField("chu_lemma") + "|" + orv_lemma + "|" + pos + "|" + chu_csv_reader.getField("count") + "|" + orv_csv_reader.getFieldsArray().slice(4, 20).join("|") + "|" + "1|" + chu_csv_reader.getFieldsArray().slice(21).join("|")).split("|");
+        continue;
+      }
+    }
+
+  }
+}
 
 
 async function matchLemmas() {
@@ -786,8 +1016,32 @@ async function matchLemmas() {
   fs.writeFileSync("orv_lemmas_master.csv", orv_master_string);
   fs.writeFileSync("chu_lemmas_master.csv", chu_master_string);
 
+  let lcs_master_csv = "chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem2|conj_type|noun_verb|loan_place|non_assim|eng_trans|etym_disc|bad_etym|loan_source|clitic|automatched\n";
+
+  for await(const line of readline.createInterface({input: fs.createReadStream("chu_lemmas_master_test.csv")})) {
+    chu_master_arr.push(line.split("|"));
+  }
+  for await (const line of readline.createInterface({input: fs.createReadStream("orv_lemmas_master_test.csv")})) {
+    orv_master_arr.push(line.split("|"));
+  }
+
+  updateOrvMasterFile();
+  updateChuMasterFile();
+
+  let orv_updated_master_csv = "";
+  for(const line_arr of orv_master_arr) {
+    orv_updated_master_csv += line_arr.join("|") + "\n";
+  }
+  let chu_updated_master_csv = "";
+  for(const line_arr of chu_master_arr) {
+    chu_updated_master_csv += line_arr.join("|") + "\n";
+  }
+  fs.writeFileSync("orv_lemmas_updated_test.csv", orv_updated_master_csv);
+  fs.writeFileSync("chu_lemmas_updated_test.csv", chu_updated_master_csv);
+
+
+
 }
 
 matchLemmas();
-
 
