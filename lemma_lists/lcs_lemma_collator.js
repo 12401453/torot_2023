@@ -1008,6 +1008,19 @@ async function updateChuMasterFile() {
   }
 }
 
+function generateLcsMasterArr(chu_master_arr, orv_master_arr) {
+
+  const lcs_lemma_map = new Map();
+
+  for(const line_arr of chu_master_arr) {
+    if(line_arr[4] != "") {
+      let automatched_lang = "";
+      if(line_arr[20] == "1") automatched_lang = "chu";
+      lcs_lemma_map.set([line_arr[0], line_arr[1], line_arr[2], line_arr[4], line_arr[9], line_arr[10], line_arr[11]], [line_arr[3], line_arr[5], line_arr[6], line_arr[7], line_arr[8], line_arr[12], line_arr[13], line_arr[14], line_arr[15], line_arr[16], line_arr[17], line_arr[18], line_arr[19], automatched_lang]);
+    }
+  }
+}
+
 
 async function matchLemmas() {
   await readLemmasSpreadsheet();
@@ -1027,6 +1040,8 @@ async function matchLemmas() {
 
   updateOrvMasterFile();
   updateChuMasterFile();
+
+  const lcs_master_arr = generateLcsMasterArr(chu_master_arr, orv_master_arr);
 
   let orv_updated_master_csv = "";
   for(const line_arr of orv_master_arr) {
