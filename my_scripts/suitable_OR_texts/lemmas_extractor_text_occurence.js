@@ -5,6 +5,7 @@ const fs = require('node:fs');
 const { text } = require('node:stream/consumers');
 
 const orv_deepClean_map = {
+    "꙽" : "",
     "\uF002" : "",
     "\uF102" : "",
     "$" : "", //these four are characters which I may or may not use to indicate supralinears in the database
@@ -221,6 +222,7 @@ const orv_deepClean_map = {
 
 };
 const chu_deepClean_map = {
+    "꙽" : "",
     "j" : "і",
     "\uF002" : "",
     "\uF102" : "",
@@ -433,7 +435,7 @@ const saxParser = sax.createStream(true);
 saxParser.destroy = function (err) {
     if (err) this.emit('error', err);
     this.emit('close');
-  };
+};
 let lang_name = process.argv[2];
 const lemmas_filename = lang_name + "_lemmas_count_text_occurence.csv";
 const deepCleanMap = lang_name == "orv" ? orv_deepClean_map : chu_deepClean_map;

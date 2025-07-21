@@ -4,6 +4,7 @@ import fs from 'fs';
 import readline from 'readline';
 
 const chu_deepClean_map = {
+    "꙽" : "",
     "j" : "і",
     "\uF002" : "",
     "\uF102" : "",

@@ -1,5 +1,6 @@
 #!/usr/bin/node
 const chu_deepClean_map = {
+    "꙽" : "",
     "j" : "і",
     "\uF002" : "",
     "\uF102" : "",
@@ -204,6 +205,7 @@ const chu_deepClean_map = {
     "штѭ" : "штѫ",
 };
 const orv_deepClean_map = {
+    "꙽" : "",
     "\uF002" : "",
     "\uF102" : "",
     "$" : "", //these four are characters which I may or may not use to indicate supralinears in the database
@@ -441,9 +443,13 @@ const deepClean_map = lang_id == "orv" ? orv_deepClean_map : chu_deepClean_map;
 const words_filename = lang_id+"_words_full_with_titles_untagged.csv";
 const just_untagged_words_filename = lang_id+"untagged_words.csv";
 
-fs.writeFileSync(words_filename, "torot_word|pos|morph_tag|deep_cleaned|lemma_id|sentence_no|pres_before|pres_after|text_id|subtitle_id|autotagged\n");
+fs.writeFileSync(words_filename, "torot_word|pos|lemma|morph_tag|deep_cleaned|lemma_id|sentence_no|pres_before|pres_after|text_id|subtitle_id|autotagged\n");
 
 const saxParser = sax.createStream(true);
+saxParser.destroy = function (err) {
+    if (err) this.emit('error', err);
+    this.emit('close');
+};
 
 const pos_set = new Set();
 const morph_set = new Set();
@@ -530,14 +536,16 @@ saxParser.on('opentag', function(node) {
         const text_word = node.attributes.form;
         let morph_tag = "";
         let pos = "";
+        let lemma = "";
         let lemma_id = 0;
+        let autotagged = "0";
         
         if(text_word != undefined) {
             tokno++;
             if(annotated) {
                 morph_tag = node.attributes.morphology;
                 pos = node.attributes['part-of-speech'];
-                const lemma = node.attributes.lemma;
+                lemma = node.attributes.lemma;
                 const lemma_pos_combo = lemma.concat(pos);
                 pos_set.add(pos);
                 morph_set.add(morph_tag);
@@ -552,9 +560,10 @@ saxParser.on('opentag', function(node) {
             }
             else {
                 untagged_csv_string += text_word+ "," + deepClean(text_word) + "," + String(tokno) + "\n";
+                autotagged = "1";
             }
             
-            csv_string += text_word + "|" + pos + "|" + morph_tag + "|" + deepClean(text_word);
+            csv_string += text_word + "|" + pos + "|" + lemma + "|" + morph_tag + "|" + deepClean(text_word);
 
             csv_string += "|" + lemma_id;
             
@@ -568,7 +577,7 @@ saxParser.on('opentag', function(node) {
             if(node.attributes["presentation-before"] != undefined) csv_string += node.attributes["presentation-before"];
             csv_string += "|";
             if(node.attributes["presentation-after"] != undefined) csv_string += node.attributes["presentation-after"];
-            csv_string += "|" + main_title_id + "|" + sub_title_id + "|0\n";
+            csv_string += "|" + main_title_id + "|" + sub_title_id + "|" + autotagged + "\n";
         }
     }
 });
