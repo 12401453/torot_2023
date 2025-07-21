@@ -997,12 +997,12 @@ async function updateChuMasterFile() {
       }
 
       //this can match some absolute bollocks OCS lemmas which have erroneos ESl. forms
-      const plain_match_idx = chu_master_arr.findIndex(x => x[4] == "" && x[2] == pos && x[0] == orv_lemma);
+      /*const plain_match_idx = chu_master_arr.findIndex(x => x[4] == "" && x[2] == pos && x[0] == orv_lemma);
       if(plain_match_idx != -1) {
         chu_csv_reader.setLine(chu_master_arr[plain_match_idx].join("|"));
         chu_master_arr[plain_match_idx] = (chu_csv_reader.getField("chu_lemma") + "|" + orv_lemma + "|" + pos + "|" + chu_csv_reader.getField("count") + "|" + orv_csv_reader.getFieldsArray().slice(4, 20).join("|") + "|" + "1|" + chu_csv_reader.getFieldsArray().slice(21).join("|")).split("|");
         continue;
-      }
+      } */
     }
 
   }
@@ -1062,10 +1062,10 @@ async function matchLemmas() {
   fs.writeFileSync("orv_lemmas_master.csv", orv_master_string);
   fs.writeFileSync("chu_lemmas_master.csv", chu_master_string);
 
-  for await(const line of readline.createInterface({input: fs.createReadStream("chu_lemmas_master_test.csv")})) {
+  for await(const line of readline.createInterface({input: fs.createReadStream("chu_lemmas_master.csv")})) {
     chu_master_arr.push(line.split("|"));
   }
-  for await (const line of readline.createInterface({input: fs.createReadStream("orv_lemmas_master_test.csv")})) {
+  for await (const line of readline.createInterface({input: fs.createReadStream("orv_lemmas_master.csv")})) {
     orv_master_arr.push(line.split("|"));
   }
 
@@ -1082,8 +1082,8 @@ async function matchLemmas() {
   for(const line_arr of chu_master_arr) {
     chu_updated_master_csv += line_arr.join("|") + "\n";
   }
-  fs.writeFileSync("orv_lemmas_updated_test.csv", orv_updated_master_csv);
-  fs.writeFileSync("chu_lemmas_updated_test.csv", chu_updated_master_csv);
+  fs.writeFileSync("orv_lemmas_master.csv", orv_updated_master_csv);
+  fs.writeFileSync("chu_lemmas_master.csv", chu_updated_master_csv);
   fs.writeFileSync("lcs_lemmas_master.csv", lcs_master_csv);
 
 
