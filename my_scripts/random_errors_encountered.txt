@@ -93,3 +93,7 @@ Putting aside the nonsense compromise lemma-form you've given рѫковѩть, 
 Ditto for съвѫзъ
 
 Psal. 3 бл҃гословещвенье is wrongly lemmatised as *bolgoslovešћenьje when clearly it should be *bolgoslovešћvĺenьje (which is also in the dict.)
+
+Many instances of vьxakъ are marked as weak (which is nonsensical since this is a pronominal not an adjective), esp. in the ORV corpus, and this makes my autoreconstructor stick an article onto them (possibly my autoreconstruction logic is flawed here but still marking them as weak is not justified and not consistent)
+
+Inconsistent ORV lemmatisation of pronominals, where sometimes they follow adjectives in being listed in long-form (i.e. +jь) but othertimes not, including the doublets сь and сии
