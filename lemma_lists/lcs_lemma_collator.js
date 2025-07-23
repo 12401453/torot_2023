@@ -664,6 +664,7 @@ class CsvReader {
   }
   
   setHeaders(first_line) {
+    this.m_header_index_map.clear();
     const headers_arr = first_line.split(this.m_separator);
     for(const header_idx in headers_arr) {
       this.m_header_index_map.set(headers_arr[header_idx], header_idx);
