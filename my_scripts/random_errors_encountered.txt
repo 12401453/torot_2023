@@ -97,3 +97,9 @@ Psal. 3 бл҃гословещвенье is wrongly lemmatised as *bolgosloveš�
 Many instances of vьxakъ are marked as weak (which is nonsensical since this is a pronominal not an adjective), esp. in the ORV corpus, and this makes my autoreconstructor stick an article onto them (possibly my autoreconstruction logic is flawed here but still marking them as weak is not justified and not consistent)
 
 Inconsistent ORV lemmatisation of pronominals, where sometimes they follow adjectives in being listed in long-form (i.e. +jь) but othertimes not, including the doublets сь and сии
+
+Within the Primary Chronicle some forms of *polmy are marked as nt. and others as masc.; I have this recorded as a masc_N stem (though clearly it moved to neuter in Russian at some point), so the neuter forms get no endings
+
+Supr. непригвожденъ lemmatised as an adjective непригвождьнъ when it's clearly the PPP of *prigvodziti, and thus *neprigvožђenъ
+
+Supr. Paul and Juliana о͑тъ поганъ покаяти lemmatised as *poganyńi

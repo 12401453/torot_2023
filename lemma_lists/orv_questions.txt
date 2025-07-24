@@ -1,0 +1,3 @@
+изъяславъ - no justification for the jer in the lemma; I've current got it as *jьzęslavъ on the assumption that 'take' root is in it, but I can't find any etymological information on the name to back that up. One spelling in TOROT has <е>, and overwhelmingly the spellings are with the jus letter, but no concrete proof of a nasal as yet
+феодосии *feodosьjь - should we follow a convention of foreign *-ии being *-ijь, or follow the evidence of spellings with jers and assume it was integrated?
+Why is 'where' and 'here' lemmatised as къдѣ and сьдѣ with a jat'? OCS is unambiguously *kъde *sьde, and while there are many jat' spellings in the ORV corpus, could these not just come from jat'-losing dialects?
