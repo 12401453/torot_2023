@@ -94,7 +94,7 @@ Ditto for съвѫзъ
 
 Psal. 3 бл҃гословещвенье is wrongly lemmatised as *bolgoslovešћenьje when clearly it should be *bolgoslovešћvĺenьje (which is also in the dict.)
 
-Many instances of vьxakъ are marked as weak (which is nonsensical since this is a pronominal not an adjective), esp. in the ORV corpus, and this makes my autoreconstructor stick an article onto them (possibly my autoreconstruction logic is flawed here but still marking them as weak is not justified and not consistent)
+Many instances of vьxakъ are marked as weak (which is nonsensical since this is a pronominal not an adjective), esp. in the ORV corpus, and this makes my autoreconstructor stick an article onto them (possibly my autoreconstruction logic is flawed here but still marking them as weak is not justified and not consistent). E.g. Birchbarks 9 инѹю is not marked for strong/wk., so autoreconstructor doesn't stick the article on
 
 Inconsistent ORV lemmatisation of pronominals, where sometimes they follow adjectives in being listed in long-form (i.e. +jь) but othertimes not, including the doublets сь and сии
 
@@ -103,3 +103,8 @@ Within the Primary Chronicle some forms of *polmy are marked as nt. and others a
 Supr. непригвожденъ lemmatised as an adjective непригвождьнъ when it's clearly the PPP of *prigvodziti, and thus *neprigvožђenъ
 
 Supr. Paul and Juliana о͑тъ поганъ покаяти lemmatised as *poganyńi
+
+вьнегда is (according to dict. and my reconstruction *vъn+jegъda) a twice-wrong lemmatisation
+сръдъце bad lemma
+Наказаѩі etc. lemmatised with the same lemma as the class 5.2 forms of this verb, very very disrespectful
+The lemma you have as masc. стѫпъ only occurs once with the nasal in your corpus, and the dict. instead records a fem. стопа, so this whole lemma and its gender-tags need changing
