@@ -598,6 +598,7 @@ void LcsFlecter::pv1LongE(std::string& flecter_output) {
     replaceAll(flecter_output, "xě", "šǢ");
 }
 void LcsFlecter::Dejotate(std::string& jotated_form) {
+    replaceAll(jotated_form, "stvj", "šћvĺ");
     replaceAll(jotated_form, "strj", "šћŕ");
     replaceAll(jotated_form, "stj", "šћ");
     replaceAll(jotated_form, "zdj", "žђ");

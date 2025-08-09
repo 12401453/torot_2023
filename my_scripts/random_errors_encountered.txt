@@ -41,6 +41,10 @@ Of the lemmas I had add to differentiate, you've only added 2 (dojiti and urěza
 жѧдати|750018|V-|žędati|||||||||||||||||54|1||||||||
 оурѣзати#2|750019|V-|urězati|||||||||||||||||54|1||||||||
 поꙗсати#2|750021|V-|pojǢsati|||||||||||||||||54|1||||||||
+наказати
+оувѧзати
+въздвиѕати
+
 
 (плачь и скрьжьтъ зѫбомъ)
 
@@ -52,6 +56,8 @@ There's a pipe-character in the "presentation-before" field of Psal., which I wa
 For some reason there is an "￼ " character in the "presentation-after" field of a token in chrabr.xml (I read on the Syntacticus documentation Unicode code-points from the Private Use Area can be used to encode formatting information, so maybe it's that, but I doubt it)
 
 Zographensis is still full of Latin <x>
+
+Psal. needs its spidery Glagolitic <х> adding back
 
 There's no subtitle <title> element in the pskov.xml or luk-koloc.xml, which fucks up my subtitle-extracting script
 
@@ -104,7 +110,19 @@ Supr. непригвожденъ lemmatised as an adjective непригвожд
 
 Supr. Paul and Juliana о͑тъ поганъ покаяти lemmatised as *poganyńi
 
-вьнегда is (according to dict. and my reconstruction *vъn+jegъda) a twice-wrong lemmatisation
+вьнегда is (according to dict. and my reconstruction *vъn+jegъda) a twice-wrong lemmatisation; the correct lemma is also in there -> get rid
 сръдъце bad lemma
-Наказаѩі etc. lemmatised with the same lemma as the class 5.2 forms of this verb, very very disrespectful
 The lemma you have as masc. стѫпъ only occurs once with the nasal in your corpus, and the dict. instead records a fem. стопа, so this whole lemma and its gender-tags need changing
+108108|повиноуѭ̑ is lemmatised as повинѫти when it should be повиновати
+Words lemmatised as прильпѣти are a total mess: dict. gives us an additional 3 variants of this word: прильнѫти, прильпати, прилѣпити, and many of the corpus-forms seem to be these instead, e.g. Прільпе is the 3sg aor. of class 21 прильнѫти
+form змииню would suggest that the hard-adj lemma змиинъ is being inappropriately used for the jo-stem змиин҄ь
+both ништета and нищета
+ꙗвити lemma is duplicate of авити (and only the latter is correct)
+The single оувѧзати lemma contains forms like о̑увꙙзъшꙙ and о̑увꙙꙁошꙙ, which can only come from оувѧзнѫти, and the PPPs must be from the class 5.2 rather than 5.4 version of оувѧзати, so that also needs adding
+млънии is an erroneous duplicated of мльнии (though the ever-retarded SJS lists it with the back-jer as well)
+154615|матерехъ|матерехъ|-p---flpsi|4561|251108|| ||||| is lemmatised with the possessive-adj *mateŕь when it's clearly the Lpl. of the fem_R *mati
+въздвиѕати is used as the lemma both for class 5.2 and 5.4 variants (вь҆ꙁдвижеши, Вьздвіѕаѩї) and for forms of the lemma въздвигнѫти (въꙁдвиженъ)
+
+Psalm 112 Вьселѣѩї неплодъве въ домъ:. Мр҃е о чѩдѣхъ веселѩште сѩ - all the nominals here are erroneously accusative rather than vocative (and hence get autoreconstructed badly)
+Psalm 36 погъіблѭтъ lemmatised as погꙑбнѫти instead of погꙑбати (5.2)
+Supr Sabini 13 March живетъ lemmatised as живити
