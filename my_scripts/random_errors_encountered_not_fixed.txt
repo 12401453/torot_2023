@@ -11,27 +11,14 @@ As came to light from your TnT-normalised ps138.txt file, /y/ in Psal. seems to 
 
 Supr. has домаштьнѧѩ which I need to check because I dont think it ever uses the jotated ję and instead differentiates by the shape of the non-jotated small jus
 
-There's a third родити lemma that only occurs in Supr. and seems to mean the same as родити#1
 Needless second чародѣи that also only occurs once in Supr.
 Your съписати#1 lemma seems to me not to be needed ontop of съпьсати, because yes one infinitive with a lengthened-stem does occur (unless this has just been badly annotated and was not motivated by a perfective-aspect reading), but that is just an expectable deviance. съписати#2 on the other hand is a straight secondary-imperfective class 5.4 and so does have a reason to exist
-въстѧѕати#1 and въстѧѕати#2 are both used for perf. 5.2 and imperf. 5.4 forms of this verb in Supr., making a mockery of your differentiation of them
+
 Needless second срѣда that only occurs once in Supr.
 In the master-spreadsheet there's привести#1 привести#2 привести, the latter of which I added myself, and it appears that no-where in the corpus does the #1 lemma occur, suggesting you more recently got rid of it in favour of the plain version. the #2 variant is for the stem ending in -vez instead of -ved, so that's allowed.
 
 Of the lemmas I had add to differentiate, you've only added 2 (dojiti and urězati); the full list is (I gave the news ones lemma_ids starting from 750000):
-тѫдѣ|750000|Df|tǫdě||||||||||||||||||99||||||||
-достати|750002|V-|dostati|||||||||||||||||stati|1||||||||
-привѧзати|750003|V-|privęzati|||||||||||||||||54|99||||||||
-доити#2|750004|V-|dojьti|||||||||||||||došьd|dojьd|jьti|1||||||||
-съказати|750005|V-|sъkazati|||||||||||||||||52|1||||||||
-съвѧзати|750006|V-|sъvęzati|||||||||||||||||54|1||||||||
-въметати|750007|V-|vъmetati|||||||||||||||||51|1||||||||
-отъкръвениѥ|750008|Nb|otъkrъvenьje|||||||||||||||||nt_jo|2||||||||
-оклеветати|750009|V-|oklevetati|||||||||||||||||52|1||||||||
-прѣлиꙗти|750010|V-|perlьjǞti|||||||||||||||||53_abl|99||||||||
-прѣпоꙗсати|750011|V-|perpojǞsati|||||||||||||||||54|1||||||||
-подвиѕати|750012|V-|podvigati||podviʒati|||||||||||||||52|1||||||||
-исꙑпати|750013|V-|jьssypati|||||||||||||||||54|1||||||||
+
 притѧжати|750014|V-|pritęžǞti|||||||||||||||||54|1||||||||
 осѧѕати|750015|V-|osęgati||osęʒati|||||touch, feel||||||||||54|1||||||||
 расꙑпати|750016|V-|orssypati|||||||||||||||||54|1||||||||
@@ -61,9 +48,6 @@ Psal. needs its spidery Glagolitic <х> adding back
 
 There's no subtitle <title> element in the pskov.xml or luk-koloc.xml, which fucks up my subtitle-extracting script
 
-Loads of long-adjectives in your Kiev Folia are marked as strong
-
-камꙑ is marked as neuter in a few places which means it gets reconstructed with no endings, because it should be masculine
 
 Psalm 140 ОУслъішѩтъ сѩ г҃лі моі ѣко възмогѫ. , the last word is tagged as 3rdpl indicative, but isnt it both formally and syntactically a subjunctive / optative?
 
@@ -120,10 +104,6 @@ Words lemmatised as прильпѣти are a total mess: dict. gives us an addit
 
 form змииню would suggest that the hard-adj lemma змиинъ is being inappropriately used for the jo-stem змиин҄ь
 
-both ништета and нищета
-
-ꙗвити lemma is duplicate of авити (and only the latter is correct)
-
 The single оувѧзати lemma contains forms like о̑увꙙзъшꙙ and о̑увꙙꙁошꙙ, which can only come from оувѧзнѫти, and the PPPs must be from the class 5.2 rather than 5.4 version of оувѧзати, so that also needs adding
 
 млънии is an erroneous duplicated of мльнии (though the ever-retarded SJS lists it with the back-jer as well)
@@ -141,8 +121,6 @@ Supr Sabini 13 March живетъ lemmatised as живити
 истьлѣти is used for both class 32 истлѣѥть (1X) and class 40 истьлити (3X ист[ьъ]ли)
 
 The back-nasal in the PRAP 180684|движѫште|двіжѫште|-pppamn-si|4364|253926|| ||||| suggests that this should be from the class 5.2 lemma двиѕати rather than the class 3.1 движати (cf. 73895|двіжѩштіѣ|двіжѧштіѣ|-pppann-wi|4364|307194|| |||||)
-
-The A- form издраиль, same as the noun, would appear to mostly be wrong and should be replaced with the *-ev- adjective or perhaps the noun (check)
 
 190051|възꙑваю|възъіваю|1spia----i|4049|310072|| ||||| ? check mss.
 

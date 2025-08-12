@@ -39,6 +39,7 @@ std::unordered_map<std::string, int> conj_type_map {
     {"masc_tel", 231},
     {"masc_u", 241},
     {"masc_o_u", 251},
+    {"masc_o_in", 121},
     {"nt_N", 261},
     {"nt_NT", 271},
     {"nt_S", 281},

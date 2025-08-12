@@ -1,8 +1,118 @@
-const cyr_map = new Array([
+#!/usr/bin/node
+
+const fs = require('node:fs');
+
+
+const cyr_map = new Map([
+
+  ["š'j", "шьj"],
+  ["ž'j", "жьj"],
+  ["č'j", "чьj"],
+  ["c'j", "цьj"],
+  ["ŕ'j", "рьj"],
+  ["ĺ'j", "льj"],
+  ["ń'j", "ньj"],
+
+
+
+  ["ʒa", "зя"],
+  ["ʒu", "зю"],
+  ["śa", "ся"],
+  ["śu", "сю"],
+  ["ŕu", "рю"],
+  ["ĺu", "лю"],
+  ["ńu", "ню"],
+  ["ŕa", "ря"],
+  ["ĺa", "ля"],
+  ["ńa", "ня"],
+  ["ŕä", "ря"],
+  ["ĺä", "ля"],
+  ["ńä", "ня"],
+  ["ŕe", "ре"],
+  ["ĺe", "ле"],
+  ["ńe", "не"],
+
+  ["ja", "я"],
+  ["ju", "ю"],
+  ["je", "е"],
+  ["jě", "е"],
+  ["ji", "и"],
+  ["jэ", ""],
+
+  ["j'", "j"],
+  ["jo", "o"],
+
+  ["št", "šč"],
+  
+  ["š'", "š"],
+  ["ž'", "ž"],
+  ["č'", "č"],
+  ["c'", "c"],
+  ["ŕ'", "ŕ"],
+  ["ĺ'", "ĺ"],
+  ["ń'", "ń"],
+
+  ["šä", "ша"],
+  ["žä", "жа"],
+  ["čä", "ча"],
+  ["cä", "ца"],
+
+
+  ["šč", "щ"],
+
   ["a", "а"],
   ["b", "б"],
+  ["ḷ", "ол"],
+  ["ʒ", "зь"],
+  ["c", "ц"],
+  ["x", "х"],
+  ["b", "б"],
+  ["ṝ", "ер"],
+  ["ě", "е"],
+  ["ž", "ж"],
+  ["y", "ы"],
+  ["ń", "нь"],
+  ["x́", "х"],
+  ["k", "к"],
+  ["u", "у"],
+  ["n", "н"],
+  ["š", "ш"],
+  ["i", "и"],
+  ["s", "с"],
+  ["p", "п"],
+  ["ъ", ""],
+  ["f", "ф"],
+  ["j", "й"],
+  ["č", "ч"],
+  ["ä", "я"],
+  ["ǵ", "г"],
+  ["e", "е"],
+  ["a", "а"],
+  ["ĺ", "ль"],
+  ["l", "л"],
+  ["g", "г"],
+  ["'", "ь"],
+  ["z", "з"],
+  ["t", "т"],
+  ["ṛ", "ор"],
+  ["v", "в"],
+  ["o", "о"],
+  ["r", "р"],
+  ["ŕ", "рь"],
+  ["d", "д"],
+  ["ś", "сь"],
+  ["m", "м"],
 
 ]);
+
+
+const orvToCSR = (orv_form) => {
+  for(const pair of cyr_map) {
+    orv_form = orv_form.replaceAll(pair[0], pair[1]);
+  }
+  return orv_form;
+};
+
 
 const tsy_regex = /ц[иы]/;
 const zd_regex = /[сз]д/;
@@ -57,3 +167,19 @@ const applyHavlik = (orv_form) => {
   }
   return reverseStr(jer_shifted_backwards);
 };
+
+
+
+const json_str= fs.readFileSync("orv_inflections.json", 'utf-8');
+const orv_inflections = JSON.parse(json_str);
+const orv_forms = orv_inflections.map(arr => arr = arr.slice(2));
+
+let converted_forms = "";
+for(const arr of orv_forms) {
+  for(const form of arr) {
+    converted_forms += form+"|"+orvToCSR(applyHavlik(form)) + " ";
+  }
+  converted_forms += "\n";
+}
+
+fs.writeFileSync("orv_converted.txt", converted_forms);

@@ -219,6 +219,8 @@ function conj_type_Trunc(conj_type) {
     return 1;
   if (conj_type == "1.1_PRAP")
     return 1;
+  if (conj_type == "masc_o_in")
+    return 1;
 
   else return 0;
 }
