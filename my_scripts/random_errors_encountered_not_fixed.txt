@@ -137,3 +137,7 @@ All of the words lemmatised under нѫждати are just imperfects of нѫди
 113248|ближикѫ|бліжікѫ|-s---fa--i|4206|247045 needs changing to masculine
 
 *(ni)kotorъ is not marked as weak even when it blatantly has an article
+
+some *jedьnъ lemmas are lemmatised as *jedinъ and need to be changed so I no longer have my retarded check for them
+
+люто as an Adj. is clearly wrong and should probably be changed to лютъ. As a noun it is in the dict. as an S-stem neuter

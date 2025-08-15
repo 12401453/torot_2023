@@ -159,3 +159,9 @@ All of the words lemmatised under нѫждати are just imperfects of нѫди
 113248|ближикѫ|бліжікѫ|-s---fa--i|4206|247045 needs changing to masculine
 
 *(ni)kotorъ is not marked as weak even when it blatantly has an article
+
+some *jedьnъ lemmas are lemmatised as *jedinъ and need to be changed so I no longer have my retarded check for them
+
+Psal. Расоушѩ is the aorist of расоути *orssъp
+
+Psal. lemma оумѫдрѣти should be оумѫдрꙗти because it is an imperfective of оумѫдрити meaning 'to make wise', and doesn't have a stative/becoming meaning so can't be class 32

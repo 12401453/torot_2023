@@ -478,18 +478,25 @@ void LcsFlecter::class1Clean(Inflection& inflection) {
 void LcsFlecter::class1NasalClean(std::string& flecter_output) {
     replaceAll(flecter_output, "ьnstъ", "ętъ");
     replaceAll(flecter_output, "ьmstъ", "ętъ");
+    replaceAll(flecter_output, "ъmstъ", "ǫtъ");
     replaceAll(flecter_output, "ьns", "ęs");
     replaceAll(flecter_output, "ьms", "ęs");
+    replaceAll(flecter_output, "ъms", "ǫs");
     replaceAll(flecter_output, "ьnx", "ęx");
     replaceAll(flecter_output, "ьmx", "ęx");
+    replaceAll(flecter_output, "ъmx", "ǫx");
     replaceAll(flecter_output, "ьnš", "ęš");
     replaceAll(flecter_output, "ьmš", "ęš");
+    replaceAll(flecter_output, "ъmš", "ǫš");
     replaceAll(flecter_output, "ьml", "ęl");
     replaceAll(flecter_output, "ьnl", "ęl");
+    replaceAll(flecter_output, "ъml", "ǫl");
     replaceAll(flecter_output, "ьmt", "ęt");
     replaceAll(flecter_output, "ьnt", "ęt");
+    replaceAll(flecter_output, "ъmt", "ǫt");
     replaceAll(flecter_output, "ьm", "ę");
     replaceAll(flecter_output, "ьn", "ę");
+    replaceAll(flecter_output, "ъm", "ǫ");
 }
 void LcsFlecter::itiClean(std::string& flecter_output) {
     replaceAll(flecter_output, "njь", "ni");

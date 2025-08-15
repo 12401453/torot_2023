@@ -24,3 +24,7 @@ put ⱒ back into Psal. everywhere that Kempgen (2016) mentions it being
 changed lemmatisation of Vita Methodii 1 хълⸯмъ from the weird хълмъ lemma (which was otherwise only used for the scribal-error Glagolitic omega <ѻ> containing word for 'hill' in Psal. Sin. thought to be a mix-up with spider Glagolitic <ⱒ>), such that this lemma should now be deleted
 
 fixed lemmatisation of words lemmatised as прильпѣти or прилѣпитъ: changed many to прильнѫти or прильпати, e.g. Zogr. Luke 10 прилепъшеи (this one had caused bad auto-lemmatisation in Assem.)
+
+changed Psal. lemma оумѫдрѣти to оумѫдрꙗти because it is an imperfective of оумѫдрити meaning 'to make wise', and doesn't have a stative/becoming meaning so can't be class 32, and this is what dict. does too
+
+changed 2 Psal. Sin одеждѫти lemmas to одѣти
