@@ -28,3 +28,5 @@ fixed lemmatisation of words lemmatised as прильпѣти or прилѣпи�
 changed Psal. lemma оумѫдрѣти to оумѫдрꙗти because it is an imperfective of оумѫдрити meaning 'to make wise', and doesn't have a stative/becoming meaning so can't be class 32, and this is what dict. does too
 
 changed 2 Psal. Sin одеждѫти lemmas to одѣти
+
+changed the morphology of Ѣко бренье пѫті поглаждѫ ѩ because it blatantly follows the Septuagint in everything except "road" being Gsg. instead of Gpl., whereas the original annotations were nonsensical

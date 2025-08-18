@@ -141,3 +141,5 @@ All of the words lemmatised under нѫждати are just imperfects of нѫди
 some *jedьnъ lemmas are lemmatised as *jedinъ and need to be changed so I no longer have my retarded check for them
 
 люто as an Adj. is clearly wrong and should probably be changed to лютъ. As a noun it is in the dict. as an S-stem neuter
+
+Psal. Sin. Подрѣжаніе і порѫганіѣ сѫштімъ окръстъ насъ.- first word lemmatised as подрьжати when dict. list it under подражати,подрѣжати meaning "to imitate" or "to mock, jeer at" (second meaning fits here)
