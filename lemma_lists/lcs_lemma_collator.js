@@ -458,7 +458,7 @@ const orv_chSl_torot_mappings = {
   'šћ' : 'щ',
   'žǯ' : 'жд',
   'žђ' : 'жд',
-  'zr' : 'здр',
+  // 'zr' : 'здр',
   'dn' : 'n',
   'ǵ' : 'г',
   'ḱ' : 'к',
@@ -554,7 +554,7 @@ const chu_torot_mappings = {
   'šћ' : 'щ',
   'žǯ' : 'жд',
   'žђ' : 'жд',
-  'zr' : 'здр',
+  // 'zr' : 'здр',
   'dn' : 'n',
   'ǵ' : 'г',
   'ḱ' : 'к',
@@ -618,6 +618,7 @@ const torotOldRus = (lcs_lemma, ch_sl=false) => {
   lcs_lemma = lcs_lemma.replace(/^ak/, "jǢk").replace(/^av/, "jǢv");
   lcs_lemma = yeetTlDl(lcs_lemma);
   //PV3 is dealt with before the lcs_lemma is passed in
+  lcs_lemma = lcs_word.replaceAll('zr', 'zdr');
 
   const ort_group_converter = ch_sl ? metaThesis : polnoGlasie;
 
@@ -641,6 +642,7 @@ const torotOCS = (lcs_lemma) => {
 
   lcs_lemma = yeetTlDl(lcs_lemma);
   //PV3 is dealt with before the lcs_lemma is passed in
+  lcs_lemma = lcs_word.replaceAll('zr', 'zdr');
 
   const ort_group_converter = metaThesis;
 
