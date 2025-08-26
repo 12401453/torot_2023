@@ -9,8 +9,6 @@ Why is there a fully-annotated sentence in Psal. in modern Russian from the 1800
 
 As came to light from your TnT-normalised ps138.txt file, /y/ in Psal. seems to have been spelt with the two Cyrillic letters <ъі>, whereas normally you render this digraph with the single Cyrillic letter <ꙑ>. I actually always render this letter with the two Cyrillic letters as you seem to have done in Psal., because it is more accurate to the digraphic nature of the underlying Glagolitic and it makes things like normalising the <ъи> spellings of /y/ in Kiev. easier, but you generally do the opposite so this messes up your normalising routines. (Conversely, I used to change all digraphic <оу> into the single letter to more accureately reflect the clearly fused Glagolitic monograph, but I think the way you do it, changing them all to <оу>, is better because of issues around ѵ and single-use of <у>)
 
-Supr. has домаштьнѧѩ which I need to check because I dont think it ever uses the jotated ję and instead differentiates by the shape of the non-jotated small jus
-
 Needless second чародѣи that also only occurs once in Supr.
 Your съписати#1 lemma seems to me not to be needed ontop of съпьсати, because yes one infinitive with a lengthened-stem does occur (unless this has just been badly annotated and was not motivated by a perfective-aspect reading), but that is just an expectable deviance. съписати#2 on the other hand is a straight secondary-imperfective class 5.4 and so does have a reason to exist
 
