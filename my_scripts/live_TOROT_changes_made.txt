@@ -30,3 +30,5 @@ changed Psal. lemma оумѫдрѣти to оумѫдрꙗти because it is an i
 changed 2 Psal. Sin одеждѫти lemmas to одѣти
 
 changed the morphology of Ѣко бренье пѫті поглаждѫ ѩ because it blatantly follows the Septuagint in everything except "road" being Gsg. instead of Gpl., whereas the original annotations were nonsensical
+
+cleaned up съпьсати съписати#1 съписати#2 nonsense by replacing all the #1 occurrences with съпьсати and controversially changing the infin. "съписати" in Supr. to съпьсати, since this is semantically perfective and explainable by the common deviance of full-grade stems encroaching upon the zero-grade stems. The leftover съписати#2 does deserve to exist as the class 5.4 secondary-imperfective, but it no longer needs to be differentiated numerically
