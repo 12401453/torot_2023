@@ -7,3 +7,4 @@ Line 4780, ) changed to ] because Kurz uses an actual round bracket here
 Line 568, got rid of the brackets in [k]o[!c] because it prevents it being recognised as punctuation and is bloody annoying
 line 2994: changed chapter from 97 to 7
 line 5216: similarly changed the verse index from 4112210 to 4122210, because this was an incorrect chapter 11 in the middle of chapter 12
+line 4879: changed verse-index from 4082020 to 4092020, because this was an incorrect chapter 8 in the middle of chapter 9

@@ -126,3 +126,7 @@ some *jedьnъ lemmas are lemmatised as *jedinъ and need to be changed so I no 
 Psal. Sin. Подрѣжаніе і порѫганіѣ сѫштімъ окръстъ насъ.- first word lemmatised as подрьжати when dict. list it under подражати,подрѣжати meaning "to imitate" or "to mock, jeer at" (second meaning fits here)
 
 сѵриискъ is lemmatised as сѵрьскъ; it should be separate *sürijьskъ
+
+Mar. etc. негасѧ is lemmatised as an adjective, but it surely needs to be a verb негасати; that is what I've marked it as in the reconstruction (ASK permission to relemmatise)
+
+Class 54 variants of the "iskati" verbs (otъmetati etc.) should possibly be added as separate lemmas
