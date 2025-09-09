@@ -51,7 +51,7 @@ class CsvReader {
   m_separator = "";
 };
 
-const read_stream1 = fs.createReadStream("jer_proj_matched_lemmas.csv");
+const read_stream1 = fs.createReadStream("jer_lemmas_matches.csv");
 const read_stream2 = fs.createReadStream("orv_lemmas_master.csv");
 read_stream1.on('error', () => {
   console.log("first file doesn't exist");
@@ -111,6 +111,12 @@ async function readJerMatchesSheet() {
 
     const pos = csv_reader.getField("pos");
     const lemma = csv_reader.getField("lemma");
+    const csr_match = csv_reader.getField("match");
+    const sasha_checked = csv_reader.getField("annotated").trim();
+    if(csr_match.trim() == "" || (sasha_checked != "1" && sasha_checked != "2")) {
+      console.log("skipping", pos+lemma, "because no modern Russian match for it");
+      continue;
+    }
     
     if(orv_reconstr_set.has(pos+lemma)) {
       match_count++;

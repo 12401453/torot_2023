@@ -31,7 +31,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 исоусъ|исусъ|Ne|jisusъ|||||||masc_o_u|2||||||||orv
 видѣти|видѣти|V-|viděti|||||||viděti|1||||||||orv
 нъ|нъ|C-|nъ||||||||0||||||||orv
-прити|приити|V-|prijьti|||||||jьti|1||||||||orv
+приити|приити|V-|prijьti|||||||jьti|1||||||||orv
 по|по|R-|po||||||||0|||||||1|orv
 сътворити|сътворити|V-|sъtvoriti|||||||40|1||||||||orv
 аще|аче|G-|aћe|atje|||||||0||||||||orv
@@ -47,7 +47,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 а|а|C-|a||||||||0||||||||orv
 дати|дати|V-|dati|||||||dati|1||||||||orv
 чьто|чьто|Pi|čьto|||||||čьto|2||||||||orv
-ѥдинъ|одинъ|Ma|jedinъ||||jedьn|||pron_hard|2||||||||orv
+ѥдинъ|одинъ|Ma|jedinъ||||jedьnъ|||pron_hard|2||||||||orv
 сꙑнъ#1|сынъ|Nb|synъ|||||||masc_u|2||||||||orv
 слово|слово|Nb|slovo|||||||nt_S|2||||||||orv
 ли|ли|Du|li||||||||0||||||||orv
@@ -61,7 +61,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 да||Df|da||||||||0||||||||
 ѥгда|егда|Dq|jegъda||||||||0||||||||orv
 отъвѣщати|отъвѣчати|V-|otъvěћǢti|otъvětjǢti||||||54|1||||||||orv
-приѩти|прияти|V-|prijęti|||||priję|prijьm|12|1||||||||orv
+приѩти||V-|prijęti|||||priję|prijьm|12|1||||||||
 оученикъ|ученикъ|Nb|učenikъ|||||||masc_o|2||||||||orv
 имѧ|имя|Nb|jьmę|||||||nt_N|2||||||||orv
 вѣдѣти|вѣдѣти|V-|věděti|||||||wote|1||||||||orv
@@ -91,7 +91,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 инъ||Px|jьnъ|||||||pron_hard|2||||||||
 домъ|домъ|Nb|domъ|||||||masc_u|2||||||||orv
 пакꙑ|пакы|Df|paky||||||||0|||again, once more; also, as well as; then, after|||||orv
-срьдьце|сьрдьце|Nb|sŕ̥dьke||sŕ̥dьko|sŕ̥dьce||||nt_o_PV3|2||||||||orv
+сръдъце|сьрдьце|Nb|sŕ̥dьke||sŕ̥dьko|sŕ̥dьce||||nt_o_PV3|2||||||||orv
 изити|изити|V-|jьzjьti|||||||jьti|1||||||||orv
 мѣсто|мѣсто|Nb|město|||||||nt_o|2||||||||orv
 слава|слава|Nb|slava|||||||fem_a|2||||||||orv
@@ -173,7 +173,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 оуста||Nb|usto|||||||nt_o|2||||||||
 врагъ|ворогъ|Nb|vorgъ|||||||masc_o|2||||||||orv
 оумрѣти|умерети|V-|umerti|||||umer|umьr|13|1||||In order to explain ⱆⰿⱃⱑ, ⱆⰿⱃⱑⱅⱏ (which we can't consider to have been original root-aorists < *mere, levelled on the newly metathesised infinitive stem < *merti, because root-aorists never appear on sonorant-stemmed verbs (Diels p.238), and because such a late analogical levelling would surely have left traces e.g. *ⱆⰿⰵⱃⰵ in the oldest documents) we have to do as Olander (2014: 318, 330 and throughout) implicitly does and accept the CS form *umer as regular, and state the traditional TOROT rule as affecting syllable-final, rather than pre-consonantal, liquids. ||||orv
-миръ#2|миръ|Nb|mirъ|||||||masc_o|2||||||||orv
+миръ#1|миръ|Nb|mirъ|||||||masc_o|2||||||||orv
 мати|мати|Nb|mati|||||||fem_R|2||||||||orv
 благъ|благыи|A-|bolgъ|||||||adj_hard|2||||||||orv
 мрьтвъ|мьртвыи|A-|mŕ̥tvъ|||||||adj_hard|2||||||||orv
@@ -186,16 +186,16 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 коньць|коньць|Nb|konьkь||konьkъ|konьcь||||masc_o_PV3|2||||||||orv
 ѕѣло|зѣло|Df|gělo|||ʒělo|||||0||||||||orv
 стоꙗти|стояти|V-|stojǢti|||||||31|1||||||||orv
-ѡ|о|I-|o||||||||0||||||||orv
+о|о|I-|o||||||||0||||||||orv
 послоушати|послушати|V-|poslušǢti|||||poslušǢ|poslušǢj|54|1||||||||orv
 акꙑ||Df|aky|||||||adj_hard|2||||||||
 ꙗкоже|якоже|G-|akože||||||||0||||||||orv
-авити|явити|V-|aviti|||||||40|1||||||||orv
+ꙗвити|явити|V-|aviti|||||||40|1||||||||orv
 ходити|ходити|V-|xoditi|||||||40|1||||||||orv
 гора|гора|Nb|gora|||||||fem_a|2||||||||orv
 нарицати|нарицати|V-|narikati|||naricati||||54|1||||||||orv
 кънѧѕь|кънязь|Nb|kъnęgь||kъnęgъ|kъnęʒь||||masc_o_PV3|2|1||prince|||Gmc. *kuningaz, probably Gothic||orv
-привести|привести|V-|privesti|||||prived|prived|11|1||||||||orv
+привести#1|привести|V-|privesti|||||prived|prived|11|1||||||||orv
 пристѫпити|приступити|V-|pristǫpiti|||||||40|1||||||||orv
 оуже||Df|juže||||||||0||||||||
 оучитель|учитель|Nb|učiteĺь|učiteljь||||||masc_tel|2||||||||orv
@@ -275,7 +275,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 оувѣдѣти|увѣдѣти|V-|uvěděti|||||||wote|1|||will know, will see|||||orv
 старьць|старьць|Nb|starьkь||starьkъ|starьcь||||masc_o_PV3|2||||||||orv
 пити|пити|V-|piti|||||pi|pьj|17|1||||||||orv
-свѣтъ#2|свѣтъ|Nb|světъ|||||||masc_o|2||||||||orv
+свѣтъ|свѣтъ|Nb|světъ|||||||masc_o|2||||||||orv
 болии|болии|A-|boĺь|boljь||||||adj_soft_comp|2||||||||orv
 дрѣво|дерево|Nb|dervo|||||||nt_S|2||||||||orv
 житиѥ|житие|Nb|žitьje|||||||nt_jo|2||||||||orv
@@ -285,7 +285,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 мѫка#1||Nb|mǫka|||||||fem_a|2|||flour, meal|||||
 часъ|часъ|Nb|čǢsъ|||||||masc_o|2||||||||orv
 чѧдо|чадо|Nb|čędo|||||||nt_o|2||||||||orv
-плакати#2|плакати|V-|plakati|||||||52|1|||wash, cleanse|||||orv
+плакати|плакати|V-|plakati|||||||52|1|||wash, cleanse|||||orv
 съказати||V-|sъkazati|||||||54|1||||||||
 пасти#1|пасти#1|V-|pasti|||||pad|pad|11|1||||||||orv
 кънижьникъ|кънижьникъ|Nb|kъńižьnikъ|kъnjižьnikъ||||||masc_o|2|7|||||||orv
@@ -306,7 +306,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 сѫбота|субота|Nb|sǫbota|||||||fem_a|2|35|||||Vulgar Latin *sambatum (the nasal infix is unexplained but present also in French 'samedi') < Gk. σάββᾱτον < Hebrew šabbāṯ||orv
 ѥлико|елико|Pr|jeliko||||||||0|||which, to which extent, however [much], in whichever way, however, whatever|||||orv
 оубоꙗти|убояти|V-|ubojǢti|||||||31|1||||||||orv
-родити|родити|V-|roditi|||||||40|1||||||||orv
+родити#2|родити|V-|roditi|||||||40|1|||pay attention, take care|||||orv
 иже|иже|Pd|jьže|||||||jьže|2||||||||orv
 истиньнъ|истиньныи|A-|jьstinьnъ|||||||adj_hard|2||||||||orv
 въспросити|въспросити|V-|vъsprositi|||||||40|1||||||||orv
@@ -428,7 +428,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 жрьти||V-|žŕ̥ti|||||||rti|1|||devour, verschlingen, wolf down|||||
 възмощи|възмощи|V-|vъzmoћi|vъzmogti||||vъzmog|vъzmog|11|1||||||||orv
 деснъ|десныи|A-|desnъ|||||||adj_hard|2||||||||orv
-тъма|тьма|Nb|tьma|||||||fem_a|2|||ten thousand; an innumerable amount|||||orv
+тьма|тьма|Nb|tьma|||||||fem_a|2|||ten thousand; an innumerable amount|||||orv
 сѣти|сѣяти|V-|sějǢti|||||||53|1|||sow|spellings like сѣти. сѣвъшоу are technically indistinguishable from *sějǢti, sějǢvъšu because of the vowel-contraction possibilities, so I reconstruct all with a *sějǢ- stem||||orv
 мъного|мъного|Df|mъnogo||||||||0||||||||orv
 съвѣтъ|съвѣтъ|Nb|sъvětъ|||||||masc_o|2||||||||orv
@@ -534,7 +534,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 третии|третии|Mo|tretьjь|||||||adj_soft_ord|2||||Mar. shows an uncontracted long-form третиѣаго which can only be from *tretьjǢjego and confirms our reconstruction of the stem as *tretьj- (cf. *divьj-)||||orv
 пропѧти|пропяти|V-|propęti|||||propьn|propьn|12|1|||stretch out; crucify|||||orv
 орѫжиѥ|оружие|Nb|orǫžьje|||||||nt_jo|2|||sword, weapon|||||orv
-звѣрь|звѣрь|Nb|zvěrь|||||||masc_i|2||||beast, wild animal||||orv
+звѣрь|звѣрь|Nb|zvěrь|||||||masc_i|2|||beast, wild animal|||||orv
 повелѣниѥ|повелѣние|Nb|povelěnьje|||||||nt_jo|2||||||||orv
 грѣшьнъ|грѣшьныи|A-|grěšьnъ|||||||adj_hard|2||||||||orv
 приносити|приносити|V-|prinositi|||||prinosi|prinoš|40|1||||||||orv
@@ -611,6 +611,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 дѣти|дѣти|Nb|dětь|||||||fem_i|2||||||||orv
 праздьникъ|праздьникъ|Nb|porzdьnikъ|||||||masc_o|2||||Pol. próżny = vain, futile, empy; próżniak = layabout; Ru. порожний||||orv
 нечьстивъ|нечьстивыи|A-|nečьstivъ|||||||adj_hard|2||||||||orv
+съборъ|съборъ|Nb|sъborъ|||||||masc_o|2||||||||chu
 храмъ|хоромъ|Nb|xormъ|||||||masc_o|2||||||||orv
 слоужьба|служьба|Nb|služьba|||||||fem_a|2||||||||orv
 вельми|вельми|Df|velьmi||||||||0||||||||orv
@@ -661,6 +662,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 область|оболость|Nb|obvolstь|||||||fem_i|2||||||||orv
 въскрѣшениѥ|въскрѣшение|Nb|vъskrěšenьje|||||||nt_jo|2|||Wiederauferstehung (z.B. von den Toten)|see ESSJa 12 p.126-7||||orv
 поити||V-|pojьti|||||||jьti|1||||||||
+жидовьскъ|жидовьскыи|A-|židovьskъ|||||||adj_hard|2|3|||||iudaius, giudeo (It.)||chu
 неже|неже|Df|neže||||||||0|||than|||||orv
 дрьжава|дьржава|Nb|dŕ̥žǢva|||||||fem_a|2||||||||orv
 щоуждь|чужии|A-|ћuђь|tjudjь||||||adj_soft|2|1|||possibly an ECS loan from Gmc. *theud- (>Deutsch, Eng. thede), which in Slavic would've been borrowed as *teud- > *tjud-||||orv
@@ -692,6 +694,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 въсходити|въсходити|V-|vъsxoditi|||||||40|1||||||||orv
 дивьнъ|дивьныи|A-|divьnъ|||||||adj_hard|2||||||||orv
 крѣпость|крѣпость|Nb|krěpostь|||||||fem_i|2||||||||orv
+ѥстьство|естьство|Nb|jestьstvo|||||||nt_o|2||||||||chu
 девѧть|девять|Ma|devętь|||||||fem_i|2||||||||orv
 трьниѥ|тьрние|Nb|tŕ̥nьje|||||||nt_jo|2|||brambles, thorns|||||orv
 ветъхъ|ветъхыи|A-|vetъxъ|||||||adj_hard|2||||Direct cognate with Latin vetus (Derksen p.517)||||orv
@@ -713,7 +716,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 зълоба|зълоба|Nb|zъloba|||||||fem_a|2||||||||orv
 мьзда|мьзда|Nb|mьzda|||||||fem_a|2||||||||orv
 отрочѧ|отроча|Nb|otročę|||||||nt_NT|2|||child|||||orv
-скръбь|скърбь|Nb|skr̥bь|||||||fem_i|2||||||||orv
+скърбь|скърбь|Nb|skr̥bь|||||||fem_i|2||||||||orv
 нагъ|нагыи|A-|nagъ|||||||adj_hard|2|||naked|||||orv
 мльчати|мълчати|V-|mĺ̥čǢti|||||||31|1||||cf. Pol. milczeć||||orv
 ребро|ребро|Nb|rebro|||||||nt_o|2||||||||orv
@@ -832,6 +835,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 пьсаниѥ||Nb|pьsanьje|||||||nt_jo|2||||||||
 оусънѫти||V-|usъpnǫti|||||||21|1|||fall asleep|||||
 сѫдьба|судьба|Nb|sǫdьba|||||||fem_a|2||||||||orv
+крьстиꙗньскъ|крьстияньскыи|A-|krьstьjǢnьskъ|||||||adj_hard|2||||||||chu
 акꙑ||Dq|aky||||||||0||||||||
 милостивъ|милостивыи|A-|milostivъ|||||||adj_hard|2||||||||orv
 оударити|ударити|V-|udariti|||||||40|1||||||||orv
@@ -847,6 +851,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 доидеже||G-|dojьdeže||||||||0|||until|Derksen 2008 p.209 Cz. jdeže||||
 исповѣданиѥ|исповѣдание|Nb|jьspovědanьje|||||||nt_jo|2||||||||orv
 сава||Ne|sava|||||||masc_a|2|25|W||||Σάβ(β)ας < סָבָא||
+въскрьсениѥ|въскрьсение|Nb|vъskrьsenьje|||||||nt_jo|2||||||||chu
 обѣщати|обѣщати|V-|obvěћǢti|obvětjǢti||||||54|1||||||||orv
 одежда|одежа|Nb|odeђǢ|odedjǢ||||||fem_ja|2||||||||orv
 храмина|хоромина|Nb|xormina|||||||fem_a|2||||||||orv
@@ -944,7 +949,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 божьствьнъ|божьствьныи|A-|božьstvьnъ|||||||adj_hard|2||||||||chu
 оудъ|удъ|Nb|udъ|||||||masc_u|2|||limb, body part|||||orv
 егѵпьтъ||Ne|jeǵüpьtъ|||||||masc_o|2|25|W|Egypt|||Αἴγυπτος||
-обити#1|обити|V-|objьti|||||||jьti|1||||go around, walk around||||orv
+обити#1||V-|objьti|||||||jьti|1||||go around, walk around||||
 отъпасти|отъпасти|V-|otъpasti|||||otъpad|otъpad|11|1||||||||orv
 прѣлюбꙑ|прѣлюбы|Nb|perĺuby|perljuby||||||fem_uu|2||||||||orv
 пагоуба|пагуба|Nb|paguba|||||||fem_a|2|||destruction, ruin, death, doom, disaster|||||orv
@@ -967,6 +972,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 похвалити|похвалити|V-|poxvaliti|||||||40|1||||||||orv
 сиць||Pd|sikь||sikъ|sicь||||vьxь|2||||||||
 божьство|божьство|Nb|božьstvo|||||||nt_o|2||||||||orv
+прѣльсть|прѣльсть|Nb|perlьstь|||||||fem_i|2||||||||chu
 римьскъ|римьскыи|A-|rimьskъ|||||||adj_hard|2|12||Roman/Latin|||||orv
 бракъ|бракъ|Nb|bьrakъ|||||||masc_o|2|||wedding, feast|ESSJa 03 p.160-1 takes this a derivative of *bьrati, but mentions a list of others who derive it from *borkъ. The word only exists in modern Russian and South Slavic so there is no evidence for or against a TorT-group, and the word does not occur in the Kiev Folia so it's plausible that all the occurences in OCS are spelt without a jer in accordance with their phonological systems. We expect jers for Urkirchenslavisch, however, so that there are no attestations of бьракъ is a problem for ESSJa's derivation|1|||orv
 възимати|възимати|V-|vъzьmati|||||||52_abl|1||||||||orv
@@ -994,7 +1000,9 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 потрѣба|потрѣба|Nb|poterba|||||||fem_a|2||||there's apparently a Rus. verb теребить and Old Rus. тереба||||orv
 застѫпьникъ|заступьникъ|Nb|zastǫpьnikъ|||||||masc_o|2||||||||orv
 отъринѫти||V-|otъrinǫti|||||||22|1||||||||
+ангельскъ|ангельскыи|A-|anǵelьskъ|||||||adj_hard|2|2|W||||||chu
 юность|юность|Nb|junostь|||||||fem_i|2||||||||orv
+словѣньскъ|словѣньскыи|A-|slověnьskъ|||||||adj_hard|2||||||||chu
 безоумиѥ|безумие|Nb|bezumьje|||||||nt_jo|2||||||||orv
 лъжа|лъжа|Nb|lъžǢ|||||||fem_ja|2||||Russian ложь < *lъžь is either a reformation on the model of the fem. i-stems, or the reflex of a separate CS word *lъžь (but OCS лъжь is an adjective meaning 'лживый')||||orv
 троица|троица|Nb|trojika|||trojica||||fem_a_PV3|2|||Trinity||1|||orv
@@ -1057,6 +1065,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 конь|конь|Nb|końь|konjь||||||masc_jo|2||||||||orv
 небрѣщи|небрѣщи|V-|neberћi|nebergti||||nebŕ̥g|neberg|15|1|||neglect + loc.|||||orv
 пастоухъ|пастухъ|Nb|pastuxъ|||||||masc_o|2||||||||orv
+въздрьжаниѥ|въздьржание|Nb|vъzdŕ̥žǢnьje|||||||nt_jo|2||||||||chu
 окаꙗнъ|окаяныи|A-|okajǢnъ|||||||adj_hard|2||||||||orv
 пакость|пакость|Nb|pakostь|||||||fem_i|2||||||||orv
 жѧдати||V-|žędati|||||||52|1||||||||
@@ -1104,6 +1113,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 измѣнити|измѣнити|V-|jьzměniti|||||||40|1||||||||orv
 миловати|миловати|V-|milovati|||||||61|1||||||||orv
 прьвоѥ|пьрвое|Df|pŕ̥voje||||||||0||||||||orv
+крьстьнъ|крьстьныи|A-|krьstьnъ|||||||adj_hard|2|12|||||||chu
 врѣдъ|врѣдъ|Nb|verdъ|||||||masc_o|2||||||||orv
 хоудъ|худыи|A-|xudъ|||||||adj_hard|2||||||||orv
 бесъмрьтьнъ||A-|bessъmŕ̥tьnъ|||||||adj_hard|2||||||||
@@ -1153,6 +1163,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 ижде|иже|Dq|jьђe||||||||0|||||1|||orv
 праздьновати|праздьновати|V-|porzdьnovati|||||||61|1||||||||orv
 змии|змии|Nb|zmьjь|||||||masc_jo|2||||||||orv
+цѣсарьскъ|цѣсарьскыи|A-|kěsaŕьskъ|kěsarjьskъ||||||adj_hard|2||||||||chu
 диꙗволь||A-|dьjǢvoĺь|dьjǢvoljь||||||adj_soft|2||||||||
 дѣтищь|дѣтищь|Nb|dětiščь|||||||masc_jo|2|||baby, infant|has this been back-formed from the nt-suffixed *dětiščě to a masc jo-stem?||||orv
 вьседрьжитель|вьседьржитель|Nb|vьxedŕ̥žiteĺь|vьxedŕ̥žiteljь||vьśedŕ̥žiteĺь||||masc_tel|2||||||||orv
@@ -1225,7 +1236,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 рогъ|рогъ|Nb|rogъ|||||||masc_o|2|||horn|||||orv
 обличати|обличати|V-|obličǢti|||||||54|1||||||||orv
 вьсѫдоу|вьсюду|Df|vьxǫdu|||vьśǫdu|||||0|||everywhere|||||orv
-отъмѣтати|отъмѣтати|V-|otъmětati|||||||54|1||||||||orv
+отъмѣтати|отъмѣтати|V-|otъmětati|||||||54|1||||Bg. мятам vs Ukr. метати, Pol. miotać suggests that both *metati and *mětati existed in CS||||orv
 привлѣщи|привлѣщи|V-|privelћi|||||privĺ̥k|privelk|15|1||||||||orv
 поминати|поминати|V-|pominati|||||||54|1||||||||orv
 живити|живити|V-|živiti|||||||40|1||||||||orv
@@ -1241,6 +1252,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 прѣславьнъ|прѣславьныи|A-|perslavьnъ|||||||adj_hard|2||||||||orv
 оуморити|уморити|V-|umoriti|||||||40|1||||||||orv
 вьсꙗчьскъ|вьсячьскыи|A-|vьxačьskъ|||vьśačьskъ||||adj_hard|2||||||||orv
+грьчьскъ|грьчьскыи|A-|grьčьskъ|||||||adj_hard|2||||||||chu
 елинъ|елинъ|Nb|jelinъ|||||||masc_o|2|2||Greek (person)|||Ἕλλην ||orv
 насадити|насадити|V-|nasaditi|||||||40|1||||||||orv
 дѣтѣль||Nb|dětělь|||||||fem_i|2|||deed, action|||||
@@ -1342,13 +1354,14 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 трѣба|трѣба|Nb|terba|||||||fem_a|2||||there's apparently a Rus. verb теребить and Old Rus. тереба||||orv
 подражати|подражати|V-|podražǢti|||||||54|1||||the dict. lists the doublet подрѣжати, but it’s possible for such a spelling to result from a hardened /ŕ/ if *ŕǢ (spelt рѣ) had become /ra/||||orv
 оутѣшити|утѣшити|V-|utěšiti|||||||40|1|||comfort, console|||||orv
-вьнегда|вънегда|Dq|vъńegъda|vъnjegъda|||||||0||||The dict. spelling suggests an etymology of *vъn+jegъda, i.e. ‘in when’, ‘in that time’||||orv
+вънѥгда|вънегда|Dq|vъńegъda|vъnjegъda|||||||0||||||||orv
 лѫкъ|лукъ|Nb|lǫkъ|||||||masc_o|2||||||||orv
 сѣдильна||Nb|sědidlьna|||||||fem_a|2||||||||
 сълъгати|сълъгати|V-|sъlъgati|||||||52|1||||||||orv
 призꙑвати|призывати|V-|prizyvati|||||||54|1||||||||orv
 мѣнити|мѣнити|V-|měniti|||||||40|1||||||||orv
 въздоухъ|въздухъ|Nb|vъzduxъ|||||||masc_o|2||||||||orv
+словесьнъ|словесьныи|A-|slovesьnъ|||||||adj_hard|2||||||||chu
 поганъ|поганыи|A-|poganъ|||||||adj_hard|2|3|||||paganus||chu
 обои|обои|Ma|obojь|||||||pron_soft|2||||||||orv
 ѥдъва|едъва|Df|jedъva||||||||0||||||||orv
@@ -1408,7 +1421,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 камо|камо|Du|kamo||||||||0|||whither|||||orv
 въсхꙑтити|въсхытити|V-|vъsxytiti|||||||40|1||||||||orv
 свободь||A-|svobodь||||||||0||||indeclinable adjective||||
-въздрастъ|възрастъ|Nb|vъzorstъ|||||||masc_o|2||||||||orv
+въздрастъ||Nb|vъzorstъ|||||||masc_o|2||||||||
 раждати|ражати|V-|raђǢti|radjǢti||||||54|1||||||||orv
 пооучити|поучити|V-|poučiti|||||||40|1||||||||orv
 въздꙑханиѥ|въздыхание|Nb|vъzdyxanьje|||||||nt_jo|2||||||||orv
@@ -1449,7 +1462,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 съмѣти|съмѣти|V-|sъměti|||||sъmě|sъměj|32|1|||dare|||||orv
 вънѣщьнь|вънѣшьнии|A-|vъněšьńь|vъněšьnjь||||||adj_soft|2|||outside; outer side|I can't explain the variants with /št/, apart from a guess that the dental articulation of the /ń/ has infected the /š/, cf. Eng. 'prince' [prinʔs] (as the weak jer is fallen), Mar. домащьнии <*domašьńiji|1|||orv
 пророчьскъ|пророчьскыи|A-|proročьskъ|||||||adj_hard|2||||||||orv
-мльнии|мълнии|Nb|mĺ̥dnьji|||||||fem_ji|2|||lightning|Both ESSJa 20 p.220-2 and Derksen p.333 reconstruct this as *mъldni, with -d- based on Old Prussian mealde and Ru. dial. молодня, among other dialectal words with /d/ in the modern languages. None of the evidence they adduce proves that we have the unpalatalised l̥ here instead of the ĺ̥ (esp. Latvian milna which suggests the opposite), so I will follow the dictionary instead and us ĺ̥.|1|||orv
+млънии|мълнии|Nb|mĺ̥dnьji|||||||fem_ji|2|||lightning|Both ESSJa 20 p.220-2 and Derksen p.333 reconstruct this as *mъldni, with -d- based on Old Prussian mealde and Ru. dial. молодня, among other dialectal words with /d/ in the modern languages. None of the evidence they adduce proves that we have the unpalatalised l̥ here instead of the ĺ̥ (esp. Latvian milna which suggests the opposite), so I will follow the dictionary instead and us ĺ̥.|1|||orv
 лоуна|луна|Nb|luna|||||||fem_a|2|||moon|||||orv
 въпль|въпль|Nb|vъpĺь|vъpjь||||||masc_jo|2||||||||orv
 оходити||V-|oxoditi|||||||40|1||||||||
@@ -1486,7 +1499,8 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 степеньнъ|степеньныи|A-|stepenьnъ|||||||adj_hard|2||||||||orv
 простити|простити|V-|prostiti|||||||40|1||||||||orv
 дѫбъ|дубъ|Nb|dǫbъ|||||||masc_o|2||||||||orv
-послоушаниѥ||Nb|poslušǢnьje|||||||nt_jo|2||||||||
+послоушаниѥ|послушание|Nb|poslušǢnьje|||||||nt_jo|2||||||||orv
+мльчаниѥ|мълчание|Nb|mĺ̥čǢnьje|||||||nt_jo|2||||||||chu
 ꙗдь|ядь|Nb|jǢdь|||||||fem_i|2|||food|||||orv
 съврьшати|съвьршати|V-|sъvŕ̥šǢti|||||||54|1||||||||orv
 послѣжде|послѣже|Df|poslěђe|poslědje|||||||0||||||||orv
@@ -1569,16 +1583,17 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 алъчьба||Nb|olčьba|||||||fem_a|2||||||||
 оудобь|удобь|Df|udobь||||||||0|||easily, easy, not hard|||||orv
 кръмити#2|кърмити|V-|kr̥miti|||||||40|1||||||||orv
+мощьнъ|мощьныи|A-|moћьnъ|mogtьnъ||||||adj_hard|2||||||||chu
 рѧдъ|рядъ|Nb|rędъ|||||||masc_o_u|2||||Derksen says o-stem, so the Supr. u-genitives and Rus. наряду etc. could be non-original|1|||orv
 неприꙗзнинъ||A-|neprijǢzninъ|||||||adj_hard|2|||the Devil's, of the Devil|||||
 ниць|ниць|A-|nikь||nikъ|nicь||||masc_o_PV3|2|||face downwards, onto one's face|Derksen 2008 p.353 reconstructs PIE *ni-h3kwo-||||orv
 климентъ|климентъ|Ne|klimentъ|||||||masc_o|2|3|W||||ultimately from the adjective clēmēns||orv
 земьскъ||A-|zemĺьskъ|zemjьskъ||||||adj_hard|2||||||||
 такоже|такоже|Df|takože||||||||0||||||||orv
-погꙑбати|погыбати|V-|pogybati|||||||52|1||||||||orv
+погꙑбати||V-|pogybati|||||||52|1||||||||
 длъгъ|дългъ|Nb|dl̥gъ|||||||masc_o|2|1||debt|||Gothic dulgs||orv
 длъжьникъ|дължьникъ|Nb|dl̥žьnikъ|||||||masc_o|2|1||debtors, people who owe you|||Gothic dulgs||orv
-оутрьнь|утрьнии|A-|utrьńь|utrьnjь||||||adj_soft|2||||I disagree with ESSJa 8 p.200-1 and think it most likely that this is cognate with Eng. East < *aust-, and therefore originally unjotated. Getting rid of the /s/ is a problem. Derksen p. 510-11 has more discussion in support of my view. ||||orv
+оутрьнь||A-|utrьńь|utrьnjь||||||adj_soft|2||||I disagree with ESSJa 8 p.200-1 and think it most likely that this is cognate with Eng. East < *aust-, and therefore originally unjotated. Getting rid of the /s/ is a problem. Derksen p. 510-11 has more discussion in support of my view. ||||
 сѫчьць||Nb|sǫčьkь||sǫčьkъ|sǫčьcь||||masc_o_PV3|2|||splinter|||||
 брьвьно|брьвьно|Nb|brьvьno|||||||nt_o|2|||beam|see ESSJa 03 p.72-73, Derksen p.67||||orv
 отврьзати||V-|otvŕ̥zati|||||||54|1||||||||
@@ -1643,7 +1658,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 льстити|льстити|V-|lьstiti|||||||40|1||||||||orv
 брьниѥ||Nb|bŕ̥nьje|||||||nt_jo|2||||Vasmer says that some bloke found loads of бьрние spellings in the Ukr. Izbornik 1073 and the Archangelsk Evangelie,, and so he prefers *bŕ̥nьje, and thinks that Ru. брение is a literary borrowing from the OCS spelling|1|||
 влѣщи|волочи|V-|velћi|||||vĺ̥k|velk|15|1||||||||orv
-наказати|наказати|V-|nakazati|||||||52|1||||||||orv
+наказати||V-|nakazati|||||||52|1||||||||
 навести|навести|V-|navesti|||||naved|naved|11|1||||||||orv
 желаниѥ|желание|Nb|želanьje|||||||nt_jo|2||||||||orv
 избавитель|избавитель|Nb|jьzbaviteĺь|jьzbaviteljь||||||masc_tel|2||||||||orv
@@ -1656,10 +1671,14 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 ѥдиноѭ|одиною|Df|jedinojǫ||||jedьnojǫ||||0||||||||orv
 непрѣподобьнъ||A-|neperpodobьnъ|||||||adj_hard|2||||||||
 врьста|вьрста|Nb|vŕ̥sta|||||||fem_a|2||||||||orv
+прѣдълежати|прѣдълежати|V-|perdъležǢti|||||||31|1||||||||chu
 прьвъ|пьрвыи|A-|pŕ̥vъ|||||||adj_hard|2||||||||orv
+съмꙑслъ|съмыслъ|Nb|sъmyslъ|||||||masc_o|2||||||||chu
+дрьзновениѥ|дьрзновение|Nb|dŕ̥znovenьje|||||||nt_jo|2||||||||chu
+съвѣсть|съвѣсть|Nb|sъvěstь|||||||fem_i|2||||||||chu
 въводити|въводити|V-|vъvoditi|||||||40|1||||||||orv
 дъска|дъска|Nb|dъska|||||||fem_a|2||||||||orv
-благословлѥниѥ|благословление|Nb|bolgoslovĺenьje|bolgoslovjenьje||||||nt_jo|2|||blessing|||||orv
+благословениѥ|благословление|Nb|bolgoslovĺenьje|bolgoslovjenьje||||||nt_jo|2||||this is just a dialectal reflection of благословлѥниѥ||||orv
 сътѧжати|сътяжати|V-|sъtęžǢti|||||||31|1|||hold on to, keep, have on one's person|||||orv
 вънѫтрьнь||A-|vъnǫtrьńь|vъnǫtrьnjь||||||adj_soft|2||||||||
 обѣтъ|обѣтъ|Nb|obvětъ|||||||masc_o|2||||||||orv
@@ -1733,6 +1752,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 вънѣ|вънѣ|R-|vъně||||||||0||||||||orv
 благꙑни||Nb|bolgyńi|bolgynji||||||fem_ji|2||||||||
 златица||Nb|zoltika|||||||fem_a_PV3|2||||||||
+прогънати|прогънати|V-|progъnati|||||||51_abl|1||||||||chu
 столъ|столъ|Nb|stolъ|||||||masc_o|2||||||||chu
 мѫдити||V-|mǫditi||||muditi|||40|1|||is gonna be late, is being slow, being held up|Derksen p.330 adduces Slovenian muditi which points to *mud- (as Slovene *ǫ > o); dict. p.341 lists both *mud- and *mǫd-, and considers it related to *mъděti, i.e. o-grade *mud- < *moud-, zero-grade *mъd- < *mud-||||
 коуръ|куръ|Nb|kurъ|||||||masc_o|2|||cockerel|||||orv
@@ -1761,7 +1781,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 сидонъ||Ne|sidonъ|||||||masc_o|2|25|||||Σιδῶν||
 попелъ|попелъ|Nb|popelъ||||pepelъ|||masc_o|2|||ash|||||orv
 ионинъ||A-|ijoninъ|||||||adj_hard|2|25|W|Jonah's|||Ἰωνᾶ||
-гонениѥ|гонение|Nb|gońenьje|gonjenьje||||||nt_jo|2|||persecution|||||orv
+гонѥниѥ|гонение|Nb|gońenьje|gonjenьje||||||nt_jo|2|||persecution|||||orv
 зелиѥ|зелие|Nb|zelьje|||||||nt_jo|2||||||||orv
 отьчьствиѥ|отьчьствие|Nb|otьčьstvьje|||||||nt_jo|2||||||||orv
 иродиꙗ||Ne|irodijǢda|||||||fem_a|2|2|W|Herodias|the Nsg. is irodijǢ because the -ad- is a Gk. infix like the -es- in slovese etc.||Ἡρῳδιάδα||
@@ -1828,6 +1848,8 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 освѣтити|освѣтити|V-|osvětiti|||||||40|1||||||||orv
 щедръ|щедрыи|A-|ščedrъ|||||||adj_hard|2||||||||orv
 готовити|готовити|V-|gotoviti|||||||40|1||||||||orv
+отъходити|отъходити|V-|otъxoditi|||||||40|1||||||||chu
+съборьнъ|съборьныи|A-|sъborьnъ|||||||adj_hard|2||||||||chu
 похоулити|похулити|V-|poxuliti|||||||40|1||||||||orv
 сверѣпъ|сверѣпыи|A-|sverěpъ|||||||adj_hard|2||||||||orv
 како|како|Dq|kako||||||||0||||||||orv
@@ -1861,7 +1883,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 обѣсити|обѣсити|V-|obvěsiti|||||||40|1|||hang [sth.] around [sth.]|||||orv
 чии|чии|Pi|čьjь|||||||pron_soft|2||||||||orv
 блѫдити|блудити|V-|blǫditi|||||||40|1|||to stray, wander off (and get lost);; to be a degenerate, partake in degeneracy|||||orv
-доити#1||V-|dojiti|||||||40|1|||to breastfeed, milk|||||
+доити#1|доити|V-|dojiti|||||||40|1|||to breastfeed, milk|||||orv
 ное||Ne|noje||||||||0|25|W||||Νῶε||
 въждѧдати||V-|vъžǯędati|||||||52|1|||feel [great] thirst, become thirsty|vъz+gęd-ati, with PV1 /zg+FV/ > *žǯ (unprefixed жѧдати)||||
 възлиꙗти|възлияти|V-|vъzlьjǢti|||||||53_abl|1||||According to Diels p.271 this verb, along with смияти:смѣѭ, has zero-grade ablaut in the infinitive and (one assumes) o-grade ablaut in present stem, which would mean that the infinitive of Pol. śmiać się: smieję may actually be the regular development of *smьjǢtь and not a contraction of *smějǢtь. Bulgarian смия has generalised the infinitive stem to the present so that this verb now behaves exactly like the descendants of *biti etc.||||orv
@@ -1939,9 +1961,11 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 нанести|нанести|V-|nanesti|||||nanes|nanes|11|1||||||||orv
 печать|печать|Nb|pečǢtь|||||||fem_i|2||||||||orv
 извѣстити|извѣстити|V-|jьzvěstiti|||||||40|1||||||||orv
+изволѥниѥ|изволение|Nb|jьzvoĺenьje|jьzvoljenьje||||||nt_jo|2||||||||chu
 лѣвъ|лѣвыи|A-|lěvъ|||||||adj_hard|2|||left-hand-[странѫ]|||||orv
 игоуменъ|игуменъ|Nb|igumenъ|||||||masc_o|2|2|W||||ἡγούμενος||chu
 бꙑлиѥ||Nb|bylьje|||||||nt_jo|2||||||||
+благочьстиѥ|благочьстие|Nb|bolgočьstьje|||||||nt_jo|2||||||||chu
 боукꙑ|букы|Nb|buky|||||||fem_uu|2|1|||||Gmc. *bōku||orv
 съзьданиѥ|съзьдание|Nb|sъzьdanьje|||||||nt_jo|2||||||||orv
 виньнъ|виньныи|A-|vinьnъ|||||||adj_hard|2|||wine-, of the vine|||||orv
@@ -1997,7 +2021,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 заклинати|заклинати|V-|zaklinati|||||||54|1|||adjure, entreat, implore|||||orv
 горько|горько|Df|gorьko||||||||0|||bitterly|||||orv
 съмѣсити|съмѣсити|V-|sъměsiti|||||||40|1||||||||orv
-обити#2||V-|obviti|||||||17|1|||wrap [it] up|||||
+обити#2|обити|V-|obviti|||||||17|1|||wrap [it] up|||||orv
 спѫдъ|спудъ|Nb|spǫdъ|||||||masc_o|2|||bushel|||||orv
 вѣтрьнъ||A-|větrьnъ|||||||adj_hard|2||||||||
 кромѣ|кромѣ|R-|kromě||||||||0||||||||orv
@@ -2052,7 +2076,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 съвести|съвести|V-|sъvesti|||||sъved|sъved|11|1||||||||orv
 застѫплѥниѥ|заступление|Nb|zastǫpĺenьje|zastǫpjenьje||||||nt_jo|2||||||||orv
 защититель|защититель|Nb|zaščititeĺь|zaščititeljь||||||masc_tel|2||||||||orv
-плъкъ|пълкъ|Nb|pl̥kъ|||||||masc_o|2|1|||Derksen p.424 says ‘Probably a borrowing from Germanic’, i.e. ‘folk’||||chu
+плъкъ|пълкъ|Nb|pl̥kъ|||||||masc_o|2||||||||chu
 процвисти||V-|prokvisti|||||||ьt|1||||||||
 срамъ|срамъ|Nb|sormъ|||||||masc_o|2||||||||orv
 попещи|попечи|V-|popeћi|popekti||||popek|popek|11|1||||||||orv
@@ -2081,6 +2105,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 чрьньць|чьрньць|Nb|čŕ̥nьkь||čŕ̥nьkъ|čŕ̥nьcь||||masc_o_PV3|2||||||||orv
 прѣставити|переставити|V-|perstaviti|||||||40|1||||||||orv
 свобода|свобода|Nb|svoboda|||||||fem_a|2||||||||orv
+срьдьчьнъ|сьрдьчьныи|A-|sŕ̥dьčьnъ|||||||adj_hard|2||||||||chu
 нежели|нежели|Df|neželi||||||||0|||than|||||orv
 кънигъчии||Nb|kъńigъčьji|kъnjigъčьji||||||masc_ji|2|7||scribe, law and scripture expert|||||
 растиславъ|ростиславъ|Ne|orstislavъ|||||||masc_o|2||||||||chu
@@ -2231,19 +2256,23 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 овогда||Df|ovogъda||||||||0||||||||
 вънъ|вънъ|R-|vъnъ||||||||0||||||||orv
 благовѣрьнъ|благовѣрьныи|A-|bolgověrьnъ|||||||adj_hard|2||||||||orv
+нѫждьнъ|нужьныи|A-|nǫђьnъ|nǫdjьnъ|||nuђьnъ|||adj_hard|2||||||||chu
 племѧ|племя|Nb|plemę|||||||nt_N|2||||||||orv
 грѫбъ|грубыи|A-|grǫbъ||||grubъ|||adj_hard|2||||||||orv
 освѧтити|освятити|V-|osvętiti|||||||40|1||||||||orv
 шьстиѥ|шьствие|Nb|šьstvьje|||||||nt_jo|2|||journey, travels|||||orv
+сѫпротивьнъ|супротивьныи|A-|sǫprotivьnъ|||||||adj_hard|2||||||||chu
 стоуденъ|студеныи|A-|studenъ|||||||adj_hard|2|||cold|The Serbo-Croat form 'studen' adduced by Derksen p. 471 allows us to agree with dict. p.631 in reconstructing this as *studenъ rather than *studьnъ (which has the different meaning 'shameful, disgusting, loathsome')||||orv
 василии|василии|Ne|vasilьjь|||||||masc_jo|2|2|||||Βασίλειος||chu
 распѧтиѥ|распятие|Nb|orspętьje|||||||nt_jo|2||||||||orv
+мольба|мольба|Nb|modlьba|||||||fem_a|2||||Родственно лит. maldà «просьба», maldýti, maldaũ «умолять», mel̃sti, meldžiù «просить, молить(ся)», хетт. mald-, maltāi- «просить, говорить», арм. mаɫtΏеm «умоляю», др.-в.-нем. meldôn, нов.-в.-нем. melden «заявлять, докладывать». Слав. метатеза *modliti < *molditi объясняется, возм., табуистическими побуждениями||||chu
 дьрати|дьрати|V-|dьrati|||||||51_abl|1||||||||orv
 бѣсовьскъ|бѣсовьскыи|A-|běsovьskъ|||||||adj_hard|2||||||||orv
 знои|знои|Nb|znojь|||||||masc_jo|2||||||||orv
 долоу|долу|Df|dolu||||||||0||||||||orv
 проречениѥ|проречение|Nb|prorečenьje|||||||nt_jo|2||||||||orv
 ѥстьствьнъ|естьствьныи|A-|jestьstvьnъ|||||||adj_hard|2||||||||orv
+прощениѥ|прощение|Nb|prošћenьje|prostjenьje||||||nt_jo|2||||||||chu
 понꙗвица||Nb|pońǢvika|ponjǢvika||pońǢvica||||fem_a_PV3|2|||linen cloth|the cognates given by Vasmer ('укр. поня́ва, сербохорв. по̀њава «подстилка, грубое одеяло», словен. роnjȃvа', though contrastingly also 'блр. понёва'), as well as Suprasliensis понꙗвици allow us to pretty securely reconstruct *pońǢ-, but further etymology is uncertain||||
 чаꙗниѥ||Nb|čǢjǢnьje|||||||nt_jo|2||||||||
 три съта||Ma|300||||||||0||||||||
@@ -2356,7 +2385,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 стоуденьць||Nb|studenьkь||studenьkъ|studenьcь||||masc_o_PV3|2|||well|The Serbo-Croat form 'studen' adduced by Derksen p. 471 allows us to reconstruct *studenъ rather than *studьnъ (which has the different meaning 'shameful, disgusting, loathsome')||||
 драгъма||Nb|dragъma|||||||fem_a|2|2|W|drachma|δραχμα||||
 седморицеѭ||Df|sedmorikejǫ||sedmorikojǫ|sedmoricejǫ|||||0||||||||
-истѧѕати#2|истязати|V-|jьstęgati|||jьstęʒati||||52|1|||ask for back, demand back, seek recompense|||||orv
+истѧѕати#2||V-|jьstęgati|||jьstęʒati||||52|1|||ask for back, demand back, seek recompense|||||
 къде||Df|kъde||||||||0||||||||
 извѣстьнъ|извѣстьныи|A-|jьzvěstьnъ|||||||adj_hard|2||||||||orv
 възмѫщениѥ|възмущение|Nb|vъzmǫћenьje|vъzmǫtjenьje||||||nt_jo|2||||||||orv
@@ -2393,11 +2422,11 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 тоукъ||Nb|tukъ|||||||masc_o|2||||||||
 прѣрѣканиѥ||Nb|perrěkanьje|||||||nt_jo|2|||contradicting (Brenton: gainsaying); usually means 'persuading', 'convincing'|||||
 хотѣниѥ|хотѣние|Nb|xotěnьje||||xъtěnьje|||nt_jo|2||||||||orv
-ѫтрьнь||A-|ǫtrьńь|ǫtrьnjь||||||adj_soft|2||||||||
+ѫтрьнь|утрьнии|A-|ǫtrьńь|ǫtrьnjь||||||adj_soft|2||||||||orv
 воскъ|воскъ|Nb|voskъ|||||||masc_o|2||||||||orv
 львовъ|львовъ|A-|lьvovъ|||||||adj_hard|2||||||||orv
 прѣпитѣти||V-|perpitěti|||||||32|1|||satisfy, feed, satiate|||||
-ништета|нищета|Nb|nišћeta|nistjeta||||||fem_a|2|||I reconstruct this with *šћ rather than *šč based purely on Derksen 2008 p.353's citation of Meillet's view that this is a '*-ti̯o derivative of *nis, cf. Sanskrit níṣṭya-'. Derksen himself gives *niščь, but this is because my *šč < *sk+FV and *šћ develop identically in Slavic, so he has no need to separate them for his Late Common Slavonic stage; I keep them separate here for maximum clarity.|||||orv
+нищета|нищета|Nb|nišћeta|nistjeta||||||fem_a|2|||I reconstruct this with *šћ rather than *šč based purely on Derksen 2008 p.353's citation of Meillet's view that this is a '*-ti̯o derivative of *nis, cf. Sanskrit níṣṭya-'. Derksen himself gives *niščь, but this is because my *šč < *sk+FV and *šћ develop identically in Slavic, so he has no need to separate them for his Late Common Slavonic stage; I keep them separate here for maximum clarity.|||||orv
 нечьсть||Nb|nečьstь|||||||fem_i|2||||||||
 въз||R-|vъz||||||||0|||||||1|
 сѣтовати|сѣтовати|V-|sětovati|||||||61|1|||complain, lament|||||orv
@@ -2425,7 +2454,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 въстѫжити|въстужити|V-|vъstǫžiti|||||||40|1||||||||orv
 оумлькнѫти|умълкнути|V-|umĺ̥knǫti|||||||21|1||||||||orv
 епискоупьство||Nb|jepiskupьstvo||||jepiskopьstvo|||nt_o|2|2|||||ἐπισκοπή||
-сирота||Nb|sirota|||||||masc_a|2||||||||
+сирота|сирота|Nb|sirota|||||||masc_a|2||||||||orv
 сьребрьнъ|сьребрьныи|A-|sьrebrьnъ|||||||adj_hard|2||||||||orv
 ноздри|ноздри|Nb|nozdrь|||||||fem_i|2||||||||orv
 погꙑбѣль||Nb|pogybělь|||||||fem_i|2||||||||
@@ -2438,9 +2467,11 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 несꙑтъ|несытыи|A-|nesytъ|||||||adj_hard|2||||||||orv
 коза|коза|Nb|koza|||||||fem_a|2||||||||orv
 въчисти||V-|vъčisti|||||||ьt|1||||||||
+нꙑнѣшьнь|нынѣшьнии|A-|nyněšьńь|nyněšьnjь||||||adj_soft|2||||ESSJa thinks this is cognate with Lith. nunai, but OCS frequently has palatalisation-diacritics and/or jotated-a in Cyrillic mss., which is a huge problem|1|||chu
 испасти|испасти|V-|jьspasti|||||jьspad|jьspad|11|1||||||||orv
 польѕьнъ|пользьныи|A-|polьgьnъ|||||||adj_hard|2||||||||orv
 мльчаливъ|мълчаливыи|A-|mĺ̥čǢlivъ|||||||adj_hard|2||||||||orv
+скврьньнъ|сквьрньныи|A-|skvŕ̥nьnъ|||||||adj_hard|2||||||||chu
 зарꙗ|заря|Nb|zaŕǢ|zarjǢ||||||fem_ja|2||||Ukr. Зоря and зірка; Wiktionary only as *zoŕǢ but in the descendants listed are loads of doublets in all the languages including the old ones, so clearly there were doublets in LCS||||orv
 недѣлꙗ|недѣля|Nb|neděĺǢ|neděljǢ||||||fem_ja|2||||||||chu
 широта||Nb|širota|||||||fem_a|2||||||||
@@ -2601,7 +2632,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 гвоздиинъ||A-|gvozdьjьnъ|||||||adj_hard|2|||from nails, nail-|||||
 прѣдъстати|прѣдъстати|V-|perdъstati|||||||stati|1||||||||orv
 забꙑвати|забывати|V-|zabyvati|||||||54|1||||||||orv
-оувѧзати|увязати|V-|uvęzati|||||||52|1||||||||orv
+оувѧзати||V-|uvęzati|||||||52|1||||||||
 ѫгль||Nb|ǫglь|||||||masc_i|2||||||||
 мѣдьнъ|мѣдьныи|A-|mědьnъ|||||||adj_hard|2||||||||orv
 възданиѥ|въздание|Nb|vъzdanьje|||||||nt_jo|2|||payback, retribution|||||orv
@@ -2636,7 +2667,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 прѣтръгнѫти|прѣтъргнути|V-|pertr̥gnǫti|||||||21|1||||||||orv
 пристанище|пристанище|Nb|pristanišče|||||||nt_jo|2||||||||orv
 матерь||A-|mateŕь|materjь||||||adj_soft|2||||||||
-въздвиѕати|въздвизати|V-|vъzdvigati|||vъzdviʒati||||52|1||||||||orv
+въздвиѕати||V-|vъzdvigati|||vъzdviʒati||||52|1||||||||
 поспѣшити|поспѣшити|V-|pospěšiti|||||||40|1||||||||orv
 оунꙑниѥ|уныние|Nb|unynьje|||||||nt_jo|2||||||||orv
 ꙗдъ|ядъ|Nb|jǢdъ|||||||masc_o|2||||||||orv
@@ -2658,9 +2689,12 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 дроугъ|другыи|Mo|drugъ|||||||adj_hard_ord|2||||||||chu
 свѣтити|свѣтити|V-|světiti|||||||40|1||||||||orv
 ледъ|ледъ|Nb|ledъ|||||||masc_o|2||||||||orv
+въздрьжати|въздьржати|V-|vъzdŕ̥žǢti|||||||31|1||||there are 2 class 54 occurrences in your DB||||chu
 обрадовати|обрадовати|V-|obradovati|||||||61|1||||||||orv
 гость|гость|Nb|gostь|||||||masc_i|2||||||||chu
+манастꙑрьскъ|манастырьскыи|A-|manastyŕьskъ|manastyrjьskъ||||||adj_hard|2||||||||chu
 лоука|лука|Ne|luka|||||||masc_a|2|2|||||||orv
+бещисльнъ|бесчисльныи|A-|beščislьnъ|||||||adj_hard|2||||||||chu
 мьздоимьць||Nb|mьzdojьmьkь|||mьzdojьmьcь||||masc_o_PV3|2|||tax-collector, мытарь|||||
 чрьта||Nb|čŕ̥ta|||||||fem_a|2||||||||
 садити|садити|V-|saditi|||||||40|1||||||||orv
@@ -2794,7 +2828,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 гоумьно|гумьно|Nb|gumьno|||||||nt_o|2|||threshing floor|this allegedly (Ru. Wikipedia) contains the *mьn- root of *męti, мять||||orv
 левьгиинъ||A-|levьǵьjinъ|||||||adj_hard|2|25|W|||1|Λευίς||
 никоторꙑиже||Px|nikotorъ|||||||adj_hard|2||||||||
-истѧѕати#1||V-|jьstęgati|||jьstęʒati||||54|1|||ask for back, demand back, seek recompense|||||
+истѧѕати#1|истязати|V-|jьstęgati|||jьstęʒati||||54|1|||ask for back, demand back, seek recompense|||||orv
 недалече||Df|nedaleče||||||||0||||||||
 оучинити|учинити|V-|učiniti|||||||40|1||||||||orv
 вѣстьникъ|вѣстьникъ|Nb|věstьnikъ|||||||masc_o|2||||||||orv
@@ -2891,7 +2925,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 готовати||V-|gotovati|||||||54|1||||||||
 призирати|призирати|V-|prizirati|||||||54|1||||||||orv
 раждиѕати||V-|oržǯigati|||oržǯiʒati||||54|1||||||||
-оущѣдрити|ущедрити|V-|uščedriti|||||||40|1||||||||orv
+оущедрити|ущедрити|V-|uščedriti|||||||40|1||||||||orv
 колесьница|колесьница|Nb|kolesьnika|||kolesьnica||||fem_a_PV3|2||||||||orv
 глоумлꙗти||V-|glumĺǢti|glumjǢti||||||54|1||||||||
 движати||V-|dvižǢti|||||||31|1||||||||
@@ -2926,16 +2960,21 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 стенаниѥ|стенание|Nb|stenanьje|||||||nt_jo|2||||||||orv
 ослоушаниѥ||Nb|uslušǢnьje||||||||99||||||||
 чловѣчьство|человѣчьство|Nb|čьlověčьstvo||||čelověčьstvo|||nt_o|2||||||||orv
+къзнь|къзнь|Nb|kъznь|||||||fem_i|2||||||||chu
 бѣшениѥ||Nb|běšenьje|||||||nt_jo|2||||||||
 въсточьнъ|въсточьныи|A-|vъstočьnъ|||||||adj_hard|2||||||||orv
 въпьсати||V-|vъpьsati|||||||52_abl|1|||write down, record, enter|||||
 слоути|слути|V-|sluti|||||||uti|1||||||||orv
+орѫдиѥ|орудие|Nb|orǫdьje|||||||nt_jo|2||||||||chu
 ѥже|еже|Dq|ježe||||||||0||||||||orv
 възградити|възградити|V-|vъzgorditi|||||||40|1||||||||orv
 съпьсати||V-|sъpьsati|||||||52_abl|1||||||||
+ратьнъ|ратьныи|A-|ortьnъ|||||||adj_hard|2||||||||chu
+въкоушати|въкушати|V-|vъkušǢti|||||||54|1||||||||chu
 чиститель|чиститель|Nb|čistiteĺь|čistiteljь||||||masc_tel|2||||||||orv
 оумрьщвениѥ||Nb|umŕ̥ћvĺenьje|umŕ̥tvjenьje||||||nt_jo|2||||||||
 съвѫзъ||Nb|sъvǫzъ|||||||masc_o|2||||||||
+разьно|разьно|Df|orzьnо||||||||0||||||||chu
 цвисти||V-|kvisti|||||||ьt|1||||||||
 свѧтоплъкъ|святопълкъ|Ne|svętopl̥kъ|||||||masc_o|2|1|||Derksen p.424 says ‘Probably a borrowing from Germanic’, i.e. ‘folk’||||chu
 прѣнести|прѣнести|V-|pernesti|||||pernes|pernes|11|1||||||||orv
@@ -2984,7 +3023,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 обльстити|обльстити|V-|oblьstiti|||||||40|1||||||||orv
 законооучитель|законоучитель|Nb|zakonoučiteĺь|zakonoučiteljь||||||masc_tel|2||||||||orv
 прѣждесѣданиѥ||Nb|perђesědanьje|perdjesědanьje||||||nt_jo|2|||translates πρωτοκαθεδρίας which means 'first-seats, important seats, seat of honour'|||||
-затварꙗти|затваряти|V-|zatvaŕǢti|||||||54|1|||zatvarjǢti|||||orv
+затварꙗти|затваряти|V-|zatvaŕǢti|zatvarjǢti||||||54|1||||||||orv
 соуша|суша|Nb|sušǢ|||||||fem_ja|2|||dry land|||||orv
 мѧта||Nb|męta|||||||fem_a|2|3||mint|||menta||
 хꙑщениѥ||Nb|xyћenьje|xytjenьje||||||nt_jo|2||||||||
@@ -3243,13 +3282,17 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 опалꙗти|опаляти|V-|opaĺǢti|opaljǢti||||||54|1||||||||orv
 неправьдьнѣ||Df|nepravьdьně||||||||0||||||||
 зълочьстьнъ||A-|zъločьstьnъ|||||||adj_hard|2||||||||
+неиздреченьнъ|неизреченьныи|A-|nejьzrečenьnъ|||||||adj_hard|2||||||||chu
 лъжеименьнъ||A-|lъžejьmenьnъ|||||||adj_hard|2||||||||
 обоуѥнъ||A-|obujenъ|||||||adj_hard|2||||||||
 влъхвованиѥ|вълхвование|Nb|vl̥xvovanьje|||||||nt_jo|2||||||||orv
+оугодьникъ|угодьникъ|Nb|ugodьnikъ|||||||masc_o|2||||||||chu
 тъкати|тъкати|V-|tъkati|||||||51|1||||||||orv
 прѣдъсѣсти||V-|perdъsěsti||||||perdъsěd|infix_11|1||||||||
 точити|точити|V-|točiti|||||||40|1||||||||orv
 мрачьнъ|мрачьныи|A-|morčьnъ|||||||adj_hard|2||||||||orv
+мѫжьскꙑ|мужьскы|Df|mǫžьsky||||||||0||||||||chu
+болꙗрьскъ|боярьскыи|A-|boĺǢrьskъ|boljǢrьskъ||||||adj_hard|2|7|||Vasmer: Слово боляринъ произошло из дунайско-болгарского (тюрк.) языка, откуда пришло в ст.-слав.. I know it’ll mess up forwards-reconstructions but if it entered Slavdom with a ĺ we should keep it|1|||chu
 начѧльнъ|начальныи|A-|načęlьnъ|||||||adj_hard|2||||||||orv
 прѣпладьниѥ||Nb|perpoldьnьje|||||||nt_jo|2||||||||
 чародѣи#2|чародѣи|Nb|čǢrodějь|||||||masc_jo|2||||||||orv
@@ -3259,13 +3302,17 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 възъваниѥ||Nb|vъzъvanьje|||||||nt_jo|2||||||||
 поврѣсти||V-|poversti|||||povŕ̥z|poverz|14|1||||||||
 мꙑти|мыти|V-|myti|||||||18|1||||||||orv
+отьчина|отьчина|Nb|otьčina|||||||fem_a|2||||||||chu
 разврѣщи||V-|orzverћi|orzvergti||||orzvŕ̥g|orzverg|14|1||||||||
 иѥроусалимль||Ne|ijerusalimĺь|ijerusalimjь||||||adj_soft|2|25|W||||Ἱεροσολύμων||
 въстѧѕати#1||V-|vъstęgati|||vъstęʒati||||52|1||||||||
+противьникъ|противьникъ|Nb|protivьnikъ|||||||masc_o|2||||||||chu
 отъмꙑти||V-|otъmyti|||||||18|1||||||||
 агнѧ|агня|Nb|agnę|||||||nt_NT|2||||||||orv
+съдѣꙗти|съдѣяти|V-|sъdějǢti|||||||53|1||||||||chu
 прѣбрати|перебороти|V-|perborti|||||perbor|perbor|16|1||||||||orv
 прочисти|прочисти|V-|pročisti|||||||ьt|1||||||||orv
+латиньскъ|латиньскыи|A-|latinьskъ|||||||adj_hard|2|3|||||latinus||chu
 нѫждати|нужати|V-|nǫђǢti|nǫdjǢti|||nuђǢti|||54|1||||||||orv
 лозиѥ|лозие|Nb|lozьje|||||||nt_jo|2|||vine|||||orv
 иманиѥ||Nb|jьmanьje|||||||nt_jo|2|||gathering, harvest|||||
@@ -3767,15 +3814,22 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 въздроути||V-|vъzruti|||||||uti|1||||||||
 помаꙗниѥ||Nb|pomajǢnьje|||||||nt_jo|2||||||||
 коликъ||Px|kolikъ|||||||pron_hard|2||||||||
+остатъкъ|остатъкъ|Nb|ostatъkъ|||||||masc_o|2||||||||chu
 дожьдати|дожьдати|V-|dožьdati|||||||51_abl|1||||||||orv
+нашьствиѥ|нашьствие|Nb|našьstvьje|||||||nt_jo|2||||||||chu
 въжагати||V-|vъžǢgati|||||||54|1|||set alight, зажигать|||||
 вести#2|вести|V-|vesti|||||vez|vez|11|1||||||||orv
 одьрати|одьрати|V-|odьrati|||||||51_abl|1||||||||orv
 недовѣдѣти||V-|nedověděti|||||||wote|1||||||||
 прослоутиѥ||Nb|proslutьje|||||||nt_jo|2||||||||
-льгъкъ|льгъкыи|A-|lьgъkъ|||||||adj_hard|2||||||||orv
+позъвати|позъвати|V-|pozъvati|||||||51_abl|1||||||||chu
+легъкъ|льгъкыи|A-|lьgъkъ|||||||adj_hard|2||||||||orv
 обьщина||Nb|obьћina|obьtjina||||||fem_a|2||||||||
+градьскъ|градьскыи|A-|gordьskъ|||||||adj_hard|2||||||||chu
+съгорѣти|съгорѣти|V-|sъgorěti|||||||31|1||||||||chu
 привести#2||V-|privesti|||||privez|privez|11|1||||||||
+диꙗконъ|дияконъ|Nb|dьjǢkonъ|||||||masc_o|2|2|||||διάκονος,διάκων||chu
+възвꙑсити|възвысити|V-|vъzvysiti|||||||40|1||||||||chu
 дѫти||V-|dǫti|||||dъm|dъm|12|1||||||||
 възвѣщениѥ|възвѣщение|Nb|vъzvěšћenьje|vъzvěstjenьje||||||nt_jo|2||||||||orv
 приготовити|приготовити|V-|prigotoviti|||||||40|1||||||||orv
@@ -3788,16 +3842,26 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 съповѣдѣти||V-|sъpověděti|||||||wote|1||||||||
 отъплоути||V-|otъpluti|||||||uti|1||||||||
 не вѣдѣти|невѣдѣти|V-|nevěděti|||||||wote|1||||||||orv
+покорѥниѥ|покорение|Nb|pokoŕenьje|pokorjenьje||||||nt_jo|2||||||||chu
 глоухъ||Nb|gluxъ|||||||masc_o|2||||||||
 пронꙑрьство|пронырьство|Nb|pronyrьstvo|||||||nt_o|2||||||||orv
 стьлати|стьлати|V-|stьlati|||||||52_abl|1||||||||orv
+оумъножати|умъножати|V-|umъnožǢti|||||||54|1||||||||chu
+вечерьнꙗ|вечерьня|Nb|večerьńǢ|večerьnjǢ||||||fem_ja|2||||||||chu
+понедѣльникъ|понедѣльникъ|Nb|ponedělьnikъ|||||||masc_o|2||||||||chu
+вельможа|вельможа|Nb|velьmožǢ|||||||fem_ja|2||||||||chu
 жласти||V-|želsti|||||želd|želd|11|1|1||||1|||
 въстѧѕати#2|въстязати|V-|vъstęgati|||vъstęʒati||||54|1||||||||orv
 добро|добро|Df|dobro||||||||0||||||||orv
 вѣтъ||Nb|větъ|||||||masc_o|2||| agreement, contract|||||
 исканиѥ||Nb|jьskanьje|||||||nt_jo|2||||||||
+прозъвати|прозъвати|V-|prozъvati|||||||51_abl|1||||||||chu
 мѣсѧчьнъ|мѣсячьныи|A-|měsęčьnъ|||||||adj_hard|2||||||||orv
+тръжьство|тържьство|Nb|tr̥žьstvo|||||||nt_o|2||||Den Danske Ordbog seems to think that Slavic *tr̥gъ (>Danish torv) is from Mongolian 'torok'  which means apparently 'silk'; essja doesn't have a volume with 't-' words out yet, and Derksen ignores this root, so whether or not this is a loanword is unclear||||chu
+възмьздиѥ|възмьздие|Nb|vъzmьzdьje|||||||nt_jo|2||||||||chu
 оуврѣсти||V-|uversti|||||uvŕ̥z|uverz|14|1||||||||
+съмꙑсльнъ|съмысльныи|A-|sъmyslьnъ|||||||adj_hard|2||||||||chu
+кънѧжениѥ|къняжение|Nb|kъnęženьje|||||||nt_jo|2|1|||||||chu
 завоулонь||A-|zavülońь|zavülonjь||||||adj_soft|2|25|W||||Ζαβουλὼν||
 невъфталимль||A-|nevъftalimĺь|nevъftalimjь||||||adj_soft|2|25|W||||Νεφθαλίμ||
 свирати||V-|svirati|||||||54|1|||to pipe (played the svirep instrument-thing)|||||
@@ -3927,7 +3991,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 живлꙗти||V-|živĺǢti|živjǢti||||||54|1|||give life to|||||
 скинопигиꙗ||Nb|sḱinopiǵijǢ|||||||fem_ja|2|2|W|the feast of Tabernacles|||σκηνοπηγία||
 ръпътъ||Nb|rъpъtъ|||||||masc_o|2|||murmur, grumble, stir, grumblings|Vasmer assumes two onomatopeic roots *ropot- and *rъpъt-, which would explain Bg. ропот and the lack of **рпот in Ru., but the OCS spellings with jers esp. Mar. ръптъ are best explained by a *rъpъt- root.||||
-обрѣзати#2|обрѣзати|V-|obrězati|||||||54|1|||circumcise|||||orv
+обрѣзати|обрѣзати|V-|obrězati|||||||54|1|||circumcise|||||orv
 чловѣкооубииць||Nb|čьlověkoubьjьkь||čьlověkoubьjьkъ|čьlověkoubьjьcь||||masc_o_PV3|2||||I reconstruct the o-stem version with *ьkь and the a-stem with *ika but there isn’t a lot of justification for this; a lot depends also on whether I’m correct in taking the stems as *bьj-, *pьj- etc. rather than *bij-|1|||
 плиновениѥ||Nb|plinovenьje|||||||nt_jo|2||||||||
 силоуамль||A-|siluamĺь|siluamjь||||||adj_soft|2|25|W||||Σιλωὰμ||
@@ -4036,7 +4100,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 прѣсельникъ||Nb|persedlьnikъ|||||||masc_o|2||||||||
 неистовлѥниѥ||Nb|nejьstovĺenьje|nejьstovjenьje||||||nt_jo|2||||||||
 съвитъкъ|съвитъкъ|Nb|sъvitъkъ|||||||masc_o|2||||||||orv
-приꙗти||V-|prijǢti|||||||54|1||||same dilemma as with neprijǢznь etc; Cz. přát suggest *prьjǢ- but that could be just loss of intervocalic /j/ and merging|1|||
+приꙗти|прияти|V-|prijǢti|||||||54|1||||same dilemma as with neprijǢznь etc; Cz. přát suggest *prьjǢ- but that could be just loss of intervocalic /j/ and merging|1|||orv
 соуѥ||Df|suje||||||||0||||||||
 шьпътати||V-|šьpъtati|||||||52|1||||||||
 хлѧбь||Nb|xlębь|||||||fem_i|2||||||||
@@ -4130,6 +4194,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 прѣмѣньникъ||Nb|perměnьnikъ|||||||masc_o|2||||||||
 дробьнъ|дробьныи|A-|drobьnъ|||||||adj_hard|2||||||||orv
 кажаниѥ||Nb|kažǢnьje|||||||nt_jo|2||||||||
+кръвавъ|кръвавыи|A-|krъvavъ|||||||adj_hard|2||||||||chu
 съвласти||V-|sъvolsti|||||sъvold|sъvold|11|1||||||||
 събити|събити|V-|sъbiti|||||||18|1||||||||orv
 неоустроѥнъ||A-|neustrojenъ|||||||adj_hard|2||||||||
@@ -4141,6 +4206,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 мокръ|мокрыи|A-|mokrъ|||||||adj_hard|2||||||||orv
 обльгъчити|обльгъчити|V-|oblьgъčiti|||||||40|1||||||||orv
 четꙑрe||Mo|četyre||||čьtyre|||four|2||||In opposition to Derksen 2008 p.87 I am giving a doublet with čьt- to account for the cztery etc. of the WSl. forms||||
+крѣпъко|крѣпъко|Df|krěpъko||||||||0||||||||chu
 блаженъ||Nb|bolženъ|||||||adj_hard|2||||||||
 бездънъ||A-|bezdъnъ|||||||adj_hard|2||||||||
 плѣвьнъ||A-|pelvьnъ|||||||adj_hard|2||||||||
@@ -4185,7 +4251,8 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 вльнꙗти||V-|vĺ̥ńǢti|vĺ̥njǢti||||||54|1||||||||
 непрѣмѣньно|непрѣмѣньно|Df|neperměnьno||||||||0||||||||orv
 митрополитъ|митрополитъ|Nb|mitropolitъ|||||||masc_o|2|2|||||μητροπολίτης||chu
-съписати#2|съписати|V-|sъpisati|||||||54|1||||||||orv
+съписати|съписати|V-|sъpisati|||||||54|1||||||||orv
+чьтениѥ|чьтение|Nb|čьtenьje|||||||nt_jo|2||||||||chu
 съсѣсти|съсѣсти|V-|sъsěsti||||||sъsěd|infix_11|1||||||||orv
 пронꙑрити||V-|pronyriti|||||||40|1||||||||
 пронꙑриѥ||Nb|pronyrьje|||||||nt_jo|2||||||||
@@ -4193,9 +4260,13 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 оупасти#1||V-|upasti|||||upad|upad|11|1|||fall down|||||
 камо|камо|Df|kamo||||||||0||||||||orv
 съмлѣти||V-|sъmelti|||||sъmel|sъmel|16|1||||||||
+състѫпити|съступити|V-|sъstǫpiti|||||||40|1||||||||chu
+въспоминати|въспоминати|V-|vъspominati|||||||54|1||||||||chu
 надоути||V-|naduti|||||||čuti|1||||||||
+вѣще|вѣче|Nb|věће|větje||||||nt_jo|2||||||||chu
 плѣти|полоти|V-|pelti|||||pelv|pelv|11|1|||to weed|||||orv
 плоути|плути|V-|pluti|||||||uti|1||||||||orv
+прѣждьнь|прѣжьнии|A-|perђьńь|perdjьnjь||||||adj_soft|2||||||||chu
 вꙑспрьнь||A-|vysprьńь|vysprьnjь||||||adj_soft|2||||||||
 пронисти||V-|pronisti|||||||ьz|1||||||||
 цѣсарьскꙑ|цѣсарьскы|Df|kěsaŕьsky|kěsarjьsky|||||||0|13|||||Goth. kaisar < Latin caesar||orv
@@ -4207,18 +4278,24 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 нѣкꙑи||Nb|někъjь|||||||kъjь|2||||||||
 въпадати|въпадати|V-|vъpadati|||||||54|1||||||||orv
 глѫбиньнъ||A-|glǫbinьnъ|||||||adj_hard|2||||||||
+тръгъ|търгъ|Nb|tr̥gъ|||||||masc_u|2||||||||chu
 ѥдьнъ||Px|jedьnъ||||jedinъ|||pron_hard|2||||||||
+иночьскъ|иночьскыи|A-|jьnočьskъ|||||||adj_hard|2||||||||chu
 оуръвати|уръвати|V-|urъvati|||||||51|1||||||||orv
 роути|рути|V-|ruti|||||||uti|1||||||||orv
 оучоути|учути|V-|učuti|||||||čuti|1||||||||orv
 изгладити||V-|jьzgladiti|||||||40|1||||||||
 бъдрость|бъдрость|Nb|bъdrostь|||||||fem_i|2||||||||orv
 вꙑти|выти|V-|vyti|||||||18|1|||howl|||||orv
+достигнѫти|достигнути|V-|dostignǫti|||||||21|1||||||||chu
+въноукъ|вънукъ|Nb|vъnukъ|||||||masc_o|2||||||||chu
 оурѣзати#2|урѣзати|V-|urězati|||||||54|1||||||||orv
 прѣврѣщи||V-|perverћi|pervergti||||pervŕ̥g|perverg|14|1||||||||
 мимо|мимо|Df|mimo||||||||0||||||||orv
 въсклати||V-|vъskolti|||||vъskol|vъskol|16|1||||||||
+нѣмьць|нѣмьць|Nb|němьkь||němьkъ|němьcь||||masc_o_PV3|2||||||||chu
 бръзъ|бързыи|A-|br̥zъ|||||||adj_hard|2||||||||orv
+отьчьскъ|отьчьскыи|A-|otьčьskъ|||||||adj_hard|2||||||||chu
 гасити|гасити|V-|gasiti|||||||40|1||||||||orv
 съмирꙗти|съмиряти|V-|sъmiŕǢti|sъmirjǢti||||||54|1||||||||orv
 рак'ка||F-|rakъka||||||||0|5|W||||||
@@ -4237,6 +4314,8 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 четꙑрe||Nb|četyre||||čьtyre|||four|2||||In opposition to Derksen 2008 p.87 I am giving a doublet with čьt- to account for the cztery etc. of the WSl. forms||||
 колижьдо||Dq|koližьdo||||||||0|||soever, whichever|||||
 отънѫдоуже||Du|otъnǫduže||||otъńǫduže||||0|||whence|This word must contain the *ǫd-/*ęd- component meaning 'place, where' that is also present in above вънѫтрьѭдѹ and in Bg. навсякъде (the fronted variant ⱗⰴⱆ, ⱗⰴⱑ is in Pol. wszędzie). Dict. p.431-2 list both jotated and unjotated variants.||||
+въспитати|въспитати|V-|vъspitati|||||||54|1||||||||chu
+мьчьтаниѥ|мьчьтание|Nb|mьčьtanьje|||||||nt_jo|2||||||||chu
 тѫдѣ|тудѣ|Df|tǫdě||||||||0||||||||orv
 достати|достати|V-|dostati|||||||stati|1||||||||orv
 привѧзати#2|привязати|V-|privęzati|||||||54|1||||||||orv
@@ -4255,14 +4334,16 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 въждѧдати#2||V-|vъžǯędati|||||||54|1||||||||
 жѧдати#2|жадати|V-|žędati|||||||54|1||||||||orv
 поꙗсати#2||V-|pojǢsati|||||||54|1||||||||
-наказати#2||V-|nakazati|||||||54|1||||||||
-оувѧзати#2||V-|uvęzati|||||||54|1||||||||
-въздвиѕати#2||V-|vъzdvigati|||vъzdviʒati||||54|1||||||||
-погꙑбати#2||V-|pogybati|||||||54|1||||||||
-посꙑпати|посыпати|V-|posypati|||||||54|1||||||||orv
+наказати#2|наказати|V-|nakazati|||||||54|1||||||||orv
+оувѧзати#2|увязати|V-|uvęzati|||||||54|1||||||||orv
+въздвиѕати#2|въздвизати|V-|vъzdvigati|||vъzdviʒati||||54|1||||||||orv
+погꙑбати#2|погыбати|V-|pogybati|||||||54|1||||||||orv
+посꙑпати#2|посыпати|V-|posypati|||||||54|1||||||||orv
 пльзѣти||V-|pĺ̥zěti|||||||31|1||||||||
+ѫдолиѥ|удолие|Nb|ǫdolьje|||||||nt_jo|2||||||||orv
 |новъгородъ|Ne|novъgordъ|||||||masc_o|2||||||||
 |кыевъ|Ne|kyjevъ|||||||masc_o|2||||||||
+|новъгородьць|Nb|novъgordьkь||novъgordьkъ|novъgordьcь||||masc_o_PV3|2||||||||
 |мьстиславъ|Ne|mьstislavъ|||||||masc_o|2||||||||
 |русьскыи|A-|rusьskъ|||||||adj_hard|2|8|||||||
 |изъяславъ|Ne|jьzęslavъ|||||||masc_o|2|||||1|||
@@ -4272,6 +4353,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 |дѣтя|Nb|dětę|||||||nt_NT|2||||||||
 |ино|Df|jьno||||||||0||||||||
 |русь|Ne|rusь|||||||fem_i|2|8|||||||
+|государь|Nb|gosudaŕь|gosudarjь||||||masc_jo|2||||||||
 |феодосии|Ne|feodosьjь|||||||masc_jo|2|2|W||spellings of the ending with jer compels me to reconstruct this as an assimilated tense-jer rather than as a foreign *-ijь, even though this is problematic because the Russian reflex of *-ьjь should be /ej/ and such spellings are absent. The Ukr/Bel. reflex is of course /ij/, so perhaps this explains the overwhelming <ии> spellings||Θεοδόσιος||
 |гривьна|Nb|grivьna|||||||fem_a|2||||||||
 |епископъ|Nb|jepiskopъ||||jepiskupъ|||masc_o|2|2|||||ἐπίσκοπος||
@@ -4282,15 +4364,152 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 |акы|Df|aky||||||||0||||||||
 |присълати|V-|prisъlati|||||||52|1||||||||
 |куна|Nb|kuna|||||||fem_a|2||||||||
+|почати|V-|počęti|||||počьn|počьn|12|1||||||||
+|посадьникъ|Nb|posadьnikъ|||||||masc_o|2||||||||
 |приѣхати|V-|prijěxati||||prijǢxati|||jaxati|1||||||||
+|новъгородьскыи|A-|novъgordьskъ|||||||adj_hard|2||||||||
 |поле|Nb|poĺě|polje||||||nt_jo|2||||||||
 |ѣхати|V-|jěxati||||jǢxati|||jaxati|1||||||||
 |смольньскъ|Ne|smolьnьskъ|||||||masc_o|2||||||||
 |поѣхати|V-|pojěxati||||pojǢxati|||jaxati|1||||||||
+|выити|V-|vyjьti|||||||jьti|1||||||||
+|чьтобы|G-|čьtoby||||||||0||||||||
+|келия|Nb|ḱelьja|||||||fem_ja|2|2|W||||||
 |ляхъ|Nb|lęxъ|||||||masc_o|2||||||||
+|отъяти|V-|otъjęti|||||otъję|otъjьm|12|1||||||||
+|благословение|Nb|bolgoslovenьje|||||||nt_o|2||||||||
+|младеньць|Nb|moldenьkь||moldenьkъ|moldenьcь||||masc_o_PV3|2||||||||
+|изимати|V-|jьzьmati|||||||52_abl|1||||||||
+|посълъ|Nb|posъlъ|||||||masc_o|2||||||||
+|ничьто|Px|ničьto|||||||čьto|2||||||||
+|угъринъ|Nb|ǫgъrinъ|||||||masc_o_in|2|27|||||||
+|мъногашьды|Df|mъnogašьdy̨||||||||0||||||||
+|пермьскыи|A-|pŕ̥mьskъ|||||||adj_hard|2|8|||||||
+|кънягыни|Nb|kъnęgyńi|kъnęgynji||||||fem_ji|2||||||||
+|половьчьскыи|A-|polvьčьskъ|||||||adj_hard|2||||apparently to do with полова ‘chaff’ (the colour of chaff), but disputed||||
+|българе|Nb|bl̥gaŕь|bl̥garjь||||||masc_ar|2|7|||||||
+|къняжити|V-|kъnęžiti|||||||40|1||||||||
+|письмо|Nb|pisьmo|||||||nt_o|2||||||||
+|посадьничьство|Nb|posadьničьstvo|||||||nt_o|2||||||||
+|генварь|Nb|ǵenъvaŕь|ǵenъvarjь||||||masc_jo|2|2|W||||Middle Greek γενουάριος||
+|только|Df|tolьko||||||||0||||||||
+|только|Dq|tolьko||||||||0||||||||
 |вълга|Ne|vĺ̥ga|||||||fem_a|2||||cf. Polish wilgoć ‘moistness’, zero grade of *volga||||
+|пушька|Nb|pušьka|||||||fem_a|2|13|||Vasmer: заимств. из д.-в.-н. buhsа от народнолат. buхis, греч. πυξίς, -ίδος «коробка из самшита»||||
+|печерьскыи|A-|peћerьskъ|pekterьskъ||||||adj_hard|2||||||||
+|ростовьць|Nb|orstovьkь||orstovьkъ|orstovьcь||||masc_o_PV3|2||||||||
+|рукодѣлие|Nb|rǫkodělьje|||||||nt_jo|2||||||||
+|орда|Nb|orъda|||||||fem_a|2|7|||||||
+|олтарь|Nb|olъtaŕь|olъtarjь||||||masc_jo|2|13|||Vasmer: Судя по концу слова, скорее всего, заимств. через д.-в.-н. altâri — то же из лат. altare (см. алта́рь)||||
+|вьсегды|Df|vьxegъdy||vьxogъdy|vьśegъdy|||||0||||||||
+|авъгустъ|Nb|avъgustъ|||||||masc_o|2|23|||Vasmer: через греч. αὔγουστος из лат. augustus||||
 |въторыи|Mo|vъtorъ|||||||adj_hard|2||||||||
-послоушаниѥ|послушание|Nb|poslušǢnьje||||||||99||||||||orv
-сирота|сирота|Nb|sirota|||||||fem_a|2||||||||orv
+|мънихъ|Nb|mъnixъ|||||||masc_o|2|132|||Vasmer: Заимств. из д.-в.-н. munih от народнолат. monicus, из греч. μοναχός||||
+|стрыи|Nb|strъjь|||||||masc_jo|2||||||||
+|тысячьскыи|A-|tysęћьskъ|tysętjьskъ|||tysǫћьskъ|||adj_hard|2||||||||
+|съказывати|V-|sъkazyvati|||||||54|1||||||||
+|готьскыи|A-|gotьskъ|||||||adj_hard|2|1|||||||
+|ключьникъ|Nb|kĺučьnikъ|ključьnikъ||||||masc_o|2||||||||
+|игуменьство|Nb|igumenьstvo|||||||nt_o|2|2|||||ἡγούμενος||
+|платье|Nb|poltьje|||||||nt_jo|2||||||||
+|жестъкыи|A-|žestъkъ||||žestokъ|||adj_hard|2||||||||
+|желѣзьныи|A-|želězьnъ|||||||adj_hard|2||||||||
+|деньга|Nb|denьga|||||||fem_a|2|7|||Vasmer: Заимств. из тат., чагат. täŋkä «деньги; серебряная монета», чув. täŋgǝ, казах. teŋgä, монг. teŋge, калм. tēŋgn̥ «мелкая серебряная монета»||||
+|деревьня|Nb|dŕ̥vьńa|dŕ̥vьnja||||||fem_ja|2||||Из неустановленной формы; по версии Фасмера, *дьрвьня (*дьрвьна) первонач. «пашня», затем «крестьянский двор или хутор с участком земли», наконец, «селение»; также сравнивают русск. слово с лит. dirvà «пашня, нива», dirvónas «пашня, оставленная под луг»||||
+|кыевьскыи|A-|kyjevьskъ|||||||adj_hard|2||||||||
+|ростовьскыи|A-|orstovьskъ|||||||adj_hard|2||||||||
+|чьрниговьскыи|A-|čŕ̥nigovьskъ|||||||adj_hard|2||||etymology disputed||||
+|обѣдьня|Nb|obědьńǢ|obědьnjǢ||||||fem_ja|2||||||||
+|смьрдъ|Nb|smŕ̥dъ|||||||masc_o|2||||||||
+|суждальць|Nb|sužьdalьkь||sužьdalьkъ|sužьdalьcь||||masc_o_PV3|2||||Etymology highly disputed, various Finnic, Baltic, Scandinavian and Slavonic origins suggested||||
+|бъчька|Nb|bъčьka|||||||fem_a|2||||||||
+|крьстиянинъ|Nb|krьstьjǢninъ|||||||masc_anin|2||||||||
+|судьно|Nb|sǫdьno|||||||nt_o|2||||||||
+|домочадьць|Nb|domočędьkь||domočędьkъ|domočędьcь||||masc_o_PV3|2||||||||
+|литургия|Nb|liturьǵijǢ|||||||fem_ja|2|2|W||||λειτουργία||
+|азъбука|Nb|azъbuky|||||||fem_uu|2||||lemmatised as азъбука on the strength of Stephen of Perm and Burtsov, so very late||||
+|постьныи|A-|postьnъ|||||||adj_hard|2||||||||
+|четвьртыи|Mo|četvŕ̥tъ |||||||adj_hard|2||||||||
+|пльсковьскыи|A-|plьskovьskъ|||||||adj_hard|2||||unclear etymology||||
+|православьныи|A-|pravoslavьnъ|||||||adj_hard|2||||||||
+|въпрѣдъ|Df|vъperdъ||||||||0||||||||
+|володимѣрьць|Nb|voldiměrьkь||voldiměrьkъ|voldiměrьcь||||masc_o_PV3|2||||||||
+|рязаньскыи|A-|ŕǢzanьskъ|rjǢzanьskъ||||||adj_hard|2||||"Vasmer: др.-русск. Рязань (часто в Пов. врем. лет). Сомнительно в фонетическом отношении исключительно популярное возведение к морд. eŕźa или eŕźań ""эрзянский"" (Бубрих, Sborník Рrасí I. Sjezdu 2, 456 и сл.; Шахматов у Монгайта, Кратк. Сообщ. 16, 105). Скорее это производное от собств. *Рѣзанъ, букв. ""вырезанный (из чрева матери)"" с ранней ассимиляцией гласных -- *Рязанъ. Ненадежно."||||
+|угърьскыи|A-|ǫgъrьskъ|||||||adj_hard|2|27|||||||
+|москъвьскыи|A-|moskъvьskъ|||||||adj_hard|2||||On the common assumption that this is an old uu-stem, but that's not the only proposal. ||||
+|дръва|Nb|drъvo|||||||nt_o|2||||pl.tant. in all known sources||||
+|ольговъ|A-|olьgоvъ|||||||adj_hard|2|1|||||||
+|ноябрь|Nb|nojębŕь|nojębrjь||||||masc_jo|2|23|||||νοέμβρι(ο)ς||
+|хрьстолюбьць|Nb|xrьstoĺubьkь|xrьstoljubьkь|xrьstoĺubьkъ|xrьstoĺubьcь|xristoĺubьkь|||masc_o_PV3|3|2|||||||
+|сколько|Du|sъkolьko||||||||0||||||||
+|шатьръ|Nb|šatьrъ|||||||masc_o|2|7|||Vasmer: Древнее заимств. из тюрк.; ср. казах. šаtуr «палатка», тур., азерб., уйг., тат., алт. čаdуr «шатер, палатка», шор. šаdуr, саг., койб. sаdуr (Радлов 3, 1903 и сл.; 4, 387, 969, 972). Первоисточником является перс. čаtr «заслон, палатка», др.-инд. cháttram «заслон»||||
+|съити|V-|sъjьti|||||||jьti|1||||||||
+|лавъка|Nb|lavъka|||||||fem_a|2||||||||
+|тъгды|Df|tъgъdy||||||||0||||||||
+|ръжь|Nb|rъžь|||||||fem_i|2||||||||
+|переяславьскыи|A-|per+jęslavьskъ|||||||adj_hard|2||||Dubious etymology: За Повістю временних літ, назва Переяслав походить від події 992 року: воїн князя Володимира переміг печенізького богатиря і «перейняв у них славу»[c][3]. За іншою — від чоловічого імені Преслав.||||
+|татарьскыи|A-|tatarьskъ|||||||adj_hard|2||||||||
+|стрѣльць|Nb|strělьkь||strělьkъ|strělьcь||||masc_o_PV3|2||||||||
+|съпрашивати|V-|sъprašivati|||||||54|1||||||||
+|служька|Nb|služьka|||||||fem_a|2||||||||
+|нельзѣ|Df|nelьgě|||nelьʒě|nelьga||||0||||||||
+|сърубити|V-|sъrǫbiti|||||||40|1||||||||
+|чьрньчьскыи|A-|čŕ̥nьčьskъ|||||||adj_hard|2||||||||
+|володимѣрьскыи|A-|voldiměrьskъ|||||||adj_hard|2||||||||
+|женъка|Nb|ženъka|||||||fem_a|2||||||||
+|рътъ|Nb|rъtъ|||||||masc_o|2||||||||
+|помьнити|V-|pomьniti|||||||40|1||||||||
+|съсълати|V-|sъsъlati|||||||52|1||||||||
+|октябрь|Nb|okъtębŕь|okъtębrjь||||||masc_jo|2|23|||I have to stick a jer in to break up the /kt/ because it simply can’t have existed as such before the Jer Shift||||
+|хрьстьныи|A-|xrьstьnъ|||||||adj_hard|2||||||||
+|подворие|Nb|podvorьje|||||||nt_jo|2||||||||
+|пошьлина|Nb|pošьdlina|||||||fem_a|2||||Vasmer agrees with the etymology from the l-participle *pošьdl-||||
+|съпросити|V-|sъprositi|||||||40|1||||||||
+|рубашька|Nb|rǫbašьka|||||||fem_a|2||||||||
+|заутрьня|Nb|zautrьńǢ|zautrьnjǢ||||||fem_ja|2||||||||
+|священичьскыи|A-|svęћeničьskъ|svętjeničьskъ||||||adj_hard|2||||||||
+|съчетъ|Nb|sъčьtъ|||||||masc_o|2|||||Changed TOROT lemma from съчетъ to съчьтъ (also made the change in Sasha's online spreadsheet)|||
+|устие|Nb|ustьje|||||||nt_jo|2||||||||
+|исписати|V-|jьspьsati|||||||52_abl|1||||||||
+|чьрниговьць|Nb|čŕ̥nigovьkь||čŕ̥nigovьkъ|čŕ̥nigovьcь||||masc_o_PV3|2||||||||
+|городъкъ|Nb|gordъkъ|||||||masc_o|2||||||||
+|дѣвъка|Nb|děvъka|||||||fem_a|2||||||||
+|пятьница|Nb|pętьnika|||pętьnica||||fem_a_PV3|2||||||||
+|замъкнути|V-|zamъknǫti|||||||21|1||||||||
+|коньчьныи|A-|konьčьnъ|||||||adj_hard|2||||||||
+|овьсъ|Nb|ovьsъ|||||||masc_o|2||||||||
+|добродѣтельныи|A-|dobrodětelьnъ|||||||adj_hard|2||||||||
+|полотьскыи|A-|polotьskъ|||||||adj_hard|2|?|||Named after the river Полота, name apparently from Baltic stem pala-, Finnic origins from paalt- also possible||||
+|гълѣбовъ|A-|gъlěbovъ|||||||adj_hard|2|1|||Имя др.-рус. Гълѣбъ происходит от древнескандинавского имени Guðleifr (др.-шв. *Guðlēfr)[2][3], означавшего «наследник бога» (guð — «бог», leifr — «наследник»).||||
+|бръсити|V-|brъsiti|||||||40|1||||||||
+|полътора|Ma|polъvъtora|||||||poltora|2||||this is a bullshit word that needs its own class if it is to be inflected seriously, but I don’t think the way it’s tagged is consistent enough to even allow for that||||
+|маленькыи|A-|malenьkъ|||||||adj_hard|2||||||||
+|кърмъ|Nb|kr̥mъ|||||||masc_o|2||||||||
+|замъкъ|Nb|zamъkъ|||||||masc_o|2||||||||
+|псалътырь|Nb|pъsalъtyrь|||||||fem_i|2|2|||Occurs both as fem_i and masc_jo in sources and is listed as both in SJS/SNSP. Even in ModRu there is some variation. If we classify it as masc_jo, it should have -ŕ-. I don't think we can sensibly split it based on our orv occurrences.||ψαλτήριον||
+|убытъкъ|Nb|ubytъkъ|||||||masc_o|2||||||||
+|вълчии|A-|vĺ̥čьjь|||||||adj_ij|2||||||||
+|гридьница|Nb|gridьnika|||gridьnica||||fem_a_PV3|2|1|||||ON griði, grið||
+|вышегородьць|Nb|vyšegordьkь||vyšegordьkъ|vyšegordьcь||||masc_o_PV3|2||||vyše is the expected shape of the comparative adverb, but the modern name of the city is вишгород so an explanation is needed |1|||
+|мьчьта|Nb|mьčьta|||||||fem_a|2||||||||
+|пригънати|V-|prigъnati|||||||52_abl|1||||||||
+|жалобьныи|A-|žǢlobьnъ|||||||adj_hard|2||||||||
+|тамъга|Nb|tamъga|||||||fem_a|2|7|||Kazakh елтаңба means герб, Wappen, and Uzbek for ‘rain’ is ёмғир||Kipchak tamğa||
+|грькъ|Nb|grьkъ|||||||masc_o|2|32|||||graecus < γραικός||
+|мазовъшане|Nb|mazovъšǢninъ|||||||masc_anin|2||||||||
+|вьсьма|Df|vьxьma|||vьśьma|||||0||||||||
+|окольныи|A-|okolьnъ|||||||adj_hard|2||||||||
+|египьтянинъ|Nb|jeǵüpьtǢninъ|||||||masc_anin|2|25|W||this shows Russian-specific replacement of the *ěninъ suffix with *Ǣninъ after /t’/, which obviously is banned in LCS but for our purposes tǢ is the best solution||Αἴγυπτος||
+|кърсунянинъ|Nb|kr̥suńǢninъ|kr̥sunjǢninъ||||||masc_anin|2|2|||||Χερσών||
+|теремьныи|A-|termьnъ|||||||adj_hard|2||||||||
+|неприязньныи|A-|neprijǢznьnъ|||||||adj_hard|2||||Derksen p.419-20 reconstructs *prijati for the verb, and in most modern languages the *pri- has preserved its full vowel, likely due to being viewed as a prefix, but Czech pŕaatele etc. shows that it could behave as a tense jer|1|||
+|уродьство|Nb|urodьstvo|||||||nt_o|2||||||||
+|наложьница|Nb|naložьnika|||naložьnica||||fem_a_PV3|2||||||||
+|проклятие|Nb|proklętьje|||||||nt_jo|2||||||||
+|възроптати|V-|vъzrъpъtati|||||||52|1||||||||
+|цвѣтъкъ|Nb|květъkъ|||||||masc_o|2||||||||
+|сорочька|Nb|sorčьka|||||||fem_a|2||||||||
+|гридьня|Nb|gridьńǢ|gridьnjǢ||||||fem_ja|2|1|||||ON griði, grið||
+|бортьныи|A-|br̥tьnъ|||||||adj_hard|2||||||||
 |ежедьнь|Df|ježedьnь||||||||0||||||||
 |оже|C-|ježe||||||||0||||||||

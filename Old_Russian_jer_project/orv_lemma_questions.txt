@@ -1,0 +1,9 @@
+Why is метельникъ in there at all? Only seems to occur in Russkaja Pravda; the word метель 'snowstorm' exists, and seems likely to have a *-tělь ending, but there's no indications as to what the RP word means or etymologically was like (Srez. just defines it as a "job in Ancient Rus")
+
+вихъръ must've had a jo-stem doublet to give mod. Russ. вихрь, so maybe he only target forwards-reconstruction of вихор
+
+the *-jęti lemmas all need special treatment because often the TOROT attestations are without intervening *-n-, and so are the TOROT lemmatisations, but the modern Russian equivalents are with *-n- (сняти etc.)
+
+чьстьнькыи is used for occurrences of чистенькъ so is badly lemmatised, but I'm not sure where the *-енький suffix comes from
+
+For lemmas like възлогати, why don't we just not use that and instead just replace it with възлагати? Maybe the Domostroj attestations are all because of akan'je or are just mistakes or whatever (depends what the word actually means in that text). Ordering our words by TOROT frequency is not a very good idea (полугривьна)

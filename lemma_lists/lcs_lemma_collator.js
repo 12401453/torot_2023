@@ -739,18 +739,24 @@ function updateOrvMasterFile () {
       if(esl_match_idx != -1) {
         orv_csv_reader.setLine(orv_master_arr[esl_match_idx].join("|"));
         orv_master_arr[esl_match_idx] = (orv_csv_reader.getField("orv_lemma") + "|" + chu_lemma + "|" + pos + "|" + orv_csv_reader.getField("count") + "|" + chu_csv_reader.getFieldsArray().slice(4, 20).join("|") + "|" + "1|e_sl|" + orv_csv_reader.getFieldsArray().slice(22).join("|")).split("|");
+
+        console.log("Added from CHU to ORV:",lemma_lcs, "for", chu_lemma, "matching", orv_esl_converted);
         continue;
       }
       const chsl_match_dx = orv_master_arr.findIndex(x => x[4] == "" && x[2] == pos && x[0] == orv_chsl_converted);
       if(chsl_match_dx != -1) {
         orv_csv_reader.setLine(orv_master_arr[chsl_match_dx].join("|"));
         orv_master_arr[chsl_match_dx] = (orv_csv_reader.getField("orv_lemma") + "|" + chu_lemma + "|" + pos + "|" + orv_csv_reader.getField("count") + "|" + chu_csv_reader.getFieldsArray().slice(4, 20).join("|") + "|" + "1|ch_sl|" + orv_csv_reader.getFieldsArray().slice(22).join("|")).split("|");
+
+        console.log("Added from CHU to ORV:",lemma_lcs, "for", chu_lemma, "matching", orv_chsl_converted);
         continue;
       }
       const plain_match_idx = orv_master_arr.findIndex(x => x[4] == "" && x[2] == pos && x[0] == chu_lemma);
       if(plain_match_idx != -1) {
         orv_csv_reader.setLine(orv_master_arr[plain_match_idx].join("|"));
         orv_master_arr[plain_match_idx] = (orv_csv_reader.getField("orv_lemma") + "|" + chu_lemma + "|" + pos + "|" + orv_csv_reader.getField("count") + "|" + chu_csv_reader.getFieldsArray().slice(4, 20).join("|") + "|" + "1|ch_sl|" + orv_csv_reader.getFieldsArray().slice(22).join("|")).split("|");
+
+        console.log("Added from CHU to ORV:",lemma_lcs, "for", chu_lemma, "matching", chu_lemma);
         continue;
       }
     }
@@ -783,6 +789,8 @@ async function updateChuMasterFile() {
       if(chu_match_idx != -1) {
         chu_csv_reader.setLine(chu_master_arr[chu_match_idx].join("|"));
         chu_master_arr[chu_match_idx] = (chu_csv_reader.getField("chu_lemma") + "|" + orv_lemma + "|" + pos + "|" + chu_csv_reader.getField("count") + "|" + orv_csv_reader.getFieldsArray().slice(4, 20).join("|") + "|" + "1|" + chu_csv_reader.getFieldsArray().slice(21).join("|")).split("|");
+
+        console.log("Added from ORV to CHU:",lemma_lcs, "for", orv_lemma, "matching", chu_converted);
         continue;
       }
 

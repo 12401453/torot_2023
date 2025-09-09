@@ -628,7 +628,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 дѣти||Nb|46|dětь|||||||fem_i|2||||||||0||||marianus||supr_y_fixed|vit-const||zogr_complete|360
 праздьникъ||Nb|46|porzdьnikъ|||||||masc_o|2||||Pol. próżny = vain, futile, empy; próżniak = layabout; Ru. порожний||||0||||marianus|psal-sin_sentence_removed|supr_y_fixed|||zogr_complete|312
 нечьстивъ||A-|46|nečьstivъ|||||||adj_hard|2||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
-съборъ||Nb|46|||||||||99||||||||0||||||supr_y_fixed|vit-const||zogr_complete|352
+съборъ|съборъ|Nb|46|sъborъ|||||||masc_o|2||||||||1||||||supr_y_fixed|vit-const||zogr_complete|352
 ти||C-|46|||||||||99||||||||0||||||supr_y_fixed||||32
 храмъ||Nb|45|xormъ|||||||masc_o|2||||||||0||euch||marianus|psal-sin_sentence_removed|supr_y_fixed|||zogr_complete|314
 слоужьба||Nb|45|služьba|||||||fem_a|2||||||||0||euch|kiev-mis|marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const|vit-meth_4_removed|zogr_complete|510
@@ -680,7 +680,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 область||Nb|42|obvolstь|||||||fem_i|2||||||||0||||marianus|psal-sin_sentence_removed|supr_y_fixed||vit-meth_4_removed|zogr_complete|440
 въскрѣшениѥ||Nb|42|vъskrěšenьje|||||||nt_jo|2|||Wiederauferstehung (z.B. von den Toten)|see ESSJa 12 p.126-7||||0||||marianus|psal-sin_sentence_removed|supr_y_fixed|||zogr_complete|312
 поити||V-|42|pojьti|||||||jьti|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed|||zogr_complete|304
-жидовьскъ||A-|41|||||||||99||||||||0|chrabr|||||supr_y_fixed|vit-const|||97
+жидовьскъ|жидовьскыи|A-|41|židovьskъ|||||||adj_hard|2|3|||||iudaius, giudeo (It.)||1|chrabr|||||supr_y_fixed|vit-const|||97
 неже||Df|41|neže||||||||0|||than|||||0|chrabr|||marianus|psal-sin_sentence_removed|supr_y_fixed|||zogr_complete|313
 дрьжава||Nb|41|dŕ̥žǢva|||||||fem_a|2||||||||0|chrabr|||marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const||zogr_complete|377
 щоуждь||A-|41|ћuђь|tjudjь||||||adj_soft|2|1|||possibly an ECS loan from Gmc. *theud- (>Deutsch, Eng. thede), which in Slavic would've been borrowed as *teud- > *tjud-||||0|||kiev-mis|marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const||zogr_complete|380
@@ -714,7 +714,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 въсходити||V-|39|vъsxoditi|||||||40|1||||||||0||||marianus|psal-sin_sentence_removed|supr_y_fixed||vit-meth_4_removed|zogr_complete|440
 дивьнъ||A-|39|divьnъ|||||||adj_hard|2||||||||0||||marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const|vit-meth_4_removed|zogr_complete|504
 крѣпость||Nb|39|krěpostь|||||||fem_i|2||||||||0||||marianus|psal-sin_sentence_removed|supr_y_fixed|||zogr_complete|312
-ѥстьство||Nb|39|||||||||99||||||||0||||||supr_y_fixed||||32
+ѥстьство|естьство|Nb|39|jestьstvo|||||||nt_o|2||||||||1||||||supr_y_fixed||||32
 девѧть||Ma|38|devętь|||||||fem_i|2||||||||0|chrabr|||marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const||zogr_complete|377
 трьниѥ||Nb|38|tŕ̥nьje|||||||nt_jo|2|||brambles, thorns|||||0||||marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const||zogr_complete|376
 ветъхъ||A-|38|vetъxъ|||||||adj_hard|2||||Direct cognate with Latin vetus (Derksen p.517)||||0||||marianus||supr_y_fixed|vit-const|vit-meth_4_removed|zogr_complete|488
@@ -863,7 +863,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 оусънѫти||V-|31|usъpnǫti|||||||21|1|||fall asleep|||||0||||marianus|psal-sin_sentence_removed|supr_y_fixed|||zogr_complete|312
 зане||G-|31|zańe|zanje|||||||0|||because|||||0||||marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const||zogr_complete|376
 сѫдьба||Nb|31|sǫdьba|||||||fem_a|2||||||||0|||||psal-sin_sentence_removed|||||16
-крьстиꙗньскъ||A-|31|||||||||99||||||||0||||||supr_y_fixed|vit-const|vit-meth_4_removed||224
+крьстиꙗньскъ|крьстияньскыи|A-|31|krьstьjǢnьskъ|||||||adj_hard|2||||||||1||||||supr_y_fixed|vit-const|vit-meth_4_removed||224
 сътрьпѣти||V-|31|||||||||99||||||||0||||||supr_y_fixed||||32
 акꙑ||Dq|31|aky||||||||0||||||||0||||||supr_y_fixed||||32
 артемонъ||Ne|31|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -883,7 +883,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 сава||Ne|30|sava|||||||masc_a|2|25|W||||Σάβ(β)ας < סָבָא||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 прѣобидѣти||V-|30|||||||||99||||||||0||||||supr_y_fixed||||32
 архиепискоупъ||Nb|30|||||||||99||||||||0||||||supr_y_fixed|vit-const|vit-meth_4_removed||224
-въскрьсениѥ||Nb|30|||||||||99||||||||0||||||supr_y_fixed||||32
+въскрьсениѥ|въскрьсение|Nb|30|vъskrьsenьje|||||||nt_jo|2||||||||1||||||supr_y_fixed||||32
 обѣщати||V-|29|obvěћǢti|obvětjǢti||||||54|1||||||||0|||kiev-mis|marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const|vit-meth_4_removed|zogr_complete|508
 одежда||Nb|29|odeђǢ|odedjǢ||||||fem_ja|2||||||||0||||marianus|psal-sin_sentence_removed|supr_y_fixed|||zogr_complete|312
 храмина||Nb|29|xormina|||||||fem_a|2||||||||0||||marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const||zogr_complete|376
@@ -1012,7 +1012,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 похвалити||V-|25|poxvaliti|||||||40|1||||||||0||||marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const|vit-meth_4_removed|zogr_complete|504
 сиць||Pd|25|sikь||sikъ|sicь||||vьxь|2||||||||0||||marianus||supr_y_fixed|vit-const|vit-meth_4_removed||232
 божьство||Nb|25|božьstvo|||||||nt_o|2||||||||0||||||supr_y_fixed|vit-const|||96
-прѣльсть||Nb|25|||||||||99||||||||0||||||supr_y_fixed||||32
+прѣльсть|прѣльсть|Nb|25|perlьstь|||||||fem_i|2||||||||1||||||supr_y_fixed||||32
 казати||V-|25|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 санъ||Nb|25|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
 тѣмь||Df|25|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -1046,9 +1046,9 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 отъринѫти||V-|24|otъrinǫti|||||||22|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed|vit-const|vit-meth_4_removed||240
 ставити||V-|24|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
 добль||A-|24|||||||||99||||||||0||||||supr_y_fixed||||32
-ангельскъ||A-|24|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
+ангельскъ|ангельскыи|A-|24|anǵelьskъ|||||||adj_hard|2|2|W||||||1||||||supr_y_fixed|vit-const|||96
 юность||Nb|23|junostь|||||||fem_i|2||||||||0|chrabr|||marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const||zogr_complete|377
-словѣньскъ||A-|23|||||||||99||||||||0|chrabr||||||vit-const|vit-meth_4_removed||193
+словѣньскъ|словѣньскыи|A-|23|slověnьskъ|||||||adj_hard|2||||||||1|chrabr||||||vit-const|vit-meth_4_removed||193
 безоумиѥ||Nb|23|bezumьje|||||||nt_jo|2||||||||0|chrabr|||marianus|psal-sin_sentence_removed|supr_y_fixed||vit-meth_4_removed|zogr_complete|441
 лъжа||Nb|23|lъžǢ|||||||fem_ja|2||||Russian ложь < *lъžь is either a reformation on the model of the fem. i-stems, or the reflex of a separate CS word *lъžь (but OCS лъжь is an adjective meaning 'лживый')||||0||euch||marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const||zogr_complete|378
 троица||Nb|23|trojika|||trojica||||fem_a_PV3|2|||Trinity||1|||0||euch||||supr_y_fixed|vit-const|vit-meth_4_removed||226
@@ -1116,7 +1116,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 небрѣщи||V-|22|neberћi|nebergti||||nebŕ̥g|neberg|15|1|||neglect + loc.|||||0||||||supr_y_fixed|vit-const||zogr_complete|352
 полемонъ||Ne|22|||||||||99||||||||0||||||supr_y_fixed||||32
 пастоухъ||Nb|22|pastuxъ|||||||masc_o|2||||||||0||||||supr_y_fixed|||zogr_complete|288
-въздрьжаниѥ||Nb|22|||||||||99||||||||0||||||supr_y_fixed||||32
+въздрьжаниѥ|въздьржание|Nb|22|vъzdŕ̥žǢnьje|||||||nt_jo|2||||||||1||||||supr_y_fixed||||32
 окаꙗнъ||A-|21|okajǢnъ|||||||adj_hard|2||||||||0|chrabr||||psal-sin_sentence_removed|supr_y_fixed||||49
 пакость||Nb|21|pakostь|||||||fem_i|2||||||||0||euch||marianus||supr_y_fixed||vit-meth_4_removed|zogr_complete|426
 жѧдати||V-|21|žędati|||||||52|1||||||||0|||kiev-mis|marianus|psal-sin_sentence_removed|supr_y_fixed||vit-meth_4_removed|zogr_complete|444
@@ -1165,7 +1165,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 миловати||V-|21|milovati|||||||61|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 алелоуиꙗ||I-|21|||||||||99||||||||0|||||psal-sin_sentence_removed||vit-const|||80
 прьвоѥ||Df|21|pŕ̥voje||||||||0||||||||0||||||supr_y_fixed||||32
-крьстьнъ||A-|21|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
+крьстьнъ|крьстьныи|A-|21|krьstьnъ|||||||adj_hard|2|12|||||||1||||||supr_y_fixed|vit-const|||96
 василискъ||Ne|21|||||||||99||||||||0||||||supr_y_fixed||||32
 невидимъ||A-|21|||||||||99||||||||0||||||supr_y_fixed|vit-const|vit-meth_4_removed||224
 врѣдъ||Nb|21|verdъ|||||||masc_o|2||||||||0||||||supr_y_fixed||||32
@@ -1220,7 +1220,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 ижде||Dq|20|jьђe||||||||0|||||1|||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 праздьновати||V-|20|porzdьnovati|||||||61|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 змии||Nb|20|zmьjь|||||||masc_jo|2||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
-цѣсарьскъ||A-|20|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
+цѣсарьскъ|цѣсарьскыи|A-|20|kěsaŕьskъ|kěsarjьskъ||||||adj_hard|2||||||||1||||||supr_y_fixed|vit-const|||96
 коумиръ||Nb|20|||||||||99||||||||0||||||supr_y_fixed||||32
 диꙗволь||A-|20|dьjǢvoĺь|dьjǢvoljь||||||adj_soft|2||||||||0||||||supr_y_fixed|vit-const|||96
 надежда||Nb|20|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -1326,7 +1326,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 чловѣколюбиѥ||Nb|18|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
 сковрада||Nb|18|||||||||99||||||||0||||||supr_y_fixed||||32
 попъ||Nb|18|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
-грьчьскъ||A-|17|||||||||99||||||||0|chrabr|||||supr_y_fixed|vit-const|vit-meth_4_removed||225
+грьчьскъ|грьчьскыи|A-|17|grьčьskъ|||||||adj_hard|2||||||||1|chrabr|||||supr_y_fixed|vit-const|vit-meth_4_removed||225
 оуставъ||Nb|17|||||||||99||||||||0|chrabr|||||supr_y_fixed||||33
 елинъ||Nb|17|jelinъ|||||||masc_o|2|2||Greek (person)|||Ἕλλην ||0|chrabr|||marianus||supr_y_fixed|vit-const|||105
 насадити||V-|17|nasaditi|||||||40|1||||||||0||euch||marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const||zogr_complete|378
@@ -1452,7 +1452,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 нѣкоторꙑи||Px|16|||||||||99||||||||0||||||supr_y_fixed||||32
 оуставити||V-|16|||||||||99||||||||0||||||supr_y_fixed||||32
 антонии||Ne|16|||||||||99||||||||0||||||supr_y_fixed||||32
-словесьнъ||A-|16|||||||||99||||||||0||||||supr_y_fixed|vit-const|vit-meth_4_removed||224
+словесьнъ|словесьныи|A-|16|slovesьnъ|||||||adj_hard|2||||||||1||||||supr_y_fixed|vit-const|vit-meth_4_removed||224
 варахисии||Ne|16|||||||||99||||||||0||||||supr_y_fixed||||32
 цѣльба||Nb|16|||||||||99||||||||0||||||supr_y_fixed||||32
 поганъ|поганыи|A-|15|poganъ|||||||adj_hard|2|3|||||paganus||1|chrabr|||||supr_y_fixed||vit-meth_4_removed||161
@@ -1605,7 +1605,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 послоушаниѥ||Nb|14|poslušǢnьje|||||||nt_jo|2||||||||0||||||supr_y_fixed||||32
 оутриѥ||Nb|14|||||||||99||||||||0||||||supr_y_fixed||||32
 одолѣти||V-|14|||||||||99||||||||0||||||supr_y_fixed||||32
-мльчаниѥ||Nb|14|||||||||99||||||||0||||||supr_y_fixed||||32
+мльчаниѥ|мълчание|Nb|14|mĺ̥čǢnьje|||||||nt_jo|2||||||||1||||||supr_y_fixed||||32
 хлѣвина||Nb|14|||||||||99||||||||0||||||supr_y_fixed||||32
 вьсьжде||Df|14|||||||||99||||||||0||||||supr_y_fixed||||32
 сѫдище||Nb|14|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -1702,7 +1702,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 савинии||Ne|13|||||||||99||||||||0||||||supr_y_fixed||||32
 оудобь||Df|13|udobь||||||||0|||easily, easy, not hard|||||0||||||supr_y_fixed|vit-const|vit-meth_4_removed|zogr_complete|480
 кръмити#1||V-|13|kr̥miti|||||||40|1||||||||0||||||supr_y_fixed||||32
-мощьнъ||A-|13|||||||||99||||||||0||||||supr_y_fixed||||32
+мощьнъ|мощьныи|A-|13|moћьnъ|mogtьnъ||||||adj_hard|2||||||||1||||||supr_y_fixed||||32
 арии||Ne|13|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 плътьнъ||A-|13|||||||||99||||||||0||||||supr_y_fixed||||32
 пръвъ||Mo|13|pŕ̥vъ|||||||adj_hard_ord|2||||||||0||||||supr_y_fixed|vit-const|vit-meth_4_removed|zogr_complete|480
@@ -1799,13 +1799,13 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 непрѣподобьнъ||A-|12|neperpodobьnъ|||||||adj_hard|2||||||||0||||||supr_y_fixed||||32
 врьста||Nb|12|vŕ̥sta|||||||fem_a|2||||||||0||||||supr_y_fixed|vit-const|||96
 а||G-|12|||||||||99||||||||0||||||supr_y_fixed||||32
-прѣдълежати||V-|12|||||||||99||||||||0||||||supr_y_fixed||||32
+прѣдълежати|прѣдълежати|V-|12|perdъležǢti|||||||31|1||||||||1||||||supr_y_fixed||||32
 мощи||Nb|12|||||||||99||||||||0||||||supr_y_fixed|vit-const|vit-meth_4_removed||224
 прьвъ||A-|12|pŕ̥vъ|||||||adj_hard|2||||||||0||||||supr_y_fixed|vit-const|vit-meth_4_removed|zogr_complete|480
 ходатаи||Nb|12|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
-съмꙑслъ||Nb|12|||||||||99||||||||0||||||supr_y_fixed|vit-const|vit-meth_4_removed||224
+съмꙑслъ|съмыслъ|Nb|12|sъmyslъ|||||||masc_o|2||||||||1||||||supr_y_fixed|vit-const|vit-meth_4_removed||224
 прѣмѣнити||V-|12|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
-дрьзновениѥ||Nb|12|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
+дрьзновениѥ|дьрзновение|Nb|12|dŕ̥znovenьje|||||||nt_jo|2||||||||1||||||supr_y_fixed|vit-const|||96
 црькъвище||Nb|12|||||||||99||||||||0||||||supr_y_fixed||||32
 пꙑтати||V-|12|||||||||99||||||||0||||||supr_y_fixed||||32
 презвѵтеръ||Nb|12|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -1813,7 +1813,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 ѳеодосии||Ne|12|||||||||99||||||||0||||||supr_y_fixed||||32
 благословесити||V-|12|||||||||99||||||||0||||||supr_y_fixed||||32
 зълобь||Nb|12|||||||||99||||||||0||||||supr_y_fixed||||32
-съвѣсть||Nb|12|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
+съвѣсть|съвѣсть|Nb|12|sъvěstь|||||||fem_i|2||||||||1||||||supr_y_fixed|vit-const|||96
 волѥ||Df|12|||||||||99||||||||0||||||supr_y_fixed||||32
 въводити||V-|11|vъvoditi|||||||40|1||||||||0|chrabr|||marianus||supr_y_fixed|||zogr_complete|297
 дъска||Nb|11|dъska|||||||fem_a|2||||||||0|chrabr|||marianus||supr_y_fixed|||zogr_complete|297
@@ -1896,7 +1896,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 златица||Nb|11|zoltika|||||||fem_a_PV3|2||||||||0||||||supr_y_fixed||||32
 съпасьнъ||A-|11|||||||||99||||||||0||||||supr_y_fixed||||32
 ратьникъ||Nb|11|||||||||99||||||||0||||||supr_y_fixed||||32
-прогънати||V-|11|||||||||99||||||||0||||||supr_y_fixed||||32
+прогънати|прогънати|V-|11|progъnati|||||||51_abl|1||||||||1||||||supr_y_fixed||||32
 стоудень||Nb|11|||||||||99||||||||0||||||supr_y_fixed||||32
 дѣꙗниѥ||Nb|11|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 подоба||Nb|11|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -2006,9 +2006,9 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 щедръ||A-|10|ščedrъ|||||||adj_hard|2||||||||0|||||psal-sin_sentence_removed|supr_y_fixed|vit-const|||112
 готовити||V-|10|gotoviti|||||||40|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 оужасть||Nb|10|||||||||99||||||||0||||||supr_y_fixed||||32
-отъходити||V-|10|||||||||99||||||||0||||||supr_y_fixed|||zogr_complete|288
+отъходити|отъходити|V-|10|otъxoditi|||||||40|1||||||||1||||||supr_y_fixed|||zogr_complete|288
 инако||Df|10|||||||||99||||||||0||||||supr_y_fixed|vit-const|vit-meth_4_removed||224
-съборьнъ||A-|10|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
+съборьнъ|съборьныи|A-|10|sъborьnъ|||||||adj_hard|2||||||||1||||||supr_y_fixed||vit-meth_4_removed||160
 дрьзость||Nb|10|||||||||99||||||||0||||||supr_y_fixed||||32
 похоулити||V-|10|poxuliti|||||||40|1||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 сверѣпъ||A-|10|sverěpъ|||||||adj_hard|2||||||||0||||||supr_y_fixed||||32
@@ -2158,7 +2158,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 верига||Nb|9|||||||||99||||||||0||||||supr_y_fixed||||32
 извѣстити||V-|9|jьzvěstiti|||||||40|1||||||||0||||||supr_y_fixed|vit-const|||96
 кѵрионъ||Ne|9|||||||||99||||||||0||||||supr_y_fixed||||32
-изволѥниѥ||Nb|9|||||||||99||||||||0||||||supr_y_fixed||||32
+изволѥниѥ|изволение|Nb|9|jьzvoĺenьje|jьzvoljenьje||||||nt_jo|2||||||||1||||||supr_y_fixed||||32
 влачити||V-|9|||||||||99||||||||0||||||supr_y_fixed||||32
 лѣвъ||A-|9|lěvъ|||||||adj_hard|2|||left-hand-[странѫ]|||||0||||||supr_y_fixed|||zogr_complete|288
 гонѥниѥ|гонение|Nb|9|gońenьje|gonjenьje||||||nt_jo|2|||persecution|||||1||||||supr_y_fixed||||32
@@ -2183,7 +2183,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 стѣнь||Nb|9|||||||||99||||||||0||||||supr_y_fixed||||32
 обавити||V-|9|||||||||99||||||||0||||||supr_y_fixed||||32
 благодарити||V-|9|||||||||99||||||||0||||||supr_y_fixed||||32
-благочьстиѥ||Nb|9|||||||||99||||||||0||||||supr_y_fixed||||32
+благочьстиѥ|благочьстие|Nb|9|bolgočьstьje|||||||nt_jo|2||||||||1||||||supr_y_fixed||||32
 горѣ||Df|9|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
 херсоньскъ||A-|9|||||||||99||||||||0||||||supr_y_fixed||||32
 грьци||Nb|8|||||||||99||||||||0|chrabr|||||supr_y_fixed|vit-const|vit-meth_4_removed||225
@@ -2299,7 +2299,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 съвести||V-|8|sъvesti|||||sъved|sъved|11|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed|vit-const||zogr_complete|368
 застѫплѥниѥ||Nb|8|zastǫpĺenьje|zastǫpjenьje||||||nt_jo|2||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 защититель||Nb|8|zaščititeĺь|zaščititeljь||||||masc_tel|2||||||||0|||||psal-sin_sentence_removed|||||16
-плъкъ|пълкъ|Nb|8|pl̥kъ|||||||masc_o|2|1|||Derksen p.424 says ‘Probably a borrowing from Germanic’, i.e. ‘folk’||||1|||||psal-sin_sentence_removed|supr_y_fixed||||48
+плъкъ|пълкъ|Nb|8|pl̥kъ|||||||masc_o|2||||||||1|||||psal-sin_sentence_removed|supr_y_fixed||||48
 процвисти||V-|8|prokvisti|||||||ьt|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 срамъ||Nb|8|sormъ|||||||masc_o|2||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 попещи||V-|8|popeћi|popekti||||popek|popek|11|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||vit-meth_4_removed||176
@@ -2349,11 +2349,11 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 чрьньць||Nb|8|čŕ̥nьkь||čŕ̥nьkъ|čŕ̥nьcь||||masc_o_PV3|2||||||||0||||||supr_y_fixed||||32
 котꙑга||Nb|8|||||||||99||||||||0||||||supr_y_fixed||||32
 ересь||Nb|8|||||||||99||||||||0||||||supr_y_fixed|vit-const|vit-meth_4_removed||224
-прѣставити|прѣставити|V-|8|perstaviti|||||||40|1||||||||1||||||supr_y_fixed|vit-const|vit-meth_4_removed||224
+прѣставити|переставити|V-|8|perstaviti|||||||40|1||||||||1||||||supr_y_fixed|vit-const|vit-meth_4_removed||224
 скврьна||Nb|8|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 свобода||Nb|8|svoboda|||||||fem_a|2||||||||0||||||supr_y_fixed||||32
 порѫчити||V-|8|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
-срьдьчьнъ||A-|8|||||||||99||||||||0||||||supr_y_fixed||||32
+срьдьчьнъ|сьрдьчьныи|A-|8|sŕ̥dьčьnъ|||||||adj_hard|2||||||||1||||||supr_y_fixed||||32
 спѣшениѥ||Nb|8|||||||||99||||||||0||||||supr_y_fixed||||32
 сицевъ||A-|8|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
 невѣстьникъ||Nb|8|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -2528,7 +2528,7 @@ FIXME||Nb|7|||||||||99||||||||0|||||psal-sin_sentence_removed||vit-const|vit-met
 смѣхъ||Nb|7|||||||||99||||||||0||||||supr_y_fixed||||32
 пѣтиѥ||Nb|7|||||||||99||||||||0||||||supr_y_fixed||||32
 благовѣрьнъ||A-|7|bolgověrьnъ|||||||adj_hard|2||||||||0||||||supr_y_fixed|vit-const|vit-meth_4_removed||224
-нѫждьнъ||A-|7|||||||||99||||||||0||||||supr_y_fixed||||32
+нѫждьнъ|нужьныи|A-|7|nǫђьnъ|nǫdjьnъ|||nuђьnъ|||adj_hard|2||||||||1||||||supr_y_fixed||||32
 племѧ||Nb|7|plemę|||||||nt_N|2||||||||0||||||supr_y_fixed|vit-const|||96
 бъшиѭ||Df|7|||||||||99||||||||0||||||supr_y_fixed||||32
 диꙗволовъ||A-|7|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -2550,7 +2550,7 @@ FIXME||Nb|7|||||||||99||||||||0|||||psal-sin_sentence_removed||vit-const|vit-met
 оустити||V-|7|||||||||99||||||||0||||||supr_y_fixed|vit-const|vit-meth_4_removed||224
 пооущати||V-|7|||||||||99||||||||0||||||supr_y_fixed||||32
 приснъ||A-|7|||||||||99||||||||0||||||supr_y_fixed||||32
-сѫпротивьнъ||A-|7|||||||||99||||||||0||||||supr_y_fixed||||32
+сѫпротивьнъ|супротивьныи|A-|7|sǫprotivьnъ|||||||adj_hard|2||||||||1||||||supr_y_fixed||||32
 стоуденъ||A-|7|studenъ|||||||adj_hard|2|||cold|The Serbo-Croat form 'studen' adduced by Derksen p. 471 allows us to agree with dict. p.631 in reconstructing this as *studenъ rather than *studьnъ (which has the different meaning 'shameful, disgusting, loathsome')||||0||||||supr_y_fixed|vit-const||zogr_complete|352
 василии|василии|Ne|7|vasilьjь|||||||masc_jo|2|2|||||Βασίλειος||1||||||supr_y_fixed||||32
 распѧтиѥ||Nb|7|orspętьje|||||||nt_jo|2||||||||0||||||supr_y_fixed|||zogr_complete|288
@@ -2558,7 +2558,7 @@ FIXME||Nb|7|||||||||99||||||||0|||||psal-sin_sentence_removed||vit-const|vit-met
 покоушати||V-|7|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
 болѣзньнъ||A-|7|||||||||99||||||||0||||||supr_y_fixed||||32
 исоухристосъ||Ne|7|||||||||99||||||||0||||||supr_y_fixed||||32
-мольба||Nb|7|||||||||99||||||||0||||||supr_y_fixed||||32
+мольба|мольба|Nb|7|modlьba|||||||fem_a|2||||Родственно лит. maldà «просьба», maldýti, maldaũ «умолять», mel̃sti, meldžiù «просить, молить(ся)», хетт. mald-, maltāi- «просить, говорить», арм. mаɫtΏеm «умоляю», др.-в.-нем. meldôn, нов.-в.-нем. melden «заявлять, докладывать». Слав. метатеза *modliti < *molditi объясняется, возм., табуистическими побуждениями||||1||||||supr_y_fixed||||32
 въпрашаниѥ||Nb|7|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
 искоусъ||Nb|7|||||||||99||||||||0||||||supr_y_fixed||||32
 тина||Nb|7|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -2584,7 +2584,7 @@ FIXME||Nb|7|||||||||99||||||||0|||||psal-sin_sentence_removed||vit-const|vit-met
 прьвѣѥ||R-|7|||||||||99||||||||0||||||supr_y_fixed||||32
 нꙑнѣчоу||Df|7|||||||||99||||||||0||||||supr_y_fixed||||32
 чловѣколюбьствиѥ||Nb|7|||||||||99||||||||0||||||supr_y_fixed||||32
-прощениѥ||Nb|7|||||||||99||||||||0||||||supr_y_fixed||||32
+прощениѥ|прощение|Nb|7|prošћenьje|prostjenьje||||||nt_jo|2||||||||1||||||supr_y_fixed||||32
 понꙗвица||Nb|7|pońǢvika|ponjǢvika||pońǢvica||||fem_a_PV3|2|||linen cloth|the cognates given by Vasmer ('укр. поня́ва, сербохорв. по̀њава «подстилка, грубое одеяло», словен. роnjȃvа', though contrastingly also 'блр. понёва'), as well as Suprasliensis понꙗвици allow us to pretty securely reconstruct *pońǢ-, but further etymology is uncertain||||0||||||supr_y_fixed|||zogr_complete|288
 хрьстиꙗнъ||Nb|7|||||||||99||||||||0|||||||vit-const|||64
 словѣньскꙑ||Df|6|||||||||99||||||||0|chrabr||||||vit-const|vit-meth_4_removed||193
@@ -2801,7 +2801,7 @@ FIXME||Nb|7|||||||||99||||||||0|||||psal-sin_sentence_removed||vit-const|vit-met
 пагоубьнъ||A-|6|||||||||99||||||||0||||||supr_y_fixed||||32
 оужасьнъ||A-|6|||||||||99||||||||0||||||supr_y_fixed||||32
 дѣльма||Df|6|||||||||99||||||||0||||||supr_y_fixed||||32
-нꙑнѣшьнь||A-|6|||||||||99||||||||0||||||supr_y_fixed||||32
+нꙑнѣшьнь|нынѣшьнии|A-|6|nyněšьńь|nyněšьnjь||||||adj_soft|2||||ESSJa thinks this is cognate with Lith. nunai, but OCS frequently has palatalisation-diacritics and/or jotated-a in Cyrillic mss., which is a huge problem|1|||1||||||supr_y_fixed||||32
 прокоудити||V-|6|||||||||99||||||||0||||||supr_y_fixed||||32
 казнь||Nb|6|||||||||99||||||||0||||||supr_y_fixed||||32
 никеискъ||A-|6|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -2824,7 +2824,7 @@ FIXME||Nb|7|||||||||99||||||||0|||||psal-sin_sentence_removed||vit-const|vit-met
 съпрѧтати||V-|6|||||||||99||||||||0||||||supr_y_fixed||||32
 далꙗ||Nb|6|||||||||99||||||||0||||||supr_y_fixed||||32
 кръстъ||Nb|6|||||||||99||||||||0||||||supr_y_fixed|||zogr_complete|288
-скврьньнъ||A-|6|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
+скврьньнъ|сквьрньныи|A-|6|skvŕ̥nьnъ|||||||adj_hard|2||||||||1||||||supr_y_fixed|vit-const|||96
 сѫпостатъ||Nb|6|||||||||99||||||||0||||||supr_y_fixed||||32
 въгодьникъ||Nb|6|||||||||99||||||||0||||||supr_y_fixed||||32
 попоустити||V-|6|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
@@ -3145,7 +3145,7 @@ FIXME||Nb|7|||||||||99||||||||0|||||psal-sin_sentence_removed||vit-const|vit-met
 проводити||V-|5|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
 горьцѣ||Df|5|||||||||99||||||||0||||||supr_y_fixed||||32
 послоухъ||Nb|5|||||||||99||||||||0||||||supr_y_fixed||||32
-въздрьжати||V-|5|||||||||99||||||||0||||||supr_y_fixed||||32
+въздрьжати|въздьржати|V-|5|vъzdŕ̥žǢti|||||||31|1||||there are 2 class 54 occurrences in your DB||||1||||||supr_y_fixed||||32
 тоже||Df|5|||||||||99||||||||0||||||supr_y_fixed||||32
 сѫпротивити||V-|5|||||||||99||||||||0||||||supr_y_fixed||||32
 пъваниѥ||Nb|5|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -3179,7 +3179,7 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 гость|гость|Nb|5|gostь|||||||masc_i|2||||||||1||||||supr_y_fixed|vit-const|||96
 отъчаꙗниѥ||Nb|5|||||||||99||||||||0||||||supr_y_fixed||||32
 пращати||V-|5|||||||||99||||||||0||||||supr_y_fixed||||32
-манастꙑрьскъ||A-|5|||||||||99||||||||0||||||supr_y_fixed||||32
+манастꙑрьскъ|манастырьскыи|A-|5|manastyŕьskъ|manastyrjьskъ||||||adj_hard|2||||||||1||||||supr_y_fixed||||32
 приобьщити||V-|5|||||||||99||||||||0||||||supr_y_fixed||||32
 извѣтъ||Nb|5|||||||||99||||||||0||||||supr_y_fixed||||32
 съсъ||Nb|5|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -3202,7 +3202,7 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 продльжити||V-|5|||||||||99||||||||0||||||supr_y_fixed||||32
 пилатовъ||A-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 евангельскъ||A-|5|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
-бещисльнъ||A-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
+бещисльнъ|бесчисльныи|A-|5|beščislьnъ|||||||adj_hard|2||||||||1||||||supr_y_fixed||vit-meth_4_removed||160
 противьство||Nb|5|||||||||99||||||||0||||||supr_y_fixed||||32
 коньчьнѣѥ||Df|5|||||||||99||||||||0||||||supr_y_fixed||||32
 несътрьпимъ||A-|5|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -3495,7 +3495,7 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 стенаниѥ||Nb|4|stenanьje|||||||nt_jo|2||||||||0||||||supr_y_fixed||||32
 ослоушаниѥ||Nb|4|uslušǢnьje||||||||99||||||||0||||||supr_y_fixed||||32
 чловѣчьство||Nb|4|čьlověčьstvo||||čelověčьstvo|||nt_o|2||||||||0||||||supr_y_fixed||||32
-къзнь||Nb|4|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
+къзнь|къзнь|Nb|4|kъznь|||||||fem_i|2||||||||1||||||supr_y_fixed||vit-meth_4_removed||160
 проповѣдьникъ||Nb|4|||||||||99||||||||0||||||supr_y_fixed||||32
 беспрѣстани||Df|4|||||||||99||||||||0||||||supr_y_fixed||||32
 позоровати||V-|4|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -3518,7 +3518,7 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 трьѕати||V-|4|||||||||99||||||||0||||||supr_y_fixed||||32
 клицати||V-|4|||||||||99||||||||0||||||supr_y_fixed|||zogr_complete|288
 оусоровъ||A-|4|||||||||99||||||||0||||||supr_y_fixed||||32
-орѫдиѥ||Nb|4|||||||||99||||||||0||||||supr_y_fixed||||32
+орѫдиѥ|орудие|Nb|4|orǫdьje|||||||nt_jo|2||||||||1||||||supr_y_fixed||||32
 ѥже||Dq|4|ježe||||||||0||||||||0||||||supr_y_fixed||||32
 възградити||V-|4|vъzgorditi|||||||40|1||||||||0||||||supr_y_fixed||||32
 васои||Ne|4|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -3549,7 +3549,7 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 отъпадати||V-|4|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 прѣтворити||V-|4|||||||||99||||||||0||||||supr_y_fixed||||32
 оими||Nb|4|||||||||99||||||||0||||||supr_y_fixed||||32
-ратьнъ||A-|4|||||||||99||||||||0||||||supr_y_fixed||||32
+ратьнъ|ратьныи|A-|4|ortьnъ|||||||adj_hard|2||||||||1||||||supr_y_fixed||||32
 примѣсити||V-|4|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
 чѧстъ||A-|4|||||||||99||||||||0||||||supr_y_fixed||||32
 излазити||V-|4|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -3583,7 +3583,7 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 отънѫдоуже||Dq|4|||||||||99||||||||0||||||supr_y_fixed||||32
 животворѧ||A-|4|||||||||99||||||||0||||||supr_y_fixed||||32
 промꙑслъ||Nb|4|||||||||99||||||||0||||||supr_y_fixed||||32
-въкоушати||V-|4|||||||||99||||||||0||||||supr_y_fixed||||32
+въкоушати|въкушати|V-|4|vъkušǢti|||||||54|1||||||||1||||||supr_y_fixed||||32
 африканъ||Ne|4|||||||||99||||||||0||||||supr_y_fixed||||32
 въгаждати||V-|4|||||||||99||||||||0||||||supr_y_fixed||||32
 арианьскъ||A-|4|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -3611,7 +3611,7 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 оумрьщвениѥ||Nb|4|umŕ̥ћvĺenьje|umŕ̥tvjenьje||||||nt_jo|2||||||||0||||||supr_y_fixed||||32
 погрѫзити||V-|4|||||||||99||||||||0||||||supr_y_fixed||||32
 съвѫзъ||Nb|4|sъvǫzъ|||||||masc_o|2||||||||0||||||supr_y_fixed||||32
-разьно||Df|4|||||||||99||||||||0||||||supr_y_fixed||||32
+разьно|разьно|Df|4|orzьnо||||||||0||||||||1||||||supr_y_fixed||||32
 ѥльмаже||G-|4|||||||||99||||||||0||||||supr_y_fixed||||32
 слоужениѥ||Nb|4|||||||||99||||||||0||||||supr_y_fixed||||32
 отъсѣкати||V-|4|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
@@ -4020,7 +4020,7 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 аполоновъ||A-|3|||||||||99||||||||0||||||supr_y_fixed||||32
 крада||Nb|3|||||||||99||||||||0||||||supr_y_fixed||||32
 наречениѥ||Nb|3|||||||||99||||||||0||||||supr_y_fixed||||32
-неиздреченьнъ||A-|3|||||||||99||||||||0||||||supr_y_fixed||||32
+неиздреченьнъ|неизреченьныи|A-|3|nejьzrečenьnъ|||||||adj_hard|2||||||||1||||||supr_y_fixed||||32
 саваоѳъ||F-|3|||||||||99||||||||0||||||supr_y_fixed||||32
 лъжеименьнъ||A-|3|lъžejьmenьnъ|||||||adj_hard|2||||||||0||||||supr_y_fixed||||32
 обоуѥнъ||A-|3|obujenъ|||||||adj_hard|2||||||||0||||||supr_y_fixed||||32
@@ -4030,7 +4030,7 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 оглашати||V-|3|||||||||99||||||||0||||||supr_y_fixed||||32
 неистьлѣниѥ||Nb|3|||||||||99||||||||0||||||supr_y_fixed||||32
 архангеловъ||A-|3|||||||||99||||||||0||||||supr_y_fixed||||32
-оугодьникъ||Nb|3|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
+оугодьникъ|угодьникъ|Nb|3|ugodьnikъ|||||||masc_o|2||||||||1||||||supr_y_fixed||vit-meth_4_removed||160
 растоꙗти||V-|3|||||||||99||||||||0||||||supr_y_fixed||||32
 рьвьнивъ||A-|3|||||||||99||||||||0||||||supr_y_fixed||||32
 отъмьстити||V-|3|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
@@ -4059,7 +4059,7 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 страстоносьць||Nb|3|||||||||99||||||||0||||||supr_y_fixed||||32
 скопьць||Nb|3|||||||||99||||||||0||||||supr_y_fixed||||32
 дѣдъ||Nb|3|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
-мѫжьскꙑ||Df|3|||||||||99||||||||0||||||supr_y_fixed||||32
+мѫжьскꙑ|мужьскы|Df|3|mǫžьsky||||||||0||||||||1||||||supr_y_fixed||||32
 лѣствица||Nb|3|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 ѥдинооумьнъ||A-|3|||||||||99||||||||0||||||supr_y_fixed||||32
 таибьно||Nb|3|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -4104,7 +4104,7 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 доброродьство||Nb|3|||||||||99||||||||0||||||supr_y_fixed||||32
 прилоучаи||Nb|3|||||||||99||||||||0||||||supr_y_fixed||||32
 перинии||Ne|3|||||||||99||||||||0||||||supr_y_fixed||||32
-болꙗрьскъ||A-|3|||||||||99||||||||0||||||supr_y_fixed||||32
+болꙗрьскъ|боярьскыи|A-|3|boĺǢrьskъ|boljǢrьskъ||||||adj_hard|2|7|||Vasmer: Слово боляринъ произошло из дунайско-болгарского (тюрк.) языка, откуда пришло в ст.-слав.. I know it’ll mess up forwards-reconstructions but if it entered Slavdom with a ĺ we should keep it|1|||1||||||supr_y_fixed||||32
 маѯимъ||Ne|3|||||||||99||||||||0||||||supr_y_fixed||||32
 ратьничьскъ||A-|3|||||||||99||||||||0||||||supr_y_fixed||||32
 непотрѣбьнъ||A-|3|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -4220,7 +4220,7 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 прѣкръмити||V-|3|||||||||99||||||||0||||||supr_y_fixed||||32
 накръмити||V-|3|||||||||99||||||||0||||||supr_y_fixed||||32
 животворивъ||A-|3|||||||||99||||||||0||||||supr_y_fixed||||32
-отьчина||Nb|3|||||||||99||||||||0||||||supr_y_fixed||||32
+отьчина|отьчина|Nb|3|otьčina|||||||fem_a|2||||||||1||||||supr_y_fixed||||32
 василина||Ne|3|||||||||99||||||||0||||||supr_y_fixed||||32
 диꙗкониса||Nb|3|||||||||99||||||||0||||||supr_y_fixed||||32
 пространо||Df|3|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -4307,7 +4307,7 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 пелена||Nb|3|||||||||99||||||||0||||||supr_y_fixed||||32
 дѣваꙗ||Nb|3|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
 зиждитель||Nb|3|||||||||99||||||||0||||||supr_y_fixed||||32
-противьникъ||Nb|3|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
+противьникъ|противьникъ|Nb|3|protivьnikъ|||||||masc_o|2||||||||1||||||supr_y_fixed||vit-meth_4_removed||160
 адьскъ||A-|3|||||||||99||||||||0||||||supr_y_fixed||||32
 владꙑчьскꙑ||Df|3|||||||||99||||||||0||||||supr_y_fixed||||32
 отъмꙑти||V-|3|otъmyti|||||||18|1||||||||0||||||supr_y_fixed||||32
@@ -4320,7 +4320,7 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 богомрьзъкъ||A-|3|||||||||99||||||||0||||||supr_y_fixed||||32
 прижитиѥ||Nb|3|||||||||99||||||||0||||||supr_y_fixed||||32
 сладость||Nb|3|||||||||99||||||||0||||||supr_y_fixed||||32
-съдѣꙗти||V-|3|||||||||99||||||||0||||||supr_y_fixed||||32
+съдѣꙗти|съдѣяти|V-|3|sъdějǢti|||||||53|1||||||||1||||||supr_y_fixed||||32
 прѣбрати||V-|3|perborti|||||perbor|perbor|16|1||||||||0||||||supr_y_fixed||||32
 обьштениѥ||Nb|3|||||||||99||||||||0||||||supr_y_fixed||||32
 распьрьнъ||A-|3|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -4365,7 +4365,7 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 прочисти||V-|3|pročisti|||||||ьt|1||||||||0|||||||vit-const|vit-meth_4_removed||192
 моравлꙗнинъ||Nb|3|||||||||99||||||||0|||||||vit-const|vit-meth_4_removed||192
 епистолиꙗ||Nb|3|||||||||99||||||||0|||||||vit-const|vit-meth_4_removed||192
-латиньскъ||A-|3|||||||||99||||||||0|||||||vit-const|vit-meth_4_removed||192
+латиньскъ|латиньскыи|A-|3|latinьskъ|||||||adj_hard|2|3|||||latinus||1|||||||vit-const|vit-meth_4_removed||192
 литоургиꙗ||Nb|3|||||||||99||||||||0|||||||vit-const|||64
 настольникъ||Nb|3|||||||||99||||||||0||||||||vit-meth_4_removed||128
 король||Nb|3|||||||||99||||||||0||||||||vit-meth_4_removed||128
@@ -5004,7 +5004,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 помаꙗниѥ||Nb|2|pomajǢnьje|||||||nt_jo|2||||||||0||||||supr_y_fixed||||32
 коликъ||Px|2|kolikъ|||||||pron_hard|2||||||||0||||||supr_y_fixed||||32
 рѫгъ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
-остатъкъ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
+остатъкъ|остатъкъ|Nb|2|ostatъkъ|||||||masc_o|2||||||||1||||||supr_y_fixed||||32
 прѣбивати||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 ферварь||Nb|2|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
 ѥдинѥниѥ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -5030,7 +5030,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 тьлѣти||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 дожьдати||V-|2|dožьdati|||||||51_abl|1||||||||0||||||supr_y_fixed||||32
 съвоинъ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
-нашьствиѥ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
+нашьствиѥ|нашьствие|Nb|2|našьstvьje|||||||nt_jo|2||||||||1||||||supr_y_fixed||||32
 въжагати||V-|2|vъžǢgati|||||||54|1|||set alight, зажигать|||||0||||||supr_y_fixed|||zogr_complete|288
 притѣкати||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 чⱕдо||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -5075,7 +5075,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 прѣмоудити||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 никакоже||Px|2|||||||||99||||||||0||||||supr_y_fixed||||32
 коуциꙗ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
-позъвати||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
+позъвати|позъвати|V-|2|pozъvati|||||||51_abl|1||||||||1||||||supr_y_fixed||||32
 длъготрьпѣниѥ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 дотолѣ||Df|2|||||||||99||||||||0||||||supr_y_fixed||||32
 жѧдьнъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -5142,7 +5142,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 инамо||Df|2|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
 въздрьжаньнъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 обьщина||Nb|2|obьћina|obьtjina||||||fem_a|2||||||||0||||||supr_y_fixed|vit-const|||96
-градьскъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
+градьскъ|градьскыи|A-|2|gordьskъ|||||||adj_hard|2||||||||1||||||supr_y_fixed||||32
 мѫчильнъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 простѣ||Df|2|||||||||99||||||||0||||||supr_y_fixed||||32
 тврьдость||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -5170,7 +5170,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 чрьноризьчьскъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 различьно||Df|2|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
 лѣсъ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
-съгорѣти||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
+съгорѣти|съгорѣти|V-|2|sъgorěti|||||||31|1||||||||1||||||supr_y_fixed||||32
 саторникъ||Ne|2|||||||||99||||||||0||||||supr_y_fixed||||32
 наньзиꙗньскъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 смрадъ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -5210,9 +5210,9 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 младеньство||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 спѣхъ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 вратарь||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
-диꙗконъ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
+диꙗконъ|дияконъ|Nb|2|dьjǢkonъ|||||||masc_o|2|2|||||διάκονος,διάκων||1||||||supr_y_fixed||vit-meth_4_removed||160
 енохъ||Ne|2|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
-възвꙑсити||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
+възвꙑсити|възвысити|V-|2|vъzvysiti|||||||40|1||||||||1||||||supr_y_fixed||||32
 мельхиседекъ||Ne|2|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 клокотати||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 съвьрѣти||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -5344,7 +5344,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 неискоусьнъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 реть||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 богонаоученъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
-покорѥниѥ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
+покорѥниѥ|покорение|Nb|2|pokoŕenьje|pokorjenьje||||||nt_jo|2||||||||1||||||supr_y_fixed||||32
 боголѣпьнъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 глоухъ||Nb|2|gluxъ|||||||masc_o|2||||||||0||||||supr_y_fixed|||zogr_complete|288
 гостиньць||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -5370,19 +5370,19 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 грозновиѥ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 попоущати||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 роуда||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
-оумъножати||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
+оумъножати|умъножати|V-|2|umъnožǢti|||||||54|1||||||||1||||||supr_y_fixed||||32
 освѧщениѥ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 ѫжичьство||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 охоулити||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 прѣдолѣвати||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
-вечерьнꙗ||Nb|2|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
+вечерьнꙗ|вечерьня|Nb|2|večerьńǢ|večerьnjǢ||||||fem_ja|2||||||||1||||||supr_y_fixed|vit-const|||96
 неицѣлимъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 остьнъ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 кꙑчениѥ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 прокоуда||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 благочьстьнъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 ѥдьносѫщьнъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
-понедѣльникъ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
+понедѣльникъ|понедѣльникъ|Nb|2|ponedělьnikъ|||||||masc_o|2||||||||1||||||supr_y_fixed||||32
 дѣлити||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 вѣдро||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 бльщаниѥ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -5400,7 +5400,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 въкоусъ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 иѥзавель||Ne|2|||||||||99||||||||0||||||supr_y_fixed||||32
 блазна||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
-вельможа||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
+вельможа|вельможа|Nb|2|velьmožǢ|||||||fem_ja|2||||||||1||||||supr_y_fixed||||32
 прѣлюбодѣиство||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 паства||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 рѫжьнъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -5480,7 +5480,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 любьзнѣ||Df|2|||||||||99||||||||0||||||supr_y_fixed||||32
 оклеветаниѥ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 прѣдавьникъ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
-прозъвати||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
+прозъвати|прозъвати|V-|2|prozъvati|||||||51_abl|1||||||||1||||||supr_y_fixed||||32
 чистити||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 гонозити||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 мѣна||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -5541,9 +5541,9 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 проклинати||V-|2|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
 остроуꙗти||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 онѣмлꙗти||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
-тръжьство||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
+тръжьство|тържьство|Nb|2|tr̥žьstvo|||||||nt_o|2||||Den Danske Ordbog seems to think that Slavic *tr̥gъ (>Danish torv) is from Mongolian 'torok'  which means apparently 'silk'; essja doesn't have a volume with 't-' words out yet, and Derksen ignores this root, so whether or not this is a loanword is unclear||||1||||||supr_y_fixed||||32
 бесъмрьтиѥ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
-възмьздиѥ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
+възмьздиѥ|възмьздие|Nb|2|vъzmьzdьje|||||||nt_jo|2||||||||1||||||supr_y_fixed||||32
 источити||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 вльчьць||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 съмрьтоносьнъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -5654,7 +5654,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 тоземьць||Nb|2|||||||||99||||||||0|||||||vit-const|vit-meth_4_removed||192
 аньнии||Ne|2|||||||||99||||||||0|||||||vit-const|||64
 воиска||Nb|2|||||||||99||||||||0|||||||vit-const|||64
-съмꙑсльнъ||A-|2|||||||||99||||||||0|||||||vit-const|||64
+съмꙑсльнъ|съмысльныи|A-|2|sъmyslьnъ|||||||adj_hard|2||||||||1|||||||vit-const|||64
 измаильтьскъ||A-|2|||||||||99||||||||0|||||||vit-const|||64
 мѣшъкъ||Nb|2|||||||||99||||||||0|||||||vit-const|||64
 козаре||Nb|2|||||||||99||||||||0|||||||vit-const|||64
@@ -5679,7 +5679,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 отъгвоздити||V-|2|||||||||99||||||||0|||||||vit-const|||64
 априль||Nb|2|||||||||99||||||||0||||||||vit-meth_4_removed||128
 тъжде||Px|2|||||||||99||||||||0||||||||vit-meth_4_removed||128
-кънѧжениѥ||Nb|2|||||||||99||||||||0||||||||vit-meth_4_removed||128
+кънѧжениѥ|къняжение|Nb|2|kъnęženьje|||||||nt_jo|2|1|||||||1||||||||vit-meth_4_removed||128
 покоръ||Nb|2|||||||||99||||||||0||||||||vit-meth_4_removed||128
 селоунꙗнинъ||Nb|2|||||||||99||||||||0||||||||vit-meth_4_removed||128
 канонъ||Nb|2|||||||||99||||||||0||||||||vit-meth_4_removed||128
@@ -6410,7 +6410,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 прѣгꙑни||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
 съвъплъчениѥ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
 неподвижьнъ||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
-кръвавъ||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
+кръвавъ|кръвавыи|A-|1|krъvavъ|||||||adj_hard|2||||||||1||||||supr_y_fixed||||32
 чистость||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
 мѧтежьникъ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
 ѥдъва||G-|1|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -6564,7 +6564,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 извѧзати||V-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 возъ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
 въскласти||V-|1|||||||||99||||||||0||||||supr_y_fixed||||32
-крѣпъко||Df|1|||||||||99||||||||0||||||supr_y_fixed||||32
+крѣпъко|крѣпъко|Df|1|krěpъko||||||||0||||||||1||||||supr_y_fixed||||32
 съмести||V-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 каланъдꙑ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
 двадесѧтъ шесть||Ma|1|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -7358,7 +7358,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 съписати#2||V-|1|sъpisati|||||||54|1||||||||0||||||supr_y_fixed||||32
 сътьнъ||Mo|1|||||||||99||||||||0||||||supr_y_fixed||||32
 пооустьнъ||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
-чьтениѥ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
+чьтениѥ|чьтение|Nb|1|čьtenьje|||||||nt_jo|2||||||||1||||||supr_y_fixed||||32
 зълодѣинъ||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 иновѣрьнъ||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 сѫпротивиѥ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -7813,11 +7813,11 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 кѫща||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
 подъзаконьнъ||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 растѫпити||V-|1|||||||||99||||||||0||||||supr_y_fixed||||32
-състѫпити||V-|1|||||||||99||||||||0||||||supr_y_fixed||||32
+състѫпити|съступити|V-|1|sъstǫpiti|||||||40|1||||||||1||||||supr_y_fixed||||32
 толи||C-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 непочоуѩ||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 невѣгласъ||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
-въспоминати||V-|1|||||||||99||||||||0||||||supr_y_fixed||||32
+въспоминати|въспоминати|V-|1|vъspominati|||||||54|1||||||||1||||||supr_y_fixed||||32
 шаръчии||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
 съготовити||V-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 жидовинъ||Ne|1|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -7841,7 +7841,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 прикоуплꙗти||V-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 тихота||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
 любослꙑшаниѥ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
-вѣще||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
+вѣще|вѣче|Nb|1|věће|větje||||||nt_jo|2||||||||1||||||supr_y_fixed||||32
 плѣти||V-|1|pelti|||||pelv|pelv|11|1|||to weed|||||0||||||supr_y_fixed||||32
 въперити||V-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 лихованиѥ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -7913,7 +7913,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 раздирати||V-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 динарионъ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
 остѣнити||V-|1|||||||||99||||||||0||||||supr_y_fixed||||32
-прѣждьнь||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
+прѣждьнь|прѣжьнии|A-|1|perђьńь|perdjьnjь||||||adj_soft|2||||||||1||||||supr_y_fixed||||32
 тъканиѥ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
 одеждьнъ||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 близньчьнъ||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -8350,7 +8350,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 никаѥонськъ||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 вѵфиниꙗ||Ne|1|||||||||99||||||||0||||||supr_y_fixed||||32
 ригеѡнъ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
-тръгъ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
+тръгъ|търгъ|Nb|1|tr̥gъ|||||||masc_u|2||||||||1||||||supr_y_fixed||||32
 парѳенеонъ||Ne|1|||||||||99||||||||0||||||supr_y_fixed||||32
 оуищениѥ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
 доушепагоубьнъ||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -8458,7 +8458,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 пьсьскꙑ||Df|1|||||||||99||||||||0||||||supr_y_fixed||||32
 осльпениѥ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
 поганинъ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
-иночьскъ||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
+иночьскъ|иночьскыи|A-|1|jьnočьskъ|||||||adj_hard|2||||||||1||||||supr_y_fixed||||32
 въдрѫжити||V-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 неистръгномъ||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 больми||Df|1|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -8595,8 +8595,8 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 заскопити||V-|1|||||||||99||||||||0|||||||vit-const|||64
 которꙑижьдо||Px|1|||||||||99||||||||0|||||||vit-const|||64
 дѣдьнъ||A-|1|||||||||99||||||||0|||||||vit-const|||64
-достигнѫти||V-|1|||||||||99||||||||0|||||||vit-const|||64
-въноукъ||Nb|1|||||||||99||||||||0|||||||vit-const|||64
+достигнѫти|достигнути|V-|1|dostignǫti|||||||21|1||||||||1|||||||vit-const|||64
+въноукъ|вънукъ|Nb|1|vъnukъ|||||||masc_o|2||||||||1|||||||vit-const|||64
 различь||Df|1|||||||||99||||||||0|||||||vit-const|||64
 трѣсновенъ||A-|1|||||||||99||||||||0|||||||vit-const|||64
 пластꙑрь||Nb|1|||||||||99||||||||0|||||||vit-const|||64
@@ -8747,7 +8747,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 съмѣра||Nb|1|||||||||99||||||||0||||||||vit-meth_4_removed||128
 прилоучити||V-|1|||||||||99||||||||0||||||||vit-meth_4_removed||128
 власи||Nb|1|||||||||99||||||||0||||||||vit-meth_4_removed||128
-нѣмьць||Nb|1|||||||||99||||||||0||||||||vit-meth_4_removed||128
+нѣмьць|нѣмьць|Nb|1|němьkь||němьkъ|němьcь||||masc_o_PV3|2||||||||1||||||||vit-meth_4_removed||128
 чьтити||V-|1|||||||||99||||||||0||||||||vit-meth_4_removed||128
 никола||Ne|1|||||||||99||||||||0||||||||vit-meth_4_removed||128
 латине||Nb|1|||||||||99||||||||0||||||||vit-meth_4_removed||128
@@ -8798,7 +8798,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 октобрь||Nb|1|||||||||99||||||||0||||||||vit-meth_4_removed||128
 дьмитрии||Ne|1|||||||||99||||||||0||||||||vit-meth_4_removed||128
 номоканонъ||Nb|1|||||||||99||||||||0||||||||vit-meth_4_removed||128
-отьчьскъ||A-|1|||||||||99||||||||0||||||||vit-meth_4_removed||128
+отьчьскъ|отьчьскыи|A-|1|otьčьskъ|||||||adj_hard|2||||||||1||||||||vit-meth_4_removed||128
 доунаискъ||A-|1|||||||||99||||||||0||||||||vit-meth_4_removed||128
 гърьскъ||A-|1|||||||||99||||||||0||||||||vit-meth_4_removed||128
 оулюбити||V-|1|||||||||99||||||||0||||||||vit-meth_4_removed||128
@@ -8951,7 +8951,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 неоуклоньно||Df|0|||||||||99||||||||0||||||||||
 милостꙑни||Px|0|||||||||99||||||||0||||||||||
 благотворениѥ||Nb|0|||||||||99||||||||0||||||||||
-въспитати||V-|0|||||||||99||||||||0||||||||||
+въспитати|въспитати|V-|0|vъspitati|||||||54|1||||||||1||||||||||
 голоубица||Nb|0|||||||||99||||||||0||||||||||
 наслѣдьница||Nb|0|||||||||99||||||||0||||||||||
 мадитъ||Ne|0|||||||||99||||||||0||||||||||
@@ -8977,7 +8977,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 съпрѣбꙑваниѥ||Nb|0|||||||||99||||||||0||||||||||
 помрачати||V-|0|||||||||99||||||||0||||||||||
 оупражнꙗти||V-|0|||||||||99||||||||0||||||||||
-мьчьтаниѥ||Nb|0|||||||||99||||||||0||||||||||
+мьчьтаниѥ|мьчьтание|Nb|0|mьčьtanьje|||||||nt_jo|2||||||||1||||||||||
 привидѣниѥ||Nb|0|||||||||99||||||||0||||||||||
 съпона||Nb|0|||||||||99||||||||0||||||||||
 непрѣстаньно||Df|0|||||||||99||||||||0||||||||||
@@ -9014,7 +9014,7 @@ golgolati||V-|0|||||||||99||||||||0||||||||||
 размꙑслъ||Nb|0|||||||||99||||||||0||||||||||
 мьртъвъ||A-|0|||||||||99||||||||0||||||||||
 трьсвѧтъ||A-|0|||||||||99||||||||0||||||||||
-пасти|пасти#1|V-|0|pasti|||||pad|pad|11|1||||||||1||||||||||
+пасти|пасти#2|V-|0|pasti|||||pas|pas|11|1|||herd, shepherd, look after as a farmer|||||1||||||||||
 плакати|плакати|V-|0|plakati|||||||52|1|||wash, cleanse|||||1||||||||||
 краль||Nb|0|||||||||99||||||||0||||||||||
 краль||Ne|0|||||||||99||||||||0||||||||||
@@ -9211,3 +9211,4 @@ golgolati||V-|0|||||||||99||||||||0||||||||||
 погꙑбати#2||V-|0|pogybati|||||||54|1||||||||0||||||||||
 посꙑпати#2||V-|0|posypati|||||||54|1||||||||0||||||||||
 пльзѣти||V-|0|pĺ̥zěti|||||||31|1||||||||0||||||||||
+ѫдолиѥ||Nb|0|ǫdolьje|||||||nt_jo|2||||||||0||||||||||
