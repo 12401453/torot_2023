@@ -7,3 +7,5 @@ the *-jęti lemmas all need special treatment because often the TOROT attestatio
 чьстьнькыи is used for occurrences of чистенькъ so is badly lemmatised, but I'm not sure where the *-енький suffix comes from
 
 For lemmas like възлогати, why don't we just not use that and instead just replace it with възлагати? Maybe the Domostroj attestations are all because of akan'je or are just mistakes or whatever (depends what the word actually means in that text). Ordering our words by TOROT frequency is not a very good idea (полугривьна)
+
+адъвъ I've reconstructed as *adovъ - I forget, is the Russian u-stem Gpl. ending different to South Slavic *ovъ? Surely not because of Ukr. lengthend /oo/ in this ending. Is the possessive-adjective suffix the same as the u-stem Gpl. ending *ov- ?

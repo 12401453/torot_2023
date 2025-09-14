@@ -39,3 +39,5 @@ Added lemma ѫдолиѥ for Psal. 64 Ї ѫдольѣ оумьножѩтъ пъ�
 Changed Psal. 17 потоці lemmatisation to потокъ (from потопъ), because Septuagint has χείμαρροι which means 'torrents' apparently
 
 Changed lemmatisation of two words in this Supr. sentence: хоштете ли и͑ о͑тъ камыка сего о̑услышати. и͑же вами чьстенъ я͑ко прѣльштаѥ͑те сⱕ
+
+Changed ручьи in Igor's Campaign from fem. to masc.
