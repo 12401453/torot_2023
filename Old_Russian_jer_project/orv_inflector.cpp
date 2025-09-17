@@ -4,7 +4,8 @@
 #include <unordered_map>
 #include <fstream>
 #include <sstream>
-#include "LcsFlecter.h"
+#include <cstdint>
+#include "LcsFlecterJerProj.h"
 
 //regex for non-final jers: [ьъ](?!$)
 
@@ -182,7 +183,7 @@ void dejotationReflexesOCS(std::string& lcs_form) {
 }
 
 
-std::string convertToORV(std::string lcs_form, const std::string& conj_type, bool ch_sl=false) {
+std::string convertToORV(std::string lcs_form, const std::string& conj_type, bool ch_sl, bool pv2_3_exists) {
   LcsFlecter::replaceAll(lcs_form, "ę̌", "ě");//should these top two be different for ch_sl words?
   LcsFlecter::replaceAll(lcs_form, "y̨", "a");
   LcsFlecter::replaceAll(lcs_form, "Q", "ь");
@@ -211,7 +212,7 @@ std::string convertToORV(std::string lcs_form, const std::string& conj_type, boo
 
   applyPV2(lcs_form_unicode, pv2_full_matcher);
 
-  if(conj_type.find("PV3") != std::string::npos || conj_type == "vьxь" || lcs_form.starts_with("vьxak")) applyPV3(lcs_form_unicode);
+  if(pv2_3_exists) applyPV3(lcs_form_unicode);
 
   yeetTlDl(lcs_form_unicode);
   ch_sl ? TRAT(lcs_form_unicode) : TOROT(lcs_form_unicode);
@@ -237,6 +238,105 @@ bool containsNonFinalJer(const icu::UnicodeString& lcs_form_unicode) {
   else return false;
 }
 
+class CsvReader {
+  public:
+    CsvReader(char separator=',') {
+      m_separator = separator;
+      m_fields_vec.reserve(32);
+    }
+
+    void setHeaders(const std::string& first_line) {
+      m_header_index_map.clear();
+
+      std::stringstream first_line_ss(first_line);
+      std::string header;
+      int header_idx = 0;
+      while(std::getline(first_line_ss, header, m_separator)) {
+        m_header_index_map.emplace(header, header_idx);
+        ++header_idx;
+      }
+    }
+   
+    void setLine(const std::string& line) {
+      m_fields_vec.clear();
+
+      m_raw_line = line;
+      std::stringstream line_ss(line);
+      std::string field;
+      while(std::getline(line_ss, field, m_separator)){
+        m_fields_vec.emplace_back(field);
+      }
+    }
+  
+    std::string getField(const std::string& header) {
+      return m_fields_vec[m_header_index_map.at(header)];
+    }
+
+  private:
+    char m_separator;
+    std::string m_raw_line;
+    std::vector<std::string> m_fields_vec;
+    std::unordered_map<std::string, int> m_header_index_map;
+};
+
+consteval std::uint64_t compileTimeHashString(std::string_view sv) {
+  uint64_t hash = 1469598103934665603ULL;
+  for(char c : sv) {
+      hash = hash ^ static_cast<unsigned char>(c);
+      hash = hash * 1099511628211ULL;
+  }
+  return hash;
+}
+
+std::uint64_t runTimeHashString(std::string_view sv) {
+  uint64_t hash = 1469598103934665603ULL;
+  for(char c : sv) {
+      hash = hash ^ static_cast<unsigned char>(c);
+      hash = hash * 1099511628211ULL;
+  }
+  return hash;
+}
+
+int safeStrToInt(const std::string &string_number, int default_result) {
+  int converted_int = default_result;
+  try {
+      converted_int = std::stoi(string_number);
+  }
+  catch (std::invalid_argument const& ex) {
+      std::cout << "std::stoi failed with an invalid_argument exception; defaulting it to " << default_result << "\n";
+  }
+  catch (std::out_of_range const& ex) {
+      std::cout << "std::stoi failed with an out_of_range exception; defaulting it to " << default_result << "\n";
+  }
+  return converted_int;
+}
+
+#include "conj_type_trunc.cpp"
+std::string makeLcsStem(icu::UnicodeString& unicode_lemma_lcs, const std::string& lcs_lemma, const std::string& conj_type, const std::string& stem1, const std::string& stem2, const std::string& pre_jot) {
+  
+  std::string stem_lcs = "";
+
+  if(conj_type == "11" || conj_type == "12" || conj_type == "15" || conj_type == "16" || conj_type == "infix_11" || conj_type == "infix_12") {
+    stem_lcs = stem2;
+  }
+  else if(conj_type == "14") {
+    stem_lcs = stem1;
+  }
+  else if(pre_jot == "") {
+    stem_lcs = "";
+    unicode_lemma_lcs = unicode_lemma_lcs.fromUTF8(lcs_lemma);
+    unicode_lemma_lcs.truncate(unicode_lemma_lcs.length() - conj_type_Trunc(conj_type));
+    unicode_lemma_lcs.toUTF8String(stem_lcs);
+  }
+  else {
+    stem_lcs = "";
+    unicode_lemma_lcs = unicode_lemma_lcs.fromUTF8(pre_jot);
+    unicode_lemma_lcs.truncate(unicode_lemma_lcs.length() - conj_type_Trunc(conj_type));
+    unicode_lemma_lcs.toUTF8String(stem_lcs);
+  }
+  return stem_lcs;
+}
+
 int main() {
 
   LcsFlecter noun_flecter(NOUN);
@@ -253,70 +353,53 @@ int main() {
   inflected_forms_json_oss << "[\n";
   inflected_forms_orv_oss << "[\n";
 
-  std::ifstream orv_ocs_lemma_matches("orv_ocs_lemma_matches.csv");
-  if(orv_ocs_lemma_matches.good()) {
+  std::ifstream orv_lemmas_file("orv_lemmas_master.csv");
+  if(orv_lemmas_file.good()) {
 
+    CsvReader csv_reader('|');
     std::string line;
-    while(std::getline(orv_ocs_lemma_matches, line)) {
+    std::getline(orv_lemmas_file, line);
+    csv_reader.setHeaders(line);
+    while(std::getline(orv_lemmas_file, line)) {
       std::stringstream ss_line(line);
       
-      
-      std::string orv_torot_lemma, lcs_lemma, lcs_stem, conj_type;
-      int old_lemma_id = 0;
-      int noun_verb = 0;
-      std::string ch_sl;
-      
-      std::string field;
-      int row_number = 1;
-
-      icu::UnicodeString lcs_lemma_unicode;
-      while(std::getline(ss_line, field, '|')) {
-            switch(row_number) {
-                case 1:
-                    orv_torot_lemma = field;
-                    break;
-                case 3:
-                    //I want this to break if the field has a non-valid number
-                    old_lemma_id = std::stoi(field);
-                    break;
-                case 4:
-                    lcs_lemma = field;
-                    break;
-                case 5:
-                    conj_type = field;
-                    break;
-                case 6:
-                    noun_verb = std::stoi(field);
-                    break;
-                case 7:
-                    lcs_stem = field;
-                    break;
-                case 8:
-                    ch_sl = field == "ch_sl" ? "true" : "false";
-                    break;
-                default:
-                    ;
-            }
-          
-        row_number++;  
+      csv_reader.setLine(line);
+      int noun_verb = safeStrToInt(csv_reader.getField("noun_verb"), 99);
+      if(noun_verb == 99) {
+        continue;
       }
+      std::string orv_torot_lemma = csv_reader.getField("orv_lemma");
+      std::string lcs_lemma = csv_reader.getField("lcs_lemma");
+      std::string conj_type= csv_reader.getField("conj_type");
+      std::string stem1 = csv_reader.getField("stem1");
+      std::string stem2 = csv_reader.getField("stem2");
+      std::string pre_jot = csv_reader.getField("pre_jot");
+      bool pv2_3_exists = csv_reader.getField("PV2/3") == "" ? false : true;
+      int old_lemma_id = 0;
+      
+      std::string ch_sl = csv_reader.getField("ch_sl") == "ch_sl" ? "true" : "false";
+      
+      icu::UnicodeString lcs_lemma_unicode;
+
+      std::string lcs_stem = makeLcsStem(lcs_lemma_unicode, lcs_lemma, conj_type, stem1, stem2, pre_jot);
+      
       if(noun_verb == 2) {
-            nouns_pairs_vec.emplace_back(old_lemma_id, std::array<std::string, 3>{lcs_stem, conj_type, ch_sl});
+            nouns_pairs_vec.emplace_back(pv2_3_exists, std::array<std::string, 3>{lcs_stem, conj_type, ch_sl});
         }
         else if(noun_verb == 1) {
-            verbs_pairs_vec.emplace_back(old_lemma_id, std::array<std::string, 3>{lcs_stem, conj_type, ch_sl});
+            verbs_pairs_vec.emplace_back(pv2_3_exists, std::array<std::string, 3>{lcs_stem, conj_type, ch_sl});
         }
         else {
           lcs_lemma_unicode.setTo(lcs_lemma.c_str());
           if(containsNonFinalJer(lcs_lemma_unicode)) {
-            inflected_forms_json_oss << "[" << old_lemma_id << "," << ch_sl << ",\"" << lcs_lemma << "\"],\n";
-            inflected_forms_orv_oss << "[" << old_lemma_id << "," << ch_sl << ",\"" << convertToORV(lcs_lemma, conj_type, (ch_sl == "true")) << "\"],\n";
+            inflected_forms_json_oss << "[" << pv2_3_exists << "," << ch_sl << ",\"" << lcs_lemma << "\"],\n";
+            inflected_forms_orv_oss << "[" << pv2_3_exists << "," << ch_sl << ",\"" << convertToORV(lcs_lemma, conj_type, (ch_sl == "true"), pv2_3_exists) << "\"],\n";
           }
       }
       
       
     }
-    orv_ocs_lemma_matches.close();
+    orv_lemmas_file.close();
   }
 
   icu::UnicodeString lcs_form_unicode;
@@ -335,7 +418,7 @@ int main() {
         inflections_iter = noun_flecter.m_unique_inflections.erase(inflections_iter);
       }
       else {
-        orv_noun_inflections.emplace_back(convertToORV(*inflections_iter, noun.second[1], (noun.second[2] == "true")));
+        orv_noun_inflections.emplace_back(convertToORV(*inflections_iter, noun.second[1], (noun.second[2] == "true"), noun.first));
         ++inflections_iter;
       }
     }
@@ -377,7 +460,7 @@ int main() {
         inflections_iter = verb_flecter.m_unique_inflections.erase(inflections_iter);
       }
       else {
-        orv_verb_inflections.emplace_back(convertToORV(*inflections_iter, verb.second[1], (verb.second[2] == "true")));
+        orv_verb_inflections.emplace_back(convertToORV(*inflections_iter, verb.second[1], (verb.second[2] == "true"), verb.first));
         ++inflections_iter;
       }
     }

@@ -1,4 +1,4 @@
-#include "LcsFlecter.h"
+#include "LcsFlecterJerProj.h"
 
 const std::unordered_map<int, inner_map> LcsFlecter::m_noun_endings = {
     #include "data/noun_inflections.txt"
@@ -263,8 +263,13 @@ std::array<std::vector<Inflection>, 3> LcsFlecter::getFullParadigm() {
     }
 
     //need to add jo-stem endings for i-stems that end on /nlr/, but also need to jotate the stem by explicitly adding /j/ (which should get yeeted by the Dejotation step)
-    if((m_stem.ends_with("r") || m_stem.ends_with("n") || m_stem.ends_with("l")) && m_conj_type == "masc_i") {
-        deviances_iter = m_active_endings.find(1401);
+    if(m_conj_type == "masc_i") {
+        if(m_stem.ends_with("r") || m_stem.ends_with("n") || m_stem.ends_with("l") || m_stem.ends_with("č")) {
+            deviances_iter = m_active_endings.find(1401); //1401 holds jo-stem endings except with prepended /j/
+        }
+        else {
+            deviances_iter = m_active_endings.end();
+        }
     }
 
     auto alternatives_iter = m_active_endings.find(alternative_map_no);
@@ -361,38 +366,23 @@ void LcsFlecter::replaceAll(std::string &source, const std::string yeeted, const
     if(yeeted_length == 0) return;
     size_t replacement_length = replacement.length();
 
-    std::string result;
-
-    int search_pos = 0;
-    int yeeted_pos = source.find(yeeted);
+    size_t yeeted_pos = source.find(yeeted);
     while(yeeted_pos != std::string::npos) {
-        //source = source.substr(0, yeeted_pos) + replacement + source.substr(yeeted_pos + yeeted_length);
-        source = source.replace(yeeted_pos, yeeted_length, replacement); 
+        source.replace(yeeted_pos, yeeted_length, replacement); 
         yeeted_pos = source.find(yeeted, yeeted_pos + replacement_length);
     }
 }
+void replaceEnd(std::string &source, const std::string yeeted, const std::string replacement) {
+    
+    size_t yeeted_length = yeeted.length();
+    if(yeeted_length == 0) return;
+    size_t replacement_length = replacement.length();
 
-// bool LcsFlecter::c_strStartsWith(const char *str1, const char *str2) {
-//     int strcmp_count = 0;
-//     int str2_len = strlen(str2);
- 
-//     int i = -1;
-   
-//     while ((*str1 == *str2 || *str2 == '\0') && i < str2_len)
-//     {
-//         strcmp_count++;
-//         str1++;
-//         str2++;
-//         i++;
-//     }
- 
-//     if (strcmp_count == str2_len + 1)
-//     {
-//         return true;
-//     }
-//     else
-//         return false;
-// }
+    size_t yeeted_pos = source.find(yeeted);
+    if(yeeted_pos + yeeted_length == source.length()) {
+        source.replace(yeeted_pos, yeeted_length, replacement); 
+    }
+}
 
 bool LcsFlecter::c_strStartsWith(const char *haystack, const char *needle) {
     while(*needle) {
@@ -417,7 +407,7 @@ void LcsFlecter::class1Clean(Inflection& inflection) {
         replaceAll(inflection.flected_form, "exě", "ьxě");
         replaceAll(inflection.flected_form, "skj", "šč");
 
-        //Old Russian has present-participle forms of решти with zero-grade рькуштий etc., but unsure whether this is Russian-specific (or caused by Bytovaja Orfografija etc.)
+        //Old Russian has present-participle forms of решти with zero-grade рькуштий etc., but unsure whether this is Russian-specific
         return;
     }
 
@@ -429,12 +419,15 @@ void LcsFlecter::class1Clean(Inflection& inflection) {
     replaceAll(inflection.flected_form, "ogsę", "ašę");
     replaceAll(inflection.flected_form, "oksę", "ašę");
     replaceAll(inflection.flected_form, "egst", "ěst");
+    replaceAll(inflection.flected_form, "ogst", "ast");
     replaceAll(inflection.flected_form, "ebs", "ěbs");
     replaceAll(inflection.flected_form, "eks", "ěx");
     replaceAll(inflection.flected_form, "ods", "as");
     replaceAll(inflection.flected_form, "ogs", "ax");
     replaceAll(inflection.flected_form, "egs", "ěx");
     replaceAll(inflection.flected_form, "eds", "ěs");
+    replaceAll(inflection.flected_form, "ets", "ěs");
+    replaceAll(inflection.flected_form, "ezs", "ěs");
     replaceAll(inflection.flected_form, "ess", "ěs");
     replaceAll(inflection.flected_form, "ęss", "ęs"); //class 11 sъtręs-ti when it adds S-aorist endings; a check for S-aorists needs adding to the autoreconstructor because Mar. Matt 28 сътрѧсѧ is wrongly reconstructed as the root-aorist *sъtręsǫ
     replaceAll(inflection.flected_form, "eps", "ěs");
@@ -494,9 +487,13 @@ void LcsFlecter::class1NasalClean(std::string& flecter_output) {
     replaceAll(flecter_output, "ьmt", "ęt");
     replaceAll(flecter_output, "ьnt", "ęt");
     replaceAll(flecter_output, "ъmt", "ǫt");
-    replaceAll(flecter_output, "ьm", "ę");
-    replaceAll(flecter_output, "ьn", "ę");
-    replaceAll(flecter_output, "ъm", "ǫ");
+    // replaceAll(flecter_output, "ьm", "ę");
+    // replaceAll(flecter_output, "ьn", "ę");
+    // replaceAll(flecter_output, "ъm", "ǫ");
+    replaceEnd(flecter_output, "ьm", "ę");
+    replaceEnd(flecter_output, "ьn", "ę");
+    replaceEnd(flecter_output, "ъm", "ǫ");
+
 }
 void LcsFlecter::itiClean(std::string& flecter_output) {
     replaceAll(flecter_output, "njь", "ni");
@@ -608,7 +605,9 @@ void LcsFlecter::Dejotate(std::string& jotated_form) {
     replaceAll(jotated_form, "stvj", "šћvĺ");
     replaceAll(jotated_form, "strj", "šћŕ");
     replaceAll(jotated_form, "stj", "šћ");
+    replaceAll(jotated_form, "skj", "šč");
     replaceAll(jotated_form, "zdj", "žђ");
+    replaceAll(jotated_form, "zgj", "žǯ");
     replaceAll(jotated_form, "slj", "šĺ");
     replaceAll(jotated_form, "zlj", "žĺ");
     replaceAll(jotated_form, "znj", "žń");

@@ -2,10 +2,16 @@ Why is метельникъ in there at all? Only seems to occur in Russkaja Pra
 
 вихъръ must've had a jo-stem doublet to give mod. Russ. вихрь, so maybe he only target forwards-reconstruction of вихор
 
-the *-jęti lemmas all need special treatment because often the TOROT attestations are without intervening *-n-, and so are the TOROT lemmatisations, but the modern Russian equivalents are with *-n- (сняти etc.)
+the *-jęti lemmas all need special treatment because often the TOROT attestations are without intervening *-n-, and so are the TOROT lemmatisations, but the modern Russian equivalents often are with *-n- (сняти etc.)
 
-чьстьнькыи is used for occurrences of чистенькъ so is badly lemmatised, but I'm not sure where the *-енький suffix comes from
+For lemmas like възлогати, why don't we just not use that and instead just replace it with възлагати (which is already reconstructed)? Maybe the Domostroj attestations are all because of akan'je or are just mistakes or whatever (depends what the word actually means in that text).
 
-For lemmas like възлогати, why don't we just not use that and instead just replace it with възлагати? Maybe the Domostroj attestations are all because of akan'je or are just mistakes or whatever (depends what the word actually means in that text). Ordering our words by TOROT frequency is not a very good idea (полугривьна)
+адъвъ I've reconstructed as *adovъ
 
-адъвъ I've reconstructed as *adovъ - I forget, is the Russian u-stem Gpl. ending different to South Slavic *ovъ? Surely not because of Ukr. lengthend /oo/ in this ending. Is the possessive-adjective suffix the same as the u-stem Gpl. ending *ov- ?
+Adjectives with the -яный suffix are impossible to do because I can't find any confirmation that this suffix is Common Slavic, and TOROT lemmas with stems that don't end on LCS palatals like овьсяный could only ever be reconstructed as **ovьsęnъ, but there's no proof of a nasal here and it is likely to be a post-Jer Shift /'an/ suffix that includes softening of the preceding consonant. Therefore words like ръжаный, which at first sight seem straightforwardly reconstructable as *rъžǢnъ, contain the same suffix and can't be done either, because we're not sure whether it should instead be *rъžęnъ. If the suffix can be shown to be Common Slavic *ěnъ (which changes to *Ǣnъ after LCS palatals, like the *ěninъ suffix for place-dwellers), then words like rъžǢnъ could be done, but овьсяный couldn't. I believe this is the explanation of Russian славянин vs. Ch.Sl. словѣнинъ.
+
+чьрленыи seems to me to be too annoying a word to include, since Sreznevskij lists both this and чьрвленыи and they seem to mean exactly the same thing, so can we not just replace this with чьрвленыи (which happens not to be attested in the TOROT texts)?
+
+Words like полдень and полночь aren't possible to inflection-class-mark properly because the pol- part changes, but both Russian and English wiktionaries seem to list the regular inflections as well, so for our purposes it's not a huge problem
+
+
