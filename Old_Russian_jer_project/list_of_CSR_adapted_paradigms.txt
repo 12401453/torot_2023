@@ -1,0 +1,23 @@
+{"ьt", 241},
+{"ьz", 141},
+{"jьti", 81},
+{"viděti", 3111},
+{"jaxati", 4001}, //no changes made
+{"iskati", 521}, //no changes made
+{"rěsti", 271},
+{"infix_11", 111}, //no changes made (YET)
+
+
+
+
+
+
+
+
+
+//NOT IN LIST
+{"uti", 251},
+{"rti", 261},
+{"čuti", 1601},
+{"nebyti", 101},
+{"have", 21},

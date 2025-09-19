@@ -4,6 +4,7 @@ Chu.Sl. doublets (щ, metathesis etc.) will need to be produced for everything, 
     - this might be an unsolvable problem if too many words contain contradictory combinations of Ch.Sl. and native features, and trying every possible combination for each word could quickly spiral
 
 Reduction of imperative-ending from *-i[te] to *ь[te] in certain verb-classes (убей налей мой готовьте etc.) - indications are that this happened before the jer-shift, otherwises there's no motivation from the rest of the paradigm to give /e,o/ here; they have to be purely phonologically regular strong-jers
+ -> I will have to try both *ь and *-i as the vowel in those imperative endings
 
 
 --the restoration of what was word-initial LCS *ě (before j-prothesis) in non-OCS in words like *jěsti is unetymological and, given its retention in nouns like язва, must be due to analogy with prefixed forms. Thus we can't easily detect it unless the TOROT lemmas already include this replacement (TOROT seems to have both, e.g. ясти and ѣсти, but I doubt it's consistent).

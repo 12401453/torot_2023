@@ -1,11 +1,11 @@
 #include "LcsFlecterJerProj.h"
 
 const std::unordered_map<int, inner_map> LcsFlecter::m_noun_endings = {
-    #include "data/noun_inflections.txt"
+    #include "data/noun_inflections_CSR.txt"
 };
 
 const std::unordered_map<int, inner_map> LcsFlecter::m_verb_endings = {
-    #include "data/verb_inflections.txt"
+    #include "data/verb_inflections_CSR.txt"
 };
 
 const std::unordered_map<std::string, int> LcsFlecter::m_conj_type_map {

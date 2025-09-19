@@ -2271,7 +2271,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 възводити|възводити|V-|vъzvoditi|||||||40|1||||||||orv
 овогда||Df|ovogъda||||||||0||||||||
 вънъ|вънъ|R-|vъnъ||||||||0||||||||orv
-прѣкрьстити|прѣкрьстити|V-|perkrьstiti|||||||40|1|12|||essja 13 p.76 says this was borrowed from the OHG '(или гот.?)' word for Christ (e.g. Otfrid 'Krist'). ||||chu
+прѣкрьстити|перекрьстити|V-|perkrьstiti|||||||40|1|12|||essja 13 p.76 says this was borrowed from the OHG '(или гот.?)' word for Christ (e.g. Otfrid 'Krist'). ||||orv
 благовѣрьнъ|благовѣрьныи|A-|bolgověrьnъ|||||||adj_hard|2||||||||orv
 нѫждьнъ|нужьныи|A-|nǫђьnъ|nǫdjьnъ|||nuђьnъ|||adj_hard|2||||||||chu
 племѧ|племя|Nb|plemę|||||||nt_N|2||||||||orv
@@ -4686,7 +4686,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 |кудесьникъ|Nb|kudesьnikъ|||||||masc_o|2||||||||
 |дальнии|A-|daĺьńь|daljьnjь||||||adj_soft|2||||||||
 |мясьныи|A-|męsьnъ|||||||adj_hard|2||||||||
-|платьно|Nb|poltьno||||||||0||||||||
+|платьно|Nb|poltьno|||||||nt_o|2||||||||
 |пересъмотрѣти|V-|persъmotriti||||persъmotrěti|||40|1||||||||
 |испъртити|V-|jьspr̥titi|||||||40|1||||||||
 |попъртити|V-|popr̥titi|||||||40|1||||||||
@@ -4726,7 +4726,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 |божьница|Nb|božьnika|||božьnica||||fem_a_PV3|2||||||||
 |съкопити|V-|sъkopiti|||||||40|1||||||||
 |письць|Nb|pisьkь||pisьkъ|pisьcь||||masc_o_PV3|2||||||||
-|подъняти|V-|podъnęti||||podъjęti|||12|1||||||||
+|подъняти|V-|podъnęti||||podъjęti|podъnьm|podъnьm|12|1||||||||
 |бубънъ|Nb|bǫbьnъ|||||||masc_o|2||||||||
 |полъдьнь|Nb|polъdьnь|||||||den|2||||||||
 |недѣльныи|A-|neděĺьnъ|neděljьnъ||||||adj_hard|2||||||||
@@ -4834,7 +4834,6 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 |подълиньныи|A-|podьlinьnъ|||||||adj_hard|2||||Vasmer thinks this contains the *dьl- root of *dьlina, so the TOROT jer is probably wrong||||
 |златовьрхыи|A-|zoltovŕ̥xъ|||||||adj_hard|2||||||||
 |добровольно|Df|dobrovoĺьno|dobrovoljьno|||||||0||||||||
-|полотьно|Nb|poltьno|||||||nt_o|2||||||||
 |булатьныи|A-|bulatьnъ|||||||adj_hard|2|74|||||Persian فولاد via some form of Turkic||
 |чудьно|Df|čudьno||||||||0||||||||
 |близъкыи|A-|blizъkъ|||||||adj_hard|2||||||||
