@@ -4,7 +4,7 @@ Chu.Sl. doublets (щ, metathesis etc.) will need to be produced for everything, 
     - this might be an unsolvable problem if too many words contain contradictory combinations of Ch.Sl. and native features, and trying every possible combination for each word could quickly spiral
 
 Reduction of imperative-ending from *-i[te] to *ь[te] in certain verb-classes (убей налей мой готовьте etc.) - indications are that this happened before the jer-shift, otherwises there's no motivation from the rest of the paradigm to give /e,o/ here; they have to be purely phonologically regular strong-jers
- -> I will have to try both *ь and *-i as the vowel in those imperative endings
+class 17 2nd, 3rd imperatives need to have their endings shortened before application of the Jer Shift
 
 
 --the restoration of what was word-initial LCS *ě (before j-prothesis) in non-OCS in words like *jěsti is unetymological and, given its retention in nouns like язва, must be due to analogy with prefixed forms. Thus we can't easily detect it unless the TOROT lemmas already include this replacement (TOROT seems to have both, e.g. ясти and ѣсти, but I doubt it's consistent).
@@ -15,3 +15,9 @@ Reduction of imperative-ending from *-i[te] to *ь[te] in certain verb-classes (
 I can't apply PV2 to only stems because certain reflexes of PV3 are actually converted by the PV2 regex (e.g., like > lice), because my grammar basically views these as a morphological-replacement of the -o desinence with -e (seeing as post-PV3 there strictly speaking was no ban on palatal + back-vowel)
 
 Certain /i/ reflexes of jat', i.e. сидеть, двести (dissimilation?)
+
+Will need to reduce *ejǫ/*ojǫ in the Isg. fem. nominals
+
+Some paradigms like azъ and ty in my system will correspond to multiple Wiktionary lemmas (though I think pronouns are not properly scraped from wiktionary anyway)
+
+The modern Russian ja-stem Isg. is -ой under stress and -ей otherwise, which may represent a spread of *ojь everywhere seeing as the unstressed pronunciation of that would in most places be identical to *ejь

@@ -9,7 +9,7 @@ const std::unordered_map<int, inner_map> LcsFlecter::m_verb_endings = {
 };
 
 const std::unordered_map<std::string, int> LcsFlecter::m_conj_type_map {
-    #include "data/conj_type_map.txt"
+    #include "data/conj_type_map_CSR.txt"
 };
 
 void LcsFlecter::setConjType(std::string conj_type) {
