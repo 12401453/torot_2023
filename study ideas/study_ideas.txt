@@ -37,3 +37,5 @@ Why does OCS show PV2 after *sk in words like ӣю̄деӣстѣӣ, ӣц
 Need to find some explanation of расоути - расъпе, (Psal. Sin. расоушѩ кості), because so far I've not found it in bastard Koch's book
 
 Why do l-participles of nasal-stems have nasal-vowels instead of just i.e. požьnlъ, načьnlъ? Was /nl, ml/ disallowed until metathesis reintroduced it in e.g. mlěti? (my autoreconstructor once )
+
+Is the *-tъ extension in some aorist 2nd and 3rd singular forms ACTUALLY the same *-tQ ending as in the present tense verbs? Uspenskij Sbornik has бъість mostly but otherwise usually spells those as -тъ, including поꙗтъ which is already a very long way from any OCS model

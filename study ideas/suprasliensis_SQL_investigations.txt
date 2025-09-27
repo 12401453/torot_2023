@@ -1,0 +1,32 @@
+jepiskupъ | episkupъ
+jevanǵelьje | evanǵelьje
+jeǵüpьtъ | eǵüpьtъ
+jelisavetь | elisavetь
+jevanǵelistъ | evanǵelistъ
+jelisejь | elisejь
+jemъmausъ | emъmausъ
+etijopьskъ | etijopьskъ
+          | elinъ 7
+          | eǵüpьtьskъ
+          | elinьskъ 7
+          | episkupьstvo
+          | evrejьskъ 1
+
+episkupъ, evanǵelьje, eǵüpьtъ, elisavetь, elinъ, evanǵelistъ, eǵüpьtьskъ, elinьskъ, episkupьstvo, evrejьskъ, elisejь, emъmausъ, etijopьskъ
+
+
+No Glagolitic text makes any effort to distinguish /je/ (after vowels or word-initially) from post-consonantal /e/, writing both with <>, unlike the situation with /ję/ vs /ę/, where in Zogr. and Mar. and partially in Assem. full front-nasal <> digraph is reserved for /ję/, while just the second 'nasalising component' <> is used for post-consontal /ę/. Glagolitic evidence alone would suggest that foreign borrowing with word-initial *e- were simply adapted to whatever the reflex of native LCS *je was, but Suprasliensis, with its jotated <> letter, does make an extremely consistent distinction between foreign borrowings and native Slavic words
+
+98 + 21 + 18 + 1 + 1 + 2 + 1 + 14 + 1
+
+select count(*) from corpus where (lemma_id = 305 OR lemma_id = 638 OR lemma_id = 961 OR lemma_id = 1163 OR lemma_id = 1269 OR lemma_id = 1527 OR lemma_id = 1772 OR lemma_id = 1787 OR lemma_id = 2504 OR lemma_id = 2679 OR lemma_id = 2939 OR lemma_id = 3183 OR lemma_id = 3238 OR lemma_id = 3330 OR lemma_id = 4271) and tokno < 189930 and tokno > 90735;
+
+select * from corpus where (lemma_id = 305 OR lemma_id = 638 OR lemma_id = 961 OR lemma_id = 1163 OR lemma_id = 1269 OR lemma_id = 1527 OR lemma_id = 1772 OR lemma_id = 1787 OR lemma_id = 2504 OR lemma_id = 2679 OR lemma_id = 2939 OR lemma_id = 3183 OR lemma_id = 3238 OR lemma_id = 3330 OR lemma_id = 4271) and tokno < 189930 and tokno > 90735;
+
+select * from corpus where (lemma_id != 305 AND lemma_id != 638 AND lemma_id != 961 AND lemma_id != 1163 AND lemma_id != 1269 AND lemma_id != 1527 AND lemma_id != 1772 AND lemma_id != 1787 AND lemma_id != 2504 AND lemma_id != 2679 AND lemma_id != 2939 AND lemma_id != 3183 AND lemma_id != 3238 AND lemma_id != 3330 AND lemma_id != 4271) and tokno < 189930 and tokno > 90735;
+
+select * from corpus where (lemma_id != 305 AND lemma_id != 638 AND lemma_id != 961 AND lemma_id != 1163 AND lemma_id != 1269 AND lemma_id != 1527 AND lemma_id != 1772 AND lemma_id != 1787 AND lemma_id != 2504 AND lemma_id != 2679 AND lemma_id != 2939 AND lemma_id != 3183 AND lemma_id != 3238 AND lemma_id != 3330 AND lemma_id != 4271) and tokno < 189930 and tokno > 90735 AND chu_word_torot LIKE 'е%' and autoreconstructed_lcs != '' AND autoreconstructed_lcs != '????';
+
+select * from corpus where (lemma_id != 305 AND lemma_id != 638 AND lemma_id != 961 AND lemma_id != 1163 AND lemma_id != 1269 AND lemma_id != 1527 AND lemma_id != 1772 AND lemma_id != 1787 AND lemma_id != 2504 AND lemma_id != 2679 AND lemma_id != 2939 AND lemma_id != 3183 AND lemma_id != 3238 AND lemma_id != 3330 AND lemma_id != 4271) and tokno < 189930 and tokno > 90735 AND chu_word_torot LIKE 'е%' and autoreconstructed_lcs LIKE 'je%';
+
+select * from corpus where (lemma_id != 305 AND lemma_id != 638 AND lemma_id != 961 AND lemma_id != 1163 AND lemma_id != 1269 AND lemma_id != 1527 AND lemma_id != 1772 AND lemma_id != 1787 AND lemma_id != 2504 AND lemma_id != 2679 AND lemma_id != 2939 AND lemma_id != 3183 AND lemma_id != 3238 AND lemma_id != 3330 AND lemma_id != 4271) and tokno < 189930 and tokno > 90735 AND chu_word_torot NOT LIKE 'ѥ%' AND chu_word_torot NOT LIKE 'Е%' AND chu_word_torot NOT LIKE 'е%' and autoreconstructed_lcs LIKE 'je%';

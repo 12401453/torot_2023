@@ -130,3 +130,5 @@ Psal. Sin. Подрѣжаніе і порѫганіѣ сѫштімъ окръс�
 Mar. etc. негасѧ is lemmatised as an adjective, but it surely needs to be a verb негасати; that is what I've marked it as in the reconstruction (ASK permission to relemmatise)
 
 Class 54 variants of the "iskati" verbs (otъmetati etc.) should possibly be added as separate lemmas
+
+All the occurrences of verbs *jьmati *jemĺǫ vs *jьměti *jьmamь in Supr. need to be checked and corrected because this is a huge source of errors
