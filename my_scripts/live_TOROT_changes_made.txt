@@ -45,3 +45,5 @@ Changed ручьи in Igor's Campaign from fem. to masc.
 Changed Usp. Sborn. начьнꙗше to načęti (from načinati)
 
 Added нарицати#2 for the class 52 (or 51, we can't tell) version, e.g. Supr. наричѫ, and corrected the incorrect lemmatisations of these forms as нарешти
+
+Changed Psalm 136 тоуждеї from fem. loc. weak to strong
