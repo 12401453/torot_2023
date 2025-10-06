@@ -21,3 +21,8 @@ Will need to reduce *ejǫ/*ojǫ in the Isg. fem. nominals
 Some paradigms like azъ and ty in my system will correspond to multiple Wiktionary lemmas (though I think pronouns are not properly scraped from wiktionary anyway)
 
 The modern Russian ja-stem Isg. is -ой under stress and -ей otherwise, which may represent a spread of *ojь everywhere seeing as the unstressed pronunciation of that would in most places be identical to *ejь
+
+Will need to add two separate alternative desinence endings for i-stems: one that become masc jo-stems and one that converts masc to fem_i stems.
+The plurals are the same for both, so in the new 143{} map I have put Gsg, Dsg. and Lsg. with the CSR jo-stem endings in both the masc. and fem. slots (to cope with ones that change gender).
+~ used as marker of softness in preceding consonant
+
