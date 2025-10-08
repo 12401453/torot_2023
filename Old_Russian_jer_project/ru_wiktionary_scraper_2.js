@@ -3,24 +3,35 @@
 const fs = require('node:fs');
 
 const https = require('https');
+const http = require('http');
+
+const axios = require('axios');
+//const {https} = require('follow-redirects');
 
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
+const {URL} = require('url');
 
-// const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%BC%D1%8B&pageuntil=%D0%B0%D0%B1%D0%B1%D1%80%D0%B5%D0%B2%D0%B8%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C#mw-pages";
+const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%BC%D1%8B&pageuntil=%D0%B0%D0%B1%D0%B1%D1%80%D0%B5%D0%B2%D0%B8%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C#mw-pages";
 
-const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%BC%D1%8B&pagefrom=%D0%BA%D1%80%D0%B0%D1%85%D0%BC%D0%B0%D0%BB%D0%B8%D1%82%D1%8C#mw-pages"; //from крахмалить
+// const local_url = "http://localhost:6100/texts";
+
+// http.get(local_url, (res) => {
+
+// });
+
+//const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%BC%D1%8B&pagefrom=%D0%BA%D1%80%D0%B0%D1%85%D0%BC%D0%B0%D0%BB%D0%B8%D1%82%D1%8C#mw-pages"; //from крахмалить
 
 const whole_dict_json = new Array();
 let failure_csv = "";
 
-const punct_shit = /[-\s,—\)\()△]+/;
+const punct_shit = /[-\s,—\)\()△\.]+/;
 
 async function startScraping() {  
     let next_page_url = start_url;
     let page_links;
-    let page_count = 571;
-    while(next_page_url != "LAST PAGE") {
+    let page_count = 0;
+    while(next_page_url != "LAST PAGE"){
         const contents_page = await domifyPage(next_page_url);
         const links_block = contents_page.getElementById("mw-pages");
         const entry_links = new Array();
@@ -59,11 +70,11 @@ async function startScraping() {
         page_count++;
 
         if(page_count % 10 === 0) {
-            fs.writeFileSync(`ru_wiktionary_data/russian_lemmas_pg${String(page_count - 9).padStart(5, "0")}-${String(page_count).padStart(5, "0")}.json`, JSON.stringify(unordered_words_arr, null, 2));
+            fs.writeFileSync(`ru_wiktionary_data_2/russian_lemmas_pg${String(page_count - 9).padStart(5, "0")}-${String(page_count).padStart(5, "0")}.json`, JSON.stringify(unordered_words_arr, null, 2));
             unordered_words_arr.length = 0;
 
 
-            fs.appendFileSync("failed_scrapes.csv", failure_csv);
+            fs.appendFileSync("failed_scrapes_2.csv", failure_csv);
             failure_csv = "";
         }
     }
@@ -85,12 +96,19 @@ async function scrapeURL(url, entry_name) {
     scrapeEntry(entry_page, entry_name);
 }
 
+const brave_ua = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36";
+const curl_ua = "curl/8.15.0";
+
 async function getHTML(url) {
-    return new Promise((resolve, reject) => {
-        const request = https.get(url, response => {
+    const parsed_url = new URL(url);
+    /*return new Promise((resolve, reject) => {
+        const request = https.get({protocol:parsed_url.protocol, hostname:parsed_url.hostname, path:parsed_url.pathname, headers:{"User-Agent" : curl_ua}}, response => {
+            
             
             if(response.statusCode !== 200) {
+                //console.log(url);
                 reject(new Error(`https.get() did not return status-code 200, but ${response.statusCode}`));
+                console.log(this.headers);
             }
             
             response.setEncoding('utf-8');
@@ -105,7 +123,17 @@ async function getHTML(url) {
         });
 
         request.on('error', e => reject(e));
-    });
+    });*/
+
+
+        try {
+            const request = await axios.get(url);
+            return request.data;
+        }
+        catch(e) {
+            throw e;
+        }
+
 }
 
 async function domifyPage(url, retries = 500) {
@@ -116,7 +144,7 @@ async function domifyPage(url, retries = 500) {
         }
         catch (e) {
             if(/*e.code == "ECONNRESET" && */i < retries - 1) {
-                console.log(e.message,`retry attempt no. ${i + 2}...`);
+                console.log(e.code,`retry attempt no. ${i + 2}...`);
                 await sleep(500 + Math.floor(Math.random()*1000));
                 continue;
             }
@@ -204,9 +232,20 @@ const getInflectionType = (tbody) => {
     const first_cell = tbody.querySelector("th");
     const table_rows = tbody.getElementsByTagName("tr");
 
-    const row1_cell2_text = normaliseString(table_rows[0].getElementsByTagName("th")[1].textContent);
-    if(first_cell.textContent.trim() == "" && (row1_cell2_text == "наст." || row1_cell2_text == "будущ." || row1_cell2_text == "наст./будущ.")) {
-        return "verb";
+    //wiktionary seems to have changed so that now on most verbs there is only one <th> element here, so `table_rows[0].getElementsByTagName("th")[1]` is undefined
+    const first_row_header_cells = table_rows[0].getElementsByTagName("th");
+
+    if(first_row_header_cells.length > 1) {
+        const row1_cell2_text = normaliseString(table_rows[0].getElementsByTagName("th")[1].textContent);
+        if(first_cell.textContent.trim() == "" && (row1_cell2_text == "наст." || row1_cell2_text == "будущ." || row1_cell2_text == "наст./будущ.")) {
+            return "verb";
+        }
+    }
+    else if(first_row_header_cells.length == 1) {
+        const first_row_header_text = normaliseString(first_cell.textContent);
+        if(first_row_header_text == "Будущее время" || first_row_header_text == "Настоящее время" || first_row_header_text == "Настоящее/будущее время") {
+            return "verb";
+        }
     }
     
     if(first_cell.textContent.trim() == "падеж") {
