@@ -5,15 +5,7 @@ There are two ⱖ in Suprasliensis, and if you look at whatsisname's version he 
     1.) тоⱘ [ⱖ] for the first occurence, but the manuscript has ѩ (and admittedly jotated front-nasal is rare in Supr. because usually that distinction is carried by using that weird front-nasal for the non-jotated version) with a possible ⱖ underneath it which has been corrected
     2.) глѫбокъⱖ for the second one, yet when you look at the manuscript there's no hint of the Glagolitic letter and it instead just has глѫбокъѩ (which could easily just be the standard letter for /y/ and the standard letter for Supr-jotated-front-nasal but with a horizontal line connecting them that makes it look like ъ plus another Supr-atypical ѩ occurence).
 
-Why is there a fully-annotated sentence in Psal. in modern Russian from the 1800s? Get rid
-
 As came to light from your TnT-normalised ps138.txt file, /y/ in Psal. seems to have been spelt with the two Cyrillic letters <ъі>, whereas normally you render this digraph with the single Cyrillic letter <ꙑ>. I actually always render this letter with the two Cyrillic letters as you seem to have done in Psal., because it is more accurate to the digraphic nature of the underlying Glagolitic and it makes things like normalising the <ъи> spellings of /y/ in Kiev. easier, but you generally do the opposite so this messes up your normalising routines. (Conversely, I used to change all digraphic <оу> into the single letter to more accureately reflect the clearly fused Glagolitic monograph, but I think the way you do it, changing them all to <оу>, is better because of issues around ѵ and single-use of <у>)
-
-Needless second чародѣи that also only occurs once in Supr.
-Your съписати#1 lemma seems to me not to be needed ontop of съпьсати, because yes one infinitive with a lengthened-stem does occur (unless this has just been badly annotated and was not motivated by a perfective-aspect reading), but that is just an expectable deviance. съписати#2 on the other hand is a straight secondary-imperfective class 5.4 and so does have a reason to exist
-
-Needless second срѣда that only occurs once in Supr.
-In the master-spreadsheet there's привести#1 привести#2 привести, the latter of which I added myself, and it appears that no-where in the corpus does the #1 lemma occur, suggesting you more recently got rid of it in favour of the plain version. the #2 variant is for the stem ending in -vez instead of -ved, so that's allowed.
 
 
 You can't have the word негасимъꙇмь lemmatised as гасити; you either separate the не or lemmatise it as негасити
@@ -23,14 +15,10 @@ There's a pipe-character in the "presentation-before" field of Psal., which I wa
 
 For some reason there is an "￼ " character in the "presentation-after" field of a token in chrabr.xml (I read on the Syntacticus documentation Unicode code-points from the Private Use Area can be used to encode formatting information, so maybe it's that, but I doubt it)
 
-Zographensis is still full of Latin <x>
 
-Psal. needs its spidery Glagolitic <х> adding back
 
 There's no subtitle <title> element in the pskov.xml or luk-koloc.xml, which fucks up my subtitle-extracting script
 
-
-Psalm 140 ОУслъішѩтъ сѩ г҃лі моі ѣко възмогѫ. , the last word is tagged as 3rdpl indicative, but isnt it both formally and syntactically a subjunctive / optative?
 
 An incorrect Nb благъ lemma occurs once in Suprs. for what should be the adjective
 An incorrect A- нечьсть occurs once in Supr. and twice in Zogr.; in Supr. it is actually the noun нечьсть and in Zogr. it should be the adj нечистъ

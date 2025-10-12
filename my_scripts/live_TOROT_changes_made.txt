@@ -47,3 +47,9 @@ Changed Usp. Sborn. начьнꙗше to načęti (from načinati)
 Added нарицати#2 for the class 52 (or 51, we can't tell) version, e.g. Supr. наричѫ, and corrected the incorrect lemmatisations of these forms as нарешти
 
 Changed Psalm 136 тоуждеї from fem. loc. weak to strong
+
+Psalm 140 ОУслъішѩтъ сѩ г҃лі моі ѣко възмогѫ. , the last word is tagged as 3rdpl indicative, so changed to 3rd pl. aorist because the Septuagint has ἠδυνήθησαν which is a passive-formed aorist of δυναμαι
+
+Changed Zogr. Luke 7:27 сⸯпано lemmatisation to *pьsati, because Mar. has писано here and the tendency for scribes to mix up the /p/ and the /s/ in this word in Zogr. is noted by Meillet (I think)
+
+Changed the съписати occurrences but now there are still #1 and #2 variants, just #1 is empty and #2 should be changed to plain съписати (but not sure how)

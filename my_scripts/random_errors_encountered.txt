@@ -15,7 +15,6 @@ There's a third родити lemma that only occurs in Supr. and seems to mean t
 Needless second чародѣи that also only occurs once in Supr.
 Your съписати#1 lemma seems to me not to be needed ontop of съпьсати, because yes one infinitive with a lengthened-stem does occur (unless this has just been badly annotated and was not motivated by a perfective-aspect reading), but that is just an expectable deviance. съписати#2 on the other hand is a straight secondary-imperfective class 5.4 and so does have a reason to exist
 въстѧѕати#1 and въстѧѕати#2 are both used for perf. 5.2 and imperf. 5.4 forms of this verb in Supr., making a mockery of your differentiation of them
-Needless second срѣда that only occurs once in Supr.
 In the master-spreadsheet there's привести#1 привести#2 привести, the latter of which I added myself, and it appears that no-where in the corpus does the #1 lemma occur, suggesting you more recently got rid of it in favour of the plain version. the #2 variant is for the stem ending in -vez instead of -ved, so that's allowed.
 
 Of the lemmas I had add to differentiate, you've only added 2 (dojiti and urězati); the full list is (I gave the news ones lemma_ids starting from 750000):
@@ -64,8 +63,6 @@ There's no subtitle <title> element in the pskov.xml or luk-koloc.xml, which fuc
 Loads of long-adjectives in your Kiev Folia are marked as strong
 
 камꙑ is marked as neuter in a few places which means it gets reconstructed with no endings, because it should be masculine
-
-Psalm 140 ОУслъішѩтъ сѩ г҃лі моі ѣко възмогѫ. , the last word is tagged as 3rdpl indicative, but isnt it both formally and syntactically a subjunctive / optative?
 
 An incorrect Nb благъ lemma occurs once in Suprs. for what should be the adjective
 An incorrect A- нечьсть occurs once in Supr. and twice in Zogr.; in Supr. it is actually the noun нечьсть and in Zogr. it should be the adj нечистъ

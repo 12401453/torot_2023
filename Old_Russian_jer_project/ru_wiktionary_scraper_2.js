@@ -12,7 +12,9 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const {URL} = require('url');
 
-const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%BC%D1%8B&pageuntil=%D0%B0%D0%B1%D0%B1%D1%80%D0%B5%D0%B2%D0%B8%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C#mw-pages";
+//const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%BC%D1%8B&pageuntil=%D0%B0%D0%B1%D0%B1%D1%80%D0%B5%D0%B2%D0%B8%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C#mw-pages";
+
+const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%BC%D1%8B&filefrom=%D0%AF%D0%BA%D0%B8%D0%BC%D0%B8%D1%88%D0%B8%D0%BD&subcatfrom=%D0%AF%D0%BA%D0%B8%D0%BC%D0%B8%D1%88%D0%B8%D0%BD&pageuntil=%D0%AF%D0%BC%D0%B1%D1%8D%D0%B9%D1%8F%D1%85%D0%B0#mw-pages";
 
 // const local_url = "http://localhost:6100/texts";
 
@@ -30,7 +32,7 @@ const punct_shit = /[-\s,—\)\()△\.]+/;
 async function startScraping() {  
     let next_page_url = start_url;
     let page_links;
-    let page_count = 0;
+    let page_count = 1520;
     while(next_page_url != "LAST PAGE"){
         const contents_page = await domifyPage(next_page_url);
         const links_block = contents_page.getElementById("mw-pages");
@@ -78,8 +80,8 @@ async function startScraping() {
             failure_csv = "";
         }
     }
-    //fs.writeFileSync("russian_lemmas.json", JSON.stringify(unordered_words_arr, null, 2));
-    //fs.writeFileSync("failed_scrapes.csv", failure_csv);
+    fs.writeFileSync(`ru_wiktionary_data_2/russian_lemmas_pg1521-${String(page_count).padStart(5, "0")}.json`, JSON.stringify(unordered_words_arr, null, 2));
+    fs.appendFileSync("failed_scrapes_2.csv", failure_csv);
 }
 
 async function processLemmas(entry_links) {
