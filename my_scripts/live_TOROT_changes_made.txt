@@ -53,3 +53,5 @@ Psalm 140 ОУслъішѩтъ сѩ г҃лі моі ѣко възмогѫ. , the
 Changed Zogr. Luke 7:27 сⸯпано lemmatisation to *pьsati, because Mar. has писано here and the tendency for scribes to mix up the /p/ and the /s/ in this word in Zogr. is noted by Meillet (I think)
 
 Changed the съписати occurrences but now there are still #1 and #2 variants, just #1 is empty and #2 should be changed to plain съписати (but not sure how)
+
+Psalm 58 Помощънікъ fixed lemmatisation (was помощь)
