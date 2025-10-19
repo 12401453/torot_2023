@@ -1,3 +1,7 @@
+Perf/Imperf:
+    съзьрѣти
+
+
 
 коньчьныи in RusPrav looks soft
 
@@ -90,8 +94,6 @@ Supr Sabini 13 March живетъ lemmatised as живити
 истьлѣти is used for both class 32 истлѣѥть (1X) and class 40 истьлити (3X ист[ьъ]ли)
 
 The back-nasal in the PRAP 180684|движѫште|двіжѫште|-pppamn-si|4364|253926|| ||||| suggests that this should be from the class 5.2 lemma двиѕати rather than the class 3.1 движати (cf. 73895|двіжѩштіѣ|двіжѧштіѣ|-pppann-wi|4364|307194|| |||||)
-
-190051|възꙑваю|възъіваю|1spia----i|4049|310072|| ||||| ? check mss.
 
 All of the words lemmatised under нѫждати are just imperfects of нѫдити
 
