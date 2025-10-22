@@ -61,7 +61,6 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 нашь|нашь|Ps|našь|pron_soft
 ѥгда|егда|Dq|jegъda|
 отъвѣщати|отъвѣчати|V-|otъvěћǢti|54
-приѩти|прияти|V-|prijęti|12
 оученикъ|ученикъ|Nb|učenikъ|masc_o
 имѧ|имя|Nb|jьmę|nt_N
 вѣдѣти|вѣдѣти|V-|věděti|wote
@@ -335,7 +334,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 гнѣвъ|гнѣвъ|Nb|gněvъ|masc_o
 давꙑдъ|давыдъ|Ne|davydъ|masc_o_u
 съто|съто|Ma|sъto|nt_o
-диꙗволъ|дияволъ|Nb|dьjǢvolъ|masc_o
+диꙗволъ|дияволъ|Nb|dijǢvolъ|masc_o
 познати|познати|V-|poznati|54
 поустꙑни|пустыни|Nb|pustyńi|fem_ji
 воѥвода|воевода|Nb|vojevoda|masc_a
@@ -583,7 +582,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 кꙑи|кыи|Px|kъjь|kъjь
 славьнъ|славьныи|A-|slavьnъ|adj_hard
 съподобити|съподобити|V-|sъpodobiti|40
-евангелиѥ|евангелие|Nb|jevanǵelьje|nt_jo
+евангелиѥ|евангелие|Nb|evanǵelьje|nt_jo
 прѣстолъ|прѣстолъ|Nb|perstolъ|masc_o
 николиже|николиже|Df|nikoliže|
 страдати|страдати|V-|stradati|52
@@ -1116,7 +1115,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 прѣславьнъ|прѣславьныи|A-|perslavьnъ|adj_hard
 оуморити|уморити|V-|umoriti|40
 вьсꙗчьскъ|вьсячьскыи|A-|vьxačьskъ|adj_hard
-елинъ|елинъ|Nb|jelinъ|masc_o
+елинъ|елинъ|Nb|elinъ|masc_o
 насадити|насадити|V-|nasaditi|40
 очищениѥ|очищение|Nb|očišћenьje|nt_jo
 отънѫдь|отънудь|Df|otъnǫdь|
@@ -1224,7 +1223,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 сапогъ|сапогъ|Nb|sapogъ|masc_o
 прахъ|порохъ|Nb|porxъ|masc_o
 класъ|класъ|Nb|kolsъ|masc_o
-елеоньскъ|елеоньскыи|A-|jeleonьskъ|adj_hard
+елеоньскъ|елеоньскыи|A-|eleonьskъ|adj_hard
 съсати|съсати|V-|sъsati|51
 людьскъ|людьскыи|A-|ĺudьskъ|adj_hard
 величати|величати|V-|veličǢti|54
@@ -1322,7 +1321,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 ꙗдь|ядь|Nb|jǢdь|fem_i
 съврьшати|съвьршати|V-|sъvŕ̥šǢti|54
 послѣжде|послѣже|Df|poslěђe|
-евангелистъ|евангелистъ|Nb|jevanǵelistъ|masc_o
+евангелистъ|евангелистъ|Nb|evanǵelistъ|masc_o
 иноплеменьникъ|иноплеменьникъ|Nb|jьnoplemenьnikъ|masc_o
 съблазнъ|съблазнъ|Nb|sъblaznъ|masc_o
 блѧдь|блядь|Nb|blędь|fem_i
@@ -1502,7 +1501,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 коуръ|куръ|Nb|kurъ|masc_o
 чрьноризьць|чьрноризьць|Nb|čŕ̥norizьkь|masc_o_PV3
 приводити|приводити|V-|privoditi|40
-елиньскъ|елиньскыи|A-|jelinьskъ|adj_hard
+елиньскъ|елиньскыи|A-|elinьskъ|adj_hard
 даровати|даровати|V-|darovati|61
 съпаситель|съпаситель|Nb|sъpasiteĺь|masc_tel
 прибѣгати|прибѣгати|V-|priběgati|54
@@ -1705,7 +1704,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 свѣтьло|свѣтьло|Df|světьlo|
 послѣдовати|послѣдовати|V-|poslědovati|61
 причисти|причисти|V-|pričisti|ьt
-тьмиꙗнъ|тьмиянъ|Nb|tьmьjǢnъ|masc_o
+тьмиꙗнъ|тьмиянъ|Nb|tьmijǢnъ|masc_o
 въцѣсарити|въцѣсарити|V-|vъkěsariti|40
 осѣнити|осѣнити|V-|osěniti|40
 владꙑчьство|владычьство|Nb|voldyčьstvo|nt_o
@@ -2402,7 +2401,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 измѣнѥниѥ|измѣнение|Nb|jьzměńenьje|nt_jo
 чьтоже|чьтоже|Px|čьtože|čьtože
 оумилѥниѥ|умиление|Nb|umiĺenьje|nt_jo
-манасии|манасии|Ne|manasьji|masc_ji
+манасии|манасии|Ne|manasiji|masc_ji
 оунꙑти|уныти|V-|unyti|18
 обогатити|обогатити|V-|obogatiti|40
 овьнъ|овьнъ|Nb|ovьnъ|masc_o
@@ -2414,7 +2413,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 моуха|муха|Nb|muxa|fem_a
 прѫгъ|пругъ|Nb|prǫgъ|masc_o
 рьвьниѥ|рьвьние|Nb|rьvьnьje|nt_jo
-веньꙗминъ|венияминъ|Ne|venьjǢminъ|masc_o
+веньꙗминъ|венияминъ|Ne|venijǢminъ|masc_o
 сльзьнъ|сльзьныи|A-|slьzьnъ|adj_hard
 пѧтъкъ|пятъкъ|Nb|pętъkъ|masc_o
 прославлꙗти|прославляти|V-|proslavĺǢti|54
@@ -2696,7 +2695,6 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 съгнити|съгнити|V-|sъgniti|32
 съгрѣти|съгрѣти|V-|sъgrěti|32
 съвитъкъ|съвитъкъ|Nb|sъvitъkъ|masc_o
-приꙗти|прияти|V-|prijǢti|54
 вꙑврѣщи|выврѣщи|V-|vyverћi|14
 потопьнъ|потопьныи|A-|potopьnъ|adj_hard
 маслина|маслина|Nb|maslina|fem_a
@@ -2805,3 +2803,4 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 посꙑпати#2|посыпати|V-|posypati|54
 ѫдолиѥ|удолие|Nb|ǫdolьje|nt_jo
 прорицати#2|прорицати|V-|prorikati|52
+нарицати#2|нарицати|V-|narikati|52
