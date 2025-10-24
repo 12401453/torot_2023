@@ -66,7 +66,7 @@ Loads of long-adjectives in your Kiev Folia are marked as strong
 камꙑ is marked as neuter in a few places which means it gets reconstructed with no endings, because it should be masculine
 
 An incorrect Nb благъ lemma occurs once in Suprs. for what should be the adjective
-An incorrect A- нечьсть occurs once in Supr. and twice in Zogr.; in Supr. it is actually the noun нечьсть and in Zogr. it should be the adj нечистъ
+An incorrect A- нечьсть occurs once in Supr. and twice in Zogr.; in Supr. it is actually the noun нечьстие and in Zogr. it should be the adj нечистъ, and was weak/strong marked for no reason
 вьсꙗко A- once in Zogr. for вьсꙗкъ
 мѫчѣница Nb once in Kiev Missal (misspelt lemma)
 въкоупьнь A- in KF (misspelt)

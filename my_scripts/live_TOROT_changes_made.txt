@@ -55,3 +55,23 @@ Changed Zogr. Luke 7:27 сⸯпано lemmatisation to *pьsati, because Mar. ha
 Changed the съписати occurrences but now there are still #1 and #2 variants, just #1 is empty and #2 should be changed to plain съписати (but not sure how)
 
 Psalm 58 Помощънікъ fixed lemmatisation (was помощь)
+
+вѣчьноѭ and небесьскооѭ adjectives in KF changed to strong
+
+Changed Vita Methodii ч4стьноѥ to чьстьноѥ based on the printed edition
+
+Changed Vita Constantini Pалтирь to ѱалтирь based on the printed edition (SLOPPY conversion from the ASCII file)
+
+Changed the division of Psal. 16.12 Ѡбѩсѩ мѩ ѣко левъ готовъ на ловъ:. и ѣко скоуменъ обітаѩ во съкровіштіхъ:- to make the first word a single aor. 3rd pl. rather than a 3sg. plus a reflexive (Septuagine has ὑπέλαβόν)
+
+Split рѫковѩть into 2 lemmas *rǫkojętь and *rǫkovętь
+
+Added оумрьщвлѥниѥ lemma and changed all оумрьщвениѥ occurrences to it, because you can't get a <štv> without an epenthetic /l/, and the fact that the SNSP thinks you can is disgusting
+
+Changed the Vita Methodii 2 вьсꙗкъ occurrence to an adjective (it was a Nb), and in so doing got rid of all occurrences of non-adjective вьсꙗкъ (the noun and two pronoun forms are only in Supr. OLD)
+
+Changed most of the 48 вьсꙗкъ from strong to weak, apart from those in the Vitas that clearly have long-form adjectival endings rather than the single pronominal endings (including gen. sg. въсакои in Constantini, which is clearly innovated from vьxakoję in some way)
+
+Changed everything in Psal. that you lemmatise as стѫпъ to the fem. стопа, since this is what both dicts have and стѫпъ is only in the dict. with a ? mark in a place where it could surely easily be стѫпати
+
+Added a змиинь (*zmьjińь) lemma for Psal. 57 змииню, but this is such an isolated form that it may just be a scribal mistake, but dict lists змиин҄ь as an alternative headword

@@ -20,62 +20,20 @@ There's a pipe-character in the "presentation-before" field of Psal., which I wa
 For some reason there is an "￼ " character in the "presentation-after" field of a token in chrabr.xml (I read on the Syntacticus documentation Unicode code-points from the Private Use Area can be used to encode formatting information, so maybe it's that, but I doubt it)
 
 
-
 There's no subtitle <title> element in the pskov.xml or luk-koloc.xml, which fucks up my subtitle-extracting script
 
 
-An incorrect Nb благъ lemma occurs once in Suprs. for what should be the adjective
-An incorrect A- нечьсть occurs once in Supr. and twice in Zogr.; in Supr. it is actually the noun нечьсть and in Zogr. it should be the adj нечистъ
-вьсꙗко A- once in Zogr. for вьсꙗкъ
-мѫчѣница Nb once in Kiev Missal (misspelt lemma)
-въкоупьнь A- in KF (misspelt)
-съ Pd in KF, Vita Const and Vita Meth (and Supr OLD) seems to be a misspelt duplicate of сь
-
-Kiev Missal такозе wrongly lemmatised as такоже (it is *takoђe)
-
-Vita Method. ч4стьноѥ. It's tagged as чьстьнъ but could conceivably also be частьнъ (given the Ru. Chu. Sl. reflex of front-nasals in this text), but I'm changing it to a ь because this 4 adds an extra character to my base deep-cleaned Chu letter-vocab, which frankly turns my stomach
-Vita Const. Pалтирь with Latin <P> is also f**king up my deep-cleaned base letter-vocab so I have replaced it with пс in my training-data but not in the XML file
-
 Marianus Matt. 21 речета given as 2.dual imperative rather than 2.dual pres. indicative
-Marianus Luke 12 отвръзѫтъ lemmatised as отъврѣщи
-
-Diels p.231 cites Psal. отъпадѣмъ with a conditional meaning "I would fall down", i.e. 1sg imper.,  whereas Sykes tags it as 1pl. imper (due to the meaningless back-jer)
-
-Psal. Sin. all forms of оущедрѩтъ etc. are lemmatised as оущѣдрити with a jat' instead of <е>. For now I can just reconstruct the lemma correctly but this will need to be moved to the new correct lemma
 
 Some Suprasliensis words have what seems underlyingly to be <я> that shows up as jotated-a under the Menaion font, which is very misleading
 
-Psal. 16. Ѡбѩсѩ мѩ ѣко левъ готовъ на ловъ:. и ѣко скоуменъ обітаѩ во съкровіштіхъ:- first word is I think 3rd pl. sigmatic aorist, but you've lemmatised it as 3sg aor + refl.
+Birchbarks 9 инѹю is not marked for strong/wk., so autoreconstructor doesn't stick the article on
 
-2X одеждѫтъ in Psal. lemmatised as the nonsense одеждѫти. Obviously this is just oděti
-The second noun (Nb) lemma ѩдро is wrong because you use it for what the dict. lists as nt. pl. ꙗдра 'arms, embrace'
-
-The lemma оумрьщвениѥ should have an epenthetic ĺ in it since it transparently the dejotated verbal-noun of *umŕ̥stviti. The dict. here is retarded since it records the same incorrect form but gives the Russian translation умерщвление that shows the original epenthetic ĺ.
-
-Putting aside the nonsense compromise lemma-form you've given рѫковѩть, this really should be split into 2 lemmas *rǫkojętь and *rǫkovętь, because they are clearly 2 possibilities of consonant-prothesis depending on whether the rounded -o of the first part or the fronted ę- of the second part was considered the more important in occasioning the prothesis. For now I have it as *rǫkovętь because spellings with <в> are more common
-Ditto for съвѫзъ
-
-Psal. 3 бл҃гословещвенье is wrongly lemmatised as *bolgoslovešћenьje when clearly it should be *bolgoslovešћvĺenьje (which is also in the dict.)
-
-Many instances of vьxakъ are marked as weak (which is nonsensical since this is a pronominal not an adjective), esp. in the ORV corpus, and this makes my autoreconstructor stick an article onto them (possibly my autoreconstruction logic is flawed here but still marking them as weak is not justified and not consistent). E.g. Birchbarks 9 инѹю is not marked for strong/wk., so autoreconstructor doesn't stick the article on
+Many вьсакъ marked as weak still in ORV (though here the long-adjectives get pronominal endings so it's hard to know what to do)
 
 Inconsistent ORV lemmatisation of pronominals, where sometimes they follow adjectives in being listed in long-form (i.e. +jь) but othertimes not, including the doublets сь and сии
 
 Within the Primary Chronicle some forms of *polmy are marked as nt. and others as masc.; I have this recorded as a masc_N stem (though clearly it moved to neuter in Russian at some point), so the neuter forms get no endings
-
-Supr. непригвожденъ lemmatised as an adjective непригвождьнъ when it's clearly the PPP of *prigvodziti, and thus *neprigvožђenъ
-
-Supr. Paul and Juliana о͑тъ поганъ покаяти lemmatised as *poganyńi
-
-вьнегда is (according to dict. and my reconstruction *vъn+jegъda) a twice-wrong lemmatisation; the correct lemma is also in there -> get rid
-сръдъце bad lemma
-
-The lemma you have as masc. стѫпъ only occurs once with the nasal in your corpus, and the dict. instead records a fem. стопа, so this whole lemma and its gender-tags need changing
-108108|повиноуѭ̑ is lemmatised as повинѫти when it should be повиновати
-
-Words lemmatised as прильпѣти are a total mess: dict. gives us an additional 3 variants of this word: прильнѫти, прильпати, прилѣпити, and many of the corpus-forms seem to be these instead, e.g. Прільпе is the 3sg aor. of class 21 прильнѫти
-
-form змииню would suggest that the hard-adj lemma змиинъ is being inappropriately used for the jo-stem змиин҄ь
 
 The single оувѧзати lemma contains forms like о̑увꙙзъшꙙ and о̑увꙙꙁошꙙ, which can only come from оувѧзнѫти, and the PPPs must be from the class 5.2 rather than 5.4 version of оувѧзати, so that also needs adding
 
