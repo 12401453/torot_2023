@@ -130,7 +130,7 @@ The single оувѧзати lemma contains forms like о̑увꙙзъшꙙ and �
 
 въздвиѕати is used as the lemma both for class 5.2 and 5.4 variants (вь҆ꙁдвижеши, Вьздвіѕаѩї) and for forms of the lemma въздвигнѫти (въꙁдвиженъ)
 
-Psalm 112 Вьселѣѩї неплодъве въ домъ:. Мр҃е о чѩдѣхъ веселѩште сѩ - all the nominals here are erroneously accusative rather than vocative (and hence get autoreconstructed badly)
+Psalm 112 Вьселѣѩї неплодъве въ домъ:. Мр҃е о чѩдѣхъ веселѩште сѩ - this seems very confused in all versions but the present solution doesn't concord at all with the forms
 
 Psalm 36 погъіблѭтъ lemmatised as погꙑбнѫти instead of погꙑбати (5.2)
 

@@ -60,7 +60,7 @@ Psalm 58 Помощънікъ fixed lemmatisation (was помощь)
 
 Changed Vita Methodii ч4стьноѥ to чьстьноѥ based on the printed edition
 
-Changed Vita Constantini Pалтирь to ѱалтирь based on the printed edition (SLOPPY conversion from the ASCII file)
+Changed Vita Constantini Pалтирь to ѱалтирь based on the printed edition
 
 Changed the division of Psal. 16.12 Ѡбѩсѩ мѩ ѣко левъ готовъ на ловъ:. и ѣко скоуменъ обітаѩ во съкровіштіхъ:- to make the first word a single aor. 3rd pl. rather than a 3sg. plus a reflexive (Septuagine has ὑπέλαβόν)
 
@@ -75,3 +75,9 @@ Changed most of the 48 вьсꙗкъ from strong to weak, apart from those in th
 Changed everything in Psal. that you lemmatise as стѫпъ to the fem. стопа, since this is what both dicts have and стѫпъ is only in the dict. with a ? mark in a place where it could surely easily be стѫпати
 
 Added a змиинь (*zmьjińь) lemma for Psal. 57 змииню, but this is such an isolated form that it may just be a scribal mistake, but dict lists змиин҄ь as an alternative headword
+
+Split подражати and подражание lemmas into two to account for the подрѣжати variants; SNSP and SJS list them both under the same headword
+
+I've changed all the forms lemmatised under негасѧ (which is the wrong lemmatisation even by the SNSP's standards; it uses негашѧ except for the one Assem. attestation of негасѧщиим) into PRAPS of the verb негасати and redone their tags completely. Any justification you may have had for following the dictionary and using an adjectival tagging is undermined by the fact that you didn't even choose the correct entry, so I feel like I have license to deviate from the dictionary in this case
+
+Added помѣтати lemma because you separate this lengthened-grade variant in other prefixed forms of *-metati (and the Bg. мятам and Ukr. forms suggest that an LCS *mět- root existed)

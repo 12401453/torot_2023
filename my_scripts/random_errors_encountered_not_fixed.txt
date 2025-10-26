@@ -1,7 +1,3 @@
-Perf/Imperf:
-    съзьрѣти
-
-
 
 коньчьныи in RusPrav looks soft
 
@@ -35,48 +31,8 @@ Inconsistent ORV lemmatisation of pronominals, where sometimes they follow adjec
 
 Within the Primary Chronicle some forms of *polmy are marked as nt. and others as masc.; I have this recorded as a masc_N stem (though clearly it moved to neuter in Russian at some point), so the neuter forms get no endings
 
-The single оувѧзати lemma contains forms like о̑увꙙзъшꙙ and о̑увꙙꙁошꙙ, which can only come from оувѧзнѫти, and the PPPs must be from the class 5.2 rather than 5.4 version of оувѧзати, so that also needs adding
+Psalm 112 Вьселѣѩї неплодъве въ домъ:. Мр҃е о чѩдѣхъ веселѩште сѩ - this seems very confused in all versions but the present solution doesn't concord at all with the forms
 
-млънии is an erroneous duplicated of мльнии (though the ever-retarded SJS lists it with the back-jer as well)
+*(ni)kotorъ is not marked as weak even when it blatantly has an article //Dealt with by check in Autoreconstructor
 
-154615|матерехъ|матерехъ|-p---flpsi|4561|251108|| ||||| is lemmatised with the possessive-adj *mateŕь when it's clearly the Lpl. of the fem_R *mati
-
-въздвиѕати is used as the lemma both for class 5.2 and 5.4 variants (вь҆ꙁдвижеши, Вьздвіѕаѩї) and for forms of the lemma въздвигнѫти (въꙁдвиженъ)
-
-Psalm 112 Вьселѣѩї неплодъве въ домъ:. Мр҃е о чѩдѣхъ веселѩште сѩ - all the nominals here are erroneously accusative rather than vocative (and hence get autoreconstructed badly)
-
-Psalm 36 погъіблѭтъ lemmatised as погꙑбнѫти instead of погꙑбати (5.2)
-
-Supr Sabini 13 March живетъ lemmatised as живити
-
-истьлѣти is used for both class 32 истлѣѥть (1X) and class 40 истьлити (3X ист[ьъ]ли)
-
-The back-nasal in the PRAP 180684|движѫште|двіжѫште|-pppamn-si|4364|253926|| ||||| suggests that this should be from the class 5.2 lemma двиѕати rather than the class 3.1 движати (cf. 73895|двіжѩштіѣ|двіжѧштіѣ|-pppann-wi|4364|307194|| |||||)
-
-All of the words lemmatised under нѫждати are just imperfects of нѫдити
-
-голиафъ should be голиадъ
-
-изѩти is obvious duplicate for *jьzęti
-
-83354|объстоѣньѣ|объстоѣньѣ|-s---ng--i|4156|308704||: ||||| is lemmatised under *ostojǢnьje, which obviously is correct, but also this is a reformation based on *obъ so really a separate word
-
-67560|оуньзѫ|оуньзѫ|3paia----i|4159|306113 should be lemmatised under separate *unьznǫti, there's no Ukr./Bel. in the OCS texts
-
-113248|ближикѫ|бліжікѫ|-s---fa--i|4206|247045 needs changing to masculine
-
-*(ni)kotorъ is not marked as weak even when it blatantly has an article
-
-some *jedьnъ lemmas are lemmatised as *jedinъ and need to be changed so I no longer have my retarded check for them
-
-люто as an Adj. is clearly wrong and should probably be changed to лютъ. As a noun it is in the dict. as an S-stem neuter
-
-Psal. Sin. Подрѣжаніе і порѫганіѣ сѫштімъ окръстъ насъ.- first word lemmatised as подрьжати when dict. list it under подражати,подрѣжати meaning "to imitate" or "to mock, jeer at" (second meaning fits here)
-
-сѵриискъ is lemmatised as сѵрьскъ; it should be separate *sürijьskъ
-
-Mar. etc. негасѧ is lemmatised as an adjective, but it surely needs to be a verb негасати; that is what I've marked it as in the reconstruction (ASK permission to relemmatise)
-
-Class 54 variants of the "iskati" verbs (otъmetati etc.) should possibly be added as separate lemmas
-
-All the occurrences of verbs *jьmati *jemĺǫ vs *jьměti *jьmamь in Supr. need to be checked and corrected because this is a huge source of errors
+some *jedьnъ lemmas are lemmatised as *jedinъ and need to be changed so I no longer have my retarded check for them //Dealt with by check in Autoreconstructor
