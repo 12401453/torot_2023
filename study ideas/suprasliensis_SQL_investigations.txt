@@ -30,3 +30,21 @@ select * from corpus where (lemma_id != 305 AND lemma_id != 638 AND lemma_id != 
 select * from corpus where (lemma_id != 305 AND lemma_id != 638 AND lemma_id != 961 AND lemma_id != 1163 AND lemma_id != 1269 AND lemma_id != 1527 AND lemma_id != 1772 AND lemma_id != 1787 AND lemma_id != 2504 AND lemma_id != 2679 AND lemma_id != 2939 AND lemma_id != 3183 AND lemma_id != 3238 AND lemma_id != 3330 AND lemma_id != 4271) and tokno < 189930 and tokno > 90735 AND chu_word_torot LIKE 'е%' and autoreconstructed_lcs LIKE 'je%';
 
 select * from corpus where (lemma_id != 305 AND lemma_id != 638 AND lemma_id != 961 AND lemma_id != 1163 AND lemma_id != 1269 AND lemma_id != 1527 AND lemma_id != 1772 AND lemma_id != 1787 AND lemma_id != 2504 AND lemma_id != 2679 AND lemma_id != 2939 AND lemma_id != 3183 AND lemma_id != 3238 AND lemma_id != 3330 AND lemma_id != 4271) and tokno < 189930 and tokno > 90735 AND chu_word_torot NOT LIKE 'ѥ%' AND chu_word_torot NOT LIKE 'Е%' AND chu_word_torot NOT LIKE 'е%' and autoreconstructed_lcs LIKE 'je%';
+
+
+
+Counting number of *jedin- vs *jedьn- numerals in Supr.:
+
+select count(*) from corpus where tokno <= 189929 and tokno >= 90736 AND autoreconstructed_lcs LIKE 'jedin%' AND (lemma_id = 51 OR lemma_id = 233 OR lemma_id = 559 OR lemma_id = 4475) AND morph_tag NOT LIKE '_s___mn__i' AND morph_tag NOT LIKE '_s___ma__i'; (counts number of non masc nom/acc. sg. forms that have the *jedin- stem) = 46
+
+select count(*) from corpus where tokno <= 189929 and tokno >= 90736 AND autoreconstructed_lcs LIKE 'jedin%' AND (lemma_id = 51 OR lemma_id = 233 OR lemma_id = 559 OR lemma_id = 4475) AND (morph_tag LIKE '_s___mn__i' OR morph_tag LIKE '_s___ma__i'); (number of masc nom./acc. sg. forms which have the *jedin- stem) = 107
+
+select count(*) from corpus where tokno <= 189929 and tokno >= 90736 AND autoreconstructed_lcs LIKE 'jedьn%' AND (lemma_id = 51 OR lemma_id = 233 OR lemma_id = 559 OR lemma_id = 4475) AND morph_tag NOT LIKE '_s___mn__i' AND morph_tag NOT LIKE '_s___ma__i'; (counts number of non masc nom/acc. sg. forms that have the *jedьn- stem)
+
+select count(*) from corpus where tokno <= 189929 and tokno >= 90736 AND autoreconstructed_lcs LIKE 'jedin%' AND (lemma_id = 51 OR lemma_id = 233 OR lemma_id = 559 OR lemma_id = 4475) AND (morph_tag LIKE '_s___mn__i' OR morph_tag LIKE '_s___ma__i'); (Number of masc. nom./acc. sg. with the *jedьnъ stem) = 0
+
+
+107 ѥдинъ's
+46 non masc. nom./acc. sg. ѥдин-'s
+0  ѥдьнъ's
+145 non masc. nom./acc. sg. ѥдьн-'s
