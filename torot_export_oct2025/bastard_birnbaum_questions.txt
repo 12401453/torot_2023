@@ -1,0 +1,10 @@
+http://suprasliensis.obdurodon.org/pages/supr247v.html 4th line; why does mss. look like it says въдати when Birnbaum says жласти?
+http://suprasliensis.obdurodon.org/pages/supr238v.html Line 14 why do you say прокаꙁы҆ when ms. looks like a back-jer?
+http://suprasliensis.obdurodon.org/pages/supr111v.html Line 17 Why do you have сеⱕꙙ for what looks like се+jotated-ꙙ?
+
+There are two ⱖ in Suprasliensis, and if you look at whatsisname's version he has:
+    1.) тоⱘ [ⱖ] for the first occurence, but the manuscript has ѩ (and admittedly jotated front-nasal is rare in Supr. because usually that distinction is carried by using that weird front-nasal for the non-jotated version) with a possible ⱖ underneath it which has been corrected
+    2.) глѫбокъⱖ for the second one, yet when you look at the manuscript there's no hint of the Glagolitic letter and it instead just has глѫбокъѩ (which could easily just be the standard letter for /y/ and the standard letter for Supr-jotated-front-nasal but with a horizontal line connecting them that makes it look like ъ plus another Supr-atypical ѩ occurence).
+
+
+
