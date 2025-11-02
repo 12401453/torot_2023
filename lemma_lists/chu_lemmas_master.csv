@@ -231,7 +231,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 приимати||V-|137|prijьmati|||||||52_abl|1||||||||0|||kiev-mis|marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const|vit-meth_4_removed|zogr_complete|508
 иѥроусалимъ||Ne|136|ijerusalimъ|||||||masc_o|2|25|W||||Ἱερουσᾱλήμ||0||||marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const||zogr_complete|376
 отъпоустити||V-|136|otъpustiti|||||||40|1||||||||0||||marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const|vit-meth_4_removed|zogr_complete|504
-ѥдинъ||Px|136|jedinъ||||jedьn|||pron_hard|2||||||||0||||marianus||supr_y_fixed|vit-const||zogr_complete|360
+ѥдинъ||Px|136|jedinъ||||jedьnъ|||pron_hard|2||||||||0||||marianus||supr_y_fixed|vit-const||zogr_complete|360
 нощь||Nb|136|noћь|noktь||||||fem_i|2||||||||0||||marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const||zogr_complete|376
 да||C-|135|da||||||||0||||||||0|chrabr||kiev-mis|marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const|vit-meth_4_removed|zogr_complete|509
 сьде||Df|134|sьde||||||||0|||here, осында, бұл жерде|||||0||euch||marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const|vit-meth_4_removed|zogr_complete|506
@@ -1438,7 +1438,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 нива||Nb|16|ńiva|njiva||||||fem_a|2||||||||0||||marianus||supr_y_fixed|||zogr_complete|296
 прѣпоꙗсати||V-|16|perpojǢsati|||||||52|1|||girdle|||||0||||marianus|psal-sin_sentence_removed||||zogr_complete|280
 трѣба||Nb|16|terba|||||||fem_a|2||||there's apparently a Rus. verb теребить and Old Rus. тереба||||0||||marianus||supr_y_fixed|vit-const||zogr_complete|360
-подражати||V-|16|podražǢti|||||||54|1||||the dict. lists the doublet подрѣжати, but it’s possible for such a spelling to result from a hardened /ŕ/ if *ŕǢ (spelt рѣ) had become /ra/||||0||||marianus|psal-sin_sentence_removed|supr_y_fixed|||zogr_complete|312
+подражати||V-|16|podražǢti|||||||54|1||||the dict. lists the doublets подрѣжати/подражати, but it’s possible for jat’ spellings to result from a hardened /ŕ/ if *ŕǢ (spelt рѣ) had become /ra/||||0||||marianus|psal-sin_sentence_removed|supr_y_fixed|||zogr_complete|312
 оутѣшити||V-|16|utěšiti|||||||40|1|||comfort, console|||||0||||marianus|psal-sin_sentence_removed|supr_y_fixed|||zogr_complete|312
 вьнегда||Dq|16|vъńegъda|vъnjegъda|||||||0||||The dict. spelling suggests an etymology of *vъn+jegъda, i.e. ‘in when’, ‘in that time’||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 лѫкъ||Nb|16|lǫkъ|||||||masc_o|2||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
@@ -1610,7 +1610,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 вьсьжде||Df|14|||||||||99||||||||0||||||supr_y_fixed||||32
 сѫдище||Nb|14|||||||||99||||||||0||||||supr_y_fixed||||32
 просто||Df|14|||||||||99||||||||0||||||supr_y_fixed||||32
-обискати||V-|14|||||||||99||||||||0||||||supr_y_fixed||||32
+обискати||V-|14|obiskati|||||||iskati|1||||||||0||||||supr_y_fixed||||32
 апостоликъ||Nb|14|||||||||99||||||||0|||||||vit-const|vit-meth_4_removed||192
 ꙗдь||Nb|13|jǢdь|||||||fem_i|2|||food|||||0|chrabr|||marianus|psal-sin_sentence_removed|supr_y_fixed|vit-const||zogr_complete|377
 съврьшати||V-|13|sъvŕ̥šǢti|||||||54|1||||||||0|chrabr||||psal-sin_sentence_removed|supr_y_fixed|vit-const|vit-meth_4_removed||241
@@ -1890,12 +1890,12 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 девѧть десѧтъ||Ma|11|||||||||99||||||||0|||||psal-sin_sentence_removed||vit-const|vit-meth_4_removed|zogr_complete|464
 благодарьствити||V-|11|bolgodarьstviti|||||||40|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 строи||Nb|11|strojь|||||||masc_jo|2||||||||0||||||supr_y_fixed||||32
-протѧгнѫти||V-|11|||||||||99||||||||0||||||supr_y_fixed||||32
+протѧгнѫти||V-|11|protęgnǫti|||||||21|1||||||||0||||||supr_y_fixed||||32
 вънѣ||R-|11|vъně||||||||0||||||||0||||||supr_y_fixed||||32
 благꙑни||Nb|11|bolgyńi|bolgynji||||||fem_ji|2||||||||0||||||supr_y_fixed||||32
 златица||Nb|11|zoltika|||||||fem_a_PV3|2||||||||0||||||supr_y_fixed||||32
-съпасьнъ||A-|11|||||||||99||||||||0||||||supr_y_fixed||||32
-ратьникъ||Nb|11|||||||||99||||||||0||||||supr_y_fixed||||32
+съпасьнъ||A-|11|sъpasьnъ|||||||adj_hard|2||||||||0||||||supr_y_fixed||||32
+ратьникъ||Nb|11|ortьnikъ|||||||masc_o|2||||||||0||||||supr_y_fixed||||32
 прогънати|прогънати|V-|11|progъnati|||||||51_abl|1||||||||1||||||supr_y_fixed||||32
 стоудень||Nb|11|||||||||99||||||||0||||||supr_y_fixed||||32
 дѣꙗниѥ||Nb|11|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
@@ -2488,7 +2488,7 @@ FIXME||Nb|7|||||||||99||||||||0|||||psal-sin_sentence_removed||vit-const|vit-met
 просвѣщениѥ||Nb|7|prosvěћenьje|prosvětjenьje||||||nt_jo|2||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 кедръ||Nb|7|ḱedrъ|||||||masc_o|2|2|W|cedar|||κέδρος||0|||||psal-sin_sentence_removed|||||16
 оугаждати||V-|7|ugaђǢti|ugadjǢti||||||54|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed|vit-const|||112
-подражаниѥ||Nb|7|podražǢnьje|||||||nt_jo|2||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
+подражаниѥ||Nb|7|podražǢnьje|||||||nt_jo|2||||the dict. lists the doublets подрѣжати/подражати, but it’s possible for jat’ spellings to result from a hardened /ŕ/ if *ŕǢ (spelt рѣ) had become /ra/||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 пожрѣти||V-|7|požerti|||||požer|požьr|13|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 оублажити||V-|7|ubolžiti|||||||40|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 лѫкавьновати||V-|7|lǫkavьnovati|||||||61|1||||||||0|||||psal-sin_sentence_removed|||||16
@@ -2498,7 +2498,7 @@ FIXME||Nb|7|||||||||99||||||||0|||||psal-sin_sentence_removed||vit-const|vit-met
 омꙑти||V-|7|omyti|||||||18|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||vit-meth_4_removed|zogr_complete|432
 саоулъ||Ne|7|saulъ|||||||masc_o|2|25|W||||Σαούλ||0|||||psal-sin_sentence_removed|supr_y_fixed|vit-const|||112
 плѣнѥниѥ||Nb|7|pelńenьje|pelnjenьje||||||nt_jo|2||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
-змиинъ||A-|7|zmьjьnъ|||||||adj_hard|2||||I’m not sure whether this is the adjectival-suffix *ьnъ or the possessive *inъ, we do seem to get only spellings with double ии which is perhaps not an expected reflex of *CьjьC given the spellings of other instances of this sequence in OCS|1|||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
+змиинъ||A-|7|zmьjinъ|||||||adj_hard|2||||I’m not sure whether this is the adjectival-suffix *ьnъ or the possessive *inъ, we do seem to get only spellings with double ии which is perhaps not an expected reflex of *CьjьC given the spellings of other instances of this sequence in OCS|1|||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 пожещи||V-|7|požeћi|požegti||||požьg|požeg|11|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 поле||Nb|7|poĺe|polje||||||nt_jo|2||||||||0|||||psal-sin_sentence_removed|||||16
 тьма|тьма|Nb|7|tьma|||||||fem_a|2|||ten thousand; an innumerable amount|||||1|||||psal-sin_sentence_removed|supr_y_fixed||||48
@@ -2666,7 +2666,7 @@ FIXME||Nb|7|||||||||99||||||||0|||||psal-sin_sentence_removed||vit-const|vit-met
 пристати||V-|6|pristati|||||||stati|1||||||||0||||marianus|||||zogr_complete|264
 зазьрѣти||V-|6|zazьrěti|||||||31|1||||||||0||||marianus||supr_y_fixed|||zogr_complete|296
 тѣщити||V-|6|těћiti|||||||40|1|||froth at the mouth|my only guess is that this is some lengthened-grade derivative of *tekti|1|||0||||marianus||supr_y_fixed|||zogr_complete|296
-негасѧ||A-|6|negasati|||||||52|1|||unextinguishable|||||0||||marianus|||||zogr_complete|264
+негасати||V-|6|negasati|||||||52|1|||unextinguishable|||||0||||marianus|||||zogr_complete|264
 мимонести||V-|6|mimonesti|||||mimones|mimones|11|1||||||||0||||marianus|||||zogr_complete|264
 въспомѧнѫти||V-|6|vъspomęnǫti|||||||22|1||||dict. p.477 gives forms with ě and with ę; we have no reason to expect the nasals to be confused only in this word so we must assume doublets existed||||0||||marianus|psal-sin_sentence_removed|supr_y_fixed|||zogr_complete|312
 бещьстьнъ||A-|6|beščьstьnъ|||||||adj_hard|2|||dishonoured, disgraced, in disgrace|pre-PV1 *beskьst- > *beščьst- (ordinarily *kьstь > čьstь (чьсть)) ||||0||||marianus||supr_y_fixed|vit-const||zogr_complete|360
@@ -3047,7 +3047,6 @@ FIXME||Nb|7|||||||||99||||||||0|||||psal-sin_sentence_removed||vit-const|vit-met
 неразоумьнъ||A-|5|neorzumьnъ|||||||adj_hard|2||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 заити||V-|5|zajьti|||||||jьti|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 поглоумити||V-|5|poglumiti|||||||40|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
-млънии||Nb|5|mĺ̥dnьji|||||||fem_ji|2|||lightning|Both ESSJa 20 p.220-2 and Derksen p.333 reconstruct this as *mъldni, with -d- based on Old Prussian mealde and Ru. dial. молодня, among other dialectal words with /d/ in the modern languages. None of the evidence they adduce proves that we have the unpalatalised l̥ here instead of the ĺ̥ (esp. Latvian milna which suggests the opposite), so I will follow the dictionary instead and us ĺ̥.|1|||0|||||psal-sin_sentence_removed|||vit-meth_4_removed||144
 потещи||V-|5|poteћi|potekti||||potek|potek|11|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 истоуканьнꙑи||A-|5|jьstukanьnъ|||||||adj_hard|2||||Vasmer thinks the verb истукати is a variant (presumably o-grade ablaut + u > ъ) of the vowel in тъкнѫти||||0|||||psal-sin_sentence_removed|||||16
 пѧть на десѧте||Ma|5|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
@@ -3323,7 +3322,7 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 юда||Ne|4|ijuda|||||||masc_a|2|25|W||||Ἰούδας||0||||marianus|||||zogr_complete|264
 богатьствиѥ||Nb|4|bogatьstvьje|||||||nt_jo|2||||||||0||||marianus|||||zogr_complete|264
 прозѧбати||V-|4|prozębati|||||||54|1|||sprout, come up|||||0||||marianus|psal-sin_sentence_removed||||zogr_complete|280
-съзьрѣти||V-|4|sъzьrěti|||||||31|1||||||||0||||marianus||supr_y_fixed|||zogr_complete|296
+съзьрѣти||V-|4|sъzьrěti|||||||32|1||||||||0||||marianus||supr_y_fixed|||zogr_complete|296
 настоꙗти||V-|4|nastojǢti|||||||31|1||||||||0||||marianus||supr_y_fixed|||zogr_complete|296
 погрѧзнѫти||V-|4|pogręznǫti|||||||21|1|||sink|||||0||||marianus||supr_y_fixed|||zogr_complete|296
 гадариньскъ||A-|4|gadarinьskъ|||||||adj_hard|2|25|W||||Γαδαρηνω̃ν < גדרה‏ .||0||||marianus|||||zogr_complete|264
@@ -3695,7 +3694,6 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 радостьнъ||A-|3|radostьnъ|||||||adj_hard|2||||||||0|||kiev-mis|||supr_y_fixed||||36
 раздрѣшениѥ||Nb|3|orzrěšenьje|||||||nt_jo|2||||||||0|||kiev-mis|||supr_y_fixed||||36
 закленѫти||V-|3|zaklepnǫti|||||||21|1|||lock up|||||0|||kiev-mis|marianus||||||12
-съ||Pd|3|sь|||||||sь|2||||||||0|||kiev-mis||||vit-const|vit-meth_4_removed||196
 любодѣꙗньнъ||A-|3|ĺubodějьnъ|ljubodějьnъ||||||adj_hard|2|||of adultery|||||0||||marianus|||vit-const||zogr_complete|328
 потьпѣга||Nb|3|potьpěga|||||||fem_a|2|||divorced, abandoned wife|Polish poćpiega||||0||||marianus|||||zogr_complete|264
 ѩзꙑчьникъ||Nb|3|języčьnikъ|||||||masc_o|2||||||||0||||marianus|||||zogr_complete|264
@@ -3902,7 +3900,6 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 пьсии||A-|3|pьsьjь|||||||adj_ij|2|||dog’s|||||0|||||psal-sin_sentence_removed|||||16
 сътрѧсати||V-|3|sъtręsati|||||||54|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 свѧщениѥ||Nb|3|svęћenьje|svętjenьje||||||nt_jo|2||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
-изѩти||V-|3|jьzęti|||||jьzę|jьzьm|12|1||||||||0|||||psal-sin_sentence_removed|||||16
 скръбити||V-|3|skr̥biti|||||||40|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 остоꙗниѥ||Nb|3|ostojǢnьje|||||||nt_jo|2||||||||0|||||psal-sin_sentence_removed|||||16
 въньзнѫти||V-|3|vъnьznǫti|||||||21|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
@@ -3989,7 +3986,7 @@ FIXME||I-|5|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed||160
 истъщати||V-|3|jьstъščǢti|||||||54|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 вѣдѣниѥ||Nb|3|věděnьje|||||||nt_jo|2||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 чоудесьнъ||A-|3|čudesьnъ|||||||adj_hard|2||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
-голиафъ||Ne|3|golijǢdъ|||||||masc_o|2|25|W||||Γολιάδ||0|||||psal-sin_sentence_removed||vit-const|||80
+голиадъ||Ne|3|golijǢdъ|||||||masc_o|2|25|W||||Γολιάδ||0|||||psal-sin_sentence_removed||vit-const|||80
 скорость||Nb|3|skorostь|||||||fem_i|2||||||||0|||||psal-sin_sentence_removed|supr_y_fixed|vit-const|||112
 посꙑпати||V-|3|posypati|||||||52|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 прѣвꙑшьнь||A-|3|pervyšьńь|pervyšьnjь||||||adj_soft|2||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
@@ -4758,7 +4755,6 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 населити||V-|2|nasedliti|||||||40|1||||||||0|||||psal-sin_sentence_removed|||||16
 законопрѣстѫплѥниѥ||Nb|2|zakonoperstǫpĺenьje|zakonoperstǫpjenьje||||||nt_jo|2||||||||0|||||psal-sin_sentence_removed|||||16
 поскрьжьтати||V-|2|poskrьžьtati|||||||52|1||||||||0|||||psal-sin_sentence_removed|||||16
-люто||A-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 правота||Nb|2|pravota|||||||fem_a|2||||||||0|||||psal-sin_sentence_removed|||||16
 въспоминаниѥ||Nb|2|vъspominanьje|||||||nt_jo|2||||||||0|||||psal-sin_sentence_removed|||||16
 прѣвъзити||V-|2|pervъzjьti|||||||jьti|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
@@ -5070,7 +5066,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 длъготрьпѣливъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 прослоутиѥ||Nb|2|proslutьje|||||||nt_jo|2||||||||0||||||supr_y_fixed||||32
 цѣломѫдрьствовати||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
-възметати||V-|2|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
+възметати||V-|2|vъzmetati|||||||54|1||||||||0||||||supr_y_fixed|vit-const|||96
 патриаршьство||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 прѣмоудити||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 никакоже||Px|2|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -5485,7 +5481,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 гонозити||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 мѣна||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 образьнъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
-разметати||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
+разметати||V-|2|orzmetati|||||||iskati|1||||||||0||||||supr_y_fixed||||32
 недостоино||Df|2|||||||||99||||||||0||||||supr_y_fixed||||32
 страшити||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 памѧтивъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -5756,8 +5752,8 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 исповѣдь||Nb|1|jьspovědь|||||||fem_i|2|||confession|||||0|||kiev-mis|||||||4
 прѣдрагъ||A-|1|perdorgъ|||||||adj_hard|2||||||||0|||kiev-mis|||||||4
 вълитиѥ||Nb|1|vъlitьje|||||||nt_jo|2|||libation|||||0|||kiev-mis|||||||4
-мѫчѣница||Nb|1|mǫčenika|||mǫčenica||||fem_a_PV3|2||||||||0|||kiev-mis|||||||4
-въкоупьнь||A-|1|vъkupьnъ|||||||adj_hard|2|13|||(this applies just to the -kup- root) See ESSJa 13 p.110-2; Germanic *kaupōn (ESSJa erroneously gives *kaupjan, but OE ċēapian, OHG koufōn unambiguously point to a weak class 2 verb in PGmc. *ōn-) was borrowed from Latin very earlier (before Anglo-Frisian velar palatalisation, cf Eng. cheap, Chippenham etc.). ||Gmc. *kaupōn- from Latin caupō||0|||kiev-mis|||||||4
+мѫченица||Nb|1|mǫčenika|||mǫčenica||||fem_a_PV3|2||||||||0|||kiev-mis|||||||4
+въкоупьнъ||A-|1|vъkupьnъ|||||||adj_hard|2|13|||(this applies just to the -kup- root) See ESSJa 13 p.110-2; Germanic *kaupōn (ESSJa erroneously gives *kaupjan, but OE ċēapian, OHG koufōn unambiguously point to a weak class 2 verb in PGmc. *ōn-) was borrowed from Latin very earlier (before Anglo-Frisian velar palatalisation, cf Eng. cheap, Chippenham etc.). ||Gmc. *kaupōn- from Latin caupō||0|||kiev-mis|||||||4
 съмѣрьно||Df|1|sъměrьno||||||||0|||meekly, humbly|||||0|||kiev-mis|||||||4
 милостивьно||Df|1|milostivьno||||||||0||||||||0|||kiev-mis|||||||4
 иже||Ps|1|||||||||99||||||||0|||kiev-mis|||||||4
@@ -6128,7 +6124,6 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 сѣчиво||Nb|1|sěčivo|||||||nt_o|2||||||||0|||||psal-sin_sentence_removed|||||16
 оскръдъ||Nb|1|||||||||99||||||||0|||||psal-sin_sentence_removed|||||16
 раздражати||V-|1|||||||||99||||||||0|||||psal-sin_sentence_removed|||||16
-ѩдро||Nb|1|jǢdro|||||||nt_o|2||||||||0|||||psal-sin_sentence_removed|||||16
 сътлѣщи||V-|1|sъtelћi|sъtelkti||||sъtĺ̥k|sъtelk|14|1||||||||0|||||psal-sin_sentence_removed|||||16
 змиѥвъ||A-|1|||||||||99||||||||0|||||psal-sin_sentence_removed|||||16
 весна||Nb|1|||||||||99||||||||0|||||psal-sin_sentence_removed|||||16
@@ -6359,7 +6354,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 ѥже||Df|1|ježe||||||||0||||||||0||||||supr_y_fixed||||32
 съпрѣбꙑвати||V-|1|sъperbyvati|||||||54|1||||||||0||||||supr_y_fixed||||32
 оутомити||V-|1|utomiti|||||||40|1||||||||0||||||supr_y_fixed||||32
-непригвождьнъ||A-|1|neprigvožђenъ|neprigvozdjenъ||||||adj_hard|2||||||||0||||||supr_y_fixed||||32
+непригвожденъ||A-|1|neprigvožђenъ|neprigvozdjenъ||||||adj_hard|2||||||||0||||||supr_y_fixed||||32
 непостраданьнъ||A-|1|nepostradanьnъ|||||||adj_hard|2||||||||0||||||supr_y_fixed||||32
 съпожити||V-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 различьнѣ||Df|1|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -6762,7 +6757,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 отъносити||V-|1|otъnositi|||||||40|1||||||||0||||||supr_y_fixed||||32
 оупепелити||V-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 мокротънъ||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
-изметати||V-|1|||||||||99||||||||0||||||supr_y_fixed||||32
+изметати||V-|1|jьzmetati|||||||iskati|1||||||||0||||||supr_y_fixed||||32
 людиискъ||A-|1|ĺudьjьskъ|ljudьjьskъ||||||adj_hard|2||||||||0||||||supr_y_fixed||||32
 декаполитьскъ||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 етни||Ne|1|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -7154,7 +7149,6 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 домꙑслити||V-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 ваꙗниѥ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
 влъхвъ||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
-лютъ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
 отънѥлиже||Df|1|||||||||99||||||||0||||||supr_y_fixed||||32
 лъгꙑни||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
 изобиловати||V-|1|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -7524,7 +7518,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 богоборѥниѥ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
 неприꙗзньство||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
 безълобиѥ||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
-люто||Nb|1|||||||||99||||||||0||||||supr_y_fixed||||32
+люто||Nb|1|ĺuto|ljuto||||||nt_S|2||||||||0||||||supr_y_fixed||||32
 понѥ||Dq|1|||||||||99||||||||0||||||supr_y_fixed||||32
 чловѣколюбьствьнъ||A-|1|||||||||99||||||||0||||||supr_y_fixed||||32
 одѣвати||V-|1|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -9192,7 +9186,7 @@ golgolati||V-|0|||||||||99||||||||0||||||||||
 привѧзати#2||V-|0|privęzati|||||||54|1||||||||0||||||||||
 съказати#2||V-|0|sъkazati|||||||52|1||||||||0||||||||||
 съвѧзати#2||V-|0|sъvęzati|||||||54|1||||||||0||||||||||
-въметати#2||V-|0|vъmetati|||||||51|1||||||||0||||||||||
+въметати#2||V-|0|vъmetati|||||||iskati|1||||||||0||||||||||
 отъкръвениѥ||Nb|0|otъkrъvenьje|||||||nt_jo|2||||||||0||||||||||
 оклеветати#2||V-|0|oklevetati|||||||52|1||||||||0||||||||||
 прѣлиꙗти#2||V-|0|perlьjǢti|||||||53_abl|1||||||||0||||||||||
@@ -9214,3 +9208,18 @@ golgolati||V-|0|||||||||99||||||||0||||||||||
 ѫдолиѥ||Nb|0|ǫdolьje|||||||nt_jo|2||||||||0||||||||||
 прорицати#2||V-|0|prorikati|||proricati||||52|1||||||||0||||||||||
 нарицати#2||V-|0|narikati|||naricati||||52|1||||||||0||||||||||
+рѫкоѩть||Nb|0|rǫkojętь||||rǫkovętь|||fem_i|2||||||||0||||||||||
+рѫковѧть||Nb|0|rǫkovętь||||rǫkojętь|||fem_i|2||||||||0||||||||||
+благословещвлѥниѥ||Nb|0|bolgoslovešћvĺenьje|||||||nt_jo|2||||||||0||||||||||
+оумрьщвлѥниѥ||Nb|0|umŕ̥šћvĺenьje|||||||nt_jo|2||||||||0||||||||||
+стопа||Nb|0|stopa|||||||fem_a|2||||||||0||||||||||
+змиинь||A-|0|zmьjińь|zmьjinjь||||||adj_soft|2||||I’m not sure whether this is the adjectival-suffix *ьńь or the possessive *in+jь, we do seem to get only spellings with double ии which is perhaps not an expected reflex of *CьjьC given the spellings of other instances of this sequence in OCS|1|||0||||||||||
+оуньзнѫти||V-|0|unьznǫti|||||||21|1||||||||0||||||||||
+объстоꙗниѥ||Nb|0|obъstojǢnьje|||||||nt_jo|2||||||||0||||||||||
+подрѣжаниѥ||Nb|0|podrěžǢnьje|||||||nt_jo|2||||the dict. lists the doublets подрѣжати/подражати, but it’s possible for jat’ spellings to result from a hardened /ŕ/ if *ŕǢ (spelt рѣ) had become /ra/||||0||||||||||
+подрѣжати||V-|0|podrěžǢti|||||||54|1||||the dict. lists the doublets подрѣжати/подражати, but it’s possible for jat’ spellings to result from a hardened /ŕ/ if *ŕǢ (spelt рѣ) had become /ra/||||0||||||||||
+сѵриискъ||A-|0|sürijьskъ|||||||adj_hard|2||||||||0||||||||||
+възискати#2||V-|0|vъziskati|||||||54|1||||||||0||||||||||
+обискати#2||V-|0|obiskati|||||||54|1||||||||0||||||||||
+отъметати#2||V-|0|otъmetati|||||||54|1||||||||0||||||||||
+помѣтати||V-|0|pomětati|||||||54|1||||||||0||||||||||

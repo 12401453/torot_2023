@@ -445,7 +445,6 @@ const lang_id = process.argv[2];
 const deepClean_map = lang_id == "orv" ? orv_deepClean_map : chu_deepClean_map;
 
 const words_filename = lang_id+"_words_full_with_titles_untagged.csv";
-const tnt_training_filename = lang_id+"_tnt_training.tt";
 
 const just_untagged_words_filename = lang_id+"_untagged_words.csv";
 
@@ -570,9 +569,9 @@ saxParser.on('opentag', function(node) {
                 morph_set.add(morph_tag);
 
 
-                tagged_tnt_POStags_string += deepClean(text_word) + " " + pos + "\n";
-                tagged_tnt_mergetags_string += deepClean(text_word) + " " + pos+morph_tag + "\n";
-                tagged_tnt_morphtags_string += deepClean(text_word) + " " + morph_tag + "\n";
+                tagged_tnt_POStags_string += deepClean(text_word).replaceAll(" ", "") + " " + pos + "\n"; //need to get rid of token-internal whitespace so that TnT doesn't view the second half of such words as tags
+                tagged_tnt_mergetags_string += deepClean(text_word).replaceAll(" ", "") + " " + pos+morph_tag + "\n";
+                tagged_tnt_morphtags_string += deepClean(text_word).replaceAll(" ", "") + " " + morph_tag + "\n";
 
                 if(lemma_map.has(lemma_pos_combo)) {
                     lemma_id = lemma_map.get(lemma_pos_combo);
@@ -590,7 +589,7 @@ saxParser.on('opentag', function(node) {
                 untagged_csv_string += text_word+ "|" + deepClean(text_word) + "|" + String(tokno) + "|" + main_title_text + "|" + sub_title_text + "|" + morph_tag + "|" + lemma + "|" + pos + "\n";
                 autotagged = "1";
 
-                untagged_tnt_string += deepClean(text_word) + "\n";
+                untagged_tnt_string += deepClean(text_word).replaceAll(" ", "") + "\n";
             }
             
             csv_string += text_word + "|" + pos + "|" + lemma + "|" + morph_tag + "|" + deepClean(text_word);
@@ -645,9 +644,9 @@ saxParser.on('end', () => {
 
         fs.writeFileSync(just_untagged_words_filename, untagged_csv_string);
 
-        fs.writeFileSync("TnT_inputs/chu_tnt_POStags.tt", tagged_tnt_POStags_string);
-        fs.writeFileSync("TnT_inputs/chu_tnt_morphtags.tt", tagged_tnt_morphtags_string);
-        fs.writeFileSync("TnT_inputs/chu_tnt_mergetags.tt", tagged_tnt_mergetags_string);
+        fs.writeFileSync("TnT_inputs/"+lang_id+"_tnt_POStags.tt", tagged_tnt_POStags_string);
+        fs.writeFileSync("TnT_inputs/"+lang_id+"_tnt_morphtags.tt", tagged_tnt_morphtags_string);
+        fs.writeFileSync("TnT_inputs/"+lang_id+"_tnt_mergetags.tt", tagged_tnt_mergetags_string);
 
 
         const output = execSync("./tnt-para chu_tnt_mergetags.tt", {cwd: "TnT_inputs"});
@@ -672,7 +671,7 @@ saxParser.on('end', () => {
 async function readAssemAutotaggedTnTFiles() {
   const assem_tnt_pos_file = readline.createInterface({input: fs.createReadStream("TnT_inputs/assem_autotagged_POStags.tts")});
   let sentence_id = 0;
-  let assem_autotagged_words_csv = "deep_cleaned|pos|morph_tag|sentence_no\n";
+  
   const postag_arr = new Array();
   for await(const line of assem_tnt_pos_file) {
     if(line.startsWith("%% ")) continue;
@@ -705,8 +704,22 @@ async function readAssemAutotaggedTnTFiles() {
   };
   assem_tnt_morphtag_file.close();
 
-  for(const [sentence_id, word, pos, morph_tag] of postag_arr) {
-    assem_autotagged_words_csv += word + "|" + pos + "|" + morph_tag + "|" + sentence_id + "\n";
+  let assem_autotagged_words_csv = "deep_cleaned|pos|morph_tag|word_raw|sentence_id|pres_before|pres_after|text_id|subtitle_id\n";
+  const assem_cyr_file = readline.createInterface({input: fs.createReadStream("TnT_inputs/assem_cyr_full_words.csv")});
+  idx = 0;
+  for await(const line of assem_cyr_file) {
+    const row = line.split("|");
+    const word_raw = row[0].trim();
+    const pres_before = row[6];
+    const pres_after = row[7];
+    const text_id = row[8];
+    const subtitle_id = row[9];
+    postag_arr[idx].push(word_raw, pres_before, pres_after, text_id, subtitle_id);
+    idx++;
+  }
+
+  for(const [sentence_id, word, pos, morph_tag, word_raw, pres_before, pres_after, text_id, subtitle_id] of postag_arr) {
+    assem_autotagged_words_csv += word + "|" + pos + "|" + morph_tag + "|" + word_raw + "|" + sentence_id + "|" + pres_before + "|" + pres_after + "|" + text_id + "|" + subtitle_id + "\n";
   }
   
   fs.writeFileSync("TnT_inputs/assem_autotagged.csv", assem_autotagged_words_csv);

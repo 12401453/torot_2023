@@ -1,0 +1,8 @@
+As Brants says in his guide, the tnt-para program consumes a training-data file where each token is separated from its tag by any amount of whitespace. Therefore, tokens with whitespace in them, as frequently occur in the TOROT corpus with adverbs like отъ кѫдѫ etc., will cause TnT to record the any part of the token to the right of the whitespace as the tag, leading to entries in the .lex file like the following:
+
+отъ			2656	R-	2578	въсѫдѣ	1	вьнѣѫдоу	1	вѣштавъ	1	коудѫ	2	кѫдоу	14	кѫдѣ	1	кѫдѫ	6	мьштеніѣ	1	неліже	3	нѭдоуже	1	селѣ	11	сѫдоу	6	сѫдѣ	1	сѫдѫ	1	толі	3	толѣ	1	тоудоу	1	тоудѣ	5	тоудѫ	1	тѫдоу	7	тѫдѣ	6	тѫдѫ	4
+
+I ran into this because the word "не" in Assemanianus got PoS tagged with брѣгоу at one point. Therefore, when making training-data files, all the token-internal whitespace needs to be got rid of.
+
+
+The assem_cyr_full_words.csv, assem_subtitles.csv, and tnt_input_assem.tt files are copied over from the top-level Assemanianus directory in this repository, and are generated with the assem_sqlite_tnt_input_generator.js script directly from the source ASCII file (corrected in many places by me). You have to specify cyr or glag script for the conversion and also "supr" to add marking of supralinear characters, which currently uses two private-use-area Unicode codes instead of $ and @, even though the final forms in the database use $ and @. I'm not sure why there is a discrepancy here but conversion for those invisible Unicode-codes to $ and @ has to take place before writing to the database

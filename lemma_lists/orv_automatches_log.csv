@@ -1497,6 +1497,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 прилагати|прилагати|V-|prilagati|54
 строи|строи|Nb|strojь|masc_jo
 вънѣ|вънѣ|R-|vъně|
+ратьникъ|ратьникъ|Nb|ortьnikъ|masc_o
 приити|приити|V-|prijьti|jьti
 коуръ|куръ|Nb|kurъ|masc_o
 чрьноризьць|чьрноризьць|Nb|čŕ̥norizьkь|masc_o_PV3
@@ -2114,7 +2115,6 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 растворити|ростворити|V-|orstvoriti|40
 неразоумьнъ|неразумьныи|A-|neorzumьnъ|adj_hard
 заити|заити|V-|zajьti|jьti
-млънии|мълнии|Nb|mĺ̥dnьji|fem_ji
 потещи|потещи|V-|poteћi|11
 распрострѣти|распрострѣти|V-|orsprosterti|13
 прѣтръгнѫти|прѣтъргнути|V-|pertr̥gnǫti|21
@@ -2297,7 +2297,6 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 оконьчати|оконьчати|V-|okonьčǢti|54
 папежь|папежь|Nb|papežь|masc_jo
 радостьнъ|радостьныи|A-|radostьnъ|adj_hard
-съ|сь|Pd|sь|sь
 любодѣꙗньнъ|любодѣиныи|A-|ĺubodějьnъ|adj_hard
 глаголаниѥ|глаголание|Nb|golgolanьje|nt_jo
 прѧсти|прясти|V-|pręsti|11
@@ -2430,7 +2429,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 оувꙑ|увы|I-|uvy|
 роса|роса|Nb|rosa|fem_a
 чоудесьнъ|чудесьныи|A-|čudesьnъ|adj_hard
-голиафъ|голиядъ|Ne|golijǢdъ|masc_o
+голиадъ|голиядъ|Ne|golijǢdъ|masc_o
 посꙑпати|посыпати|V-|posypati|52
 прѣвꙑшьнь|прѣвышьнии|A-|pervyšьńь|adj_soft
 рѫчьнъ|ручьныи|A-|rǫčьnъ|adj_hard
@@ -2648,7 +2647,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 ꙗдѣниѥ|ядение|Nb|jǢdenьje|nt_jo
 съпаниѥ|съпание|Nb|sъpanьje|nt_jo
 оутѧгнѫти|утягнути|V-|utęgnǫti|21
-мѫчѣница|мученица|Nb|mǫčenika|fem_a_PV3
+мѫченица|мученица|Nb|mǫčenika|fem_a_PV3
 отъплатити|отъплатити|V-|otъplatiti|40
 жаль|жаль|Nb|žǢlь|fem_i
 легъкъ|льгъкыи|A-|lьgъkъ|adj_hard
@@ -2708,7 +2707,6 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 оудалꙗти|удаляти|V-|udaĺǢti|54
 расѣщи|расѣщи|V-|orssěћi|11
 сѣчиво|сѣчиво|Nb|sěčivo|nt_o
-ѩдро|ядро|Nb|jǢdro|nt_o
 вꙑгонити|выгонити|V-|vygoniti|40
 ожещи|ожещи|V-|ožeћi|11
 оущедрити|ущедрити|V-|uščedriti|40
@@ -2734,6 +2732,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 фараонъ|фараонъ|Nb|faraonъ|masc_o
 мокръ|мокрыи|A-|mokrъ|adj_hard
 обльгъчити|обльгъчити|V-|oblьgъčiti|40
+изметати|изметати|V-|jьzmetati|iskati
 зълонравьнъ|зълонравьныи|A-|zъlonorvьnъ|adj_hard
 хоть|хоть|Nb|xotь|fem_i
 съдѣиствовати|съдѣиствовати|V-|sъdějьstvovati|61
@@ -2789,7 +2788,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 привѧзати#2|привязати|V-|privęzati|54
 съказати#2|съказати|V-|sъkazati|52
 съвѧзати#2|съвязати|V-|sъvęzati|54
-въметати#2|въметати|V-|vъmetati|51
+въметати#2|въметати|V-|vъmetati|iskati
 отъкръвениѥ|отъкръвение|Nb|otъkrъvenьje|nt_jo
 оклеветати#2|оклеветати|V-|oklevetati|52
 прѣпоꙗсати#2|прѣпоясати|V-|perpojǢsati|54
@@ -2804,3 +2803,9 @@ chu_lemma|orv_lemma|pos|lcs_lemma|conj_type
 ѫдолиѥ|удолие|Nb|ǫdolьje|nt_jo
 прорицати#2|прорицати|V-|prorikati|52
 нарицати#2|нарицати|V-|narikati|52
+рѫкоѩть|рукоять|Nb|rǫkojętь|fem_i
+стопа|стопа|Nb|stopa|fem_a
+оуньзнѫти|уньзнути|V-|unьznǫti|21
+объстоꙗниѥ|объстояние|Nb|obъstojǢnьje|nt_jo
+възискати#2|възискати|V-|vъziskati|54
+помѣтати|помѣтати|V-|pomětati|54
