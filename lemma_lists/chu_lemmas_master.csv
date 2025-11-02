@@ -1320,7 +1320,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 оуморити||V-|18|umoriti|||||||40|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 вьсꙗчьскъ||A-|18|vьxačьskъ|||vьśačьskъ||||adj_hard|2||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||vit-meth_4_removed||176
 иоулиꙗни||Ne|18|||||||||99||||||||0||||||supr_y_fixed||||32
-напрасно|напрасьно|Df|18|naprasno||||||||0||||the OCS dictionaries list напраснъ with no jer, and the only jer attestation in TOROT is напрасен from Luka Koločskij||||1||||||supr_y_fixed||||32
+напрасно|напрасно|Df|18|naprasno||||||||0||||the OCS dictionaries list напраснъ with no jer, and the only jer attestation in TOROT is напрасен from Luka Koločskij||||1||||||supr_y_fixed||||32
 камꙑкъ||Nb|18|||||||||99||||||||0||||||supr_y_fixed||||32
 течениѥ||Nb|18|||||||||99||||||||0||||||supr_y_fixed||vit-meth_4_removed|zogr_complete|416
 чловѣколюбиѥ||Nb|18|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
@@ -4878,7 +4878,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 прѣзорьство||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 оловѣнъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 ѫродьнъ||A-|2|ǫrodьnъ|||||||adj_hard|2||||||||0||||||supr_y_fixed||||32
-владꙑчица||Nb|2|voldyčika|||||||fem_a_PV3|2||||||||0||||||supr_y_fixed||||32
+владꙑчица||Nb|2|voldyčika|||voldyčica||||fem_a_PV3|2||||||||0||||||supr_y_fixed||||32
 колъ||Nb|2|||||||||99||||||||0||||||supr_y_fixed||||32
 павьль||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 покропити||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -5018,7 +5018,7 @@ FIXME||V-|2|||||||||99||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 говѣти||V-|2|||||||||99||||||||0||||||supr_y_fixed|vit-const|||96
 величавъ||A-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 съмрьзнѫти||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
-напраснъ|напрасьныи|A-|2|naprasnъ|||||||adj_hard|2||||the OCS dictionaries list напраснъ with no jer, and the only jer attestation in TOROT is напрасен from Luka Koločskij||||1||||||supr_y_fixed||||32
+напраснъ|напрасныи|A-|2|naprasnъ|||||||adj_hard|2||||the OCS dictionaries list напраснъ with no jer, and the only jer attestation in TOROT is напрасен from Luka Koločskij||||1||||||supr_y_fixed||||32
 въносити||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 помрьзнѫти||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32
 рѣꙗти||V-|2|||||||||99||||||||0||||||supr_y_fixed||||32

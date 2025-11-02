@@ -1,0 +1,20 @@
+Zographensis: row-number + 204018 = tokno in my DB
+Marianus: +2715
+
+I also had to had the three ЕВАНЬꙈЕЛИЕ ОТЪ МАРЪКА rows to the marianus_alignments.csv file (with torot chu toknos starting from 10000000), since they were missing and messed up my calculations (the incipits are also missing but I can detect those parts easily enough and shunt the row-numbers forward)
+
+These two lines from marianus_alignments.csv file seem to be mistaken: 
+ЛОуКꙐ,604901,διαπαντὸς,342419
+стиховъ,604907,ἱερῷ,342422
+
+Also added these 4 lines to marianus_alignments.csv to account for the weird unannotated bit at the end of John 2:
+а҃,10000010,,
+неⷣ҇,10000011,,
+в,10000012,,
+чⷦ҇ь,10000013,,
+внⷡ҇ром,10000014,,
+
+
+Doing Psalterium Sinaiticum was a pain in the ass because the alignment file was out of order and not the same as the mar and zogr ones, so I had to generate a proper in-order alignment file based on the xml files, but the psal-sin.xml file the alignments work for is very old and has the bullshit Russian sentence in it, and I had to edit it to resegment that sentence with Ѡбѩсѩ parsed as a reflexive and then get rid of the row corresponding the errant сѩ in the alignment file
+
+Currently all that should be needed to add the Greek alignments to a fresh chu.db corpus-file is running the ./grc_aligner program with the db-filename as a cmdline argumnet; this is the compiled version of the greek_sqlite_aligner.cpp program. The psal_grc_alignment_maker.js script was used to generate the new_psal_alignments.csv file, since the original alignment file I was given was out-of-order dogshit

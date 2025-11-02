@@ -6,6 +6,8 @@
 #include <unordered_map>
 #include <map>
 #include <vector>
+#include <array>
+#include <utility>
 
 
 
@@ -42,6 +44,7 @@ std::unordered_map <std::string, int> pos_map = {
 
 int safeStrToInt(const std::string &string_number, int default_result=0) {
     int converted_int = default_result;
+    if(string_number.empty()) return default_result;
     try {
         converted_int = std::stoi(string_number);
     }
@@ -77,10 +80,21 @@ class CsvReader {
       m_fields_vec.clear();
 
       m_raw_line = line;
-      std::stringstream line_ss(line);
-      std::string field;
-      while(std::getline(line_ss, field, m_separator)){
-        m_fields_vec.emplace_back(field);
+      // std::stringstream line_ss(line);
+      // std::string field;
+      // while(std::getline(line_ss, field, m_separator)){
+      //   m_fields_vec.emplace_back(field);
+      // }
+      
+      std::size_t start_pos = 0;
+      while(true) {
+        auto sep_pos = line.find(m_separator, start_pos);
+        if(sep_pos == std::string::npos) {
+            m_fields_vec.emplace_back(line.substr(start_pos));
+            break;
+        }
+        m_fields_vec.emplace_back(line.substr(start_pos, sep_pos-start_pos));
+        start_pos = sep_pos + 1;
       }
     }
   
@@ -95,7 +109,34 @@ class CsvReader {
     std::unordered_map<std::string, int> m_header_index_map;
 };
 
-void readAlignmentFile(std::string alignment_filename, const std::vector<std::pair<int, int>>& incipit_tokno_bounds, int db_tokno_offset, const std::unordered_map<int, std::array<std::string, 4>>& greek_token_map, std::map<int, std::array<std::string, 4>>& chu_db_gk_alignment_map) {
+void readGreekFile(std::string greek_filename, std::unordered_map<int, std::array<std::string, 4>>& greek_token_map) {
+  std::ifstream greek_file(greek_filename);
+
+  if(greek_file.good()) {
+    CsvReader csv_reader('|');
+
+    std::string line;
+    std::getline(greek_file, line);
+    csv_reader.setHeaders(line);
+
+    //tokno|grc_word|pos|morph_tag|grc_lemma_id|sentence_id|text_id|subtitle_id
+
+    while(std::getline(greek_file, line)) {
+      csv_reader.setLine(line);
+      int grc_tokno = safeStrToInt(csv_reader.getField("tokno"));
+      std::string grc_form = csv_reader.getField("grc_word");
+      std::string grc_pos = csv_reader.getField("pos");
+      std::string grc_morph = csv_reader.getField("morph_tag");
+      std::string grc_lemma_id_str = csv_reader.getField("grc_lemma_id");
+
+      greek_token_map.emplace(grc_tokno, std::array<std::string, 4>{grc_form, grc_pos, grc_morph, grc_lemma_id_str});
+
+    }
+    greek_file.close();
+  }
+}
+
+void readAlignmentFile(std::string alignment_filename, const std::vector<std::pair<int, int>>& incipit_tokno_bounds, int db_tokno_offset, const std::unordered_map<int, std::array<std::string, 4>>& greek_token_map, std::map<int, std::array<std::string, 4>>& chu_db_grc_alignment_map) {
   std::ifstream alignment_file(alignment_filename);
 
   if(alignment_file.good()){
@@ -118,15 +159,16 @@ void readAlignmentFile(std::string alignment_filename, const std::vector<std::pa
       for(const auto& incipit_pair : incipit_tokno_bounds) {
         if(db_tokno_offset + row_no == incipit_pair.first) {
           row_no += (incipit_pair.second - incipit_pair.first) + 1;
+          std::cout << "incipit detected, shifting tokno forward by " << (incipit_pair.second - incipit_pair.first) + 1 << "\n";
         }
       }
       int chu_db_tokno = db_tokno_offset + row_no;
       
       if(grc_tokno != 0 && greek_token_map.contains(grc_tokno)) {
-        chu_db_gk_alignment_map.emplace(chu_db_tokno, greek_token_map.at(grc_tokno));
+        chu_db_grc_alignment_map.emplace(chu_db_tokno, greek_token_map.at(grc_tokno));
       }
       else if(grc_tokno != 0) {
-        std::cout << "the gk tokno with number" << grc_tokno << "has no equivalent in the greek xml files apparenlty\n";
+        std::cout << "the gk tokno with number " << grc_tokno << " has no equivalent in the greek xml files apparenlty\n";
       }
       row_no++;
     }
@@ -150,12 +192,37 @@ int main(int argc, char *argv[]) {
     std::vector<std::pair<int, int>> incipit_tokno_bounds;
     while(sqlite3_step(statement) == SQLITE_ROW) {
       int incipit_tokno_start = sqlite3_column_int(statement, 0);
-      int incipit_tokno_end = sqlite3_column_int(statement, 0);
+      int incipit_tokno_end = sqlite3_column_int(statement, 1);
       incipit_tokno_bounds.emplace_back(incipit_tokno_start, incipit_tokno_end);
     }
     sqlite3_finalize(statement);
 
+    for(const auto& pair : incipit_tokno_bounds) {
+      std::cout << "Incipt start: " << pair.first << " | Incipt end: " << pair.second << "\n";
+    }
+
+    std::unordered_map<int, std::array<std::string, 4>> greek_token_map;
+
+    readGreekFile("grc_words_full_with_titles.csv", greek_token_map);
+
+    std::cout << greek_token_map.size()<< "\n";
+
+    std::map<int, std::array<std::string, 4>> chu_db_grc_alignment_map;
+
+    readAlignmentFile("zographensis_alignments.csv", incipit_tokno_bounds, 204018, greek_token_map, chu_db_grc_alignment_map);
+    readAlignmentFile("marianus_alignments.csv", incipit_tokno_bounds, 2715, greek_token_map, chu_db_grc_alignment_map);
+    readAlignmentFile("new_psal_alignments.csv", incipit_tokno_bounds, 60974, greek_token_map, chu_db_grc_alignment_map);
+
+    std::cout << chu_db_grc_alignment_map.size()<< "\n";
+
+    //writing the alignment-file to disk is not strictly necessary as I am adding the data straight to the DB from the maps
+    std::ofstream chu_db_grc_file("chu_db_gk_align_cpp.csv");
+    for(const auto& chu_db_row : chu_db_grc_alignment_map)  {
+      chu_db_grc_file << chu_db_row.first << "|" << chu_db_row.second[0] << "|" << chu_db_row.second[1] << "|" << chu_db_row.second[2] << "|" << chu_db_row.second[3] << "\n";
+    }
+    chu_db_grc_file.close();
     
+
 
     sqlite3_exec(DB, "DROP TABLE IF EXISTS greek_alignments;CREATE TABLE greek_alignments (chu_tokno INTEGER PRIMARY KEY, gk_word TEXT, gk_lemma_id INTEGER, gk_morph_tag TEXT, gk_pos INTEGER)", nullptr, nullptr, nullptr);
     sqlite3_exec(DB, "DROP TABLE IF EXISTS greek_lemmas;CREATE TABLE greek_lemmas (gk_lemma_id INTEGER PRIMARY KEY, gk_lemma_pos INTEGER, gk_lemma_form TEXT)", nullptr, nullptr, nullptr);
@@ -171,23 +238,13 @@ int main(int argc, char *argv[]) {
 
     sqlite3_prepare_v2(DB, sql, -1, &statement, nullptr);
 
-    std::ifstream aligned_greek_file("zogr_db_gk_align.csv");
-    std::ifstream gk_lemmas_file("grc_lemmas.csv");
-    std::string greek_line;
-    std::vector<std::string> greek_row;
-    greek_row.reserve(5);
-    while(std::getline(aligned_greek_file, greek_line)) {
-      std::string field;
-      std::stringstream greek_line_ss(greek_line);
-      while(std::getline(greek_line_ss, field, '|')) {
-        greek_row.push_back(field);
-      }
+    for(const auto& chu_db_aligned_row : chu_db_grc_alignment_map) {
 
-      int chu_tokno = std::stoi(greek_row[0]);
-      std::string gk_word = greek_row[1];
-      int gk_pos = pos_map.at(greek_row[2]);
-      std::string gk_morph_tag = greek_row[3];
-      int gk_lemma_id = std::stoi(greek_row[4]);
+      int chu_tokno = chu_db_aligned_row.first;
+      std::string gk_word = chu_db_aligned_row.second[0];
+      int gk_pos = pos_map.at(chu_db_aligned_row.second[1]);
+      std::string gk_morph_tag = chu_db_aligned_row.second[2];
+      int gk_lemma_id = safeStrToInt(chu_db_aligned_row.second[3]);
 
       sqlite3_bind_int(statement, 1, chu_tokno);
       sqlite3_bind_text(statement, 2, gk_word.c_str(), -1, SQLITE_TRANSIENT);
@@ -197,21 +254,21 @@ int main(int argc, char *argv[]) {
 
       sqlite3_step(statement);
 
-      greek_row.clear();
+
       sqlite3_reset(statement);
       sqlite3_clear_bindings(statement);
     }
     sqlite3_finalize(statement);
 
+    std::ifstream gk_lemmas_file("grc_lemmas.csv");
     sql = "INSERT INTO greek_lemmas (gk_lemma_id, gk_lemma_pos, gk_lemma_form) VALUES (?,?,?)";
     sqlite3_prepare_v2(DB, sql, -1, &statement, nullptr);
     std::string lemma_line;
     std::vector<std::string> lemma_row;
-    greek_row.reserve(3);
     while(std::getline(gk_lemmas_file, lemma_line)) {
       std::string field;
       std::stringstream lemma_line_ss(lemma_line);
-      while(std::getline(lemma_line_ss, field, ',')) {
+      while(std::getline(lemma_line_ss, field, '|')) {
         lemma_row.push_back(field);
       }
 
@@ -229,10 +286,10 @@ int main(int argc, char *argv[]) {
       sqlite3_reset(statement);
       sqlite3_clear_bindings(statement);
     }
+    std::cout << "THUS FAR\n";
     sqlite3_finalize(statement);
 
 
-    aligned_greek_file.close();
     gk_lemmas_file.close();
 
     std::cout << sqlite3_exec(DB, sql_COMMIT, nullptr, nullptr, nullptr);

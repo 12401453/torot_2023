@@ -262,8 +262,8 @@ async function addAutotaggedAssemToCorpus() {
     const lemma_id = csv_reader.getField("lemma_id");
     const lemma = csv_reader.getField("lemma");
     const sentence_id = csv_reader.getField("sentence_id");
-    const pres_before = csv_reader.getField("pres_before");
-    const pres_after = csv_reader.getField("pres_after");
+    const pres_before = csv_reader.getField("pres_before").replaceAll("\uF002", "$").replaceAll("\uF102", "@");
+    const pres_after = csv_reader.getField("pres_after").replaceAll("\uF002", "$").replaceAll("\uF102", "@");
     const text_id = csv_reader.getField("text_id");
     const subtitle_id = csv_reader.getField("subtitle_id");
 

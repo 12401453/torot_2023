@@ -1,7 +1,13 @@
 ͑ => ҅
 ͆ => ꙯
 ͗ => ҆
-̑ => ҄
+
+Hex-codes for space and then line-separated pairs:
+0xcd 0x91 0x20 0xd2 0x85
+0xcd 0x86 0x20 0xea 0x99 0xaf
+0xcd 0x97 0x20 0xd2 0x86
 
 
 The one on the left is the shitty TOROT one that prevents the OCS fonts from displaying the adjacent character correctly; the one on the right is Birnbaum's one that works properly
+
+Also replaced all Russian ы with the Cyrillic ꙑ digraph, since I've tried looking on Birnshit's site for the front-jer version and the only one I found seemed to contradict the manuscript

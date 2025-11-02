@@ -1,4 +1,4 @@
-%% lexicon created Sat Nov  1 12:30:35 2025 from file
+%% lexicon created Sun Nov  2 21:52:28 2025 from file
 %%     chu_tnt_mergetags.tt
 %% the corpus contained 242536 tokens
 %% this lexicon contains 36243 tokens
