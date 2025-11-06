@@ -56,6 +56,14 @@
 {"nt_N", 261},
 {"den", 1011},
 {"oko", 1021},
+{"nt_o_PV3", 301},
+{"masc_o_PV3", 301},
+{"fem_a_PV3", 301},
+{"masc_a_PV3", 301}, //the PV3 desinences were added to a 303 table rather than by changing the 302 table
+
+{"vьxь", 2031},
+{"kъto", 2041},//no changes made
+{"čьto", 2051},
 
 
 
@@ -70,4 +78,8 @@
 {"nt_NT", 271},
 {"nt_S", 281},
 {"nt_o_S", 291},
-
+{"kъjь", 2061},
+{"kъjьže", 2061},
+{"jь", 51},
+{"jьže", 51},
+{"kъžьdo", 61},
