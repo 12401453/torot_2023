@@ -27,7 +27,7 @@ const start_url = "https://ru.wiktionary.org/w/index.php?title=%D0%9A%D0%B0%D1%8
 const whole_dict_json = new Array();
 let failure_csv = "";
 
-const punct_shit = /[-\s,—\)\()△\.]+/;
+const punct_shit = /[-\s,—\)\()\/△\.]+/;
 
 async function startScraping() {  
     let next_page_url = start_url;

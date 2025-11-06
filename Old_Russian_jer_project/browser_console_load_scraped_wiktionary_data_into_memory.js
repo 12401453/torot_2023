@@ -12,4 +12,12 @@ for(let i = 10; i < 1521; i+=10) {
         response.forEach(entry => scraped_ru.push(entry));
     });
 
-} 
+}
+fetch("ru_wiktionary_data/russian_lemmas_pg1521-01526.json")
+.then(response => {
+    return response.json();
+})
+.then(response => {
+    response.forEach(entry => scraped_ru.push(entry));
+});
+

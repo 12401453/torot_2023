@@ -26,7 +26,7 @@ const icu::UnicodeString PV2_regex_CSR = "[kgx]v?[ěi](?!$)";
 const icu::UnicodeString PV2_regex_stem = "[kgx]v?[ěi]";
 const icu::UnicodeString PV3_regex = "[ьię][kgx][auǫ]";
 const icu::UnicodeString tense_jer_regex = "[ьъ]j[Ǣeiьęǫuě]";
-const icu::UnicodeString m_non_final_jer_regex = "[ьъ](?!$)";
+const icu::UnicodeString m_non_final_jer_regex = "[ьъEO](?!$)";
 
 UErrorCode status = U_ZERO_ERROR;
 icu::RegexMatcher non_final_jer_matcher(m_non_final_jer_regex, 0, status);
@@ -191,6 +191,9 @@ std::string convertToORV(std::string lcs_form, const std::string& conj_type, boo
 
   LcsFlecter::replaceAll(lcs_form, "dn", "n");
 
+  LcsFlecter::replaceAll(lcs_form, "E", "ь");
+  LcsFlecter::replaceAll(lcs_form, "O", "ъ");
+
   if(lcs_form.starts_with("ak") || lcs_form.starts_with("av") || lcs_form.starts_with("az")) {
     lcs_form = "jǢ" + lcs_form.substr(1);
   }
@@ -205,7 +208,7 @@ std::string convertToORV(std::string lcs_form, const std::string& conj_type, boo
     LcsFlecter::replaceAll(lcs_form, "jezer", "ozer");
   }
 
-  LcsFlecter::replaceAll(lcs_form, "Ǣ", "a");
+  // LcsFlecter::replaceAll(lcs_form, "Ǣ", "a");
 
   icu::UnicodeString lcs_form_unicode;
   lcs_form_unicode = lcs_form_unicode.fromUTF8(lcs_form);

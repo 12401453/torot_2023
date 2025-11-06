@@ -17,7 +17,7 @@ const test_page_url = process.argv[2];
 
 let failure_csv = "";
 
-const punct_shit = /[-\s,—\)\()△\.]+/;
+const punct_shit = /[-\s,—\)\()\/△\.]+/;
 
 async function startScraping() {  
         const entry_name = decodeURIComponent(new URL(test_page_url).pathname.slice(6));

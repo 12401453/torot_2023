@@ -41,3 +41,11 @@
 {"masc_jo", 131},
 {"fem_ja", 131},
 {"nt_jo", 131},
+{"fem_i", 141},
+{"masc_i", 141},
+{121} //adapted for o/a-stems but this conjugation touches other paradigms like adjectives so they might need special handling
+
+//{"tri", 141} no special handling of tri has been implemented since it is an i-stem in LCS
+
+{"fem_R", 161},
+{"fem_uu", 171}, //but *azъbuky becomes a straight a-stem which isn't dealt with
