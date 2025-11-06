@@ -2,3 +2,7 @@
 phrase "ясен пень" has short-form of ясный with an inserted /e/, but Derksen pg.153 reconstructs this as *ěsnъ (i.e. *jǢsnъ)
 
 I'm using a tilde ~ to mark secondary-palatalisation in the inflection-tables
+
+The plural oblique forms of око have the PV1 reflex from the *-es- infix in them (очах etc.), which is only specifiable at the LCS stage if I make their desinences *jǢxъ etc., which is not historically accurate in any way
+
+I've put the modern Russian PV3 endings in an extra {303,} table, because I'm worried about their being Russian words which don't undergo PV3, and what's in the 302 column is mostly the original hard o/a-stem endings

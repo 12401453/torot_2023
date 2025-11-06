@@ -1,4 +1,3 @@
--- I haven't yet decided how to deal with the North-Slavic o-stem instr. sg. ending *-ъmь, and opposed to *-omь, but I don't think the exclusion of this will matter since it always ends up as -ом anyway, and it would bloat the number of non-final-jer-containing forms if it were included as *ъmь
 -- One of my alternatives endings for o-stems and similar is the u-stem Instr. pl. *ъmi ending, which I don't think ever survives into modern Russian, so this somewhat inflates the number of lemmas viewed as having a non-final jer "somewhere in the paradigm".
 -- I choose to add one long-form adjectival to the produced paradigms, viz. the nom. masc. sg. by adding *jь, but this then makes basically every single adjective contain a non-final jer, and since the reflexes of these are mostly entirely predictably and morphologically-determined, this could be seen as pointless. It's useful for tracking forms in TOROT texts, though
 

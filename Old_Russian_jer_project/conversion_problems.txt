@@ -24,5 +24,6 @@ The modern Russian ja-stem Isg. is -ой under stress and -ей otherwise, which
 
 Will need to add two separate alternative desinence endings for i-stems: one that become masc jo-stems and one that converts masc to fem_i stems.
 The plurals are the same for both, so in the new 143{} map I have put Gsg, Dsg. and Lsg. with the CSR jo-stem endings in both the masc. and fem. slots (to cope with ones that change gender).
-~ used as marker of softness in preceding consonant
+
+tilde ~ used as marker of softness in preceding consonant
 

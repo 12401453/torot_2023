@@ -49,3 +49,25 @@
 
 {"fem_R", 161},
 {"fem_uu", 171}, //but *azъbuky becomes a straight a-stem which isn't dealt with
+{"masc_anin", 181},
+{"masc_tel", 231},
+{"masc_u", 241},
+{"masc_o_in",121} //dealt with by LcsFlecter
+{"nt_N", 261},
+{"den", 1011},
+{"oko", 1021},
+
+
+
+
+
+//NOT IN LIST
+{"four", 191},
+{"masc_jo_foreign", 201},
+{"masc_ju", 211},
+{"masc_N", 221},
+{"masc_o_u", 251},
+{"nt_NT", 271},
+{"nt_S", 281},
+{"nt_o_S", 291},
+

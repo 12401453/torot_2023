@@ -88,6 +88,16 @@ void LcsFlecter::postProcess(std::array<std::vector<Inflection>, 3> &inflected_f
             inflected_forms[1][19].flected_form = "";
             inflected_forms[1][20].flected_form = "";
         }
+
+        if(m_conj_type == "masc_o_in") {
+            for(auto& infl_vec : inflected_forms) {
+                for(Inflection& infl : infl_vec) {
+                    if(infl.desinence_ix < 22 && infl.desinence_ix > 14) {
+                        replaceAll(infl.flected_form, "in", "");
+                    }
+                }
+            }
+        }
     }
     else if(m_noun_verb == VERB) {
         //NB the imperf_sheta() function from the autoreconstructor will need to just be added on in the JS, since it affects the 2nd 3rd dual and 3pl imperfect of all verbs and is thus not captured in inflection-class-specific alternate conjugation-tables 
