@@ -208,7 +208,7 @@ std::string convertToORV(std::string lcs_form, const std::string& conj_type, boo
     LcsFlecter::replaceAll(lcs_form, "jezer", "ozer");
   }
 
-  // LcsFlecter::replaceAll(lcs_form, "Ǣ", "a");
+  LcsFlecter::replaceAll(lcs_form, "Ǣ", "ä");
 
   icu::UnicodeString lcs_form_unicode;
   lcs_form_unicode = lcs_form_unicode.fromUTF8(lcs_form);

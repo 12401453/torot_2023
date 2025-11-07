@@ -8,3 +8,5 @@ The plural oblique forms of око have the PV1 reflex from the *-es- infix in t
 I've put the modern Russian PV3 endings in an extra {303,} table, because I'm worried about their being Russian words which don't undergo PV3, and what's in the 302 column is mostly the original hard o/a-stem endings
 
 всякий just becomes an adjective; тъ becomes more like a Russian pronominal but is reduplicated in nom.; neither can be accounted for easily by a secondary pron-hard table
+
+I should add a separate table for adjectives and just put the ancestors of the modern Russian pronominal-dervied and short-form endings in there, rather than keeping them on the o/a-stem table
