@@ -365,10 +365,12 @@ int main() {
   nouns_pairs_vec.reserve(2048);
   verbs_pairs_vec.reserve(2048);
   
-  std::ostringstream inflected_forms_json_oss;
-  std::ostringstream inflected_forms_orv_oss;
-  inflected_forms_json_oss << "[\n";
-  inflected_forms_orv_oss << "[\n";
+  std::ostringstream inflected_lcs_json_oss;
+  std::ostringstream inflected_orv_json_oss;
+  std::ostringstream indexed_inflected_lcs_json_oss;
+  inflected_lcs_json_oss << "[\n";
+  inflected_orv_json_oss << "[\n";
+  indexed_inflected_lcs_json_oss << "[\n";
 
   std::cout << "reading orv_lemmas_master.csv file...\n";
   std::ifstream orv_lemmas_file("orv_lemmas_master.csv");
@@ -413,8 +415,9 @@ int main() {
         else {
           lcs_lemma_unicode.setTo(lcs_lemma.c_str());
           if(containsNonFinalJer(lcs_lemma_unicode)) {
-            inflected_forms_json_oss << "[" << pv2_3_exists << "," << ch_sl << ",\"" << lcs_lemma << "\"],\n";
-            inflected_forms_orv_oss << "[" << pv2_3_exists << "," << ch_sl << ",\"" << convertToORV(lcs_lemma, conj_type, (ch_sl == "true"), pv2_3_exists) << "\"],\n";
+            inflected_lcs_json_oss << "[" << pv2_3_exists << "," << ch_sl << ",\"" << lcs_lemma << "\"],\n";
+            inflected_orv_json_oss << "[" << pv2_3_exists << "," << ch_sl << ",\"" << convertToORV(lcs_lemma, conj_type, (ch_sl == "true"), pv2_3_exists) << "\"],\n";
+            indexed_inflected_lcs_json_oss << "[" << pv2_3_exists << "," << ch_sl << ",\"" << lcs_lemma << "\"],\n";
           }
       }
       
@@ -430,6 +433,7 @@ int main() {
     noun_flecter.setConjType(noun.conj_type);
     
     noun_flecter.produceUniqueInflections();
+    noun_flecter.produceAllInflections();
 
 
     std::vector<std::string> orv_noun_inflections;
@@ -452,18 +456,33 @@ int main() {
     // std::cout << "\n";
 
     if(noun_flecter.m_unique_inflections.size() > 0) {
-      inflected_forms_json_oss << "[" << noun.pv2_3_exists << "," << noun.ch_sl << ",";
-      inflected_forms_orv_oss << "[" << noun.pv2_3_exists << "," << noun.ch_sl << ",";
+      inflected_lcs_json_oss << "[" << noun.pv2_3_exists << "," << noun.ch_sl << ",";
+      inflected_orv_json_oss << "[" << noun.pv2_3_exists << "," << noun.ch_sl << ",";
+      indexed_inflected_lcs_json_oss << "[" << noun.pv2_3_exists << "," << noun.ch_sl << ",";
       for(const auto& infl : noun_flecter.m_unique_inflections) {
-        inflected_forms_json_oss << "\"" << infl << "\",";
+        inflected_lcs_json_oss << "\"" << infl << "\",";
       }
       for(const auto& orv_infl : orv_noun_inflections) {
-        inflected_forms_orv_oss << "\"" << orv_infl << "\",";
+        inflected_orv_json_oss << "\"" << orv_infl << "\",";
       }
-      inflected_forms_json_oss.seekp(-1, std::ios_base::cur);
-      inflected_forms_json_oss << "],\n";
-      inflected_forms_orv_oss.seekp(-1, std::ios_base::cur);
-      inflected_forms_orv_oss << "],\n";
+      for(const auto& infl_vec : noun_flecter.m_inflections) {
+        indexed_inflected_lcs_json_oss << "{";
+        bool empty_paradigm = true;
+        for(const auto& infl : infl_vec) {
+          if(!infl.flected_form.empty()) {
+            indexed_inflected_lcs_json_oss << "\"" << infl.desinence_ix << "\":\"" << infl.flected_form << "\",";
+            empty_paradigm = false;
+          }
+        }
+        if(!empty_paradigm) indexed_inflected_lcs_json_oss.seekp(-1, std::ios_base::cur);
+        indexed_inflected_lcs_json_oss << "},";
+      }
+      inflected_lcs_json_oss.seekp(-1, std::ios_base::cur);
+      inflected_lcs_json_oss << "],\n";
+      inflected_orv_json_oss.seekp(-1, std::ios_base::cur);
+      inflected_orv_json_oss << "],\n";
+      indexed_inflected_lcs_json_oss.seekp(-1, std::ios_base::cur);
+      indexed_inflected_lcs_json_oss << "],\n";
     }
   }
 
@@ -473,6 +492,7 @@ int main() {
     verb_flecter.setConjType(verb.conj_type);
     
     verb_flecter.produceUniqueInflections();
+    verb_flecter.produceAllInflections();
 
     std::vector<std::string> orv_verb_inflections;
     orv_verb_inflections.reserve(verb_flecter.m_unique_inflections.size());
@@ -495,41 +515,64 @@ int main() {
     // std::cout << "\n";
 
     if(verb_flecter.m_unique_inflections.size() > 0) {
-      inflected_forms_json_oss << "[" << verb.pv2_3_exists << "," << verb.ch_sl << ",";
-      inflected_forms_orv_oss << "[" << verb.pv2_3_exists << "," << verb.ch_sl << ",";
+      inflected_lcs_json_oss << "[" << verb.pv2_3_exists << "," << verb.ch_sl << ",";
+      inflected_orv_json_oss << "[" << verb.pv2_3_exists << "," << verb.ch_sl << ",";
+      indexed_inflected_lcs_json_oss << "[" << verb.pv2_3_exists << "," << verb.ch_sl << ",";
       for(const auto& infl : verb_flecter.m_unique_inflections) {
-        inflected_forms_json_oss << "\"" << infl << "\",";
+        inflected_lcs_json_oss << "\"" << infl << "\",";
       }
       for(const auto& orv_infl : orv_verb_inflections) {
-        inflected_forms_orv_oss << "\"" << orv_infl << "\",";
+        inflected_orv_json_oss << "\"" << orv_infl << "\",";
       }
-      inflected_forms_json_oss.seekp(-1, std::ios_base::cur);
-      inflected_forms_json_oss << "],\n";
-      inflected_forms_orv_oss.seekp(-1, std::ios_base::cur);
-      inflected_forms_orv_oss << "],\n";
+      for(const auto& infl_vec : verb_flecter.m_inflections) {
+        indexed_inflected_lcs_json_oss << "{";
+        bool empty_paradigm = true;
+        for(const auto& infl : infl_vec) {
+          if(!infl.flected_form.empty()) {
+            indexed_inflected_lcs_json_oss << "\"" << infl.desinence_ix << "\":\"" << infl.flected_form << "\",";
+            empty_paradigm = false;
+          }
+        }
+        if(!empty_paradigm) indexed_inflected_lcs_json_oss.seekp(-1, std::ios_base::cur);
+        indexed_inflected_lcs_json_oss << "},";
+      }
+      inflected_lcs_json_oss.seekp(-1, std::ios_base::cur);
+      inflected_lcs_json_oss << "],\n";
+      inflected_orv_json_oss.seekp(-1, std::ios_base::cur);
+      inflected_orv_json_oss << "],\n";
+      indexed_inflected_lcs_json_oss.seekp(-1, std::ios_base::cur);
+      indexed_inflected_lcs_json_oss << "],\n";
     }
   }
 
 
 //std::cout << nouns_map.at(65090)[0] << " : " << nouns_map.at(65090)[1] << "\n";
-  inflected_forms_json_oss.seekp(-2, std::ios_base::cur);
-  inflected_forms_json_oss << "\n]";
-  inflected_forms_orv_oss.seekp(-2, std::ios_base::cur);
-  inflected_forms_orv_oss << "\n]";
-  // std::cout << inflected_forms_json_oss.str() << "\n"; 
+  inflected_lcs_json_oss.seekp(-2, std::ios_base::cur);
+  inflected_lcs_json_oss << "\n]";
+  inflected_orv_json_oss.seekp(-2, std::ios_base::cur);
+  inflected_orv_json_oss << "\n]";
+  indexed_inflected_lcs_json_oss.seekp(-2, std::ios_base::cur);
+  indexed_inflected_lcs_json_oss << "\n]";
+  // std::cout << inflected_lcs_json_oss.str() << "\n"; 
 
   std::ofstream lcs_inflections_file("lcs_inflections.json");
   std::ofstream orv_inflections_file("orv_inflections.json");
+  std::ofstream indexed_lcs_inflections_file("lcs_inflections_indexed.json");
 
   if(lcs_inflections_file.good()) {
-    lcs_inflections_file << inflected_forms_json_oss.str();
+    lcs_inflections_file << inflected_lcs_json_oss.str();
 
     lcs_inflections_file.close();
   }
   if(orv_inflections_file.good()) {
-    orv_inflections_file << inflected_forms_orv_oss.str();
+    orv_inflections_file << inflected_orv_json_oss.str();
 
     orv_inflections_file.close();
+  }
+  if(indexed_lcs_inflections_file.good()) {
+    indexed_lcs_inflections_file << indexed_inflected_lcs_json_oss.str();
+
+    indexed_lcs_inflections_file.close();
   }
 
 

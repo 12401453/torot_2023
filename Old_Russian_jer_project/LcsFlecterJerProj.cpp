@@ -700,6 +700,43 @@ void LcsFlecter::produceUniqueInflections() {
     }
 };
 
+void LcsFlecter::produceAllInflections() {
+    
+    m_inflections = getFullParadigm();
+    for(auto& vec : m_inflections) {
+        for(auto& inflection : vec) {
+            if(!inflection.flected_form.empty()) {
+                //std::cout << inflection.flected_form;
+                
+                if(m_noun_verb == VERB && (inflection.desinence_ix > 37 && inflection.desinence_ix < 43)) {
+                    std::string jer = "ъ";
+                    if(inflection.desinence_ix == 38) {
+                        inflection.flected_form = inflection.flected_form + "ь";
+                        //add masc. Nsg. long-form to PRAPs
+                        vec.emplace_back(145, inflection.flected_form + "jь");
+                    }
+                    else if(inflection.desinence_ix > 40) {
+                        inflection.flected_form = inflection.flected_form + "ъ";
+                    }
+                    
+                    if(inflection.desinence_ix == 40) {
+                        //non-masc l-past tenses for modern Russian comparisons
+                        vec.emplace_back(146, inflection.flected_form + "a");
+                        vec.emplace_back(147, inflection.flected_form + "o");
+                        vec.emplace_back(148, inflection.flected_form + "i");
+                        inflection.flected_form = inflection.flected_form + "ъ";
+                    }
+                    else if(inflection.desinence_ix == 39) {
+                        vec.emplace_back(149, inflection.flected_form + "ši");
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
 // int main() {
 
 //     std::string conj_type, stem, noun_verb_str;

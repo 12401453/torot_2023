@@ -22,6 +22,12 @@ struct Inflection {
     std::string flected_form;
 };
 
+struct IndexedInflection {
+    int deviance_idx;
+    int desinence_idx;
+    std::string flected_form;
+};
+
 struct Lemma {
     std::string stem;
     std::string conj_type;
@@ -80,8 +86,10 @@ class LcsFlecter {
     bool c_strStartsWith(const char* str1, const char* str2);
 
     void produceUniqueInflections();
+    void produceAllInflections();
 
     std::unordered_set<std::string> m_unique_inflections;
+    std::array<std::vector<Inflection>, 3> m_inflections;
 
 
     private:
