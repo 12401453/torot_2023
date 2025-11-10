@@ -10,3 +10,5 @@ I've put the modern Russian PV3 endings in an extra {303,} table, because I'm wo
 всякий just becomes an adjective; тъ becomes more like a Russian pronominal but is reduplicated in nom.; neither can be accounted for easily by a secondary pron-hard table
 
 I should add a separate table for adjectives and just put the ancestors of the modern Russian pronominal-dervied and short-form endings in there, rather than keeping them on the o/a-stem table
+
+An interesting question is: what happens to the dual-forms of adjectives as the endings are being replaced with the pronoun-ones?

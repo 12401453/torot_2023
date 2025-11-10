@@ -3,17 +3,17 @@
     {"ty", 21},
     {"sę", 31},
 
-    {"adj_hard", 121},
+    {"adj_hard", 1501},
     {"masc_o", 121},
     {"fem_a", 121},
     {"masc_a", 121},
     {"nt_o", 121},
-    {"long_adj_noun", 121},
-    {"adj_soft", 131},
-    {"adj_ij", 131}, //not included in Autoreconstructor conj_type_enum.h because of TOROT strength-marking inaccuracy
+    {"long_adj_noun", 1501},
+    {"adj_soft", 1511},
+    {"adj_ij", 1511}, //not included in Autoreconstructor conj_type_enum.h because of TOROT strength-marking inaccuracy
     {"adj_soft_comp", 1311},
-    {"adj_soft_ord", 131},
-    {"adj_hard_ord", 121},
+    {"adj_soft_ord", 1511},
+    {"adj_hard_ord", 1501},
     {"masc_jo", 131},
     {"fem_ja", 131},
     {"nt_jo", 131},

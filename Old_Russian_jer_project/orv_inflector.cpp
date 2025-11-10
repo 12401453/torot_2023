@@ -1,3 +1,7 @@
+//g++ -O3 -std=c++20 orv_inflector.cpp LcsFlecterJerProj.cpp -licui18n -licuuc -licudata -o orv_inflector
+//OR compile the LcsFlecterJerProj.cpp bit separately, as that is what takes fockin ages because of the inflection-maps
+//g++ -O3 -std=c++20 -c LcsFlecterJerProj.cpp -licui18n -licuuc -licudata -o LcsFlecterJerProj.o
+//g++ -O3 -std=c++20 orv_inflector.cpp LcsFlecterJerProj.o -licui18n -licuuc -licudata -o orv_inflector
 #include <iostream>
 #include <string>
 #include <array>
@@ -6,6 +10,13 @@
 #include <sstream>
 #include <cstdint>
 #include "LcsFlecterJerProj.h"
+
+struct LemmaInfo {
+  bool pv2_3_exists;
+  std::string ch_sl;
+  std::string conj_type;
+  std::string lcs_stem;
+};
 
 //regex for non-final jers: [ьъ](?!$)
 
@@ -186,7 +197,7 @@ void dejotationReflexesOCS(std::string& lcs_form) {
 std::string convertToORV(std::string lcs_form, const std::string& conj_type, bool ch_sl, bool pv2_3_exists) {
   LcsFlecter::replaceAll(lcs_form, "ę̌", "ě");//should these top two be different for ch_sl words?
   LcsFlecter::replaceAll(lcs_form, "y̨", "a");
-  LcsFlecter::replaceAll(lcs_form, "Q", "ь");
+  //LcsFlecter::replaceAll(lcs_form, "Q", "ь");
   LcsFlecter::replaceAll(lcs_form, "ĺ̥", "l̥");
 
   LcsFlecter::replaceAll(lcs_form, "dn", "n");
@@ -213,7 +224,7 @@ std::string convertToORV(std::string lcs_form, const std::string& conj_type, boo
   icu::UnicodeString lcs_form_unicode;
   lcs_form_unicode = lcs_form_unicode.fromUTF8(lcs_form);
 
-  applyPV2(lcs_form_unicode, pv2_full_matcher);
+  //applyPV2(lcs_form_unicode, pv2_full_matcher);
 
   if(pv2_3_exists) applyPV3(lcs_form_unicode);
 
@@ -241,46 +252,47 @@ bool containsNonFinalJer(const icu::UnicodeString& lcs_form_unicode) {
   else return false;
 }
 
-class CsvReader {
-  public:
-    CsvReader(char separator=',') {
-      m_separator = separator;
-      m_fields_vec.reserve(32);
-    }
+// class CsvReader {
+//   public:
+//     CsvReader(char separator=',') {
+//       m_separator = separator;
+//       m_fields_vec.reserve(32);
+//     }
 
-    void setHeaders(const std::string& first_line) {
-      m_header_index_map.clear();
+//     void setHeaders(const std::string& first_line) {
+//       m_header_index_map.clear();
 
-      std::stringstream first_line_ss(first_line);
-      std::string header;
-      int header_idx = 0;
-      while(std::getline(first_line_ss, header, m_separator)) {
-        m_header_index_map.emplace(header, header_idx);
-        ++header_idx;
-      }
-    }
+//       std::stringstream first_line_ss(first_line);
+//       std::string header;
+//       int header_idx = 0;
+//       while(std::getline(first_line_ss, header, m_separator)) {
+//         m_header_index_map.emplace(header, header_idx);
+//         ++header_idx;
+//       }
+//     }
    
-    void setLine(const std::string& line) {
-      m_fields_vec.clear();
+//     void setLine(const std::string& line) {
+//       m_fields_vec.clear();
 
-      m_raw_line = line;
-      std::stringstream line_ss(line);
-      std::string field;
-      while(std::getline(line_ss, field, m_separator)){
-        m_fields_vec.emplace_back(field);
-      }
-    }
+//       m_raw_line = line;
+//       std::stringstream line_ss(line);
+//       std::string field;
+//       while(std::getline(line_ss, field, m_separator)){
+//         m_fields_vec.emplace_back(field);
+//       }
+//     }
   
-    std::string getField(const std::string& header) {
-      return m_fields_vec[m_header_index_map.at(header)];
-    }
+//     std::string getField(const std::string& header) {
+//       return m_fields_vec[m_header_index_map.at(header)];
+//     }
 
-  private:
-    char m_separator;
-    std::string m_raw_line;
-    std::vector<std::string> m_fields_vec;
-    std::unordered_map<std::string, int> m_header_index_map;
-};
+//   private:
+//     char m_separator;
+//     std::string m_raw_line;
+//     std::vector<std::string> m_fields_vec;
+//     std::unordered_map<std::string, int> m_header_index_map;
+// };
+#include "CsvReader.cpp"
 
 consteval std::uint64_t compileTimeHashString(std::string_view sv) {
   uint64_t hash = 1469598103934665603ULL;
@@ -345,8 +357,10 @@ int main() {
   LcsFlecter noun_flecter(NOUN);
   LcsFlecter verb_flecter(VERB);
   
-  std::vector<std::pair<int, std::array<std::string, 3>>> nouns_pairs_vec;
-  std::vector<std::pair<int, std::array<std::string, 3>>> verbs_pairs_vec;
+  // std::vector<std::pair<int, std::array<std::string, 3>>> nouns_pairs_vec;
+  // std::vector<std::pair<int, std::array<std::string, 3>>> verbs_pairs_vec;
+  std::vector<LemmaInfo> nouns_pairs_vec;
+  std::vector<LemmaInfo> verbs_pairs_vec;
 
   nouns_pairs_vec.reserve(2048);
   verbs_pairs_vec.reserve(2048);
@@ -356,6 +370,7 @@ int main() {
   inflected_forms_json_oss << "[\n";
   inflected_forms_orv_oss << "[\n";
 
+  std::cout << "reading orv_lemmas_master.csv file...\n";
   std::ifstream orv_lemmas_file("orv_lemmas_master.csv");
   if(orv_lemmas_file.good()) {
 
@@ -364,11 +379,11 @@ int main() {
     std::getline(orv_lemmas_file, line);
     csv_reader.setHeaders(line);
     while(std::getline(orv_lemmas_file, line)) {
-      std::stringstream ss_line(line);
       
       csv_reader.setLine(line);
       int noun_verb = safeStrToInt(csv_reader.getField("noun_verb"), 99);
-      if(noun_verb == 99) {
+      bool jer_proj = csv_reader.getField("jer_project") == "1" ? true : false;
+      if(jer_proj == false || noun_verb == 99) {
         continue;
       }
       std::string orv_torot_lemma = csv_reader.getField("orv_lemma");
@@ -380,6 +395,7 @@ int main() {
       bool pv2_3_exists = csv_reader.getField("PV2/3") == "" ? false : true;
       int old_lemma_id = 0;
       
+      
       std::string ch_sl = csv_reader.getField("ch_sl") == "ch_sl" ? "true" : "false";
       
       icu::UnicodeString lcs_lemma_unicode;
@@ -387,10 +403,12 @@ int main() {
       std::string lcs_stem = makeLcsStem(lcs_lemma_unicode, lcs_lemma, conj_type, stem1, stem2, pre_jot);
       
       if(noun_verb == 2) {
-            nouns_pairs_vec.emplace_back(pv2_3_exists, std::array<std::string, 3>{lcs_stem, conj_type, ch_sl});
+            //nouns_pairs_vec.emplace_back(pv2_3_exists, std::array<std::string, 3>{lcs_stem, conj_type, ch_sl});
+            nouns_pairs_vec.emplace_back(pv2_3_exists, ch_sl, conj_type, lcs_stem);
         }
         else if(noun_verb == 1) {
-            verbs_pairs_vec.emplace_back(pv2_3_exists, std::array<std::string, 3>{lcs_stem, conj_type, ch_sl});
+            // verbs_pairs_vec.emplace_back(pv2_3_exists, std::array<std::string, 3>{lcs_stem, conj_type, ch_sl});
+            verbs_pairs_vec.emplace_back(pv2_3_exists, ch_sl, conj_type, lcs_stem);
         }
         else {
           lcs_lemma_unicode.setTo(lcs_lemma.c_str());
@@ -406,34 +424,36 @@ int main() {
   }
 
   icu::UnicodeString lcs_form_unicode;
+  std::cout << "inflecting nouns...\n";
   for(const auto& noun : nouns_pairs_vec) {
-    noun_flecter.setStem(noun.second[0]);
-    noun_flecter.setConjType(noun.second[1]);
+    noun_flecter.setStem(noun.lcs_stem);
+    noun_flecter.setConjType(noun.conj_type);
     
     noun_flecter.produceUniqueInflections();
+
 
     std::vector<std::string> orv_noun_inflections;
     orv_noun_inflections.reserve(noun_flecter.m_unique_inflections.size());
 
     for(auto inflections_iter = noun_flecter.m_unique_inflections.begin(); inflections_iter != noun_flecter.m_unique_inflections.end();) {
       lcs_form_unicode.setTo((*inflections_iter).c_str());
-      if(!containsNonFinalJer(lcs_form_unicode)) {
-        inflections_iter = noun_flecter.m_unique_inflections.erase(inflections_iter);
-      }
-      else {
-        orv_noun_inflections.emplace_back(convertToORV(*inflections_iter, noun.second[1], (noun.second[2] == "true"), noun.first));
+      // if(!containsNonFinalJer(lcs_form_unicode)) {
+      //   inflections_iter = noun_flecter.m_unique_inflections.erase(inflections_iter);
+      // }
+      //else {
+        orv_noun_inflections.emplace_back(convertToORV(*inflections_iter, noun.conj_type, (noun.ch_sl == "true"), noun.pv2_3_exists));
         ++inflections_iter;
-      }
+      //}
     }
 
-    for(const auto& orv_infl : orv_noun_inflections) {
-      std::cout << orv_infl << " | ";
-    }
-    std::cout << "\n";
+    // for(const auto& orv_infl : orv_noun_inflections) {
+    //   std::cout << orv_infl << " | ";
+    // }
+    // std::cout << "\n";
 
     if(noun_flecter.m_unique_inflections.size() > 0) {
-      inflected_forms_json_oss << "[" << noun.first << "," << noun.second[2] << ",";
-      inflected_forms_orv_oss << "[" << noun.first << "," << noun.second[2] << ",";
+      inflected_forms_json_oss << "[" << noun.pv2_3_exists << "," << noun.ch_sl << ",";
+      inflected_forms_orv_oss << "[" << noun.pv2_3_exists << "," << noun.ch_sl << ",";
       for(const auto& infl : noun_flecter.m_unique_inflections) {
         inflected_forms_json_oss << "\"" << infl << "\",";
       }
@@ -447,9 +467,10 @@ int main() {
     }
   }
 
+  std::cout << "inflecting verbs...\n";
   for(const auto& verb : verbs_pairs_vec) {
-    verb_flecter.setStem(verb.second[0]);
-    verb_flecter.setConjType(verb.second[1]);
+    verb_flecter.setStem(verb.lcs_stem);
+    verb_flecter.setConjType(verb.conj_type);
     
     verb_flecter.produceUniqueInflections();
 
@@ -458,24 +479,24 @@ int main() {
 
     for(auto inflections_iter = verb_flecter.m_unique_inflections.begin(); inflections_iter != verb_flecter.m_unique_inflections.end();) {
       lcs_form_unicode.setTo((*inflections_iter).c_str());
-      if(!containsNonFinalJer(lcs_form_unicode)) {
-        //std::set::erase() invalidates the current iterator and returns an iterator to the member after the erased one
-        inflections_iter = verb_flecter.m_unique_inflections.erase(inflections_iter);
-      }
-      else {
-        orv_verb_inflections.emplace_back(convertToORV(*inflections_iter, verb.second[1], (verb.second[2] == "true"), verb.first));
+      // if(!containsNonFinalJer(lcs_form_unicode)) {
+      //   //std::set::erase() invalidates the current iterator and returns an iterator to the member after the erased one
+      //   inflections_iter = verb_flecter.m_unique_inflections.erase(inflections_iter);
+      // }
+      //else {
+        orv_verb_inflections.emplace_back(convertToORV(*inflections_iter, verb.conj_type, (verb.ch_sl == "true"), verb.pv2_3_exists));
         ++inflections_iter;
-      }
+      //}
     }
 
-    for(const auto& orv_infl : orv_verb_inflections) {
-      std::cout << orv_infl << " | ";
-    }
-    std::cout << "\n";
+    // for(const auto& orv_infl : orv_verb_inflections) {
+    //   std::cout << orv_infl << " | ";
+    // }
+    // std::cout << "\n";
 
     if(verb_flecter.m_unique_inflections.size() > 0) {
-      inflected_forms_json_oss << "[" << verb.first << "," << verb.second[2] << ",";
-      inflected_forms_orv_oss << "[" << verb.first << "," << verb.second[2] << ",";
+      inflected_forms_json_oss << "[" << verb.pv2_3_exists << "," << verb.ch_sl << ",";
+      inflected_forms_orv_oss << "[" << verb.pv2_3_exists << "," << verb.ch_sl << ",";
       for(const auto& infl : verb_flecter.m_unique_inflections) {
         inflected_forms_json_oss << "\"" << infl << "\",";
       }

@@ -1,4 +1,4 @@
-const cyr_map = new Map([
+const cyr_arr = new Array([
 
     ["а́", "а"],
     ["е́", "е"],
@@ -14,7 +14,7 @@ const cyr_map = new Map([
 
 const deStressDownCase = (word) => {
 
-    for(const pair of cyr_map) {
+    for(const pair of cyr_arr) {
         word = word.toLocaleLowerCase().replaceAll(pair[0], pair[1]);
     }
     return word;

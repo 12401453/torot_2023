@@ -22,12 +22,12 @@ void LcsFlecter::setConjType(std::string conj_type) {
         if(m_noun_verb == NOUN) {
             m_outer_map_no = m_conj_type_map.at("masc_o");
             m_conj_type = "masc_o";
-            std::cout << "inflection-class passed in to setConjType not found, defaulting to masc_o\n";
+            std::cout << "inflection-class passed in to setConjType not found (" << conj_type << "), defaulting to masc_o\n";
         }
         else {
             m_outer_map_no = m_conj_type_map.at("40");
             m_conj_type = "40";
-            std::cout << "inflection-class passed in to setConjType not found, defaulting to class 40\n";
+            std::cout << "inflection-class passed in to setConjType not found (" << conj_type << "), defaulting to class 40\n";
         }
     }
 }
@@ -81,13 +81,14 @@ void LcsFlecter::postProcess(std::array<std::vector<Inflection>, 3> &inflected_f
         }
 
         //remove u-stem etc. variants from adjectivals
-        if(m_conj_type.starts_with("adj")) {
-            inflected_forms[1][3].flected_form = "";
-            inflected_forms[1][14].flected_form = "";
-            inflected_forms[1][16].flected_form = "";
-            inflected_forms[1][19].flected_form = "";
-            inflected_forms[1][20].flected_form = "";
-        }
+        //NOT NEEDED FOR JER PROJECT BECAUSE ADJECTIVES GIVEN THEIR OWN RUSSIAN-SPECIFIC TABLE
+        // if(m_conj_type.starts_with("adj")) {
+        //     inflected_forms[1][3].flected_form = "";
+        //     inflected_forms[1][14].flected_form = "";
+        //     inflected_forms[1][16].flected_form = "";
+        //     inflected_forms[1][19].flected_form = "";
+        //     inflected_forms[1][20].flected_form = "";
+        // }
 
         if(m_conj_type == "masc_o_in") {
             for(auto& infl_vec : inflected_forms) {
@@ -664,19 +665,28 @@ void LcsFlecter::produceUniqueInflections() {
             if(!inflection.flected_form.empty()) {
                 //std::cout << inflection.flected_form;
                 
-                if(m_noun_verb == VERB && (inflection.desinence_ix == 38 || (inflection.desinence_ix > 39 && inflection.desinence_ix < 43))) {
-                    std::string jer = inflection.desinence_ix == 38 ? "ь" : "ъ";
-                    m_unique_inflections.insert(inflection.flected_form + jer);
+                if(m_noun_verb == VERB && (inflection.desinence_ix > 37 && inflection.desinence_ix < 43)) {
+                    std::string jer = "ъ";
+                    if(inflection.desinence_ix == 38) {
+                        m_unique_inflections.insert(inflection.flected_form + "ь");
+                        //add masc. Nsg. long-form to PRAPs
+                        m_unique_inflections.insert(inflection.flected_form + "ьjь");
+                    }
+                    else if(inflection.desinence_ix > 39) {
+                        m_unique_inflections.insert(inflection.flected_form + "ъ");
+                    }
+                    
                     if(inflection.desinence_ix == 40) {
                         //non-masc l-past tenses for modern Russian comparisons
                         m_unique_inflections.insert(inflection.flected_form + "a");
                         m_unique_inflections.insert(inflection.flected_form + "i");
                         m_unique_inflections.insert(inflection.flected_form + "o");
                     }
-                    /*else if(inflection.desinence_ix == 38) {
-                        //add masc. Nsg. long-form to PRAPs
-                        m_unique_inflections.insert(inflection.flected_form + "jь");
-                    } */
+                    else if(inflection.desinence_ix == 39) {
+                        m_unique_inflections.insert(inflection.flected_form);
+                        //add the perfective adverbial -[в]ши ending
+                        m_unique_inflections.insert(inflection.flected_form + "ši");
+                    }
                 }
                 //add one long-form nom. masc. sg. adjectival
                 /*else if(m_noun_verb == NOUN && m_conj_type.find("adj") != -1 && inflection.desinence_ix == 1) {
