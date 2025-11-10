@@ -3,7 +3,7 @@
 const fs = require('node:fs');
 
 
-const cyr_map = new Map([
+const cyr_map = new Array([
 
   ["š'j", "шьj"],
   ["ž'j", "жьj"],

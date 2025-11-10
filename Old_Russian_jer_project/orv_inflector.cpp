@@ -193,6 +193,14 @@ void dejotationReflexesOCS(std::string& lcs_form) {
   LcsFlecter::replaceAll(lcs_form, "ђ", "žd");
 }
 
+std::string unicodeSyllabicLiquids(std::string lcs_form) {
+  LcsFlecter::replaceAll(lcs_form, "ŕ̥", "ṝ");
+  LcsFlecter::replaceAll(lcs_form, "r̥", "ṛ");
+  LcsFlecter::replaceAll(lcs_form, "ĺ̥", "ḹ");
+  LcsFlecter::replaceAll(lcs_form, "l̥", "ḷ");
+  return lcs_form;
+}
+
 
 std::string convertToORV(std::string lcs_form, const std::string& conj_type, bool ch_sl, bool pv2_3_exists) {
   LcsFlecter::replaceAll(lcs_form, "ę̌", "ě");//should these top two be different for ch_sl words?
@@ -417,7 +425,7 @@ int main() {
           if(containsNonFinalJer(lcs_lemma_unicode)) {
             inflected_lcs_json_oss << "[" << pv2_3_exists << "," << ch_sl << ",\"" << lcs_lemma << "\"],\n";
             inflected_orv_json_oss << "[" << pv2_3_exists << "," << ch_sl << ",\"" << convertToORV(lcs_lemma, conj_type, (ch_sl == "true"), pv2_3_exists) << "\"],\n";
-            indexed_inflected_lcs_json_oss << "[" << pv2_3_exists << "," << ch_sl << ",\"" << lcs_lemma << "\"],\n";
+            indexed_inflected_lcs_json_oss << "[" << pv2_3_exists << "," << ch_sl << ",{\"0\":\"" << unicodeSyllabicLiquids(lcs_lemma) << "\"}],\n";
           }
       }
       
@@ -470,7 +478,7 @@ int main() {
         bool empty_paradigm = true;
         for(const auto& infl : infl_vec) {
           if(!infl.flected_form.empty()) {
-            indexed_inflected_lcs_json_oss << "\"" << infl.desinence_ix << "\":\"" << infl.flected_form << "\",";
+            indexed_inflected_lcs_json_oss << "\"" << infl.desinence_ix << "\":\"" << unicodeSyllabicLiquids(infl.flected_form) << "\",";
             empty_paradigm = false;
           }
         }
@@ -529,7 +537,7 @@ int main() {
         bool empty_paradigm = true;
         for(const auto& infl : infl_vec) {
           if(!infl.flected_form.empty()) {
-            indexed_inflected_lcs_json_oss << "\"" << infl.desinence_ix << "\":\"" << infl.flected_form << "\",";
+            indexed_inflected_lcs_json_oss << "\"" << infl.desinence_ix << "\":\"" << unicodeSyllabicLiquids(infl.flected_form) << "\",";
             empty_paradigm = false;
           }
         }
