@@ -6,8 +6,11 @@ const fs = require("node:fs");
 const dl_tl_regex = /[dt][ĺl]/;
 const ORT_regex = /[eo][rl](?:[tŕrpsšdfgћђklĺzžxčvbnńmǯ\+]|$)/
 const PV2_regex = /[kgx]v?[ěęeiьṝḹ]/;
-const PV3_regex = /[ьięṝḹ][kgx][auǫ]/;
+const PV3_pure_regex = /[ьięṝḹ][kgx][auǫ]/;
+const PV3_regex = /[ьięṝḹ][kgx][auǫěęeiь]/;
 const tense_jer_regex = /[ьъ]j[Ǣeiьęǫuě]/; //I know that /ě/ cannot follow /j/ etymologically but my current analysis (probably wrong) of dealing with glagoĺěte etc. imperatives after palatal consonants is to assume analogy with the hard-stems, so the alternative 2pl. imperative of покръіти has a theoretical deviant form *pokrъjěte that needs to have its tense back-jer lengthened in accordance with my orthographic policy for normalised OCS
+const PV2_regex_PV3 = /[kgx]v?[ęeьṝḹ]/;
+const PV2_regex_CSR = /[kgx]v?[ěi](?!$)/;
 
 const PV2_map = new Map();
 PV2_map.set('k', 'c');
@@ -30,6 +33,17 @@ const applyPV3 = (lcs_form) => {
     const velar = lcs_form.at(PV3_pos + 1);
     lcs_form = lcs_form.slice(0, PV3_pos + 1) + PV2_map.get(velar) + lcs_form.slice(PV3_pos + 1 + 1);
     PV3_pos = lcs_form.search(PV3_regex);
+  }
+  return lcs_form;
+};
+
+const applyPV2 = (lcs_form, regex) => {
+  let PV2_pos = lcs_form.search(regex);
+  while(PV2_pos != -1) {
+    const velar = lcs_form.at(PV2_pos);
+    lcs_form = lcs_form.slice(0, PV2_pos) + PV2_map.get(velar) + lcs_form.slice(PV2_pos + 1);
+    
+    PV2_pos = lcs_form.search(regex);
   }
   return lcs_form;
 };
@@ -77,7 +91,7 @@ const orv_shipyashi_a_regex = new RegExp(/[ščžћђǯjʒś]Ǣ/ug);
 const orv_bare_nasal_regex = new RegExp(/[^ščžћђǯj]ę/ug);
 
 const denasalise = (lcs_form) => {
-  lcs_form = lcs_form.replaceAll("ǫ", "u").replaceAll("ʒa", "ʒä").replaceAll("śa", "śä").replaceAll("ę", "ä");
+  lcs_form = lcs_form.replaceAll("ǫ", "u").replaceAll("ę", "ä");
   return lcs_form;
 };
 
@@ -137,34 +151,6 @@ const russifyDoublets = (lcs_form) => {
   return lcs_form;
 };
 
-const convertToORV = (lcs_word, pv2_3_exists, ch_sl) => {
-
-  lcs_word = lcs_word.replaceAll("O", "ъ").replaceAll("E", "ь");
-  lcs_word = lcs_word.replaceAll("ḹ", "ḷ");
-
-  lcs_word = lcs_word.replace(/^ak/, "jǢk").replace(/^av/, "jǢv");
-  lcs_word = yeetTlDl(lcs_word);
-
-  lcs_word = lcs_word.replaceAll("Ǣ", "ä");
-
-  if(pv2_3_exists) lcs_word = applyPV3(lcs_word);
-  lcs_word = denasalise(lcs_word);
-  lcs_word = russifyDoublets(lcs_word);
-
-  if(!ch_sl) {
-    lcs_word = TOROT(lcs_word);
-    lcs_word = dejotateORV(lcs_word);
-  }
-  else {
-    lcs_word = TRAT(lcs_word);
-    lcs_word = dejotateOCS(lcs_word);
-  }
-  lcs_word = nasalisedJat(lcs_word, ch_sl);
-  lcs_word = nasalisedY(lcs_word, ch_sl);
-
-  return lcs_word;
-};
-
 const cyr_map = new Array(
 
   ["š'j", "шьj"],
@@ -179,8 +165,12 @@ const cyr_map = new Array(
 
   ["ʒa", "зя"],
   ["ʒu", "зю"],
+  ["ʒe", "зе"],
+  ["ʒě", "зě"],
   ["śa", "ся"],
   ["śu", "сю"],
+  ["śe", "śе"],
+  ["śě", "śě"],
   ["ŕu", "рю"],
   ["ĺu", "лю"],
   ["ńu", "ню"],
@@ -193,13 +183,16 @@ const cyr_map = new Array(
   ["ŕe", "ре"],
   ["ĺe", "ле"],
   ["ńe", "не"],
+  ["ŕi", "ри"],
+  ["ĺi", "ли"],
+  ["ńi", "ни"],
 
   ["ja", "я"],
   ["ju", "ю"],
   ["je", "е"],
   ["jě", "е"],
   ["ji", "и"],
-  ["jэ", ""],
+  ["jä", "я"],
 
   ["j'", "j"],
   ["jo", "o"],
@@ -330,16 +323,51 @@ const applyHavlik = (orv_form) => {
   return reverseStr(jer_shifted_backwards);
 };
 
+const convertToORV = (lcs_word, pv2_3_exists, ch_sl) => {
+
+  lcs_word = lcs_word.replaceAll("O", "ъ").replaceAll("E", "ь");
+  lcs_word = lcs_word.replaceAll("ḹ", "ḷ");
+
+  lcs_word = lcs_word.replace(/^ak/, "jǢk").replace(/^av/, "jǢv");
+  lcs_word = yeetTlDl(lcs_word);
+
+  lcs_word = lcs_word.replaceAll("Ǣ", "ä");
+
+  if(pv2_3_exists) {
+    lcs_word = applyPV3(lcs_word);
+    lcs_word = applyPV2()
+  }
+  
+  lcs_word = denasalise(lcs_word);
+  lcs_word = russifyDoublets(lcs_word);
+
+  if(!ch_sl) {
+    lcs_word = TOROT(lcs_word);
+    lcs_word = dejotateORV(lcs_word);
+  }
+  else {
+    lcs_word = TRAT(lcs_word);
+    lcs_word = dejotateOCS(lcs_word);
+  }
+  lcs_word = nasalisedJat(lcs_word, ch_sl);
+  lcs_word = nasalisedY(lcs_word, ch_sl);
+
+  return lcs_word;
+};
+
 const json_str= fs.readFileSync("lcs_inflections_indexed.json", 'utf-8');
 const lcs_json = JSON.parse(json_str);
 
-for(const word_obj of lcs_json) {
+for(let word_obj of lcs_json) {
   const obj_length = word_obj.length;
   const pv2_3_exists = Boolean(word_obj[0]);
   const ch_sl = word_obj[1];
   for(let i = 2; i < obj_length; i++) {
     for(const idx in word_obj[i]) {
-      console.log(orvToCSR(applyHavlik(convertToORV(word_obj[i][idx], pv2_3_exists, ch_sl))));
+      //console.log(orvToCSR(applyHavlik(convertToORV(word_obj[i][idx], pv2_3_exists, ch_sl))));
+      word_obj[i][idx] = orvToCSR(applyHavlik(convertToORV(word_obj[i][idx], pv2_3_exists, ch_sl)));
+      
     }
   }
 }
+fs.writeFileSync("lcs_converted.json", JSON.stringify(lcs_json, null, 2));

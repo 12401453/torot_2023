@@ -73,7 +73,12 @@ async function jsonifyCSV() {
 
     const csr_lemma = csv_reader.getField('match');
     const annotated = csv_reader.getField('annotated');
-    if(annotated != "" && csr_lemma.trim() != "") csr_arr.push(csr_lemma);
+    if(annotated != "" && csr_lemma.trim() != "") {
+      const fields_lemmas = csr_lemma.split(", ");
+      for(const lemma of fields_lemmas) {
+        csr_arr.push(lemma);
+      }
+    }
   }
   console.log(csr_arr.length);
   fs.writeFileSync("csr_matches.json", JSON.stringify(csr_arr, null, 2));
