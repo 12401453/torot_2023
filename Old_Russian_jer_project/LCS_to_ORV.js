@@ -67,8 +67,10 @@ const hardening_clusters = new Array(
   ["v's", "vs"],
   ["t's", "ts"],
   ["n'n", "nn"],
-  ["r'n", "rn"]
-
+  ["r'n", "rn"],
+  ["d'n", "dn"],
+  ["v's", "vs"],
+  ["s'd", "sd"]
 );
 
 const orv_shipyashi_nasal_regex = new RegExp(/[ščžћђǯj]ę/ug);
@@ -251,8 +253,16 @@ const cyr_map = new Array(
 
 );
 
+const hardenClusters = (jer_shifted_form) => {
+  for(const pair of hardening_clusters) {
+    jer_shifted_form = jer_shifted_form.replaceAll(pair[0], pair[1]);
+  }
+  return jer_shifted_form;
+};
+
 
 const orvToCSR = (orv_form) => {
+  orv_form = hardenClusters(orv_form);
   for(const pair of cyr_map) {
     orv_form = orv_form.replaceAll(pair[0], pair[1]);
   }

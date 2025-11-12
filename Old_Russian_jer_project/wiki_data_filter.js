@@ -146,6 +146,8 @@ function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, f
     //if(wiki_generated_key_match != -1) console.log(wiki_paradigm[1].lemma, generated_forms[wiki_generated_key_match][5]);
     const pos_lemma_combo = wiki_paradigm[0];
     const generated_forms_key_idx = generated_forms_keys.indexOf(pos_lemma_combo);
+    
+    const generated_form_entry = generated_forms[generated_forms_key_idx];
 
     if(wiki_paradigm[1].inflections.length == 0) {
       paradigmless_lemmas_csv += wiki_paradigm[1].lemma + "\n";
@@ -153,7 +155,7 @@ function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, f
     else {
       for(const wiki_infl of wiki_paradigm[1].inflections) {
         result_csv += wiki_infl + "|";
-        const generated_form_entry = generated_forms[generated_forms_key_idx];
+        
 
         outer: for(let i = 2; i < 5; i++) {
           console.log(generated_form_entry[i].length);
