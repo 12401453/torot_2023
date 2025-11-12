@@ -482,7 +482,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 радыи|радъ|A-|69|radъ|||||||adj_hard|2||||||||1|e_sl||avv|birchbark||||drac||gol-gol|||||lav||||||||nov-sin||||||pskov_subtitle_added|pvl-hyp|||||sergrad|||spi||suz-lav||usp-sbor|||||1452103704902|0
 вънукъ||Nb|69|vъnukъ|||||||masc_o|2||||||||0|e_sl||||||||||||||lav|luk-koloc_subtitle_added|||mstislav-col||||nov-sin|||||||||||||||spi||suz-lav||usp-sbor|ust-vlad|||zadon|21234320564224|1
 избавити|избавити|V-|68|jьzbaviti|||||||40|1||||||||1|e_sl||avv|||const|domo||||||||lav||||||||nov-sin||||||||||||sergrad||||stefan|suz-lav||usp-sbor|ust-vlad||||3719443783730|0
-благословение||Nb|68|bolgoslovenьje|||||||nt_o|2||||||||0|e_sl||avv||bur-alph||domo|||gol-gol|||||lav||mikh||mstislav-col|||||novgorod-jaroslav|ostromir-col|paz|peter|||||||schism|sergrad||||stefan|suz-lav||usp-sbor|||||1524776476970|1
+благословение||Nb|68|bolgoslovenьje|||||||nt_jo|2||||||||0|e_sl||avv||bur-alph||domo|||gol-gol|||||lav||mikh||mstislav-col|||||novgorod-jaroslav|ostromir-col|paz|peter|||||||schism|sergrad||||stefan|suz-lav||usp-sbor|||||1524776476970|1
 сьребро|сьребро|Nb|68|sьrebro|||||||nt_o|2||||||||1|e_sl|||birchbark|||domo||||||||lav|||mst|mstislav-col|nevsky-treaty|||nov-sin|||paz||||pvl-hyp||riga-goth||||||spi|stefan|suz-lav||usp-sbor|||||1581909483556|1
 ѣства||Nb|67|||||||||99||||||||0|e_sl|afnik|||||domo||||||||||||||||||||||||||||||||||||||||33|0
 гнѣвъ|гнѣвъ|Nb|67|gněvъ|||||||masc_o|2|||wrath|||||1|e_sl||avv||bur-alph|const|domo||||||||lav||||||||nov-sin||||||pskov_subtitle_added|||||||||||suz-lav||usp-sbor|||||1374525857850|0
@@ -1362,7 +1362,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 съити||V-|20|sъjьti|||||||jьti|1||||||||0|e_sl||avv|||const|domo||||||||lav|luk-koloc_subtitle_added|||||||nov-sin||||||||||||sergrad|||||suz-lav||usp-sbor|||||1382981591090|1
 лавъка||Nb|20|lavъka|||||||fem_a|2||||||||0|e_sl||avv||||domo||||||||||||||||||||||||||||||||||||||||34|1
 архимандритъ||Nb|20|||||||||99||||||||0|e_sl||avv||||||||||||||||||||nov-sin|||||||||||schism|sergrad||||||||||||12886999042|0
-цѣсарьскыи||A-|20|kěsaŕьskъ|kěsarjьskъ||||||adj_hard|2||||||||0|e_sl||avv||bur-alph|const|domo|drac|||||||||||||||||||||||||||sergrad|||||suz-lav||usp-sbor|||||1382979469434|1
+цѣсарьскыи||A-|20|kěsaŕьskъ|kěsarjьskъ||cěsaŕьskъ||||adj_hard|2||||||||0|e_sl||avv||bur-alph|const|domo|drac|||||||||||||||||||||||||||sergrad|||||suz-lav||usp-sbor|||||1382979469434|1
 погыбель||Nb|20|||||||||99||||||||0|e_sl||avv|||const|domo||||||||lav||||||||nov-sin|||||||||||||||||suz-lav|||||||274880012338|0
 прѣльстити|прѣльстити|V-|20|perlьstiti|||||||40|1|||betrügen, scam, lead astray, falsely flatter|||||1|ch_sl||avv||||||||||||lav||||||||nov-sin||||||||||||||||stefan||||||||137441058818|1
 богатьство|богатьство|Nb|20|bogatьstvo|||||||nt_o|2||||||||1|e_sl||avv||||domo|drac|||||||lav|luk-koloc_subtitle_added||||||||||||||pvl-hyp|||||sergrad||||stefan|||usp-sbor|||||1245808975970|1
@@ -4737,7 +4737,7 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 проверещати||V-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 алъчьныи||A-|4|olčьnъ|||||||adj_hard|2||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|1
 прознаменати||V-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
-прѣдътеча||Nb|4|perdъtečǢ|||||||masc_ja|2||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad|||||suz-lav|||||||283467841536|1
+прѣдътеча||Nb|4|perdъtečǢ|||||||masc_ja|2||||||||0|ch_sl||||||||||||||||||||||||||||||||||sergrad|||||suz-lav|||||||283467841536|1
 прѣуспѣвати||V-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||stefan||||||||146028888064|0
 прильпнути|прильнѫти|V-|4|prilьpnǫti|||||||21|1|||stick to, adhere to|||||1|e_sl||||||||||||||||||||||||||||||||||sergrad||||stefan||||||||146028888064|0
 подвижьныи||A-|4|podvižьnъ|||||||adj_hard|2||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad|||||||usp-sbor|||||1108101562368|1

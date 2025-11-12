@@ -60,31 +60,16 @@ const lengthenTenseJers = (lcs_form) => {
   return lcs_form;
 };
 
-const long_adj_map = {
-  'omъjimъ' : 'ъіимъ',
-  'emъjimъ' : 'иимъ',
-  'omьjimь' : 'ъіимь',
-  'emьjimь' : 'иимь',
-  'ěxъjixъ' : 'ъіихъ',
-  'ixъjixъ' : 'иихъ',
-  'omajima' : 'ъіима',
-  'emajima' : 'иима',
-  'amajima' : 'ъіима',
-  'Ǣmajima' : 'иима',
-  'amъjimъ' : 'ъіимъ',
-  'Ǣmъjimъ' : 'иимъ',
-  'axъjixъ' : 'ъіихъ',
-  'Ǣxъjixъ' : 'иихъ',
-  'amijimi' : 'ъіими',
-  'Ǣmijimi' : 'иими'
-}
+const hardening_clusters = new Array(
+  ["z'd", "zd"],
+  ["s'd", "sd"],
+  ["v'n", "vn"],
+  ["v's", "vs"],
+  ["t's", "ts"],
+  ["n'n", "nn"],
+  ["r'n", "rn"]
 
-const simplifyLongAdj = (lcs_form) => {
-  for(const key in long_adj_map) {
-    lcs_form = lcs_form.replaceAll(key, long_adj_map[key]);
-  }
-  return lcs_form;
-};
+);
 
 const orv_shipyashi_nasal_regex = new RegExp(/[ščžћђǯj]ę/ug);
 const orv_shipyashi_a_regex = new RegExp(/[ščžћђǯjʒś]Ǣ/ug);
@@ -151,6 +136,11 @@ const russifyDoublets = (lcs_form) => {
   return lcs_form;
 };
 
+
+const PV4 = (word) => {
+  return word.replaceAll("ky", "ki").replaceAll("xy", "xi").replaceAll("gy", "gi");
+}
+
 const cyr_map = new Array(
 
   ["š'j", "шьj"],
@@ -166,11 +156,11 @@ const cyr_map = new Array(
   ["ʒa", "зя"],
   ["ʒu", "зю"],
   ["ʒe", "зе"],
-  ["ʒě", "зě"],
+  ["ʒě", "зе"],
   ["śa", "ся"],
   ["śu", "сю"],
-  ["śe", "śе"],
-  ["śě", "śě"],
+  ["śe", "се"],
+  ["śě", "се"],
   ["ŕu", "рю"],
   ["ĺu", "лю"],
   ["ńu", "ню"],
@@ -257,6 +247,7 @@ const cyr_map = new Array(
   ["d", "д"],
   ["ś", "сь"],
   ["m", "м"],
+  ["ьь", "ь"]
 
 );
 
@@ -335,8 +326,14 @@ const convertToORV = (lcs_word, pv2_3_exists, ch_sl) => {
 
   if(pv2_3_exists) {
     lcs_word = applyPV3(lcs_word);
-    lcs_word = applyPV2()
+    lcs_word = applyPV2(lcs_word, PV2_regex_PV3);
+    lcs_word = applyPV2(lcs_word, PV2_regex_CSR); //this does it only for non-word-final *ě, *i which hopefully will leave most of the Russian levelled forms
   }
+
+  //has to be after PV2 etc. because these are post-PV2/3 loans and often the only source of velar+front-vowel in the languages
+  lcs_word = lcs_word.replaceAll("ḱ", "k").replaceAll("x́", "x").replaceAll("ǵ", "g");
+
+  lcs_word = lcs_word.replaceAll("cěsaŕ", "caŕ");
   
   lcs_word = denasalise(lcs_word);
   lcs_word = russifyDoublets(lcs_word);
@@ -362,10 +359,11 @@ for(let word_obj of lcs_json) {
   const obj_length = word_obj.length;
   const pv2_3_exists = Boolean(word_obj[0]);
   const ch_sl = word_obj[1];
-  for(let i = 2; i < obj_length; i++) {
+  for(let i = 2; i < 5; i++) {
     for(const idx in word_obj[i]) {
       //console.log(orvToCSR(applyHavlik(convertToORV(word_obj[i][idx], pv2_3_exists, ch_sl))));
-      word_obj[i][idx] = orvToCSR(applyHavlik(convertToORV(word_obj[i][idx], pv2_3_exists, ch_sl)));
+      const unconverted_form = word_obj[i][idx];
+      word_obj[i][idx] = [orvToCSR(applyHavlik(convertToORV(unconverted_form, pv2_3_exists, ch_sl))), unconverted_form];
       
     }
   }

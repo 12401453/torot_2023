@@ -52,15 +52,40 @@ class CsvReader {
   m_separator = "";
 };
 
-const chu_master_arr = new Array();
-const orv_master_arr = new Array();
+const cyr_arr = new Array([
+
+  ["а́", "а"],
+  ["е́", "е"],
+  ["и́", "и"],
+  ["о́", "о"],
+  ["у́", "у"],
+  ["я́", "я"],
+  ["ю́", "ю"],
+  ["ё", "е"],
+  ["ы́", "ы"]
+
+]);
+
+const deStressDownCase = (word) => {
+
+  for(const pair of cyr_arr) {
+      word = word.toLocaleLowerCase().replaceAll(pair[0], pair[1]);
+  }
+  return word;
+};
+const deStress = (word) => {
+
+  for(const pair of cyr_arr) {
+      word = word.replaceAll(pair[0], pair[1]);
+  }
+  return word;
+};
 
 
-async function jsonifyCSV() {
+async function jsonifyCSV(csr_matches) {
   const csv_reader = new CsvReader('|');
   let first_line = true;
 
-  const csr_arr = new Array();
   for await(const line of readline.createInterface({input: fs.createReadStream("jer_lemmas_CSR.csv")})) {
 
     if(first_line) {
@@ -73,21 +98,93 @@ async function jsonifyCSV() {
 
     const csr_lemma = csv_reader.getField('match');
     const annotated = csv_reader.getField('annotated');
+    const torot_lemma = csv_reader.getField('lemma');
+    const pos = csv_reader.getField('pos');
     if(annotated != "" && csr_lemma.trim() != "") {
-      const fields_lemmas = csr_lemma.split(", ");
+      const fields_lemmas = csr_lemma.split(", "); //this line is to deal with variants put in the same cell
       for(const lemma of fields_lemmas) {
-        csr_arr.push(lemma);
+        csr_matches.push([lemma, pos+torot_lemma]);
       }
     }
   }
-  console.log(csr_arr.length);
-  fs.writeFileSync("csr_matches.json", JSON.stringify(csr_arr, null, 2));
-  
+  fs.writeFileSync("csr_matches.json", JSON.stringify(csr_matches, null, 2)); 
+}
+
+function readWiktionaryData(matched_wiki_forms, csr_matches) {
+  const csr_matches_lemmas = csr_matches.map(x => x[0]);
+  for(let i = 10; i < 1521; i+=10) {
+    const filename = `ru_wiktionary_data_2/russian_lemmas_pg${String(i - 9).padStart(5, "0")}-${String(i).padStart(5, "0")}.json`;
+    const wiki_file_str = fs.readFileSync(filename, "utf-8");
+    const wiki_file_json = JSON.parse(wiki_file_str);
+    wiki_file_json.forEach(entry => {
+      const csr_match_idx = csr_matches_lemmas.indexOf(deStress(entry.lemma));
+      if(csr_match_idx != -1) {
+        matched_wiki_forms.push([csr_matches[csr_match_idx][1], entry]);
+      }
+    });
+  }
+  const last_filename = "ru_wiktionary_data_2/russian_lemmas_pg1521-01526.json";
+  const wiki_file_str = fs.readFileSync(last_filename, "utf-8");
+  const wiki_file_json = JSON.parse(wiki_file_str);
+  wiki_file_json.forEach(entry => {
+    const csr_match_idx = csr_matches_lemmas.indexOf(deStress(entry.lemma));
+    if(csr_match_idx != -1) {
+      matched_wiki_forms.push([csr_matches[csr_match_idx][1], entry]);
+    }
+  });
+
+  fs.writeFileSync("matched_wiki_forms.json", JSON.stringify(matched_wiki_forms, null, 2));
 }
 
 
-let json_str = "";
+function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, flat_results_csv) {
+  let paradigmless_lemmas_csv = "";
+  let result_csv = "wiki_form|generated_match|lcs_match|match_desinence_idx|match_code\n";
+  const generated_forms_keys = generated_forms.map(x => x[5]);
+  for(const wiki_paradigm of matched_wiki_forms) {
+    //const wiki_generated_key_match = generated_keys.indexOf(wiki_paradigm[0]);
+    //if(wiki_generated_key_match != -1) console.log(wiki_paradigm[1].lemma, generated_forms[wiki_generated_key_match][5]);
+    const pos_lemma_combo = wiki_paradigm[0];
+    const generated_forms_key_idx = generated_forms_keys.indexOf(pos_lemma_combo);
 
-jsonifyCSV();
+    if(wiki_paradigm[1].inflections.length == 0) {
+      paradigmless_lemmas_csv += wiki_paradigm[1].lemma + "\n";
+    }
+    else {
+      for(const wiki_infl of wiki_paradigm[1].inflections) {
+        result_csv += wiki_infl + "|";
+        const generated_form_entry = generated_forms[generated_forms_key_idx];
 
+        outer: for(let i = 2; i < 5; i++) {
+          console.log(generated_form_entry[i].length);
+        }
+      }
+    }
+  }
+
+  fs.writeFileSync("paradigmless_wiki_lemmas.csv", paradigmless_lemmas_csv);
+
+}
+
+async function runAsyncBullshitBecauseNodeIsRetarded() {
+  const csr_matches = new Array();
+  await jsonifyCSV(csr_matches);
+  console.log(csr_matches.length);
+
+  const matched_wiki_forms = new Array();
+  readWiktionaryData(matched_wiki_forms, csr_matches);
+  console.log(matched_wiki_forms.length);
+
+  const generated_forms = JSON.parse(fs.readFileSync("lcs_converted.json"));
+
+  console.log(generated_forms.length);
+
+  let flat_results_csv = "";
+  
+  compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, flat_results_csv);
+}
+
+
+
+runAsyncBullshitBecauseNodeIsRetarded();
 

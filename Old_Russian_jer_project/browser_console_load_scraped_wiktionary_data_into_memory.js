@@ -19,6 +19,13 @@ const deStressDownCase = (word) => {
     }
     return word;
 };
+const deStress = (word) => {
+
+    for(const pair of cyr_arr) {
+        word = word.replaceAll(pair[0], pair[1]);
+    }
+    return word;
+};
 
 
 
@@ -47,7 +54,7 @@ for(let i = 10; i < 1521; i+=10) {
     .then(response => {
         response.forEach(entry => {
             scraped_ru.push(entry);
-            if(csr_matches.includes(deStressDownCase(entry.lemma))) {
+            if(csr_matches.includes(deStress(entry.lemma))) {
                 scraped_ru_matches.push(entry);
             }
         });
@@ -61,7 +68,7 @@ fetch("ru_wiktionary_data/russian_lemmas_pg1521-01526.json")
 .then(response => {
     response.forEach(entry => {
         scraped_ru.push(entry);
-        if(csr_matches.includes(deStressDownCase(entry.lemma))) {
+        if(csr_matches.includes(deStress(entry.lemma))) {
             scraped_ru_matches.push(entry);
         }
     });

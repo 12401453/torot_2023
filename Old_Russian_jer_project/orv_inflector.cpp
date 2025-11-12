@@ -16,6 +16,7 @@ struct LemmaInfo {
   std::string ch_sl;
   std::string conj_type;
   std::string lcs_stem;
+  std::string pos_lemma_combo;
 };
 
 //regex for non-final jers: [ьъ](?!$)
@@ -397,6 +398,7 @@ int main() {
         continue;
       }
       std::string orv_torot_lemma = csv_reader.getField("orv_lemma");
+      std::string torot_pos = csv_reader.getField("pos");
       std::string lcs_lemma = csv_reader.getField("lcs_lemma");
       std::string conj_type= csv_reader.getField("conj_type");
       std::string stem1 = csv_reader.getField("stem1");
@@ -414,18 +416,18 @@ int main() {
       
       if(noun_verb == 2) {
             //nouns_pairs_vec.emplace_back(pv2_3_exists, std::array<std::string, 3>{lcs_stem, conj_type, ch_sl});
-            nouns_pairs_vec.emplace_back(pv2_3_exists, ch_sl, conj_type, lcs_stem);
+            nouns_pairs_vec.emplace_back(pv2_3_exists, ch_sl, conj_type, lcs_stem, torot_pos+orv_torot_lemma);
         }
         else if(noun_verb == 1) {
             // verbs_pairs_vec.emplace_back(pv2_3_exists, std::array<std::string, 3>{lcs_stem, conj_type, ch_sl});
-            verbs_pairs_vec.emplace_back(pv2_3_exists, ch_sl, conj_type, lcs_stem);
+            verbs_pairs_vec.emplace_back(pv2_3_exists, ch_sl, conj_type, lcs_stem, torot_pos+orv_torot_lemma);
         }
         else {
           lcs_lemma_unicode.setTo(lcs_lemma.c_str());
           if(containsNonFinalJer(lcs_lemma_unicode)) {
             inflected_lcs_json_oss << "[" << pv2_3_exists << "," << ch_sl << ",\"" << lcs_lemma << "\"],\n";
             inflected_orv_json_oss << "[" << pv2_3_exists << "," << ch_sl << ",\"" << convertToORV(lcs_lemma, conj_type, (ch_sl == "true"), pv2_3_exists) << "\"],\n";
-            indexed_inflected_lcs_json_oss << "[" << pv2_3_exists << "," << ch_sl << ",{\"0\":\"" << unicodeSyllabicLiquids(applyPV2Stem(lcs_lemma.c_str(), pv2_full_matcher)) << "\"}],\n";
+            indexed_inflected_lcs_json_oss << "[" << pv2_3_exists << "," << ch_sl << ",{\"0\":\"" << unicodeSyllabicLiquids(applyPV2Stem(lcs_lemma.c_str(), pv2_full_matcher)) << "\"},{},{},\"" << torot_pos << orv_torot_lemma << "\"],\n";
           }
       }
       
@@ -489,7 +491,7 @@ int main() {
       inflected_lcs_json_oss << "],\n";
       inflected_orv_json_oss.seekp(-1, std::ios_base::cur);
       inflected_orv_json_oss << "],\n";
-      indexed_inflected_lcs_json_oss.seekp(-1, std::ios_base::cur);
+      indexed_inflected_lcs_json_oss << "\"" << noun.pos_lemma_combo << "\"";
       indexed_inflected_lcs_json_oss << "],\n";
     }
   }
@@ -548,7 +550,7 @@ int main() {
       inflected_lcs_json_oss << "],\n";
       inflected_orv_json_oss.seekp(-1, std::ios_base::cur);
       inflected_orv_json_oss << "],\n";
-      indexed_inflected_lcs_json_oss.seekp(-1, std::ios_base::cur);
+      indexed_inflected_lcs_json_oss << "\"" << verb.pos_lemma_combo << "\"";
       indexed_inflected_lcs_json_oss << "],\n";
     }
   }

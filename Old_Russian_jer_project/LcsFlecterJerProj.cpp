@@ -498,6 +498,9 @@ void LcsFlecter::class1NasalClean(std::string& flecter_output) {
     replaceAll(flecter_output, "ьmt", "ęt");
     replaceAll(flecter_output, "ьnt", "ęt");
     replaceAll(flecter_output, "ъmt", "ǫt");
+    replaceAll(flecter_output, "ьnv", "ęv");
+    replaceAll(flecter_output, "ьmv", "ęv");
+
     // replaceAll(flecter_output, "ьm", "ę");
     // replaceAll(flecter_output, "ьn", "ę");
     // replaceAll(flecter_output, "ъm", "ǫ");
