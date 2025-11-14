@@ -12,6 +12,8 @@ const tense_jer_regex = /[ьъ]j[Ǣeiьęǫuě]/; //I know that /ě/ cannot foll
 const PV2_regex_PV3 = /[kgx]v?[ęeьṝḹ]/;
 const PV2_regex_CSR = /[kgx]v?[ěi](?!$)/;
 
+const hard_sign_regex = /([kgxtdnlrpbmfv])j/g; //the g flag is so I can use capturing-groups and .replaceAll()
+
 const PV2_map = new Map();
 PV2_map.set('k', 'c');
 PV2_map.set('g', 'ʒ');
@@ -70,7 +72,11 @@ const hardening_clusters = new Array(
   ["r'n", "rn"],
   ["d'n", "dn"],
   ["v's", "vs"],
-  ["s'd", "sd"]
+  ["s'd", "sd"],
+  ["d't", "dt"],
+  ["d'l", "dl"],
+  ["n'c", "nc"],
+  ["n'k", "nk"]
 );
 
 const orv_shipyashi_nasal_regex = new RegExp(/[ščžћђǯj]ę/ug);
@@ -155,14 +161,14 @@ const cyr_map = new Array(
 
 
 
-  ["ʒa", "зя"],
-  ["ʒu", "зю"],
-  ["ʒe", "зе"],
-  ["ʒě", "зе"],
-  ["śa", "ся"],
-  ["śu", "сю"],
-  ["śe", "се"],
-  ["śě", "се"],
+  ["z'a", "зя"],
+  ["z'u", "зю"],
+  ["z'e", "зе"],
+  ["z'ě", "зе"],
+  ["s'a", "ся"],
+  ["s'u", "сю"],
+  ["s'e", "се"],
+  ["s'ě", "се"],
   ["ŕu", "рю"],
   ["ĺu", "лю"],
   ["ńu", "ню"],
@@ -210,7 +216,6 @@ const cyr_map = new Array(
   ["a", "а"],
   ["b", "б"],
   ["ḷ", "ол"],
-  ["ʒ", "зь"],
   ["c", "ц"],
   ["x", "х"],
   ["b", "б"],
@@ -247,9 +252,10 @@ const cyr_map = new Array(
   ["r", "р"],
   ["ŕ", "рь"],
   ["d", "д"],
-  ["ś", "сь"],
   ["m", "м"],
-  ["ьь", "ь"]
+  ["ьь", "ь"],
+  ["@", "ъ"],
+  ["Q", ""]
 
 );
 
@@ -262,7 +268,7 @@ const hardenClusters = (jer_shifted_form) => {
 
 
 const orvToCSR = (orv_form) => {
-  orv_form = hardenClusters(orv_form);
+  orv_form = hardenClusters(PV4(orv_form));
   for(const pair of cyr_map) {
     orv_form = orv_form.replaceAll(pair[0], pair[1]);
   }
@@ -273,6 +279,8 @@ const orvToCSR = (orv_form) => {
 const tsy_regex = /ц[иы]/;
 const zd_regex = /[сз]д/;
 const zhd_regex = /[жш]д/;
+const palatal_plus_o_regex = /([шжчцщ])е/g;
+
 //includes palatal letters because Russian seems to reapply this rule after they have hardened (молодёжь etc.)
 //I'm gonna apply the Jer Shift before everything else so don't need to care about strong-jer > /o/
 const e_o_regex = /[ščžcj]e(?:[tŕrpsšdfgkx́ḱǵlĺzžxčvbcʒśnńm\++](?:[aouyъ]|$)|$)/;
@@ -291,6 +299,7 @@ const reverseStr = (str) => {
 };
 
 const applyHavlik = (orv_form) => {
+  //!!!REMEMBER WHEN YOU ADD STUFF TO THE END OF THIS FUNCTION THAT THE STRING IS BACKWARDS
   orv_form = orv_form.replaceAll("ěa", "ä");
   orv_form = orv_form.replaceAll(starting_i_regex, "i");
   const lngth = orv_form.length;
@@ -321,7 +330,11 @@ const applyHavlik = (orv_form) => {
       jer_shifted_backwards += letter;
     }
   }
-  return reverseStr(jer_shifted_backwards);
+  jer_shifted_backwards = jer_shifted_backwards.replaceAll("''", "'");
+  let jer_shifted_unreversed = reverseStr(jer_shifted_backwards);
+  jer_shifted_unreversed = jer_shifted_unreversed.replaceAll(hard_sign_regex, "$1@j");
+
+  return jer_shifted_unreversed;
 };
 
 const convertToORV = (lcs_word, pv2_3_exists, ch_sl) => {
@@ -358,6 +371,8 @@ const convertToORV = (lcs_word, pv2_3_exists, ch_sl) => {
   }
   lcs_word = nasalisedJat(lcs_word, ch_sl);
   lcs_word = nasalisedY(lcs_word, ch_sl);
+
+  lcs_word = lcs_word.replaceAll("ś", "s'").replaceAll("ʒ", "z'");
 
   return lcs_word;
 };

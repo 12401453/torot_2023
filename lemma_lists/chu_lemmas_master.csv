@@ -1220,7 +1220,7 @@ chu_lemma|orv_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 ижде||Dq|20|jьђe||||||||0|||||1|||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 праздьновати||V-|20|porzdьnovati|||||||61|1||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
 змии||Nb|20|zmьjь|||||||masc_jo|2||||||||0|||||psal-sin_sentence_removed|supr_y_fixed||||48
-цѣсарьскъ|цѣсарьскыи|A-|20|kěsaŕьskъ|kěsarjьskъ||||||adj_hard|2||||||||1||||||supr_y_fixed|vit-const|||96
+цѣсарьскъ|цѣсарьскыи|A-|20|kěsaŕьskъ|kěsarjьskъ||cěsaŕьskъ||||adj_hard|2||||||||1||||||supr_y_fixed|vit-const|||96
 коумиръ||Nb|20|||||||||99||||||||0||||||supr_y_fixed||||32
 диꙗволь||A-|20|dijǢvoĺь|dijǢvoljь||||||adj_soft|2|2|||||διάβολος ||0||||||supr_y_fixed|vit-const|||96
 надежда||Nb|20|||||||||99||||||||0||||||supr_y_fixed||||32
@@ -2549,7 +2549,7 @@ FIXME||Nb|7|||||||||99||||||||0|||||psal-sin_sentence_removed||vit-const|vit-met
 тихость||Nb|7|||||||||99||||||||0||||||supr_y_fixed||||32
 оустити||V-|7|||||||||99||||||||0||||||supr_y_fixed|vit-const|vit-meth_4_removed||224
 пооущати||V-|7|||||||||99||||||||0||||||supr_y_fixed||||32
-приснъ|присныи|A-|7|prisnъ|||| prisьnъ|||adj_hard|2||||The n may not be a suffix but could belong to the stem. Etymology very unclear.||||1||||||supr_y_fixed||||32
+приснъ|присьныи|A-|7|prisnъ|||| prisьnъ|||adj_hard|2||||The n may not be a suffix but could belong to the stem. Etymology very unclear.||||1||||||supr_y_fixed||||32
 сѫпротивьнъ|супротивьныи|A-|7|sǫprotivьnъ|||||||adj_hard|2||||||||1||||||supr_y_fixed||||32
 стоуденъ||A-|7|studenъ|||||||adj_hard|2|||cold|The Serbo-Croat form 'studen' adduced by Derksen p. 471 allows us to agree with dict. p.631 in reconstructing this as *studenъ rather than *studьnъ (which has the different meaning 'shameful, disgusting, loathsome')||||0||||||supr_y_fixed|vit-const||zogr_complete|352
 василии|василии|Ne|7|vasilijь|||||||masc_jo|2|2|||||Βασίλειος||1||||||supr_y_fixed||||32

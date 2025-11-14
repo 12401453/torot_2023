@@ -424,11 +424,11 @@ int main() {
         }
         else {
           lcs_lemma_unicode.setTo(lcs_lemma.c_str());
-          if(containsNonFinalJer(lcs_lemma_unicode)) {
+          //if(containsNonFinalJer(lcs_lemma_unicode)) {
             inflected_lcs_json_oss << "[" << pv2_3_exists << "," << ch_sl << ",\"" << lcs_lemma << "\"],\n";
             inflected_orv_json_oss << "[" << pv2_3_exists << "," << ch_sl << ",\"" << convertToORV(lcs_lemma, conj_type, (ch_sl == "true"), pv2_3_exists) << "\"],\n";
             indexed_inflected_lcs_json_oss << "[" << pv2_3_exists << "," << ch_sl << ",{\"0\":\"" << unicodeSyllabicLiquids(applyPV2Stem(lcs_lemma.c_str(), pv2_full_matcher)) << "\"},{},{},\"" << torot_pos << orv_torot_lemma << "\"],\n";
-          }
+          //}
       }
       
       

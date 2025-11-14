@@ -216,6 +216,7 @@ void LcsFlecter::postProcess(std::array<std::vector<Inflection>, 3> &inflected_f
                 for(int j = 9; j < 18; j++) {
                     class1NasalClean(inflected_forms[i][j].flected_form);
                 }
+                class1NasalClean(inflected_forms[i][38].flected_form);
                 class1NasalClean(inflected_forms[i][39].flected_form);
                 class1NasalClean(inflected_forms[i][40].flected_form);
                 class1NasalClean(inflected_forms[i][42].flected_form);

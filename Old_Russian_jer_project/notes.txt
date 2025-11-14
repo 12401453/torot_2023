@@ -20,3 +20,11 @@ Extra Inflection desinence_idx's for the extra verb-forms I produce are as follo
 
 
 CSR match тиверцы needs to be тиверец to match the Wiktionary lemma
+
+About 5 uninflectable lemmas from the spreadsheet get included if I switch off the "hasFinalJer" check: tvṝdo bṛzo naprasno dḹgo prisno
+
+I'm getting rid (setting the 'annotated' column of the Google Drive spreadsheet to blank) of отъврести and отъврещи because for one, only the first actually corresponds to CSR отверзть, and they aren't in my lemma-spreadsheet so presumably they were added after 2023, and they are retarded forms anyway as they should have jats in them (unless the ORV lemmatisation-policy is to write all Ch.Sl. TerT groups with <е>, which it surely can't be). It will also be a pain to force zero-grade ablaut throughout the paradigm of these verbs which is what I'd need to do to match Ru. отверзть
+
+Got rid of присно and присьныи as it's likely there was never a jer in these
+
+Removed the non-numbered спасти from the Google Drive spreadsheet since that was total bullshit when I looked it up on TOROT ('save' is #1 and 'fall' is #2)

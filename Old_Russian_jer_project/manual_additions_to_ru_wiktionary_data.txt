@@ -11,3 +11,5 @@ Russian Wiktionary lists only угр with no угрин singular forms (Engl. Wi
 двое
 
 May need to just get rid of the irregular present-tense forms of the *gъnati verbs that descend from *gon-, because they don't have jer-reflexes
+
+Ru. Wiktionary only has по-мужски so will need to make sure the paradigm gets matched to our мужски generated-form

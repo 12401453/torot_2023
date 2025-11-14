@@ -52,7 +52,7 @@ class CsvReader {
   m_separator = "";
 };
 
-const cyr_arr = new Array([
+const cyr_arr = new Array(
 
   ["а́", "а"],
   ["е́", "е"],
@@ -64,7 +64,7 @@ const cyr_arr = new Array([
   ["ё", "е"],
   ["ы́", "ы"]
 
-]);
+);
 
 const deStressDownCase = (word) => {
 
@@ -112,14 +112,17 @@ async function jsonifyCSV(csr_matches) {
 
 function readWiktionaryData(matched_wiki_forms, csr_matches) {
   const csr_matches_lemmas = csr_matches.map(x => x[0]);
+  const csr_matches_lemmas_leftover = [...csr_matches_lemmas];
   for(let i = 10; i < 1521; i+=10) {
     const filename = `ru_wiktionary_data_2/russian_lemmas_pg${String(i - 9).padStart(5, "0")}-${String(i).padStart(5, "0")}.json`;
     const wiki_file_str = fs.readFileSync(filename, "utf-8");
     const wiki_file_json = JSON.parse(wiki_file_str);
     wiki_file_json.forEach(entry => {
       const csr_match_idx = csr_matches_lemmas.indexOf(deStress(entry.lemma));
+      const csr_leftover_idx = csr_matches_lemmas_leftover.indexOf(deStress(entry.lemma));
       if(csr_match_idx != -1) {
         matched_wiki_forms.push([csr_matches[csr_match_idx][1], entry]);
+        csr_matches_lemmas_leftover.splice(csr_leftover_idx, 1);
       }
     });
   }
@@ -128,12 +131,15 @@ function readWiktionaryData(matched_wiki_forms, csr_matches) {
   const wiki_file_json = JSON.parse(wiki_file_str);
   wiki_file_json.forEach(entry => {
     const csr_match_idx = csr_matches_lemmas.indexOf(deStress(entry.lemma));
+    const csr_leftover_idx = csr_matches_lemmas_leftover.indexOf(deStress(entry.lemma));
     if(csr_match_idx != -1) {
       matched_wiki_forms.push([csr_matches[csr_match_idx][1], entry]);
+      csr_matches_lemmas_leftover.splice(csr_leftover_idx, 1);
     }
   });
 
   fs.writeFileSync("matched_wiki_forms.json", JSON.stringify(matched_wiki_forms, null, 2));
+  fs.writeFileSync("missing_wiki_forms.json", JSON.stringify(csr_matches_lemmas_leftover, null, 2));
 }
 
 
@@ -146,6 +152,10 @@ function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, f
     //if(wiki_generated_key_match != -1) console.log(wiki_paradigm[1].lemma, generated_forms[wiki_generated_key_match][5]);
     const pos_lemma_combo = wiki_paradigm[0];
     const generated_forms_key_idx = generated_forms_keys.indexOf(pos_lemma_combo);
+    if(generated_forms_key_idx == -1) {
+      //should write these forms out somehow, since they are forms from the Google Drive spreadsheet that have checked CSR matches but were deemed unreconstructable to LCS, or post-Jer Shift derivations or the like
+      continue;
+    }
     
     const generated_form_entry = generated_forms[generated_forms_key_idx];
 
@@ -155,16 +165,31 @@ function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, f
     else {
       for(const wiki_infl of wiki_paradigm[1].inflections) {
         result_csv += wiki_infl + "|";
-        
+        let wiki_matched_with_generated_form = false;
 
         outer: for(let i = 2; i < 5; i++) {
-          console.log(generated_form_entry[i].length);
+
+          for(const idx in generated_form_entry[i]) {
+            const generated_inflected_form = generated_form_entry[i][idx][0];
+            
+            if(generated_inflected_form == deStressDownCase(wiki_infl)) {
+              result_csv += generated_inflected_form + "|" + generated_form_entry[i][idx][1] + "|" + idx + "|1\n";
+              wiki_matched_with_generated_form = true;
+              console.log(generated_inflected_form, wiki_infl);
+              break outer; 
+            }
+          }   
         }
+        if(!wiki_matched_with_generated_form) {
+          result_csv += "|||0\n";
+        }
+        //console.log(generated_form_entry[4]);
       }
     }
   }
 
   fs.writeFileSync("paradigmless_wiki_lemmas.csv", paradigmless_lemmas_csv);
+  fs.writeFileSync("results.csv", result_csv);
 
 }
 

@@ -1165,7 +1165,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 ижде|иже|Dq|jьђe||||||||0|||||1|||orv
 праздьновати|праздьновати|V-|porzdьnovati|||||||61|1||||||||orv
 змии|змии|Nb|zmьjь|||||||masc_jo|2||||||||orv
-цѣсарьскъ|цѣсарьскыи|A-|kěsaŕьskъ|kěsarjьskъ||||||adj_hard|2||||||||chu
+цѣсарьскъ|цѣсарьскыи|A-|kěsaŕьskъ|kěsarjьskъ||cěsaŕьskъ||||adj_hard|2||||||||chu
 диꙗволь||A-|dijǢvoĺь|dijǢvoljь||||||adj_soft|2|2|||||διάβολος ||
 дѣтищь|дѣтищь|Nb|dětiščь|||||||masc_jo|2|||baby, infant|has this been back-formed from the nt-suffixed *dětiščě to a masc jo-stem?||||orv
 вьседрьжитель|вьседьржитель|Nb|vьxedŕ̥žiteĺь|vьxedŕ̥žiteljь||vьśedŕ̥žiteĺь||||masc_tel|2||||||||orv
@@ -2283,7 +2283,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 освѧтити|освятити|V-|osvętiti|||||||40|1||||||||orv
 воиньство|воиньство|Nb|vojinьstvo|||||||nt_o|2||||Derksen  lists *voinъ, but other than that he and Vasmer are unhelpful on the core issue which is whether it’s *vojinъ or *vojьnъ. My policy is generally to write *jь unless we are dealing with a morpheme that unambiguously contains /i/ and just happens to be stuck after a /j/, e.g. *napojiti or *dojiti, so if what we have here is a agent-noun-suffix, or a possessive the same as you get in Russian surnames (сукин сын) *-inъ, then it should be *vojinъ, and I think the modern language forms support that ||||chu
 шьстиѥ|шьствие|Nb|šьstvьje|||||||nt_jo|2|||journey, travels|||||orv
-приснъ|присныи|A-|prisnъ|||| prisьnъ|||adj_hard|2||||The n may not be a suffix but could belong to the stem. Etymology very unclear.||||chu
+приснъ|присьныи|A-|prisnъ|||| prisьnъ|||adj_hard|2||||The n may not be a suffix but could belong to the stem. Etymology very unclear.||||chu
 сѫпротивьнъ|супротивьныи|A-|sǫprotivьnъ|||||||adj_hard|2||||||||chu
 стоуденъ|студеныи|A-|studenъ|||||||adj_hard|2|||cold|The Serbo-Croat form 'studen' adduced by Derksen p. 471 allows us to agree with dict. p.631 in reconstructing this as *studenъ rather than *studьnъ (which has the different meaning 'shameful, disgusting, loathsome')||||orv
 василии|василии|Ne|vasilijь|||||||masc_jo|2|2|||||Βασίλειος||chu
@@ -4553,7 +4553,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 |келия|Nb|ḱelija|||||||fem_ja|2|2|W||||||
 |ляхъ|Nb|lęxъ|||||||masc_o|2||||||||
 |отъяти|V-|otъjęti|||||otъję|otъjьm|12|1||||||||
-|благословение|Nb|bolgoslovenьje|||||||nt_o|2||||||||
+|благословение|Nb|bolgoslovenьje|||||||nt_jo|2||||||||
 |печенѣгъ|Nb|pečeněgъ|||||||masc_o|2|7|||||||
 |младеньць|Nb|moldenьkь||moldenьkъ|moldenьcь||||masc_o_PV3|2||||||||
 |изимати|V-|jьzьmati|||||||52_abl|1||||||||
@@ -4652,6 +4652,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 |городъкъ|Nb|gordъkъ|||||||masc_o|2||||||||
 |дѣвъка|Nb|děvъka|||||||fem_a|2||||||||
 |пятьница|Nb|pętьnika|||pętьnica||||fem_a_PV3|2||||||||
+|помрѣти|V-|pomerti|||||umer|umьr|13|1||||||||
 |замъкнути|V-|zamъknǫti|||||||21|1||||||||
 |коньчьныи|A-|konьčьnъ|||||||adj_hard|2||||||||
 |овьсъ|Nb|ovьsъ|||||||masc_o|2||||||||
@@ -5046,7 +5047,7 @@ chu_lemma|orv_lemma|pos|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem1|stem
 |проклятие|Nb|proklętьje|||||||nt_jo|2||||||||
 |възроптати|V-|vъzrъpъtati|||||||52|1||||||||
 |сънискати|V-|sъniskati|||||||iskati|1||||||||
-|цвѣтъкъ|Nb|květъkъ|||||||masc_o|2||||||||
+|цвѣтъкъ|Nb|květъkъ|||cvětъkъ||||masc_o|2||||||||
 |сорочька|Nb|sorčьka|||||||fem_a|2||||||||
 |трапезьница|Nb|trapezьnika|||||||fem_a_PV3|2|2|||||τράπεζα||
 |гридьня|Nb|gridьńǢ|gridьnjǢ||||||fem_ja|2|1|||||ON griði, grið||
