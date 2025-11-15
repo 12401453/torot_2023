@@ -160,7 +160,27 @@ function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, f
     const generated_form_entry = generated_forms[generated_forms_key_idx];
 
     if(wiki_paradigm[1].inflections.length == 0) {
-      paradigmless_lemmas_csv += wiki_paradigm[1].lemma + "\n";
+      const wiki_infl = wiki_paradigm[1].lemma;
+      result_csv += wiki_infl + "|";
+      paradigmless_lemmas_csv += wiki_infl + "\n";
+      let wiki_matched_with_generated_form = false;
+
+        outer: for(let i = 2; i < 5; i++) {
+
+          for(const idx in generated_form_entry[i]) {
+            const generated_inflected_form = generated_form_entry[i][idx][0];
+            
+            if(generated_inflected_form == deStressDownCase(wiki_infl)) {
+              result_csv += generated_inflected_form + "|" + generated_form_entry[i][idx][1] + "|" + idx + "|" + generated_form_entry[6] + "|1\n";
+              wiki_matched_with_generated_form = true;
+              //console.log(generated_inflected_form, wiki_infl);
+              break outer; 
+            }
+          }   
+        }
+        if(!wiki_matched_with_generated_form) {
+          result_csv += "|||0\n";
+        }
     }
     else {
       for(const wiki_infl of wiki_paradigm[1].inflections) {
@@ -173,15 +193,15 @@ function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, f
             const generated_inflected_form = generated_form_entry[i][idx][0];
             
             if(generated_inflected_form == deStressDownCase(wiki_infl)) {
-              result_csv += generated_inflected_form + "|" + generated_form_entry[i][idx][1] + "|" + idx + "|1\n";
+              result_csv += generated_inflected_form + "|" + generated_form_entry[i][idx][1] + "|" + idx + "|" + generated_form_entry[6] + "|1\n";
               wiki_matched_with_generated_form = true;
-              console.log(generated_inflected_form, wiki_infl);
+              //console.log(generated_inflected_form, wiki_infl);
               break outer; 
             }
           }   
         }
         if(!wiki_matched_with_generated_form) {
-          result_csv += "|||0\n";
+          result_csv += "|||" + generated_form_entry[6] + "|0\n";
         }
         //console.log(generated_form_entry[4]);
       }

@@ -732,6 +732,7 @@ void LcsFlecter::produceAllInflections() {
                     }
                     else if(inflection.desinence_ix == 39) {
                         vec.emplace_back(149, inflection.flected_form + "ši");
+                        vec.emplace_back(150, inflection.flected_form + "šьjь");
                     }
                 }
             }

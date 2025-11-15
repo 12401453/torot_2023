@@ -197,9 +197,9 @@ const cyr_map = new Array(
 
   ["št", "šč"],
   
-  ["š'", "š"],
-  ["ž'", "ž"],
-  ["č'", "č"],
+  // ["š'", "š"],
+  //["ž'", "ž"],
+  //["č'", "č"],
   ["c'", "c"],
   ["ŕ'", "ŕ"],
   ["ĺ'", "ĺ"],
@@ -266,11 +266,20 @@ const hardenClusters = (jer_shifted_form) => {
   return jer_shifted_form;
 };
 
+const hardenFinalM = (word) => {
+  return word.replace(/m'$/, "m");
+}
 
-const orvToCSR = (orv_form) => {
-  orv_form = hardenClusters(PV4(orv_form));
+const orvToCSR = (orv_form, torot_pos) => {
+  orv_form = hardenFinalM(hardenClusters(PV4(orv_form)));
   for(const pair of cyr_map) {
     orv_form = orv_form.replaceAll(pair[0], pair[1]);
+  }
+  if((torot_pos != "V-" && orv_form.search(/[шжчщ]ь$/) != -1)) {
+    //word-final шь
+    
+    orv_form = orv_form.replaceAll(/([шжчщ])ь$/g, "$1");
+    console.log(orv_form);
   }
   return orv_form;
 };
@@ -332,7 +341,7 @@ const applyHavlik = (orv_form) => {
   }
   jer_shifted_backwards = jer_shifted_backwards.replaceAll("''", "'");
   let jer_shifted_unreversed = reverseStr(jer_shifted_backwards);
-  jer_shifted_unreversed = jer_shifted_unreversed.replaceAll(hard_sign_regex, "$1@j");
+  jer_shifted_unreversed = jer_shifted_unreversed.replaceAll(hard_sign_regex, "$1@j").replaceAll("~", "\'");
 
   return jer_shifted_unreversed;
 };
@@ -384,11 +393,12 @@ for(let word_obj of lcs_json) {
   const obj_length = word_obj.length;
   const pv2_3_exists = Boolean(word_obj[0]);
   const ch_sl = word_obj[1];
+  const torot_pos = word_obj[5].slice(0, 2);
   for(let i = 2; i < 5; i++) {
     for(const idx in word_obj[i]) {
       //console.log(orvToCSR(applyHavlik(convertToORV(word_obj[i][idx], pv2_3_exists, ch_sl))));
       const unconverted_form = word_obj[i][idx];
-      word_obj[i][idx] = [orvToCSR(applyHavlik(convertToORV(unconverted_form, pv2_3_exists, ch_sl))), unconverted_form];
+      word_obj[i][idx] = [orvToCSR(applyHavlik(convertToORV(unconverted_form, pv2_3_exists, ch_sl)), torot_pos), unconverted_form];
       
     }
   }
