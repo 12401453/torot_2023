@@ -96,6 +96,22 @@ const nasalisedY = (word, ch_sl) => {
   if(!ch_sl) return word.replaceAll("y̨", "a");
   else return word.replaceAll("y̨", "y");
 };
+
+const nasalisedJatORV = (word) => {
+  return word.replaceAll("ę̌", "ě");  
+};
+const nasalisedJatOCS = (word) => {
+  return word.replaceAll("ę̌", "ä");
+};
+
+const nasalisedYORV = (word) => {
+  return word.replaceAll("y̨", "a");
+};
+const nasalisedYOCS = (word) => {
+  return word.replaceAll("y̨", "y");
+};
+
+
 const TOROT = (lcs_word) => {
   let ORT_pos =  lcs_word.search(ORT_regex);
   while(ORT_pos != -1) {
@@ -126,7 +142,8 @@ const dejotateORV = (lcs_form) => {
  return lcs_form.replaceAll("šћ", "šč").replaceAll("žђ", "žž").replaceAll("žǯ", "žž").replaceAll("ћ", "č").replaceAll("ђ", "ž");
 };
 const dejotateOCS = (lcs_form) => {
-  return lcs_form.replaceAll("šћ", "št").replaceAll("žђ", "žd").replaceAll("žǯ", "žd").replaceAll("ћ", "št").replaceAll("ђ", "žd");
+  //I use /šč/ rather than /št/ so the Cyrillicisation is easier later on
+  return lcs_form.replaceAll("šћ", "šč").replaceAll("žђ", "žd").replaceAll("žǯ", "žd").replaceAll("ћ", "šč").replaceAll("ђ", "žd");
 };
 
 const russifyDoublets = (lcs_form) => {
@@ -259,6 +276,36 @@ const cyr_map = new Array(
 
 );
 
+const cyrillicise = (word) => {
+  for(const pair of cyr_map) {
+    word = word.replaceAll(pair[0], pair[1]);
+  }
+  return word;
+};
+
+const removeFinalShipyashiJer = (word) => {
+  return word.replace(/([шжчщ])ь$/, "$1");
+};
+
+//the changeFunctions passed into these helper-functions have to be ones where the input and output are both just a single string
+const applyChangeToSet = (variants_set, changeFunction) => {
+  const initial_set_size = variants_set.size;
+  for(const variant of variants_set) {
+    variants_set.add(changeFunction(variant));
+    if(initial_set_size < variants_set.size) variants_set.delete(variant);
+  }
+};
+
+const applyAlternateChangesToSet = (variants_set, changeFunctionFirst, changeFunctionSecond) => {
+  let initial_set_size = variants_set.size;
+  for(const variant of variants_set) {
+    variants_set.add(changeFunctionFirst(variant));
+    variants_set.add(changeFunctionSecond(variant));
+    if(initial_set_size < variants_set.size) variants_set.delete(variant);
+    initial_set_size = variants_set.size;
+  }
+};
+
 const hardenClusters = (jer_shifted_form) => {
   for(const pair of hardening_clusters) {
     jer_shifted_form = jer_shifted_form.replaceAll(pair[0], pair[1]);
@@ -278,20 +325,28 @@ const orvToCSR = (orv_form, torot_pos, converted_variants_set) => {
   if((torot_pos != "V-" && orv_form.search(/[шжчщ]ь$/) != -1)) {
     //word-final шь
     
-    orv_form = orv_form.replaceAll(/([шжчщ])ь$/g, "$1");
+    orv_form = orv_form.replace(/([шжчщ])ь$/, "$1");
     //console.log(orv_form);
   }
 
-  for(const variant of converted_variants_set) {
-    let variant_changed = hardenFinalM(hardenClusters(PV4(variant)));
-    for(const pair of cyr_map) {
-      variant_changed = variant_changed.replaceAll(pair[0], pair[1]);
-    }
+  // for(const variant of converted_variants_set) {
+  //   let variant_changed = hardenFinalM(hardenClusters(PV4(variant)));
+  //   for(const pair of cyr_map) {
+  //     variant_changed = variant_changed.replaceAll(pair[0], pair[1]);
+  //   }
 
-    converted_variants_set.add(variant_changed.replaceAll(/([шжчщ])ь$/g, "$1"));
-    converted_variants_set.add(variant_changed);
-    //converted_variants_set.delete(variant);
+  //   converted_variants_set.add(variant_changed.replaceAll(/([шжчщ])ь$/g, "$1"));
+  //   converted_variants_set.add(variant_changed);
+  //   //converted_variants_set.delete(variant);
+  // }
+  applyChangeToSet(converted_variants_set, PV4);
+  applyChangeToSet(converted_variants_set, hardenClusters);
+  applyChangeToSet(converted_variants_set, hardenFinalM);
+  applyChangeToSet(converted_variants_set, cyrillicise);
+  for(const variant of converted_variants_set) {
+    converted_variants_set.add(removeFinalShipyashiJer(variant)); //don't want to delete unchanged forms for this one so I can't use my helper-functions
   }
+
   return orv_form;
 };
 
@@ -320,6 +375,7 @@ const reverseStr = (str) => {
 
 const applyHavlik = (orv_form) => {
   //!!!REMEMBER WHEN YOU ADD STUFF TO THE END OF THIS FUNCTION THAT THE STRING IS BACKWARDS
+  orv_form = orv_form.replaceAll("ś", "s'").replaceAll("ʒ", "z'");
   orv_form = orv_form.replaceAll("ěa", "ä");
   orv_form = orv_form.replaceAll(starting_i_regex, "i");
   const lngth = orv_form.length;
@@ -385,24 +441,28 @@ const convertToORV = (lcs_word, pv2_3_exists, ch_sl, converted_variants_set) => 
   converted_variants_set.add(TRAT(lcs_word));
 
   //apparently the loop will not visit elements added to it during the course of the loop
-  for(const variant of converted_variants_set) {
-    const initial_size = converted_variants_set.size;
-    converted_variants_set.add(dejotateORV(variant));
-    converted_variants_set.add(dejotateOCS(variant));
-    if(initial_size < converted_variants_set.size) converted_variants_set.delete(variant);
-  }
-  for(const variant of converted_variants_set) {
-    const initial_size = converted_variants_set.size;
-    converted_variants_set.add(nasalisedJat(variant, false));
-    converted_variants_set.add(nasalisedJat(variant, true));
-    if(initial_size < converted_variants_set.size) converted_variants_set.delete(variant);
-  }
-  for(const variant of converted_variants_set) {
-    const initial_size = converted_variants_set.size;
-    converted_variants_set.add(nasalisedY(variant, false));
-    converted_variants_set.add(nasalisedY(variant, true));
-    if(initial_size < converted_variants_set.size) converted_variants_set.delete(variant);
-  }  
+  // for(const variant of converted_variants_set) {
+  //   const initial_size = converted_variants_set.size;
+  //   converted_variants_set.add(dejotateORV(variant));
+  //   converted_variants_set.add(dejotateOCS(variant));
+  //   if(initial_size < converted_variants_set.size) converted_variants_set.delete(variant);
+  // }
+  // for(const variant of converted_variants_set) {
+  //   const initial_size = converted_variants_set.size;
+  //   converted_variants_set.add(nasalisedJat(variant, false));
+  //   converted_variants_set.add(nasalisedJat(variant, true));
+  //   if(initial_size < converted_variants_set.size) converted_variants_set.delete(variant);
+  // }
+  // for(const variant of converted_variants_set) {
+  //   const initial_size = converted_variants_set.size;
+  //   converted_variants_set.add(nasalisedY(variant, false));
+  //   converted_variants_set.add(nasalisedY(variant, true));
+  //   if(initial_size < converted_variants_set.size) converted_variants_set.delete(variant);
+  // }
+
+  applyAlternateChangesToSet(converted_variants_set, dejotateORV, dejotateOCS);
+  applyAlternateChangesToSet(converted_variants_set, nasalisedJatOCS, nasalisedJatORV);
+  applyAlternateChangesToSet(converted_variants_set, nasalisedYOCS, nasalisedYORV);
 
   if(!ch_sl) {
     lcs_word = TOROT(lcs_word);
@@ -414,10 +474,6 @@ const convertToORV = (lcs_word, pv2_3_exists, ch_sl, converted_variants_set) => 
   }
   lcs_word = nasalisedJat(lcs_word, ch_sl);
   lcs_word = nasalisedY(lcs_word, ch_sl);
-
-  
-
-  lcs_word = lcs_word.replaceAll("ś", "s'").replaceAll("ʒ", "z'");
 
   return lcs_word;
 };
@@ -440,11 +496,12 @@ for(let word_obj of lcs_json) {
       let first_conversion = convertToORV(unconverted_form, pv2_3_exists, ch_sl, converted_variants_set);
       
       let second_conversion = applyHavlik(first_conversion);
-      for(const variant of converted_variants_set) {
-        const initial_size = converted_variants_set.size;
-        converted_variants_set.add(applyHavlik(variant));
-        if(initial_size < converted_variants_set.size) converted_variants_set.delete(variant);
-      }
+      applyChangeToSet(converted_variants_set, applyHavlik);
+      // for(const variant of converted_variants_set) {
+      //   const initial_size = converted_variants_set.size;
+      //   converted_variants_set.add(applyHavlik(variant));
+      //   if(initial_size < converted_variants_set.size) converted_variants_set.delete(variant);
+      // }
       let final_conversion = orvToCSR(second_conversion, torot_pos, converted_variants_set);
       console.log(converted_variants_set.size);
       sets_obj.push(Array.from(converted_variants_set));
