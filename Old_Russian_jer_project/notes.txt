@@ -18,6 +18,8 @@ Extra Inflection desinence_idx's for the extra verb-forms I produce are as follo
     146, 147, 148: fem, nt, and plural l-participle forms (вела вело вели)
     149: perfective verbal adverb *-(v)ъši forms (ведши, наступивши etc.)
     150: masc. sg. long-form PAP (наливший)
+    151: masc. sg. long-form PPP (убитый, сожжённый)
+    152: masc. sg. long-form PrPP (обозримый)
 
 
 CSR match тиверцы needs to be тиверец to match the Wiktionary lemma
@@ -33,3 +35,7 @@ Removed the non-numbered спасти from the Google Drive spreadsheet since th
 I've had to break my rule about not changing the LCS first-table inflections by changing all the 2nd sg. pres. endings to *šь from *ši
 
 Word-final [шчжщ]ь is preserved in basically feminine nouns and verbs but not elsewhere, and since we don't have modern Russian inflection-class-data I can't easily test for such conditions so need to just produce both types for everything
+
+drevĺьńьjь and bratrь etc. probably show unrecognised post-Jer Shift cluster-simplifications
+
+consonant-stemmed masc. l-participles like *neslъ > нёс suggest that these clusters with /l/ were banned syllable-finally, but then those forms get matched from the PAP *nesъ etc. so unless they turn up elsewhere I don't know if it's worth adding a sound-change for that

@@ -168,18 +168,20 @@ function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, f
         outer: for(let i = 2; i < 5; i++) {
 
           for(const idx in generated_form_entry[i]) {
-            const generated_inflected_form = generated_form_entry[i][idx][0];
+            const generated_inflected_forms = generated_form_entry[i][idx][0];
             
-            if(generated_inflected_form == deStressDownCase(wiki_infl)) {
-              result_csv += generated_inflected_form + "|" + generated_form_entry[i][idx][1] + "|" + idx + "|" + generated_form_entry[6] + "|1\n";
-              wiki_matched_with_generated_form = true;
-              //console.log(generated_inflected_form, wiki_infl);
-              break outer; 
+            for(const generated_inflected_form of generated_inflected_forms) {
+              if(generated_inflected_form == deStressDownCase(wiki_infl)) {
+                result_csv += generated_inflected_form + "|" + generated_form_entry[i][idx][1] + "|" + idx + "|" + generated_form_entry[6] + "|1\n";
+                wiki_matched_with_generated_form = true;
+                //console.log(generated_inflected_form, wiki_infl);
+                break outer; 
+              }
             }
           }   
         }
         if(!wiki_matched_with_generated_form) {
-          result_csv += "|||0\n";
+          result_csv += "||||0\n";
         }
     }
     else {
@@ -190,13 +192,15 @@ function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, f
         outer: for(let i = 2; i < 5; i++) {
 
           for(const idx in generated_form_entry[i]) {
-            const generated_inflected_form = generated_form_entry[i][idx][0];
-            
-            if(generated_inflected_form == deStressDownCase(wiki_infl)) {
-              result_csv += generated_inflected_form + "|" + generated_form_entry[i][idx][1] + "|" + idx + "|" + generated_form_entry[6] + "|1\n";
-              wiki_matched_with_generated_form = true;
-              //console.log(generated_inflected_form, wiki_infl);
-              break outer; 
+            const generated_inflected_forms = generated_form_entry[i][idx][0];
+
+            for(const generated_inflected_form of generated_inflected_forms) {
+              if(generated_inflected_form == deStressDownCase(wiki_infl)) {
+                result_csv += generated_inflected_form + "|" + generated_form_entry[i][idx][1] + "|" + idx + "|" + generated_form_entry[6] + "|1\n";
+                wiki_matched_with_generated_form = true;
+                //console.log(generated_inflected_form, wiki_infl);
+                break outer; 
+              }
             }
           }   
         }

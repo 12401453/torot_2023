@@ -720,7 +720,10 @@ void LcsFlecter::produceAllInflections() {
                         vec.emplace_back(145, inflection.flected_form + "jь");
                     }
                     else if(inflection.desinence_ix > 40) {
+                        //only 41 and 42 are < 43 && > 40
                         inflection.flected_form = inflection.flected_form + "ъ";
+                        inflection.desinence_ix == 41 ? vec.emplace_back(151, inflection.flected_form + "jь") : vec.emplace_back(152, inflection.flected_form + "jь");
+                        //for PPP that end in *-enъ this isn't even enough because Russian adds basically an *ьnъ suffix to it as well, unlike Ukrainian
                     }
                     
                     if(inflection.desinence_ix == 40) {
@@ -734,6 +737,12 @@ void LcsFlecter::produceAllInflections() {
                         vec.emplace_back(149, inflection.flected_form + "ši");
                         vec.emplace_back(150, inflection.flected_form + "šьjь");
                     }
+                    // else if(inflection.desinence_ix == 41) {
+                    //     vec.emplace_back(151, inflection.flected_form + "jь");
+                    // }
+                    // else if(inflection.desinence_ix == 42) {
+                    //     vec.emplace_back(152, inflection.flected_form + "jь");
+                    // }
                 }
             }
         }

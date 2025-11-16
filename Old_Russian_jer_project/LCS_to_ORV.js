@@ -14,6 +14,9 @@ const PV2_regex_CSR = /[kgx]v?[ěi](?!$)/;
 
 const hard_sign_regex = /([kgxtdnlrpbmfv])j/g; //the g flag is so I can use capturing-groups and .replaceAll()
 
+const hardened_cluster_softsign_regex = /(?<=[tdnńrŕpbmvfszcšžč])'(?=[tdnńrŕlĺpbmvfszcšžčgkx])/g;
+const hardened_cluster_softsign_regex_cyr = /(?<=[тднрпбмвфсзцшжч])ь(?=[тднрлпбмвсзцшжчгкх])/g;
+
 const PV2_map = new Map();
 PV2_map.set('k', 'c');
 PV2_map.set('g', 'ʒ');
@@ -76,7 +79,8 @@ const hardening_clusters = new Array(
   ["d't", "dt"],
   ["d'l", "dl"],
   ["n'c", "nc"],
-  ["n'k", "nk"]
+  ["n'k", "nk"],
+  ["š'"]
 );
 
 const orv_shipyashi_nasal_regex = new RegExp(/[ščžћђǯj]ę/ug);
@@ -157,17 +161,27 @@ const russifyDoublets = (lcs_form) => {
   else if(lcs_form.startsWith("jezer")) {
     lcs_form = lcs_form.replace("jezer", "ozer");
   }
+  else if(lcs_form.startsWith("bezakon")) {
+    lcs_form = lcs_form.replaceAll("bezakon", "bezъzakon");
+  }
   
   return lcs_form;
 };
 
+const jotifyInitialA = (lcs_form) => {
+  return lcs_form.replace(/^a/, "ja");
+}
+
+const shortenFemInstrSg = (word) => {
+  return word.replace(/([ое])ю$/, "$1й");
+};
 
 const PV4 = (word) => {
   return word.replaceAll("ky", "ki").replaceAll("xy", "xi").replaceAll("gy", "gi");
 }
 
 const cyr_map = new Array(
-
+  ["šč'j", "щьj"],
   ["š'j", "шьj"],
   ["ž'j", "жьj"],
   ["č'j", "чьj"],
@@ -176,7 +190,7 @@ const cyr_map = new Array(
   ["ĺ'j", "льj"],
   ["ń'j", "ньj"],
 
-
+  ["ščä", "ща"],
 
   ["z'a", "зя"],
   ["z'u", "зю"],
@@ -212,7 +226,7 @@ const cyr_map = new Array(
   ["j'", "j"],
   ["jo", "o"],
 
-  ["št", "šč"],
+  // ["št", "šč"],
   
   // ["š'", "š"],
   //["ž'", "ž"],
@@ -287,12 +301,22 @@ const removeFinalShipyashiJer = (word) => {
   return word.replace(/([шжчщ])ь$/, "$1");
 };
 
+const shortenInfinitive = (infinitive) => {
+  return infinitive.replace(/([тчщ])и$/, "$1ь");
+}
+
 //the changeFunctions passed into these helper-functions have to be ones where the input and output are both just a single string
 const applyChangeToSet = (variants_set, changeFunction) => {
   const initial_set_size = variants_set.size;
   for(const variant of variants_set) {
     variants_set.add(changeFunction(variant));
     if(initial_set_size < variants_set.size) variants_set.delete(variant);
+  }
+};
+
+const applyOptionalChangeToSet = (variants_set, changeFunction) => {
+  for(const variant of variants_set) {
+    variants_set.add(changeFunction(variant));
   }
 };
 
@@ -307,26 +331,40 @@ const applyAlternateChangesToSet = (variants_set, changeFunctionFirst, changeFun
 };
 
 const hardenClusters = (jer_shifted_form) => {
-  for(const pair of hardening_clusters) {
-    jer_shifted_form = jer_shifted_form.replaceAll(pair[0], pair[1]);
-  }
-  return jer_shifted_form;
+  // for(const pair of hardening_clusters) {
+  //   jer_shifted_form = jer_shifted_form.replaceAll(pair[0], pair[1]);
+  // }
+
+  return jer_shifted_form.replaceAll(hardened_cluster_softsign_regex_cyr, "");
 };
 
 const hardenFinalM = (word) => {
   return word.replace(/m'$/, "m");
-}
+};
 
-const orvToCSR = (orv_form, torot_pos, converted_variants_set) => {
+const churchSlavoniciseNomMascSgParticiples = (participle) => {
+  if(participle.endsWith("ей")) {
+    participle = participle.slice(0, -2) + "ий";
+  }
+  else if(participle.endsWith("ой")) {
+    participle = participle.slice(0, -2) + "ый";
+  }
+  return participle;
+};
+
+const orvToCSR = (orv_form, torot_pos, infl_idx, converted_variants_set) => {
   orv_form = hardenFinalM(hardenClusters(PV4(orv_form)));
   for(const pair of cyr_map) {
     orv_form = orv_form.replaceAll(pair[0], pair[1]);
   }
-  if((torot_pos != "V-" && orv_form.search(/[шжчщ]ь$/) != -1)) {
+  if(torot_pos != "V-" && infl_idx != "2") {
     //word-final шь
     
     orv_form = orv_form.replace(/([шжчщ])ь$/, "$1");
     //console.log(orv_form);
+  }
+  if(infl_idx == "43") {
+    orv_form = shortenInfinitive(orv_form);
   }
 
   // for(const variant of converted_variants_set) {
@@ -340,12 +378,33 @@ const orvToCSR = (orv_form, torot_pos, converted_variants_set) => {
   //   //converted_variants_set.delete(variant);
   // }
   applyChangeToSet(converted_variants_set, PV4);
-  applyChangeToSet(converted_variants_set, hardenClusters);
   applyChangeToSet(converted_variants_set, hardenFinalM);
   applyChangeToSet(converted_variants_set, cyrillicise);
-  for(const variant of converted_variants_set) {
-    converted_variants_set.add(removeFinalShipyashiJer(variant)); //don't want to delete unchanged forms for this one so I can't use my helper-functions
+  applyChangeToSet(converted_variants_set, hardenClusters);
+
+  if(infl_idx == "43") {
+    applyOptionalChangeToSet(converted_variants_set, shortenInfinitive);
   }
+
+  if(torot_pos != "V-" && infl_idx != "2") {
+    // for(const variant of converted_variants_set) {
+    //   converted_variants_set.add(removeFinalShipyashiJer(variant)); //don't want to delete unchanged forms for this one so I can't use my helper-functions
+    // }
+    applyOptionalChangeToSet(converted_variants_set, removeFinalShipyashiJer);
+  }
+
+  if(infl_idx == "27") {
+    applyOptionalChangeToSet(converted_variants_set, shortenFemInstrSg);
+  }
+
+  //these two shouldn't really be included because they are jer-changes
+  if(infl_idx == "145" || infl_idx == "152" ||infl_idx == "151" ||infl_idx == "150") {
+    applyOptionalChangeToSet(converted_variants_set, churchSlavoniciseNomMascSgParticiples);
+  }
+  if(torot_pos == "A-" && infl_idx == "1" || infl_idx == "2") {
+    applyOptionalChangeToSet(converted_variants_set, churchSlavoniciseNomMascSgParticiples);
+  }
+  
 
   return orv_form;
 };
@@ -354,7 +413,6 @@ const orvToCSR = (orv_form, torot_pos, converted_variants_set) => {
 const tsy_regex = /ц[иы]/;
 const zd_regex = /[сз]д/;
 const zhd_regex = /[жш]д/;
-const palatal_plus_o_regex = /([шжчцщ])е/g;
 
 //includes palatal letters because Russian seems to reapply this rule after they have hardened (молодёжь etc.)
 //I'm gonna apply the Jer Shift before everything else so don't need to care about strong-jer > /o/
@@ -406,6 +464,7 @@ const applyHavlik = (orv_form) => {
       jer_shifted_backwards += letter;
     }
   }
+  
   jer_shifted_backwards = jer_shifted_backwards.replaceAll("''", "'");
   let jer_shifted_unreversed = reverseStr(jer_shifted_backwards);
   jer_shifted_unreversed = jer_shifted_unreversed.replaceAll(hard_sign_regex, "$1@j").replaceAll("~", "\'");
@@ -418,7 +477,7 @@ const convertToORV = (lcs_word, pv2_3_exists, ch_sl, converted_variants_set) => 
   lcs_word = lcs_word.replaceAll("O", "ъ").replaceAll("E", "ь");
   lcs_word = lcs_word.replaceAll("ḹ", "ḷ");
 
-  lcs_word = lcs_word.replace(/^ak/, "jǢk").replace(/^av/, "jǢv");
+  
   lcs_word = yeetTlDl(lcs_word);
 
   lcs_word = lcs_word.replaceAll("Ǣ", "ä");
@@ -437,8 +496,13 @@ const convertToORV = (lcs_word, pv2_3_exists, ch_sl, converted_variants_set) => 
   lcs_word = denasalise(lcs_word);
   lcs_word = russifyDoublets(lcs_word);
 
+
+
   converted_variants_set.add(TOROT(lcs_word));
   converted_variants_set.add(TRAT(lcs_word));
+
+  applyOptionalChangeToSet(converted_variants_set, jotifyInitialA);
+  lcs_word = lcs_word.replace(/^ak/, "jak").replace(/^av/, "jav");
 
   //apparently the loop will not visit elements added to it during the course of the loop
   // for(const variant of converted_variants_set) {
@@ -502,12 +566,14 @@ for(let word_obj of lcs_json) {
       //   converted_variants_set.add(applyHavlik(variant));
       //   if(initial_size < converted_variants_set.size) converted_variants_set.delete(variant);
       // }
-      let final_conversion = orvToCSR(second_conversion, torot_pos, converted_variants_set);
+      let final_conversion = orvToCSR(second_conversion, torot_pos, idx, converted_variants_set);
       console.log(converted_variants_set.size);
-      sets_obj.push(Array.from(converted_variants_set));
+
+      const final_converted_variants_array = Array.from(converted_variants_set);
+      sets_obj.push(final_converted_variants_array);
 
       // word_obj[i][idx] = [orvToCSR(applyHavlik(convertToORV(unconverted_form, pv2_3_exists, ch_sl, converted_variants_set)), torot_pos), unconverted_form];
-      word_obj[i][idx] = [final_conversion, unconverted_form];
+      word_obj[i][idx] = [final_converted_variants_array, unconverted_form];
     }
   }
 }
