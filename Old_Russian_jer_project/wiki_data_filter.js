@@ -145,7 +145,7 @@ function readWiktionaryData(matched_wiki_forms, csr_matches) {
 
 function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, flat_results_csv) {
   let paradigmless_lemmas_csv = "";
-  let result_csv = "wiki_form|generated_match|lcs_match|match_desinence_idx|match_code\n";
+  let result_csv = "wiki_form|generated_match|lcs_match|match_desinence_idx|lcs_infl_class|match_code\n";
   const generated_forms_keys = generated_forms.map(x => x[5]);
   for(const wiki_paradigm of matched_wiki_forms) {
     //const wiki_generated_key_match = generated_keys.indexOf(wiki_paradigm[0]);

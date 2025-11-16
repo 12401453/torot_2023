@@ -270,7 +270,7 @@ const hardenFinalM = (word) => {
   return word.replace(/m'$/, "m");
 }
 
-const orvToCSR = (orv_form, torot_pos) => {
+const orvToCSR = (orv_form, torot_pos, converted_variants_set) => {
   orv_form = hardenFinalM(hardenClusters(PV4(orv_form)));
   for(const pair of cyr_map) {
     orv_form = orv_form.replaceAll(pair[0], pair[1]);
@@ -279,7 +279,18 @@ const orvToCSR = (orv_form, torot_pos) => {
     //word-final шь
     
     orv_form = orv_form.replaceAll(/([шжчщ])ь$/g, "$1");
-    console.log(orv_form);
+    //console.log(orv_form);
+  }
+
+  for(const variant of converted_variants_set) {
+    let variant_changed = hardenFinalM(hardenClusters(PV4(variant)));
+    for(const pair of cyr_map) {
+      variant_changed = variant_changed.replaceAll(pair[0], pair[1]);
+    }
+
+    converted_variants_set.add(variant_changed.replaceAll(/([шжчщ])ь$/g, "$1"));
+    converted_variants_set.add(variant_changed);
+    //converted_variants_set.delete(variant);
   }
   return orv_form;
 };
@@ -346,7 +357,7 @@ const applyHavlik = (orv_form) => {
   return jer_shifted_unreversed;
 };
 
-const convertToORV = (lcs_word, pv2_3_exists, ch_sl) => {
+const convertToORV = (lcs_word, pv2_3_exists, ch_sl, converted_variants_set) => {
 
   lcs_word = lcs_word.replaceAll("O", "ъ").replaceAll("E", "ь");
   lcs_word = lcs_word.replaceAll("ḹ", "ḷ");
@@ -362,13 +373,36 @@ const convertToORV = (lcs_word, pv2_3_exists, ch_sl) => {
     lcs_word = applyPV2(lcs_word, PV2_regex_CSR); //this does it only for non-word-final *ě, *i which hopefully will leave most of the Russian levelled forms
   }
 
-  //has to be after PV2 etc. because these are post-PV2/3 loans and often the only source of velar+front-vowel in the languages
+  //has to be after PV2 etc. because these are post-PV2/3 loans and often the only source of velar+front-vowel in the old languages
   lcs_word = lcs_word.replaceAll("ḱ", "k").replaceAll("x́", "x").replaceAll("ǵ", "g");
 
   lcs_word = lcs_word.replaceAll("cěsaŕ", "caŕ");
   
   lcs_word = denasalise(lcs_word);
   lcs_word = russifyDoublets(lcs_word);
+
+  converted_variants_set.add(TOROT(lcs_word));
+  converted_variants_set.add(TRAT(lcs_word));
+
+  //apparently the loop will not visit elements added to it during the course of the loop
+  for(const variant of converted_variants_set) {
+    const initial_size = converted_variants_set.size;
+    converted_variants_set.add(dejotateORV(variant));
+    converted_variants_set.add(dejotateOCS(variant));
+    if(initial_size < converted_variants_set.size) converted_variants_set.delete(variant);
+  }
+  for(const variant of converted_variants_set) {
+    const initial_size = converted_variants_set.size;
+    converted_variants_set.add(nasalisedJat(variant, false));
+    converted_variants_set.add(nasalisedJat(variant, true));
+    if(initial_size < converted_variants_set.size) converted_variants_set.delete(variant);
+  }
+  for(const variant of converted_variants_set) {
+    const initial_size = converted_variants_set.size;
+    converted_variants_set.add(nasalisedY(variant, false));
+    converted_variants_set.add(nasalisedY(variant, true));
+    if(initial_size < converted_variants_set.size) converted_variants_set.delete(variant);
+  }  
 
   if(!ch_sl) {
     lcs_word = TOROT(lcs_word);
@@ -381,6 +415,8 @@ const convertToORV = (lcs_word, pv2_3_exists, ch_sl) => {
   lcs_word = nasalisedJat(lcs_word, ch_sl);
   lcs_word = nasalisedY(lcs_word, ch_sl);
 
+  
+
   lcs_word = lcs_word.replaceAll("ś", "s'").replaceAll("ʒ", "z'");
 
   return lcs_word;
@@ -389,6 +425,8 @@ const convertToORV = (lcs_word, pv2_3_exists, ch_sl) => {
 const json_str= fs.readFileSync("lcs_inflections_indexed.json", 'utf-8');
 const lcs_json = JSON.parse(json_str);
 
+const sets_obj = new Array();
+
 for(let word_obj of lcs_json) {
   const obj_length = word_obj.length;
   const pv2_3_exists = Boolean(word_obj[0]);
@@ -396,11 +434,25 @@ for(let word_obj of lcs_json) {
   const torot_pos = word_obj[5].slice(0, 2);
   for(let i = 2; i < 5; i++) {
     for(const idx in word_obj[i]) {
-      //console.log(orvToCSR(applyHavlik(convertToORV(word_obj[i][idx], pv2_3_exists, ch_sl))));
       const unconverted_form = word_obj[i][idx];
-      word_obj[i][idx] = [orvToCSR(applyHavlik(convertToORV(unconverted_form, pv2_3_exists, ch_sl)), torot_pos), unconverted_form];
+      const converted_variants_set = new Set();
+
+      let first_conversion = convertToORV(unconverted_form, pv2_3_exists, ch_sl, converted_variants_set);
       
+      let second_conversion = applyHavlik(first_conversion);
+      for(const variant of converted_variants_set) {
+        const initial_size = converted_variants_set.size;
+        converted_variants_set.add(applyHavlik(variant));
+        if(initial_size < converted_variants_set.size) converted_variants_set.delete(variant);
+      }
+      let final_conversion = orvToCSR(second_conversion, torot_pos, converted_variants_set);
+      console.log(converted_variants_set.size);
+      sets_obj.push(Array.from(converted_variants_set));
+
+      // word_obj[i][idx] = [orvToCSR(applyHavlik(convertToORV(unconverted_form, pv2_3_exists, ch_sl, converted_variants_set)), torot_pos), unconverted_form];
+      word_obj[i][idx] = [final_conversion, unconverted_form];
     }
   }
 }
+fs.writeFileSync("sets_variants.json", JSON.stringify(sets_obj, null, 2));
 fs.writeFileSync("lcs_converted.json", JSON.stringify(lcs_json, null, 2));
