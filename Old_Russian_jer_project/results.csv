@@ -4183,7 +4183,7 @@ wiki_form|generated_match|lcs_match|match_desinence_idx|lcs_infl_class|match_cod
 дни|дни|dьni|4|den|1
 дня|дня|dьnǢ|3|den|1
 дней|дней|dьnьjь|17|den|1
-дню||||den|0
+дню|дню|dьn~u|4|den|1
 дням|дням|dьnǢmъ|18|den|1
 днём|днем|dьnьmь|6|den|1
 дня́ми|днями|dьnǢmi|20|den|1
@@ -8836,7 +8836,7 @@ wiki_form|generated_match|lcs_match|match_desinence_idx|lcs_infl_class|match_cod
 но́гти|ногти|nogъti|3|masc_i|1
 но́гтя|ногтя|nogъtǢ|3|masc_i|1
 ногте́й|ногтей|nogъtьjь|17|masc_i|1
-но́гтю||||masc_i|0
+но́гтю|ногтю|nogъt~u|4|masc_i|1
 ногтя́м||||masc_i|0
 но́гтем|ногтем|nogъtьmь|6|masc_i|1
 ногтя́ми||||masc_i|0
@@ -13006,7 +13006,7 @@ wiki_form|generated_match|lcs_match|match_desinence_idx|lcs_infl_class|match_cod
 псалтыри́|псалтыри|pъsalъtyri|24|fem_i|1
 псалтыря́|псалтыря|pъsalъtyrǢ|24|fem_i|1
 псалтыре́й|псалтырей|pъsalъtyrьjь|38|fem_i|1
-псалтырю́||||fem_i|0
+псалтырю́|псалтырю|pъsalъtyr~u|25|fem_i|1
 псалтыря́м|псалтырям|pъsalъtyrǢmъ|39|fem_i|1
 псалтырём|псалтырем|pъsalъtyrьmъ|39|fem_i|1
 псалтыря́ми|псалтырями|pъsalъtyrǢmi|41|fem_i|1
@@ -18154,7 +18154,7 @@ wiki_form|generated_match|lcs_match|match_desinence_idx|lcs_infl_class|match_cod
 хме́ли|хмели|xъmeli|24|fem_i|1
 хме́ля|хмеля|xъmelǢ|24|fem_i|1
 хме́лей|хмелей|xъmelьjь|38|fem_i|1
-хме́лю||||fem_i|0
+хме́лю|хмелю|xъmel~u|25|fem_i|1
 хме́лям|хмелям|xъmelǢmъ|39|fem_i|1
 хме́лем|хмелем|xъmelьmъ|39|fem_i|1
 хме́лями|хмелями|xъmelǢmi|41|fem_i|1
@@ -18162,10 +18162,10 @@ wiki_form|generated_match|lcs_match|match_desinence_idx|lcs_infl_class|match_cod
 хме́лях|хмелях|xъmelǢxъ|40|fem_i|1
 хме́ль|хмель|xъmelь|22|fem_i|1
 хме́ля|хмеля|xъmelǢ|24|fem_i|1
-хме́лю||||fem_i|0
+хме́лю|хмелю|xъmel~u|25|fem_i|1
 хме́лем|хмелем|xъmelьmъ|39|fem_i|1
 хме́ле|хмеле|xъmelě|26|fem_i|1
-хмелю́||||fem_i|0
+хмелю́|хмелю|xъmel~u|25|fem_i|1
 холм|холм|xḷmъ|1|masc_o|1
 холмы́|холмы|xḷmy|16|masc_o|1
 холма́|холма|xḷma|3|masc_o|1
@@ -18395,7 +18395,7 @@ wiki_form|generated_match|lcs_match|match_desinence_idx|lcs_infl_class|match_cod
 че́рви|черви|čṝvi|24|fem_i|1
 червя́|червя|čṝvǢ|24|fem_i|1
 черве́й|червей|čṝvьjь|38|fem_i|1
-червю́||||fem_i|0
+червю́|червю|čṝv~u|25|fem_i|1
 червя́м|червям|čṝvǢmъ|39|fem_i|1
 червём|червем|čṝvьmъ|39|fem_i|1
 червя́ми|червями|čṝvǢmi|41|fem_i|1

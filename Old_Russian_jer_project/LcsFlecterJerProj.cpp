@@ -123,11 +123,18 @@ void LcsFlecter::postProcess(std::array<std::vector<Inflection>, 3> &inflected_f
             //add lengthened-grade past participles and infinitives as variants (certainly happens with pьsati and but not bьrati)
             //due to intervening pres-part. this would be two for-loops so better unrolled
             if(m_conj_type == "52_abl" && m_stem.ends_with("pьs")) {
-                inflected_forms[1][38].flected_form = class5AblautCleanCopy(inflected_forms[0][38].flected_form);
-                inflected_forms[1][39].flected_form = class5AblautCleanCopy(inflected_forms[0][39].flected_form);
-                inflected_forms[1][40].flected_form = class5AblautCleanCopy(inflected_forms[0][40].flected_form);
-                inflected_forms[1][42].flected_form = class5AblautCleanCopy(inflected_forms[0][42].flected_form);
-                inflected_forms[1][43].flected_form = class5AblautCleanCopy(inflected_forms[0][43].flected_form);
+                // inflected_forms[1][38].flected_form = class5AblautCleanCopy(inflected_forms[0][38].flected_form);
+                // inflected_forms[1][39].flected_form = class5AblautCleanCopy(inflected_forms[0][39].flected_form);
+                // inflected_forms[1][40].flected_form = class5AblautCleanCopy(inflected_forms[0][40].flected_form);
+                // inflected_forms[1][42].flected_form = class5AblautCleanCopy(inflected_forms[0][42].flected_form);
+                // inflected_forms[1][43].flected_form = class5AblautCleanCopy(inflected_forms[0][43].flected_form);
+
+                //for Modern Russian we just need all the stems lengthened, since *псати verbs do not occur
+                for(auto& infl_vec : inflected_forms) {
+                    for(Inflection& infl : infl_vec) {
+                        class5AblautClean(infl.flected_form);
+                    }
+                }
             }
             
 

@@ -14,7 +14,6 @@ const PV2_regex_CSR = /[kgx]v?[ěi](?!$)/;
 
 const hard_sign_regex = /([kgxtdnlrpbmfv])j/g; //the g flag is so I can use capturing-groups and .replaceAll()
 
-const hardened_cluster_softsign_regex = /(?<=[tdnńrŕpbmvfszcšžč])'(?=[tdnńrŕlĺpbmvfszcšžčgkx])/g;
 const hardened_cluster_softsign_regex_cyr = /(?<=[тднрпбмвфсзцшжч])ь(?=[тднрлпбмвсзцшжчгкх])/g;
 
 const PV2_map = new Map();
@@ -65,40 +64,9 @@ const lengthenTenseJers = (lcs_form) => {
   return lcs_form;
 };
 
-const hardening_clusters = new Array(
-  ["z'd", "zd"],
-  ["s'd", "sd"],
-  ["v'n", "vn"],
-  ["v's", "vs"],
-  ["t's", "ts"],
-  ["n'n", "nn"],
-  ["r'n", "rn"],
-  ["d'n", "dn"],
-  ["v's", "vs"],
-  ["s'd", "sd"],
-  ["d't", "dt"],
-  ["d'l", "dl"],
-  ["n'c", "nc"],
-  ["n'k", "nk"],
-  ["š'"]
-);
-
-const orv_shipyashi_nasal_regex = new RegExp(/[ščžћђǯj]ę/ug);
-const orv_shipyashi_a_regex = new RegExp(/[ščžћђǯjʒś]Ǣ/ug);
-const orv_bare_nasal_regex = new RegExp(/[^ščžћђǯj]ę/ug);
-
 const denasalise = (lcs_form) => {
   lcs_form = lcs_form.replaceAll("ǫ", "u").replaceAll("ę", "ä");
   return lcs_form;
-};
-
-const nasalisedJat = (word, ch_sl) => {
-  if(!ch_sl) return word.replaceAll("ę̌", "ě");
-  else return word.replaceAll("ę̌", "ä");
-};
-const nasalisedY = (word, ch_sl) => {
-  if(!ch_sl) return word.replaceAll("y̨", "a");
-  else return word.replaceAll("y̨", "y");
 };
 
 const nasalisedJatORV = (word) => {
@@ -181,6 +149,7 @@ const PV4 = (word) => {
 }
 
 const cyr_map = new Array(
+  ["šč'u", "щу"],
   ["šč'j", "щьj"],
   ["š'j", "шьj"],
   ["ž'j", "жьj"],
@@ -192,6 +161,10 @@ const cyr_map = new Array(
 
   ["ščä", "ща"],
 
+  ["č'u", "чу"],
+  ["š'u", "шу"],
+  ["ž'u", "жу"],
+
   ["z'a", "зя"],
   ["z'u", "зю"],
   ["z'e", "зе"],
@@ -200,6 +173,18 @@ const cyr_map = new Array(
   ["s'u", "сю"],
   ["s'e", "се"],
   ["s'ě", "се"],
+  ["r'u", "рю"],
+  ["l'u", "лю"],
+  ["n'u", "ню"],
+  ["t'u", "тю"],
+  ["d'u", "дю"],
+  ["s'u", "сю"],
+  ["p'u", "пю"],
+  ["b'u", "бю"],
+  ["v'u", "вю"],
+  ["f'u", "фю"],
+  
+  
   ["ŕu", "рю"],
   ["ĺu", "лю"],
   ["ńu", "ню"],
@@ -331,10 +316,6 @@ const applyAlternateChangesToSet = (variants_set, changeFunctionFirst, changeFun
 };
 
 const hardenClusters = (jer_shifted_form) => {
-  // for(const pair of hardening_clusters) {
-  //   jer_shifted_form = jer_shifted_form.replaceAll(pair[0], pair[1]);
-  // }
-
   return jer_shifted_form.replaceAll(hardened_cluster_softsign_regex_cyr, "");
 };
 
@@ -342,7 +323,7 @@ const hardenFinalM = (word) => {
   return word.replace(/m'$/, "m");
 };
 
-const churchSlavoniciseNomMascSgParticiples = (participle) => {
+const churchSlavoniciseNomMascSgLongAdj = (participle) => {
   if(participle.endsWith("ей")) {
     participle = participle.slice(0, -2) + "ий";
   }
@@ -352,31 +333,8 @@ const churchSlavoniciseNomMascSgParticiples = (participle) => {
   return participle;
 };
 
-const orvToCSR = (orv_form, torot_pos, infl_idx, converted_variants_set) => {
-  orv_form = hardenFinalM(hardenClusters(PV4(orv_form)));
-  for(const pair of cyr_map) {
-    orv_form = orv_form.replaceAll(pair[0], pair[1]);
-  }
-  if(torot_pos != "V-" && infl_idx != "2") {
-    //word-final шь
-    
-    orv_form = orv_form.replace(/([шжчщ])ь$/, "$1");
-    //console.log(orv_form);
-  }
-  if(infl_idx == "43") {
-    orv_form = shortenInfinitive(orv_form);
-  }
+const orvToCSR = (torot_pos, infl_idx, converted_variants_set) => {
 
-  // for(const variant of converted_variants_set) {
-  //   let variant_changed = hardenFinalM(hardenClusters(PV4(variant)));
-  //   for(const pair of cyr_map) {
-  //     variant_changed = variant_changed.replaceAll(pair[0], pair[1]);
-  //   }
-
-  //   converted_variants_set.add(variant_changed.replaceAll(/([шжчщ])ь$/g, "$1"));
-  //   converted_variants_set.add(variant_changed);
-  //   //converted_variants_set.delete(variant);
-  // }
   applyChangeToSet(converted_variants_set, PV4);
   applyChangeToSet(converted_variants_set, hardenFinalM);
   applyChangeToSet(converted_variants_set, cyrillicise);
@@ -387,9 +345,6 @@ const orvToCSR = (orv_form, torot_pos, infl_idx, converted_variants_set) => {
   }
 
   if(torot_pos != "V-" && infl_idx != "2") {
-    // for(const variant of converted_variants_set) {
-    //   converted_variants_set.add(removeFinalShipyashiJer(variant)); //don't want to delete unchanged forms for this one so I can't use my helper-functions
-    // }
     applyOptionalChangeToSet(converted_variants_set, removeFinalShipyashiJer);
   }
 
@@ -399,14 +354,11 @@ const orvToCSR = (orv_form, torot_pos, infl_idx, converted_variants_set) => {
 
   //these two shouldn't really be included because they are jer-changes
   if(infl_idx == "145" || infl_idx == "152" ||infl_idx == "151" ||infl_idx == "150") {
-    applyOptionalChangeToSet(converted_variants_set, churchSlavoniciseNomMascSgParticiples);
+    applyOptionalChangeToSet(converted_variants_set, churchSlavoniciseNomMascSgLongAdj);
   }
   if(torot_pos == "A-" && infl_idx == "1" || infl_idx == "2") {
-    applyOptionalChangeToSet(converted_variants_set, churchSlavoniciseNomMascSgParticiples);
+    applyOptionalChangeToSet(converted_variants_set, churchSlavoniciseNomMascSgLongAdj);
   }
-  
-
-  return orv_form;
 };
 
 
@@ -502,53 +454,20 @@ const convertToORV = (lcs_word, pv2_3_exists, ch_sl, converted_variants_set) => 
   converted_variants_set.add(TRAT(lcs_word));
 
   applyOptionalChangeToSet(converted_variants_set, jotifyInitialA);
-  lcs_word = lcs_word.replace(/^ak/, "jak").replace(/^av/, "jav");
-
-  //apparently the loop will not visit elements added to it during the course of the loop
-  // for(const variant of converted_variants_set) {
-  //   const initial_size = converted_variants_set.size;
-  //   converted_variants_set.add(dejotateORV(variant));
-  //   converted_variants_set.add(dejotateOCS(variant));
-  //   if(initial_size < converted_variants_set.size) converted_variants_set.delete(variant);
-  // }
-  // for(const variant of converted_variants_set) {
-  //   const initial_size = converted_variants_set.size;
-  //   converted_variants_set.add(nasalisedJat(variant, false));
-  //   converted_variants_set.add(nasalisedJat(variant, true));
-  //   if(initial_size < converted_variants_set.size) converted_variants_set.delete(variant);
-  // }
-  // for(const variant of converted_variants_set) {
-  //   const initial_size = converted_variants_set.size;
-  //   converted_variants_set.add(nasalisedY(variant, false));
-  //   converted_variants_set.add(nasalisedY(variant, true));
-  //   if(initial_size < converted_variants_set.size) converted_variants_set.delete(variant);
-  // }
-
   applyAlternateChangesToSet(converted_variants_set, dejotateORV, dejotateOCS);
   applyAlternateChangesToSet(converted_variants_set, nasalisedJatOCS, nasalisedJatORV);
   applyAlternateChangesToSet(converted_variants_set, nasalisedYOCS, nasalisedYORV);
-
-  if(!ch_sl) {
-    lcs_word = TOROT(lcs_word);
-    lcs_word = dejotateORV(lcs_word);
-  }
-  else {
-    lcs_word = TRAT(lcs_word);
-    lcs_word = dejotateOCS(lcs_word);
-  }
-  lcs_word = nasalisedJat(lcs_word, ch_sl);
-  lcs_word = nasalisedY(lcs_word, ch_sl);
-
-  return lcs_word;
 };
+
+
+
+
+/******************************************THE BELOW IS WHERE THE ACTUAL PROCESSING STARTS; ABOVE IS ALL HELPER-FUNCTIONS**************************/
 
 const json_str= fs.readFileSync("lcs_inflections_indexed.json", 'utf-8');
 const lcs_json = JSON.parse(json_str);
 
-const sets_obj = new Array();
-
 for(let word_obj of lcs_json) {
-  const obj_length = word_obj.length;
   const pv2_3_exists = Boolean(word_obj[0]);
   const ch_sl = word_obj[1];
   const torot_pos = word_obj[5].slice(0, 2);
@@ -557,25 +476,16 @@ for(let word_obj of lcs_json) {
       const unconverted_form = word_obj[i][idx];
       const converted_variants_set = new Set();
 
-      let first_conversion = convertToORV(unconverted_form, pv2_3_exists, ch_sl, converted_variants_set);
+      convertToORV(unconverted_form, pv2_3_exists, ch_sl, converted_variants_set);
       
-      let second_conversion = applyHavlik(first_conversion);
       applyChangeToSet(converted_variants_set, applyHavlik);
-      // for(const variant of converted_variants_set) {
-      //   const initial_size = converted_variants_set.size;
-      //   converted_variants_set.add(applyHavlik(variant));
-      //   if(initial_size < converted_variants_set.size) converted_variants_set.delete(variant);
-      // }
-      let final_conversion = orvToCSR(second_conversion, torot_pos, idx, converted_variants_set);
-      console.log(converted_variants_set.size);
+
+      orvToCSR(torot_pos, idx, converted_variants_set);
 
       const final_converted_variants_array = Array.from(converted_variants_set);
-      sets_obj.push(final_converted_variants_array);
 
-      // word_obj[i][idx] = [orvToCSR(applyHavlik(convertToORV(unconverted_form, pv2_3_exists, ch_sl, converted_variants_set)), torot_pos), unconverted_form];
       word_obj[i][idx] = [final_converted_variants_array, unconverted_form];
     }
   }
 }
-fs.writeFileSync("sets_variants.json", JSON.stringify(sets_obj, null, 2));
 fs.writeFileSync("lcs_converted.json", JSON.stringify(lcs_json, null, 2));
