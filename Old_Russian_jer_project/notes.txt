@@ -39,3 +39,9 @@ Word-final [шчжщ]ь is preserved in basically feminine nouns and verbs but n
 drevĺьńьjь and bratrь etc. probably show unrecognised post-Jer Shift cluster-simplifications
 
 consonant-stemmed masc. l-participles like *neslъ > нёс suggest that these clusters with /l/ were banned syllable-finally, but then those forms get matched from the PAP *nesъ etc. so unless they turn up elsewhere I don't know if it's worth adding a sound-change for that
+
+*žegti in modern Russian has basically zero-grade ablaut throughout except for infinitive and l-participle, whereas I am only zeroing it in the imperative (strictle speaking in the PAP and masc l-participle we can't tell if zero or /e/)
+
+don't have князей <*kъnęgьjь because отцов made me put *-evъ as the ending there: why the difference in mod. Russian? post-hardening of /c'/? Surely not
+
+Need to add a global check for 2nd pl. imperatives in *ěte and add an *-ite variant in column 155 or whatever

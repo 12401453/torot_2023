@@ -121,6 +121,9 @@ function readWiktionaryData(matched_wiki_forms, csr_matches) {
       const csr_match_idx = csr_matches_lemmas.indexOf(deStress(entry.lemma));
       const csr_leftover_idx = csr_matches_lemmas_leftover.indexOf(deStress(entry.lemma));
       if(csr_match_idx != -1) {
+        if(entry.pos == "verb") {
+          entry.inflections.push(entry.lemma) //add infinitive to wiktionary paradigms, because it is not included for some reason
+        }
         matched_wiki_forms.push([csr_matches[csr_match_idx][1], entry]);
         csr_matches_lemmas_leftover.splice(csr_leftover_idx, 1);
       }
@@ -133,6 +136,9 @@ function readWiktionaryData(matched_wiki_forms, csr_matches) {
     const csr_match_idx = csr_matches_lemmas.indexOf(deStress(entry.lemma));
     const csr_leftover_idx = csr_matches_lemmas_leftover.indexOf(deStress(entry.lemma));
     if(csr_match_idx != -1) {
+      if(entry.pos == "verb") {
+        entry.inflections.push(entry.lemma) //add infinitive to wiktionary paradigms, because it is not included for some reason
+      }
       matched_wiki_forms.push([csr_matches[csr_match_idx][1], entry]);
       csr_matches_lemmas_leftover.splice(csr_leftover_idx, 1);
     }

@@ -14,7 +14,7 @@ const PV2_regex_CSR = /[kgx]v?[ěi](?!$)/;
 
 const hard_sign_regex = /([kgxtdnlrpbmfv])j/g; //the g flag is so I can use capturing-groups and .replaceAll()
 
-const hardened_cluster_softsign_regex_cyr = /(?<=[тднрпбмвфсзцшжч])ь(?=[тднрлпбмвсзцшжчгкх])/g;
+const hardened_cluster_softsign_regex_cyr = /(?<=[тднрпбмвфсзцшжщч])ь(?=[тднрлпбмвсзцшжчгкх])/g;
 
 const PV2_map = new Map();
 PV2_map.set('k', 'c');
@@ -146,7 +146,7 @@ const shortenFemInstrSg = (word) => {
 
 const PV4 = (word) => {
   return word.replaceAll("ky", "ki").replaceAll("xy", "xi").replaceAll("gy", "gi");
-}
+};
 
 const cyr_map = new Array(
   ["šč'u", "щу"],
@@ -194,6 +194,9 @@ const cyr_map = new Array(
   ["ŕä", "ря"],
   ["ĺä", "ля"],
   ["ńä", "ня"],
+  ["ŕě", "ре"],
+  ["ĺě", "ле"],
+  ["ńě", "не"],
   ["ŕe", "ре"],
   ["ĺe", "ле"],
   ["ńe", "не"],
@@ -333,6 +336,17 @@ const churchSlavoniciseNomMascSgLongAdj = (participle) => {
   return participle;
 };
 
+const writeFinalHardenedTsy = (word) => {
+  //the second thing here is really an e->o shift problem that needs dealing with separately along with all the rest of the bastards
+  return word.replace(word_final_tsy_regex, "цы").replace(word_final_tsov_regex, "цов");
+};
+
+
+const voicingAssimilation = (word) => {
+  //there's definitely more than just these and I have a feeling it might sometimes go the other way as well; a regex might be required
+  return word.replaceAll("шд", "жд").replaceAll("сд", "зд");
+};
+
 const orvToCSR = (torot_pos, infl_idx, converted_variants_set) => {
 
   applyChangeToSet(converted_variants_set, PV4);
@@ -356,15 +370,17 @@ const orvToCSR = (torot_pos, infl_idx, converted_variants_set) => {
   if(infl_idx == "145" || infl_idx == "152" ||infl_idx == "151" ||infl_idx == "150") {
     applyOptionalChangeToSet(converted_variants_set, churchSlavoniciseNomMascSgLongAdj);
   }
-  if(torot_pos == "A-" && infl_idx == "1" || infl_idx == "2") {
+  //for pure adjectives adding the Ch.Sl. *yjь reflex is indefensible in a jer-investigation, but for the participles often the long forms are the only ones listed in the wiktionary paradigm so we have to match that part or we'll lose them all
+  /*if(torot_pos == "A-" && infl_idx == "1" || infl_idx == "2") {
     applyOptionalChangeToSet(converted_variants_set, churchSlavoniciseNomMascSgLongAdj);
-  }
+  }*/
+  applyOptionalChangeToSet(converted_variants_set, writeFinalHardenedTsy);
+  applyOptionalChangeToSet(converted_variants_set, voicingAssimilation);
 };
 
+const word_final_tsy_regex = /ци$/;
+const word_final_tsov_regex = /цев$/;
 
-const tsy_regex = /ц[иы]/;
-const zd_regex = /[сз]д/;
-const zhd_regex = /[жш]д/;
 
 //includes palatal letters because Russian seems to reapply this rule after they have hardened (молодёжь etc.)
 //I'm gonna apply the Jer Shift before everything else so don't need to care about strong-jer > /o/

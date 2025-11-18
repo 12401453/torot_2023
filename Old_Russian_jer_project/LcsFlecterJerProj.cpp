@@ -281,15 +281,16 @@ std::array<std::vector<Inflection>, 3> LcsFlecter::getFullParadigm() {
         alternative_map_no = 2112;
     }
 
+    //NOT NEEDED FOR RUSSIAN
     //need to add jo-stem endings for i-stems that end on /nlr/, but also need to jotate the stem by explicitly adding /j/ (which should get yeeted by the Dejotation step)
-    if(m_conj_type == "masc_i") {
+    /*if(m_conj_type == "masc_i") {
         if(m_stem.ends_with("r") || m_stem.ends_with("n") || m_stem.ends_with("l") || m_stem.ends_with("č")) {
             deviances_iter = m_active_endings.find(1401); //1401 holds jo-stem endings except with prepended /j/
         }
         else {
             deviances_iter = m_active_endings.end();
         }
-    }
+    } */
 
     auto alternatives_iter = m_active_endings.find(alternative_map_no);
 
@@ -728,9 +729,17 @@ void LcsFlecter::produceAllInflections() {
                     }
                     else if(inflection.desinence_ix > 40) {
                         //only 41 and 42 are < 43 && > 40
+                        if(inflection.desinence_ix == 41) {
+                            if(inflection.flected_form.ends_with("n")) {
+                                //Russian -ённый PPPs
+                                vec.emplace_back(151, inflection.flected_form + "ьnъjь");
+                            }
+                            else {
+                                vec.emplace_back(151, inflection.flected_form + "ъjь");
+                            }
+                        }
                         inflection.flected_form = inflection.flected_form + "ъ";
-                        inflection.desinence_ix == 41 ? vec.emplace_back(151, inflection.flected_form + "jь") : vec.emplace_back(152, inflection.flected_form + "jь");
-                        //for PPP that end in *-enъ this isn't even enough because Russian adds basically an *ьnъ suffix to it as well, unlike Ukrainian
+                        if(inflection.desinence_ix == 42) vec.emplace_back(152, inflection.flected_form + "jь");
                     }
                     
                     if(inflection.desinence_ix == 40) {
