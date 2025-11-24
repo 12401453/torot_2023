@@ -12,9 +12,10 @@ const tense_jer_regex = /[ьъ]j[Ǣeiьęǫuě]/; //I know that /ě/ cannot foll
 const PV2_regex_PV3 = /[kgx]v?[ęeьṝḹ]/;
 const PV2_regex_CSR = /[kgx]v?[ěi](?!$)/;
 
-const hard_sign_regex = /([kgxtdnlrpbmfv])j/g; //the g flag is so I can use capturing-groups and .replaceAll()
+const hard_sign_regex = /([kgxtdnlrpbmfszv])j/g; //the g flag is so I can use capturing-groups and .replaceAll()
 
-const hardened_cluster_softsign_regex_cyr = /(?<=[тднрпбмвфсзцшжщч])ь(?=[тднрлпбмвсзцшжчгкх])/g;
+//const hardened_cluster_softsign_regex_cyr = /(?<=[тднрпбмвфсзцшжщч])ь(?=[тднрлпбмвсзцшжчщгкх])/g;
+const hardened_cluster_softsign_regex_cyr = /([тднрпбмвфсзцшжщч])ь([тднрлпбмвсзцшжчщгкх])/g;
 
 const PV2_map = new Map();
 PV2_map.set('k', 'c');
@@ -123,12 +124,6 @@ const russifyDoublets = (lcs_form) => {
   if(lcs_form.includes("čьlově")) {
     lcs_form = lcs_form.replaceAll("čьlově", "čelově");
   }
-  if(lcs_form.startsWith("jedin")) {
-    lcs_form = lcs_form.replace("jedin", "odin");
-  }
-  else if(lcs_form.startsWith("jezer")) {
-    lcs_form = lcs_form.replace("jezer", "ozer");
-  }
   else if(lcs_form.startsWith("bezakon")) {
     lcs_form = lcs_form.replaceAll("bezakon", "bezъzakon");
   }
@@ -164,6 +159,7 @@ const cyr_map = new Array(
   ["č'u", "чу"],
   ["š'u", "шу"],
   ["ž'u", "жу"],
+  ["ždä", "žda" ],
 
   ["z'a", "зя"],
   ["z'u", "зю"],
@@ -251,7 +247,7 @@ const cyr_map = new Array(
   ["i", "и"],
   ["s", "с"],
   ["p", "п"],
-  ["ъ", ""],
+  //["ъ", ""],
   ["f", "ф"],
   ["j", "й"],
   ["č", "ч"],
@@ -319,8 +315,19 @@ const applyAlternateChangesToSet = (variants_set, changeFunctionFirst, changeFun
 };
 
 const hardenClusters = (jer_shifted_form) => {
-  return jer_shifted_form.replaceAll(hardened_cluster_softsign_regex_cyr, "");
+  return jer_shifted_form.replaceAll(hardened_cluster_softsign_regex_cyr, (match, g1, g2, offset, full) => {
+    if(g1 == "р" && g2 == "к") {
+      return match;
+    }
+    else {
+      return g1+g2;
+    }
+  });
 };
+
+const initialJeToO = (orv_form) => {
+  return orv_form.replace(/^je/, "o");
+}
 
 const hardenFinalM = (word) => {
   return word.replace(/m'$/, "m");
@@ -337,8 +344,7 @@ const churchSlavoniciseNomMascSgLongAdj = (participle) => {
 };
 
 const writeFinalHardenedTsy = (word) => {
-  //the second thing here is really an e->o shift problem that needs dealing with separately along with all the rest of the bastards
-  return word.replace(word_final_tsy_regex, "цы").replace(word_final_tsov_regex, "цов");
+  return word.replace(word_final_tsy_regex, "цы");
 };
 
 
@@ -353,6 +359,9 @@ const orvToCSR = (torot_pos, infl_idx, converted_variants_set) => {
   applyChangeToSet(converted_variants_set, hardenFinalM);
   applyChangeToSet(converted_variants_set, cyrillicise);
   applyChangeToSet(converted_variants_set, hardenClusters);
+  
+
+  
 
   if(infl_idx == "43") {
     applyOptionalChangeToSet(converted_variants_set, shortenInfinitive);
@@ -376,16 +385,21 @@ const orvToCSR = (torot_pos, infl_idx, converted_variants_set) => {
   }*/
   applyOptionalChangeToSet(converted_variants_set, writeFinalHardenedTsy);
   applyOptionalChangeToSet(converted_variants_set, voicingAssimilation);
+  applyOptionalChangeToSet(converted_variants_set, eToOShift);
 };
 
 const word_final_tsy_regex = /ци$/;
-const word_final_tsov_regex = /цев$/;
 
 
 //includes palatal letters because Russian seems to reapply this rule after they have hardened (молодёжь etc.)
 //I'm gonna apply the Jer Shift before everything else so don't need to care about strong-jer > /o/
 const e_o_regex = /[ščžcj]e(?:[tŕrpsšdfgkx́ḱǵlĺzžxčvbcʒśnńm\++](?:[aouyъ]|$)|$)/;
-const bv_regex = /bv/;
+
+const e_o_cyr_regex = /([жчшщц])е/g;
+
+const eToOShift = (word) => {
+  return word.replaceAll(e_o_cyr_regex, "$1о");
+}
 
 const consonants_regex = /[tŕrpsšdfgkx́ḱǵlĺzžxčcʒśvbnńm]+/;
 const vowels_regex = /[iyuьъṛṝḷḹeěoäaü]/;
@@ -470,6 +484,7 @@ const convertToORV = (lcs_word, pv2_3_exists, ch_sl, converted_variants_set) => 
   converted_variants_set.add(TRAT(lcs_word));
 
   applyOptionalChangeToSet(converted_variants_set, jotifyInitialA);
+  applyOptionalChangeToSet(converted_variants_set, initialJeToO);
   applyAlternateChangesToSet(converted_variants_set, dejotateORV, dejotateOCS);
   applyAlternateChangesToSet(converted_variants_set, nasalisedJatOCS, nasalisedJatORV);
   applyAlternateChangesToSet(converted_variants_set, nasalisedYOCS, nasalisedYORV);
@@ -495,9 +510,8 @@ for(let word_obj of lcs_json) {
       convertToORV(unconverted_form, pv2_3_exists, ch_sl, converted_variants_set);
       
       applyChangeToSet(converted_variants_set, applyHavlik);
-
+      
       orvToCSR(torot_pos, idx, converted_variants_set);
-
       const final_converted_variants_array = Array.from(converted_variants_set);
 
       word_obj[i][idx] = [final_converted_variants_array, unconverted_form];

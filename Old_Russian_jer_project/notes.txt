@@ -45,3 +45,7 @@ consonant-stemmed masc. l-participles like *neslъ > нёс suggest that these c
 don't have князей <*kъnęgьjь because отцов made me put *-evъ as the ending there: why the difference in mod. Russian? post-hardening of /c'/? Surely not
 
 Need to add a global check for 2nd pl. imperatives in *ěte and add an *-ite variant in column 155 or whatever
+
+/r'k/ seems not to harden
+
+had to add *ьnъ suffix to the *tьlěnъ adjective in the lemma-spreadsheet because the CSR has it

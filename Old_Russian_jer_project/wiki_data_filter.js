@@ -62,7 +62,8 @@ const cyr_arr = new Array(
   ["я́", "я"],
   ["ю́", "ю"],
   ["ё", "е"],
-  ["ы́", "ы"]
+  ["ы́", "ы"],
+  ["ѐ", "е"]
 
 );
 
@@ -110,42 +111,88 @@ async function jsonifyCSV(csr_matches) {
   fs.writeFileSync("csr_matches.json", JSON.stringify(csr_matches, null, 2)); 
 }
 
+const chooseCorrectCSRMatchIndex = (wiki_entry, csr_matches_json, csr_matches_lemmas) => {
+
+  const candidate_idxes = [];
+  for(let i = 0; i < csr_matches_lemmas.length; i++) {
+    if(csr_matches_lemmas[i] == deStress(wiki_entry.lemma)) {
+      candidate_idxes.push(i);
+    }
+  }
+
+  // const candidate_idxes = csr_matches_lemmas.map((lemma, idx) => lemma == deStress(wiki_entry.lemma) ? idx : -1).filter(idx => idx !== -1);
+
+  if(candidate_idxes.length == 0) {
+    return -1;
+  }
+  else if(candidate_idxes.length == 1) {
+    return candidate_idxes[0];
+  }
+  else {
+    const wiki_pos = wiki_entry.pos;
+    if(wiki_pos == "noun") {
+      for(const idx of candidate_idxes) {
+        const torot_pos = csr_matches_json[idx][1].slice(0, 2);
+        if(torot_pos == "Nb" || torot_pos == "Ne") {
+          return idx;
+        }
+      }
+    }
+    else if(wiki_pos == "verb") {
+      for(const idx of candidate_idxes) {
+        const torot_pos = csr_matches_json[idx][1].slice(0, 2);
+        if(torot_pos == "V-") {
+          return idx;
+        }
+      }
+    }
+    else return candidate_idxes[0];
+  }
+};
+
 function readWiktionaryData(matched_wiki_forms, csr_matches) {
   const csr_matches_lemmas = csr_matches.map(x => x[0]);
-  const csr_matches_lemmas_leftover = [...csr_matches_lemmas];
   for(let i = 10; i < 1521; i+=10) {
     const filename = `ru_wiktionary_data_2/russian_lemmas_pg${String(i - 9).padStart(5, "0")}-${String(i).padStart(5, "0")}.json`;
     const wiki_file_str = fs.readFileSync(filename, "utf-8");
     const wiki_file_json = JSON.parse(wiki_file_str);
-    wiki_file_json.forEach(entry => {
-      const csr_match_idx = csr_matches_lemmas.indexOf(deStress(entry.lemma));
-      const csr_leftover_idx = csr_matches_lemmas_leftover.indexOf(deStress(entry.lemma));
+    for(const entry of wiki_file_json){
+      //const csr_match_idx = csr_matches_lemmas.indexOf(deStress(entry.lemma));
+
+      if(csr_matches_lemmas.indexOf(deStress(entry.lemma)) == -1) {
+        continue;
+      }
+
+      const csr_match_idx = chooseCorrectCSRMatchIndex(entry, csr_matches, csr_matches_lemmas);
+
       if(csr_match_idx != -1) {
+        console.log(csr_match_idx);
         if(entry.pos == "verb") {
           entry.inflections.push(entry.lemma) //add infinitive to wiktionary paradigms, because it is not included for some reason
         }
         matched_wiki_forms.push([csr_matches[csr_match_idx][1], entry]);
-        csr_matches_lemmas_leftover.splice(csr_leftover_idx, 1);
       }
-    });
+    };
   }
   const last_filename = "ru_wiktionary_data_2/russian_lemmas_pg1521-01526.json";
   const wiki_file_str = fs.readFileSync(last_filename, "utf-8");
   const wiki_file_json = JSON.parse(wiki_file_str);
-  wiki_file_json.forEach(entry => {
-    const csr_match_idx = csr_matches_lemmas.indexOf(deStress(entry.lemma));
-    const csr_leftover_idx = csr_matches_lemmas_leftover.indexOf(deStress(entry.lemma));
+  for(const entry of wiki_file_json){
+    if(csr_matches_lemmas.indexOf(deStress(entry.lemma)) == -1) {
+      continue;
+    }
+    const csr_match_idx = chooseCorrectCSRMatchIndex(entry, csr_matches, csr_matches_lemmas);
     if(csr_match_idx != -1) {
+      console.log(csr_match_idx);
       if(entry.pos == "verb") {
         entry.inflections.push(entry.lemma) //add infinitive to wiktionary paradigms, because it is not included for some reason
       }
       matched_wiki_forms.push([csr_matches[csr_match_idx][1], entry]);
-      csr_matches_lemmas_leftover.splice(csr_leftover_idx, 1);
-    }
-  });
 
-  fs.writeFileSync("matched_wiki_forms.json", JSON.stringify(matched_wiki_forms, null, 2));
-  fs.writeFileSync("missing_wiki_forms.json", JSON.stringify(csr_matches_lemmas_leftover, null, 2));
+    }
+  };
+
+  fs.writeFileSync("target_wiki_paradigms.json", JSON.stringify(matched_wiki_forms, null, 2));
 }
 
 
@@ -223,13 +270,34 @@ function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, f
 
 }
 
+const recordDuplicateWikiParadigms = (matched_wiki_forms) => {
+  let duplicate_wiki_paradigms_csv = "";
+  const duplicates = new Set();
+  let prev_pos_lemma = "";
+  for(const entry of matched_wiki_forms) {
+    const pos_lemma = entry[0];
+    if(prev_pos_lemma == pos_lemma) {
+      duplicates.add(pos_lemma);
+    }
+    prev_pos_lemma = pos_lemma;
+  }
+  for(const dup of Array.from(duplicates)) {
+    duplicate_wiki_paradigms_csv += dup + "\n";
+  }
+  fs.writeFileSync("duplicate_wiki_paradigms.csv", duplicate_wiki_paradigms_csv);
+};
+
 async function runAsyncBullshitBecauseNodeIsRetarded() {
   const csr_matches = new Array();
   await jsonifyCSV(csr_matches);
   console.log(csr_matches.length);
 
-  const matched_wiki_forms = new Array();
-  readWiktionaryData(matched_wiki_forms, csr_matches);
+  // const matched_wiki_forms = new Array();
+  // readWiktionaryData(matched_wiki_forms, csr_matches);
+  const matched_wiki_forms = JSON.parse(fs.readFileSync("target_wiki_paradigms_deduplicated.json"));
+
+  recordDuplicateWikiParadigms(matched_wiki_forms);
+
   console.log(matched_wiki_forms.length);
 
   const generated_forms = JSON.parse(fs.readFileSync("lcs_converted.json"));
