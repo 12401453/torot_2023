@@ -172,11 +172,12 @@ std::vector<std::uint16_t> tokeniseWord(const std::vector<std::uint16_t> &source
     return word_vec;
 }
 
-void tokenisePart(const std::vector<std::uint16_t>& numerified_word, std::ostringstream& csv_text) {
+void tokenisePart(const std::vector<std::uint16_t>& numerified_word, std::ostringstream& csv_text, int& worker_token_count) {
     std::ostringstream charcode_tokenised, text_tokenised;
     for(const auto& charcode : tokeniseWord(numerified_word)) {
         charcode_tokenised << charcode << ' ';
         text_tokenised << total_vocab_reversed.at(charcode) << '|';
+        ++worker_token_count;
     }
     charcode_tokenised.seekp(-1, std::ios_base::cur);
     charcode_tokenised << '\0';
@@ -188,10 +189,13 @@ void tokenisePart(const std::vector<std::uint16_t>& numerified_word, std::ostrin
 
 void worker(decltype(std::vector<std::vector<std::uint16_t>>().begin()) start, decltype(std::vector<std::vector<std::uint16_t>>().begin()) end, std::ostringstream& csv_text_oss, int i) {
     std::cout << "thread " << i + 1 << " has started\n";
+    int worker_token_count = 0;
+
     for(auto iter = start; iter != end; ++iter) {
-        tokenisePart(*iter, csv_text_oss);
+        tokenisePart(*iter, csv_text_oss, worker_token_count);
     }
     std::cout << "thread " << i + 1 << " has finished\n";
+    std::cout << "Token count for thread " << i + 1 << ": " << worker_token_count << "\n";
 }
 
 int main(int argc, char** argv) {

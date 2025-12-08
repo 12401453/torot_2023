@@ -69,6 +69,7 @@ const orv_deepClean_map = {
     "Ꙋ" : "оу",
     "ОУ" : "оу",
     "о҄у" : "оу",
+    "Ꙑ" : "ъі",
     "ꙑ" : "ъі",
     "Оу" : "оу",
     "ѹ" : "оу",
@@ -220,6 +221,8 @@ const orv_deepClean_map = {
     "щѧ" : "ща",
     "ѧ" : "ꙗ",
 
+    " " : "", //get rid of token-internal whitespace
+
 };
 const chu_deepClean_map = {
     "꙽" : "",
@@ -288,6 +291,7 @@ const chu_deepClean_map = {
     "Ꙋ" : "оу",
     "ОУ" : "оу",
     "о҄у" : "оу",
+    "Ꙑ" : "ъі",
     "ꙑ" : "ъі",
     "Оу" : "оу",
     "ѹ" : "оу",
@@ -425,6 +429,8 @@ const chu_deepClean_map = {
     "ждѭ" : "ждѫ",
     "цѭ" : "цѫ",
     "штѭ" : "штѫ",
+
+    " " : "", //get rid of token-internal whitespace
 };
 
 let list_of_xml_files = fs.readdirSync(".").filter(x => x.slice(-4) == ".xml");

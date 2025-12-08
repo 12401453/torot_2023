@@ -66,6 +66,7 @@ const chu_deepClean_map = {
     "Ꙋ" : "оу",
     "ОУ" : "оу",
     "о҄у" : "оу",
+    "Ꙑ" : "ъі",
     "ꙑ" : "ъі",
     "Оу" : "оу",
     "ѹ" : "оу",
@@ -203,6 +204,8 @@ const chu_deepClean_map = {
     "ждѭ" : "ждѫ",
     "цѭ" : "цѫ",
     "штѭ" : "штѫ",
+
+    " " : "", //get rid of token-internal whitespace
 };
 const orv_deepClean_map = {
     "꙽" : "",
@@ -269,6 +272,7 @@ const orv_deepClean_map = {
     "Ꙋ" : "оу",
     "ОУ" : "оу",
     "о҄у" : "оу",
+    "Ꙑ" : "ъі",
     "ꙑ" : "ъі",
     "Оу" : "оу",
     "ѹ" : "оу",
@@ -419,6 +423,8 @@ const orv_deepClean_map = {
     "штѧ" : "шта",
     "щѧ" : "ща",
     "ѧ" : "ꙗ",
+
+    " " : "", //get rid of token-internal whitespace
 
 };
 
