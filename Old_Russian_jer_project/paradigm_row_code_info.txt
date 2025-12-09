@@ -1,0 +1,5 @@
+Adjectives:
+short-form masculine: 7
+short-form feminine: 28
+short-form neuter: 49
+short-form plural: 21

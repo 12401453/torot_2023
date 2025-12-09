@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include <cstdint>
 #include <list>
+#include <algorithm>
 
 std::unordered_map<std::string, u_int16_t> base_vocab {
     {"ш", 1},
@@ -227,7 +228,21 @@ int main(int argc, char** argv)
     }
 
     std::ifstream inFile(input_filename);
-    std::ofstream outFile("merge_rules.csv");
+    std::ostringstream merge_rules_oss;
+    std::ofstream merge_rules_file("merge_rules.csv");
+
+    std::ostringstream token_idx_oss;
+    std::vector<std::pair<int, std::string>> base_vocab_vec;
+    base_vocab_vec.reserve(64);
+    for(const auto &base_vocab_pair : base_vocab_reversed) {
+        base_vocab_vec.emplace_back(base_vocab_pair.first, base_vocab_pair.second);
+    }
+    std::sort(base_vocab_vec.begin(), base_vocab_vec.end());
+
+    token_idx_oss << "0,<pad>\n1,<unk>\n";
+    for(const auto& pair : base_vocab_vec) {
+        token_idx_oss << pair.first + 1 << "," << pair.second << "\n";
+    }
 
     std::string line;
 
@@ -296,7 +311,9 @@ int main(int argc, char** argv)
         std::cout << "Highest frequency pair is: " << most_freq_first << "|" << most_freq_second << " corresponding to: " << merged_char << " which occurs " << highest_count_pf_it->second << " times.\n";
 
         base_vocab_count++;
-        outFile << most_freq_first << "|" << most_freq_second << "," << base_vocab_count << "\n";
+        merge_rules_oss << most_freq_first << "|" << most_freq_second << "," << base_vocab_count << "\n";
+
+        token_idx_oss << base_vocab_count + 1 << "," << merged_char << "\n"; //account for <pad> and <unk> being first two tokens
         
         base_vocab.insert({merged_char, base_vocab_count});
         base_vocab_reversed.insert({base_vocab_count, merged_char});
@@ -304,7 +321,12 @@ int main(int argc, char** argv)
         updateWordCodes(word_lists_vec, most_freq_first, most_freq_second, base_vocab_count);
     }
 
-    outFile.close();
+    merge_rules_file << merge_rules_oss.str();
 
+    merge_rules_file.close();
+
+    std::ofstream bpe_token_index_file("bpe_token_indices.csv");
+    bpe_token_index_file << token_idx_oss.str();
+    bpe_token_index_file.close();
     return 0;
 }

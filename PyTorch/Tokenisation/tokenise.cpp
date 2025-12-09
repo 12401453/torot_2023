@@ -187,7 +187,7 @@ void tokenisePart(const std::vector<std::uint16_t>& numerified_word, std::ostrin
     csv_text << charcode_tokenised.str().c_str() << ',' << text_tokenised.str().c_str() << '\n';
 }
 
-void worker(decltype(std::vector<std::vector<std::uint16_t>>().begin()) start, decltype(std::vector<std::vector<std::uint16_t>>().begin()) end, std::ostringstream& csv_text_oss, int i) {
+void worker(decltype(std::vector<std::vector<std::uint16_t>>().begin()) start, decltype(std::vector<std::vector<std::uint16_t>>().begin()) end, std::ostringstream& csv_text_oss, int i, int& total_token_count) {
     std::cout << "thread " << i + 1 << " has started\n";
     int worker_token_count = 0;
 
@@ -195,7 +195,8 @@ void worker(decltype(std::vector<std::vector<std::uint16_t>>().begin()) start, d
         tokenisePart(*iter, csv_text_oss, worker_token_count);
     }
     std::cout << "thread " << i + 1 << " has finished\n";
-    std::cout << "Token count for thread " << i + 1 << ": " << worker_token_count << "\n";
+    // std::cout << "Token count for thread " << i + 1 << ": " << worker_token_count << "\n";
+    total_token_count += worker_token_count;
 }
 
 int main(int argc, char** argv) {
@@ -237,6 +238,8 @@ int main(int argc, char** argv) {
     
     auto start_iter = numerifiedWords.begin();
     auto end_iter = numerifiedWords.end();
+
+    int total_token_count = 0;
     
     std::cout << "Words processed by each thread: " << vec_portion_size << "\n";
 
@@ -246,13 +249,16 @@ int main(int argc, char** argv) {
     std::cout << "csv_vec size: " << csv_text_portions.size() << "\n";
 
     for(int i = 0; i < num_hardware_threads - 1; i++) {
-        tokeniser_threads.emplace_back(worker, start_iter+(vec_portion_size*i), start_iter+(vec_portion_size*(i+1)), std::ref(csv_text_portions[i]), i);
+        tokeniser_threads.emplace_back(worker, start_iter+(vec_portion_size*i), start_iter+(vec_portion_size*(i+1)), std::ref(csv_text_portions[i]), i, std::ref(total_token_count));
     }
-    tokeniser_threads.emplace_back(worker, start_iter+(vec_portion_size*(num_hardware_threads - 1)), end_iter, std::ref(csv_text_portions[num_hardware_threads - 1]), num_hardware_threads - 1);
+    tokeniser_threads.emplace_back(worker, start_iter+(vec_portion_size*(num_hardware_threads - 1)), end_iter, std::ref(csv_text_portions[num_hardware_threads - 1]), num_hardware_threads - 1, std::ref(total_token_count));
 
     for(auto& thread : tokeniser_threads) {
         thread.join();
     }
+    std::cout << "\ntotal_token_count: " << total_token_count << "\n";
+    double tokens_per_word = double(total_token_count)/num_words;
+    std::cout << "tokens-per-word: " << tokens_per_word << "\n";
 
     std::ofstream tokenisedFile("tokenised_" + cleaned_text_path);
 
