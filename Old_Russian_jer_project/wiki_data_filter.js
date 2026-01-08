@@ -198,12 +198,13 @@ function readWiktionaryData(matched_wiki_forms, csr_matches) {
 
 function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, flat_results_csv) {
   let paradigmless_lemmas_csv = "";
-  let result_csv = "wiki_form|generated_match|lcs_match|match_desinence_idx|lcs_infl_class|match_code\n";
+  let result_csv = "wiki_form|generated_match|lcs_match|match_desinence_idx|lcs_infl_class|oes_lemma|match_code\n";
   const generated_forms_keys = generated_forms.map(x => x[5]);
   for(const wiki_paradigm of matched_wiki_forms) {
     //const wiki_generated_key_match = generated_keys.indexOf(wiki_paradigm[0]);
     //if(wiki_generated_key_match != -1) console.log(wiki_paradigm[1].lemma, generated_forms[wiki_generated_key_match][5]);
     const pos_lemma_combo = wiki_paradigm[0];
+    const oes_lemma = pos_lemma_combo.slice(2);
     const generated_forms_key_idx = generated_forms_keys.indexOf(pos_lemma_combo);
     if(generated_forms_key_idx == -1) {
       //should write these forms out somehow, since they are forms from the Google Drive spreadsheet that have checked CSR matches but were deemed unreconstructable to LCS, or post-Jer Shift derivations or the like
@@ -225,7 +226,7 @@ function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, f
             
             for(const generated_inflected_form of generated_inflected_forms) {
               if(generated_inflected_form == deStressDownCase(wiki_infl)) {
-                result_csv += generated_inflected_form + "|" + generated_form_entry[i][idx][1] + "|" + idx + "|" + generated_form_entry[6] + "|1\n";
+                result_csv += generated_inflected_form + "|" + generated_form_entry[i][idx][1] + "|" + idx + "|" + generated_form_entry[6] + "|" + pos_lemma_combo + "|1\n";
                 wiki_matched_with_generated_form = true;
                 //console.log(generated_inflected_form, wiki_infl);
                 break outer; 
@@ -234,7 +235,7 @@ function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, f
           }   
         }
         if(!wiki_matched_with_generated_form) {
-          result_csv += "||||0\n";
+          result_csv += "||||" + pos_lemma_combo + "|0\n";
         }
     }
     else {
@@ -249,7 +250,7 @@ function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, f
 
             for(const generated_inflected_form of generated_inflected_forms) {
               if(generated_inflected_form == deStressDownCase(wiki_infl)) {
-                result_csv += generated_inflected_form + "|" + generated_form_entry[i][idx][1] + "|" + idx + "|" + generated_form_entry[6] + "|1\n";
+                result_csv += generated_inflected_form + "|" + generated_form_entry[i][idx][1] + "|" + idx + "|" + generated_form_entry[6] + "|" + pos_lemma_combo + "|1\n";
                 wiki_matched_with_generated_form = true;
                 //console.log(generated_inflected_form, wiki_infl);
                 break outer; 
@@ -258,7 +259,7 @@ function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, f
           }   
         }
         if(!wiki_matched_with_generated_form) {
-          result_csv += "|||" + generated_form_entry[6] + "|0\n";
+          result_csv += "|||" + generated_form_entry[6] + "|" + pos_lemma_combo + "|0\n";
         }
         //console.log(generated_form_entry[4]);
       }
