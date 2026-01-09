@@ -146,12 +146,17 @@ const chooseCorrectCSRMatchIndex = (wiki_entry, csr_matches_json, csr_matches_le
         }
       }
     }
-    else return candidate_idxes[0];
+    // else {
+    //   return candidate_idxes[0];
+    // }
+    return candidate_idxes[0];
   }
 };
 
 function readWiktionaryData(matched_wiki_forms, csr_matches) {
-  const csr_matches_lemmas = csr_matches.map(x => x[0]);
+  const csr_matches_lemmas = csr_matches.map(x => deStress(x[0]));
+  const leftover_csr_match_lemmas = csr_matches.map(x => x[0]);
+  console.log("csr_matches.json entries:", csr_matches_lemmas.length)
   for(let i = 10; i < 1521; i+=10) {
     const filename = `ru_wiktionary_data_2/russian_lemmas_pg${String(i - 9).padStart(5, "0")}-${String(i).padStart(5, "0")}.json`;
     const wiki_file_str = fs.readFileSync(filename, "utf-8");
@@ -164,9 +169,10 @@ function readWiktionaryData(matched_wiki_forms, csr_matches) {
       }
 
       const csr_match_idx = chooseCorrectCSRMatchIndex(entry, csr_matches, csr_matches_lemmas);
+      //console.log(csr_match_idx, entry.lemma);
 
       if(csr_match_idx != -1) {
-        console.log(csr_match_idx);
+        leftover_csr_match_lemmas[csr_match_idx] = "";
         if(entry.pos == "verb") {
           entry.inflections.push(entry.lemma) //add infinitive to wiktionary paradigms, because it is not included for some reason
         }
@@ -183,7 +189,7 @@ function readWiktionaryData(matched_wiki_forms, csr_matches) {
     }
     const csr_match_idx = chooseCorrectCSRMatchIndex(entry, csr_matches, csr_matches_lemmas);
     if(csr_match_idx != -1) {
-      console.log(csr_match_idx);
+      leftover_csr_match_lemmas[csr_match_idx] = "";
       if(entry.pos == "verb") {
         entry.inflections.push(entry.lemma) //add infinitive to wiktionary paradigms, because it is not included for some reason
       }
@@ -192,7 +198,22 @@ function readWiktionaryData(matched_wiki_forms, csr_matches) {
     }
   };
 
-  fs.writeFileSync("target_wiki_paradigms.json", JSON.stringify(matched_wiki_forms, null, 2));
+
+  for(const leftover_lemma of leftover_csr_match_lemmas) {
+    if(leftover_lemma != "") {
+      console.log(leftover_lemma);
+    }
+  }
+
+  const jo_lemma_wiki_forms = new Array();
+  for(const wiki_form of matched_wiki_forms) {
+    if(wiki_form[1].lemma.includes("ё")) {
+      jo_lemma_wiki_forms.push(wiki_form);
+    }
+  }
+
+  //fs.writeFileSync("target_wiki_paradigms_.json", JSON.stringify(matched_wiki_forms, null, 2));
+  fs.writeFileSync("target_wiki_paradigms_jo.json", JSON.stringify(jo_lemma_wiki_forms, null, 2));
 }
 
 
@@ -266,8 +287,8 @@ function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, f
     }
   }
 
-  fs.writeFileSync("paradigmless_wiki_lemmas.csv", paradigmless_lemmas_csv);
-  fs.writeFileSync("results.csv", result_csv);
+  //fs.writeFileSync("paradigmless_wiki_lemmas.csv", paradigmless_lemmas_csv);
+  fs.writeFileSync("results_jo.csv", result_csv);
 
 }
 
@@ -288,16 +309,18 @@ const recordDuplicateWikiParadigms = (matched_wiki_forms) => {
   fs.writeFileSync("duplicate_wiki_paradigms.csv", duplicate_wiki_paradigms_csv);
 };
 
-async function runAsyncBullshitBecauseNodeIsRetarded() {
+async function runAsyncFunctionsSequentially() {
   const csr_matches = new Array();
   await jsonifyCSV(csr_matches);
   console.log(csr_matches.length);
 
-  // const matched_wiki_forms = new Array();
-  // readWiktionaryData(matched_wiki_forms, csr_matches);
-  const matched_wiki_forms = JSON.parse(fs.readFileSync("target_wiki_paradigms_deduplicated.json"));
+  //const matched_wiki_forms_test = new Array();
+  //readWiktionaryData(matched_wiki_forms_test, csr_matches);
+  
+  // const matched_wiki_forms = JSON.parse(fs.readFileSync("target_wiki_paradigms_deduplicated.json"));
+  const matched_wiki_forms = JSON.parse(fs.readFileSync("target_wiki_paradigms_jo.json"));
 
-  recordDuplicateWikiParadigms(matched_wiki_forms);
+  //recordDuplicateWikiParadigms(matched_wiki_forms);
 
   console.log(matched_wiki_forms.length);
 
@@ -312,5 +335,5 @@ async function runAsyncBullshitBecauseNodeIsRetarded() {
 
 
 
-runAsyncBullshitBecauseNodeIsRetarded();
+runAsyncFunctionsSequentially();
 
