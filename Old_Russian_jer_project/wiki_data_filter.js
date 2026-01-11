@@ -212,8 +212,7 @@ function readWiktionaryData(matched_wiki_forms, csr_matches) {
     }
   }
 
-  //fs.writeFileSync("target_wiki_paradigms_.json", JSON.stringify(matched_wiki_forms, null, 2));
-  fs.writeFileSync("target_wiki_paradigms_jo.json", JSON.stringify(jo_lemma_wiki_forms, null, 2));
+  fs.writeFileSync("target_wiki_paradigms.json", JSON.stringify(jo_lemma_wiki_forms, null, 2));
 }
 
 
@@ -288,7 +287,7 @@ function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms, f
   }
 
   //fs.writeFileSync("paradigmless_wiki_lemmas.csv", paradigmless_lemmas_csv);
-  fs.writeFileSync("results_jo.csv", result_csv);
+  fs.writeFileSync("results.csv", result_csv);
 
 }
 
@@ -317,10 +316,9 @@ async function runAsyncFunctionsSequentially() {
   //const matched_wiki_forms_test = new Array();
   //readWiktionaryData(matched_wiki_forms_test, csr_matches);
   
-  // const matched_wiki_forms = JSON.parse(fs.readFileSync("target_wiki_paradigms_deduplicated.json"));
-  const matched_wiki_forms = JSON.parse(fs.readFileSync("target_wiki_paradigms_jo.json"));
-
-  //recordDuplicateWikiParadigms(matched_wiki_forms);
+  const matched_wiki_forms = JSON.parse(fs.readFileSync("target_wiki_paradigms_deduplicated.json"));
+  
+  recordDuplicateWikiParadigms(matched_wiki_forms);
 
   console.log(matched_wiki_forms.length);
 
