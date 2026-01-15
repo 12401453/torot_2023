@@ -1,5 +1,4 @@
-#!/usr/bin/node
-//this deliberately doesn't match lemmas with #1 #2 etc. because those would risk being inaccurate
+#!/bin/node
 
 const fs = require('node:fs');
 
@@ -82,7 +81,6 @@ const deStress = (word) => {
   return word;
 };
 
-/*
 async function jsonifyCSV(csr_matches) {
   const csv_reader = new CsvReader('|');
   let first_line = true;
@@ -108,7 +106,6 @@ async function jsonifyCSV(csr_matches) {
       }
     }
   }
-  fs.writeFileSync("csr_matches.json", JSON.stringify(csr_matches, null, 2)); 
 }
 
 const chooseCorrectCSRMatchIndex = (wiki_entry, csr_matches_json, csr_matches_lemmas) => {
@@ -119,8 +116,6 @@ const chooseCorrectCSRMatchIndex = (wiki_entry, csr_matches_json, csr_matches_le
       candidate_idxes.push(i);
     }
   }
-
-  // const candidate_idxes = csr_matches_lemmas.map((lemma, idx) => lemma == deStress(wiki_entry.lemma) ? idx : -1).filter(idx => idx !== -1);
 
   if(candidate_idxes.length == 0) {
     return -1;
@@ -146,9 +141,6 @@ const chooseCorrectCSRMatchIndex = (wiki_entry, csr_matches_json, csr_matches_le
         }
       }
     }
-    // else {
-    //   return candidate_idxes[0];
-    // }
     return candidate_idxes[0];
   }
 };
@@ -158,7 +150,7 @@ function readWiktionaryData(matched_wiki_forms, csr_matches) {
   const leftover_csr_match_lemmas = csr_matches.map(x => x[0]);
   console.log("csr_matches.json entries:", csr_matches_lemmas.length)
   for(let i = 10; i < 1521; i+=10) {
-    const filename = `ru_wiktionary_data_2/russian_lemmas_pg${String(i - 9).padStart(5, "0")}-${String(i).padStart(5, "0")}.json`;
+    const filename = `ru_wiktionary_data/russian_lemmas_pg${String(i - 9).padStart(5, "0")}-${String(i).padStart(5, "0")}.json`;
     const wiki_file_str = fs.readFileSync(filename, "utf-8");
     const wiki_file_json = JSON.parse(wiki_file_str);
     for(const entry of wiki_file_json){
@@ -174,13 +166,13 @@ function readWiktionaryData(matched_wiki_forms, csr_matches) {
       if(csr_match_idx != -1) {
         leftover_csr_match_lemmas[csr_match_idx] = "";
         if(entry.pos == "verb") {
-          entry.inflections.push(entry.lemma) //add infinitive to wiktionary paradigms, because it is not included for some reason
+          entry.inflections.push(entry.lemma) //adds infinitive to wiktionary paradigms, because it is not included for some reason
         }
         matched_wiki_forms.push([csr_matches[csr_match_idx][1], entry]);
       }
     };
   }
-  const last_filename = "ru_wiktionary_data_2/russian_lemmas_pg1521-01526.json";
+  const last_filename = "ru_wiktionary_data/russian_lemmas_pg1521-01526.json";
   const wiki_file_str = fs.readFileSync(last_filename, "utf-8");
   const wiki_file_json = JSON.parse(wiki_file_str);
   for(const entry of wiki_file_json){
@@ -205,126 +197,16 @@ function readWiktionaryData(matched_wiki_forms, csr_matches) {
     }
   }
 
-  const jo_lemma_wiki_forms = new Array();
-  for(const wiki_form of matched_wiki_forms) {
-    if(wiki_form[1].lemma.includes("ё")) {
-      jo_lemma_wiki_forms.push(wiki_form);
-    }
-  }
-
-  fs.writeFileSync("target_wiki_paradigms.json", JSON.stringify(jo_lemma_wiki_forms, null, 2));
-} */
-
-
-function compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms) {
-  let paradigmless_lemmas_csv = "";
-  let result_csv = "wiki_form|generated_match|lcs_match|match_desinence_idx|lcs_infl_class|oes_lemma|match_code\n";
-  const generated_forms_keys = generated_forms.map(x => x[5]);
-  for(const wiki_paradigm of matched_wiki_forms) {
-    const pos_lemma_combo = wiki_paradigm[0];
-    const oes_lemma = pos_lemma_combo.slice(2);
-    const generated_forms_key_idx = generated_forms_keys.indexOf(pos_lemma_combo);
-    if(generated_forms_key_idx == -1) {
-      //should write these forms out somehow, since they are forms from the Google Drive spreadsheet that have checked CSR matches but were deemed unreconstructable to LCS, or post-Jer Shift derivations or the like
-      continue;
-    }
-    
-    const generated_form_entry = generated_forms[generated_forms_key_idx];
-
-    if(wiki_paradigm[1].inflections.length == 0) {
-      const wiki_infl = wiki_paradigm[1].lemma;
-      result_csv += wiki_infl + "|";
-      paradigmless_lemmas_csv += wiki_infl + "\n";
-      let wiki_matched_with_generated_form = false;
-
-        outer: for(let i = 2; i < 5; i++) {
-
-          for(const idx in generated_form_entry[i]) {
-            const generated_inflected_forms = generated_form_entry[i][idx][0];
-            
-            for(const generated_inflected_form of generated_inflected_forms) {
-              if(generated_inflected_form == deStressDownCase(wiki_infl)) {
-                result_csv += generated_inflected_form + "|" + generated_form_entry[i][idx][1] + "|" + idx + "|" + generated_form_entry[6] + "|" + pos_lemma_combo + "|1\n";
-                wiki_matched_with_generated_form = true;
-                break outer; 
-              }
-            }
-          }   
-        }
-        if(!wiki_matched_with_generated_form) {
-          result_csv += "||||" + pos_lemma_combo + "|0\n";
-        }
-    }
-    else {
-      for(const wiki_infl of wiki_paradigm[1].inflections) {
-        result_csv += wiki_infl + "|";
-        let wiki_matched_with_generated_form = false;
-
-        outer: for(let i = 2; i < 5; i++) {
-
-          for(const idx in generated_form_entry[i]) {
-            const generated_inflected_forms = generated_form_entry[i][idx][0];
-
-            for(const generated_inflected_form of generated_inflected_forms) {
-              if(generated_inflected_form == deStressDownCase(wiki_infl)) {
-                result_csv += generated_inflected_form + "|" + generated_form_entry[i][idx][1] + "|" + idx + "|" + generated_form_entry[6] + "|" + pos_lemma_combo + "|1\n";
-                wiki_matched_with_generated_form = true;
-                break outer; 
-              }
-            }
-          }   
-        }
-        if(!wiki_matched_with_generated_form) {
-          result_csv += "|||" + generated_form_entry[6] + "|" + pos_lemma_combo + "|0\n";
-        }
-      }
-    }
-  }
-
-  fs.writeFileSync("paradigmless_wiki_lemmas.csv", paradigmless_lemmas_csv);
-  fs.writeFileSync("results.csv", result_csv);
-
+  fs.writeFileSync("target_wiki_paradigms.json", JSON.stringify(matched_wiki_forms, null, 2));
 }
-
-/*const recordDuplicateWikiParadigms = (matched_wiki_forms) => {
-  let duplicate_wiki_paradigms_csv = "";
-  const duplicates = new Set();
-  let prev_pos_lemma = "";
-  for(const entry of matched_wiki_forms) {
-    const pos_lemma = entry[0];
-    if(prev_pos_lemma == pos_lemma) {
-      duplicates.add(pos_lemma);
-    }
-    prev_pos_lemma = pos_lemma;
-  }
-  for(const dup of Array.from(duplicates)) {
-    duplicate_wiki_paradigms_csv += dup + "\n";
-  }
-  fs.writeFileSync("duplicate_wiki_paradigms.csv", duplicate_wiki_paradigms_csv);
-}; */
 
 async function runAsyncFunctionsSequentially() {
-  // const csr_matches = new Array();
-  // await jsonifyCSV(csr_matches);
-  // console.log(csr_matches.length);
+  const csr_matches = new Array();
+  await jsonifyCSV(csr_matches);
+  console.log(csr_matches.length);
 
-  //const matched_wiki_forms_test = new Array();
-  //readWiktionaryData(matched_wiki_forms_test, csr_matches);
-  
-  const matched_wiki_forms = JSON.parse(fs.readFileSync("target_wiki_paradigms_deduplicated.json"));
-  
-  recordDuplicateWikiParadigms(matched_wiki_forms);
-
-  console.log(matched_wiki_forms.length);
-
-  const generated_forms = JSON.parse(fs.readFileSync("lcs_converted.json"));
-
-  console.log(generated_forms.length);
-  
-  compareGeneratedLCSWithWikiForms(matched_wiki_forms, generated_forms);
+  const matched_wiki_forms = new Array();
+  readWiktionaryData(matched_wiki_forms, csr_matches);
 }
 
-
-
 runAsyncFunctionsSequentially();
-

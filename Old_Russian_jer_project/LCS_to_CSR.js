@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/bin/node
 
 const fs = require("node:fs");
 
@@ -53,7 +53,7 @@ const applyPV2 = (lcs_form, regex) => {
   return lcs_form;
 };
 
-
+//not used because this is a jer-deviance
 const lengthenTenseJers = (lcs_form) => {
   let tense_jer_pos = lcs_form.search(tense_jer_regex);
   while(tense_jer_pos != -1) {
@@ -210,11 +210,6 @@ const cyr_map = new Array(
   ["j'", "j"],
   ["jo", "o"],
 
-  // ["št", "šč"],
-  
-  // ["š'", "š"],
-  //["ž'", "ž"],
-  //["č'", "č"],
   ["c'", "c"],
   ["ŕ'", "ŕ"],
   ["ĺ'", "ĺ"],
@@ -247,7 +242,6 @@ const cyr_map = new Array(
   ["i", "и"],
   ["s", "с"],
   ["p", "п"],
-  //["ъ", ""],
   ["f", "ф"],
   ["j", "й"],
   ["č", "ч"],
@@ -375,11 +369,11 @@ const orvToCSR = (torot_pos, infl_idx, converted_variants_set) => {
     applyOptionalChangeToSet(converted_variants_set, shortenFemInstrSg);
   }
 
-  //these two shouldn't really be included because they are jer-changes
+  
+  //for pure adjectives adding the Ch.Sl. *yjь reflex is indefensible in a jer-investigation, but for the participles often the long forms are the only ones listed in the wiktionary paradigm so we have to match that part or we'll lose them all
   if(infl_idx == "145" || infl_idx == "152" ||infl_idx == "151" ||infl_idx == "150") {
     applyOptionalChangeToSet(converted_variants_set, churchSlavoniciseNomMascSgLongAdj);
   }
-  //for pure adjectives adding the Ch.Sl. *yjь reflex is indefensible in a jer-investigation, but for the participles often the long forms are the only ones listed in the wiktionary paradigm so we have to match that part or we'll lose them all
   /*if(torot_pos == "A-" && infl_idx == "1" || infl_idx == "2") {
     applyOptionalChangeToSet(converted_variants_set, churchSlavoniciseNomMascSgLongAdj);
   }*/
@@ -391,9 +385,9 @@ const orvToCSR = (torot_pos, infl_idx, converted_variants_set) => {
 const word_final_tsy_regex = /ци$/;
 
 
-//includes palatal letters because Russian seems to reapply this rule after they have hardened (молодёжь etc.)
+//not used because I've opted for the much cruder version of just generating <о> variants after all palatals
 //I'm gonna apply the Jer Shift before everything else so don't need to care about strong-jer > /o/
-const e_o_regex = /[ščžcj]e(?:[tŕrpsšdfgkx́ḱǵlĺzžxčvbcʒśnńm\++](?:[aouyъ]|$)|$)/;
+//const e_o_regex = /[ščžcj]e(?:[tŕrpsšdfgkx́ḱǵlĺzžxčvbcʒśnńm\++](?:[aouyъ]|$)|$)/;
 
 const e_o_cyr_regex = /([жчшщц])е/g;
 
@@ -454,7 +448,7 @@ const applyHavlik = (orv_form) => {
   return jer_shifted_unreversed;
 };
 
-const convertToORV = (lcs_word, pv2_3_exists, ch_sl, converted_variants_set) => {
+const convertToORV = (lcs_word, pv2_3_exists, converted_variants_set) => {
 
   lcs_word = lcs_word.replaceAll("O", "ъ").replaceAll("E", "ь");
   lcs_word = lcs_word.replaceAll("ḹ", "ḷ");
@@ -500,14 +494,13 @@ const lcs_json = JSON.parse(json_str);
 
 for(let word_obj of lcs_json) {
   const pv2_3_exists = Boolean(word_obj[0]);
-  const ch_sl = word_obj[1];
   const torot_pos = word_obj[5].slice(0, 2);
   for(let i = 2; i < 5; i++) {
     for(const idx in word_obj[i]) {
       const unconverted_form = word_obj[i][idx];
       const converted_variants_set = new Set();
 
-      convertToORV(unconverted_form, pv2_3_exists, ch_sl, converted_variants_set);
+      convertToORV(unconverted_form, pv2_3_exists, converted_variants_set);
       
       applyChangeToSet(converted_variants_set, applyHavlik);
       

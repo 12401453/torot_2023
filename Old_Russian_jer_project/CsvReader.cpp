@@ -21,11 +21,6 @@ class CsvReader {
       m_fields_vec.clear();
 
       m_raw_line = line;
-      // std::stringstream line_ss(line);
-      // std::string field;
-      // while(std::getline(line_ss, field, m_separator)){
-      //   m_fields_vec.emplace_back(field);
-      // }
 
       std::size_t start_pos = 0;
       while(true) {
