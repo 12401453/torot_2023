@@ -81,7 +81,7 @@ const deStress = (word) => {
   return word;
 };
 
-async function jsonifyCSV(csr_matches) {
+async function jsonifyJerLemmasCSV(csr_matches) {
   const csv_reader = new CsvReader('|');
   let first_line = true;
 
@@ -148,20 +148,17 @@ const chooseCorrectCSRMatchIndex = (wiki_entry, csr_matches_json, csr_matches_le
 function readWiktionaryData(matched_wiki_forms, csr_matches) {
   const csr_matches_lemmas = csr_matches.map(x => deStress(x[0]));
   const leftover_csr_match_lemmas = csr_matches.map(x => x[0]);
-  console.log("csr_matches.json entries:", csr_matches_lemmas.length)
   for(let i = 10; i < 1521; i+=10) {
     const filename = `ru_wiktionary_data/russian_lemmas_pg${String(i - 9).padStart(5, "0")}-${String(i).padStart(5, "0")}.json`;
     const wiki_file_str = fs.readFileSync(filename, "utf-8");
     const wiki_file_json = JSON.parse(wiki_file_str);
     for(const entry of wiki_file_json){
-      //const csr_match_idx = csr_matches_lemmas.indexOf(deStress(entry.lemma));
 
       if(csr_matches_lemmas.indexOf(deStress(entry.lemma)) == -1) {
         continue;
       }
 
       const csr_match_idx = chooseCorrectCSRMatchIndex(entry, csr_matches, csr_matches_lemmas);
-      //console.log(csr_match_idx, entry.lemma);
 
       if(csr_match_idx != -1) {
         leftover_csr_match_lemmas[csr_match_idx] = "";
@@ -191,19 +188,18 @@ function readWiktionaryData(matched_wiki_forms, csr_matches) {
   };
 
 
-  for(const leftover_lemma of leftover_csr_match_lemmas) {
-    if(leftover_lemma != "") {
-      console.log(leftover_lemma);
-    }
-  }
+  // for(const leftover_lemma of leftover_csr_match_lemmas) {
+  //   if(leftover_lemma != "") {
+  //     console.log(leftover_lemma);
+  //   }
+  // }
 
   fs.writeFileSync("target_wiki_paradigms.json", JSON.stringify(matched_wiki_forms, null, 2));
 }
 
 async function runAsyncFunctionsSequentially() {
   const csr_matches = new Array();
-  await jsonifyCSV(csr_matches);
-  console.log(csr_matches.length);
+  await jsonifyJerLemmasCSV(csr_matches);
 
   const matched_wiki_forms = new Array();
   readWiktionaryData(matched_wiki_forms, csr_matches);
