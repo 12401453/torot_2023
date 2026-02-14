@@ -41,3 +41,5 @@ Why do l-participles of nasal-stems have nasal-vowels instead of just i.e. pož�
 Is the *-tъ extension in some aorist 2nd and 3rd singular forms ACTUALLY the same *-tQ ending as in the present tense verbs? Uspenskij Sbornik has бъість mostly but otherwise usually spells those as -тъ, including поꙗтъ which is already a very long way from any OCS model
 
 10. Polemical article "Against Cyrillic transcription of Glagolitic OCS" outlining all the problems caused
+
+11. Searching for Ǣ in Uspenskij SBornik gives the impression that the front-nasal letter is only ever used here after *ŕ or in those Russian-specific class-4 non-jotated imperfects, where front-nasal is used for contracted *ěa. Since this text is pre-Jer Shift, do we have here evidence of the totally separate Old Russian /ä/-phoneme.
