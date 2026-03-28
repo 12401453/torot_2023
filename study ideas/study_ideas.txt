@@ -43,3 +43,6 @@ Is the *-tъ extension in some aorist 2nd and 3rd singular forms ACTUALLY the sa
 10. Polemical article "Against Cyrillic transcription of Glagolitic OCS" outlining all the problems caused
 
 11. Searching for Ǣ in Uspenskij SBornik gives the impression that the front-nasal letter is only ever used here after *ŕ or in those Russian-specific class-4 non-jotated imperfects, where front-nasal is used for contracted *ěa. Since this text is pre-Jer Shift, do we have here evidence of the totally separate Old Russian /ä/-phoneme.
+
+
+12. Trying to solve the problem of how *ś fits into the morphology of OCS, so we can know what сѣ spellings actually hide - is it *śǢ in a word like сѣмо (Czech has kam vs sem, prehlaska or original jat'), вьсѣкъ, and also to help us explain the front-desinences on the pronoun сь (how could this ever be ś, since we have no PV2 or PV3 environment here?)
