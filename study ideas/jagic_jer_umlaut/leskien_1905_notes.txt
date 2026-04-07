@@ -15,4 +15,9 @@ p.328 moots a ridiculous idea that when followed by complicated clusters that wo
 
 p.329-330 explains lack of въ > вь before jotated vowels and и by Dehnung, i.e. voellig im Einklang mit der Trubetzkoy'schen Theorie der /ъ,y/ Archiphoneme
 
-p.332 remarks on lack of fronting of къ and съ
+p.332 remarks on lack of fronting of къ and съ, which he at first considers a possible consequence of the impossibility of secondarily-palatalised /k'/ due to its absence in native words before front-vowels, but then he rejects that idea because s- has no such restriction (though he neglects to mention that the potential opposition /s/:/ś/ may have still existed between, say, вьси /vьśi/ and сила /sila/, and therefore plain /s/ even before front-vowels may have been paradigmatically hard in the same way as /k/), and because /ḱ/ "konnte sich ja im gegebenen Falle sekundär entwickeln, wie z.B. in Fremdwörtern, к҄есарь u. dgl."
+
+p.333 Marianus: rejects a backing of *ь caused by following *ъ due to the preponderance of <е> spellings
+p.333 explicitly rejects Totomanova by calling cases like -шъдъ "weiter nichts als Fehler"
+
+p.333-4 claims that erhaltung of <ь>. nach palatalen Konsonanten is shown after *ĺ, but the data sei less clear for other palatals
