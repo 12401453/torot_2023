@@ -17,7 +17,49 @@ p.329-330 explains lack of въ > вь before jotated vowels and и by Dehnung, 
 
 p.332 remarks on lack of fronting of къ and съ, which he at first considers a possible consequence of the impossibility of secondarily-palatalised /k'/ due to its absence in native words before front-vowels, but then he rejects that idea because s- has no such restriction (though he neglects to mention that the potential opposition /s/:/ś/ may have still existed between, say, вьси /vьśi/ and сила /sila/, and therefore plain /s/ even before front-vowels may have been paradigmatically hard in the same way as /k/), and because /ḱ/ "konnte sich ja im gegebenen Falle sekundär entwickeln, wie z.B. in Fremdwörtern, к҄есарь u. dgl."
 
+MARIANUS
+
 p.333 Marianus: rejects a backing of *ь caused by following *ъ due to the preponderance of <е> spellings
 p.333 explicitly rejects Totomanova by calling cases like -шъдъ "weiter nichts als Fehler"
 
-p.333-4 claims that erhaltung of <ь>. nach palatalen Konsonanten is shown after *ĺ, but the data sei less clear for other palatals
+p.333-4 claims that <ь> is erhalten after *ĺ ń ŕ, but the data seien less clear for other palatals
+
+p.334 claims that ь is bewahrt before *ń ĺ ŕ
+
+p.335 claims that adj. *ьn- groups have backing most of the time before back-vowels but not front-vowels unless ч ж шт жд vorangeht, and says that this comports with Zogr. and suggests a common Vorlage.
+
+p.335-6 says that conversely, after ч ж etc. ън- even before front-vowels is "in ausserordentlicher Ueberzahl eingetreten"
+
+p.336 bottom: word-final *ь shows the same difference between tendency to keep <ь> after *ń ĺ ŕ but not other palatals [JW: couldn't this be a case of needing to signal the palatality of /ń ĺ ŕ/ with the vowel-letter, which isn't needed for the others? Same as how Mid. Bg. tends to use <ѫ> only after /j š ž/ etc.?]
+p.337 top: mentions that <ръ$> could be excluded as stemming from the hardening of *ŕ
+p.337: BUT Leskien assumes that this word-final <ъ> reflects hardening of the consonants: "Es sind also diese Consonanten für den Schreiber oder einen seiner Vorlage hart, daher das ъ". This is a big jump and directly contradicts the Totomanova'schen Theorie (though is found also I believe in Velcheva)
+    -back-jer after these palatals "bildet einen starken Gegensatz gegen den Zographensis, der sie gar nicht hat."
+
+p.337 bottom: looks at old i-stems and finds that they keep <ь> after *čšžћђ more often, which Leskien puts down to a tradition that was "aware that these words belong to a certain grammatical category".
+
+p.338 contrasts *ьsk- which he says in Zographensis is never backed by followign back-vowel, with Marianus' treatment which has ъск before back-vowels nearly three times as much as ьск.
+
+p.338 bottom: before <ц> Leskien explains the "größte Schwanken zwischen ъ und ь" regardless of following vowel by the "Entpalatalisirung des ц, wodurch die so anlautende Silbe hart wurde".
+
+p.339 mentions the overwhelming use of unetymological ъ in the infinitive-stems of бьрати дьрати пьрати стьлати зьдати, and considers the front-jer versions "keine Alterthümlichkeit, sondern eine Abirrung des Schreibers". Thus he is implicitly assuming that some backing occurred before the dawn of written OCS and led to the back-versions being seen as correct
+
+p.339 summarises conclusions about Zogr. and Mar. regarding backing of *ь
+
+p.340 Marianus behaves like Zogr. in showing very little fronting of ъ in къ съ groups
+
+p.342 sums up the data of various other odds and ends by concluding that Zogr. and Mar. both have fronting of ъ in дъвѣ зъли вънѣ бъдѣти etc., but Zogr. is more consistent, whereas Mar. is consistent only with вънѣ and бъдѣти
+
+p.343-344 makes the point that in Mar.you never get spelligns like *ве дни, suggesting that no real fronting of the jer in strong position could have occurred, despite more frequent spellings like вь дьнехъ in Mar. than in Zogr. Instead Mar. only ever shows vocalisation with <о>, e.g. во вьсеі, возьми.
+p.344 Leskien thus concludes that the Vorlage of both Zogr. and Mar. had no fronting of strong back-jer by following weak front-jer.
+
+p.345 remarks on the difference between Mar. and Zogr. in the *ьm- verbal-root, which Zographensis actually spells back-jer even before front-vowels, but where Mar. tends to show jer-umlaut mostly before back-syllables
+
+p.345 bottom: Leskien notes that up to now he has been imagining that these jer-umlauts occurred in some Vorlage at a time when the weak jers were still pronounced, but that he now wants to try a new theory, namely one where the spellings stem from a time when the jers had already fallen and instead reflect changes in the vorangehenden consonants.
+
+p.345-6 Leskien uses the discrepancy in Zogr. between exceptionless зъд- for *zьdati vs пс/п'с/сп/с'п for *pьsati to argue that, because /zd/ is an accepted cluster even in pre-Jer Shift times, whereas /ps-/ is not, the /zd-/ resulting from the fallen jer in *zьdati would cause no pronunciation problems, but the /ps-/ would, hence it occasionally gets metathesised. He says we should expect at least some **пъсати spellings if the jer-umlaut-spelligns occurred with still-existing jers and affected *zьda and *pьsa equally.
+
+p.346 Leskien advances the theory that *pьsa- root in Zogr. had been everywhere replaced with *pisa- (as it has in Mar.), and the scribe didn't pronounce weak jers so viewed the пъс/пьс spellings of his Vorlage as conveying /ps-/ which was an alien cluster to his language, so he "merzte es daher aus und schrieb überall  das von ihm so gelesene псати"
+
+p.347 - illegal jers in the full-grade-stems of the *merti/*kolti/*borti etc. verbs stem also from this view of weak jer-spellings as being silent [JW: though here of course the present-stem zero-grade spellings will have strengthened the feeling that мьр- etc. is how all forms of these verbs should start]
+
+p.347-8 Leskien then explains that the apparent instances of Jer Umlaut could instead just reflect secondary palatalisation-assimilations, i.e. he assumes that in a word like *věrьni the /r/ and /n/ were secondarily-soft, whereas in *věrьna only the /r'/ was, so when the weak intervening jer fell out, you got an assimilation of this secondary-palatalisation to the nature of the second consonant, hence /věr'n'i/ but /věrna/, and the writing of <ь> vs <ъ> reflects the soft/hard nature of the /r/.
