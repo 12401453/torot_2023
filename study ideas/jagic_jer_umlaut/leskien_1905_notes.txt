@@ -63,3 +63,8 @@ p.346 Leskien advances the theory that *pьsa- root in Zogr. had been everywhere
 p.347 - illegal jers in the full-grade-stems of the *merti/*kolti/*borti etc. verbs stem also from this view of weak jer-spellings as being silent [JW: though here of course the present-stem zero-grade spellings will have strengthened the feeling that мьр- etc. is how all forms of these verbs should start]
 
 p.347-8 Leskien then explains that the apparent instances of Jer Umlaut could instead just reflect secondary palatalisation-assimilations, i.e. he assumes that in a word like *věrьni the /r/ and /n/ were secondarily-soft, whereas in *věrьna only the /r'/ was, so when the weak intervening jer fell out, you got an assimilation of this secondary-palatalisation to the nature of the second consonant, hence /věr'n'i/ but /věrna/, and the writing of <ь> vs <ъ> reflects the soft/hard nature of the /r/.
+
+p.348 In the same way he explains why only strong ь wirkt umlautend auf vorangehenden vokalen: *vъ dьnь > /v'd'en'/, but *vъ dьne > /vo dn'e/. [JW: here he doesn't explain why the d isnt softened by consonant-soft-assimilation]
+    - lack of umlaut after *k, *s erklärt er damit, dass diese Konsonanten immer hart bleiben, auch wenn sie in Consonantgruppen vorkommen, derer der zweiter Bestandtheil weich ist. Here he has to do some adhoc reasoning to explain вь слэдъ by drawing a distinction between LCS *slě and neuenstandenen /sl/-gruppen
+
+p.348-9 Leskien finishes by claiming that weak ъ is really only fronted in Zogr. after /b v z d/, and thus that these sounds "+Consonanten waren erweichbar". p.349 he then uses this to explain the Erhaltung in Zogr. of тъмэ възъмэте сънъмиште: that /tm'/ /zm'/ and /nm'/ were not subject to group-cluster-softness-assimilation.
