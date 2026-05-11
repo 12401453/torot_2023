@@ -1,0 +1,14 @@
+the Primary Chronicle словѧше instance should not be lemmatised as словити but as слоути, cf. Supr. словѣѣ҆ше
+
+Is the Old Russian -влач- root a hyperOCSism of -волоч- or genuinely from *volk- (cf. OCS непротлаченъ vs. тлѣщи suggesting both *telk and *tolk)?
+
+How can you tell imperfect occurrences of words like провожати and наслажати apart from jotated imperfects of прово[дз]ити and насладити? Do we risk losing some class 4 imperfects if we don't also reconstruct all of these class 54 secondary imperfects? This is quite a big problem because for instance there's only one occurence of крепляти (jat' btw) and it's an imperfect крѣплѧху that surely is instead from крѣпити.
+
+My default assumption was always that class 54 secondary-imperfective counterparts to class 40 verbs like the above were developed off the back of the imperfects, i.e. the jotated imperfects date from a time BEFORE the perfective/imperfective had made its way into the DERIVATIONAL morphology (as opposed to the INFLECTIONAL morphology). That was one of the main reasons I objected to Andersen's claim that jotated-imperfects were newer than the non-jotated ones, because I had assumed that the development of jotated-imperfects preceded the development of full secondary-imperfective lemmas, i.e. I assumed that the timeline went something like:
+    1.) *privoditi = "bring"[NO ASPECT], *privodixъ "I brung"[PRETERITE], *privoђǢaxъ "I was bringing"[IMPERFECT]
+    2.) *privodixъ "I brung"[PERFECTIVE PRETERITE], *privoђǢaxъ "I was bringing"[IMPERFECTIVE]
+    3.) *privoditi[PERFECTIVE] <--- *privodixъ[PERFECTIVE], but *privoђǢaxъ[IMPERFECTIVE] due to the aspect-mismatch no longer gets associated with *privoditi[PERFECTIVE] and so instead a secondary-imperfective infinitive based on the perceived imperfect-stem is innovated: *privoђǢ-ti --> *privoђǢjǫ
+
+But I don't know really anything about the history of Slavic aspect (apart from when I had to read your Dag Haug article, which I may have misunderstood), so that whole assumption might be wrong.
+
+The point is, we don't get Russian secondary-imperfectives like **наставять, we instead always get jotated forms like наставлять or помышлять, so if the assumption that jotated-imperfects were the source of this type of Russian secondary-imperfective, then non-jotated imperfects HAVE to be late analogical formations from AFTER the aspectual distinctions had moved from INFLECTIONAL to DERIVATIONAL morphology, because otherwise we would expect non-jotated imperfects to have served as the model on which to build secondary-imperfectives, but we don't get such **наставять or **помыслять types in Russian.

@@ -803,7 +803,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 мартъ||Nb|38|||||||||99||||||||0|e_sl|afnik|||||domo|||||||kur|lav||||||||nov-sin|||||||pvl-hyp||||||||||suz-lav|||||||275148451873|0
 полонъ|плѣнъ|Nb|38|pelnъ|||||||masc_o|2||||||||1|e_sl|afnik|avv||||||||||||lav||||||nov-list||nov-sin||||||pskov_subtitle_added|||||||||||suz-lav|||||||275014754307|0
 коньчати|коньчати|V-|38|konьčǢti|||||||54|1||||||||1|e_sl||avv||||domo||||||||lav|||||nevsky-treaty|||nov-sin||||peter||||rig-smol1281||rusprav||sergrad|||||suz-lav||usp-sbor|||||1385699745826|1
-чисти|чисти|V-|38|čisti|||||čit|čьt|ьt|1||||||||1|e_sl||avv||||domo||||||||lav||||mstislav-col|||||||||||||||schism|sergrad||||stefan|suz-lav|||||||425201901602|0
+чисти|чисти|V-|38|čisti|||||čit|čьt|ьt|1||||||||1|e_sl||avv||||domo||||||||lav||||mstislav-col|||||||||||||||schism|sergrad||||stefan|suz-lav|||||||425201901602|1
 помянути|помѧнѫти|V-|38|pomęnǫti|||||||22|1|||remember|dict. p.477 gives forms with ě and with ę; we have no reason to expect the nasals to be confused only in this word so we must assume doublets existed||||1|e_sl||avv||||domo||||||||lav||||||||||||||pskov_subtitle_added|pvl-hyp|||||sergrad|||spi|stefan|suz-lav||usp-sbor||||zadon|19181726605346|0
 приспѣти|приспѣти|V-|38|prispěti|||||||32|1||||||||1|e_sl||avv|||const|||||||||lav||||||||nov-sin||||||pskov_subtitle_added|pvl-hyp|||||||||stefan|suz-lav||usp-sbor|||||1512233246738|0
 съмѣти|съмѣти|V-|38|sъměti|||||sъmě|sъměj|32|1|||dare|||||1|e_sl||avv||||domo|drac|||||||lav||mikh||||||nov-sin|||||||pvl-hyp|||||sergrad|||||suz-lav||usp-sbor|||||1383250042978|1
@@ -835,7 +835,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 увѣдѣти|оувѣдѣти|V-|37|uvěděti|||||||wote|1|||will know, will see|||||1|e_sl|||||||drac|||||||lav||||||||||||||||||||sergrad|||||suz-lav||usp-sbor|||||1382979477568|0
 печера|пещера|Nb|37|peћera|pektera||||||fem_a|2||||||||1|e_sl||||||||||||||lav||||||||nov-sin|||||||||||||||||||usp-sbor|||||1099513733120|0
 орда||Nb|36|orъda|||||||fem_a|2|7|||||||0|e_sl|afnik|avv||||||||||||||||||||nov-sin||||||||||||sergrad||||stefan|||||||zadon|17738217029635|1
-ѣздити||V-|36|||||||||99||||||||0|e_sl|afnik|avv|||||drac||||kiev-hyp|||lav|luk-koloc_subtitle_added|||||||nov-sin|novgorod-jaroslav||||||pvl-hyp||||||||spi||suz-lav|turch|usp-sbor||||zadon|19585325622339|0
+ѣздити||V-|36|jǢzditi||||jězditi|||40|1||||||||0|e_sl|afnik|avv|||||drac||||kiev-hyp|||lav|luk-koloc_subtitle_added|||||||nov-sin|novgorod-jaroslav||||||pvl-hyp||||||||spi||suz-lav|turch|usp-sbor||||zadon|19585325622339|0
 ѣсти||V-|36|||||||||99||||||||0|e_sl|afnik|avv|birchbark|||domo||||||||lav||||||||||||||||||||sergrad|||||suz-lav||usp-sbor|||||1382979477543|0
 жаловати||V-|36|||||||||99||||||||0|e_sl|afnik|avv||||domo|drac||||kiev-hyp|||lav||||||nov-list||nov-sin|||||pskov-ivan|pskov_subtitle_added|pvl-hyp|||||sergrad||||stefan|suz-lav|||||||421379187811|0
 казати||V-|36|||||||||99||||||||0|e_sl|afnik|avv|birchbark|||domo||||||||lav||||mstislav-col||||nov-sin|||||||pvl-hyp||||||||spi||suz-lav||usp-sbor|||||1443379683367|0
@@ -862,7 +862,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 славити|славити|V-|35|slaviti|||||slavi|slavĺ|40|1|||praise, glorify, sing the praises of|||||1|e_sl||avv||bur-alph||||||||||lav||||||||nov-sin||||||||||||sergrad||||stefan|suz-lav||usp-sbor|||||1520420528138|0
 утѣшати|оутѣшати|V-|35|utěšǢti|||||||54|1|||comfort, console|||||1|e_sl||avv|||const|domo||||||||lav|luk-koloc_subtitle_added|||||||||||||||||||sergrad||||stefan|suz-lav||usp-sbor|||||1520418447410|0
 отъходити||V-|35|otъxoditi|||||||40|1||||||||0|e_sl||avv||||||||||||lav||||||||||||||||||rusprav||sergrad||||stefan|||usp-sbor|||||1247688007682|1
-уставити||V-|35|||||||||99||||||||0|e_sl||avv|||const|domo||||||||lav||mikh||||||nov-sin|||||||pvl-hyp|||rusprav||||||stefan|||usp-sbor|ust-vlad|||zadon|21030577938482|0
+уставити||V-|35|ustaviti|||||||40|1||||||||0|e_sl||avv|||const|domo||||||||lav||mikh||||||nov-sin|||||||pvl-hyp|||rusprav||||||stefan|||usp-sbor|ust-vlad|||zadon|21030577938482|0
 милостыня||Nb|35|||||||||99||||||||0|e_sl||avv||||domo|drac|||||||lav|luk-koloc_subtitle_added|||||||||||||||||||sergrad||||stefan|suz-lav|||||||420906819682|0
 полата||Nb|35|||||||||99||||||||0|e_sl||avv|||const|domo|drac|||||||lav||||||||nov-sin||||||pskov_subtitle_added|pvl-hyp||||||||||suz-lav|turch|usp-sbor|||vest-kur||10720643129458|0
 учитель|оучитель|Nb|35|učiteĺь|učiteljь||||||masc_tel|2||||||||1|e_sl||avv|||const|domo||||||||lav|||||||||||||||pvl-hyp|||||sergrad||||stefan|||usp-sbor|||||1245808959538|0
@@ -898,7 +898,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 увы|оувꙑ|I-|33|uvy||||||||0||||||||1|e_sl||avv|||||drac|||||||lav|||||||||||||||pvl-hyp|||||sergrad||||stefan|||usp-sbor|||||1245808959554|0
 горькыи|горькъ|A-|33|gorьkъ|||||||adj_hard|2||||||||1|e_sl||avv||||domo||||||||lav||||||||nov-sin||||||pskov_subtitle_added||||||||||stefan|||usp-sbor||||zadon|18829272948770|1
 овьца|овьца|Nb|33|ovьka|||ovьca||||fem_a_PV3|2||||||||1|e_sl||avv|||const|||dux-grjaz||||||lav||||||||nov-sin|||||||pvl-hyp|||rusprav||sergrad||||stefan|suz-lav||usp-sbor|||||1522836447378|1
-казнити||V-|33|||||||||99||||||||0|e_sl||avv||||domo|drac|||||||lav||||||||nov-sin||||peter||||||rusprav|||||||suz-lav||||||zadon|17869247094882|0
+казнити||V-|33|kazniti|||||||40|1||||||||0|e_sl||avv||||domo|drac|||||||lav||||||||nov-sin||||peter||||||rusprav|||||||suz-lav||||||zadon|17869247094882|0
 тъчию||Df|33|||||||||99||||||||0|e_sl|||||const|||||||||lav|luk-koloc_subtitle_added|||||||||||peter|||pvl-hyp|||||sergrad||||stefan|||usp-sbor|||||1245842530320|0
 вънезаапу|вънезаапѫ|Df|33|vъnezaapǫ||||||||0||||vъ ne za apǫ; attest also are вънезаꙗпѫ (Old Rus.) and вънезаѣпѫ; Vasmer reconstructs the root of the *apa word with no original /j/|1|||1|e_sl|||||const||drac|||||||lav||||||||nov-sin||||||||||||sergrad||||stefan|||usp-sbor|||||1245542621264|1
 разити|разити|V-|33|orzjьti|||||||jьti|1||||||||1|ch_sl|||||const|domo||||||||lav||||||||nov-sin||||||pskov_subtitle_added||||||sergrad|||||suz-lav||usp-sbor|||||1383115792432|0
@@ -1221,7 +1221,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 доконьчати|доконьчати|V-|23|dokonьčǢti|||||||54|1||||||||1|e_sl|||birchbark|||||||||||lav|||||nevsky-treaty|||nov-sin|||||||||riga-goth|||||smol-pol-lit|spi|||||||||104155324420|0
 матерьнии|матерьнь|A-|23|materьńь|materьnjь||||||adj_soft|2||||||||1|e_sl||||bur-alph||domo||||||||||||||||||||||||||rusprav||sergrad|||||||usp-sbor|||||1110249046056|0
 мощи||Nb|23|||||||||99||||||||0|e_sl||||bur-alph|const|domo||||||||lav||||||||nov-sin|||||||pvl-hyp|||||sergrad||||stefan||||||||146299428920|0
-благодарити||V-|23|||||||||99||||||||0|e_sl|||||const|||||||||||||||||||||||||||||sergrad|shch|||stefan|suz-lav||usp-sbor|||||1537598291984|0
+благодарити||V-|23|bolgodariti|||||||40|1||||||||0|e_sl|||||const|||||||||||||||||||||||||||||sergrad|shch|||stefan|suz-lav||usp-sbor|||||1537598291984|0
 наутрия||Df|23|||||||||99||||||||0|e_sl|||||const|||||||||lav||||||||||||||||||||sergrad|||||suz-lav|||||||283467849744|0
 потрѣбьныи|потрѣбьнъ|A-|23|poterbьnъ|||||||adj_hard|2||||||||1|ch_sl|||||const|domo||||||||lav||||||||||||||||||||sergrad|shch|||stefan||||||||163208765488|1
 въсѣсти|въсѣсти|V-|23|vъsěsti|||||vъsěd|vъsěd|infix_11|1||||||||1|e_sl|||||const|||||||||lav||||||||nov-sin|||||||pvl-hyp|||rusprav|||||spi||suz-lav||usp-sbor|||||1445527035920|0
@@ -1288,7 +1288,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 купьно|коупьно|Df|22|kupьno||||||||0|13||together|See ESSJa 13 p.110-2; Germanic *kaupōn (ESSJa erroneously gives *kaupjan, but OE ċēapian, OHG koufōn unambiguously point to a weak class 2 verb in PGmc. *ōn-) was borrowed from Latin very earlier (before Anglo-Frisian velar palatalisation, cf Eng. cheap, Chippenham etc.). ||Gmc. *kaupōn- from Latin caupō||1|e_sl|||||||||||||kur|||||||||||||||||||||sergrad||||stefan|||usp-sbor|||||1245540519936|1
 поляне||Nb|22|||||||||99||||||||0|e_sl||||||||||||||lav|||||||||||||||pvl-hyp|||||||||||||||||268443648|0
 ольговъ||A-|22|olьgоvъ|||||||adj_hard|2|1|||||||0|e_sl||||||||||||||lav||||||||nov-sin|||||||pvl-hyp|||rusprav|||||spi||suz-lav|||||||346015408128|1
-испълчити||V-|22|||||||||99||||||||0|e_sl||||||||||||||lav||||||||nov-sin|||||||||||||||||suz-lav|||||||274880012288|0
+испълчити||V-|22|jьspl̥čiti|||||||40|1|1|||Derksen p.424 says the pl̥k- root is ‘Probably a borrowing from Germanic’, i.e. ‘folk’||||0|e_sl||||||||||||||lav||||||||nov-sin|||||||||||||||||suz-lav|||||||274880012288|0
 веселие|веселиѥ|Nb|22|veselьje|||||||nt_jo|2||||||||1|e_sl||||||||||||||lav||||mstislav-col||||nov-sin||||||||||||sergrad|||spi|stefan|||usp-sbor||||zadon|18906448273408|1
 тъмуторокань||Ne|22|||||||||99||||||||0|e_sl||||||||||||||lav||||||||nov-sin|||||||||||||||spi|||||||||68721582080|0
 дѣдъ||Nb|22|||||||||99||||||||0|e_sl||||||||||||||lav||||||||nov-sin|novgorod-jaroslav|||||pskov_subtitle_added|||||||||spi|stefan|suz-lav|||||||481176854528|0
@@ -1300,7 +1300,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 пьсъ|пьсъ|Nb|21|pьsъ|||||||masc_o|2||||||||1|e_sl|afnik|avv||||||||||||lav|luk-koloc_subtitle_added|||||||nov-sin||||||||||rusprav||||||stefan|suz-lav||usp-sbor|||||1513978093571|1
 доспѣхъ||Nb|21|||||||||99||||||||0|e_sl|afnik||||||||||||||||||||||||||||||||||||||||||||zadon|17592186044417|0
 приводити|приводити|V-|21|privoditi|||||||40|1||||||||1|e_sl|afnik|||bur-alph|const|domo||||||||lav||||||||||||||pskov_subtitle_added||||||sergrad||||stefan|suz-lav||usp-sbor|||||1520552648761|0
-нарядити||V-|21|||||||||99||||||||0|e_sl|afnik||birchbark||const|domo||||||||lav||||||||nov-sin|||||||||||||||||suz-lav|||||||274880012341|0
+нарядити||V-|21|naręditi|||||||40|1||||||||0|e_sl|afnik||birchbark||const|domo||||||||lav||||||||nov-sin|||||||||||||||||suz-lav|||||||274880012341|0
 золото|злато|Nb|21|zolto|||||||nt_o|2||||||||1|e_sl|afnik|||||domo||||||||lav|||||||||||||||pvl-hyp||riga-goth|rusprav|||||||suz-lav||usp-sbor|||||1377879203873|1
 класти||V-|21|||||||||99||||||||0|e_sl|afnik|avv|birchbark||const|domo|||||||||||||nevsky-treaty|||||||||||||rusprav||sergrad|||spi|||||||||79457157175|0
 съжалити|съжалити|V-|21|sъžǢliti|||||||40|1||||||||1|e_sl|afnik|avv||||||||||||lav||||||||nov-sin||||||||||||sergrad||||stefan|suz-lav||usp-sbor|||||1520420528131|1
@@ -1355,7 +1355,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 афанасии||Ne|20|||||||||99||||||||0|e_sl|afnik|avv||||||||||||lav||||||||nov-sin||||||||||||sergrad||||stefan||||||||146030993411|0
 свиния|свиниꙗ|Nb|20|svinьjǢ|||||||fem_ja|2||||||||1|e_sl|afnik|avv|||const|domo||dux-grjaz||||||lav||||||||||||||||||rusprav||sergrad||||stefan||||||||148176380083|1
 иерусалимъ|иѥроусалимъ|Ne|20|ijerusalimъ|||||||masc_o|2|25|W||||Ἱερουσᾱλήμ||1|e_sl|afnik|avv||||||||||||lav||||||||nov-sin||||||||||||sergrad||||stefan|||usp-sbor|||||1245542621187|0
-правити||V-|20|||||||||99||||||||0|e_sl|afnik|avv|birchbark|||||||||||lav||||mstislav-col||||nov-sin||ostromir-col||||||||||sergrad|||spi|stefan|suz-lav|||||||489636896775|0
+правити||V-|20|praviti|||||||40|1||||||||0|e_sl|afnik|avv|birchbark|||||||||||lav||||mstislav-col||||nov-sin||ostromir-col||||||||||sergrad|||spi|stefan|suz-lav|||||||489636896775|0
 мария|мариꙗ|Ne|20|marijǢ|||||||fem_ja|2|25|W||||Μαριὰμ||1|e_sl|afnik|avv||||||||||||lav||||||||nov-sin||||||||||||sergrad||||stefan|||usp-sbor||||zadon|18837728665603|0
 собака||Nb|20|||||||||99||||||||0|e_sl||avv||||domo||||golitsyn||||||||||||||||||||||||||||||||||||546|0
 данилъ|данилъ|Ne|20|daniilъ|||||||masc_o|2|25|W||||Δανιὴλ||1|ch_sl||avv|birchbark|||||||||||lav|luk-koloc_subtitle_added|||||||nov-sin||||||||||||sergrad|||||suz-lav|||||||283469963270|0
@@ -1367,7 +1367,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 прѣльстити|прѣльстити|V-|20|perlьstiti|||||||40|1|||betrügen, scam, lead astray, falsely flatter|||||1|ch_sl||avv||||||||||||lav||||||||nov-sin||||||||||||||||stefan||||||||137441058818|1
 богатьство|богатьство|Nb|20|bogatьstvo|||||||nt_o|2||||||||1|e_sl||avv||||domo|drac|||||||lav|luk-koloc_subtitle_added||||||||||||||pvl-hyp|||||sergrad||||stefan|||usp-sbor|||||1245808975970|1
 послушание|послоушаниѥ|Nb|20|poslušǢnьje|||||||nt_jo|2||||||||1|e_sl||avv|||const|domo||||||||lav||||||||||||||||||||sergrad||||stefan|suz-lav||usp-sbor|||||1520418431026|1
-проводити||V-|20|||||||||99||||||||0|e_sl||avv|||const|||||||||lav||||||||nov-sin|||||||pvl-hyp|||||sergrad||||stefan|suz-lav||usp-sbor|||vest-kur||10316781985810|0
+проводити||V-|20|provoditi|||||||40|1||||||||0|e_sl||avv|||const|||||||||lav||||||||nov-sin|||||||pvl-hyp|||||sergrad||||stefan|suz-lav||usp-sbor|||vest-kur||10316781985810|0
 вънъ|вънъ|Df|20|vъnъ||||||||0||||||||1|e_sl||avv||||||||||||lav|||||||||||||||||||schism|sergrad||||||turch|usp-sbor|||||1662152351746|1
 покои|покои|Nb|20|pokojь|||||||masc_jo|2||||||||1|e_sl||avv||bur-alph||domo||||||||lav||||||||||||||||||||sergrad||||stefan|suz-lav|turch|usp-sbor|||||2070174244906|0
 съвязати|съвѧзати#2|V-|20|sъvęzati|||||||54|1||||||||1|e_sl||avv||||domo||||||||lav||||||nov-list||nov-sin|||||||pvl-hyp||riga-goth|rusprav|||||||||usp-sbor|||||1103003918370|1
@@ -1499,7 +1499,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 неизреченьныи||A-|18|nejьzrečenьnъ|||||||adj_hard|2||||||||0|e_sl|||||const|||||||||lav|luk-koloc_subtitle_added|||||||||||||||||||sergrad|||||suz-lav||usp-sbor|ust-vlad||||3582002749456|1
 брѣгъ|брѣгъ|Nb|18|bergъ|||||||masc_o|2||||||||1|ch_sl|||||const|||||||||lav||||||||nov-sin|||||||||||||||spi||||||||zadon|17660907626512|0
 настати|настати|V-|18|nastati|||||||stati|1||||||||1|e_sl|||||const|||||||||lav||||||||nov-sin||||||||||||sergrad||||stefan|suz-lav|||||||420908900368|0
-едъва|ѥдъва|Df|18|jedъva||||||||0||||||||1|e_sl|||||const|||||||||lav|luk-koloc_subtitle_added|||||||||||||||||||sergrad||||stefan|suz-lav|turch|usp-sbor|||||2070174261264|1
+едъва|ѥдъва|Df|18|jedъva||||||||0||||Andersen 1996: 118 assumes *jedva|1|||1|e_sl|||||const|||||||||lav|luk-koloc_subtitle_added|||||||||||||||||||sergrad||||stefan|suz-lav|turch|usp-sbor|||||2070174261264|1
 пролияти|пролиꙗти|V-|18|prolьjǢti|||||||53_abl|1||||||||1|e_sl|||||const|||||||||lav||||||||nov-sin|||||||||||||||spi||suz-lav||usp-sbor|||||1443111116816|0
 поучати|пооучати|V-|18|poučǢti|||||||54|1|||doing a bit of the old teaching|||||1|e_sl|||||const|domo||||||||lav||||||||||||||||||||sergrad||||stefan|||usp-sbor|||||1245540524080|0
 иночьскыи||A-|18|jьnočьskъ|||||||adj_hard|2||||||||0|e_sl|||||const|domo|||||||||||||||||||||||||||schism|sergrad||||stefan||||||||150323855408|1
@@ -1860,7 +1860,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 канцелярия||Nb|14|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||||turch||||||549755813888|0
 шуринъ||Nb|13|||||||||99||||||||0|e_sl|afnik|||||||||||||lav||||||||nov-sin|||||||||||||||||suz-lav|||||||274880012289|0
 занеже|занѥже|G-|13|zańeže|zanježe|||||||0||||||||1|e_sl|afnik|||||||||||||lav||||||||||||||pskov_subtitle_added|pvl-hyp||||||||||suz-lav||||||zadon|17867466612737|0
-возити||V-|13|||||||||99||||||||0|e_sl|afnik|avv||||domo||||||||lav||mikh||mstislav-col||||nov-sin|||||||||||||||||||usp-sbor|||||1099513896995|0
+возити||V-|13|voziti|||||||40|1||||||||0|e_sl|afnik|avv||||domo||||||||lav||mikh||mstislav-col||||nov-sin|||||||||||||||||||usp-sbor|||||1099513896995|0
 зелие|зелиѥ|Nb|13|zelьje|||||||nt_jo|2||||||||1|e_sl|afnik||||const|domo||||||||lav||||||||||||||||||||sergrad|||||||usp-sbor|||||1108101570609|0
 прямыи||A-|13|||||||||99||||||||0|e_sl|afnik|avv||||domo||||||||||||||||||||peter||||||||||||||||||vest-kur||8796126576675|0
 праздьновати|праздьновати|V-|13|porzdьnovati|||||||61|1||||||||1|ch_sl|afnik|avv|||const|||||||||lav||||||||||||||||||||sergrad||||stefan|||usp-sbor|||||1245540524051|1
@@ -2068,7 +2068,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 посѣщати|посѣщати|V-|12|posěћǢti|posětjǢti||||||54|1||||||||1|ch_sl||||||domo||||||||||||||||||||||||||||sergrad|shch|||stefan|||usp-sbor|||||1262720385056|0
 чьтити||V-|12|čьstiti|||||||40|1||||||||0|e_sl||||||domo||||||||lav|luk-koloc_subtitle_added|||||||||||||||||||||||stefan|suz-lav|||||||412316885024|1
 съдравие|съдравиѥ|Nb|12|sъdorvьje|||||||nt_jo|2||||||||1|ch_sl||||||domo|||||||kur|lav||||||||||||peter||pskov_subtitle_added||||||||||||||||||167784480|1
-грабити||V-|12|||||||||99||||||||0|e_sl||||||domo||||||||lav|luk-koloc_subtitle_added|||||||nov-sin|||||||||||||||||suz-lav|||||||274880028704|0
+грабити||V-|12|grabiti|||||||40|1||||||||0|e_sl||||||domo||||||||lav|luk-koloc_subtitle_added|||||||nov-sin|||||||||||||||||suz-lav|||||||274880028704|0
 сладость||Nb|12|||||||||99||||||||0|e_sl||||||domo|drac|||||||||||||||||||||||||||sergrad|||||||usp-sbor|||||1108101562464|0
 боголюбивыи||A-|12|||||||||99||||||||0|e_sl||||||domo||||||||lav||||||||nov-sin||||||||||||sergrad|||||suz-lav||usp-sbor|||||1382981574688|0
 рано|рано|Df|12|rano||||||||0||||||||1|e_sl||||||domo||||||||lav||||||||||||||||||||sergrad|||spi||suz-lav||usp-sbor|||vest-kur||10247791976480|0
@@ -2134,7 +2134,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 обьщии|обьщь|A-|11|obьћь|obьtjь||||||adj_soft|2||||||||1|ch_sl||avv|||||||||||kur|lav||||||||||||||||||||sergrad||||stefan|||usp-sbor|ust-vlad||||3444563783682|1
 въскрьснути|въскрьснѫти|V-|11|vъskrьsnǫti|||||||21|1||||*krьs- is zero-grade of kresati; see ESSJa 12 p.124-5 for kresati||||1|e_sl||avv|||const|||||||||lav||||||||||||||||||||sergrad||||||||||||8589942802|1
 хъмельныи||A-|11|xъmelьnъ|||||||adj_hard|2|1|||Disputed etymology, but Vasmer seems to think Germanic origins are more likely:  Возникает вопрос, не правы ли те исследователи, которые отделяют герм. слова от тюрк. и ищут происхождение др.-исл. humli, англос. hуmеlе, ср.-нж.-нем. homele в герм.; ср. нов.-в.-н. hummeln «шарить, ощупывать» (см. Клюге-Гётце 255; Э. Нойман, Festschr. Моgk 424 и сл.; ср. также Ельквист 369; Гамильшег, ЕW 519: houblon). Из герм. в таком случае происходят ср.-лат. humulus, франц. houblon, фин. humala, слав. *хъmеlь; см. Томсен, SА 2, 177; Einfl. 136; Хирт, РВВ 23, 338; Кипарский 136; Уленбек, AfslPh 15, 485.||||0|e_sl||avv||||domo|||||||||||||||||novgorod-jaroslav||||||||||schism|||||||||||||4299161634|1
-волочити||V-|11|||||||||99||||||||0|e_sl||avv||||domo||||||||||||||||nov-sin|||||||||||||||||suz-lav|||||||274880004130|0
+волочити||V-|11|velčiti|||||||40|1||||||||0|e_sl||avv||||domo||||||||||||||||nov-sin|||||||||||||||||suz-lav|||||||274880004130|0
 стрѣлити||V-|11|||||||||99||||||||0|e_sl||avv||||||||||||lav||||||||nov-sin|||||||||||||||||suz-lav|||||vest-kur||9070973034498|0
 прочисти|прочисти|V-|11|pročisti|||||||ьt|1||||||||1|e_sl||avv||bur-alph||domo|drac|||golitsyn||||lav|||||||||||||||||||schism|sergrad|||||||usp-sbor|||||1112396538474|1
 чрѣво|чрѣво|Nb|11|červo|||||||nt_o|2|||belly|||||1|ch_sl||avv||||||||||||lav||||||||||||||||||||sergrad|||||||usp-sbor|||||1108101570562|0
@@ -2279,7 +2279,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 конюшьна||Nb|10|końušьńь|konjušьnjь||||||adj_soft|2||||It's soft in ModRu. All our occurrences are in Domostroj, some suggest soft and some suggest hard declension, most are ambiguous.||||0|e_sl|afnik|avv||||domo||||||||||||||||||||||||||||||||||||||||35|1
 полънощь||Nb|10|polъnoћь|polъnoktь||||||fem_i|2||||||||0|e_sl|afnik|avv|||const|domo||||||||lav|||||||||||||||||||||||spi|stefan|suz-lav|||||||481036345395|1
 правовѣрьныи||A-|10|pravověrьnъ|||||||adj_hard|2||||||||0|e_sl||avv||||||||||||||||||||||||||||||||||||stefan|suz-lav|||||||412316860418|1
-тѣшити||V-|10|||||||||99||||||||0|e_sl||avv||||domo|||||||||luk-koloc_subtitle_added|||||||||||||||||||sergrad||||stefan|||usp-sbor||||zadon|18837726576674|0
+тѣшити||V-|10|těšiti|||||||40|1||||||||0|e_sl||avv||||domo|||||||||luk-koloc_subtitle_added|||||||||||||||||||sergrad||||stefan|||usp-sbor||||zadon|18837726576674|0
 тварь|тварь|Nb|10|tvarь|||||||fem_i|2|||creation|||||1|e_sl||avv||bur-alph|const|||||||||lav||||||||||||||||||||||||stefan|suz-lav|||||||412316868634|0
 иноплеменьникъ|иноплеменьникъ|Nb|10|jьnoplemenьnikъ|||||||masc_o|2|||foreigner, outsider, member of different tribe|||||1|e_sl||avv||||||||||||lav|||||||||||||||||||||||||suz-lav|||||||274877915138|0
 проклятыи||A-|10|||||||||99||||||||0|e_sl||avv||||domo||||||||lav||||||||nov-sin||||peter||||||||||||stefan|suz-lav|||||||412352520226|0
@@ -2314,7 +2314,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 полагати|полагати|V-|10|polagati|||||||54|1||||||||1|e_sl||avv||||domo||||||||lav||||||||||||||||||||sergrad||||stefan|||usp-sbor|||||1245540524066|0
 прадѣдъ||Nb|10|||||||||99||||||||0|e_sl||avv||||||||||||lav||||||||||||||pskov_subtitle_added||||||||||stefan|suz-lav||||||zadon|18004637130754|0
 съмощи||V-|10|sъmoћi|sъmogti||||sъmog|sъmog|11|1||||||||0|e_sl||avv||||||||||||||||||||||||||||||||||||||||||||2|1
-бродити||V-|10|||||||||99||||||||0|e_sl||avv||||||||||||lav|||||||||||||||||||||||||suz-lav||||||zadon|17867063959554|0
+бродити||V-|10|broditi|||||||40|1||||||||0|e_sl||avv||||||||||||lav|||||||||||||||||||||||||suz-lav||||||zadon|17867063959554|0
 быстрыи||A-|10|||||||||99||||||||0|e_sl||avv|||||||||||||||||||||||||||||||||||spi||||usp-sbor||||zadon|18760417148930|0
 брести||V-|10|||||||||99||||||||0|e_sl||avv|||||||||||||||||||||||||||||||||||||suz-lav||||||zadon|17867063951362|0
 домои||Df|10|||||||||99||||||||0|e_sl||avv||||domo||||||||||||||||||||||||||||||||||||||||34|0
@@ -2367,7 +2367,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 устрьмление|оустрьмлѥниѥ|Nb|10|ustrьmĺenьje|ustrьmjenьje||||||nt_jo|2||||||||1|e_sl|||||const|||||||||lav||||||||||||||||||||sergrad||||stefan||||||||146028896272|1
 разрушити||V-|10|||||||||99||||||||0|e_sl|||||const|||||||||lav||||||||||||||||||||sergrad||||||||||||8589942800|0
 отъвѣщевати||V-|10|||||||||99||||||||0|e_sl|||||const|domo||||||||lav|luk-koloc_subtitle_added||||||||||||||pvl-hyp|||||sergrad|||||||usp-sbor|||||1108370022448|0
-урядити||V-|10|||||||||99||||||||0|e_sl|||||const|||||||||lav||||||||nov-sin|||||||pvl-hyp||riga-goth||||||||suz-lav|||||||276222189584|0
+урядити||V-|10|uręditi|||||||40|1||||||||0|e_sl|||||const|||||||||lav||||||||nov-sin|||||||pvl-hyp||riga-goth||||||||suz-lav|||||||276222189584|0
 отринути||V-|10|||||||||99||||||||0|e_sl|||||const|||||||||lav||||||||nov-sin|||||||pvl-hyp|||||||||stefan||||||||137709494288|0
 чудотворьныи||A-|10|čudotvorьnъ|||||||adj_hard|2||||||||0|e_sl||||||domo|||||||||luk-koloc_subtitle_added||||||||||||||||||||||||suz-lav|||||||274877923360|1
 накърмити||V-|10|nakr̥miti|||||||40|1||||||||0|e_sl||||||domo||||||||lav||||||||||||||||||||sergrad||||||||||||8589942816|1
@@ -2533,7 +2533,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 пущати|поущати|V-|9|pušћǢti|pustjǢti||||||54|1||||||||1|e_sl|||||const|domo||||||||lav||||||||nov-sin|||||||||||||||spi|||||||||68721582128|0
 въступити||V-|9|vъstǫpiti|||||||40|1||||||||0|e_sl|||||const|||||||||lav|||||||||||||||pvl-hyp||||||||spi||||||||zadon|17661173964816|1
 львъ||Ne|9|||||||||99||||||||0|e_sl|||||const|||||||||lav|||||||||||||||pvl-hyp|||||||||||||||||268443664|0
-прогонити||V-|9|||||||||99||||||||0|e_sl|||||const|||||||||lav||||||||nov-sin||||||||||||||||stefan||||||||137441058832|0
+прогонити||V-|9|progoniti|||||||40|1||||||||0|e_sl|||||const|||||||||lav||||||||nov-sin||||||||||||||||stefan||||||||137441058832|0
 уклонити|оуклонити|V-|9|ukloniti|||||||40|1|||incline towards|||||1|e_sl|||||const|domo||||||||lav|||||||||||||||||||||||||suz-lav||usp-sbor|||||1374389542960|0
 показание||Nb|9|pokazanьje|||||||nt_jo|2||||||||0|e_sl|||||const|||||||||lav|||||||nov-marg||||||||pvl-hyp||||||||||suz-lav||usp-sbor|||||1374659026960|1
 искупити||V-|9|||||||||99||||||||0|e_sl|||||const||drac|||||||||||||||||||peter|||pvl-hyp|||||||||stefan|||usp-sbor|||||1237252571216|0
@@ -2568,7 +2568,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 хлѣбьныи|хлѣбьнъ|A-|9|xlěbьnъ|||||||adj_hard|2|1|||||Germanic *hlaibaz, probably Gothic hlaifs||1|e_sl||||||domo|||||||||||||||||||||||pvl-hyp|||||sergrad||||||||||||8858370080|1
 обрѣзъкъ||Nb|9|obrězъkъ|||||||masc_o|2||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|1
 умьныи||A-|9|umьnъ|||||||adj_hard|2||||||||0|e_sl||||||domo||||||||lav|||||||||||||||||riga-goth|||||||stefan||||||||138512703520|1
-рядити||V-|9|||||||||99||||||||0|e_sl||||||domo||||||||lav||||||||||||||||||rusprav|||||spi||suz-lav|||||||345744875552|0
+рядити||V-|9|ręditi|||||||40|1||||||||0|e_sl||||||domo||||||||lav||||||||||||||||||rusprav|||||spi||suz-lav|||||||345744875552|0
 огородъ||Nb|9|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||pskov_subtitle_added|||||||||||suz-lav||||varlaam|||4673058635808|0
 сушило||Nb|9|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||stefan||||||||137438953504|0
 одръ|одръ|Nb|9|odrъ|||||||masc_o|2|||bed, stretcher|||||1|e_sl||||||domo||||||||lav||||||||||||||||||||||||stefan|||usp-sbor|||||1236950589472|0
@@ -2810,7 +2810,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 нои||Ne|8|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 подражати|подражати|V-|8|podražǢti|||||||54|1||||the dict. lists the doublets подрѣжати/подражати, but it’s possible for jat’ spellings to result from a hardened /ŕ/ if *ŕǢ (spelt рѣ) had become /ra/||||1|e_sl||||||||||||||lav||||||||||||||||||||sergrad||||stefan|||usp-sbor|||||1245540524032|0
 бръня||Nb|8|brъńǢ|brъnjǢ||||||fem_ja|2|1|||the fem. acc. pl. брънѧ exists in OCS Euch||Gothic brunjō||0|e_sl||||||||||||||lav||||||||nov-sin|||||||||||||||||suz-lav|||||||274880012288|1
-излазити||V-|8|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||stefan|||usp-sbor|||||1236950589440|0
+излазити||V-|8|jьzlaziti|||||||40|1||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||stefan|||usp-sbor|||||1236950589440|0
 похоть|похоть|Nb|8|poxotь|||||||fem_i|2||||||||1|e_sl||||||||||||||lav|||||||||||||||||||||||spi|stefan|suz-lav|||||||481036345344|0
 побѣжати#1||V-|8|||||||||99||||||||0|e_sl||||||||||||||lav|||||||||||||||||||||||||||usp-sbor|||||1099511635968|0
 колодьникъ||Nb|8|koldьnikъ|||||||masc_o|2||||Derksen says root is cognate with ‘Holt’||||0|e_sl||||||||||||||lav|||||||||||||||||||||||||suz-lav|turch||||||824633729024|1
@@ -2834,7 +2834,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 буи||A-|8|||||||||99||||||||0|e_sl||||||||||||||lav|||||||||||||||||||||||spi|||||||||68719484928|0
 тьсть|тьсть|Nb|8|tьstь|||||||masc_i|2|||father-in-law|||||1|e_sl||||||||||||||lav||||||||nov-sin|||||||||||||||||suz-lav|||||||274880012288|1
 иулии||Nb|8|||||||||99||||||||0|e_sl||||||||||||||lav|||||||||||||||||||||||||suz-lav||usp-sbor|||||1374389542912|0
-жалити||V-|8|||||||||99||||||||0|e_sl||||||||||||||lav||||||||nov-sin|||||||||||||||||||usp-sbor|||||1099513733120|0
+жалити||V-|8|žǢliti|||||||40|1||||||||0|e_sl||||||||||||||lav||||||||nov-sin|||||||||||||||||||usp-sbor|||||1099513733120|0
 зазьрѣти|зазьрѣти|V-|8|zazьrěti|||||||31|1||||||||1|e_sl||||||||||||||lav||||||||||ostromir-col|||||pvl-hyp|||||sergrad||||stefan|||usp-sbor|||||1245817348096|0
 измрѣти||V-|8|||||||||99||||||||0|e_sl||||||||||||||lav||||||||nov-sin|||||||||||||||||suz-lav|||||||274880012288|0
 грясти|грѧсти|V-|8|gręsti|||||gręd|gręd|11|1||||||||1|e_sl||||||||||||||lav||||||||||||||||||||sergrad||||stefan|suz-lav||usp-sbor|||||1520418430976|0
@@ -2944,7 +2944,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 погрузити||V-|7|||||||||99||||||||0|e_sl||avv||||||||||||lav|||||||nov-marg|||||||||||||sergrad|||spi|||||||||77310468098|0
 боръ||Nb|7|||||||||99||||||||0|e_sl||avv|||||||||kiev-hyp|||lav|||||||||||||||||||||||||||usp-sbor|||||1099511636994|0
 водьныи|водьнъ|A-|7|vodьnъ|||||||adj_hard|2||||||||1|e_sl||avv||||||||||||lav||||||||||||||||||||sergrad||||||||||||8589942786|1
-находити||V-|7|||||||||99||||||||0|e_sl||avv|||||drac|||||||lav||||||||||||||||||||sergrad||||stefan||||||||146028896322|0
+находити||V-|7|naxoditi|||||||40|1||||||||0|e_sl||avv|||||drac|||||||lav||||||||||||||||||||sergrad||||stefan||||||||146028896322|0
 снъха||Nb|7|snъxa|||||||fem_a|2||||||||0|e_sl||avv|||||||||||kur|lav|||||||||||||||||||||||||suz-lav|||||||274877919234|1
 четвьрть||Nb|7|četvŕ̥tь|||||||fem_i|2||||||||0|e_sl||avv||||domo||||||||||mikh|||||||||||||||riga-goth|||||||||||||||1073774626|1
 прибѣгати|прибѣгати|V-|7|priběgati|||||priběga|priběgaj|54|1|||run to, turn to (for help/in times of need)|||||1|e_sl||avv||||domo|||gol-gol||||||||||||||||||||||||||||||||usp-sbor|||vest-kur||9895604650274|0
@@ -3287,7 +3287,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 въсълати||V-|6|||||||||99||||||||0|e_sl|||birchbark|||||||||||||||||||nov-sin|||||||||||||||||suz-lav|||||||274880004100|0
 янъка||Ne|6|||||||||99||||||||0|e_sl|||birchbark|||||||||||lav||||||||nov-sin|||||||||||||||||suz-lav|||||||274880012292|0
 притещи|притещи|V-|6|priteћi|pritekti||||pritek|pritek|11|1|||come running|||||1|ch_sl|||birchbark|||||||||||||||||||||||||||||||sergrad|||||suz-lav||usp-sbor||||zadon|18975165513732|0
-пакостити||V-|6|||||||||99||||||||0|e_sl|||birchbark|||||||||||lav||||||||nov-sin||||||||||||sergrad|||||suz-lav|||||||283469946884|0
+пакостити||V-|6|pakostiti|||||||40|1||||||||0|e_sl|||birchbark|||||||||||lav||||||||nov-sin||||||||||||sergrad|||||suz-lav|||||||283469946884|0
 игнатъ||Ne|6|||||||||99||||||||0|e_sl|||birchbark|||||||||||lav||||||nov-list||nov-sin|||||||||||schism|||||||||||||4297596932|0
 зади|зади|Df|6|zadi||||||||0|||at the back, behind|||||1|e_sl|||birchbark||||drac||||||||||||||||||||||||||||||||suz-lav|||||||274877907012|0
 елинъ|елинъ|Nb|6|elinъ|||||||masc_o|2|2||Greek (person)|||Ἕλλην ||1|e_sl||||bur-alph||||||||||||||||||||||||||||||||||stefan||||||||137438953480|0
@@ -3691,7 +3691,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 братоненавидѣние||Nb|5|||||||||99||||||||0|e_sl||avv||||||||||||lav||||||||nov-sin|||||||||||||||||||usp-sbor|||||1099513733122|0
 ястие||Nb|5|||||||||99||||||||0|e_sl||avv||||||||||||||||||||||||||||||||sergrad||||||||||||8589934594|0
 шумѣти||V-|5|||||||||99||||||||0|e_sl||avv||||||||||||||||||||||||||||||||sergrad|||spi||||||||zadon|17669495455746|0
-распустити||V-|5|||||||||99||||||||0|e_sl||avv|||||||||kiev-hyp|||lav||||||||||||||||||||sergrad|||||||usp-sbor|||||1108101571586|0
+распустити||V-|5|orspustiti|||||||40|1||||||||0|e_sl||avv|||||||||kiev-hyp|||lav||||||||||||||||||||sergrad|||||||usp-sbor|||||1108101571586|0
 запрѣщати|запрѣщати|V-|5|zaperћǢti|zapertjǢti||||||54|1||||||||1|ch_sl||avv|||||||||||||||||||||||||||||||schism|sergrad||||stefan|||usp-sbor|||||1249835483138|0
 человѣколюбие||Nb|5|||||||||99||||||||0|e_sl||avv||bur-alph||||||||||lav|||||||||||||||||||||||||suz-lav||usp-sbor|||||1374389542922|0
 вьрхънии||A-|5|vŕ̥xъńь|vŕ̥xъnjь||||||adj_soft|2||||frankly I think the necessity of positing a back-jer before the *nь suffix (so as not to palatalise the *x) is proof that this word arose after the Jer Shift||||0|e_sl||avv||||domo||||||||||||||||||||||||||||||||||||||||34|1
@@ -3854,13 +3854,13 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 въсажати||V-|5|||||||||99||||||||0|e_sl|||||||drac|||||||lav||||||||nov-sin||||||||||||||||||||||||2105408|0
 почьстити||V-|5|||||||||99||||||||0|e_sl|||||||drac||||||||||||||||||||||pvl-hyp||riga-goth|||||||||||||||1342177344|0
 нищета|нищета|Nb|5|nišћeta|nistjeta||||||fem_a|2|||I reconstruct this with *šћ rather than *šč based purely on Derksen 2008 p.353's citation of Meillet's view that this is a '*-ti̯o derivative of *nis, cf. Sanskrit níṣṭya-'. Derksen himself gives *niščь, but this is because my *šč < *sk+FV and *šћ develop identically in Slavic, so he has no need to separate them for his Late Common Slavonic stage; I keep them separate here for maximum clarity.|||||1|e_sl|||||||drac||||||||luk-koloc_subtitle_added|||||||||||||||||||sergrad||||stefan||||||||146028904512|0
-усладити||V-|5|||||||||99||||||||0|e_sl|||||||drac|||||||lav||||||||||||||||||||sergrad||||||||||||8589942848|0
+усладити||V-|5|usolditi|||||||40|1||||||||0|e_sl|||||||drac|||||||lav||||||||||||||||||||sergrad||||||||||||8589942848|0
 будинъ||Ne|5|||||||||99||||||||0|e_sl|||||||drac|||||||||||||||||||||||||||||||||||||||64|0
 младеньство||Nb|5|||||||||99||||||||0|e_sl|||||||drac|||||||||||||||||||||||||||sergrad||||||||||||8589934656|0
 лазоревъ||A-|5|||||||||99||||||||0|e_sl||||||||dux-grjaz||||||lav||||mstislav-col||||nov-sin||||||||||||||||||||||||2236544|0
 дьмитрѣевичь||Ne|5|||||||||99||||||||0|e_sl||||||||dux-grjaz||||||||mikh||||nov-list||||||||||||||||||stefan||||||||137439510656|0
 ивановъ||A-|5|||||||||99||||||||0|e_sl||||||||dux-grjaz|gol-gol||||||luk-koloc_subtitle_added||||||||||||||pvl-hyp|||||||||||||||||268452224|0
-съдравьствовати||V-|5|sъdorvьstvovati|||||||61|1||||||||0|e_sl|||||||||gol-gol|||||||mikh||||||||ostromir-col|paz|||||||||||||||||||||25198848|1
+съдравьствовати||V-|5|sъdorvьstvovati|||||||61|1||||||||0|ch_sl|||||||||gol-gol|||||||mikh||||||||ostromir-col|paz|||||||||||||||||||||25198848|1
 мъноголѣтьныи||A-|5|mъnogolětьnъ|||||||adj_hard|2||||||||0|e_sl|||||||||gol-gol|||||||mikh|||||||||paz|||||||||||||||||||||16810240|1
 максимовичь||Ne|5|||||||||99||||||||0|e_sl|||||||||gol-gol|||klem||||||||||||||||||||||||||||||||||2304|0
 челобитие||Nb|5|čelobitьje|||||||nt_jo|2||||||||0|e_sl|||||||||gol-gol||||||||||||||||||||||||schism|||||||||||||4294967552|1
@@ -3897,7 +3897,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 жьрѣти||V-|5|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||stefan||||||||137438961664|0
 сельце||Nb|5|selьke||selьko|selьce||||nt_o_PV3|2||||Derksen p.444 gives Pol. sioło and Old Cz. selo which preclude a root *sedl-, even though the semantic closeness of that root (in въселити etc.) with the word for village (cf. 'settlement') are obvious||||0|e_sl||||||||||||||lav|||||||||||||||||||||||||suz-lav|||||||274877915136|1
 вышеславъ||Ne|5|||||||||99||||||||0|e_sl||||||||||||||lav|||||||||||||||||||||||||||usp-sbor|||||1099511635968|0
-наслажати||V-|5|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||sergrad||||stefan|||usp-sbor|||||1245540524032|0
+наслажати||V-|5|nasolђǢti|nasoldjǢti||||||54|1||||||||0|e_sl||||||||||||||lav||||||||||||||||||||sergrad||||stefan|||usp-sbor|||||1245540524032|0
 лѣпота|лѣпота|Nb|5|lěpota|||||||fem_a|2||||||||1|e_sl||||||||||||||lav||||||||nov-sin|||||||||||||||||suz-lav|||||||274880012288|0
 попирати|попирати|V-|5|popirati|||||||54|1||||||||1|e_sl||||||||||||||lav|||||||||||||||||||||||||||usp-sbor|||||1099511635968|0
 обрѣзати|обрѣзати|V-|5|obrězati|||||||54|1|||circumcise|||||1|e_sl||||||||||||||lav||||||||nov-sin||||||||||||||||||||||||2105344|0
@@ -3965,7 +3965,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 святопълчь||Ne|5|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 муромьць||Nb|5|muromьkь||muromьkъ|muromьcь||||masc_o_PV3|2|8|||||||0|e_sl||||||||||||||lav||||||||nov-sin|||||||||||||||||suz-lav|||||||274880012288|1
 стародубъ||Ne|5|||||||||99||||||||0|e_sl||||||||||||||lav|||||||||||||||||||||||||suz-lav|||||||274877915136|0
-перебродити||V-|5|||||||||99||||||||0|e_sl||||||||||||||lav||||||||nov-sin|||||||||||||||||suz-lav|||||||274880012288|0
+перебродити||V-|5|perbroditi|||||||40|1||||||||0|e_sl||||||||||||||lav||||||||nov-sin|||||||||||||||||suz-lav|||||||274880012288|0
 очутити|ощоутити|V-|5|oћutiti|otjutiti||||||40|1|||notice|||||1|e_sl||||||||||||||lav||||||||nov-sin||||||||||||sergrad||||||||||||8592039936|0
 задъ||Nb|5|||||||||99||||||||0|e_sl||||||||||||||lav|||||||||||||||||||||||||suz-lav||usp-sbor|||||1374389542912|0
 угъ||Nb|5|||||||||99||||||||0|e_sl||||||||||||||lav||||||||nov-sin||||||||||||||||stefan||||||||137441058816|0
@@ -4015,7 +4015,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 камо||Dq|5|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin|||||||||riga-goth|||sergrad|||spi|||||||||78385250304|0
 твьрдиславичь||Ne|5|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
 ярунъ||Ne|5|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
-поскочити||V-|5|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin|||||||||||||||spi||suz-lav|||||||343599480832|0
+поскочити||V-|5|poskočiti|||||||40|1||||||||0|e_sl||||||||||||||||||||||nov-sin|||||||||||||||spi||suz-lav|||||||343599480832|0
 ублюсти||V-|5|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||rusprav|||||||suz-lav|||||||277027487744|0
 водовикъ||Ne|5|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
 волыньскыи||A-|5|velyńьskъ|velynjьskъ|||volyńьskъ|||adj_hard|2||||noun велынѧне in the Primary Chronicle suggests to me a *ńǢninъ < *-ěninъ and thus an LCS palatal-consonant on the end||||0|e_sl||||||||||||||||||||||nov-sin|||||||pvl-hyp|||||sergrad|||||||||||zadon|17601046511616|1
@@ -4084,7 +4084,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 дѣгъ||Ne|4|||||||||99||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|0
 красъка||Nb|4|krasъka|||||||fem_a|2||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|1
 кафаръ||Nb|4|||||||||99||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|0
-привозити||V-|4|||||||||99||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||stefan||||||||137438953473|0
+привозити||V-|4|privoziti|||||||40|1||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||stefan||||||||137438953473|0
 сорочица|срачица|Nb|4|sorčika|||sorčica||||fem_a_PV3|2|||shirt|||||1|e_sl|afnik||birchbark||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627781|0
 съмиловати||V-|4|||||||||99||||||||0|e_sl|afnik|||||||||||klem||||||||||||||||||||||||||||||||||2049|0
 пьрьць||Nb|4|pьrьkь||pьrьkъ|pьrьcь||||masc_o_PV3|2|32|||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|1
@@ -4130,7 +4130,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 крьстообразьно||Df|4|krьstoobrazьno||||||||0|12|||||||0|e_sl||avv||||domo||||||||||||||||||||||||||||sergrad||||||||||||8589934626|1
 прибыти|прибꙑти|V-|4|pribyti|||||||pref_byti|1||||||||1|e_sl||avv|||||||||||||||||||||||||||pvl-hyp|||||sergrad|||||||usp-sbor|||||1108369997826|0
 раздѣляти||V-|4|||||||||99||||||||0|e_sl||avv||||||||||||lav|||||||||||||||||||||||||||usp-sbor|||||1099511635970|0
-славословити||V-|4|||||||||99||||||||0|e_sl||avv||bur-alph||||||||||||||||||||||||||||||sergrad||||stefan||||||||146028888074|0
+славословити||V-|4|slavosloviti|||||||40|1||||||||0|e_sl||avv||bur-alph||||||||||||||||||||||||||||||sergrad||||stefan||||||||146028888074|0
 тричисльныи||A-|4|||||||||99||||||||0|e_sl||avv||||||||||||||||||||||||||||||||sergrad||||||||||||8589934594|0
 досада||Nb|4|||||||||99||||||||0|e_sl||avv||||domo||||||||||||||||||||||||||||||||||||||||34|0
 исхождение|исхождениѥ|Nb|4|jьsxoђenьje|jьsxodjenьje||||||nt_jo|2||||||||1|ch_sl||avv||||||||||||||||||||||||||||||||sergrad||||stefan||||||||146028888066|0
@@ -4296,7 +4296,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 вьршь||Nb|4|||||||||99||||||||0|e_sl|||birchbark|||||||||||||||||||nov-sin||||||||||||||||||||||||2097156|0
 гнити||V-|4|||||||||99||||||||0|e_sl|||birchbark|||domo||||||||||||||||nov-sin||||||||||||||||||||||||2097188|0
 сидоръ||Ne|4|||||||||99||||||||0|e_sl|||birchbark|||||||||||||||||||nov-sin|||||||||||schism|||||||||||||4297064452|0
-печалити||V-|4|||||||||99||||||||0|e_sl|||birchbark|||||||||||||||||||||||peter||||||||sergrad|||||||usp-sbor|||||1108135116804|0
+печалити||V-|4|pečǢliti|||||||40|1||||||||0|e_sl|||birchbark|||||||||||||||||||||||peter||||||||sergrad|||||||usp-sbor|||||1108135116804|0
 уречи||V-|4|||||||||99||||||||0|e_sl|||birchbark||const|||||||||lav||||||||||||||||||||sergrad||||||||||||8589942804|0
 сукъно||Nb|4|sukъno|||||||nt_o|2||||*kn is allowed in LCS and attestations with jers are rare, but Sreznevskij cites a few along with an adjective суконныхъ which surely suggests <*sukъnьnъ||||0|e_sl|||birchbark|||domo||||||||||mikh||||||||||||||||||sergrad||||||||||||8589967396|1
 умилосьрдити||V-|4|umilosŕ̥diti|||||||40|1||||||||0|e_sl|||birchbark|||||||||||||||||||||||||||||||sergrad||||stefan|||usp-sbor|||||1245540515844|1
@@ -4371,7 +4371,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 пригожати||V-|4|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
 бесчиние||Nb|4|beščinьje|||||||nt_jo|2||||||||0|e_sl||||||domo||||||||lav||||||||||||||||||||||||||||||||8224|1
 похулити|похоулити|V-|4|poxuliti|||||||40|1||||||||1|e_sl||||||domo||||||||lav|||||||||||||||pvl-hyp||||||||||||usp-sbor|||||1099780071456|0
-възлогати||V-|4|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|1
+възлагати||V-|4|vъzlagati|||||||54|1||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|1
 павечерьница||Nb|4|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||sergrad||||||||||||8589934624|0
 произволение||Nb|4|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||sergrad||||||||||||8589934624|0
 пияница|пиꙗница|Nb|4|pьjǢnika|||pьjǢnica||||masc_a_PV3|2|||drunkard, pisshead|||||1|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
@@ -4643,7 +4643,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 тугортъканъ||Ne|4|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 лука||Nb|4|||||||||99||||||||0|e_sl||||||||||||||lav|||||||||||||||||||||||||suz-lav|||||||274877915136|0
 ижещи||V-|4|||||||||99||||||||0|e_sl||||||||||||||lav||||||||nov-sin||||||||||||||||||||||||2105344|0
-отрядити||V-|4|||||||||99||||||||0|e_sl||||||||||||||lav||||||||nov-sin|||||||||||||||||suz-lav|||||||274880012288|0
+отрядити||V-|4|otręditi|||||||40|1||||||||0|e_sl||||||||||||||lav||||||||nov-sin|||||||||||||||||suz-lav|||||||274880012288|0
 насладити|насладити|V-|4|nasolditi|||||||40|1|||sweeten|||||1|ch_sl||||||||||||||lav||||||||||||||||||||sergrad||||stefan||||||||146028896256|0
 тъчьныи||A-|4|tъčьnъ|||||||adj_hard|2||||||||0|e_sl||||||||||||||lav||||||||||||||||||||sergrad|||||||usp-sbor|||||1108101570560|1
 съжьдати||V-|4|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||stefan|suz-lav|||||||412316868608|0
@@ -4661,7 +4661,7 @@ orv_lemma|chu_lemma|pos|count|lcs_lemma|pre_jot|morph_replace|PV2/3|doublet|stem
 казатель|казатель|Nb|4|kazateĺь|kazateljь||||||masc_tel|2||||||||1|e_sl||||||||||||||lav||||||||||||||||||||sergrad||||stefan|||usp-sbor|||||1245540524032|0
 наслѣдие||Nb|4|naslědьje|||||||nt_jo|2||||||||0|e_sl||||||||||||||lav||||mstislav-col||||||||||||||||sergrad||||stefan||||||||146029027328|1
 ослушати||V-|4|||||||||99||||||||0|e_sl||||||||||||||lav|||||||||||||||||||||||||||usp-sbor|||||1099511635968|0
-острити||V-|4|||||||||99||||||||0|e_sl||||||||||||||lav|||||||||||||||||||||||||||usp-sbor|||||1099511635968|0
+острити||V-|4|ostriti|||||||40|1||||||||0|e_sl||||||||||||||lav|||||||||||||||||||||||||||usp-sbor|||||1099511635968|0
 вьсеволожь||Ne|4|||||||||99||||||||0|e_sl||||||||||||||lav|||||||||||||||||||||||||suz-lav|||||||274877915136|0
 пригънати||V-|4|prigъnati|||||||52_abl|1||||||||0|e_sl||||||||||||||lav|luk-koloc_subtitle_added||||||||||||||||||||||||suz-lav|||||||274877931520|1
 забороло||Nb|4|||||||||99||||||||0|e_sl||||||||||||||lav||||||||nov-sin|||||||||||||||spi|||||||||68721582080|0
@@ -5228,7 +5228,7 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 ударяти||V-|3|||||||||99||||||||0|e_sl|||||const|||||||||lav||||||||||||||||||||sergrad||||||||||||8589942800|0
 бесчисльно||Df|3|||||||||99||||||||0|e_sl|||||const|||||||||||||||||||||||||||||||||||||||||16|0
 изобилие||Nb|3|||||||||99||||||||0|e_sl|||||const|domo||||||||lav||||||||||||||||||||||||||||||||8240|0
-вылазити||V-|3|||||||||99||||||||0|e_sl|||||const|||||||||lav||||||||||||||||||rusprav||||||||||||||2147491856|0
+вылазити||V-|3|vylaziti|||||||40|1||||||||0|e_sl|||||const|||||||||lav||||||||||||||||||rusprav||||||||||||||2147491856|0
 нечувьствьныи||A-|3|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||sergrad||||||||||||8589934624|0
 искрьнии|искрьнии|A-|3|jьskrьńь|||||||adj_soft|2||||||||1|e_sl||||||domo|||||||||||||||||||||||||||||shch|||||||||||17179869216|0
 больница||Nb|3|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||ust-vlad||||2199023255584|0
@@ -5260,7 +5260,7 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 дълголѣтьныи||A-|3|||||||||99||||||||0|e_sl||||||domo||||||||||||mstislav-col||||||||||||||||sergrad||||||||||||8590065696|0
 горѣи||A-|3|||||||||99||||||||0|e_sl||||||domo||||||||lav|||||||||||||||||||||||||suz-lav|||||||274877915168|0
 обьщьникъ|обьщьникъ|Nb|3|obьћьnikъ|obьtjьnikъ||||||masc_o|2|||partaker; accomplice, fellow|Pol. obcy||||1|ch_sl||||||domo|||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627808|0
-угожати||V-|3|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||sergrad||||||||||||8589934624|0
+угожати||V-|3|ugoђǢti|ugodjǢti||||||54|1||||||||0|e_sl||||||domo||||||||||||||||||||||||||||sergrad||||||||||||8589934624|0
 рукодѣльничати||V-|3|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
 кощуна||Nb|3|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
 дѣмонъ||Nb|3|||||||||99||||||||0|e_sl||||||domo||||||||lav||||||||||||||||||||sergrad||||||||||||8589942816|0
@@ -5370,7 +5370,7 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 слива||Nb|3|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
 брежьныи||A-|3|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
 упарити||V-|3|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
-мѣсити||V-|3|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||sergrad|||||||usp-sbor|||||1108101562400|0
+мѣсити||V-|3|měsiti|||||||40|1||||||||0|e_sl||||||domo||||||||||||||||||||||||||||sergrad|||||||usp-sbor|||||1108101562400|0
 кушати||V-|3|||||||||99||||||||0|e_sl||||||domo||||golitsyn||||lav||||||||||||||||||||||||||||||||8736|0
 намочити||V-|3|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
 вѣсити||V-|3|||||||||99||||||||0|e_sl||||||domo|||||||||||||||||||||||||riga-goth|||||||||||||||1073741856|0
@@ -5469,7 +5469,7 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 прастѣнъ||Ne|3|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 роалдъ||Ne|3|||||||||99||||||||0|e_sl||||||||||||||lav|||||||||||||||pvl-hyp|||||||||||||||||268443648|0
 показывати||V-|3|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
-показнити||V-|3|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
+показнити||V-|3|pokazniti|||||||40|1||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 трѣбѣ||Df|3|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||stefan||||||||137438961664|0
 кърсунянинъ||Nb|3|kr̥suńǢninъ|kr̥sunjǢninъ||||||masc_anin|2|2|||||Χερσών||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|1
 допроводити||V-|3|||||||||99||||||||0|e_sl||||||||||||||lav|||||||||||||||||||||||||||usp-sbor|||||1099511635968|0
@@ -5496,7 +5496,7 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 скотии||A-|3|||||||||99||||||||0|e_sl||||||||||||||lav|||||||||||||||pvl-hyp|||||||||||||||||268443648|0
 вьручии||Ne|3|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 гробля||Nb|3|||||||||99||||||||0|e_sl||||||||||||||lav|||||||||||||||||||||||||suz-lav|||||||274877915136|0
-влачити||V-|3|||||||||99||||||||0|e_sl||||||||||||||lav||||||||nov-sin|||||||||||||||||||usp-sbor|||||1099513733120|0
+влачити||V-|3|volčiti||||velčiti|||40|1|||||1|||0|e_sl||||||||||||||lav||||||||nov-sin|||||||||||||||||||usp-sbor|||||1099513733120|0
 дорогожичь||Ne|3|||||||||99||||||||0|e_sl||||||||||||||lav|||||||||||||||||||||||||suz-lav|||||||274877915136|0
 родьня||Ne|3|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 привабити||V-|3|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
@@ -5681,7 +5681,7 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 чулъкъ||Nb|3|||||||||99||||||||0|e_sl||||||||||||||||mikh||||||||||||||||||||||||||||||32768|0
 матерьныи||A-|3|||||||||99||||||||0|e_sl||||||||||||||||mikh||||||||||||||||||sergrad||||||||||||8589967360|0
 проньюшька||Ne|3|||||||||99||||||||0|e_sl||||||||||||||||mikh||||||||||||||||||||||||||||||32768|0
-подърядити||V-|3|||||||||99||||||||0|e_sl||||||||||||||||mikh|||||||||paz|||||||||||||||||||||16809984|0
+подърядити||V-|3|podъręditi|||||||40|1||||||||0|e_sl||||||||||||||||mikh|||||||||paz|||||||||||||||||||||16809984|0
 пустошь|поустошь|Nb|3|pustošь|||||||fem_i|2|||empty words, meaningless bollocks|||||1|e_sl||||||||||||||||mikh||||||||||||||||||sergrad||||stefan||||||||146028920832|0
 наславъ||Ne|3|||||||||99||||||||0|e_sl||||||||||||||||||mstislav-col||||||||||||||||||||||||||||131072|0
 ныня||Df|3|||||||||99||||||||0|e_sl||||||||||||||||||mstislav-col|||||||||||||||||||||suz-lav|||||||274878038016|0
@@ -5875,7 +5875,7 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 больми||Df|3|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad|||||suz-lav||usp-sbor|||||1382979469312|0
 съвратити||V-|3|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||stefan|||usp-sbor|||||1245540515840|0
 облачити|облачити|V-|3|obvolčiti|||||||40|1|||dress, array, put clothes on|||||1|ch_sl||||||||||||||||||||||||||||||||||sergrad||||stefan||||||||146028888064|0
-съподобляти||V-|3|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||stefan||||||||146028888064|0
+съподобляти||V-|3|sъpodobĺǢti|sъpodobjǢti||||||54|1||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||stefan||||||||146028888064|0
 прѣдъложение|прѣдъложениѥ|Nb|3|perdъloženьje|||||||nt_jo|2||||||||1|ch_sl||||||||||||||||||||||||||||||||||sergrad||||stefan|||usp-sbor|||||1245540515840|0
 дълготьрпѣние||Nb|3|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||stefan||||||||146028888064|0
 кътоже||Px|3|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad|||||||usp-sbor|||||1108101562368|0
@@ -6257,7 +6257,7 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 бродьня||Nb|2|||||||||99||||||||0|e_sl||avv||||||||||||||||||||||||||||||||||||||||||||2|0
 мѣшькъ||Nb|2|||||||||99||||||||0|e_sl||avv||||||||||||||||||||||||||||||||||||||||||||2|0
 петь||Df|2|||||||||99||||||||0|e_sl||avv||||||||||||||||||||||||||||||||||||||||||||2|0
-събродити||V-|2|||||||||99||||||||0|e_sl||avv||||||||||||||||||||||||||||||||||||||||||||2|0
+събродити||V-|2|sъbroditi|||||||40|1||||||||0|e_sl||avv||||||||||||||||||||||||||||||||||||||||||||2|0
 нерча||Ne|2|||||||||99||||||||0|e_sl||avv||||||||||||||||||||||||||||||||||||||||||||2|0
 небольшии||A-|2|||||||||99||||||||0|e_sl||avv||||||||||||||||||||||||||||||||||||||||||||2|0
 мьртвьчии||A-|2|||||||||99||||||||0|e_sl||avv||||||||||||||||||||||||||||||||||||||||||||2|0
@@ -6762,7 +6762,7 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 выкашляти||V-|2|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
 кашляти||V-|2|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
 смъркати||V-|2|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
-покушати||V-|2|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||sergrad||||||||||||8589934624|0
+покушати||V-|2|pokušǢti|||||||54|1||||||||0|e_sl||||||domo||||||||||||||||||||||||||||sergrad||||||||||||8589934624|0
 посматривати||V-|2|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
 съдѣлька||Nb|2|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
 объговоръ||Nb|2|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
@@ -7077,8 +7077,8 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 голубьникъ||Nb|2|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 възгарати|възгарати|V-|2|vъzgarati|||||||54|1||||||||1|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 ольжинъ||A-|2|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
-уставляти||V-|2|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||sergrad||||||||||||8589942784|0
-изрядити||V-|2|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
+уставляти||V-|2|ustavĺǢti|ustavjǢti||||||54|1||||||||0|e_sl||||||||||||||lav||||||||||||||||||||sergrad||||||||||||8589942784|0
+изрядити||V-|2|jьzręditi|||||||40|1||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 цѣмьскыи||Ne|2|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 авимелехъ||Ne|2|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 соломоныи||A-|2|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
@@ -7424,7 +7424,7 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 еличановъ||Ne|2|||||||||99||||||||0|e_sl||||||||||||||||mikh||||||||||||||||||||||||||||||32768|0
 тихонъ||Ne|2|||||||||99||||||||0|e_sl||||||||||||||||mikh||||||||||||||||||||||||||||||32768|0
 племяньникъ||Nb|2|||||||||99||||||||0|e_sl||||||||||||||||mikh||||||||||peter||||||||||||||||||||33587200|0
-съѣздити||V-|2|||||||||99||||||||0|e_sl||||||||||||||||mikh||||||nov-sin||||||||||||||||||||||||2129920|0
+съѣздити||V-|2|sъjǢzditi||||sъjězditi|||40|1||||||||0|e_sl||||||||||||||||mikh||||||nov-sin||||||||||||||||||||||||2129920|0
 състояти||V-|2|||||||||99||||||||0|e_sl|||||||||||||||||mst|||||nov-sin||||||||||||||||||||||||2162688|0
 скалъва||Nb|2|||||||||99||||||||0|e_sl|||||||||||||||||||nevsky-treaty|||||||||||||||||||||||||||262144|0
 чудь||Nb|2|||||||||99||||||||0|e_sl||||||||||||||||||||nov-list||nov-sin||||||||||||||||||||||||2621440|0
@@ -8037,7 +8037,7 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 пършане||Nb|2|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||suz-lav|||||||274877906944|0
 янъчинъ||A-|2|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||suz-lav|||||||274877906944|0
 пополохъ||Nb|2|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||suz-lav|||||||274877906944|0
-приѣздити||V-|2|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||suz-lav|||||||274877906944|0
+приѣздити||V-|2|prijǢzditi||||prijězditi|||40|1||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||suz-lav|||||||274877906944|0
 турпѣи||Nb|2|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||suz-lav|||||||274877906944|0
 мыльскъ||Ne|2|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||suz-lav|||||||274877906944|0
 ино||C-|2|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||suz-lav|||||||274877906944|0
@@ -8234,7 +8234,7 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 пиръ||F-|1|||||||||99||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|0
 атыръ||F-|1|||||||||99||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|0
 алядинандъ||F-|1|||||||||99||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|0
-съвозити||V-|1|||||||||99||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|0
+съвозити||V-|1|sъvoziti|||||||40|1||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|0
 аляндъ||Ne|1|||||||||99||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|0
 обезияньскыи||A-|1|||||||||99||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|0
 разваляти||V-|1|||||||||99||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|0
@@ -8471,7 +8471,7 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 безводица||Nb|1|||||||||99||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|0
 меликъчанъ||Ne|1|||||||||99||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|0
 поголовие||Nb|1|||||||||99||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|0
-розвозити||V-|1|||||||||99||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|0
+розвозити||V-|1|orzvoziti|||||||40|1||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|0
 алмазьникъ||Nb|1|||||||||99||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|0
 суляхъ||F-|1|||||||||99||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|0
 микунѣтъ||F-|1|||||||||99||||||||0|e_sl|afnik|||||||||||||||||||||||||||||||||||||||||||||1|0
@@ -9116,7 +9116,7 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 риторика||Nb|1|||||||||99||||||||0|e_sl||avv||||||||||||||||||||||||||||||||||||||||||||2|0
 съглупати||V-|1|||||||||99||||||||0|e_sl||avv||||||||||||||||||||||||||||||||||||||||||||2|0
 вонифантиевичь||Ne|1|||||||||99||||||||0|e_sl||avv||||||||||||||||||||||||||||||||||||||||||||2|0
-заѣздити||V-|1|||||||||99||||||||0|e_sl||avv||||||||||||||||||||||||||||||||||||||||||||2|0
+заѣздити||V-|1|zajǢzditi||||zajězditi|||40|1||||||||0|e_sl||avv||||||||||||||||||||||||||||||||||||||||||||2|0
 озълобляти||V-|1|||||||||99||||||||0|e_sl||avv||||||||||||||||||||||||||||||||||||||||||||2|0
 кафизма||Nb|1|||||||||99||||||||0|e_sl||avv||||||||||||||||||||||||||||||||||||||||||||2|0
 завъпити||V-|1|||||||||99||||||||0|e_sl||avv||||||||||||||||||||||||||||||||||||||||||||2|0
@@ -9421,7 +9421,7 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 сѣньникъ||Nb|1|||||||||99||||||||0|e_sl|||birchbark|||||||||||||||||||||||||||||||||||||||||||4|0
 чихъ||Ne|1|||||||||99||||||||0|e_sl|||birchbark|||||||||||||||||||||||||||||||||||||||||||4|0
 дѣтина||Nb|1|||||||||99||||||||0|e_sl|||birchbark|||||||||||||||||||||||||||||||||||||||||||4|0
-отъѣздити||V-|1|||||||||99||||||||0|e_sl|||birchbark|||||||||||||||||||||||||||||||||||||||||||4|0
+отъѣздити||V-|1|otъjǢzditi||||otъjězditi|||40|1||||||||0|e_sl|||birchbark|||||||||||||||||||||||||||||||||||||||||||4|0
 съмѣрьныи|съмѣрьнъ|A-|1|sъměrьnъ|||||||adj_hard|2||||||||1|e_sl|||birchbark|||||||||||||||||||||||||||||||||||||||||||4|0
 офросения||Ne|1|||||||||99||||||||0|e_sl|||birchbark|||||||||||||||||||||||||||||||||||||||||||4|0
 привитъка||Nb|1|||||||||99||||||||0|e_sl|||birchbark|||||||||||||||||||||||||||||||||||||||||||4|0
@@ -9566,7 +9566,7 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 иставити||V-|1|||||||||99||||||||0|e_sl|||||const|||||||||||||||||||||||||||||||||||||||||16|0
 неисповѣдимыи||A-|1|||||||||99||||||||0|e_sl|||||const|||||||||||||||||||||||||||||||||||||||||16|0
 прѣблагословленыи||A-|1|||||||||99||||||||0|e_sl|||||const|||||||||||||||||||||||||||||||||||||||||16|0
-объездити||V-|1|||||||||99||||||||0|e_sl|||||const|||||||||||||||||||||||||||||||||||||||||16|0
+объездити||V-|1|obъjězditi|||||||40|1||||||||0|e_sl|||||const|||||||||||||||||||||||||||||||||||||||||16|0
 съпротивление||Nb|1|||||||||99||||||||0|e_sl|||||const|||||||||||||||||||||||||||||||||||||||||16|0
 защититель|защититель|Nb|1|zaščititeĺь|zaščititeljь||||||masc_tel|2||||||||1|e_sl|||||const|||||||||||||||||||||||||||||||||||||||||16|0
 опочити||V-|1|||||||||99||||||||0|e_sl|||||const|||||||||||||||||||||||||||||||||||||||||16|0
@@ -9990,7 +9990,7 @@ PS||F-|4|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||shch|||
 подруга||Nb|1|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
 объговаривати||V-|1|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
 насьрдъка||Nb|1|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
-избродити||V-|1|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
+избродити||V-|1|jьzbroditi|||||||40|1||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
 доносити||V-|1|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
 потьчивати||V-|1|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
 остряпати||V-|1|||||||||99||||||||0|e_sl||||||domo||||||||||||||||||||||||||||||||||||||||32|0
@@ -10616,7 +10616,7 @@ FIXME||Df|1|||||||||99||||||||0|e_sl|||||||||gol-gol||||||||||||||||||||||||||||
 беклемишевъ||Ne|1|||||||||99||||||||0|e_sl||||||||||||klem||||||||||||||||||||||||||||||||||2048|0
 тридьневьныи||A-|1|||||||||99||||||||0|e_sl|||||||||||||kur|||||||||||||||||||||||||||||||||4096|0
 o||R-|1|||||||||99||||||||0|e_sl|||||||||||||kur|||||||||||||||||||||||||||||||||4096|0
-извозити||V-|1|||||||||99||||||||0|e_sl|||||||||||||kur|||||||||||||||||||||||||||||||||4096|0
+извозити||V-|1|jьzvoziti|||||||40|1||||||||0|e_sl|||||||||||||kur|||||||||||||||||||||||||||||||||4096|0
 черкасьская||Ne|1|||||||||99||||||||0|e_sl|||||||||||||kur|||||||||||||||||||||||||||||||||4096|0
 трошьды||Df|1|||||||||99||||||||0|e_sl|||||||||||||kur|||||||||||||||||||||||||||||||||4096|0
 отъговорка||Nb|1|||||||||99||||||||0|e_sl|||||||||||||kur|||||||||||||||||||||||||||||||||4096|0
@@ -11230,7 +11230,7 @@ o||R-|1|||||||||99||||||||0|e_sl|||||||||||||kur||||||||||||||||||||||||||||||||
 судомирь||Ne|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 истъкати|истъкати|V-|1|jьstъkati|||||||51|1||||||||1|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 листвьнъ||Ne|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
-посвѣтити||V-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
+посвѣтити||V-|1|posvětiti|||||||40|1||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 братолюбьство||Nb|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 белзъ||Ne|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 ръсь||Nb|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
@@ -11375,7 +11375,7 @@ o||R-|1|||||||||99||||||||0|e_sl|||||||||||||kur||||||||||||||||||||||||||||||||
 чьрнь||Ne|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 осъхнути||V-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 лакътъ||Nb|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
-лѣгати||V-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
+лѣгати|лѣгати|V-|1|lěgati|||||||52|1||||||||1|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 сѣдало||Nb|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 памятити||V-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 съплясати||V-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
@@ -11528,7 +11528,7 @@ o||R-|1|||||||||99||||||||0|e_sl|||||||||||||kur||||||||||||||||||||||||||||||||
 присѣтити||V-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 мьртвьныи||A-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 оправливати||V-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
-поѣздити||V-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
+поѣздити||V-|1|pojǢzditi||||pojězditi|||40|1||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 присудити||V-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 ставъко||Ne|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 скордятичь||Ne|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
@@ -11559,7 +11559,7 @@ o||R-|1|||||||||99||||||||0|e_sl|||||||||||||kur||||||||||||||||||||||||||||||||
 ромьнъ||Ne|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 очитити||V-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 нестишь||Df|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
-переѣздити||V-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
+переѣздити||V-|1|per+jǢzditi||||per+jězditi|||40|1||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 испомьнѣти||V-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 шарукань||A-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 овчинъ||A-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
@@ -11630,7 +11630,7 @@ o||R-|1|||||||||99||||||||0|e_sl|||||||||||||kur||||||||||||||||||||||||||||||||
 ночьлегъ||Nb|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 вълчьскы||Df|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 отъвыти||V-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
-допустити||V-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
+допустити||V-|1|dopustiti|||||||40|1||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 събивати||V-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 санъ||Ne|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 купанъ||Ne|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
@@ -11639,7 +11639,7 @@ o||R-|1|||||||||99||||||||0|e_sl|||||||||||||kur||||||||||||||||||||||||||||||||
 пинянинъ||Nb|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 облежати||V-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 увѣтичи||Ne|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
-припустити||V-|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
+припустити||V-|1|pripustiti|||||||40|1||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 орогость||Ne|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 остромъ||Ne|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
 чьрторыискъ||Ne|1|||||||||99||||||||0|e_sl||||||||||||||lav||||||||||||||||||||||||||||||||8192|0
@@ -11795,7 +11795,7 @@ o||R-|1|||||||||99||||||||0|e_sl|||||||||||||kur||||||||||||||||||||||||||||||||
 изблазнити||V-|1|||||||||99||||||||0|e_sl|||||||||||||||||||||nov-marg|||||||||||||||||||||||||1048576|0
 приязнь||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
 мало||A-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
-перевозити||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
+перевозити||V-|1|pervoziti|||||||40|1||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
 лодь||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
 снъвьскъ||Ne|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
 къземль||Ne|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
@@ -12094,7 +12094,7 @@ o||R-|1|||||||||99||||||||0|e_sl|||||||||||||kur||||||||||||||||||||||||||||||||
 некуришиниць||Ne|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
 провадити||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
 пирение||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
-изнарядити||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
+изнарядити||V-|1|jьznaręditi|||||||40|1||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
 пълъстьница||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
 зъломысльныи||A-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
 моисеичь||Ne|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
@@ -12236,7 +12236,7 @@ o||R-|1|||||||||99||||||||0|e_sl|||||||||||||kur||||||||||||||||||||||||||||||||
 болъдыжевичь||Ne|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
 рычагъ||Ne|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
 ратиборовъ||A-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
-въвозити||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
+въвозити||V-|1|vъvoziti|||||||40|1||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
 жилотугъ||Ne|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
 коневьникъ||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
 творимиръ||Ne|1|||||||||99||||||||0|e_sl||||||||||||||||||||||nov-sin||||||||||||||||||||||||2097152|0
@@ -12931,7 +12931,7 @@ piter||F-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||||||
 жасити||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 страшити||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 тьмьнѣ||Df|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
-провожати||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
+провожати||V-|1|provoђǢti|provodjǢti||||||54|1||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 недоумѣвати||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 лѣчьба||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 чадолюбица||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
@@ -13107,7 +13107,7 @@ piter||F-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||||||
 якута||Ne|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 посъльникъ||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 раздробляти||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
-разносити||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
+разносити||V-|1|orznositi|||||||40|1||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 осѣняти|осѣнꙗти|V-|1|osěńǢti|osěnjǢti||||||54|1|||shade, cover with shade|||||1|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 пьние||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 удуже||Dq|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
@@ -13171,7 +13171,7 @@ piter||F-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||||||
 прѣтваряти|прѣтварꙗти|V-|1|pertvaŕǢti|pertvarjǢti||||||54|1||||||||1|ch_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 дръвьце||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 разганяти||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
-числити||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
+числити||V-|1|čisliti|||||||40|1||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 явьствовати||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 архимандрития||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 страньничествовати||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
@@ -13181,9 +13181,9 @@ piter||F-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||||||
 распространяти||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 патерикъ||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 трудодѣльникъ||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
-квасити||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
+квасити||V-|1|kvasiti|||||||40|1||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 въкланяти||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
-уцвѣтити||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
+уцвѣтити||V-|1|ukvětiti|||ucvětiti||||40|1||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 извыкняти||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 манатия||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
 подълагати|подълагати|V-|1|podъlagati|||||||54|1||||||||1|e_sl||||||||||||||||||||||||||||||||||sergrad||||||||||||8589934592|0
@@ -13539,7 +13539,7 @@ piter||F-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||||||
 разумичьныи||A-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
 съвъпросьникъ||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
 събесѣдьникъ||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
-съвъдворяти||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
+съвъдворяти||V-|1|sъvъdvoŕǢti|sъvъdvorjǢti||||||54|1||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
 утрьновати||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
 скоропытьнѣ||Df|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
 гоньзати||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
@@ -13698,7 +13698,7 @@ piter||F-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||||||
 поболѣти||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
 сълежати|сълежати|V-|1|sъležǢti|||||||31|1||||||||1|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
 прѣдъсѣдѣти||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
-навѣщати||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
+навѣщати||V-|1|navěšћǢti|navěstjǢti||||||54|1||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
 уподиякъ||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
 расходъ||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
 кумирослужение||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
@@ -13709,7 +13709,7 @@ piter||F-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||peter|||||||||||||
 зъловѣрьникъ||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
 еликоже|ѥликоже|Dq|1|jelikože||||||||0||||||||1|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
 расправити||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
-розрядити||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
+розрядити||V-|1|orzręditi|||||||40|1||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
 кадильница||Nb|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
 отъходьныи||A-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
 промълвити||V-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan||||||||137438953472|0
@@ -14351,7 +14351,7 @@ FIXME||A-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan
 проразумьникъ||Nb|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
 съньныи||A-|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
 тягость||Nb|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
-дручити||V-|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
+дручити||V-|1|drǫčiti|||||||40|1||||Derksen p.121 reconstructs noun *drǫkъ ‘bar, pole’||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
 благонравьство||Nb|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
 бъдрость|бъдрость|Nb|1|bъdrostь|||||||fem_i|2||||||||1|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
 вызывати||V-|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
@@ -14398,14 +14398,14 @@ FIXME||A-|1|||||||||99||||||||0|e_sl||||||||||||||||||||||||||||||||||||||stefan
 починути||V-|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
 доправити||V-|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
 охопити||V-|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
-обрядити||V-|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
+обрядити||V-|1|obręditi|||||||40|1||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
 ексархъ||Nb|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
 пещьница|пещьница|Nb|1|peћьnika|pektьnika||peћьnica||||fem_a_PV3|2||||||||1|ch_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
-мѣшати||V-|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
+мѣшати||V-|1|měšǢti|||||||54|1||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
 варение||Nb|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
 служьбьникъ||Nb|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
 власяныи||A-|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
-възволочати||V-|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
+възволочати||V-|1|vъzvolčǢti|||||||54|1||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
 умудити||V-|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
 посъпание||Nb|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0
 покоривыи||A-|1|||||||||99||||||||0|e_sl|||||||||||||||||||||||||||||||||||||||||usp-sbor|||||1099511627776|0

@@ -41,6 +41,7 @@ orv_lemma|chu_lemma|pos|lcs_lemma|conj_type
 отьчина|отьчина|Nb|otьčina|fem_a
 къняжение|кънѧжениѥ|Nb|kъnęženьje|nt_jo
 отъходити|отъходити|V-|otъxoditi|40
+уставити|оуставити|V-|ustaviti|40
 вельможа|вельможа|Nb|velьmožǢ|fem_ja
 крьстьныи|крьстьнъ|A-|krьstьnъ|adj_hard
 прозъвати|прозъвати|V-|prozъvati|51_abl
@@ -51,11 +52,14 @@ orv_lemma|chu_lemma|pos|lcs_lemma|conj_type
 позъвати|позъвати|V-|pozъvati|51_abl
 мольба|мольба|Nb|modlьba|fem_a
 нужьныи|нѫждьнъ|A-|nǫђьnъ|adj_hard
+благодарити|благодарити|V-|bolgodariti|40
 манастырьскыи|манастꙑрьскъ|A-|manastyŕьskъ|adj_hard
 ангельскыи|ангельскъ|A-|anǵelьskъ|adj_hard
 къзнь|къзнь|Nb|kъznь|fem_i
+правити|правити|V-|praviti|40
 данилъ|даниилъ|Ne|daniilъ|masc_o
 цѣсарьскыи|цѣсарьскъ|A-|kěsaŕьskъ|adj_hard
+проводити|проводити|V-|provoditi|40
 мощьныи|мощьнъ|A-|moћьnъ|adj_hard
 въскрьсение|въскрьсениѥ|Nb|vъskrьsenьje|nt_jo
 жидовьскыи|жидовьскъ|A-|židovьskъ|adj_hard
@@ -109,6 +113,7 @@ orv_lemma|chu_lemma|pos|lcs_lemma|conj_type
 чьстьно|чьстьно|Df|čьstьnо|
 чудотворьць|чоудотворьць|Nb|čudotvorьkь|masc_o_PV3
 воиньство|воиньство|Nb|vojinьstvo|nt_o
+грабити|грабити|V-|grabiti|40
 нѣмьчьскыи|нѣмьчьскъ|A-|němьčьskъ|adj_hard
 въторьникъ|въторьникъ|Nb|vъtorьnikъ|masc_o
 апостольскыи|апостольскъ|A-|apostolьskъ|adj_hard
@@ -117,6 +122,7 @@ orv_lemma|chu_lemma|pos|lcs_lemma|conj_type
 бъдѣние|бъдѣниѥ|Nb|bъděnьje|nt_jo
 творьць|творьць|Nb|tvorьkь|masc_o_PV3
 правовѣрьныи|правовѣрьнъ|A-|pravověrьnъ|adj_hard
+тѣшити|тѣшити|V-|těšiti|40
 въскочити|въскочити|V-|vъskočiti|40
 отъгънати|отъгънати|V-|otъgъnati|51_abl
 дружьба|дроужьба|Nb|družьba|fem_a
@@ -131,6 +137,7 @@ orv_lemma|chu_lemma|pos|lcs_lemma|conj_type
 сълньчьныи|слъньчьнъ|A-|sl̥nьčьnъ|adj_hard
 благовоньныи|благовоньнъ|A-|bolgovońьnъ|adj_hard
 събьрание|събьраниѥ|Nb|sъbьranьje|nt_jo
+прогонити|прогонити|V-|progoniti|40
 показание|показаниѥ|Nb|pokazanьje|nt_jo
 възоръ|възоръ|Nb|vъzorъ|masc_o
 добытъкъ|добꙑтъкъ|Nb|dobytъkъ|masc_o
@@ -147,14 +154,17 @@ orv_lemma|chu_lemma|pos|lcs_lemma|conj_type
 сълучити|сълоучити|V-|sъlučiti|40
 бесконьчьныи|бесконьчьнъ|A-|beskonьčьnъ|adj_hard
 съвъкупляти|съвъкоуплꙗти|V-|sъvъkupĺǢti|54
+излазити|излазити|V-|jьzlaziti|40
 прѣображение|прѣображениѥ|Nb|per+obraženьje|nt_jo
 пролитие|пролитиѥ|Nb|prolitьje|nt_jo
+жалити|жалити|V-|žǢliti|40
 грьмѣти|грьмѣти|V-|grьměti|31
 отъсълати|отъсълати|V-|otъsъlati|52
 съпасовъ|съпасовъ|A-|sъpasovъ|adj_hard
 протълковати|протлъковати|V-|protl̥kovati|61
 воеводьство|воѥводьство|Nb|vojevodьstvo|nt_o
 съпустити|съпоустити|V-|sъpustiti|40
+находити|находити|V-|naxoditi|40
 искусьныи|искоусьнъ|A-|jьskusьnъ|adj_hard
 жительство|жительство|Nb|žiteĺьstvo|nt_o
 угодие|оугодиѥ|Nb|ugodьje|nt_jo
@@ -186,6 +196,7 @@ orv_lemma|chu_lemma|pos|lcs_lemma|conj_type
 тънъкыи|тьнъкъ|A-|tьnъkъ|adj_hard
 подвижьникъ|подвижьникъ|Nb|podvižьnikъ|masc_o
 прѣкрасьныи|прѣкрасьнъ|A-|perkrasьnъ|adj_hard
+распустити|распоустити|V-|orspustiti|40
 клеветьникъ|клеветьникъ|Nb|klevetьnikъ|masc_o
 мудрьць|мѫдрьць|Nb|mǫdrьkь|masc_o_PV3
 въступати|въстѫпати|V-|vъstǫpati|54
@@ -210,6 +221,7 @@ orv_lemma|chu_lemma|pos|lcs_lemma|conj_type
 старѣишиньство|старѣишиньство|Nb|starějьšinьstvo|nt_o
 съчинити|съчинити|V-|sъčiniti|40
 пьрьць|пьрьць|Nb|pьrьkь|masc_o_PV3
+славословити|славословити|V-|slavosloviti|40
 съвъкупление|съвъкоуплѥниѥ|Nb|sъvъkupĺenьje|nt_jo
 изрядьныи|издрѧдьнъ|A-|jьzrędьnъ|adj_hard
 възбѣсити|възбѣсити|V-|vъzběsiti|40
@@ -221,6 +233,7 @@ orv_lemma|chu_lemma|pos|lcs_lemma|conj_type
 отълучати|отълѫчати|V-|otъlǫčǢti|54
 латыньскыи|латиньскъ|A-|latinьskъ|adj_hard
 боголюбьць|боголюбьць|Nb|bogoĺubьkь|masc_o_PV3
+печалити|печалити|V-|pečǢliti|40
 сукъно|соукъно|Nb|sukъno|nt_o
 умилосьрдити|оумилосрьдити|V-|umilosŕ̥diti|40
 напълняти|напльнꙗти|V-|napĺ̥ńǢti|54
@@ -242,6 +255,7 @@ orv_lemma|chu_lemma|pos|lcs_lemma|conj_type
 възвысити|възвꙑсити|V-|vъzvysiti|40
 съблюдение|съблюдениѥ|Nb|sъbĺudenьje|nt_jo
 тъчьныи|тъчьнъ|A-|tъčьnъ|adj_hard
+острити|острити|V-|ostriti|40
 переставити|прѣставити|V-|perstaviti|40
 бесцѣньныи|бецѣньнъ|A-|beskěnьnъ|adj_hard
 вихъръ|вихъръ|Nb|vixъrъ|masc_o
@@ -250,13 +264,18 @@ orv_lemma|chu_lemma|pos|lcs_lemma|conj_type
 подвижьныи|подвижьнъ|A-|podvižьnъ|adj_hard
 въгодьникъ|въгодьникъ|Nb|vъgodьnikъ|masc_o
 тържьство|тръжьство|Nb|tr̥žьstvo|nt_o
+мѣсити|мѣсити|V-|měsiti|40
 городьскыи|градьскъ|A-|gordьskъ|adj_hard
+влачити|влачити|V-|volčiti|40
 нашьствие|нашьствиѥ|Nb|našьstvьje|nt_jo
 страстьныи|страстьнъ|A-|strastьnъ|adj_hard
 вѣрьно|вѣрьно|Df|věrьno|
 послушьство|послоушьство|Nb|poslušьstvo|nt_o
+съподобляти|съподоблꙗти|V-|sъpodobĺǢti|54
 шьствие|шьствиѥ|Nb|šьstvьje|nt_jo
 гонение|гонѥниѥ|Nb|gońenьje|nt_jo
+покушати|покоушати|V-|pokušǢti|54
+уставляти|оуставлꙗти|V-|ustavĺǢti|54
 ротьныи|ратьнъ|A-|ortьnъ|adj_hard
 перекрьстити|прѣкрьстити|V-|perkrьstiti|40
 болярьскыи|болꙗрьскъ|A-|boĺǢrьskъ|adj_hard
