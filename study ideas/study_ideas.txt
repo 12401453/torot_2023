@@ -46,3 +46,7 @@ Is the *-tъ extension in some aorist 2nd and 3rd singular forms ACTUALLY the sa
 
 
 12. Trying to solve the problem of how *ś fits into the morphology of OCS, so we can know what сѣ spellings actually hide - is it *śǢ in a word like сѣмо (Czech has kam vs sem, prehlaska or original jat'), вьсѣкъ, and also to help us explain the front-desinences on the pronoun сь (how could this ever be ś, since we have no PV2 or PV3 environment here?)
+
+13. Article that tries to prove the theory that phonemic secondary palatalisation in (most areas of?) Ukrainian was caused by loss of a mora in the following front-vowel (explains softness after *ę, initially after *i, after WEAK *ь, and *ě, but not *e or strong *ь )
+
+14. Spellings like Supr. ꙁемь҆ѧ where we have jer-letters seemingly used to signify /j/ in place of expective epenthetic /ĺ/ - how does this fit into the story of secondary palatalisation? Is there any relationship between the tendency for this to happen and secondary palatalisation to develop?
