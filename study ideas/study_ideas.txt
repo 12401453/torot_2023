@@ -50,3 +50,5 @@ Is the *-tъ extension in some aorist 2nd and 3rd singular forms ACTUALLY the sa
 13. Article that tries to prove the theory that phonemic secondary palatalisation in (most areas of?) Ukrainian was caused by loss of a mora in the following front-vowel (explains softness after *ę, initially after *i, after WEAK *ь, and *ě, but not *e or strong *ь )
 
 14. Spellings like Supr. ꙁемь҆ѧ where we have jer-letters seemingly used to signify /j/ in place of expective epenthetic /ĺ/ - how does this fit into the story of secondary palatalisation? Is there any relationship between the tendency for this to happen and secondary palatalisation to develop?
+
+15. Does the fact that you very frequently get -ии҅мь instr. sg. endings in Supr. for *ьjEmь point to a North Slavic-style -ьmь reflex? We do get о҅тьць҆мь҆ цѣсарь҆мъ о҅гн҄ьмъ вь҆пл҄ьмъ spellings as well (maybe just jer/e confusion?) Also at least one дѣлъмъ spelling which can't be /o/ since strong *ъ in Supr. is /ъ/
