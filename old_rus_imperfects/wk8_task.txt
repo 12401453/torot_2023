@@ -1,0 +1,5 @@
+Get full sentence context and text of the class 4 imperfects already identified
+
+See if theres an easy way to identify potential class 4 imperfects which are lemmatised as class 54 currently
+
+Look at non-TOROT parts of Uspenskij Sbornik to see what the imperfects are like / Ostromir's Gospel
