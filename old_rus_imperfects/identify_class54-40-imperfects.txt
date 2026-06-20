@@ -1,0 +1,1 @@
+select * from lemmas where lemma_ocs LIKE '%чати' OR lemma_ocs LIKE '%жати' OR lemma_ocs LIKE '%шати' OR lemma_ocs LIKE '%щати' OR lemma_ocs LIKE '%ждати' OR lemma_ocs LIKE '%няти' OR lemma_ocs LIKE '%ряти' OR lemma_ocs LIKE '%ляти';
