@@ -1,6 +1,5 @@
-Get full sentence context and text of the class 4 imperfects already identified
+1.) Get full sentence context and text of the class 4 imperfects already identified
 
-See if theres an easy way to identify potential class 4 imperfects which are lemmatised as class 54 currently
-    - lemma ends on <ча жа ща жда ня ля ря ша> etc. and the bit before the яти/ати exists in another lemma that ends on <dejotatedconsonant>ити
+2.) See if theres an easy way to identify potential class 4 imperfects which are lemmatised as class 54 currently
 
-Look at non-TOROT parts of Uspenskij Sbornik to see what the imperfects are like / Ostromir's Gospel
+3.) Look at non-TOROT parts of Uspenskij Sbornik to see what the imperfects are like / Ostromir's Gospel

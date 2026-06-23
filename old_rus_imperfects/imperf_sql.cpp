@@ -3,7 +3,9 @@
 #include <string>
 #include <vector>
 #include <unordered_set>
+#include <unordered_map>
 #include <sstream>
+#include <fstream>
 
 //g++ -std=c++20 imperf_sql.cpp -lsqlite3 -o imperf_sql
 
@@ -12,6 +14,42 @@ struct LemmaInfo {
     std::string lemma_ocs;
     std::string lemma_ocs_no_hashtag;
 };
+
+struct SentenceInfo {
+    int sentence_no;
+    int lemma_id;
+    std::string lemma_ocs;
+    std::string sentence_txt;
+    sqlite3_int64 imperfect_form_tokno;
+    std::string imperfect_form_ocs;
+    std::string text_title;
+    std::string subtitle;
+};
+
+std::pair<std::string, std::string> getTextTitleAndSubtitle(sqlite3* db_connection, sqlite3_int64 tokno) {
+    const char* sql_txt = "SELECT subtitle_text, text_id FROM subtitles WHERE tokno_start <= ? AND tokno_end >= ?";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db_connection, sql_txt, -1, &stmt, nullptr);
+    sqlite3_bind_int64(stmt, 1, tokno);
+    sqlite3_bind_int64(stmt, 2, tokno);
+    sqlite3_step(stmt);
+
+    std::string subtitle = (const char*)sqlite3_column_text(stmt, 0);
+    int text_id = sqlite3_column_int(stmt, 1);
+    sqlite3_finalize(stmt);
+
+    sql_txt = "SELECT text_title FROM texts WHERE text_id = ?";
+    sqlite3_prepare_v2(db_connection, sql_txt, -1, &stmt, nullptr);
+    sqlite3_bind_int(stmt, 1, text_id);
+    sqlite3_step(stmt);
+
+    std::string text_title = (const char*)sqlite3_column_text(stmt, 0);
+
+    sqlite3_finalize(stmt);
+
+    return {text_title, subtitle};
+
+}
 
 std::string replaceEnd(std::string source, const std::string yeeted, const std::string replacement) {
     
@@ -121,22 +159,28 @@ std::pair<std::string, std::string> class4ifyAtiVerb(const std::string& ati_verb
     else return std::pair{"", ""};
 }
 
-void getFullSentencesFromSentenceNos(sqlite3* db_connection, const std::vector<int>&result_sentence_nos, std::vector<std::string>& tokno_sentences){
+void getFullSentencesFromSentenceNos(sqlite3* db_connection, std::vector<SentenceInfo>& imperfect_sentences_vec){
 
-    const char* sql_sentence_txt = "SELECT tokno, chu_word_torot, presentation_before, presentation_after FROM corpus WHERE sentence_no = ?";
+    const char* sql_sentence_txt = "SELECT tokno, chu_word_torot, presentation_before, presentation_after, lemma_id FROM corpus WHERE sentence_no = ?";
     sqlite3_stmt *sql_sentence_stmt;
     sqlite3_prepare_v2(db_connection, sql_sentence_txt, -1, &sql_sentence_stmt, NULL);
 
     std::ostringstream sentence_oss;
 
-    for(const int& sentence_no : result_sentence_nos) {
-        sqlite3_bind_int(sql_sentence_stmt, 1, sentence_no);
+    for(SentenceInfo& sentence_struct : imperfect_sentences_vec) {
+        sqlite3_bind_int(sql_sentence_stmt, 1, sentence_struct.sentence_no);
         sentence_oss.str(""); //sets underlying string to empty
         while(sqlite3_step(sql_sentence_stmt) == SQLITE_ROW) {
-            sentence_oss << (const char*)sqlite3_column_text(sql_sentence_stmt, 2) << (const char*)sqlite3_column_text(sql_sentence_stmt, 1) << (const char*)sqlite3_column_text(sql_sentence_stmt, 3);
+            int tokno = sqlite3_column_int64(sql_sentence_stmt, 0);
+            std::string chu_word_torot = (const char*)sqlite3_column_text(sql_sentence_stmt, 1);
+            sentence_oss << (const char*)sqlite3_column_text(sql_sentence_stmt, 2) << chu_word_torot << (const char*)sqlite3_column_text(sql_sentence_stmt, 3);
+            
+            if(tokno == sentence_struct.imperfect_form_tokno) {
+                sentence_struct.imperfect_form_ocs = chu_word_torot;
+            }
         }
         
-        tokno_sentences.emplace_back(sentence_oss.str());
+        sentence_struct.sentence_txt = sentence_oss.str();
 
         sqlite3_reset(sql_sentence_stmt);
         sqlite3_clear_bindings(sql_sentence_stmt);
@@ -147,7 +191,7 @@ void getFullSentencesFromSentenceNos(sqlite3* db_connection, const std::vector<i
 
 int main() {
     sqlite3* DB;
-    const char* db_path = "/mnt/Windows/Users/Joe/Programs/ocs_server/orv.db";
+    const char* db_path = "/home/joe/Programs/ocs_server/orv.db";
     
     if(!sqlite3_open(db_path, &DB)) {
 
@@ -175,8 +219,11 @@ int main() {
         }
         sqlite3_finalize(sql_lemmas_stmt);
 
-        std::unordered_set<int> potential_class4_lemma_ids_vec;
-        potential_class4_lemma_ids_vec.reserve(256);
+        
+        std::ostringstream potential_class4_lemmas_csv_oss;
+        potential_class4_lemmas_csv_oss << "class_54_lemma_id|class_54_lemma|potential_class4_equivalent_lemma_first|potential_class4_equivalent_lemma_second\n";
+        std::unordered_map<int, std::string> potential_class4_lemma_ids_map;
+        potential_class4_lemma_ids_map.reserve(512);
         for(const auto& lemma_struct : lemma_verbs_vec) {
              
             std::pair<std::string, std::string> class4ified_verb_pair = class4ifyAtiVerb(lemma_struct.lemma_ocs_no_hashtag);
@@ -185,45 +232,77 @@ int main() {
                 bool first_class4ified_verb_exists = lemma_strings_set.contains(class4ified_verb_pair.first);
                 bool second_class4ified_verb_exists = lemma_strings_set.contains(class4ified_verb_pair.second);
                 if(first_class4ified_verb_exists || second_class4ified_verb_exists) {
-                    potential_class4_lemma_ids_vec.insert(lemma_struct.lemma_id);
+                    potential_class4_lemma_ids_map.emplace(lemma_struct.lemma_id, lemma_struct.lemma_ocs);
 
-                    std::cout << lemma_struct.lemma_id << "|" << lemma_struct.lemma_ocs_no_hashtag << "|";
+                    potential_class4_lemmas_csv_oss << lemma_struct.lemma_id << "|" << lemma_struct.lemma_ocs_no_hashtag << "|";
                     if(first_class4ified_verb_exists) {
-                    std::cout << class4ified_verb_pair.first;
+                        potential_class4_lemmas_csv_oss << class4ified_verb_pair.first;
                     }
-                    std::cout << "|";
+                    potential_class4_lemmas_csv_oss << "|";
                     if(second_class4ified_verb_exists) {
-                        std::cout << class4ified_verb_pair.second;
+                        potential_class4_lemmas_csv_oss << class4ified_verb_pair.second;
                     }
-                    std::cout << "\n";
+                    potential_class4_lemmas_csv_oss << "\n";
                 }
             }
         }
 
-        const char* sql_extra_imperfect_attestations_txt = "SELECT tokno, sentence_no, lemma_id FROM corpus WHERE morph_tag LIKE '__i_______'";
-        sqlite3_stmt* stmt;
-        sqlite3_prepare_v2(DB, sql_extra_imperfect_attestations_txt, -1, &stmt, nullptr);
+        std::cout << potential_class4_lemma_ids_map.size() << "\n";
+        
+        std::ofstream potential_class4_lemmas_file("potential_class4_class54_lemmas.csv");
+        if(potential_class4_lemmas_file.good()) {
+            potential_class4_lemmas_file << potential_class4_lemmas_csv_oss.str();
+        }
+        potential_class4_lemmas_file.close();
 
-        std::vector<int> imperfect_sentence_nos_vec;
-        imperfect_sentence_nos_vec.reserve(256);
+
+        sqlite3_stmt* stmt;
+        //25 is the inflexion_class_id for inflexion_class '40'
+        const char* sql_non_palatal_class4_lemmas_txt = "SELECT lemma_id, lemma_ocs FROM lemmas WHERE inflexion_class_id = 25 AND lemma_lcs NOT LIKE '%čiti' AND lemma_lcs NOT LIKE '%žiti' AND lemma_lcs NOT LIKE '%šiti' AND lemma_lcs NOT LIKE '%ћiti' AND lemma_lcs NOT LIKE '%ђiti' AND lemma_lcs NOT LIKE '%ŕiti' AND lemma_lcs NOT LIKE '%ĺiti' AND lemma_lcs NOT LIKE '%ńiti' AND lemma_lcs NOT LIKE '%jiti'";
+        sqlite3_prepare_v2(DB, sql_non_palatal_class4_lemmas_txt, -1, &stmt, nullptr);
+        while(sqlite3_step(stmt) == SQLITE_ROW) {
+            int lemma_id = sqlite3_column_int(stmt, 0);
+            std::string lemma_ocs = (const char*)sqlite3_column_text(stmt, 1);
+            potential_class4_lemma_ids_map.emplace(lemma_id, lemma_ocs);
+        }
+        sqlite3_finalize(stmt);
+
+        std::cout << potential_class4_lemma_ids_map.size() << "\n";
+
+        const char* sql_extra_imperfect_attestations_txt = "SELECT tokno, sentence_no, lemma_id FROM corpus WHERE morph_tag LIKE '__i_______'";
+        sqlite3_prepare_v2(DB, sql_extra_imperfect_attestations_txt, -1, &stmt, nullptr);
+        std::vector<SentenceInfo> imperfect_sentences_vec;
+        imperfect_sentences_vec.reserve(1024);
         while(sqlite3_step(stmt) == SQLITE_ROW) {
             sqlite3_int64 tokno = sqlite3_column_int64(stmt, 0);
             int sentence_no = sqlite3_column_int(stmt, 1);
             int lemma_id = sqlite3_column_int(stmt, 2);
 
-            if(potential_class4_lemma_ids_vec.contains(lemma_id)) {
-                imperfect_sentence_nos_vec.push_back(sentence_no);
+            if(potential_class4_lemma_ids_map.contains(lemma_id)) {
+                auto title_subtitle_pair = getTextTitleAndSubtitle(DB, tokno);
+                std::string text_title = title_subtitle_pair.first;
+                std::string subtitle = title_subtitle_pair.second;
+                imperfect_sentences_vec.emplace_back(SentenceInfo{sentence_no, lemma_id, potential_class4_lemma_ids_map.at(lemma_id), "", tokno, "", text_title, subtitle});
             }
         }
         sqlite3_finalize(stmt);
 
-        std::vector<std::string> imperfect_sentences_vec;
-        imperfect_sentences_vec.reserve(256);
-        getFullSentencesFromSentenceNos(DB, imperfect_sentence_nos_vec, imperfect_sentences_vec);
+        getFullSentencesFromSentenceNos(DB, imperfect_sentences_vec);
 
-        for(const auto& sentence : imperfect_sentences_vec) {
-            std::cout << sentence << "\n";
+        std::cout << imperfect_sentences_vec.size() << "\n";
+
+        std::ostringstream imperfect_sentences_csv_oss;
+        imperfect_sentences_csv_oss << "tokno|orv_word_torot|lemma_id|lemma_orv|text_title|subtitle|sentence_no|sentence_txt\n";
+        for(const SentenceInfo sentence_struct: imperfect_sentences_vec) {
+            imperfect_sentences_csv_oss << sentence_struct.imperfect_form_tokno << "|" << sentence_struct.imperfect_form_ocs << "|" << sentence_struct.lemma_id << "|" << sentence_struct.lemma_ocs << "|" << sentence_struct.text_title << "|" << sentence_struct.subtitle << "|" << sentence_struct.sentence_no << "|" << sentence_struct.sentence_txt << "\n";
         }
+        std::ofstream imperfect_sentences_csv_file("imperfect_sentences.csv");
+        imperfect_sentences_csv_file << imperfect_sentences_csv_oss.str();
+        imperfect_sentences_csv_file.close();
+
+
+        imperfect_sentences_vec.clear();
+        
 
         sqlite3_close(DB);
     }
