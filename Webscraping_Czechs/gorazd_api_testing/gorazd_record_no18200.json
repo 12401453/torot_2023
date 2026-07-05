@@ -1,0 +1,86 @@
+{
+  "response": {
+    "result": {
+      "Dictionary": 2,
+      "GramKatZah": [
+        "01_Subst",
+        "11_FemSubst"
+      ],
+      "GramKat": [
+        "01_Subst",
+        "11_FemSubst"
+      ],
+      "GramEnd": [
+        "иѩ"
+      ],
+      "Frekv": [
+        "5"
+      ],
+      "RuTrl": [
+        "Александрия"
+      ],
+      "Identifier": "18200",
+      "IdentifierAll": [
+        "18200",
+        "SNSP 1.5 - 1.htm-alto|0109"
+      ],
+      "Header": "алеѯандриꙗ",
+      "HeaderAll": [
+        "алеѯандриꙗ"
+      ],
+      "Header_KL": "алеѯандриꙗ",
+      "Header_CU_KCL": "алеѯандриꙗ",
+      "Header_KB": "алеѯандриꙗ",
+      "Header_CU_KC": "алеѯандриꙗ",
+      "ElEquiv": [
+        "Ἀλεξάνδρεια"
+      ],
+      "GramKatSpecZah": [
+        "01_PropSubst"
+      ],
+      "GramKatSpec": [
+        "01_PropSubst"
+      ],
+      "RecType": [
+        "hlavni"
+      ],
+      "TitleD": "<div class=\"snsp\" style=\"float: left; padding: 10px; width: 100%; text-align: justify;\" heslo=\"hlavni\" id=\"18200\"><span aip-type=\"zahlavi\" aip-subtype=\"hlavicka\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"32\" aip-style=\"bold\">алеѯандриꙗ,</span><span aip-type=\"gramaticke_zarazeni\" aip-subtype=\"hlavicka\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">-иѩ</span><span aip-type=\"slovni_druh\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">f.,</span><span aip-type=\"slovni_druh\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">nom.</span><span aip-type=\"slovni_druh\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">propr.</span></div>",
+      "EnTrl": [
+        "Alexandria"
+      ],
+      "CsTrl": [
+        "Alexandrie"
+      ],
+      "CsTrl_TL": [
+        "Alexandrie"
+      ],
+      "CsTrl_CS_TCL": [
+        "Alexandrie"
+      ],
+      "CsTrl_CS_TCLA": [
+        "Alexandrie"
+      ],
+      "CsTrl_TB": [
+        "Alexandrie"
+      ],
+      "CsTrl_CS_TC": [
+        "Alexandrie"
+      ],
+      "SourceD": "<div class=\"snsp\" style=\"float: left; padding: 10px; width: 100%; text-align: justify;\" heslo=\"hlavni\" id=\"18200\"><p class=\"hlavicka\" style=\"margin-top: 0; margin-bottom: 0;\"><span aip-type=\"zahlavi\" aip-subtype=\"hlavicka\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"32\" aip-style=\"bold\">алеѯандриꙗ,</span><span aip-type=\"gramaticke_zarazeni\" aip-subtype=\"hlavicka\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">-иѩ</span><span aip-type=\"slovni_druh\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">f.,</span><span aip-type=\"slovni_druh\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">nom.</span><span aip-type=\"slovni_druh\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">propr.</span><span aip-type=\"frekvence\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">(5)</span><span aip-type=\"text_hesla\" aip-subtype=\"hlavicka\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\" aip-zavorka=\"yes\">[алеѯанⸯдр-</span><span aip-type=\"text_hesla\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\" aip-zavorka=\"yes\">Supr</span><span aip-type=\"text_hesla\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\" aip-zavorka=\"yes\">(1),</span><span aip-type=\"text_hesla\" aip-subtype=\"hlavicka\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\" aip-zavorka=\"yes\">александр-</span><span aip-type=\"text_hesla\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\" aip-zavorka=\"yes\">As</span><span aip-type=\"text_hesla\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\" aip-zavorka=\"yes\">(1)</span><span aip-type=\"text_hesla\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\" aip-zavorka=\"yes\">En</span><span aip-type=\"text_hesla\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\" aip-zavorka=\"yes\">(1)]</span></p><p class=\"odstavec\" style=\"margin-top: 0; margin-bottom: 0; clear: both; text-indent: 0.4cm;\"><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"FreeSerif\" aip-size=\"16\" aip-style=\"normal\">město</span><span aip-type=\"rectina\" aip-subtype=\"stare_jazyky\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">Ἀλεξάνδρεια</span><span aip-type=\"text_hesla\" aip-subtype=\"stare_jazyky\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">|</span><span aip-type=\"rustina\" aip-subtype=\"moderni_jazyky\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"italics\">Александрия</span><span aip-type=\"text_hesla\" aip-subtype=\"moderni_jazyky\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">|</span><span aip-type=\"anglictina\" aip-subtype=\"moderni_jazyky\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"italics\">Alexandria</span><span aip-type=\"text_hesla\" aip-subtype=\"moderni_jazyky\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">|</span><span aip-type=\"cestina\" aip-subtype=\"moderni_jazyky\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"italics\">Alexandrie:</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">с‹вѧ›тоую</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">о‹ть›цю</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">наш‹е›ю</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">аѳан‹а›сиѣ</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">и</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">курила</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">арх‹ие›п‹искоу›па</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">александриѩ</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">As</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">141а20.</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">—</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">En</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">29b7;</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">Supr</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">188:2;</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">188:22;</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">201:10</span></p></div>",
+      "WordClass": [
+        "f.",
+        "nom.",
+        "propr."
+      ]
+    },
+    "request": "show_record_id",
+    "found": 1,
+    "record": 0,
+    "listPages": 0,
+    "JSESSIONID": "4544F9DD27BBB3D4E33C5C7C77B8756B",
+    "page": 0,
+    "rows": 20,
+    "error": 0,
+    "coreName": "gorazd"
+  }
+}

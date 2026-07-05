@@ -1,0 +1,109 @@
+{
+  "response": {
+    "result": {
+      "DeTrl": [
+        "аbwаsсhen"
+      ],
+      "Dictionary": 1,
+      "CardImageD": [
+        "Kartoteka/SS2-05E/SS2-05E002467a.jpg"
+      ],
+      "GramKatZah": [
+        "32_Verb",
+        "36_VerbConj3"
+      ],
+      "GramKat": [
+        "32_Verb",
+        "36_VerbConj3"
+      ],
+      "LaTrl": [
+        "аbluere"
+      ],
+      "GramEnd": [
+        "мꙑваѭ",
+        "мꙑваѥши"
+      ],
+      "RuTrl": [
+        "смывать"
+      ],
+      "Ref": [
+        "омꙑвати",
+        "мꙑти",
+        "оумꙑвати",
+        "измꙑти",
+        "омꙑти",
+        "отъмꙑти"
+      ],
+      "Identifier": "18084",
+      "IdentifierAll": [
+        "18084",
+        "SINE_DIL_2__2JA6I81EX0604P|03|(2017-05-11T21:58:27)21"
+      ],
+      "Header": "отъмꙑвати",
+      "HeaderAll": [
+        "отъмꙑвати"
+      ],
+      "Header_KL": "отъмꙑвати",
+      "Header_CU_KCL": "отъмꙑвати",
+      "Header_KB": "отъмꙑвати",
+      "Header_CU_KC": "отъмꙑвати",
+      "Mem": [
+        "Euch"
+      ],
+      "TermD": [
+        "UC/SUAVCRSINE_DIL_2__2JA6I81/N1/SINE_DIL_2__2JA6I81N10604P.JPG"
+      ],
+      "GramKatSpecZah": [
+        "06_VerbImperf"
+      ],
+      "GramKatSpec": [
+        "06_VerbImperf"
+      ],
+      "MemReg": [
+        "001_MemCan",
+        "031_Euch"
+      ],
+      "RecType": [
+        "hlavni",
+        "Z_Exh"
+      ],
+      "TitleD": "<div class=\"sjs\" style=\"float: left; padding: 10px; width: 100%; text-align: justify;\" heslo=\"hlavni\" id=\"18084\"><span aip-type=\"zahlavi\" aip-subtype=\"hlavicka\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"32\" aip-style=\"bold\">отъмꙑвати,</span><span aip-type=\"gramaticke_zarazeni\" aip-subtype=\"text_hesla\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">-мꙑваѭ,</span><span aip-type=\"gramaticke_zarazeni\" aip-subtype=\"text_hesla\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">-мꙑваѥши</span><span aip-type=\"slovni_druh\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">ipf.</span></div>",
+      "EnTrl": [
+        "to",
+        "wash",
+        "away"
+      ],
+      "CsTrl": [
+        "smývаt"
+      ],
+      "CsTrl_TL": [
+        "smývаt"
+      ],
+      "CsTrl_CS_TCL": [
+        "smývаt"
+      ],
+      "CsTrl_CS_TCLA": [
+        "smývаt"
+      ],
+      "CsTrl_TB": [
+        "smývаt"
+      ],
+      "CsTrl_CS_TC": [
+        "smývаt"
+      ],
+      "SourceD": "<div class=\"sjs\" style=\"float: left; padding: 10px; width: 100%; text-align: justify;\" heslo=\"hlavni\" id=\"18084\"><p class=\"hlavicka\" style=\"margin-top: 0; margin-bottom: 0;\"><span aip-type=\"zahlavi\" aip-subtype=\"hlavicka\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"32\" aip-style=\"bold\">отъмꙑвати,</span><span aip-type=\"gramaticke_zarazeni\" aip-subtype=\"text_hesla\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">-мꙑваѭ,</span><span aip-type=\"gramaticke_zarazeni\" aip-subtype=\"text_hesla\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">-мꙑваѥши</span><span aip-type=\"slovni_druh\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">ipf.</span></p><p class=\"vyskyt\" style=\"margin-top: 0; margin-bottom: 0; clear: both; text-indent: 0.4cm;\"><span aip-type=\"text_hesla\" aip-subtype=\"vyskyt\" aip-font=\"FreeSerif\" aip-size=\"16\" aip-style=\"normal\">occurring in</span><span aip-type=\"pamatka\" aip-subtype=\"vyskyt\" aip-font=\"FreeSerif\" aip-size=\"16\" aip-style=\"normal\">Euch</span></p><p class=\"odstavec\" style=\"margin-top: 0; margin-bottom: 0; clear: both; text-indent: 0.4cm;\"><span aip-type=\"la_preklad\" aip-subtype=\"cestina\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"italics\">smývаt;</span><span aip-type=\"la_preklad\" aip-subtype=\"anglictina\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"italics\">to</span><span aip-type=\"la_preklad\" aip-subtype=\"anglictina\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"italics\">wash</span><span aip-type=\"la_preklad\" aip-subtype=\"anglictina\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"italics\">away;</span><span aip-type=\"ru_preklad\" aip-subtype=\"rustina\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"italics\">смывать;</span><span aip-type=\"la_preklad\" aip-subtype=\"nemcina\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"italics\">аbwаsсhen;</span><span aip-type=\"la_preklad\" aip-subtype=\"latina_preklad\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"italics\">аbluere:</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">отъмꙑваемъ</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">же</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">пакꙑ</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">грѣхꙑ</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">отъ</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\">себѣ</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"FreeSerif\" aip-size=\"16\" aip-style=\"normal\">(sic!)</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">Euch</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">67b</span><span aip-type=\"text_hesla\" aip-subtype=\"odstavec\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">9sq.</span></p><p class=\"exh\" style=\"margin-top: 0; margin-bottom: 0; clear: both; text-indent: 0.4cm;\"><span aip-type=\"exh\" aip-subtype=\"heslo\" aip-font=\"FreeSerif\" aip-size=\"16\" aip-style=\"normal\">Exh.</span></p><p class=\"confer\" style=\"margin-top: 0; margin-bottom: 0; clear: both; text-indent: 0.4cm;\"><span aip-type=\"text_hesla\" aip-subtype=\"confer\" aip-font=\"FreeSerif\" aip-size=\"16\" aip-style=\"normal\">Cf.</span><span aip-type=\"odkaz\" aip-subtype=\"confer\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\"><a onclick=\"ajaxContextSearch('HeaderAll','&#x43E;&#x43C;&#xA651;&#x432;&#x430;&#x442;&#x438;');\">омꙑвати</a>,</span><span aip-type=\"odkaz\" aip-subtype=\"confer\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\"><a onclick=\"ajaxContextSearch('HeaderAll','&#x43C;&#xA651;&#x442;&#x438;');\">мꙑти</a>,</span><span aip-type=\"odkaz\" aip-subtype=\"confer\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\"><a onclick=\"ajaxContextSearch('HeaderAll','&#x43E;&#x443;&#x43C;&#xA651;&#x432;&#x430;&#x442;&#x438;');\">оумꙑвати</a>,</span><span aip-type=\"odkaz\" aip-subtype=\"confer\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\"><a onclick=\"ajaxContextSearch('HeaderAll','&#x438;&#x437;&#x43C;&#xA651;&#x442;&#x438;');\">измꙑти</a>,</span><span aip-type=\"odkaz\" aip-subtype=\"confer\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\"><a onclick=\"ajaxContextSearch('HeaderAll','&#x43E;&#x43C;&#xA651;&#x442;&#x438;');\">омꙑти</a>,</span><span aip-type=\"odkaz\" aip-subtype=\"confer\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\"><a onclick=\"ajaxContextSearch('HeaderAll','&#x43E;&#x442;&#x44A;&#x43C;&#xA651;&#x442;&#x438;');\">отъмꙑти</a></span></p></div>",
+      "WordClass": [
+        "ipf."
+      ]
+    },
+    "request": "show_record_id",
+    "found": 1,
+    "record": 0,
+    "listPages": 0,
+    "JSESSIONID": "855888663EE53AC0EA786B766E708BE2",
+    "page": 0,
+    "rows": 20,
+    "error": 0,
+    "coreName": "gorazd"
+  }
+}

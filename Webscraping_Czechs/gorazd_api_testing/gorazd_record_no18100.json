@@ -1,0 +1,37 @@
+{
+  "response": {
+    "result": {
+      "Dictionary": 2,
+      "Ref": [
+        "а"
+      ],
+      "Identifier": "18100",
+      "IdentifierAll": [
+        "18100",
+        "SNSP 1.5 - 1.htm-alto|0009"
+      ],
+      "Header": "абꙑ",
+      "HeaderAll": [
+        "абꙑ"
+      ],
+      "Header_KL": "абꙑ",
+      "Header_CU_KCL": "абꙑ",
+      "Header_KB": "абꙑ",
+      "Header_CU_KC": "абꙑ",
+      "RecType": [
+        "odkazove"
+      ],
+      "TitleD": "<div class=\"snsp\" style=\"float: left; padding: 10px; width: 100%; text-align: justify;\" heslo=\"odkazove\" id=\"18100\"><span aip-type=\"zahlavi\" aip-subtype=\"hlavicka\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"32\" aip-style=\"bold\">абꙑ</span><span aip-type=\"text_hesla\" aip-subtype=\"zahlavi\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">Supr</span><span aip-type=\"text_hesla\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"16\" aip-style=\"normal\">v.</span><span aip-type=\"odkaz\" aip-subtype=\"hlavicka\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\"><a onclick=\"ajaxContextSearch('HeaderAll','&#x430;');\">а</a></span></div>",
+      "SourceD": "<div class=\"snsp\" style=\"float: left; padding: 10px; width: 100%; text-align: justify;\" heslo=\"odkazove\" id=\"18100\"><p class=\"hlavicka\" style=\"margin-top: 0; margin-bottom: 0;\"><span aip-type=\"zahlavi\" aip-subtype=\"hlavicka\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"32\" aip-style=\"bold\">абꙑ</span><span aip-type=\"text_hesla\" aip-subtype=\"zahlavi\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">Supr</span><span aip-type=\"text_hesla\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"16\" aip-style=\"normal\">v.</span><span aip-type=\"odkaz\" aip-subtype=\"hlavicka\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\"><a onclick=\"ajaxContextSearch('HeaderAll','&#x430;');\">а</a></span></p></div>"
+    },
+    "request": "show_record_id",
+    "found": 1,
+    "record": 0,
+    "listPages": 0,
+    "JSESSIONID": "990B1494240A8560541F3511A8E29AF3",
+    "page": 0,
+    "rows": 20,
+    "error": 0,
+    "coreName": "gorazd"
+  }
+}

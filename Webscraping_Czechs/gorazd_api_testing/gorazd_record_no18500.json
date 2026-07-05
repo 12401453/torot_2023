@@ -1,0 +1,37 @@
+{
+  "response": {
+    "result": {
+      "Dictionary": 2,
+      "Ref": [
+        "бещоувьствьнъ"
+      ],
+      "Identifier": "18500",
+      "IdentifierAll": [
+        "18500",
+        "SNSP 1.5 - 1.htm-alto|0409"
+      ],
+      "Header": "безъчоувьствьнъ",
+      "HeaderAll": [
+        "безъчоувьствьнъ"
+      ],
+      "Header_KL": "безъчоувьствьнъ",
+      "Header_CU_KCL": "безъчоувьствьнъ",
+      "Header_KB": "безъчоувьствьнъ",
+      "Header_CU_KC": "безъчоувьствьнъ",
+      "RecType": [
+        "odkazove"
+      ],
+      "TitleD": "<div class=\"snsp\" style=\"float: left; padding: 10px; width: 100%; text-align: justify;\" heslo=\"odkazove\" id=\"18500\"><span aip-type=\"zahlavi\" aip-subtype=\"hlavicka\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"32\" aip-style=\"bold\">безъчоувьствьнъ</span><span aip-type=\"text_hesla\" aip-subtype=\"zahlavi\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">Supr</span><span aip-type=\"text_hesla\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">116:5-6</span><span aip-type=\"text_hesla\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"16\" aip-style=\"normal\">v.</span><span aip-type=\"odkaz\" aip-subtype=\"hlavicka\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\"><a onclick=\"ajaxContextSearch('HeaderAll','&#x431;&#x435;&#x449;&#x43E;&#x443;&#x432;&#x44C;&#x441;&#x442;&#x432;&#x44C;&#x43D;&#x44A;');\">бещоувьствьнъ</a></span></div>",
+      "SourceD": "<div class=\"snsp\" style=\"float: left; padding: 10px; width: 100%; text-align: justify;\" heslo=\"odkazove\" id=\"18500\"><p class=\"hlavicka\" style=\"margin-top: 0; margin-bottom: 0;\"><span aip-type=\"zahlavi\" aip-subtype=\"hlavicka\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"32\" aip-style=\"bold\">безъчоувьствьнъ</span><span aip-type=\"text_hesla\" aip-subtype=\"zahlavi\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">Supr</span><span aip-type=\"text_hesla\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"24\" aip-style=\"normal\">116:5-6</span><span aip-type=\"text_hesla\" aip-subtype=\"hlavicka\" aip-font=\"FreeSerif\" aip-size=\"16\" aip-style=\"normal\">v.</span><span aip-type=\"odkaz\" aip-subtype=\"hlavicka\" aip-font=\"CyrillicaBulgarian10U\" aip-size=\"24\" aip-style=\"normal\"><a onclick=\"ajaxContextSearch('HeaderAll','&#x431;&#x435;&#x449;&#x43E;&#x443;&#x432;&#x44C;&#x441;&#x442;&#x432;&#x44C;&#x43D;&#x44A;');\">бещоувьствьнъ</a></span></p></div>"
+    },
+    "request": "show_record_id",
+    "found": 1,
+    "record": 0,
+    "listPages": 0,
+    "JSESSIONID": "2A3A907DA74B001564C48456F681DACB",
+    "page": 0,
+    "rows": 20,
+    "error": 0,
+    "coreName": "gorazd"
+  }
+}

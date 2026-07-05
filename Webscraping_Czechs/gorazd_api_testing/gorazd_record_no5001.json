@@ -1,0 +1,8 @@
+{
+  "response": {
+    "result": "CastorException: 4 (Invalid Record Identifier)",
+    "request": "show_record_id",
+    "JSESSIONID": "A27A437B8DC33C7D3FC8483B57DC281B",
+    "error": 4
+  }
+}
