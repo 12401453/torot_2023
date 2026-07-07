@@ -16,6 +16,8 @@ let record_id = 18080;
 
 const iterations = Number(process.argv[2]);
 
+
+
 function makeRequest(record_id) {
     const req_url = "http://castor.gorazd.org:8080/gorazd/show_record_id;jsessionid=CC2E5311CE705F8E1F7780DD9095BF4F?value="+record_id+"&xslFile=0&fields=&_=1732327903110";
     http.get(req_url, dict_response => {
@@ -37,7 +39,7 @@ function makeRequest(record_id) {
             const json = JSON.parse(response_data_string.trim());
 
             
-            const dict_no = json.response.result.Dictionary;
+            const dict_no = Number(json.response.result.Dictionary);
             const eng_trans_arr = json.response.result.EnTrl;
             const ocs_headwords_arr = json.response.result.HeaderAll;
 
