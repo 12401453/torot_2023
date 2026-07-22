@@ -207,6 +207,20 @@ void updateWordCodes(std::vector<std::pair<std::list<std::uint16_t>, int>>& word
     }
 }
 
+int safeStrToInt(const std::string &string_number, int default_result=-1) {
+    int converted_int = default_result;
+    try {
+        converted_int = std::stoi(string_number);
+    }
+    catch (std::invalid_argument const& ex) {
+        // std::cout << "std::stoi failed with an invalid_argument exception; defaulting it to " << default_result << "\n";
+    }
+    catch (std::out_of_range const& ex) {
+        // std::cout << "std::stoi failed with an out_of_range exception; defaulting it to " << default_result << "\n";
+    }
+    return converted_int;
+}
+
 
 
 int main(int argc, char** argv)
@@ -216,7 +230,11 @@ int main(int argc, char** argv)
         return -1;
     }
 
-    int num_iterations = std::stoi(argv[2]);
+    int num_iterations = safeStrToInt(argv[2]);
+    if(num_iterations <= 0) {
+        std::cout << "Specified number of iterations must be a positive integer\n";
+        return -1;
+    }
 
     std::string input_filename(argv[1]);
 
