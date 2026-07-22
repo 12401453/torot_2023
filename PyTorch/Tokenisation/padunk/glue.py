@@ -4,6 +4,7 @@
 import numpy as np
 from numpy.dtypes import StringDType
 import csv
+from random import randrange
 import subprocess
 
 #print(torch.accelerator.is_available())
@@ -25,7 +26,7 @@ for line in tokenised_chu_words_training_file.readlines():
     token_idxs = list(map(int, line.split(",")[0].split(" ")))
     words_tokens_list.append(token_idxs)
 
-my_idx = 140000
+my_idx = randrange(27000)
 # print(words_tokens_list[my_idx])
 # word_str = "".join(token_vocab_list[i] for i in words_tokens_list[my_idx])
 # print(word_str)
@@ -40,13 +41,18 @@ for row in csv.DictReader(open("../../chu_words_tagged.csv", "r"), delimiter="|"
         sentence_tokens_list.append([])
         j = j + 1
         sentence_no_prev = sentence_no
-    for tokno in words_tokens_list[i]:
-        sentence_tokens_list[j].append(tokno)
+    
+    sentence_tokens_list[j].append(words_tokens_list[i])
     i = i + 1
 
 
-print(sentence_tokens_list[3])
-sentence = " ".join(token_vocab_list[tokno] for tokno in sentence_tokens_list[3])
-# for tokno in sentence_tokens_list[3]:
-#     sentence += token_vocab_list[tokno]
-print(sentence)
+print(sentence_tokens_list[my_idx])
+
+sentence = ""
+for token_array in sentence_tokens_list[my_idx]:
+    word = "".join(token_vocab_list[tokno] for tokno in token_array)
+    sentence += word + " "
+print(sentence.strip())
+
+# sentence = "".join(" ".join(token_vocab_list[tokno] for tokno in sentence_tokens_list[3]))
+# print(sentence)
