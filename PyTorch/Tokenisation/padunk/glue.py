@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 #import torch
-import numpy as np
+#import numpy as np
 from numpy.dtypes import StringDType
 import csv
 from random import randrange
@@ -11,7 +11,7 @@ import subprocess
 
 #subprocess.run(["./bpe", "chu_corpus_words_bpe_training.csv", "5000"])
 
-bpe_token_indices_file = open("bpe_token_indices_padunk.csv", "r")
+bpe_token_indices_file = open("bpe_token_indices.csv", "r")
 tokenised_chu_words_training_file = open("tokenised_chu_words_training_deepcleaned.csv", "r")
 
 token_vocab_list = []
@@ -53,6 +53,8 @@ for token_array in sentence_tokens_list[my_idx]:
     word = "".join(token_vocab_list[tokno] for tokno in token_array)
     sentence += word + " "
 print(sentence.strip())
+
+#np_sentences = np.array(sentence_tokens_list, dtype=np.float32)
 
 # sentence = "".join(" ".join(token_vocab_list[tokno] for tokno in sentence_tokens_list[3]))
 # print(sentence)
