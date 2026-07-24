@@ -27,11 +27,9 @@ for line in tokenised_chu_words_training_file.readlines():
     words_tokens_list.append(token_idxs)
 
 my_idx = randrange(27000)
-# print(words_tokens_list[my_idx])
-# word_str = "".join(token_vocab_list[i] for i in words_tokens_list[my_idx])
-# print(word_str)
 
 sentence_tokens_list = [[]]
+sentence_token_word_key = [[]]
 sentence_no_prev = 0
 i, j = 0, 0
 for row in csv.DictReader(open("../../chu_words_tagged.csv", "r"), delimiter="|"):
@@ -39,18 +37,27 @@ for row in csv.DictReader(open("../../chu_words_tagged.csv", "r"), delimiter="|"
     sentence_no = int(row["sentence_no"])
     if sentence_no != sentence_no_prev:
         sentence_tokens_list.append([])
+        sentence_token_word_key.append([])
         j = j + 1
         sentence_no_prev = sentence_no
     
-    sentence_tokens_list[j].append(words_tokens_list[i])
+    #sentence_tokens_list[j].append(words_tokens_list[i]) #numpy and torch tensors do not allow variable length inner arrays
+    for word_token in words_tokens_list[i]:
+        sentence_tokens_list[j].append(word_token)
+
+    sentence_token_word_key[j].append(len(words_tokens_list[i]))
     i = i + 1
 
 
 print(sentence_tokens_list[my_idx])
+print(sentence_token_word_key[my_idx])
 
 sentence = ""
-for token_array in sentence_tokens_list[my_idx]:
-    word = "".join(token_vocab_list[tokno] for tokno in token_array)
+cumulative_idx = 0
+for i in range(len(sentence_token_word_key[my_idx])):
+    word_token_count = sentence_token_word_key[my_idx][i]
+    word = "".join(token_vocab_list[sentence_tokens_list[my_idx][cumulative_idx+word_token_no]] for word_token_no in range(word_token_count))
+    cumulative_idx += word_token_count
     sentence += word + " "
 print(sentence.strip())
 
