@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[372]:
+# In[409]:
 
 
 import torch
@@ -13,7 +13,7 @@ import subprocess
 import mmap
 
 
-# In[373]:
+# In[410]:
 
 
 def countLines (file_path) -> int:
@@ -26,7 +26,7 @@ def countLines (file_path) -> int:
   return line_count
 
 
-# In[374]:
+# In[411]:
 
 
 def retrieveSentence (sentence_idx, tokens_list, sentence_offsets) -> str:
@@ -35,7 +35,7 @@ def retrieveSentence (sentence_idx, tokens_list, sentence_offsets) -> str:
     return "".join(tokens_dict[tokno].replace("<wb>", " ") for tokno in tokens_list[sentence_offsets[sentence_idx]:end_idx]).strip()
 
 
-# In[375]:
+# In[412]:
 
 
 def retrieveSubtext(subtext_idx, tokens_list, subtext_offsets) -> str:
@@ -43,7 +43,7 @@ def retrieveSubtext(subtext_idx, tokens_list, subtext_offsets) -> str:
     return "".join(tokens_dict[tokno].replace("<wb>", " ") for tokno in tokens_list[subtext_offsets[subtext_idx]:end_idx]).strip()
 
 
-# In[376]:
+# In[413]:
 
 
 def retrieveSubtextBeginning(subtext_idx, tokens_list, subtext_offsets) -> str:
@@ -51,27 +51,27 @@ def retrieveSubtextBeginning(subtext_idx, tokens_list, subtext_offsets) -> str:
     return "".join(tokens_dict[tokno].replace("<wb>", " ") for tokno in tokens_list[subtext_offsets[subtext_idx]:end_idx]).strip()
 
 
-# In[377]:
+# In[414]:
 
 
 def stringifyTokensTensor(tokens_tensor) -> str:
     return "".join(tokens_dict[tokno].replace("<wb>", " ") for tokno in tokens_tensor.tolist()).strip()
 
 
-# In[378]:
+# In[415]:
 
 
 token_vocab_length = countLines("bpe_token_indices.csv")
 
 
-# In[379]:
+# In[416]:
 
 
 bpe_token_indices_file = open("bpe_token_indices.csv", "r")
 tokenised_chu_words_training_file = open("tokenised_chu_words_training_deepcleaned.csv", "r")
 
 
-# In[380]:
+# In[417]:
 
 
 tokens_list = []
@@ -85,13 +85,13 @@ with mmap.mmap(tokenised_chu_words_training_file.fileno(), length=0, access=mmap
       word_token_count += 1
 
 
-# In[381]:
+# In[418]:
 
 
 tokens_tensor = torch.tensor(tokens_list, dtype=torch.float32)
 
 
-# In[382]:
+# In[419]:
 
 
 sentence_offsets = []
@@ -120,13 +120,13 @@ for row in csv.DictReader(open("../../chu_words_tagged.csv", "r"), delimiter="|"
     row_no += 1
 
 
-# In[383]:
+# In[420]:
 
 
 len(tokens_list), len(word_offsets), len(sentence_offsets), len(subtext_offsets), len(text_offsets)
 
 
-# In[384]:
+# In[421]:
 
 
 tokens_dict = {}
@@ -139,19 +139,19 @@ with mmap.mmap(bpe_token_indices_file.fileno(), length=0, access=mmap.ACCESS_REA
         tokens_dict_reversed[split_line[1]] = int(split_line[0])
 
 
-# In[385]:
+# In[422]:
 
 
 retrieveSentence(27239, tokens_list, sentence_offsets)
 
 
-# In[386]:
+# In[423]:
 
 
 tokens_list[0:10], word_offsets[0:10], sentence_offsets[0:10]
 
 
-# In[387]:
+# In[424]:
 
 
 sentence_offsets_tensor = torch.tensor(sentence_offsets, dtype=torch.int64)
@@ -164,7 +164,7 @@ tensor_snt_lngths[21318] = 0
 print(tensor_snt_lngths.max())
 
 
-# In[388]:
+# In[425]:
 
 
 tensor_snt_lngths = torch.diff(sentence_offsets_tensor)
@@ -173,39 +173,39 @@ for i in range(len(tensor_snt_lngths)):
         print(i)
 
 
-# In[389]:
+# In[426]:
 
 
 tokens_tensor = torch.tensor(tokens_list, dtype=torch.int64)
 
 
-# In[390]:
+# In[427]:
 
 
 subtext_offsets[0:2]
 
 
-# In[391]:
+# In[428]:
 
 
 token_embedder = torch.nn.Embedding(num_embeddings=4539, embedding_dim=256, padding_idx=0)
 positional_embedder = torch.nn.Embedding(num_embeddings=64, embedding_dim=256)
 
 
-# In[392]:
+# In[429]:
 
 
 position_embeddings = positional_embedder(torch.tensor(range(64)))
 
 
-# In[393]:
+# In[430]:
 
 
 for i in range(0, 9, 4):
     print(i)
 
 
-# In[394]:
+# In[431]:
 
 
 subtext_windows = []
@@ -222,27 +222,65 @@ for i in range(len(subtext_offsets)):
     subtext_windows.append(torch.stack(subtext_chunks, dim=0))
 
 
-# In[395]:
+# In[432]:
 
 
 subtext_windows[1][1], stringifyTokensTensor(subtext_windows[1][1])
 
 
-# In[400]:
+# In[447]:
 
 
-print(retrieveSubtext(1, tokens_list, subtext_offsets))
+stringifyTokensTensor(subtext_windows[20][17])
 
 
-# In[397]:
+# In[445]:
 
 
-subtext_windows[405][5], stringifyTokensTensor(subtext_windows[405][5])
+retrieveSubtext(20, tokens_list, subtext_offsets)
 
 
-# In[398]:
+# In[448]:
 
 
-transformer_encoder = torch.nn.TransformerEncoderLayer(d_model=256, nhead=8)
-print(transformer_encoder)
+transformer_encoder = torch.nn.TransformerEncoderLayer(d_model=256, nhead=4, dim_feedforward=1024)
+
+
+# In[513]:
+
+
+class MorphologyLSTMTransformerModel(torch.nn.Module):
+    def __init__(self, token_vocab_size=4539, token_embedding_dim=256, token_seq_length=64, attention_heads=4, trans_layers=4):
+        super().__init__()
+
+        transformer_encoder_layer = torch.nn.TransformerEncoderLayer(d_model=token_embedding_dim, nhead=attention_heads, dim_feedforward=4*token_embedding_dim, batch_first=True)
+
+        self.token_embedder = torch.nn.Embedding(num_embeddings=token_vocab_size, embedding_dim=token_embedding_dim, padding_idx=0)
+        self.positional_embedder = torch.nn.Embedding(num_embeddings=token_seq_length, embedding_dim=token_embedding_dim)
+        self.transformer = torch.nn.TransformerEncoder(transformer_encoder_layer, trans_layers)
+
+        self.register_buffer("position_ids", torch.arange(token_seq_length).unsqueeze_(0))
+        self.register_buffer("word_offsets", torch.tensor(word_offsets)
+
+    def word_pooling(self, transformer_output) -> torch.Tensor:
+
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        token_embeddings = self.token_embedder(x)
+        positional_embeddings = self.positional_embedder(self.position_ids.expand(token_embeddings.size(0), -1))
+        padding_mask = (x == 0)
+        return self.transformer(token_embeddings + positional_embeddings, src_key_padding_mask=padding_mask)
+
+
+# In[514]:
+
+
+network = MorphologyLSTMTransformerModel()
+network(subtext_windows[406])
+
+
+# In[509]:
+
+
+out.shape
 
