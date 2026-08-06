@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[192]:
+# In[452]:
 
 
 import torch
@@ -14,7 +14,7 @@ import subprocess
 import mmap
 
 
-# In[4]:
+# In[453]:
 
 
 def countLines (file_path) -> int:
@@ -27,7 +27,7 @@ def countLines (file_path) -> int:
   return line_count
 
 
-# In[5]:
+# In[454]:
 
 
 def retrieveSentence (sentence_idx, tokens_list, sentence_offsets) -> str:
@@ -36,7 +36,7 @@ def retrieveSentence (sentence_idx, tokens_list, sentence_offsets) -> str:
     return "".join(tokens_dict[tokno].replace("<wb>", " ") for tokno in tokens_list[sentence_offsets[sentence_idx]:end_idx]).strip()
 
 
-# In[6]:
+# In[455]:
 
 
 def retrieveSubtext(subtext_idx, tokens_list, subtext_offsets) -> str:
@@ -44,7 +44,7 @@ def retrieveSubtext(subtext_idx, tokens_list, subtext_offsets) -> str:
     return "".join(tokens_dict[tokno].replace("<wb>", " ") for tokno in tokens_list[subtext_offsets[subtext_idx]:end_idx]).strip()
 
 
-# In[7]:
+# In[456]:
 
 
 def retrieveSubtextBeginning(subtext_idx, tokens_list, subtext_offsets) -> str:
@@ -52,7 +52,7 @@ def retrieveSubtextBeginning(subtext_idx, tokens_list, subtext_offsets) -> str:
     return "".join(tokens_dict[tokno].replace("<wb>", " ") for tokno in tokens_list[subtext_offsets[subtext_idx]:end_idx]).strip()
 
 
-# In[357]:
+# In[457]:
 
 
 def stringifyTokensTensor(tokens_tensor, token_boundaries=False) -> str:
@@ -60,10 +60,10 @@ def stringifyTokensTensor(tokens_tensor, token_boundaries=False) -> str:
     return token_separator.join(tokens_dict[tokno].replace("<wb>", " ") for tokno in tokens_tensor.tolist()).strip()
 
 
-# In[208]:
+# In[458]:
 
 
-def sortedListFind(sorted_list, sought_after_value):
+def sortedListFind(sorted_list, sought_after_value) -> int:
     'Locate the leftmost value exactly equal to x'
     i = bisect.bisect_left(sorted_list, sought_after_value)
     if i != len(sorted_list) and sorted_list[i] == sought_after_value:
@@ -72,20 +72,20 @@ def sortedListFind(sorted_list, sought_after_value):
         return -1
 
 
-# In[9]:
+# In[459]:
 
 
 token_vocab_length = countLines("bpe_token_indices.csv")
 
 
-# In[10]:
+# In[460]:
 
 
 bpe_token_indices_file = open("bpe_token_indices.csv", "r")
 tokenised_chu_words_training_file = open("tokenised_chu_words_training_deepcleaned.csv", "r")
 
 
-# In[11]:
+# In[461]:
 
 
 tokens_list = []
@@ -99,13 +99,13 @@ with mmap.mmap(tokenised_chu_words_training_file.fileno(), length=0, access=mmap
       word_token_count += 1
 
 
-# In[12]:
+# In[462]:
 
 
 tokens_tensor = torch.tensor(tokens_list, dtype=torch.float32)
 
 
-# In[13]:
+# In[463]:
 
 
 sentence_offsets = []
@@ -134,13 +134,13 @@ for row in csv.DictReader(open("../../chu_words_tagged.csv", "r"), delimiter="|"
     row_no += 1
 
 
-# In[14]:
+# In[464]:
 
 
 len(tokens_list), len(word_offsets), len(sentence_offsets), len(subtext_offsets), len(text_offsets)
 
 
-# In[15]:
+# In[465]:
 
 
 tokens_dict = {}
@@ -153,19 +153,19 @@ with mmap.mmap(bpe_token_indices_file.fileno(), length=0, access=mmap.ACCESS_REA
         tokens_dict_reversed[split_line[1]] = int(split_line[0])
 
 
-# In[16]:
+# In[466]:
 
 
 retrieveSentence(27239, tokens_list, sentence_offsets)
 
 
-# In[17]:
+# In[467]:
 
 
 tokens_list[0:10], word_offsets[0:10], sentence_offsets[0:10]
 
 
-# In[18]:
+# In[468]:
 
 
 sentence_offsets_tensor = torch.tensor(sentence_offsets, dtype=torch.int64)
@@ -178,7 +178,7 @@ tensor_snt_lngths[21318] = 0
 print(tensor_snt_lngths.max())
 
 
-# In[19]:
+# In[469]:
 
 
 tensor_snt_lngths = torch.diff(sentence_offsets_tensor)
@@ -187,39 +187,39 @@ for i in range(len(tensor_snt_lngths)):
         print(i)
 
 
-# In[20]:
+# In[470]:
 
 
 tokens_tensor = torch.tensor(tokens_list, dtype=torch.int64)
 
 
-# In[21]:
+# In[471]:
 
 
 subtext_offsets[0:2]
 
 
-# In[22]:
+# In[472]:
 
 
 token_embedder = torch.nn.Embedding(num_embeddings=4539, embedding_dim=256, padding_idx=0)
 positional_embedder = torch.nn.Embedding(num_embeddings=64, embedding_dim=256)
 
 
-# In[23]:
+# In[473]:
 
 
 position_embeddings = positional_embedder(torch.tensor(range(64)))
 
 
-# In[24]:
+# In[474]:
 
 
 for i in range(0, 9, 4):
     print(i)
 
 
-# In[55]:
+# In[475]:
 
 
 subtext_windows = []
@@ -240,25 +240,25 @@ for subtext_tensors in subtext_windows:
     subtext_window_sizes.append(subtext_tensors.size(0))
 
 
-# In[56]:
+# In[476]:
 
 
 subtext_windows[1][1], stringifyTokensTensor(subtext_windows[1][1])
 
 
-# In[27]:
+# In[477]:
 
 
 stringifyTokensTensor(subtext_windows[20][17])
 
 
-# In[28]:
+# In[478]:
 
 
 retrieveSubtext(20, tokens_list, subtext_offsets)
 
 
-# In[30]:
+# In[479]:
 
 
 class MorphologyLSTMTransformerModel(torch.nn.Module):
@@ -285,21 +285,22 @@ class MorphologyLSTMTransformerModel(torch.nn.Module):
         return self.transformer(token_embeddings + positional_embeddings, src_key_padding_mask=padding_mask)
 
 
-# In[382]:
+# In[516]:
 
 
-def getWindowLossMask(subtext_idx, window_idx):
+def getWindowLossMask(subtext_idx, window_idx) -> tuple(torch.Tensor, int, int):
     token_offset_at_window_start = subtext_offsets[subtext_idx] + window_idx*32
 
     first_whole_word_idx = 0
+    start_word_offset = 0
     for i in range(0, 32):
-        if sortedListFind(word_offsets, token_offset_at_window_start+i) != -1:
+        start_word_offset = sortedListFind(word_offsets, token_offset_at_window_start+i)
+        if start_word_offset != -1:
             first_whole_word_idx = i
             break
     last_whole_word_idx = 31
     for i in range(31, 64):
         idx_pos_in_word_offsets = sortedListFind(word_offsets, token_offset_at_window_start+i+1)
-
         if idx_pos_in_word_offsets != -1 or idx_pos_in_word_offsets == len(word_offsets):
             last_whole_word_idx = i
             break
@@ -309,33 +310,107 @@ def getWindowLossMask(subtext_idx, window_idx):
     loss_mask[last_whole_word_idx + 1:] = False
     loss_mask[:first_whole_word_idx] = False
 
-    return loss_mask
+    post_final_word_token_offset = token_offset_at_window_start + loss_mask.nonzero()[-1].item() + 1
+    end_word_offset = 0
+    post_final_word_word_offset = sortedListFind(word_offsets, post_final_word_token_offset)
+    if post_final_word_word_offset == -1:
+        end_word_offset = len(word_offsets) - 1
+    else:
+        end_word_offset = post_final_word_word_offset - 1
+
+    return loss_mask, start_word_offset, end_word_offset
 
 
-    #if final window:
-    #    loss_mask[:unpadded_length] = True
+# In[690]:
 
 
-# In[451]:
+def poolWorkTokenVectors(token_window: torch.Tensor, loss_mask: torch.Tensor, start_word_offset: int, end_word_offset: int) -> torch.Tensor:
+
+    word_tokens_tensor = token_window[loss_mask]
+    #word_tokens_tensor = token_window[loss_mask].float()
+
+    pooled_tensors_list = []
+    #deliberately leave off the last word so we can deal with the possibility of it being the last ever word in the set
+    i = start_word_offset
+    j = start_word_offset
+    for i in range(start_word_offset, end_word_offset):
+        word_token_length = word_offsets[i + 1] - word_offsets[i]
+        start_idx = j - start_word_offset
+        one_past_end_idx = start_idx + word_token_length
+        pooled_tensor = word_tokens_tensor[start_idx:one_past_end_idx].mean(dim=0)
+        #print(start_idx, one_past_end_idx)
+        pooled_tensors_list.append(pooled_tensor)
+        j += word_token_length
+
+    final_word_token_length = 1
+    if len(word_offsets) == end_word_offset:
+        final_word_token_length = len(tokens_list) - word_offsets[end_word_offset]
+    else:
+        final_word_token_length = word_offsets[end_word_offset + 1] - word_offsets[end_word_offset]
+    final_start_idx = j - start_word_offset
+    final_one_past_end_idx = final_start_idx + final_word_token_length
+    #print(final_start_idx, final_one_past_end_idx)
+    final_pooled_tensor = word_tokens_tensor[final_start_idx:final_one_past_end_idx].mean(dim=0)
+    pooled_tensors_list.append(final_pooled_tensor)
+
+    pooled_window_tensors = torch.stack(pooled_tensors_list, dim=0)
+    return torch.nn.functional.pad(pooled_window_tensors, (0, 0, 0, 32-pooled_window_tensors.size(0)), value=0)
+    #return torch.nn.functional.pad(pooled_window_tensors, (0, 32-pooled_window_tensors.size(0)), value=0)
+
+
+
+# In[691]:
 
 
 s = randrange(0, 407)
 # s = 406
 w = randrange(0, subtext_windows[s].size(0))
 
+print(f"s: {s}, w: {w}")
 
 token_offset_at_window_start = subtext_offsets[s] + w*32
 
 
-loss_mask = getWindowLossMask(s, w)
+loss_mask, start_word_offset, end_word_offset = getWindowLossMask(s, w)
 first, last = loss_mask.nonzero()[0].item(), loss_mask.nonzero()[-1].item()
 print(token_offset_at_window_start, tokens_dict[tokens_list[token_offset_at_window_start+first]], tokens_dict[tokens_list[token_offset_at_window_start+last]])
 print(stringifyTokensTensor(subtext_windows[s][w], token_boundaries=True))
 print(first, last)
 print(loss_mask)
 
+print(start_word_offset, end_word_offset)
+print(tokens_dict[tokens_list[word_offsets[start_word_offset]]], tokens_dict[tokens_list[word_offsets[end_word_offset]]])
 
-
+random_window = subtext_windows[s][w]
 
 # subtext_offsets[x], tokens_list[subtext_offsets[x]]
+
+
+# In[692]:
+
+
+network = MorphologyLSTMTransformerModel()
+output = network(subtext_windows[232][1].unsqueeze_(dim=0))
+output.shape
+
+
+# In[693]:
+
+
+random_window, random_window[loss_mask], word_offsets[start_word_offset+1], word_offsets[end_word_offset+1]
+
+
+# In[694]:
+
+
+word_pooled_output_tensor = poolWorkTokenVectors(output[0], loss_mask, start_word_offset, end_word_offset)
+#word_pooled_raw_indices = poolWorkTokenVectors(random_window, loss_mask, start_word_offset, end_word_offset)
+#print(word_pooled_raw_indices)
+
+
+# In[695]:
+
+
+print(word_pooled_output_tensor != 0)
+print(word_pooled_output_tensor)
 
