@@ -1,0 +1,33 @@
+p.608 split between classical view that impperfect AND aorist were alive till middle 13th century or later, and "revisionists" who believe these preterites disappeared in the 11th century and are only used later due to obrazcovyje knizhnyje teksty
+
+"Functional" vs "Formal" arguments: impperfect only used in "knizhnyje" texts (which must include chronicles). Imperfects in BBs extremely rare ("half-a-dozen") and often coincide with literary style, e.g. no.605 which is between monks
+
+p.608-609 apparently the 3sg augement -tь on OESl. imperfects is taken as a sign of artificiality to differentiate 2sg from 3sg or as hypercorrection introduced from dialects with 3sg present with no -tь
+ - cites a load of Timberlake papers arguing that this augment first appears before pronoun "i" and is a sandhi phenomenon
+
+ "Н.	Н.	Дурново	полагал,	что	«употребление	‐ѧа- вместо	‐ѣа-	в	памятниках
+русского	 письма	 основано	 на	 известном	 русским	 писцам	 произношении
+южных	 славян,	 читавших	 в	 этих	формах	 ѣ»	 по‐южнославянски,	 т.	е.	 как	 [æ]
+ሺДурново,	 VI,	 60;	 Дурново	 2000,	 490ሻ.	 Если	 переносилось	 южнославянское
+произношение,	 то	 у	 самих	 восточных	 славян	 данных	 форм	 не	 было.	 Иное
+объяснение	 предлагает	 Г.	 Лант,	 считающий,	 что	 восточнославянская	 мор‐
+фонология	 ሺреальных	 диалектовሻ	 отличалась	 здесь	 от	 южнославянской	 и
+‐ѧሺаሻ-	был	суффиксом	имперфекта	независимо	от	класса	глагола."
+
+
+p.608-9 talks about jotated class 4s: says that non-jotated forms result from "automatic formation off the infinitive or present-tense forms as a result of recalculation (? пересчёта), and not the retention of an ancient form"
+Хабургаев 1991:50, Оттен 1973:218, and Lunt 1980:93 are references given here worth following up
+
+p.610-11 he argues that usage of l-forms with imperfect meaning in the Primary Chronicle are evidence of the vytesnenie of the imperfect as eary as early 11th century (total bullshit given how late the PVL spiski are)
+
+p.612 difficulty drawing conclusions about the aorists (/imperfects) in non-knizhnyje teksty are summed up well as follows "они	могли	не	употребляться	как	в	силу
+того,	что	их	не	было	в	разговорном	языке,	так	и	в	силу	того,	что	они	были	не
+нужны	для	коммуникативных	задач	деловой	и	бытовой	письменности"
+
+p.613 some crap about aorists in BBs and delovyje gramoty being mostly used in fixed beginning formulations; Zaliznyak even says that originally these would've been in the perfect so aorist here is totally non-living. p.614 Zhyvov rejects this Zaliznyakian theory on account of very early aorists in such documents and other boring shit
+
+p.614-15 accented documents from 14th century show on the one hand (Merilo Pravednoe) aorist forms with etymologically correct stress, but on the other hand (Chudovskij Novyj Zavet) a new system of stress always on the aorist-marker; Zhyvov takes the former as proof that the aorist was still a living part of the spoken language, and the latter as testifying to the beginnings of its dying out
+
+p.619 ft. 347 describes how he's getting imperfects electronically from some form of corpus, and that they only look at 3sg and 3pl forms because of how crude their search-method is (ne govorja uzhe ob otsutstvii v ix korpusa opredeljonnyx neelektronisirovannyx tekstov)
+
+WTF is трафарет (stencil) supposed to mean?
