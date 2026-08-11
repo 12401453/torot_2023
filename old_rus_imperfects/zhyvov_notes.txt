@@ -31,3 +31,11 @@ p.614-15 accented documents from 14th century show on the one hand (Merilo Prave
 p.619 ft. 347 describes how he's getting imperfects electronically from some form of corpus, and that they only look at 3sg and 3pl forms because of how crude their search-method is (ne govorja uzhe ob otsutstvii v ix korpusa opredeljonnyx neelektronisirovannyx tekstov)
 
 WTF is трафарет (stencil) supposed to mean?
+
+p.632 contains remark that proves Zhyvov's focus is basically useless to us: "Ряд этих ошибок относится, конечно, не к ПВЛ как таковой, а к конкретному списку а именно Ипатьевскому , однако для наших целей текстологический аспект не имеет принципиального значения, и мы его учитывать не будем." Then this remark, where a text from Usp. Sborn. is considered alongside PVL, shows that he fails to recognise the language of these two documents as being totally different: "Взглянем теперь на памятники агиографической традиции, начав, как
+мы делали и в других случаях, с Жития Феодосия. В этом тексте встречается
+390 форм имперфекта; поскольку Житие приблизительно в 3,4 раза меньше
+ПВЛ, это означает, что имперфект употребляется в нем более чем в два раза
+интенсивнее, чем в ПВЛ и приблизительно в 6 раз интенсивнее, чем в НПЛ .
+Эта повышенная интенсивность связана, надо думать, со степенью книжно‐
+сти текста, со степенью ориентации текста на корпус образцовых текстов"
