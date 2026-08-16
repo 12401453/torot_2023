@@ -1,0 +1,11 @@
+field_name|field_values|field_value_descriptions
+person|1;2;3;x|first person;second person;third person;uncertain person
+number|s;d;p;e;x|singular;dual;plural;singular or plural;uncertain number
+tense|p;i;r;s;a;u;l;f;t;x|present;imperfect;perfect;resultative;aorist;past;pluperfect;future;future perfect;uncertain tense
+mood|i;s;m;o;n;p;d;g;u;x;y;e;f;h;t|indicative;subjunctive;imperative;optative;infinitive;participle;gerund;gerundive;supine;uncertain mood;finiteness unspecified;indicative or subjunctive;indicative or imperative;subjunctive or imperative;finite
+voice|a;m;p;e;x|active;middle;passive;middle or passive;unspecified
+gender|m;f;n;p;o;r;q;x|masculine;feminine;neuter;masculine or feminine;masculine or neuter;feminine or neuter;masculine, feminine or neuter;uncertain gender
+case|n;a;k;o;g;c;e;d;b;i;l;v;x;z|nominative;accusative;nominative or accusative;oblique;genitive;genitive or dative;accusative or dative;dative;ablative;instrumental;locative;vocative;uncertain case;no case
+degree|p;c;s;x;z|positive;comparative;superlative;uncertain degree;no degree
+strength|w;s;t|weak;strong;weak or strong
+inflection|n;i|non-inflecting;inflecting

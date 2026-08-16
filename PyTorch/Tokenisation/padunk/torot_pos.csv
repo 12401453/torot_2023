@@ -1,0 +1,28 @@
+pos_tag|pos_tag_description|pos_tag_id
+A-|adjective|0
+Df|adverb|1
+S-|article|2
+Ma|cardinal numeral|3
+Nb|common noun|4
+C-|conjunction|5
+Pd|demonstrative pronoun|6
+F-|foreign word|7
+Px|indefinite pronoun|8
+N-|infinitive marker|9
+I-|interjection|10
+Du|interrogative adverb|11
+Pi|interrogative pronoun|12
+Mo|ordinal numeral|13
+Pp|personal pronoun|14
+Pk|personal reflexive pronoun|15
+Ps|possessive pronoun|16
+Pt|possessive reflexive pronoun|17
+R-|preposition|18
+Ne|proper noun|19
+Py|quantifier|20
+Pc|reciprocal pronoun|21
+Dq|relative adverb|22
+Pr|relative pronoun|23
+G-|subjunction|24
+V-|verb|25
+X-|unassigned|26

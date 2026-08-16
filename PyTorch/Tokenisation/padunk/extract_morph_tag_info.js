@@ -28,7 +28,6 @@ saxParser.on('closetag', (node_name) => {
         morph_csv_str += "|" + morph_values.slice(0, -1) + "|" + morph_value_descriptions.slice(0, -1) + "\n";
         morph_values = "";
         morph_value_descriptions = "";
-        console.log("here");
     }
     tag_stack.pop();
 });
@@ -59,8 +58,10 @@ saxParser.on('opentag', (node) => {
 });
 
 saxParser.on('end', () => {
-    console.log(pos_csv_str);
-    console.log(morph_csv_str);
+    //console.log(pos_csv_str);
+    fs.writeFileSync("torot_pos.csv", pos_csv_str);
+    //console.log(morph_csv_str);
+    fs.writeFileSync("torot_morphtags.csv", morph_csv_str);
 })
 
 
