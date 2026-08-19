@@ -92,16 +92,17 @@ def getSubtextWindowIndices(flat_index):
             total += 1
 
 
-# In[138]:
+# In[10]:
 
 
-def getWindowLossMask(subtext_idx, window_idx) -> tuple(torch.Tensor, int, int):
+def getWindowLossMask(subtext_idx, window_idx, current_token_window) -> tuple(torch.Tensor, int, int):
     token_offset_at_window_start = subtext_offsets[subtext_idx] + window_idx*transformer_stride
 
-    non_padding_transformer_window_size = subtext_windows[subtext_idx][window_idx].nonzero().size(0)
+    non_padding_transformer_window_size = current_token_window.nonzero().size(0)
 
     loss_mask = torch.zeros(transformer_window_length, dtype=torch.bool)
-    loss_mask = subtext_windows[subtext_idx][window_idx] != 0 #sets padding token positions to False
+    loss_mask = current_token_window != 0 #sets padding token positions to False
+
 
 
 
@@ -199,7 +200,7 @@ def getTargetTagWindows(start_word_offset, end_word_offset):
     return pos_tensor[start_word_offset:end_word_offset+1], morph_tag_tensors[start_word_offset:end_word_offset+1] 
 
 
-# In[82]:
+# In[14]:
 
 
 def getCharLSTMInputWindow(token_window: torch.Tensor, loss_mask: torch.Tensor, start_word_offset: int, end_word_offset: int, max_word_length=32) -> (torch.Tensor, torch.Tensor, list):
@@ -416,11 +417,18 @@ print("Median sentence length:", tensor_snt_lngths.median())
 tokens_tensor = torch.tensor(tokens_list, dtype=torch.int64)
 
 
-# In[139]:
+# In[28]:
 
 
 subtext_windows = []
 flat_subtext_window_tensors = []
+
+subtext_window_loss_masks = []
+flat_token_loss_mask_tensors = []
+flat_window_word_token_lengths = []
+flat_window_word_token_lengths_padded_tensor = []
+pos_window_tensors = []
+morph_tag_window_tensors = []
 
 for i in range(len(subtext_offsets)):
     end_idx = len(tokens_list) if i+1 == len(subtext_offsets) else subtext_offsets[i+1]
@@ -428,16 +436,35 @@ for i in range(len(subtext_offsets)):
     subtext_token_length = subtext_tokens.size(0)
 
     subtext_chunks = []
+    loss_mask_chunks = []
+    w = 0
     for j in range(0, subtext_token_length, transformer_stride):
         window_tokens = subtext_tokens[j:j+transformer_window_length]
         padded_window = torch.nn.functional.pad(window_tokens, (0, transformer_window_length-window_tokens.size(0)), value=0)
-        subtext_chunks.append(padded_window)
-        flat_subtext_window_tensors.append(padded_window)       
+        loss_mask, start_word_offset, end_word_offset = getWindowLossMask(i, w, padded_window)
+        if i == 220 and w == 51:
+            print(loss_mask, start_word_offset, end_word_offset)
+        if start_word_offset != -1:    
+            subtext_chunks.append(padded_window)
+            flat_subtext_window_tensors.append(padded_window)
+
+            loss_mask_chunks.append((loss_mask, start_word_offset, end_word_offset))
+            flat_token_loss_mask_tensors.append(loss_mask)
+            flat_window_word_token_lengths.append(getWindowWordLengths(start_word_offset, end_word_offset))
+            flat_window_word_token_lengths_padded_tensor.append(getWindowWordLengths(start_word_offset, end_word_offset, padded=True))
+
+            pos_window, morph_tag_window = getTargetTagWindows(start_word_offset, end_word_offset)
+            pos_window_tensors.append(pos_window)
+            morph_tag_window_tensors.append(morph_tag_window)
+
+            w += 1
+    subtext_window_loss_masks.append(loss_mask_chunks)       
 
     subtext_windows.append(torch.stack(subtext_chunks, dim=0))
 
 
-
+flat_token_loss_mask_tensors = torch.stack(flat_token_loss_mask_tensors)
+flat_window_word_token_lengths_padded_tensor = torch.stack(flat_window_word_token_lengths_padded_tensor)
 
 flat_subtext_window_tensors = torch.stack(flat_subtext_window_tensors)
 
@@ -446,40 +473,40 @@ for subtext_tensors in subtext_windows:
     subtext_window_sizes.append(subtext_tensors.size(0))
 
 
-# In[28]:
+# In[ ]:
 
 
-subtext_windows[6][0], subtext_windows[6][1], stringifyTokensTensor(subtext_windows[6][0], True), stringifyTokensTensor(subtext_windows[6][0][24:72]), stringifyTokensTensor(subtext_windows[6][1], True), stringifyTokensTensor(subtext_windows[6][1][24:72])
 
 
-# In[140]:
+
+# In[29]:
 
 
 ##rewrite this into the first subtext loop and exclude windows which return zeros, -1, -1 from the ggetWindowLossMask() function
-subtext_window_loss_masks = []
-flat_token_loss_mask_tensors = []
-flat_window_word_token_lengths = []
-flat_window_word_token_lengths_padded_tensor = []
-pos_window_tensors = []
-morph_tag_window_tensors = []
-for s in range(len(subtext_windows)):
-    loss_mask_chunks = []
-    for w in range(subtext_windows[s].size(0)):
-        loss_mask, start_word_offset, end_word_offset = getWindowLossMask(s, w)
-        loss_mask_chunks.append((loss_mask, start_word_offset, end_word_offset))
-        flat_token_loss_mask_tensors.append(loss_mask)
-        flat_window_word_token_lengths.append(getWindowWordLengths(start_word_offset, end_word_offset))
-        flat_window_word_token_lengths_padded_tensor.append(getWindowWordLengths(start_word_offset, end_word_offset, padded=True))
+# subtext_window_loss_masks = []
+# flat_token_loss_mask_tensors = []
+# flat_window_word_token_lengths = []
+# flat_window_word_token_lengths_padded_tensor = []
+# pos_window_tensors = []
+# morph_tag_window_tensors = []
+# for s in range(len(subtext_windows)):
+#     loss_mask_chunks = []
+#     for w in range(subtext_windows[s].size(0)):
+#         loss_mask, start_word_offset, end_word_offset = getWindowLossMask(s, w)
+#         loss_mask_chunks.append((loss_mask, start_word_offset, end_word_offset))
+#         flat_token_loss_mask_tensors.append(loss_mask)
+#         flat_window_word_token_lengths.append(getWindowWordLengths(start_word_offset, end_word_offset))
+#         flat_window_word_token_lengths_padded_tensor.append(getWindowWordLengths(start_word_offset, end_word_offset, padded=True))
 
-        pos_window, morph_tag_window = getTargetTagWindows(start_word_offset, end_word_offset)
-        pos_window_tensors.append(pos_window)
-        morph_tag_window_tensors.append(morph_tag_window)
-    subtext_window_loss_masks.append(loss_mask_chunks)
-flat_token_loss_mask_tensors = torch.stack(flat_token_loss_mask_tensors)
-flat_window_word_token_lengths_padded_tensor = torch.stack(flat_window_word_token_lengths_padded_tensor)
+#         pos_window, morph_tag_window = getTargetTagWindows(start_word_offset, end_word_offset)
+#         pos_window_tensors.append(pos_window)
+#         morph_tag_window_tensors.append(morph_tag_window)
+#     subtext_window_loss_masks.append(loss_mask_chunks)
+# flat_token_loss_mask_tensors = torch.stack(flat_token_loss_mask_tensors)
+# flat_window_word_token_lengths_padded_tensor = torch.stack(flat_window_word_token_lengths_padded_tensor)
 
 
-# In[141]:
+# In[30]:
 
 
 lstm_windows = []
@@ -499,34 +526,34 @@ lstm_windows = torch.stack(lstm_windows)
 lstm_word_masks = torch.stack(lstm_word_masks)
 
 
-# In[142]:
+# In[31]:
 
 
-flt_idx = 2553
+flt_idx = 2551
 #flt_idx = randrange(0, 7442)
-lstm_windows[flt_idx][:, :10], lstm_word_masks[flt_idx]
+lstm_windows[flt_idx][:, :10], lstm_word_masks[flt_idx], stringifyTokensTensor(flat_subtext_window_tensors[flt_idx])
 
 
-# In[143]:
+# In[32]:
 
 
 print(flt_idx)
 lstm_word_lengths[flt_idx], stringifyTokensTensor(flat_subtext_window_tensors[flt_idx], True), flat_token_loss_mask_tensors[flt_idx], lstm_word_lengths[flt_idx].shape, flat_token_loss_mask_tensors[flt_idx].nonzero().shape, stringifyTokensTensor(flat_subtext_window_tensors[flt_idx][flat_token_loss_mask_tensors[flt_idx]])
 
 
-# In[144]:
+# In[34]:
 
 
-getSubtextWindowIndices(2553), subtext_window_loss_masks[220][51], flat_window_word_token_lengths[2553][-1]
+getSubtextWindowIndices(2553)
 
 
-# In[316]:
+# In[ ]:
 
 
 
 
 
-# In[86]:
+# In[40]:
 
 
 #print(pos_window_tensors[:7])
@@ -538,13 +565,13 @@ for i in range(6700,6707):
     print(stringifyTokensTensor(flat_subtext_window_tensors[i][flat_token_loss_mask_tensors[i]]))
 
 
-# In[87]:
+# In[41]:
 
 
 print(stringifyTokensTensor(flat_subtext_window_tensors[0]))
 
 
-# In[88]:
+# In[42]:
 
 
 class textWindowsDataset(torch.utils.data.Dataset):
@@ -566,14 +593,14 @@ class textWindowsDataset(torch.utils.data.Dataset):
         return {'token_windows': self.token_windows[idx], 'token_window_loss_masks': self.token_window_loss_masks[idx], 'token_window_word_lengths': self.token_window_word_lengths[idx], 'lstm_windows': self.lstm_windows[idx], 'lstm_word_masks': self.lstm_word_masks[idx], 'lstm_word_lengths': self.lstm_word_lengths[idx], 'pos_window_tensors': self.pos_window_tensors[idx], 'morph_tag_window_tensors': self.morph_tag_window_tensors[idx]}
 
 
-# In[89]:
+# In[43]:
 
 
 mydataset = textWindowsDataset(flat_subtext_window_tensors, flat_token_loss_mask_tensors, flat_window_word_token_lengths_padded_tensor, lstm_windows, lstm_word_masks, lstm_word_lengths, pos_window_tensors, morph_tag_window_tensors)
 mydataset[3000]['pos_window_tensors'], mydataset[3000]['morph_tag_window_tensors'], stringifyTokensTensor(mydataset[3000]['token_windows']), stringifyTokensTensor(mydataset[3000]['token_windows'][mydataset[3000]['token_window_loss_masks']])
 
 
-# In[90]:
+# In[44]:
 
 
 class MorphologyLSTMTransformerModel(torch.nn.Module):
@@ -715,7 +742,7 @@ class MorphologyLSTMTransformerModel(torch.nn.Module):
         return tag_logits
 
 
-# In[91]:
+# In[45]:
 
 
 network = MorphologyLSTMTransformerModel()
@@ -723,10 +750,10 @@ cross_entropy_loss = torch.nn.modules.loss.CrossEntropyLoss()
 adamw_optimiser = torch.optim.AdamW(network.parameters(), lr=1e-4)
 
 
-# In[151]:
+# In[195]:
 
 
-btch_idx = randrange(0, 7442)
+btch_idx = randrange(0, 7437)
 dta = mydataset[btch_idx:btch_idx+32]
 tkn_wndw = dta['token_windows']
 tkn_msks = dta['token_window_loss_masks']
@@ -740,28 +767,6 @@ window_morph_tags = dta['morph_tag_window_tensors']
 flat_pos_window_tensors = torch.cat(poses)
 flat_morph_tag_tensors = torch.cat(window_morph_tags, dim=0)
 
-print(btch_idx)
-prnt_str = ""
-for i in range(len(poses)):
-    prnt_str += str(poses[i].max().item()) + " "
-print(prnt_str.strip())
-
-
-# In[104]:
-
-
-mydataset[3234]['token_window_loss_masks'], mydataset[3234]['token_windows'], stringifyTokensTensor(mydataset[3234]['token_windows'])
-
-
-# In[77]:
-
-
-mydataset[3236]
-
-
-# In[ ]:
-
-
 output_logits = network(tkn_wndw, tkn_msks, tkn_lngths, lstm_wndws, lstm_msks, lstm_lngths, flat_pos_window_tensors, flat_morph_tag_tensors)
 
 losses = [cross_entropy_loss(output_logits[0], flat_pos_window_tensors)]
@@ -773,6 +778,29 @@ loss.backward()
 adamw_optimiser.step()
 print(btch_idx)
 print(loss)
+print(f"loss: {loss.item()}")
+
+
+# In[99]:
+
+
+flat_subtext_window_tensors.shape
+
+
+# In[97]:
+
+
+
+
+
+# In[ ]:
+
+
+print(btch_idx)
+prnt_str = ""
+for i in range(len(poses)):
+    prnt_str += str(poses[i].max().item()) + " "
+print(prnt_str.strip())
 
 
 # In[ ]:
