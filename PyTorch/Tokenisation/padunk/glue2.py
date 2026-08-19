@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[1]:
 
 
 import torch
@@ -14,13 +14,15 @@ import subprocess
 import mmap
 
 
-# In[3]:
+# In[2]:
 
 
 batch_size = 32
+transformer_window_length = 96
+transformer_stride = transformer_window_length//2
 
 
-# In[4]:
+# In[3]:
 
 
 def countLines (file_path) -> int:
@@ -33,7 +35,7 @@ def countLines (file_path) -> int:
   return line_count
 
 
-# In[5]:
+# In[4]:
 
 
 def retrieveSentence (sentence_idx, tokens_list, sentence_offsets) -> str:
@@ -42,7 +44,7 @@ def retrieveSentence (sentence_idx, tokens_list, sentence_offsets) -> str:
     return "".join(tokens_dict[tokno].replace("<wb>", " ") for tokno in tokens_list[sentence_offsets[sentence_idx]:end_idx]).strip()
 
 
-# In[6]:
+# In[5]:
 
 
 def retrieveSubtext(subtext_idx, tokens_list, subtext_offsets) -> str:
@@ -50,7 +52,7 @@ def retrieveSubtext(subtext_idx, tokens_list, subtext_offsets) -> str:
     return "".join(tokens_dict[tokno].replace("<wb>", " ") for tokno in tokens_list[subtext_offsets[subtext_idx]:end_idx]).strip()
 
 
-# In[7]:
+# In[6]:
 
 
 def retrieveSubtextBeginning(subtext_idx, tokens_list, subtext_offsets) -> str:
@@ -58,7 +60,7 @@ def retrieveSubtextBeginning(subtext_idx, tokens_list, subtext_offsets) -> str:
     return "".join(tokens_dict[tokno].replace("<wb>", " ") for tokno in tokens_list[subtext_offsets[subtext_idx]:end_idx]).strip()
 
 
-# In[8]:
+# In[7]:
 
 
 def stringifyTokensTensor(tokens_tensor, token_boundaries=False) -> str:
@@ -66,7 +68,7 @@ def stringifyTokensTensor(tokens_tensor, token_boundaries=False) -> str:
     return token_separator.join(tokens_dict[tokno].replace("<wb>", " ") for tokno in tokens_tensor.tolist()).strip()
 
 
-# In[9]:
+# In[8]:
 
 
 def sortedListFind(sorted_list, sought_after_value) -> int:
@@ -78,28 +80,61 @@ def sortedListFind(sorted_list, sought_after_value) -> int:
         return -1
 
 
-# In[10]:
+# In[9]:
+
+
+def getSubtextWindowIndices(flat_index):
+    total = 0
+    for s in range(len(subtext_windows)):
+        for w in range(subtext_windows[s].size(0)):
+            if total == flat_index:
+                return s, w
+            total += 1
+
+
+# In[138]:
 
 
 def getWindowLossMask(subtext_idx, window_idx) -> tuple(torch.Tensor, int, int):
-    token_offset_at_window_start = subtext_offsets[subtext_idx] + window_idx*32
+    token_offset_at_window_start = subtext_offsets[subtext_idx] + window_idx*transformer_stride
+
+    non_padding_transformer_window_size = subtext_windows[subtext_idx][window_idx].nonzero().size(0)
+
+    loss_mask = torch.zeros(transformer_window_length, dtype=torch.bool)
+    loss_mask = subtext_windows[subtext_idx][window_idx] != 0 #sets padding token positions to False
+
+
 
     first_whole_word_idx = 0
-    start_word_offset = 0
-    for i in range(0, 32):
-        start_word_offset = sortedListFind(word_offsets, token_offset_at_window_start+i)
-        if start_word_offset != -1:
+    start_word_offsets_idx = 0
+    for i in range(0, non_padding_transformer_window_size):
+        start_word_offsets_idx = sortedListFind(word_offsets, token_offset_at_window_start+i)
+        if start_word_offsets_idx != -1:
             first_whole_word_idx = i
             break
-    last_whole_word_idx = 31
-    for i in range(31, 64):
-        idx_pos_in_word_offsets = sortedListFind(word_offsets, token_offset_at_window_start+i+1)
-        if idx_pos_in_word_offsets != -1 or idx_pos_in_word_offsets == len(word_offsets):
-            last_whole_word_idx = i
+
+    ##
+    if start_word_offsets_idx == -1:
+        return torch.zeros(transformer_window_length, dtype=torch.bool), -1, -1
+
+    last_whole_word_idx = non_padding_transformer_window_size - 1##how can we get the last whole-word token from within a window without knowing if it crosses over the boundary?
+    end_word_offsets_idx = 0
+    for i in range(non_padding_transformer_window_size - 1, -1, -1): #transformer_window_length overshoots well into next subtext if this window is padded
+        idx_pos_in_word_offsets = sortedListFind(word_offsets, token_offset_at_window_start+i)
+        if idx_pos_in_word_offsets != -1:
+            last_whole_word_idx = i - 1
+            end_word_offsets_idx = idx_pos_in_word_offsets - 1
             break
 
-    loss_mask = torch.zeros(64, dtype=torch.bool)
-    loss_mask = subtext_windows[subtext_idx][window_idx] != 0 #sets padding token positions to False
+    ##check whether the token after the end of the window is a new word, if so take whole window
+    if sortedListFind(word_offsets, token_offset_at_window_start+non_padding_transformer_window_size) != -1 or token_offset_at_window_start+non_padding_transformer_window_size >= len(tokens_list):
+        last_whole_word_idx = non_padding_transformer_window_size - 1
+        end_word_offsets_idx += 1
+
+    if token_offset_at_window_start+non_padding_transformer_window_size >= len(tokens_list):
+        print(f"last_whole_word_idx: {last_whole_word_idx}")
+
+
     loss_mask[last_whole_word_idx + 1:] = False
     loss_mask[:first_whole_word_idx] = False
 
@@ -107,21 +142,34 @@ def getWindowLossMask(subtext_idx, window_idx) -> tuple(torch.Tensor, int, int):
     if loss_mask.nonzero().size(0) == 0:
         return loss_mask, -1, -1
 
-    post_final_word_token_offset = token_offset_at_window_start + loss_mask.nonzero()[-1].item() + 1
-    end_word_offset = 0
-    post_final_word_word_offset = sortedListFind(word_offsets, post_final_word_token_offset)
-    if post_final_word_word_offset == -1:
-        end_word_offset = len(word_offsets) - 1
-    else:
-        end_word_offset = post_final_word_word_offset - 1
+    # post_final_word_token_offset = token_offset_at_window_start + loss_mask.nonzero()[-1].item() + 1
+    # end_word_offsets_idx = 0
+    # post_final_word_word_offset = sortedListFind(word_offsets, post_final_word_token_offset)
+    # if post_final_word_word_offset == -1:
+    #     end_word_offsets_idx = len(word_offsets) - 1
+    # else:
+    #     end_word_offsets_idx = post_final_word_word_offset - 1
 
-    return loss_mask, start_word_offset, end_word_offset
+    return loss_mask, start_word_offsets_idx, end_word_offsets_idx
 
 
 # In[11]:
 
 
-def getWindowWordLengths(start_word_offset, end_word_offset, padded=False, max_word_length=32):
+def getFlatWindowIndex(s, w):
+    total = 0
+    for i in range(s+1):
+        for j in range(len(subtext_windows[i])):
+            if i == s and j == w:
+                return total
+            total += 1
+    return total
+
+
+# In[12]:
+
+
+def getWindowWordLengths(start_word_offset, end_word_offset, padded=False):
     subtext_window_word_lengths = []
     for i in range(start_word_offset, end_word_offset):
         word_token_length = word_offsets[i + 1] - word_offsets[i]
@@ -135,29 +183,29 @@ def getWindowWordLengths(start_word_offset, end_word_offset, padded=False, max_w
     subtext_window_word_lengths.append(final_word_token_length)
 
     if padded:
-        return torch.nn.functional.pad(torch.tensor(subtext_window_word_lengths, dtype=torch.int64), (0, max_word_length-len(subtext_window_word_lengths)), value=0) 
+        return torch.nn.functional.pad(torch.tensor(subtext_window_word_lengths, dtype=torch.int64), (0, transformer_window_length-len(subtext_window_word_lengths)), value=0) 
     else:
         return torch.tensor(subtext_window_word_lengths, dtype=torch.int64)
-
-
-# In[12]:
-
-
-def getTargetTagWindows(start_word_offset, end_word_offset, max_word_length=32):
-    if start_word_offset == -1:
-        return torch.tensor([-1], dtype=torch.int64).expand(max_word_length), torch.tensor([-1], dtype=torch.int64).expand(max_word_length).unsqueeze(1).expand(-1, 10)
-
-    num_words_in_window = end_word_offset+1 - start_word_offset
-    return pos_tensor[start_word_offset:end_word_offset+1], morph_tag_tensors[start_word_offset:end_word_offset+1] 
 
 
 # In[13]:
 
 
+def getTargetTagWindows(start_word_offset, end_word_offset):
+    if start_word_offset == -1:
+        return torch.tensor([-1], dtype=torch.int64).expand(transformer_window_length), torch.tensor([-1], dtype=torch.int64).expand(transformer_window_length).unsqueeze(1).expand(-1, 10)
+
+    num_words_in_window = end_word_offset+1 - start_word_offset
+    return pos_tensor[start_word_offset:end_word_offset+1], morph_tag_tensors[start_word_offset:end_word_offset+1] 
+
+
+# In[82]:
+
+
 def getCharLSTMInputWindow(token_window: torch.Tensor, loss_mask: torch.Tensor, start_word_offset: int, end_word_offset: int, max_word_length=32) -> (torch.Tensor, torch.Tensor, list):
 
     if start_word_offset == -1:
-        return torch.zeros(32, 32, dtype=torch.int64), torch.zeros(32, dtype=torch.bool), []
+        return torch.zeros(transformer_window_length, max_word_length, dtype=torch.int64), torch.zeros(transformer_window_length, dtype=torch.bool), []
 
     word_tokens_tensor = token_window[loss_mask]
 
@@ -181,6 +229,8 @@ def getCharLSTMInputWindow(token_window: torch.Tensor, loss_mask: torch.Tensor, 
         word_tensor = torch.nn.functional.pad(torch.tensor(word_char_ids, dtype=torch.int64), (0, max_word_length-len(word_char_ids)), value=0)
         char_lstm_window_word_tensors_list.append(word_tensor)
         word_lengths_list.append(len(word_char_ids))
+        # if start_word_offset == 67013:
+        #     print(f"word_str: {word_str},i:j: {i}:{j}, start_idx:one_past_end_idx: {start_idx}:{one_past_end_idx}, word_tokens_tensor.shape: {word_tokens_tensor.shape}")
         j += word_token_length
 
     final_word_token_length = 1
@@ -202,28 +252,30 @@ def getCharLSTMInputWindow(token_window: torch.Tensor, loss_mask: torch.Tensor, 
     word_tensor = torch.nn.functional.pad(torch.tensor(word_char_ids, dtype=torch.int64), (0, max_word_length-len(word_char_ids)), value=0)
     char_lstm_window_word_tensors_list.append(word_tensor)
     word_lengths_list.append(len(word_char_ids))
+    # if start_word_offset == 67013 and len(word_char_ids) == 0:
+    #     print(f"word_str: {word_str}, start_idx:one_past_end_idx: {start_idx}:{one_past_end_idx}, word_tokens_tensor.shape: {word_tokens_tensor.shape}")
 
     unpadded_char_lstm_window_tensor = torch.stack(char_lstm_window_word_tensors_list, dim=0)
-    char_lstm_window_tensor = torch.nn.functional.pad(unpadded_char_lstm_window_tensor, (0, 0, 0, 32-unpadded_char_lstm_window_tensor.size(0)), value=0)
+    char_lstm_window_tensor = torch.nn.functional.pad(unpadded_char_lstm_window_tensor, (0, 0, 0, transformer_window_length-unpadded_char_lstm_window_tensor.size(0)), value=0)
     lstm_word_mask = (char_lstm_window_tensor != 0).any(dim=1)
 
     return char_lstm_window_tensor, lstm_word_mask, word_lengths_list
 
 
-# In[14]:
+# In[15]:
 
 
 token_vocab_length = countLines("bpe_token_indices.csv")
 
 
-# In[15]:
+# In[16]:
 
 
 bpe_token_indices_file = open("bpe_token_indices.csv", "r")
 tokenised_chu_words_training_file = open("tokenised_chu_words_training_deepcleaned.csv", "r")
 
 
-# In[16]:
+# In[17]:
 
 
 tokens_list = []
@@ -237,7 +289,7 @@ with mmap.mmap(tokenised_chu_words_training_file.fileno(), length=0, access=mmap
       word_token_count += 1
 
 
-# In[82]:
+# In[18]:
 
 
 pos_dict = {}
@@ -249,7 +301,7 @@ for row in csv.DictReader(open("torot_pos.csv", "r"), delimiter="|"):
     pos_dict_reversed[pos_tag] = pos_tag_id
 
 
-# In[83]:
+# In[19]:
 
 
 morph_slots_dicts = []
@@ -268,13 +320,13 @@ for row in csv.DictReader(open("torot_morphtags.csv", "r"), delimiter="|"):
     morph_slots_reverse_dicts.append(morph_slots_reverse_dict)
 
 
-# In[84]:
+# In[20]:
 
 
 len(word_offsets)
 
 
-# In[85]:
+# In[21]:
 
 
 sentence_offsets = []
@@ -317,19 +369,19 @@ for row in csv.DictReader(open("../../chu_words_tagged.csv", "r"), delimiter="|"
 morph_tag_tensors = torch.stack(morph_tag_tensors, dim=0)
 
 
-# In[86]:
+# In[22]:
 
 
 pos_tensor.shape, morph_tag_tensors.shape
 
 
-# In[87]:
+# In[23]:
 
 
 len(tokens_list), len(word_offsets), len(sentence_offsets), len(subtext_offsets), len(text_offsets)
 
 
-# In[88]:
+# In[24]:
 
 
 tokens_dict = {}
@@ -349,7 +401,7 @@ with mmap.mmap(bpe_token_indices_file.fileno(), length=0, access=mmap.ACCESS_REA
         line_no += 1
 
 
-# In[89]:
+# In[25]:
 
 
 sentence_offsets_tensor = torch.tensor(sentence_offsets, dtype=torch.int64)
@@ -358,13 +410,13 @@ print("Max sentence length:", tensor_snt_lngths.max())
 print("Median sentence length:", tensor_snt_lngths.median())
 
 
-# In[90]:
+# In[26]:
 
 
 tokens_tensor = torch.tensor(tokens_list, dtype=torch.int64)
 
 
-# In[91]:
+# In[139]:
 
 
 subtext_windows = []
@@ -374,13 +426,13 @@ for i in range(len(subtext_offsets)):
     end_idx = len(tokens_list) if i+1 == len(subtext_offsets) else subtext_offsets[i+1]
     subtext_tokens = tokens_tensor[subtext_offsets[i]:end_idx]
     subtext_token_length = subtext_tokens.size(0)
-    # leftover = subtext_token_length
-    # window_length = 0
+
     subtext_chunks = []
-    for j in range(0, subtext_token_length, 32):
-        window_tokens = subtext_tokens[j:j+64]
-        subtext_chunks.append(torch.nn.functional.pad(window_tokens, (0, 64-window_tokens.size(0)), value=0))
-        flat_subtext_window_tensors.append(torch.nn.functional.pad(window_tokens, (0, 64-window_tokens.size(0)), value=0))       
+    for j in range(0, subtext_token_length, transformer_stride):
+        window_tokens = subtext_tokens[j:j+transformer_window_length]
+        padded_window = torch.nn.functional.pad(window_tokens, (0, transformer_window_length-window_tokens.size(0)), value=0)
+        subtext_chunks.append(padded_window)
+        flat_subtext_window_tensors.append(padded_window)       
 
     subtext_windows.append(torch.stack(subtext_chunks, dim=0))
 
@@ -394,9 +446,16 @@ for subtext_tensors in subtext_windows:
     subtext_window_sizes.append(subtext_tensors.size(0))
 
 
-# In[92]:
+# In[28]:
 
 
+subtext_windows[6][0], subtext_windows[6][1], stringifyTokensTensor(subtext_windows[6][0], True), stringifyTokensTensor(subtext_windows[6][0][24:72]), stringifyTokensTensor(subtext_windows[6][1], True), stringifyTokensTensor(subtext_windows[6][1][24:72])
+
+
+# In[140]:
+
+
+##rewrite this into the first subtext loop and exclude windows which return zeros, -1, -1 from the ggetWindowLossMask() function
 subtext_window_loss_masks = []
 flat_token_loss_mask_tensors = []
 flat_window_word_token_lengths = []
@@ -420,7 +479,7 @@ flat_token_loss_mask_tensors = torch.stack(flat_token_loss_mask_tensors)
 flat_window_word_token_lengths_padded_tensor = torch.stack(flat_window_word_token_lengths_padded_tensor)
 
 
-# In[93]:
+# In[141]:
 
 
 lstm_windows = []
@@ -440,7 +499,34 @@ lstm_windows = torch.stack(lstm_windows)
 lstm_word_masks = torch.stack(lstm_word_masks)
 
 
-# In[94]:
+# In[142]:
+
+
+flt_idx = 2553
+#flt_idx = randrange(0, 7442)
+lstm_windows[flt_idx][:, :10], lstm_word_masks[flt_idx]
+
+
+# In[143]:
+
+
+print(flt_idx)
+lstm_word_lengths[flt_idx], stringifyTokensTensor(flat_subtext_window_tensors[flt_idx], True), flat_token_loss_mask_tensors[flt_idx], lstm_word_lengths[flt_idx].shape, flat_token_loss_mask_tensors[flt_idx].nonzero().shape, stringifyTokensTensor(flat_subtext_window_tensors[flt_idx][flat_token_loss_mask_tensors[flt_idx]])
+
+
+# In[144]:
+
+
+getSubtextWindowIndices(2553), subtext_window_loss_masks[220][51], flat_window_word_token_lengths[2553][-1]
+
+
+# In[316]:
+
+
+
+
+
+# In[86]:
 
 
 #print(pos_window_tensors[:7])
@@ -452,13 +538,13 @@ for i in range(6700,6707):
     print(stringifyTokensTensor(flat_subtext_window_tensors[i][flat_token_loss_mask_tensors[i]]))
 
 
-# In[95]:
+# In[87]:
 
 
 print(stringifyTokensTensor(flat_subtext_window_tensors[0]))
 
 
-# In[96]:
+# In[88]:
 
 
 class textWindowsDataset(torch.utils.data.Dataset):
@@ -480,18 +566,18 @@ class textWindowsDataset(torch.utils.data.Dataset):
         return {'token_windows': self.token_windows[idx], 'token_window_loss_masks': self.token_window_loss_masks[idx], 'token_window_word_lengths': self.token_window_word_lengths[idx], 'lstm_windows': self.lstm_windows[idx], 'lstm_word_masks': self.lstm_word_masks[idx], 'lstm_word_lengths': self.lstm_word_lengths[idx], 'pos_window_tensors': self.pos_window_tensors[idx], 'morph_tag_window_tensors': self.morph_tag_window_tensors[idx]}
 
 
-# In[97]:
+# In[89]:
 
 
 mydataset = textWindowsDataset(flat_subtext_window_tensors, flat_token_loss_mask_tensors, flat_window_word_token_lengths_padded_tensor, lstm_windows, lstm_word_masks, lstm_word_lengths, pos_window_tensors, morph_tag_window_tensors)
 mydataset[3000]['pos_window_tensors'], mydataset[3000]['morph_tag_window_tensors'], stringifyTokensTensor(mydataset[3000]['token_windows']), stringifyTokensTensor(mydataset[3000]['token_windows'][mydataset[3000]['token_window_loss_masks']])
 
 
-# In[155]:
+# In[90]:
 
 
 class MorphologyLSTMTransformerModel(torch.nn.Module):
-    def __init__(self, token_vocab_size=4539, token_embedding_dim=256, token_seq_length=64, attention_heads=4, trans_layers=4, char_vocab_size=38, char_embedding_dim=32, lstm_hidden_size=64, lstm_layers=1, tag_slots_num=11, tag_slot_embedding_dim=32):
+    def __init__(self, token_vocab_size=4539, token_embedding_dim=256, token_seq_length=transformer_window_length, attention_heads=4, trans_layers=4, char_vocab_size=38, char_embedding_dim=32, lstm_hidden_size=64, lstm_layers=1, tag_slots_num=11, tag_slot_embedding_dim=32):
         super().__init__()
 
 
@@ -575,7 +661,7 @@ class MorphologyLSTMTransformerModel(torch.nn.Module):
 
         return flattened_pooled_tokens
 
-    def forward(self, token_windows, token_windows_loss_masks, token_windows_word_lengths, lstm_windows, lstm_word_masks, lstm_word_lengths, pos_window_tensors, morph_tag_window_tensors) -> torch.Tensor:
+    def forward(self, token_windows, token_windows_loss_masks, token_windows_word_lengths, lstm_windows, lstm_word_masks, lstm_word_lengths, flat_pos_window_tensors, flat_morph_tag_window_tensors) -> torch.Tensor:
         ### TRANSFORMER ###
         token_embeddings = self.token_embedder(token_windows)
         positional_embeddings = self.positional_embedder(self.position_ids.expand(token_embeddings.size(0), -1))
@@ -610,19 +696,17 @@ class MorphologyLSTMTransformerModel(torch.nn.Module):
         slot_embeddings = self.gru_slot_positional_embedder(self.gru_slot_ids.expand(N, -1))
         gru_START_embedding = self.gru_START_embedding.unsqueeze(0).expand(N, -1)
 
-        flat_pos_window_tensors = torch.cat(pos_window_tensors)
-        flat_pos_morph_tag_tensors = torch.cat(morph_tag_window_tensors, dim=0)
         prev_tag_embeddings = [gru_START_embedding.unsqueeze(1), self.gru_tag_slot_embedders[0](flat_pos_window_tensors).unsqueeze(1)]
         for i in range(1, 10):
-            prev_tag_embeddings.append(self.gru_tag_slot_embedders[i](flat_pos_morph_tag_tensors[:, i-1]).unsqueeze(1))
+            prev_tag_embeddings.append(self.gru_tag_slot_embedders[i](flat_morph_tag_window_tensors[:, i-1]).unsqueeze(1))
             #print(self.gru_tag_slot_embedders[i], flat_pos_morph_tag_tensors[:, i])
 
         prev_tag_embeddings = torch.cat(prev_tag_embeddings, dim=1)
-        print(flat_word_vectors_gru_expanded.shape, prev_tag_embeddings.shape, slot_embeddings.shape)
+        #print(flat_word_vectors_gru_expanded.shape, prev_tag_embeddings.shape, slot_embeddings.shape)
 
         gru_input = torch.cat([flat_word_vectors_gru_expanded, prev_tag_embeddings, slot_embeddings], dim=2)
 
-        gru_output, h_n = self.decoder_gru(gru_input)
+        gru_output = self.decoder_gru(gru_input)[0]
 
         tag_logits = []
         for j in range(11):
@@ -631,10 +715,19 @@ class MorphologyLSTMTransformerModel(torch.nn.Module):
         return tag_logits
 
 
-# In[156]:
+# In[91]:
 
 
-dta = mydataset[0:32]
+network = MorphologyLSTMTransformerModel()
+cross_entropy_loss = torch.nn.modules.loss.CrossEntropyLoss()
+adamw_optimiser = torch.optim.AdamW(network.parameters(), lr=1e-4)
+
+
+# In[151]:
+
+
+btch_idx = randrange(0, 7442)
+dta = mydataset[btch_idx:btch_idx+32]
 tkn_wndw = dta['token_windows']
 tkn_msks = dta['token_window_loss_masks']
 tkn_lngths = dta['token_window_word_lengths']
@@ -644,20 +737,45 @@ lstm_lngths = dta['lstm_word_lengths']
 poses = dta['pos_window_tensors']
 window_morph_tags = dta['morph_tag_window_tensors']
 
-network = MorphologyLSTMTransformerModel()
+flat_pos_window_tensors = torch.cat(poses)
+flat_morph_tag_tensors = torch.cat(window_morph_tags, dim=0)
 
-output = network(tkn_wndw, tkn_msks, tkn_lngths, lstm_wndws, lstm_msks, lstm_lngths, poses, window_morph_tags)
-
-
-
-
-# In[160]:
-
-
-output[10]
+print(btch_idx)
+prnt_str = ""
+for i in range(len(poses)):
+    prnt_str += str(poses[i].max().item()) + " "
+print(prnt_str.strip())
 
 
-# In[36]:
+# In[104]:
+
+
+mydataset[3234]['token_window_loss_masks'], mydataset[3234]['token_windows'], stringifyTokensTensor(mydataset[3234]['token_windows'])
+
+
+# In[77]:
+
+
+mydataset[3236]
+
+
+# In[ ]:
+
+
+output_logits = network(tkn_wndw, tkn_msks, tkn_lngths, lstm_wndws, lstm_msks, lstm_lngths, flat_pos_window_tensors, flat_morph_tag_tensors)
+
+losses = [cross_entropy_loss(output_logits[0], flat_pos_window_tensors)]
+for i in range(1, 11):
+    losses.append(cross_entropy_loss(output_logits[i], flat_morph_tag_tensors[:, i -1]))
+loss = torch.stack(losses).mean()
+adamw_optimiser.zero_grad()
+loss.backward()
+adamw_optimiser.step()
+print(btch_idx)
+print(loss)
+
+
+# In[ ]:
 
 
 def poolWorkTokenVectors(token_window: torch.Tensor, loss_mask: torch.Tensor, start_word_offset: int, end_word_offset: int) -> torch.Tensor:
@@ -693,4 +811,37 @@ def poolWorkTokenVectors(token_window: torch.Tensor, loss_mask: torch.Tensor, st
     return torch.nn.functional.pad(pooled_window_tensors, (0, 0, 0, 32-pooled_window_tensors.size(0)), value=0)
     #return torch.nn.functional.pad(pooled_window_tensors, (0, 32-pooled_window_tensors.size(0)), value=0)
 
+
+
+# In[ ]:
+
+
+loss = torch.nn.CrossEntropyLoss()
+sft_mx = torch.nn.Softmax(dim=0)
+inp = torch.tensor([-1.5, 1.4, 0.1, 3.2], requires_grad=True)
+print(inp)
+print(sft_mx(inp))
+targ = torch.empty(1, dtype=torch.long).random_(4)
+print(targ)
+output = loss(inp, targ)
+print(output)
+
+
+# In[161]:
+
+
+last_whole_word_idx = 0
+for i in range(96 - 1, -1, -1):
+    idx_pos_in_word_offsets = sortedListFind(word_offsets, 347650+i)
+    if idx_pos_in_word_offsets != -1 or idx_pos_in_word_offsets == len(word_offsets) - 1:
+        last_whole_word_idx = i
+        break
+print(last_whole_word_idx)
+sortedListFind(word_offsets, 347650+96)
+
+
+# In[156]:
+
+
+sortedListFind(word_offsets, 347760), len(word_offsets)
 
