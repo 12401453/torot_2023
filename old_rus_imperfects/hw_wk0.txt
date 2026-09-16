@@ -1,0 +1,2 @@
+1.) Write first draft of imperfect article, putting in all the references I've looked at already, making the point of the difference between Andersen and the Russians and saying that our aim is to look very detailed at all the data
+2.) Check Wiktionary scrape by the Finnish guy and see if a subset of non-retardedly foreign vocab can be retrieved from it

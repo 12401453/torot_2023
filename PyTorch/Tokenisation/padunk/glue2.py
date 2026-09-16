@@ -6,12 +6,14 @@
 
 import torch
 import bisect
-import numpy as np
-from numpy.dtypes import StringDType
+# import numpy as np
+# from numpy.dtypes import StringDType
 import csv
 from random import randrange
 import subprocess
 import mmap
+import matplotlib.pyplot as plt
+from colorama import Fore, Style
 
 
 # In[2]:
@@ -71,6 +73,43 @@ def stringifyTokensTensor(tokens_tensor, token_boundaries=False) -> str:
 # In[8]:
 
 
+def stringifyPosTensor(pos_tensor) -> str:
+    return " ".join(pos_dict[pos_code] for pos_code in pos_tensor.tolist()).strip()
+
+
+# In[9]:
+
+
+def stringifyMorphTagsTensor(morph_tags_tensor, array=False) -> str:
+
+    tags = []
+    tags_str = ""
+    for i in range(morph_tags_tensor.shape[0]):
+        tag_str = ""
+        for j in range(10):
+            tag_str += morph_slots_dicts[j][morph_tags_tensor[i][j].item()]
+        tags.append(tag_str)
+        tags_str += "|"+tag_str
+
+    return tags if array==True else tags_str[1:]
+
+
+
+# In[10]:
+
+
+def stringifyLSTMWindowEntry(char_tensor):
+    word_str = ""
+    for char_code in char_tensor.tolist():
+        if char_code == 0:
+            break
+        word_str += char_dict[char_code]
+    return word_str
+
+
+# In[11]:
+
+
 def sortedListFind(sorted_list, sought_after_value) -> int:
     'Locate the leftmost value exactly equal to x'
     i = bisect.bisect_left(sorted_list, sought_after_value)
@@ -80,7 +119,7 @@ def sortedListFind(sorted_list, sought_after_value) -> int:
         return -1
 
 
-# In[9]:
+# In[12]:
 
 
 def getSubtextWindowIndices(flat_index):
@@ -92,10 +131,10 @@ def getSubtextWindowIndices(flat_index):
             total += 1
 
 
-# In[10]:
+# In[13]:
 
 
-def getWindowLossMask(subtext_idx, window_idx, current_token_window) -> tuple(torch.Tensor, int, int):
+def getWindowLossMask(subtext_idx, window_idx, current_token_window, subtext_offsets, word_offsets, tokens_list) -> tuple[torch.Tensor, int, int]:
     token_offset_at_window_start = subtext_offsets[subtext_idx] + window_idx*transformer_stride
 
     non_padding_transformer_window_size = current_token_window.nonzero().size(0)
@@ -154,7 +193,7 @@ def getWindowLossMask(subtext_idx, window_idx, current_token_window) -> tuple(to
     return loss_mask, start_word_offsets_idx, end_word_offsets_idx
 
 
-# In[11]:
+# In[14]:
 
 
 def getFlatWindowIndex(s, w):
@@ -167,10 +206,10 @@ def getFlatWindowIndex(s, w):
     return total
 
 
-# In[12]:
+# In[15]:
 
 
-def getWindowWordLengths(start_word_offset, end_word_offset, padded=False):
+def getWindowWordLengths(start_word_offset, end_word_offset, word_offsets, tokens_list, padded=False):
     subtext_window_word_lengths = []
     for i in range(start_word_offset, end_word_offset):
         word_token_length = word_offsets[i + 1] - word_offsets[i]
@@ -189,10 +228,10 @@ def getWindowWordLengths(start_word_offset, end_word_offset, padded=False):
         return torch.tensor(subtext_window_word_lengths, dtype=torch.int64)
 
 
-# In[13]:
+# In[16]:
 
 
-def getTargetTagWindows(start_word_offset, end_word_offset):
+def getTargetTagWindows(start_word_offset, end_word_offset, pos_tensor, morph_tag_tensors):
     if start_word_offset == -1:
         return torch.tensor([-1], dtype=torch.int64).expand(transformer_window_length), torch.tensor([-1], dtype=torch.int64).expand(transformer_window_length).unsqueeze(1).expand(-1, 10)
 
@@ -200,10 +239,10 @@ def getTargetTagWindows(start_word_offset, end_word_offset):
     return pos_tensor[start_word_offset:end_word_offset+1], morph_tag_tensors[start_word_offset:end_word_offset+1] 
 
 
-# In[14]:
+# In[17]:
 
 
-def getCharLSTMInputWindow(token_window: torch.Tensor, loss_mask: torch.Tensor, start_word_offset: int, end_word_offset: int, max_word_length=32) -> (torch.Tensor, torch.Tensor, list):
+def getCharLSTMInputWindow(token_window: torch.Tensor, loss_mask: torch.Tensor, start_word_offset: int, end_word_offset: int, word_offsets, tokens_list, max_word_length=32) -> (torch.Tensor, torch.Tensor, list):
 
     if start_word_offset == -1:
         return torch.zeros(transformer_window_length, max_word_length, dtype=torch.int64), torch.zeros(transformer_window_length, dtype=torch.bool), []
@@ -263,33 +302,6 @@ def getCharLSTMInputWindow(token_window: torch.Tensor, loss_mask: torch.Tensor, 
     return char_lstm_window_tensor, lstm_word_mask, word_lengths_list
 
 
-# In[15]:
-
-
-token_vocab_length = countLines("bpe_token_indices.csv")
-
-
-# In[16]:
-
-
-bpe_token_indices_file = open("bpe_token_indices.csv", "r")
-tokenised_chu_words_training_file = open("tokenised_chu_words_training_deepcleaned.csv", "r")
-
-
-# In[17]:
-
-
-tokens_list = []
-word_offsets = []
-with mmap.mmap(tokenised_chu_words_training_file.fileno(), length=0, access=mmap.ACCESS_READ) as mmap_tokens_file:
-  word_token_count = 0
-  for line in iter(mmap_tokens_file.readline, b""):
-    word_offsets.append(word_token_count)
-    for token_no in line.decode("utf-8").strip().split(",")[0].split(" "):
-      tokens_list.append(int(token_no))
-      word_token_count += 1
-
-
 # In[18]:
 
 
@@ -324,254 +336,462 @@ for row in csv.DictReader(open("torot_morphtags.csv", "r"), delimiter="|"):
 # In[20]:
 
 
-len(word_offsets)
+#bpe_token_indices_file = open("bpe_token_indices.csv", "r")
+#tokenised_chu_words_training_file = open("tokenised_chu_words_training_deepcleaned.csv", "r")
 
 
 # In[21]:
-
-
-sentence_offsets = []
-subtext_offsets = []
-text_offsets = []
-row_no = 0
-sentence_no_prev = 0
-subtext_no_prev = 0
-text_id_prev = 0
-token_count = 0
-training_data_wordcount = countLines("../../chu_words_tagged.csv") - 1
-pos_tensor = torch.zeros(training_data_wordcount, dtype=torch.int64)
-morph_tag_tensors = []
-for row in csv.DictReader(open("../../chu_words_tagged.csv", "r"), delimiter="|"):
-    sentence_no = int(row["sentence_no"])
-    subtext_no = int(row["subtitle_id"])
-    text_id_no = int(row["text_id"])
-    if sentence_no != sentence_no_prev:
-        sentence_offsets.append(word_offsets[row_no])
-        sentence_no_prev = sentence_no
-    if text_id_no != text_id_prev:
-        text_offsets.append(word_offsets[row_no])
-        text_id_prev = text_id_no
-        subtext_offsets.append(word_offsets[row_no])
-        subtext_no_prev = subtext_no
-    elif subtext_no != subtext_no_prev:
-        subtext_offsets.append(word_offsets[row_no])
-        subtext_no_prev = subtext_no
-
-    pos = row["pos"]
-    morph_tag = row["morph_tag"]
-    pos_tensor[row_no] = pos_dict_reversed[pos]
-    morph_tag_tensor = torch.zeros(10, dtype=torch.int64)
-    for i in range(10):
-        morph_tag_tensor[i] = morph_slots_reverse_dicts[i][morph_tag[i]]
-    morph_tag_tensors.append(morph_tag_tensor)
-
-
-    row_no += 1
-morph_tag_tensors = torch.stack(morph_tag_tensors, dim=0)
-
-
-# In[22]:
-
-
-pos_tensor.shape, morph_tag_tensors.shape
-
-
-# In[23]:
-
-
-len(tokens_list), len(word_offsets), len(sentence_offsets), len(subtext_offsets), len(text_offsets)
-
-
-# In[24]:
 
 
 tokens_dict = {}
 tokens_dict_reversed = {}
 char_dict = {}
 char_dict_reversed = {}
-with mmap.mmap(bpe_token_indices_file.fileno(), length=0, access=mmap.ACCESS_READ) as mmap_bpe_file:
-    line_no = 0
-    for bin_line in iter(mmap_bpe_file.readline, b""):
-        line = bin_line.decode("utf-8").strip()
-        split_line = line.split(",")
-        tokens_dict[int(split_line[0])] = split_line[1].strip()
-        tokens_dict_reversed[split_line[1]] = int(split_line[0])
-        if line_no < 38:
-            char_dict[int(split_line[0])] = split_line[1].strip()
-            char_dict_reversed[split_line[1]] = int(split_line[0])
-        line_no += 1
+with open("bpe_token_indices.csv", "r") as bpe_token_indices_file:
+    with mmap.mmap(bpe_token_indices_file.fileno(), length=0, access=mmap.ACCESS_READ) as mmap_bpe_file:
+        line_no = 0
+        for bin_line in iter(mmap_bpe_file.readline, b""):
+            line = bin_line.decode("utf-8").strip()
+            split_line = line.split(",")
+            tokens_dict[int(split_line[0])] = split_line[1].strip()
+            tokens_dict_reversed[split_line[1]] = int(split_line[0])
+            if line_no < 38:
+                char_dict[int(split_line[0])] = split_line[1].strip()
+                char_dict_reversed[split_line[1]] = int(split_line[0])
+            line_no += 1
+
+
+# In[22]:
+
+
+def getDatasetInput(tokenised_data_filepath, tagged_data_filepath):
+
+    tokens_list = []
+    word_offsets = []
+    with open(tokenised_data_filepath, "r") as tokenised_data_file:
+        with mmap.mmap(tokenised_data_file.fileno(), length=0, access=mmap.ACCESS_READ) as mmap_tokenised_data_file:
+            word_token_count = 0
+            for b_line in iter(mmap_tokenised_data_file.readline, b""):
+                word_offsets.append(word_token_count)
+                for token_no in b_line.decode("utf-8").strip().split(",")[0].split(" "):
+                    tokens_list.append(int(token_no))
+                    word_token_count += 1
+    tokens_tensor = torch.tensor(tokens_list, dtype=torch.int64)
+
+    sentence_offsets = []
+    subtext_offsets = []
+    text_offsets = []
+    row_no = 0
+    sentence_no_prev = 0
+    subtext_no_prev = 0
+    text_id_prev = 0
+    token_count = 0
+    training_data_wordcount = countLines(tagged_data_filepath) - 1
+    pos_tensor = torch.zeros(training_data_wordcount, dtype=torch.int64)
+    morph_tag_tensors = []
+    for row in csv.DictReader(open(tagged_data_filepath, "r"), delimiter="|"):
+        sentence_no = int(row["sentence_no"])
+        subtext_no = int(row["subtitle_id"])
+        text_id_no = int(row["text_id"])
+        if sentence_no != sentence_no_prev:
+            sentence_offsets.append(word_offsets[row_no])
+            sentence_no_prev = sentence_no
+        if text_id_no != text_id_prev:
+            text_offsets.append(word_offsets[row_no])
+            text_id_prev = text_id_no
+            subtext_offsets.append(word_offsets[row_no])
+            subtext_no_prev = subtext_no
+        elif subtext_no != subtext_no_prev:
+            subtext_offsets.append(word_offsets[row_no])
+            subtext_no_prev = subtext_no
+
+        pos = row["pos"]
+        morph_tag = row["morph_tag"]
+        pos_tensor[row_no] = pos_dict_reversed[pos]
+        morph_tag_tensor = torch.zeros(10, dtype=torch.int64)
+        for i in range(10):
+            morph_tag_tensor[i] = morph_slots_reverse_dicts[i][morph_tag[i]]
+        morph_tag_tensors.append(morph_tag_tensor)        
+        row_no += 1
+    morph_tag_tensors = torch.stack(morph_tag_tensors, dim=0)
+
+    subtext_windows = []
+    flat_subtext_window_tensors = []
+
+    subtext_window_loss_masks = []
+    flat_token_loss_mask_tensors = []
+    flat_window_word_token_lengths = []
+    flat_window_word_token_lengths_padded_tensor = []
+    pos_window_tensors = []
+    morph_tag_window_tensors = []
+
+    for i in range(len(subtext_offsets)):
+        end_idx = len(tokens_list) if i+1 == len(subtext_offsets) else subtext_offsets[i+1]
+        subtext_tokens = tokens_tensor[subtext_offsets[i]:end_idx]
+        subtext_token_length = subtext_tokens.size(0)
+
+        subtext_chunks = []
+        loss_mask_chunks = []
+        w = 0
+        for j in range(0, subtext_token_length, transformer_stride):
+            window_tokens = subtext_tokens[j:j+transformer_window_length]
+            padded_window = torch.nn.functional.pad(window_tokens, (0, transformer_window_length-window_tokens.size(0)), value=0)
+            loss_mask, start_word_offset, end_word_offset = getWindowLossMask(i, w, padded_window, subtext_offsets, word_offsets, tokens_list)
+            if i == 220 and w == 51:
+                print(loss_mask, start_word_offset, end_word_offset)
+            if start_word_offset != -1:    
+                subtext_chunks.append(padded_window)
+                flat_subtext_window_tensors.append(padded_window)
+
+                loss_mask_chunks.append((loss_mask, start_word_offset, end_word_offset))
+                flat_token_loss_mask_tensors.append(loss_mask)
+                flat_window_word_token_lengths.append(getWindowWordLengths(start_word_offset, end_word_offset, word_offsets, tokens_list))
+                flat_window_word_token_lengths_padded_tensor.append(getWindowWordLengths(start_word_offset, end_word_offset, word_offsets, tokens_list, padded=True))
+
+                pos_window, morph_tag_window = getTargetTagWindows(start_word_offset, end_word_offset, pos_tensor, morph_tag_tensors)
+                pos_window_tensors.append(pos_window)
+                morph_tag_window_tensors.append(morph_tag_window)
+
+                w += 1
+        subtext_window_loss_masks.append(loss_mask_chunks)       
+
+        subtext_windows.append(torch.stack(subtext_chunks, dim=0))
+
+
+    flat_token_loss_mask_tensors = torch.stack(flat_token_loss_mask_tensors)
+    flat_window_word_token_lengths_padded_tensor = torch.stack(flat_window_word_token_lengths_padded_tensor)
+
+    flat_subtext_window_tensors = torch.stack(flat_subtext_window_tensors)
+
+    subtext_window_sizes = []
+    for subtext_tensors in subtext_windows:
+        subtext_window_sizes.append(subtext_tensors.size(0))
+
+
+    lstm_windows = []
+    lstm_word_masks = []
+    lstm_word_lengths = []
+    flat_pos_window_tensors = []
+    flat_morph_tag_window_tensors = []
+    for s in range(len(subtext_windows)):
+        for w in range(subtext_windows[s].size(0)):
+            loss_mask, start_word_offset, end_word_offset = subtext_window_loss_masks[s][w]
+            lstm_window, lstm_word_mask, lstm_window_word_lengths = getCharLSTMInputWindow(subtext_windows[s][w], loss_mask, start_word_offset, end_word_offset, word_offsets, tokens_list)
+            lstm_windows.append(lstm_window)
+            lstm_word_masks.append(lstm_word_mask)
+            lstm_word_lengths.append(torch.tensor(lstm_window_word_lengths, dtype=torch.int64))
+
+    lstm_windows = torch.stack(lstm_windows)
+    lstm_word_masks = torch.stack(lstm_word_masks)
+
+    return flat_subtext_window_tensors, flat_token_loss_mask_tensors, flat_window_word_token_lengths_padded_tensor, lstm_windows, lstm_word_masks, lstm_word_lengths, pos_window_tensors, morph_tag_window_tensors
+
+
+# In[23]:
+
+
+train_dataset_input = getDatasetInput("tokenised_chu_words_training_deepcleaned.csv", "../../chu_words_tagged.csv")
+
+
+# In[24]:
+
+
+validation_dataset_input = getDatasetInput("tokenised_zogr_validation_words_deepcleaned.csv", "zogr_unannotated_validation.csv")
 
 
 # In[25]:
 
 
-sentence_offsets_tensor = torch.tensor(sentence_offsets, dtype=torch.int64)
-tensor_snt_lngths = torch.diff(sentence_offsets_tensor)
-print("Max sentence length:", tensor_snt_lngths.max())
-print("Median sentence length:", tensor_snt_lngths.median())
+stringifyTokensTensor(validation_dataset_input[0][201]), stringifyPosTensor(validation_dataset_input[6][201]), stringifyMorphTagsTensor(validation_dataset_input[7][201]), validation_dataset_input[3][201][:, :10]
 
 
 # In[26]:
 
 
-tokens_tensor = torch.tensor(tokens_list, dtype=torch.int64)
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+
+# In[27]:
+
+
+print(device)
 
 
 # In[28]:
 
 
-subtext_windows = []
-flat_subtext_window_tensors = []
+class MorphologyLSTMTransformerModel(torch.nn.Module):
+    def __init__(self, token_vocab_size=4539, token_embedding_dim=256, token_seq_length=transformer_window_length, attention_heads=4, trans_layers=4, char_vocab_size=38, char_embedding_dim=32, lstm_hidden_size=64, lstm_layers=1, tag_slots_num=11, tag_slot_embedding_dim=32, decoder_lstm_hidden_size=256):
+        super().__init__()
 
-subtext_window_loss_masks = []
-flat_token_loss_mask_tensors = []
-flat_window_word_token_lengths = []
-flat_window_word_token_lengths_padded_tensor = []
-pos_window_tensors = []
-morph_tag_window_tensors = []
+        self.gru_input_dim = decoder_lstm_hidden_size+tag_slot_embedding_dim+16
 
-for i in range(len(subtext_offsets)):
-    end_idx = len(tokens_list) if i+1 == len(subtext_offsets) else subtext_offsets[i+1]
-    subtext_tokens = tokens_tensor[subtext_offsets[i]:end_idx]
-    subtext_token_length = subtext_tokens.size(0)
+        self.token_embedder = torch.nn.Embedding(num_embeddings=token_vocab_size, embedding_dim=token_embedding_dim, padding_idx=0)
+        self.positional_embedder = torch.nn.Embedding(num_embeddings=token_seq_length, embedding_dim=token_embedding_dim)
+        transformer_encoder_layer = torch.nn.TransformerEncoderLayer(d_model=token_embedding_dim, nhead=attention_heads, dim_feedforward=4*token_embedding_dim, batch_first=True)
+        self.transformer = torch.nn.TransformerEncoder(transformer_encoder_layer, trans_layers)
 
-    subtext_chunks = []
-    loss_mask_chunks = []
-    w = 0
-    for j in range(0, subtext_token_length, transformer_stride):
-        window_tokens = subtext_tokens[j:j+transformer_window_length]
-        padded_window = torch.nn.functional.pad(window_tokens, (0, transformer_window_length-window_tokens.size(0)), value=0)
-        loss_mask, start_word_offset, end_word_offset = getWindowLossMask(i, w, padded_window)
-        if i == 220 and w == 51:
-            print(loss_mask, start_word_offset, end_word_offset)
-        if start_word_offset != -1:    
-            subtext_chunks.append(padded_window)
-            flat_subtext_window_tensors.append(padded_window)
+        self.char_embedder = torch.nn.Embedding(num_embeddings=char_vocab_size, embedding_dim=char_embedding_dim, padding_idx=0)
+        self.char_dropout = torch.nn.Dropout(0.1)
+        self.lstm = torch.nn.LSTM(input_size=char_embedding_dim, hidden_size=lstm_hidden_size, num_layers=lstm_layers, batch_first=True, bidirectional=True)
 
-            loss_mask_chunks.append((loss_mask, start_word_offset, end_word_offset))
-            flat_token_loss_mask_tensors.append(loss_mask)
-            flat_window_word_token_lengths.append(getWindowWordLengths(start_word_offset, end_word_offset))
-            flat_window_word_token_lengths_padded_tensor.append(getWindowWordLengths(start_word_offset, end_word_offset, padded=True))
+        self.word_lstm_tag_downprojection = torch.nn.Linear(tag_slot_embedding_dim*tag_slots_num, 128)
+        self.word_level_decoder_lstm = torch.nn.LSTM(input_size=512, hidden_size=decoder_lstm_hidden_size, num_layers=lstm_layers, batch_first=True, bidirection=False)
+        self.word_lstm_STARTTAG_embedding = torch.nn.Parameter(torch.randn(tag_slot_embedding_dim*11))
 
-            pos_window, morph_tag_window = getTargetTagWindows(start_word_offset, end_word_offset)
-            pos_window_tensors.append(pos_window)
-            morph_tag_window_tensors.append(morph_tag_window)
+        self.decoder_gru = torch.nn.GRU(input_size=self.gru_input_dim, hidden_size=128, batch_first=True)
 
-            w += 1
-    subtext_window_loss_masks.append(loss_mask_chunks)       
+        self.gru_tag_slot_embedders = torch.nn.ModuleList([
+            torch.nn.Embedding(num_embeddings=len(pos_dict), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[0]), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[1]), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[2]), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[3]), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[4]), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[5]), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[6]), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[7]), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[8]), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[9]), embedding_dim=tag_slot_embedding_dim)
+        ])
+        self.gru_slot_positional_embedder = torch.nn.Embedding(num_embeddings=tag_slots_num, embedding_dim=16)
+        self.gru_START_embedding = torch.nn.Parameter(torch.randn(tag_slot_embedding_dim))
+        self.gru_classifier_heads = torch.nn.ModuleList([
+            torch.nn.Linear(128, len(pos_dict)),
+            torch.nn.Linear(128, len(morph_slots_dicts[0])),
+            torch.nn.Linear(128, len(morph_slots_dicts[1])),
+            torch.nn.Linear(128, len(morph_slots_dicts[2])),
+            torch.nn.Linear(128, len(morph_slots_dicts[3])),
+            torch.nn.Linear(128, len(morph_slots_dicts[4])),
+            torch.nn.Linear(128, len(morph_slots_dicts[5])),
+            torch.nn.Linear(128, len(morph_slots_dicts[6])),
+            torch.nn.Linear(128, len(morph_slots_dicts[7])),
+            torch.nn.Linear(128, len(morph_slots_dicts[8])),
+            torch.nn.Linear(128, len(morph_slots_dicts[9]))
+        ])
 
-    subtext_windows.append(torch.stack(subtext_chunks, dim=0))
+        self.token_embedding_dim = token_embedding_dim
+        self.lstm_hidden_size = lstm_hidden_size
+        self.register_buffer("position_ids", torch.arange(token_seq_length).unsqueeze_(0))
+        self.register_buffer("gru_slot_ids", torch.arange(11).unsqueeze_(0))
+        self.register_buffer("word_offsets", torch.zeros(242536)) #DELETE
+
+    def gru_decode_training(self, combined_final_word_vectors, flat_pos_window_tensors, flat_morph_tag_window_tensors):
+
+        N = combined_final_word_vectors.shape[0]
+        flat_word_vectors_gru_expanded = combined_final_word_vectors.unsqueeze(1).expand(-1, 11, -1) #(N, 11, 384)
+        slot_embeddings = self.gru_slot_positional_embedder(self.gru_slot_ids.expand(N, -1)) #(N, 11, 16)
+        gru_START_embedding = self.gru_START_embedding.unsqueeze(0).expand(N, -1) #(N, 32)
+
+        prev_tag_embeddings = [gru_START_embedding.unsqueeze(1), self.gru_tag_slot_embedders[0](flat_pos_window_tensors).unsqueeze(1)]
+        for i in range(1, 10):
+            prev_tag_embeddings.append(self.gru_tag_slot_embedders[i](flat_morph_tag_window_tensors[:, i-1]).unsqueeze(1))
+            #print(self.gru_tag_slot_embedders[i], flat_pos_morph_tag_tensors[:, i])
+        #produces array of 11 tensors with shape (N, 1, 32)
+
+        prev_tag_embeddings = torch.cat(prev_tag_embeddings, dim=1) #(N, 1*11, 32) -> (N, 11, 32)
+        #print(flat_word_vectors_gru_expanded.shape, prev_tag_embeddings.shape, slot_embeddings.shape)
+
+        # (N, 11, 384) + (N, 11, 32) + (N, 11, 16) -> (N, 11, 432)
+        gru_input = torch.cat([flat_word_vectors_gru_expanded, prev_tag_embeddings, slot_embeddings], dim=2) #the second dimension of the GRU's input is sequence-length, which for training is 11 because we are feeding it the full 11-slot sequence at once, but at inference we feed it each previous time-step's slot-prediction one by one, so the second dimension is 1, hence the difference between flat_word_vectors_gru_expanded (repeat the word-encodings for each of the 11 slots) at training and flat_word_vectors_gru_unsqueezed (just a single representation of the word-encoding fed at each of the 11 timesteps) at inference
+
+        gru_output = self.decoder_gru(gru_input)[0] #the second parameter is the GRU's initial hidden-state which defaults to zeros, which we provide explicitly in the inference-code below because it needs to be replaced for subsequent time-steps with the actual hidden-state outputs of the GRU
+
+        output_logits = []
+        for j in range(11):
+            output_logits.append(self.gru_classifier_heads[j](gru_output[:, j, :]))
+        return output_logits
+
+    def gru_decode_inference(self, decoder_lstm_hidden_state):
+
+        B = decoder_lstm_hidden_state.shape[0] 
+        decoder_lstm_hidden_state_unsqueezed = decoder_lstm_hidden_state.unsqueeze(1) #(B, 1, 256)
+        slot_embeddings = self.gru_slot_positional_embedder(self.gru_slot_ids.expand(B, -1)) # (1, 11) -> (B, 11) -> (B, 11, 16)
+        gru_START_embedding = self.gru_START_embedding.unsqueeze(0).expand(B, -1) #(B, 32)
+
+        output_logits = []
+        predicted_idces = []
+
+        gru_hidden = combined_final_word_vectors.new_zeros(1, B, 128)
+        prev_tag_embedding = gru_START_embedding.unsqueeze(1) #(B, 1, 32)
+        for j in range(11):
+            current_slot_embedding = slot_embeddings[:, j, :].unsqueeze(1) #(B, 1, 16)
+            gru_input = torch.cat([decoder_lstm_hidden_state_unsqueezed, prev_tag_embedding, current_slot_embedding], dim=2)
+            gru_output, gru_hidden = self.decoder_gru(gru_input, gru_hidden) #here we explicitly provide the hidden-state (initialising it as .new_zeros() above) because at inference we run the GRU step by step and so need to provide it with the previous output's hidden state
+            #(B, 1, 128), (1, B, 128) #for this 1-member sequence gru_ouput and gru_hidden are the same except for shape
+
+            tag_logit = self.gru_classifier_heads[j](gru_output[:, 0, :]) #(B, 1, 128) -> (B, 128) -> (B, num_slot_options)
+            output_logits.append(tag_logit)
+            predicted_idx = torch.argmax(tag_logit, dim=1) #(B)
+            predicted_idces.append(predicted_idx)
+
+            prev_tag_embedding = self.gru_tag_slot_embedders[j](predicted_idx).unsqueeze(1) #(B, 1, 32)
+
+        return output_logits, predicted_idces #[(B, num_slot_options)*11], [B*11]
+
+    def poolWordTokensKeepFlat(self, token_windows, token_windows_loss_masks, token_windows_word_lengths):
+
+        B, W, H = token_windows.shape
+
+        flattened_selected_word_tokens = token_windows[token_windows_loss_masks]
+        flattened_unpadded_lengths = token_windows_word_lengths[token_windows_word_lengths > 0]
+
+        flattened_pooled_tokens = torch.segment_reduce(flattened_selected_word_tokens, 'mean', lengths=flattened_unpadded_lengths)
+
+        return flattened_pooled_tokens
+
+    def batchify_flatshit(self, B, lstm_word_lengths, combined_final_word_vectors, flat_pos_window_tensors, flat_morph_tag_window_tensors):
+        batch_windows_num_words = []
+        for lstm_window_word_lengths_tensor in lstm_word_lengths:
+            batch_windows_num_words.append(lstm_window_word_lengths_tensor.shape[0])
+        batch_windows_num_words = torch.tensor(batch_windows_num_words, dtype=torch.int64)
+
+        #re-batching the flat tag tensors should really be unnecessary and I should keep them batched in my dataloader etc.
+        max_window_word_count = batch_windows_num_words.max()
+        batched_combined_final_word_vectors = combined_final_word_vectors.new_zeros(B, max_window_word_count, combined_final_word_vectors.shape[-1]) #(B, Wmax, 384)
+        batched_pos_window_tensors = flat_pos_window_tensors.new_zeros(B, max_window_word_count)
+        batched_morph_tag_window_tensors = flat_morph_tag_window_tensors.new_zeros(B, max_window_word_count, 10)
+
+        batch_word_offset = 0
+        for batch_no, num_words in enumerate(batch_windows_num_words):     
+            batched_combined_final_word_vectors[batch_no, :num_words] = combined_final_word_vectors[batch_word_offset:batch_word_offset+num_words]
+            batched_pos_window_tensors[batch_no, :num_words] = flat_pos_window_tensors[batch_word_offset:batch_word_offset+num_words]
+            batched_morph_tag_window_tensors[batch_no, :num_words] = flat_morph_tag_window_tensors[batch_word_offset:batch_word_offset+num_words]
+            batch_word_offset += num_words
+
+        return batched_combined_final_word_vectors, batched_pos_window_tensors, batched_morph_tag_window_tensors, batch_windows_num_words
+
+    def forward(self, token_windows, token_windows_loss_masks, token_windows_word_lengths, lstm_windows, lstm_word_masks, lstm_word_lengths, flat_pos_window_tensors, flat_morph_tag_window_tensors) -> torch.Tensor:
+        ### TRANSFORMER ###
+        token_embeddings = self.token_embedder(token_windows)
+        positional_embeddings = self.positional_embedder(self.position_ids.expand(token_embeddings.size(0), -1))
+        padding_mask = (token_windows == 0)
+
+        token_states = self.transformer(token_embeddings + positional_embeddings, src_key_padding_mask=padding_mask)
+        word_pooled_token_states = self.poolWordTokensKeepFlat(token_states, token_windows_loss_masks, token_windows_word_lengths)
+
+        ### LSTM ###
+        B, W, L = lstm_windows.shape #(B, 96, 32)
+        flat_lstm_windows = lstm_windows.reshape(B*W, L)
+        flat_lstm_word_masks = lstm_word_masks.reshape(B*W)
+        flat_unwordpadded_lstm_windows = flat_lstm_windows[flat_lstm_word_masks] #(N, 32)
+
+        lstm_char_embeddings = self.char_dropout(self.char_embedder(flat_unwordpadded_lstm_windows)) #(N, 32, 32)
+        packed_char_embeddings = torch.nn.utils.rnn.pack_padded_sequence(lstm_char_embeddings, lstm_word_lengths.cpu(), batch_first=True, enforce_sorted=False)
+
+        packed_output, (h_n, c_n) = self.lstm(packed_char_embeddings)
+        flat_unpadded_word_vectors = torch.cat([h_n[0], h_n[1]], dim=1) #(N, 128)
+
+        combined_final_word_vectors = torch.cat([word_pooled_token_states, flat_unpadded_word_vectors], dim=-1) #(N, 384)
+
+        ### LSTM TAG DECODER ###
+        batched_combined_final_word_vectors, batched_pos_window_tensors, batched_morph_tag_window_tensors, batch_windows_num_words = self.batchify_flatshit(B, lstm_word_lengths, combined_final_word_vectors, flat_pos_window_tensors, flat_morph_tag_window_tensors) #(B, Wmax, 384), (B, Wmax), (B, WMax, 10)
+        max_window_word_count = batched_pos_window_tensors.shape[1]
+
+        word_lstm_STARTTAG_embedding = self.word_lstm_STARTTAG_embedding.unsqueeze_(0).unsqueeze(0).expand(B, 1, -1) #(B, 1, 352)
+
+        if self.training:
+            tag_embeddings = [self.gru_tag_slot_embedders[0](batched_pos_window_tensors)] #(B, Wmax) -> (B, Wmax, 32)
+            for i in range(0, 10):
+                tag_embeddings.append(self.gru_tag_slot_embedders[i+1](batched_morph_tag_window_tensors[:, :, i])) #each slot selected by i has dimensions (B, Wmax), same as the POS tensor, so embedding it also gives (B, Wmax, 32) and they are added to the list for torch.cat
+            tag_embeddings = torch.cat(tag_embeddings, dim=2) #(B, Wmax, 352)
+
+            prev_word_tag_embeddings = torch.cat([word_lstm_STARTTAG_embedding, tag_embeddings[:, :-1, :]], dim=1) #(B, Wmax, 352), with the final tag-embedding pushed off the end by appending the STARTTAG embedding to the start
+
+            prev_word_tag_downprojections = self.word_lstm_tag_downprojection(prev_word_tag_embeddings) #(B, Wmax, 128) #could skip
+
+            prev_tag_plus_combined_word_vectors = torch.cat([batched_combined_final_word_vectors, prev_word_tag_downprojections], dim=2) #(B, Wmax, 384) + (B, Wmax, 128) => (B, Wmax, 512)
+            packed_tag_plus_word_vectors = torch.nn.utils.rnn.pack_padded_sequence(prev_tag_plus_combined_word_vectors, batch_windows_num_words.cpu(), batch_first=True, enforce_sorted=False)
+
+            packed_decoder_lstm_output, (h_n, c_n) = self.word_level_decoder_lstm(packed_tag_plus_word_vectors)
+            unpacked_decoder_lstm_output, lngths = torch.nn.utils.rnn.pad_packed_sequence(packed_decoder_lstm_output, batch_first=True, total_length=max_window_word_count) #(B, Wmax, 256)
+
+            unpacked_decoder_lstm_outputt_loss_mask = (unpacked_decoder_lstm_output != 0.0).any(dim=2) #(B, Wmax)
+
+            flattened_final_word_vectors = unpacked_decoder_lstm_output[unpacked_decoder_lstm_outputt_loss_mask] #(N, 256)
+
+        else:
+            prev_word_tag_embedding = word_lstm_STARTTAG_embedding #(B, 1, 352)
+            lstm_hidden = batched_combined_final_word_vectors.new_zeros(1, B, decoder_lstm_hidden_size)
+            lstm_cell = batched_combined_final_word_vectors.new_zeros(1, B, decoder_lstm_hidden_size) #(1, B, 256)
+            for word_pos in range(max_window_word_count):
+                active_windows_mask = word_pos < batch_windows_num_words #(B) with True for windows that still have words at word_pos
+
+                active_batched_combined_final_word_vectors = batched_combined_final_word_vectors[active_windows_mask]
+                lstm_hidden = lstm_hidden[:, active_windows_mask, :] #(1, Bactive, 256)
+                lstm_cell = lstm_cell[:, active_windows_mask, :] #(1, Bactive, 256)
+                prev_word_tag_embedding = prev_word_tag_embedding[active_windows_mask] #(Bactive, 1, 352)
+
+                prev_word_tag_downprojection = self.word_lstm_tag_downprojection(prev_word_tag_embedding) #(Bact, 1, 128) #could skip
+                prev_tag_plus_combined_word_vec = torch.cat([active_batched_combined_final_word_vectors[:, word_pos, :], prev_word_tag_downprojection], dim=2) #(Bact, 1, 384) + (Bact, 1, 128) -> (Bact, 1, 512)
+
+                _, (lstm_hidden, lstm_cell) = self.word_level_decoder_lstm(prev_tag_plus_combined_word_vec) #h_n and c_n are (1, Bact, 256)
+
+                output_logits, predicted_idcs = self.gru_decode_inference(lstm_hidden[0]) #[(B, num_slot_options)*11], [B*11]
+
+                tag_embeddings = []
+                for i in range(0, 11):
+                    tag_embeddings.append(self.gru_tag_slot_embedders[i](predicted_idcs[i])
+                prev_word_tag_embedding = torch.cat(tag_embeddings, dim=2) #(Bact, 1, 352)
 
 
-flat_token_loss_mask_tensors = torch.stack(flat_token_loss_mask_tensors)
-flat_window_word_token_lengths_padded_tensor = torch.stack(flat_window_word_token_lengths_padded_tensor)
-
-flat_subtext_window_tensors = torch.stack(flat_subtext_window_tensors)
-
-subtext_window_sizes = []
-for subtext_tensors in subtext_windows:
-    subtext_window_sizes.append(subtext_tensors.size(0))
-
-
-# In[ ]:
-
-
-
+        ### GRU DECODER ###
+        if self.training:
+            return self.gru_decode_training(combined_final_word_vectors, flat_pos_window_tensors, flat_morph_tag_window_tensors)
+        else:
+            return self.gru_decode_inference(combined_final_word_vectors)
 
 
 # In[29]:
 
 
-##rewrite this into the first subtext loop and exclude windows which return zeros, -1, -1 from the ggetWindowLossMask() function
-# subtext_window_loss_masks = []
-# flat_token_loss_mask_tensors = []
-# flat_window_word_token_lengths = []
-# flat_window_word_token_lengths_padded_tensor = []
-# pos_window_tensors = []
-# morph_tag_window_tensors = []
-# for s in range(len(subtext_windows)):
-#     loss_mask_chunks = []
-#     for w in range(subtext_windows[s].size(0)):
-#         loss_mask, start_word_offset, end_word_offset = getWindowLossMask(s, w)
-#         loss_mask_chunks.append((loss_mask, start_word_offset, end_word_offset))
-#         flat_token_loss_mask_tensors.append(loss_mask)
-#         flat_window_word_token_lengths.append(getWindowWordLengths(start_word_offset, end_word_offset))
-#         flat_window_word_token_lengths_padded_tensor.append(getWindowWordLengths(start_word_offset, end_word_offset, padded=True))
+pos_lgts = torch.randn(5, 3)
+pred_idcs = torch.argmax(pos_lgts, dim=1)
+pos_lgts, pred_idcs
 
-#         pos_window, morph_tag_window = getTargetTagWindows(start_word_offset, end_word_offset)
-#         pos_window_tensors.append(pos_window)
-#         morph_tag_window_tensors.append(morph_tag_window)
-#     subtext_window_loss_masks.append(loss_mask_chunks)
-# flat_token_loss_mask_tensors = torch.stack(flat_token_loss_mask_tensors)
-# flat_window_word_token_lengths_padded_tensor = torch.stack(flat_window_word_token_lengths_padded_tensor)
+
+# In[125]:
+
+
+tns = torch.randn(5, 10, 4)
+zero_row = torch.zeros(4, dtype=torch.float32)
+tns[0, 6:, :] = zero_row
+tns[1, 8:, :] = zero_row
+tns[2, 4:, :] = zero_row
+tns[3, 9:, :] = zero_row
+tns[4, 10:, :] = zero_row
+
+batch_windows_num_words = torch.tensor([6, 8, 4, 9, 10])
+
+tns_msk = 7 < batch_windows_num_words
+tns.shape, tns_msk.shape, tns[tns_msk].shape, tns_msk, tns, tns[tns_msk]
+
+
+# In[121]:
+
+
+window_word_counts = torch.tensor([4,3,6])
+3 < window_word_counts
 
 
 # In[30]:
 
 
-lstm_windows = []
-lstm_word_masks = []
-lstm_word_lengths = []
-flat_pos_window_tensors = []
-flat_morph_tag_window_tensors = []
-for s in range(len(subtext_windows)):
-    for w in range(subtext_windows[s].size(0)):
-        loss_mask, start_word_offset, end_word_offset = subtext_window_loss_masks[s][w]
-        lstm_window, lstm_word_mask, lstm_window_word_lengths = getCharLSTMInputWindow(subtext_windows[s][w], loss_mask, start_word_offset, end_word_offset)
-        lstm_windows.append(lstm_window)
-        lstm_word_masks.append(lstm_word_mask)
-        lstm_word_lengths.append(torch.tensor(lstm_window_word_lengths, dtype=torch.int64))
-
-lstm_windows = torch.stack(lstm_windows)
-lstm_word_masks = torch.stack(lstm_word_masks)
-
-
-# In[31]:
-
-
-flt_idx = 2551
-#flt_idx = randrange(0, 7442)
-lstm_windows[flt_idx][:, :10], lstm_word_masks[flt_idx], stringifyTokensTensor(flat_subtext_window_tensors[flt_idx])
-
-
-# In[32]:
-
-
-print(flt_idx)
-lstm_word_lengths[flt_idx], stringifyTokensTensor(flat_subtext_window_tensors[flt_idx], True), flat_token_loss_mask_tensors[flt_idx], lstm_word_lengths[flt_idx].shape, flat_token_loss_mask_tensors[flt_idx].nonzero().shape, stringifyTokensTensor(flat_subtext_window_tensors[flt_idx][flat_token_loss_mask_tensors[flt_idx]])
+tst_lstm_word_lengths = train_dataset_input[5][0:5]
 
 
 # In[34]:
 
 
-getSubtextWindowIndices(2553)
+batch_windows_num_words = []
+for lstm_window_word_lengths_tensor in tst_lstm_word_lengths:
+    batch_windows_num_words.append(lstm_window_word_lengths_tensor.shape[0])
+batch_windows_num_words = torch.tensor(batch_windows_num_words, dtype=torch.int64)
+
+print(batch_windows_num_words)
 
 
 # In[ ]:
-
-
-
-
-
-# In[40]:
-
-
-#print(pos_window_tensors[:7])
-for i in range(6700,6707):
-    tnsr_str = "["
-    for pos_id in pos_window_tensors[i].tolist():
-        tnsr_str += pos_dict[pos_id] + ", "
-    print(tnsr_str[:-2]+"]")
-    print(stringifyTokensTensor(flat_subtext_window_tensors[i][flat_token_loss_mask_tensors[i]]))
-
-
-# In[41]:
-
-
-print(stringifyTokensTensor(flat_subtext_window_tensors[0]))
-
-
-# In[42]:
 
 
 class textWindowsDataset(torch.utils.data.Dataset):
@@ -593,17 +813,377 @@ class textWindowsDataset(torch.utils.data.Dataset):
         return {'token_windows': self.token_windows[idx], 'token_window_loss_masks': self.token_window_loss_masks[idx], 'token_window_word_lengths': self.token_window_word_lengths[idx], 'lstm_windows': self.lstm_windows[idx], 'lstm_word_masks': self.lstm_word_masks[idx], 'lstm_word_lengths': self.lstm_word_lengths[idx], 'pos_window_tensors': self.pos_window_tensors[idx], 'morph_tag_window_tensors': self.morph_tag_window_tensors[idx]}
 
 
-# In[43]:
+# In[ ]:
 
 
-mydataset = textWindowsDataset(flat_subtext_window_tensors, flat_token_loss_mask_tensors, flat_window_word_token_lengths_padded_tensor, lstm_windows, lstm_word_masks, lstm_word_lengths, pos_window_tensors, morph_tag_window_tensors)
-mydataset[3000]['pos_window_tensors'], mydataset[3000]['morph_tag_window_tensors'], stringifyTokensTensor(mydataset[3000]['token_windows']), stringifyTokensTensor(mydataset[3000]['token_windows'][mydataset[3000]['token_window_loss_masks']])
+def data_loader_collate_fn(samples):
+    return {
+        "token_windows" : torch.stack([sample["token_windows"] for sample in samples]),
+        "token_window_loss_masks" : torch.stack([sample["token_window_loss_masks"] for sample in samples]),
+        "token_window_word_lengths" : torch.stack([sample["token_window_word_lengths"] for sample in samples]),
+        "lstm_windows" : torch.stack([sample["lstm_windows"] for sample in samples]),
+        "lstm_word_masks" : torch.stack([sample["lstm_word_masks"] for sample in samples]),
+        "lstm_word_lengths" : torch.cat([sample["lstm_word_lengths"] for sample in samples]),
+        "pos_window_tensors" : torch.cat([sample["pos_window_tensors"] for sample in samples]),
+        "morph_tag_window_tensors" : torch.cat([sample["morph_tag_window_tensors"] for sample in samples])      
+    }
 
 
-# In[44]:
+# In[ ]:
 
 
-class MorphologyLSTMTransformerModel(torch.nn.Module):
+# mydataset = textWindowsDataset(flat_subtext_window_tensors, flat_token_loss_mask_tensors, flat_window_word_token_lengths_padded_tensor, lstm_windows, lstm_word_masks, lstm_word_lengths, pos_window_tensors, morph_tag_window_tensors)
+
+train_dataset = textWindowsDataset(*train_dataset_input)
+
+# def data_loader_collate_fn(samples):
+#     return samples
+
+train_data_loader = torch.utils.data.DataLoader(train_dataset, batch_size=32, shuffle=True, collate_fn=data_loader_collate_fn)
+
+validation_dataset = textWindowsDataset(*validation_dataset_input)
+
+validation_data_loader = torch.utils.data.DataLoader(validation_dataset, batch_size=32, shuffle=False, collate_fn=data_loader_collate_fn)
+
+
+# In[ ]:
+
+
+network = MorphologyLSTMTransformerModel()
+cross_entropy_loss = torch.nn.modules.loss.CrossEntropyLoss()
+adamw_optimiser = torch.optim.AdamW(network.parameters(), lr=1e-4)
+network.to(device)
+#network.load_state_dict(torch.load("MorphologyLSTMTransformerModel_POS_only_18epochs.pt", map_location=device))
+
+
+# In[ ]:
+
+
+training_loss_values = []
+batches_counts = []
+training_epochs = []
+per_epoch_loss_values = []
+per_epoch_tagslot_loss_values = []
+
+
+# In[ ]:
+
+
+validation_average_per_epoch_loss_values = []
+validation_per_epoch_tagslot_loss_values = []
+
+
+# In[ ]:
+
+
+network.train()
+
+batches_count = 0
+for epoch_no in range(15):
+    train_data_loader_iter = iter(train_data_loader)
+    network.train()
+
+    epoch_loss_values = []
+    epoch_tagslot_loss_values = []
+    for batch in train_data_loader_iter:
+        tkn_wndw = batch['token_windows'].to(device)
+        tkn_msks = batch['token_window_loss_masks'].to(device)
+        tkn_lngths = batch['token_window_word_lengths'].to(device)
+        lstm_wndws = batch['lstm_windows'].to(device)
+        lstm_msks = batch['lstm_word_masks'].to(device)
+        lstm_lngths = batch['lstm_word_lengths'].to(device)
+        flat_pos_window_tensors = batch['pos_window_tensors'].to(device)
+        flat_morph_tag_tensors = batch['morph_tag_window_tensors'].to(device)
+
+        output_logits = network(tkn_wndw, tkn_msks, tkn_lngths, lstm_wndws, lstm_msks, lstm_lngths, flat_pos_window_tensors, flat_morph_tag_tensors)
+
+        losses = [cross_entropy_loss(output_logits[0], flat_pos_window_tensors)]
+        for i in range(1, 11):
+            losses.append(cross_entropy_loss(output_logits[i], flat_morph_tag_tensors[:, i -1]))
+        weighted_losses = losses.copy()
+        weighted_losses[0] = 4*weighted_losses[0]
+        loss = torch.stack(weighted_losses).mean()
+        # loss = losses[0] #test only part-of-speech training
+        adamw_optimiser.zero_grad()
+        loss.backward()
+        adamw_optimiser.step()
+
+        actual_loss = torch.stack(losses).mean()
+        training_loss_values.append(actual_loss.item())
+        epoch_loss_values.append(actual_loss.detach())
+        epoch_tagslot_loss_values.append(torch.stack(losses).detach())
+
+        batches_counts.append(batches_count)
+        batches_count += 1
+
+    per_epoch_loss_values.append(torch.stack(epoch_loss_values).mean().item())
+    per_epoch_tagslot_loss_values.append(torch.stack(epoch_tagslot_loss_values, dim=0).mean(dim=0).detach().cpu())
+
+    # if len(per_epoch_loss_values) > 5 and per_epoch_loss_values[-1] < per_epoch_loss_values[-2]:
+    #     torch.save(obj=network.state_dict(), f="MorphologyLSTMTransformerModel_bestcheckpoint.pt")
+
+    network.eval()
+    validation_dataloader_iter = iter(validation_data_loader)
+    validation_per_window_loss_values = []
+    validation_per_window_tagslot_loss_values = []
+    for batch in validation_dataloader_iter:
+        tkn_wndw = batch['token_windows'].to(device)
+        tkn_msks = batch['token_window_loss_masks'].to(device)
+        tkn_lngths = batch['token_window_word_lengths'].to(device)
+        lstm_wndws = batch['lstm_windows'].to(device)
+        lstm_msks = batch['lstm_word_masks'].to(device)
+        lstm_lngths = batch['lstm_word_lengths'].to(device)
+        flat_pos_window_tensors = batch['pos_window_tensors'].to(device)
+        flat_morph_tag_tensors = batch['morph_tag_window_tensors'].to(device)
+
+        lgts, idcs = network(tkn_wndw, tkn_msks, tkn_lngths, lstm_wndws, lstm_msks, lstm_lngths, flat_pos_window_tensors, flat_morph_tag_tensors)
+
+        losses = [cross_entropy_loss(lgts[0], flat_pos_window_tensors)]
+        for i in range(1, 11):
+            losses.append(cross_entropy_loss(lgts[i], flat_morph_tag_tensors[:, i -1]))
+        loss = torch.stack(losses).mean()
+        # loss = losses[0] #test only part-of-speech training
+        validation_per_window_loss_values.append(loss)
+        validation_per_window_tagslot_loss_values.append(torch.stack(losses)) #11
+    mean_validation_per_batch_loss = torch.stack(validation_per_window_loss_values).mean().item()
+    validation_average_per_epoch_loss_values.append(mean_validation_per_batch_loss)
+
+    #print(validation_per_window_tagslot_loss_values)
+
+    mean_validation_per_batch_tagslot_loss = torch.stack(validation_per_window_tagslot_loss_values, dim=0).mean(dim=0).detach().cpu()
+    validation_per_epoch_tagslot_loss_values.append(mean_validation_per_batch_tagslot_loss)
+
+    training_epochs.append(epoch_no)
+
+
+
+# In[ ]:
+
+
+network.train()
+
+for param in network.transformer.parameters():
+    param.requires_grad = False
+for param in network.token_embedder.parameters():
+    param.requires_grad = False
+for param in network.positional_embedder.parameters():
+    param.requires_grad = False
+
+batches_count = batches_counts[-1]
+for epoch_no in range(15, 30):
+    train_data_loader_iter = iter(train_data_loader)
+    network.train()
+    network.transformer.eval()
+
+    epoch_loss_values = []
+    epoch_tagslot_loss_values = []
+    for batch in train_data_loader_iter:
+        tkn_wndw = batch['token_windows'].to(device)
+        tkn_msks = batch['token_window_loss_masks'].to(device)
+        tkn_lngths = batch['token_window_word_lengths'].to(device)
+        lstm_wndws = batch['lstm_windows'].to(device)
+        lstm_msks = batch['lstm_word_masks'].to(device)
+        lstm_lngths = batch['lstm_word_lengths'].to(device)
+        flat_pos_window_tensors = batch['pos_window_tensors'].to(device)
+        flat_morph_tag_tensors = batch['morph_tag_window_tensors'].to(device)
+
+        output_logits = network(tkn_wndw, tkn_msks, tkn_lngths, lstm_wndws, lstm_msks, lstm_lngths, flat_pos_window_tensors, flat_morph_tag_tensors)
+
+        losses = [cross_entropy_loss(output_logits[0], flat_pos_window_tensors)]
+        for i in range(1, 11):
+            losses.append(cross_entropy_loss(output_logits[i], flat_morph_tag_tensors[:, i -1]))
+        weighted_losses = losses.copy()
+        weighted_losses[0] = 4*weighted_losses[0]
+        loss = torch.stack(weighted_losses).mean()
+        # loss = losses[0] #test only part-of-speech training
+        adamw_optimiser.zero_grad()
+        loss.backward()
+        adamw_optimiser.step()
+
+        actual_loss = torch.stack(losses).mean()
+        training_loss_values.append(actual_loss.item())
+        epoch_loss_values.append(actual_loss.detach())
+        epoch_tagslot_loss_values.append(torch.stack(losses).detach())
+
+        batches_counts.append(batches_count)
+        batches_count += 1
+
+    per_epoch_loss_values.append(torch.stack(epoch_loss_values).mean().item())
+    per_epoch_tagslot_loss_values.append(torch.stack(epoch_tagslot_loss_values, dim=0).mean(dim=0).detach().cpu())
+
+    # if len(per_epoch_loss_values) > 5 and per_epoch_loss_values[-1] < per_epoch_loss_values[-2]:
+    #     torch.save(obj=network.state_dict(), f="MorphologyLSTMTransformerModel_bestcheckpoint.pt")
+
+    network.eval()
+    validation_dataloader_iter = iter(validation_data_loader)
+    validation_per_window_loss_values = []
+    validation_per_window_tagslot_loss_values = []
+    for batch in validation_dataloader_iter:
+        tkn_wndw = batch['token_windows'].to(device)
+        tkn_msks = batch['token_window_loss_masks'].to(device)
+        tkn_lngths = batch['token_window_word_lengths'].to(device)
+        lstm_wndws = batch['lstm_windows'].to(device)
+        lstm_msks = batch['lstm_word_masks'].to(device)
+        lstm_lngths = batch['lstm_word_lengths'].to(device)
+        flat_pos_window_tensors = batch['pos_window_tensors'].to(device)
+        flat_morph_tag_tensors = batch['morph_tag_window_tensors'].to(device)
+
+        lgts, idcs = network(tkn_wndw, tkn_msks, tkn_lngths, lstm_wndws, lstm_msks, lstm_lngths, flat_pos_window_tensors, flat_morph_tag_tensors)
+
+        losses = [cross_entropy_loss(lgts[0], flat_pos_window_tensors)]
+        for i in range(1, 11):
+            losses.append(cross_entropy_loss(lgts[i], flat_morph_tag_tensors[:, i -1]))
+        loss = torch.stack(losses).mean()
+        # loss = losses[0] #test only part-of-speech training
+        validation_per_window_loss_values.append(loss)
+        validation_per_window_tagslot_loss_values.append(torch.stack(losses)) #11
+    mean_validation_per_batch_loss = torch.stack(validation_per_window_loss_values).mean().item()
+    validation_average_per_epoch_loss_values.append(mean_validation_per_batch_loss)
+
+    #print(validation_per_window_tagslot_loss_values)
+
+    mean_validation_per_batch_tagslot_loss = torch.stack(validation_per_window_tagslot_loss_values, dim=0).mean(dim=0).detach().cpu()
+    validation_per_epoch_tagslot_loss_values.append(mean_validation_per_batch_tagslot_loss)
+
+    training_epochs.append(epoch_no)
+
+
+
+# In[ ]:
+
+
+validation_per_epoch_tagslot_loss_values, validation_average_per_epoch_loss_values, per_epoch_loss_values, per_epoch_tagslot_loss_values
+
+
+# In[ ]:
+
+
+x =  [1,2,3]
+x[-4]
+
+
+# In[ ]:
+
+
+plt.plot(batches_counts, training_loss_values, label="training loss")
+plt.ylabel("Loss")
+plt.xlabel("batches processed")
+plt.legend()
+print(training_loss_values[batches_counts[-1]])
+plt.show()
+
+
+# In[ ]:
+
+
+per_epoch_loss_values, per_epoch_tagslot_loss_values, validation_average_per_epoch_loss_values
+
+
+# In[ ]:
+
+
+plt.plot(training_epochs, validation_average_per_epoch_loss_values)
+
+
+# In[ ]:
+
+
+plt.plot(training_epochs, per_epoch_loss_values)
+
+
+# In[ ]:
+
+
+network.load_state_dict(torch.load("google_colab_40epochs.pt", map_location=device))
+
+
+# In[ ]:
+
+
+#torch.save(obj=network.state_dict(), f="MorphologyLSTMTransformerModel_15epochs_joint_15epochs_LSTM_only.pt")
+
+
+# In[ ]:
+
+
+network.eval()
+validation_dataloader_iter = iter(validation_data_loader)
+
+batch = next(validation_dataloader_iter)
+tkn_wndw = batch['token_windows'].to(device)
+tkn_msks = batch['token_window_loss_masks'].to(device)
+tkn_lngths = batch['token_window_word_lengths'].to(device)
+lstm_wndws = batch['lstm_windows'].to(device)
+lstm_msks = batch['lstm_word_masks'].to(device)
+lstm_lngths = batch['lstm_word_lengths'].to(device)
+flat_pos_window_tensors = batch['pos_window_tensors'].to(device)
+flat_morph_tag_tensors = batch['morph_tag_window_tensors'].to(device)
+
+lgts, idcs = network(tkn_wndw, tkn_msks, tkn_lngths, lstm_wndws, lstm_msks, lstm_lngths, flat_pos_window_tensors, flat_morph_tag_tensors)
+
+
+# In[ ]:
+
+
+idcs
+
+
+# In[ ]:
+
+
+lstm_wndws[lstm_msks][1]
+
+
+stringifyLSTMWindowEntry(lstm_wndws[lstm_msks][2001])
+
+
+# In[ ]:
+
+
+lstm_wndws[lstm_msks].shape[0:2]
+
+
+# In[ ]:
+
+
+#stringifyPosTensor(flat_pos_window_tensors[1300:1400]), stringifyPosTensor(idcs[0][1300:1400])
+
+
+
+for i in range(1100,1200):
+    actual_pos = stringifyPosTensor(flat_pos_window_tensors[i:i+1])
+    predicted_pos = stringifyPosTensor(idcs[0][i:i+1])
+    actual_morph_tag = stringifyMorphTagsTensor(flat_morph_tag_tensors[i:i+1])
+    predicted_morph_tag = stringifyMorphTagsTensor(torch.stack(idcs[1:], dim = -1)[i:i+1])
+    word = stringifyLSTMWindowEntry(lstm_wndws[lstm_msks][i])
+
+    if actual_pos != predicted_pos:
+        predicted_pos = Fore.RED+predicted_pos+Style.RESET_ALL
+    if actual_morph_tag != predicted_morph_tag:
+        predicted_morph_tag = Fore.RED+predicted_morph_tag+Style.RESET_ALL
+
+    print(actual_pos, predicted_pos, actual_morph_tag, predicted_morph_tag, word)
+
+
+# In[ ]:
+
+
+#just crap to understand the loss-functions
+loss = torch.nn.CrossEntropyLoss()
+sft_mx = torch.nn.Softmax(dim=0)
+inp = torch.tensor([-1.5, 1.4, 0.1, 3.2], requires_grad=True)
+print(inp)
+print(sft_mx(inp))
+targ = torch.empty(1, dtype=torch.long).random_(4)
+print(targ)
+output = loss(inp, targ)
+print(output)
+
+
+# In[ ]:
+
+
+class MorphologyLSTMTransformerModel_LSTM_removed(torch.nn.Module):
     def __init__(self, token_vocab_size=4539, token_embedding_dim=256, token_seq_length=transformer_window_length, attention_heads=4, trans_layers=4, char_vocab_size=38, char_embedding_dim=32, lstm_hidden_size=64, lstm_layers=1, tag_slots_num=11, tag_slot_embedding_dim=32):
         super().__init__()
 
@@ -617,7 +1197,7 @@ class MorphologyLSTMTransformerModel(torch.nn.Module):
         self.char_dropout = torch.nn.Dropout(0.1)
         self.lstm = torch.nn.LSTM(input_size=char_embedding_dim, hidden_size=lstm_hidden_size, num_layers=lstm_layers, batch_first=True, bidirectional=True)
 
-        self.decoder_gru = torch.nn.GRU(input_size=token_embedding_dim+lstm_hidden_size*2+tag_slot_embedding_dim+16, hidden_size=128, batch_first=True)
+        self.decoder_gru = torch.nn.GRU(input_size=token_embedding_dim+tag_slot_embedding_dim+16, hidden_size=128, batch_first=True)
 
         self.gru_tag_slot_embedders = torch.nn.ModuleList([
             torch.nn.Embedding(num_embeddings=len(pos_dict), embedding_dim=tag_slot_embedding_dim),
@@ -633,7 +1213,7 @@ class MorphologyLSTMTransformerModel(torch.nn.Module):
             torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[9]), embedding_dim=tag_slot_embedding_dim)
         ])
         self.gru_slot_positional_embedder = torch.nn.Embedding(num_embeddings=tag_slots_num, embedding_dim=16)
-        self.gru_START_embedding = self.start_embedding = torch.nn.Parameter(torch.randn(32))
+        self.gru_START_embedding = torch.nn.Parameter(torch.randn(tag_slot_embedding_dim))
         self.gru_classifier_heads = torch.nn.ModuleList([
             torch.nn.Linear(128, len(pos_dict)),
             torch.nn.Linear(128, len(morph_slots_dicts[0])),
@@ -652,7 +1232,58 @@ class MorphologyLSTMTransformerModel(torch.nn.Module):
         self.lstm_hidden_size = lstm_hidden_size
         self.register_buffer("position_ids", torch.arange(token_seq_length).unsqueeze_(0))
         self.register_buffer("gru_slot_ids", torch.arange(11).unsqueeze_(0))
-        self.register_buffer("word_offsets", torch.tensor(word_offsets))
+        self.register_buffer("word_offsets", torch.zeros(242536)) #DELETE
+
+    def gru_decode_training(self, combined_final_word_vectors, flat_pos_window_tensors, flat_morph_tag_window_tensors):
+
+        N = combined_final_word_vectors.shape[0]
+        flat_word_vectors_gru_expanded = combined_final_word_vectors.unsqueeze(1).expand(-1, 11, -1)
+        slot_embeddings = self.gru_slot_positional_embedder(self.gru_slot_ids.expand(N, -1))
+        gru_START_embedding = self.gru_START_embedding.unsqueeze(0).expand(N, -1)
+
+        prev_tag_embeddings = [gru_START_embedding.unsqueeze(1), self.gru_tag_slot_embedders[0](flat_pos_window_tensors).unsqueeze(1)]
+        for i in range(1, 10):
+            prev_tag_embeddings.append(self.gru_tag_slot_embedders[i](flat_morph_tag_window_tensors[:, i-1]).unsqueeze(1))
+            #print(self.gru_tag_slot_embedders[i], flat_pos_morph_tag_tensors[:, i])
+
+        prev_tag_embeddings = torch.cat(prev_tag_embeddings, dim=1)
+        #print(flat_word_vectors_gru_expanded.shape, prev_tag_embeddings.shape, slot_embeddings.shape)
+
+        gru_input = torch.cat([flat_word_vectors_gru_expanded, prev_tag_embeddings, slot_embeddings], dim=2)
+
+        gru_output = self.decoder_gru(gru_input)[0]
+
+        output_logits = []
+        for j in range(11):
+            output_logits.append(self.gru_classifier_heads[j](gru_output[:, j, :]))
+        return output_logits
+
+    def gru_decode_inference(self, combined_final_word_vectors):
+
+        N = combined_final_word_vectors.shape[0]
+        flat_word_vectors_gru_unsqueezed = combined_final_word_vectors.unsqueeze(1) #(N, 1, 384)
+        slot_embeddings = self.gru_slot_positional_embedder(self.gru_slot_ids.expand(N, -1)) #(N, 11, 16)
+        gru_START_embedding = self.gru_START_embedding.unsqueeze(0).expand(N, -1) #(N, 32)
+
+        output_logits = []
+        predicted_idces = []
+
+        gru_hidden = combined_final_word_vectors.new_zeros(1, N, 128)
+        prev_tag_embedding = gru_START_embedding.unsqueeze(1) #(N, 1, 32)
+        for j in range(11):
+            current_slot_embedding = slot_embeddings[:, j, :].unsqueeze(1) #(N, 1, 16)
+            gru_input = torch.cat([flat_word_vectors_gru_unsqueezed, prev_tag_embedding, current_slot_embedding], dim=2)
+            gru_output, gru_hidden = self.decoder_gru(gru_input, gru_hidden)
+
+            tag_logit = self.gru_classifier_heads[j](gru_output[:, 0, :]) #(N, num_slot_options)
+            output_logits.append(tag_logit)
+            predicted_idx = torch.argmax(tag_logit, dim=1) #(N)
+            predicted_idces.append(predicted_idx)
+
+            prev_tag_embedding = self.gru_tag_slot_embedders[j](predicted_idx).unsqueeze(1) #(N, 1, 32)
+
+        return output_logits, predicted_idces
+
 
     def poolWordTokens(self, token_windows, token_windows_loss_masks, token_windows_word_lengths):
 
@@ -698,26 +1329,83 @@ class MorphologyLSTMTransformerModel(torch.nn.Module):
         word_pooled_token_states = self.poolWordTokensKeepFlat(token_states, token_windows_loss_masks, token_windows_word_lengths)
 
         ### LSTM ###
-        B, W, L = lstm_windows.shape
-        flat_lstm_windows = lstm_windows.reshape(B*W, L)
-        flat_lstm_word_masks = lstm_word_masks.reshape(B*W)
-        flat_unwordpadded_lstm_windows = flat_lstm_windows[flat_lstm_word_masks]
+        # B, W, L = lstm_windows.shape
+        # flat_lstm_windows = lstm_windows.reshape(B*W, L)
+        # flat_lstm_word_masks = lstm_word_masks.reshape(B*W)
+        # flat_unwordpadded_lstm_windows = flat_lstm_windows[flat_lstm_word_masks]
 
-        lstm_char_embeddings = self.char_dropout(self.char_embedder(flat_unwordpadded_lstm_windows))
-        packed_char_embeddings = torch.nn.utils.rnn.pack_padded_sequence(lstm_char_embeddings, torch.cat(lstm_word_lengths), batch_first=True, enforce_sorted=False)
+        # lstm_char_embeddings = self.char_dropout(self.char_embedder(flat_unwordpadded_lstm_windows))
+        # packed_char_embeddings = torch.nn.utils.rnn.pack_padded_sequence(lstm_char_embeddings, lstm_word_lengths.cpu(), batch_first=True, enforce_sorted=False)
 
-        packed_output, (h_n, c_n) = self.lstm(packed_char_embeddings)
-        flat_unpadded_word_vectors = torch.cat([h_n[0], h_n[1]], dim=1)
+        # packed_output, (h_n, c_n) = self.lstm(packed_char_embeddings)
+        # flat_unpadded_word_vectors = torch.cat([h_n[0], h_n[1]], dim=1)
 
-        #flat_padded_word_vectors = flat_unpadded_word_vectors.new_zeros(B*W, self.lstm_hidden_size*2)
-        #flat_padded_word_vectors[flat_lstm_word_masks] = flat_unpadded_word_vectors
-
-        #final_lstm_word_vectors = flat_padded_word_vectors.reshape(B, W, self.lstm_hidden_size*2)
-
-        #combined_final_word_vectors = torch.cat([word_pooled_token_states, final_lstm_word_vectors], dim=-1)
-        combined_final_word_vectors = torch.cat([word_pooled_token_states, flat_unpadded_word_vectors], dim=-1)
+        # combined_final_word_vectors = torch.cat([word_pooled_token_states, flat_unpadded_word_vectors], dim=-1)
+        combined_final_word_vectors = word_pooled_token_states
 
         ### GRU DECODER ###
+        if self.training:
+            return self.gru_decode_training(combined_final_word_vectors, flat_pos_window_tensors, flat_morph_tag_window_tensors)
+        else:
+            return self.gru_decode_inference(combined_final_word_vectors)
+
+
+# In[ ]:
+
+
+class MorphologyLSTMTransformerModel_Transformer_removed(torch.nn.Module):
+    def __init__(self, token_vocab_size=4539, token_embedding_dim=256, token_seq_length=transformer_window_length, attention_heads=4, trans_layers=4, char_vocab_size=38, char_embedding_dim=32, lstm_hidden_size=64, lstm_layers=1, tag_slots_num=11, tag_slot_embedding_dim=32):
+        super().__init__()
+
+
+        self.token_embedder = torch.nn.Embedding(num_embeddings=token_vocab_size, embedding_dim=token_embedding_dim, padding_idx=0)
+        self.positional_embedder = torch.nn.Embedding(num_embeddings=token_seq_length, embedding_dim=token_embedding_dim)
+        transformer_encoder_layer = torch.nn.TransformerEncoderLayer(d_model=token_embedding_dim, nhead=attention_heads, dim_feedforward=4*token_embedding_dim, batch_first=True)
+        self.transformer = torch.nn.TransformerEncoder(transformer_encoder_layer, trans_layers)
+
+        self.char_embedder = torch.nn.Embedding(num_embeddings=char_vocab_size, embedding_dim=char_embedding_dim, padding_idx=0)
+        self.char_dropout = torch.nn.Dropout(0.1)
+        self.lstm = torch.nn.LSTM(input_size=char_embedding_dim, hidden_size=lstm_hidden_size, num_layers=lstm_layers, batch_first=True, bidirectional=True)
+
+        self.decoder_gru = torch.nn.GRU(input_size=lstm_hidden_size*2+tag_slot_embedding_dim+16, hidden_size=128, batch_first=True)
+
+        self.gru_tag_slot_embedders = torch.nn.ModuleList([
+            torch.nn.Embedding(num_embeddings=len(pos_dict), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[0]), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[1]), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[2]), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[3]), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[4]), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[5]), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[6]), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[7]), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[8]), embedding_dim=tag_slot_embedding_dim),
+            torch.nn.Embedding(num_embeddings=len(morph_slots_dicts[9]), embedding_dim=tag_slot_embedding_dim)
+        ])
+        self.gru_slot_positional_embedder = torch.nn.Embedding(num_embeddings=tag_slots_num, embedding_dim=16)
+        self.gru_START_embedding = torch.nn.Parameter(torch.randn(tag_slot_embedding_dim))
+        self.gru_classifier_heads = torch.nn.ModuleList([
+            torch.nn.Linear(128, len(pos_dict)),
+            torch.nn.Linear(128, len(morph_slots_dicts[0])),
+            torch.nn.Linear(128, len(morph_slots_dicts[1])),
+            torch.nn.Linear(128, len(morph_slots_dicts[2])),
+            torch.nn.Linear(128, len(morph_slots_dicts[3])),
+            torch.nn.Linear(128, len(morph_slots_dicts[4])),
+            torch.nn.Linear(128, len(morph_slots_dicts[5])),
+            torch.nn.Linear(128, len(morph_slots_dicts[6])),
+            torch.nn.Linear(128, len(morph_slots_dicts[7])),
+            torch.nn.Linear(128, len(morph_slots_dicts[8])),
+            torch.nn.Linear(128, len(morph_slots_dicts[9]))
+        ])
+
+        self.token_embedding_dim = token_embedding_dim
+        self.lstm_hidden_size = lstm_hidden_size
+        self.register_buffer("position_ids", torch.arange(token_seq_length).unsqueeze_(0))
+        self.register_buffer("gru_slot_ids", torch.arange(11).unsqueeze_(0))
+        self.register_buffer("word_offsets", torch.zeros(242536)) #DELETE
+
+    def gru_decode_training(self, combined_final_word_vectors, flat_pos_window_tensors, flat_morph_tag_window_tensors):
+
         N = combined_final_word_vectors.shape[0]
         flat_word_vectors_gru_expanded = combined_final_word_vectors.unsqueeze(1).expand(-1, 11, -1)
         slot_embeddings = self.gru_slot_positional_embedder(self.gru_slot_ids.expand(N, -1))
@@ -735,141 +1423,99 @@ class MorphologyLSTMTransformerModel(torch.nn.Module):
 
         gru_output = self.decoder_gru(gru_input)[0]
 
-        tag_logits = []
+        output_logits = []
         for j in range(11):
-            tag_logits.append(self.gru_classifier_heads[j](gru_output[:, j, :]))
+            output_logits.append(self.gru_classifier_heads[j](gru_output[:, j, :]))
+        return output_logits
 
-        return tag_logits
+    def gru_decode_inference(self, combined_final_word_vectors):
 
+        N = combined_final_word_vectors.shape[0]
+        flat_word_vectors_gru_unsqueezed = combined_final_word_vectors.unsqueeze(1) #(N, 1, 384)
+        slot_embeddings = self.gru_slot_positional_embedder(self.gru_slot_ids.expand(N, -1)) #(N, 11, 16)
+        gru_START_embedding = self.gru_START_embedding.unsqueeze(0).expand(N, -1) #(N, 32)
 
-# In[45]:
+        output_logits = []
+        predicted_idces = []
 
+        gru_hidden = combined_final_word_vectors.new_zeros(1, N, 128)
+        prev_tag_embedding = gru_START_embedding.unsqueeze(1) #(N, 1, 32)
+        for j in range(11):
+            current_slot_embedding = slot_embeddings[:, j, :].unsqueeze(1) #(N, 1, 16)
+            gru_input = torch.cat([flat_word_vectors_gru_unsqueezed, prev_tag_embedding, current_slot_embedding], dim=2)
+            gru_output, gru_hidden = self.decoder_gru(gru_input, gru_hidden)
 
-network = MorphologyLSTMTransformerModel()
-cross_entropy_loss = torch.nn.modules.loss.CrossEntropyLoss()
-adamw_optimiser = torch.optim.AdamW(network.parameters(), lr=1e-4)
+            tag_logit = self.gru_classifier_heads[j](gru_output[:, 0, :]) #(N, num_slot_options)
+            output_logits.append(tag_logit)
+            predicted_idx = torch.argmax(tag_logit, dim=1) #(N)
+            predicted_idces.append(predicted_idx)
 
+            prev_tag_embedding = self.gru_tag_slot_embedders[j](predicted_idx).unsqueeze(1) #(N, 1, 32)
 
-# In[195]:
-
-
-btch_idx = randrange(0, 7437)
-dta = mydataset[btch_idx:btch_idx+32]
-tkn_wndw = dta['token_windows']
-tkn_msks = dta['token_window_loss_masks']
-tkn_lngths = dta['token_window_word_lengths']
-lstm_wndws = dta['lstm_windows']
-lstm_msks = dta['lstm_word_masks']
-lstm_lngths = dta['lstm_word_lengths']
-poses = dta['pos_window_tensors']
-window_morph_tags = dta['morph_tag_window_tensors']
-
-flat_pos_window_tensors = torch.cat(poses)
-flat_morph_tag_tensors = torch.cat(window_morph_tags, dim=0)
-
-output_logits = network(tkn_wndw, tkn_msks, tkn_lngths, lstm_wndws, lstm_msks, lstm_lngths, flat_pos_window_tensors, flat_morph_tag_tensors)
-
-losses = [cross_entropy_loss(output_logits[0], flat_pos_window_tensors)]
-for i in range(1, 11):
-    losses.append(cross_entropy_loss(output_logits[i], flat_morph_tag_tensors[:, i -1]))
-loss = torch.stack(losses).mean()
-adamw_optimiser.zero_grad()
-loss.backward()
-adamw_optimiser.step()
-print(btch_idx)
-print(loss)
-print(f"loss: {loss.item()}")
+        return output_logits, predicted_idces
 
 
-# In[99]:
+    def poolWordTokens(self, token_windows, token_windows_loss_masks, token_windows_word_lengths):
 
+        B, W, H = token_windows.shape
+        L = W//2 #L is the char lstm's max words per window, which is always half of the transformer's token-window size
 
-flat_subtext_window_tensors.shape
+        flattened_selected_word_tokens = token_windows[token_windows_loss_masks]
+        flattened_unpadded_lengths = token_windows_word_lengths[token_windows_word_lengths > 0]
 
+        flattened_pooled_tokens = torch.segment_reduce(flattened_selected_word_tokens, 'mean', lengths=flattened_unpadded_lengths)
 
-# In[97]:
+        word_counts_per_window = (token_windows_word_lengths > 0).sum(dim=1)
 
+        rebuilt_pooled_windows = token_windows.new_zeros(B, L, H) #new_zeros() just inherits properties like device from the tensor you call it on; it still creates a new tensor and doesn't modify token_windows
 
+        row_idx = torch.arange(B, device=token_windows.device).unsqueeze(1).expand(-1, L)
+        col_idx = torch.arange(L, device=token_windows.device).unsqueeze(0).expand(B, -1)
 
+        keep = col_idx < word_counts_per_window.unsqueeze(1) #returns a boolean mask of shape (B, L) that for each row has as many Trues as are in the corresponding entry of word_counts_per_window, with the rest being False
 
+        rebuilt_pooled_windows[row_idx[keep], col_idx[keep]] = flattened_pooled_tokens
 
-# In[ ]:
+        return rebuilt_pooled_windows
+    def poolWordTokensKeepFlat(self, token_windows, token_windows_loss_masks, token_windows_word_lengths):
 
+        B, W, H = token_windows.shape
+        L = W//2 #L is the char lstm's max words per window, which is always half of the transformer's token-window size
 
-print(btch_idx)
-prnt_str = ""
-for i in range(len(poses)):
-    prnt_str += str(poses[i].max().item()) + " "
-print(prnt_str.strip())
+        flattened_selected_word_tokens = token_windows[token_windows_loss_masks]
+        flattened_unpadded_lengths = token_windows_word_lengths[token_windows_word_lengths > 0]
 
+        flattened_pooled_tokens = torch.segment_reduce(flattened_selected_word_tokens, 'mean', lengths=flattened_unpadded_lengths)
 
-# In[ ]:
+        return flattened_pooled_tokens
 
+    def forward(self, token_windows, token_windows_loss_masks, token_windows_word_lengths, lstm_windows, lstm_word_masks, lstm_word_lengths, flat_pos_window_tensors, flat_morph_tag_window_tensors) -> torch.Tensor:
+        # ### TRANSFORMER ###
+        # token_embeddings = self.token_embedder(token_windows)
+        # positional_embeddings = self.positional_embedder(self.position_ids.expand(token_embeddings.size(0), -1))
+        # padding_mask = (token_windows == 0)
 
-def poolWorkTokenVectors(token_window: torch.Tensor, loss_mask: torch.Tensor, start_word_offset: int, end_word_offset: int) -> torch.Tensor:
+        # token_states = self.transformer(token_embeddings + positional_embeddings, src_key_padding_mask=padding_mask)
+        # word_pooled_token_states = self.poolWordTokensKeepFlat(token_states, token_windows_loss_masks, token_windows_word_lengths)
 
-    word_tokens_tensor = token_window[loss_mask]
-    #word_tokens_tensor = token_window[loss_mask].float()
+        ## LSTM ###
+        B, W, L = lstm_windows.shape
+        flat_lstm_windows = lstm_windows.reshape(B*W, L)
+        flat_lstm_word_masks = lstm_word_masks.reshape(B*W)
+        flat_unwordpadded_lstm_windows = flat_lstm_windows[flat_lstm_word_masks]
 
-    pooled_tensors_list = []
-    #deliberately leave off the last word so we can deal with the possibility of it being the last ever word in the set
-    i = start_word_offset
-    j = start_word_offset
-    for i in range(start_word_offset, end_word_offset):
-        word_token_length = word_offsets[i + 1] - word_offsets[i]
-        start_idx = j - start_word_offset
-        one_past_end_idx = start_idx + word_token_length
-        pooled_tensor = word_tokens_tensor[start_idx:one_past_end_idx].mean(dim=0)
-        #print(start_idx, one_past_end_idx)
-        pooled_tensors_list.append(pooled_tensor)
-        j += word_token_length
+        lstm_char_embeddings = self.char_dropout(self.char_embedder(flat_unwordpadded_lstm_windows))
+        packed_char_embeddings = torch.nn.utils.rnn.pack_padded_sequence(lstm_char_embeddings, lstm_word_lengths.cpu(), batch_first=True, enforce_sorted=False)
 
-    final_word_token_length = 1
-    if len(word_offsets) - 1 == end_word_offset:
-        final_word_token_length = len(tokens_list) - word_offsets[end_word_offset]
-    else:
-        final_word_token_length = word_offsets[end_word_offset + 1] - word_offsets[end_word_offset]
-    final_start_idx = j - start_word_offset
-    final_one_past_end_idx = final_start_idx + final_word_token_length
-    #print(final_start_idx, final_one_past_end_idx)
-    final_pooled_tensor = word_tokens_tensor[final_start_idx:final_one_past_end_idx].mean(dim=0)
-    pooled_tensors_list.append(final_pooled_tensor)
+        packed_output, (h_n, c_n) = self.lstm(packed_char_embeddings)
+        flat_unpadded_word_vectors = torch.cat([h_n[0], h_n[1]], dim=1)
 
-    pooled_window_tensors = torch.stack(pooled_tensors_list, dim=0)
-    return torch.nn.functional.pad(pooled_window_tensors, (0, 0, 0, 32-pooled_window_tensors.size(0)), value=0)
-    #return torch.nn.functional.pad(pooled_window_tensors, (0, 32-pooled_window_tensors.size(0)), value=0)
+        # combined_final_word_vectors = torch.cat([word_pooled_token_states, flat_unpadded_word_vectors], dim=-1)
+        combined_final_word_vectors = flat_unpadded_word_vectors
 
-
-
-# In[ ]:
-
-
-loss = torch.nn.CrossEntropyLoss()
-sft_mx = torch.nn.Softmax(dim=0)
-inp = torch.tensor([-1.5, 1.4, 0.1, 3.2], requires_grad=True)
-print(inp)
-print(sft_mx(inp))
-targ = torch.empty(1, dtype=torch.long).random_(4)
-print(targ)
-output = loss(inp, targ)
-print(output)
-
-
-# In[161]:
-
-
-last_whole_word_idx = 0
-for i in range(96 - 1, -1, -1):
-    idx_pos_in_word_offsets = sortedListFind(word_offsets, 347650+i)
-    if idx_pos_in_word_offsets != -1 or idx_pos_in_word_offsets == len(word_offsets) - 1:
-        last_whole_word_idx = i
-        break
-print(last_whole_word_idx)
-sortedListFind(word_offsets, 347650+96)
-
-
-# In[156]:
-
-
-sortedListFind(word_offsets, 347760), len(word_offsets)
+        ### GRU DECODER ###
+        if self.training:
+            return self.gru_decode_training(combined_final_word_vectors, flat_pos_window_tensors, flat_morph_tag_window_tensors)
+        else:
+            return self.gru_decode_inference(combined_final_word_vectors)
 
