@@ -520,7 +520,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(device)
 
 
-# In[262]:
+# In[541]:
 
 
 class MorphologyLSTMTransformerModel(torch.nn.Module):
@@ -575,6 +575,7 @@ class MorphologyLSTMTransformerModel(torch.nn.Module):
 
         self.token_embedding_dim = token_embedding_dim
         self.lstm_hidden_size = lstm_hidden_size
+        self.decoder_lstm_hidden_size = decoder_lstm_hidden_size
         self.register_buffer("position_ids", torch.arange(token_seq_length).unsqueeze_(0))
         self.register_buffer("gru_slot_ids", torch.arange(11).unsqueeze_(0))
         self.register_buffer("word_offsets", torch.zeros(242536)) #DELETE
@@ -716,16 +717,16 @@ class MorphologyLSTMTransformerModel(torch.nn.Module):
             return output_logits #[(N, slot_possibilities)*11]
 
         else:
-            full_prev_word_tag_embedding = word_lstm_STARTTAG_embedding #(B, 1, 352)
-            full_batch_lstm_hidden = batched_combined_final_word_vectors.new_zeros(1, B, decoder_lstm_hidden_size)
-            full_batch_lstm_cell = batched_combined_final_word_vectors.new_zeros(1, B, decoder_lstm_hidden_size) #(1, B, 256)
+            full_prev_word_tag_embedding = word_lstm_STARTTAG_embedding.clone() #(B, 1, 352)
+            full_batch_lstm_hidden = batched_combined_final_word_vectors.new_zeros(1, B, self.decoder_lstm_hidden_size)
+            full_batch_lstm_cell = batched_combined_final_word_vectors.new_zeros(1, B, self.decoder_lstm_hidden_size) #(1, B, 256)
 
             batched_output_logits = [batched_combined_final_word_vectors.new_zeros(B, max_window_word_count, len(pos_dict))]
             for i in range(0, 10):
                 batched_output_logits.append(batched_combined_final_word_vectors.new_zeros(B, max_window_word_count, len(morph_slots_dicts[i]))) #[(B, Wmax, slot_possibilities)*11]
-            batched_predicted_idcs = batched_combined_final_word_vectors.new_zeros(B, max_window_word_count, 11) #(B, Wmax, 11)
+            batched_predicted_idcs = batched_combined_final_word_vectors.new_zeros(B, max_window_word_count, 11, dtype=torch.int64) #(B, Wmax, 11)
 
-            active_windows_masks_for_each_word_pos = batched_combined_final_word_vectors.new_zeros(max_window_word_count, B)
+            active_windows_masks_for_each_word_pos = batched_combined_final_word_vectors.new_zeros(max_window_word_count, B, dtype=torch.bool)
 
             for word_pos in range(max_window_word_count):
                 active_windows_mask = word_pos < lstm_windows_num_words #(B) with True for windows that still have words at word_pos
@@ -737,7 +738,7 @@ class MorphologyLSTMTransformerModel(torch.nn.Module):
                 prev_word_tag_embedding = full_prev_word_tag_embedding[active_windows_mask] #(Bactive, 1, 352)
 
                 prev_word_tag_downprojection = self.word_lstm_tag_downprojection(prev_word_tag_embedding) #(Bact, 1, 128) #could skip
-                prev_tag_plus_combined_word_vec = torch.cat([active_batched_combined_final_word_vectors[:, word_pos, :], prev_word_tag_downprojection], dim=2) #(Bact, 1, 384) + (Bact, 1, 128) -> (Bact, 1, 512)
+                prev_tag_plus_combined_word_vec = torch.cat([active_batched_combined_final_word_vectors[:, word_pos:word_pos+1, :], prev_word_tag_downprojection], dim=2) #(Bact, 1, 384) + (Bact, 1, 128) -> (Bact, 1, 512)
 
                 _, (lstm_hidden, lstm_cell) = self.word_level_decoder_lstm(prev_tag_plus_combined_word_vec, (lstm_hidden, lstm_cell)) #h_n and c_n are (1, Bact, 256)
 
@@ -746,10 +747,10 @@ class MorphologyLSTMTransformerModel(torch.nn.Module):
                 tag_embeddings = []
                 batched_predicted_idcs[active_windows_mask, word_pos] = predicted_idcs
                 for i in range(0, 11):
-                    tag_embeddings.append(self.gru_tag_slot_embedders[i](predicted_idcs[:, i]))       
+                    tag_embeddings.append(self.gru_tag_slot_embedders[i](predicted_idcs[:, i])) #(Bact) -> (Bact, 32)       
                     batched_output_logits[i][active_windows_mask, word_pos] = output_logits[i] #[(B, Wmax, slot_possibilities)*11]
 
-                prev_word_tag_embedding = torch.cat(tag_embeddings, dim=2) #(Bact, 1, 352)
+                prev_word_tag_embedding = torch.cat(tag_embeddings, dim=1).unsqueeze(1) #(Bact, 1, 352)
                 full_prev_word_tag_embedding.zero_()
                 full_prev_word_tag_embedding[active_windows_mask, :, :] = prev_word_tag_embedding #(B, 1, 352), with only Bact non-zero rows
 
@@ -776,7 +777,7 @@ pred_idcs = torch.argmax(pos_lgts, dim=1)
 pos_lgts, pred_idcs
 
 
-# In[264]:
+# In[506]:
 
 
 class textWindowsDataset(torch.utils.data.Dataset):
@@ -799,7 +800,7 @@ class textWindowsDataset(torch.utils.data.Dataset):
         return {'token_windows': self.token_windows[idx], 'token_window_loss_masks': self.token_window_loss_masks[idx], 'token_window_word_lengths': self.token_window_word_lengths[idx], 'lstm_windows': self.lstm_windows[idx], 'lstm_word_masks': self.lstm_word_masks[idx], 'lstm_word_lengths': self.lstm_word_lengths[idx], 'lstm_windows_num_words': self.lstm_windows_num_words[idx], 'pos_window_tensors': self.pos_window_tensors[idx], 'morph_tag_window_tensors': self.morph_tag_window_tensors[idx]}
 
 
-# In[265]:
+# In[507]:
 
 
 def data_loader_collate_fn(samples):
@@ -816,7 +817,7 @@ def data_loader_collate_fn(samples):
     }
 
 
-# In[266]:
+# In[508]:
 
 
 # mydataset = textWindowsDataset(flat_subtext_window_tensors, flat_token_loss_mask_tensors, flat_window_word_token_lengths_padded_tensor, lstm_windows, lstm_word_masks, lstm_word_lengths, pos_window_tensors, morph_tag_window_tensors)
@@ -833,7 +834,7 @@ validation_dataset = textWindowsDataset(*validation_dataset_input)
 validation_data_loader = torch.utils.data.DataLoader(validation_dataset, batch_size=32, shuffle=False, collate_fn=data_loader_collate_fn)
 
 
-# In[267]:
+# In[542]:
 
 
 network = MorphologyLSTMTransformerModel()
@@ -880,6 +881,53 @@ adamw_optimiser.zero_grad()
 loss.backward()
 adamw_optimiser.step()
 print(loss)
+
+
+# In[543]:
+
+
+#torch.save(obj=network.state_dict(), f="decoder_lstm_1epoch.pt")
+network.load_state_dict(torch.load("decoder_lstm_1epoch.pt", map_location=device))
+
+
+# In[567]:
+
+
+network.eval()
+validation_dataloader_iter = iter(validation_data_loader)
+
+
+# In[578]:
+
+
+try:
+    batch = next(validation_dataloader_iter)
+except StopIteration:
+    print("Reached end of dataset")
+tkn_wndw = batch['token_windows'].to(device)
+tkn_msks = batch['token_window_loss_masks'].to(device)
+tkn_lngths = batch['token_window_word_lengths'].to(device)
+lstm_wndws = batch['lstm_windows'].to(device)
+lstm_msks = batch['lstm_word_masks'].to(device)
+lstm_lngths = batch['lstm_word_lengths'].to(device)
+lstm_wndws_num_wrds = batch['lstm_windows_num_words'].to(device)
+flat_pos_window_tensors = batch['pos_window_tensors'].to(device)
+flat_morph_tag_tensors = batch['morph_tag_window_tensors'].to(device)
+
+with torch.inference_mode():
+    batched_output_logits, batched_predicted_idcs, active_windows_masks_for_each_word_pos = network(tkn_wndw, tkn_msks, tkn_lngths, lstm_wndws, lstm_msks, lstm_lngths, lstm_wndws_num_wrds, flat_pos_window_tensors, flat_morph_tag_tensors) #[(B, Wmax, slot_possibilities)*11], (B, Wmax, 11), (Wmax, B)
+
+losses = [cross_entropy_loss(batched_output_logits[0][active_windows_masks_for_each_word_pos.T], flat_pos_window_tensors)]
+for i in range(1, 11):
+    losses.append(cross_entropy_loss(batched_output_logits[i][active_windows_masks_for_each_word_pos.T], flat_morph_tag_tensors[:, i-1]))
+loss = torch.stack(losses).mean()
+print(loss)
+
+
+# In[553]:
+
+
+batched_output_logits[0][active_windows_masks_for_each_word_pos.T].shape, flat_pos_window_tensors.shape
 
 
 # In[ ]:
