@@ -1,0 +1,8 @@
+!pip install colorama
+
+from google.colab import drive
+drive.mount('/content/drive')
+
+%cd /content/drive/MyDrive/PyTorch/Tokenisation/padunk/model_versions
+
+drive.flush_and_unmount()

@@ -1,0 +1,1 @@
+Why not use all the unannotated digitised OCS and OCS-adjacent text I can get to run an LLM-style next-token-prediction self-supervised learning task on my encoder architecture, to "pre-train" these parameters on a massively expanded amount of relevant data before I start training it to actually predict my tags?

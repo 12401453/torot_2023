@@ -1,4 +1,4 @@
-//compile: g++ -O3 -std=c++20 tokenise.cpp -o tokenise
+//compile: g++ -O3 -std=c++20 -march=native tokenise_padunk_wb.cpp -o tokenise_padunk_wb
 
 #include <iostream>
 #include <string>
@@ -207,18 +207,34 @@ void worker(decltype(std::vector<std::vector<std::uint16_t>>().begin()) start, d
     total_token_count += worker_token_count;
 }
 
+int safeStrToInt(const std::string &string_number, int default_result=-1) {
+    int converted_int = default_result;
+    try {
+        converted_int = std::stoi(string_number);
+    }
+    catch (std::invalid_argument const& ex) {
+        // std::cout << "std::stoi failed with an invalid_argument exception; defaulting it to " << default_result << "\n";
+    }
+    catch (std::out_of_range const& ex) {
+        // std::cout << "std::stoi failed with an out_of_range exception; defaulting it to " << default_result << "\n";
+    }
+    return converted_int;
+}
+
 int main(int argc, char** argv) {
 
-    if(argc != 2) {
-        std::cout << "Usage: ./tokenise <deep-cleaned word-per-line textfile>\n";
+    if(argc != 3) {
+        std::cout << "Usage: ./tokenise <deep-cleaned word-per-line textfile> <bpe iterations>\n";
         return -1;
     }
 
     std::string cleaned_text_path = argv[1];
+    int num_iterations = safeStrToInt(argv[2]);
 
     std::ifstream mergeRulesFile("merge_rules.csv");
     std::string line;
-    while(std::getline(mergeRulesFile, line)) {
+    int line_no = 0;
+    while(std::getline(mergeRulesFile, line) && line_no < num_iterations) {
         int pipe_pos = line.find('|');
         int comma_pos = line.find(',');
 
@@ -230,6 +246,7 @@ int main(int argc, char** argv) {
 
         merge_rules_vec.emplace_back(std::make_pair(shortIntPair(merge_pair_first, merge_pair_second), merged_new));
         total_vocab_reversed.emplace(std::make_pair(merged_new, total_vocab_reversed.at(merge_pair_first) + total_vocab_reversed.at(merge_pair_second)));
+        line_no++;
     }
     std::cout << "total_vocab size after adding all the merges: " << total_vocab_reversed.size() << "\n";
     mergeRulesFile.close();
@@ -268,7 +285,7 @@ int main(int argc, char** argv) {
     double tokens_per_word = double(total_token_count)/num_words;
     std::cout << "tokens-per-word: " << tokens_per_word << "\n";
 
-    std::ofstream tokenisedFile("tokenised_" + cleaned_text_path);
+    std::ofstream tokenisedFile("tokenised_" + std::to_string(num_iterations) + "_" + cleaned_text_path);
 
     for(const auto& csv_oss : csv_text_portions) {
         tokenisedFile << csv_oss.str();

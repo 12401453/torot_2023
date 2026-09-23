@@ -10,6 +10,8 @@
 #include <list>
 #include <algorithm>
 
+//g++ -std=c++20 -O3 -march=native bpe_padunk_wb.cpp -o bpe_padunk_wb
+
 std::unordered_map<std::string, u_int16_t> base_vocab {
     {"<pad>", 0},
     {"<unk>", 1},
@@ -253,7 +255,8 @@ int main(int argc, char** argv)
 
     std::ifstream inFile(input_filename);
     std::ostringstream merge_rules_oss;
-    std::ofstream merge_rules_file("merge_rules.csv");
+    std::string merge_rules_filename = "merge_rules_"+std::to_string(num_iterations)+".csv";
+    std::ofstream merge_rules_file(merge_rules_filename);
 
     std::ostringstream token_idx_oss;
     std::vector<std::pair<int, std::string>> base_vocab_vec;

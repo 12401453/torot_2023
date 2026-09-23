@@ -1,0 +1,97 @@
+Epoch no. 10
+    Training loss: 0.1025630310177803
+    Validation loss: 0.1597328931093216
+Saving model at epoch no. 10 because its validation loss was lower than the previous best validation-loss of 99999.9
+Epoch no. 11
+    Training loss: 0.09242116659879684
+    Validation loss: 0.15239474177360535
+Saving model at epoch no. 11 because its validation loss was lower than the previous best validation-loss of 0.1597328931093216
+Epoch no. 12
+    Training loss: 0.08417119085788727
+    Validation loss: 0.1501440554857254
+Saving model at epoch no. 12 because its validation loss was lower than the previous best validation-loss of 0.15239474177360535
+Epoch no. 13
+    Training loss: 0.07740817219018936
+    Validation loss: 0.14593605697155
+Saving model at epoch no. 13 because its validation loss was lower than the previous best validation-loss of 0.1501440554857254
+Epoch no. 14
+    Training loss: 0.07158397883176804
+    Validation loss: 0.14506013691425323
+Saving model at epoch no. 14 because its validation loss was lower than the previous best validation-loss of 0.14593605697155
+Epoch no. 15
+    Training loss: 0.0666956827044487
+    Validation loss: 0.14592307806015015
+Epoch no. 16
+    Training loss: 0.06234271451830864
+    Validation loss: 0.14277353882789612
+Saving model at epoch no. 16 because its validation loss was lower than the previous best validation-loss of 0.14506013691425323
+Epoch no. 17
+    Training loss: 0.058295417577028275
+    Validation loss: 0.14218920469284058
+Saving model at epoch no. 17 because its validation loss was lower than the previous best validation-loss of 0.14277353882789612
+Epoch no. 18
+    Training loss: 0.05481792241334915
+    Validation loss: 0.1444108486175537
+Epoch no. 19
+    Training loss: 0.05140117555856705
+    Validation loss: 0.1436794102191925
+Epoch no. 20
+    Training loss: 0.04848181828856468
+    Validation loss: 0.14863786101341248
+Epoch no. 21
+    Training loss: 0.045603424310684204
+    Validation loss: 0.1429060995578766
+Epoch no. 22
+    Training loss: 0.043213989585638046
+    Validation loss: 0.14566802978515625
+Epoch no. 23
+    Training loss: 0.04065806046128273
+    Validation loss: 0.14666323363780975
+Epoch no. 24
+    Training loss: 0.038418158888816833
+    Validation loss: 0.15719664096832275
+Epoch no. 25
+    Training loss: 0.03613670915365219
+    Validation loss: 0.1489458978176117
+Epoch no. 26
+    Training loss: 0.03411368653178215
+    Validation loss: 0.14989931881427765
+Epoch no. 27
+    Training loss: 0.03244619444012642
+    Validation loss: 0.1529332548379898
+Epoch no. 28
+    Training loss: 0.03049701824784279
+    Validation loss: 0.15219996869564056
+Epoch no. 29
+    Training loss: 0.028889283537864685
+    Validation loss: 0.15653160214424133
+Epoch no. 30
+    Training loss: 0.027382219210267067
+    Validation loss: 0.15897688269615173
+Epoch no. 31
+    Training loss: 0.02577005699276924
+    Validation loss: 0.160678431391716
+Epoch no. 32
+    Training loss: 0.024389389902353287
+    Validation loss: 0.16412293910980225
+Epoch no. 33
+    Training loss: 0.023029109463095665
+    Validation loss: 0.17537207901477814
+Epoch no. 34
+    Training loss: 0.021776819601655006
+    Validation loss: 0.1692812442779541
+Epoch no. 35
+    Training loss: 0.020538708195090294
+    Validation loss: 0.1614433079957962
+Epoch no. 36
+    Training loss: 0.01954023353755474
+    Validation loss: 0.1690320074558258
+Epoch no. 37
+    Training loss: 0.018401388078927994
+    Validation loss: 0.16535578668117523
+Epoch no. 38
+    Training loss: 0.0175381600856781
+    Validation loss: 0.17261937260627747
+Epoch no. 39
+    Training loss: 0.01652173139154911
+    Validation loss: 0.170816108584404
