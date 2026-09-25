@@ -47,7 +47,11 @@ const privateCodePointReplacements = new Array(
   [57368, "҆"], //same as 57369 except a smooth-breathing; am foresaking the acute again
   [58182, "~"], //looks more like 58180 with a curve at either end and a dot above and below
   //euangelium_didacticum
-  [57878, "Ꙋ"]
+  [57878, "Ꙋ"],
+  //kratuk_zlatostruy
+  [58179, "~"], //has a dot through the middle of it
+  [61568, ""],//is literally a box on the webpage so even they haven't made a font to display this codepoint
+  [57360, "҃"], //titlo; these fuckers seem to be using a flat line as a titlo normally which I am going to replace with the proper titlo
   // [, ""],
   // [, ""],
   // [, ""],
@@ -96,7 +100,7 @@ const replacePrivateCodepoints = (str) => {
       ocs_dict_entry_doc.querySelector(".body").querySelectorAll("p")[0].childNodes.forEach((child, i) => {
         if(child.nodeName == "SPAN") {
 
-          raw_text += replacePrivateCodepoints(child.textContent);
+          raw_text += replacePrivateCodepoints(child.textContent).replaceAll("͞", "҃"); //replace the weird flat bar they use with a normal titlo
           
         }
         else if(child.nodeName == "BR") {
