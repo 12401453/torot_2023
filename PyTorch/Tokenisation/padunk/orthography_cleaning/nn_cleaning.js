@@ -216,5 +216,16 @@ const nn_OCS_OESl_deepClean_map = {
     "цѭ" : "цѫ",
     "штѭ" : "штѫ",
 
+    "шꙗ" : "ша",
+    "чꙗ" : "ча",
+    "жꙗ" : "жа",
+    "ждꙗ" : "жда",
+    "цꙗ" : "ца",
+    "штꙗ" : "шта",
+
+    "шт": "щ", //this would be bad if you ever get *šьt sequences that omit the jer, but in my whole autoreconstructed corpus you never do
+
     " " : "", //get rid of token-internal whitespace
 };
+
+module.exports = nn_OCS_OESl_deepClean_map;
