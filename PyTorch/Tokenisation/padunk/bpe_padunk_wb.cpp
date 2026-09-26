@@ -51,6 +51,11 @@ std::unordered_map<std::string, u_int16_t> base_vocab {
     {"у", 35},
     {"л", 36},
     {"п", 37},
+    {"ҁ", 38}, //think it's a numeral so kinda need it
+    {"ꙗ", 39},
+    {"щ", 40},
+    {"҃", 41}, //titlo
+    
     {"<wb>", 38}
 };
 std::unordered_map<u_int16_t, std::string> base_vocab_reversed {
@@ -92,6 +97,11 @@ std::unordered_map<u_int16_t, std::string> base_vocab_reversed {
     {35, "у"},
     {36, "л"},
     {37, "п"},
+    {38, "ҁ"},
+    {39, "ꙗ"},
+    {40, "щ"},
+    {41, "҃"}, //titlo
+
     {38, "<wb>"}
 };
 
