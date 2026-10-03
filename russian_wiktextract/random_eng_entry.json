@@ -1,0 +1,595 @@
+{
+  "pos": "verb",
+  "head_templates": [
+    {
+      "name": "ru-verb",
+      "args": {
+        "1": "произойти́",
+        "2": "pf",
+        "impf": "происходи́ть"
+      },
+      "expansion": "произойти́ • (proizojtí) pf (imperfective происходи́ть)"
+    }
+  ],
+  "forms": [
+    {
+      "form": "произойти́",
+      "tags": [
+        "canonical",
+        "perfective"
+      ]
+    },
+    {
+      "form": "proizojtí",
+      "tags": [
+        "romanization"
+      ]
+    },
+    {
+      "form": "происходи́ть",
+      "links": [
+        [
+          "происходи́ть",
+          "происходить"
+        ]
+      ],
+      "tags": [
+        "imperfective"
+      ]
+    },
+    {
+      "form": "intransitive perfective",
+      "source": "conjugation",
+      "tags": [
+        "table-tags"
+      ]
+    },
+    {
+      "form": "ru-conj",
+      "source": "conjugation",
+      "tags": [
+        "inflection-template"
+      ]
+    },
+    {
+      "form": "irreg-b/b perfective intransitive",
+      "source": "conjugation",
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "form": "произойти́",
+      "tags": [
+        "infinitive",
+        "perfective"
+      ],
+      "source": "conjugation",
+      "roman": "proizojtí",
+      "links": [
+        [
+          "произойти́",
+          "произойти#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "-",
+      "tags": [
+        "active",
+        "participle",
+        "present"
+      ],
+      "source": "conjugation"
+    },
+    {
+      "form": "происше́дший",
+      "tags": [
+        "active",
+        "participle",
+        "past"
+      ],
+      "source": "conjugation",
+      "roman": "proisšédšij",
+      "links": [
+        [
+          "происше́дший",
+          "происшедший#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "произоше́дший",
+      "tags": [
+        "active",
+        "participle",
+        "past"
+      ],
+      "source": "conjugation",
+      "roman": "proizošédšij",
+      "links": [
+        [
+          "произоше́дший",
+          "произошедший#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "-",
+      "tags": [
+        "participle",
+        "passive",
+        "present"
+      ],
+      "source": "conjugation"
+    },
+    {
+      "form": "-",
+      "tags": [
+        "participle",
+        "passive",
+        "past"
+      ],
+      "source": "conjugation"
+    },
+    {
+      "form": "-",
+      "tags": [
+        "adverbial",
+        "participle",
+        "present"
+      ],
+      "source": "conjugation"
+    },
+    {
+      "form": "произойдя́",
+      "tags": [
+        "adverbial",
+        "participle",
+        "past"
+      ],
+      "source": "conjugation",
+      "roman": "proizojdjá",
+      "links": [
+        [
+          "произойдя́",
+          "произойдя#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "происше́дши",
+      "tags": [
+        "adverbial",
+        "participle",
+        "past"
+      ],
+      "source": "conjugation",
+      "roman": "proisšédši",
+      "links": [
+        [
+          "происше́дши",
+          "происшедши#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "произоше́дши",
+      "tags": [
+        "adverbial",
+        "participle",
+        "past"
+      ],
+      "source": "conjugation",
+      "roman": "proizošédši",
+      "links": [
+        [
+          "произоше́дши",
+          "произошедши#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "-",
+      "tags": [
+        "first-person",
+        "present",
+        "singular"
+      ],
+      "source": "conjugation"
+    },
+    {
+      "form": "произойду́",
+      "tags": [
+        "first-person",
+        "future",
+        "singular"
+      ],
+      "source": "conjugation",
+      "roman": "proizojdú",
+      "links": [
+        [
+          "произойду́",
+          "произойду#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "-",
+      "tags": [
+        "present",
+        "second-person",
+        "singular"
+      ],
+      "source": "conjugation"
+    },
+    {
+      "form": "произойдёшь",
+      "tags": [
+        "future",
+        "second-person",
+        "singular"
+      ],
+      "source": "conjugation",
+      "roman": "proizojdjóšʹ"
+    },
+    {
+      "form": "-",
+      "tags": [
+        "present",
+        "singular",
+        "third-person"
+      ],
+      "source": "conjugation"
+    },
+    {
+      "form": "произойдёт",
+      "tags": [
+        "future",
+        "singular",
+        "third-person"
+      ],
+      "source": "conjugation",
+      "roman": "proizojdjót"
+    },
+    {
+      "form": "-",
+      "tags": [
+        "first-person",
+        "plural",
+        "present"
+      ],
+      "source": "conjugation"
+    },
+    {
+      "form": "произойдём",
+      "tags": [
+        "first-person",
+        "future",
+        "plural"
+      ],
+      "source": "conjugation",
+      "roman": "proizojdjóm"
+    },
+    {
+      "form": "-",
+      "tags": [
+        "plural",
+        "present",
+        "second-person"
+      ],
+      "source": "conjugation"
+    },
+    {
+      "form": "произойдёте",
+      "tags": [
+        "future",
+        "plural",
+        "second-person"
+      ],
+      "source": "conjugation",
+      "roman": "proizojdjóte"
+    },
+    {
+      "form": "-",
+      "tags": [
+        "plural",
+        "present",
+        "third-person"
+      ],
+      "source": "conjugation"
+    },
+    {
+      "form": "произойду́т",
+      "tags": [
+        "future",
+        "plural",
+        "third-person"
+      ],
+      "source": "conjugation",
+      "roman": "proizojdút",
+      "links": [
+        [
+          "произойду́т",
+          "произойдут#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "произойди́",
+      "tags": [
+        "imperative",
+        "second-person",
+        "singular"
+      ],
+      "source": "conjugation",
+      "roman": "proizojdí",
+      "links": [
+        [
+          "произойди́",
+          "произойди#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "произойди́те",
+      "tags": [
+        "imperative",
+        "plural",
+        "second-person"
+      ],
+      "source": "conjugation",
+      "roman": "proizojdíte",
+      "links": [
+        [
+          "произойди́те",
+          "произойдите#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "произошёл",
+      "tags": [
+        "masculine",
+        "past",
+        "singular"
+      ],
+      "source": "conjugation",
+      "roman": "proizošól"
+    },
+    {
+      "form": "произошли́",
+      "tags": [
+        "masculine",
+        "past",
+        "plural"
+      ],
+      "source": "conjugation",
+      "roman": "proizošlí",
+      "links": [
+        [
+          "произошли́",
+          "произошли#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "произошла́",
+      "tags": [
+        "feminine",
+        "past",
+        "singular"
+      ],
+      "source": "conjugation",
+      "roman": "proizošlá",
+      "links": [
+        [
+          "произошла́",
+          "произошла#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "произошли́",
+      "tags": [
+        "feminine",
+        "past",
+        "plural"
+      ],
+      "source": "conjugation",
+      "roman": "proizošlí",
+      "links": [
+        [
+          "произошли́",
+          "произошли#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "произошло́",
+      "tags": [
+        "neuter",
+        "past",
+        "singular"
+      ],
+      "source": "conjugation",
+      "roman": "proizošló",
+      "links": [
+        [
+          "произошло́",
+          "произошло#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "произошли́",
+      "tags": [
+        "neuter",
+        "past",
+        "plural"
+      ],
+      "source": "conjugation",
+      "roman": "proizošlí",
+      "links": [
+        [
+          "произошли́",
+          "произошли#Russian"
+        ]
+      ]
+    }
+  ],
+  "inflection_templates": [
+    {
+      "name": "ru-conj",
+      "args": {
+        "1": "pf-intr",
+        "2": "irreg",
+        "3": "произойти́",
+        "pap": "происше́дший",
+        "pap2": "произоше́дший",
+        "padp": "происше́дши",
+        "padp2": "произоше́дши"
+      }
+    }
+  ],
+  "etymology_text": "про- (pro-) + изойти́ (izojtí)",
+  "etymology_links": [
+    [
+      "про-",
+      "про-#Russian"
+    ],
+    [
+      "изойти́",
+      "изойти#Russian"
+    ]
+  ],
+  "etymology_templates": [
+    {
+      "name": "af",
+      "args": {
+        "1": "ru",
+        "2": "про-",
+        "3": "изойти́"
+      },
+      "expansion": "про- (pro-) + изойти́ (izojtí)"
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[prəɪzɐjˈtʲi]"
+    },
+    {
+      "ipa": "[prəɪzɐjˈtʲːi]"
+    },
+    {
+      "audio": "Ru-произойти.ogg",
+      "ogg_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Ru-%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%BE%D0%B9%D1%82%D0%B8.ogg",
+      "mp3_url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c7/Ru-%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%BE%D0%B9%D1%82%D0%B8.ogg/Ru-%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%BE%D0%B9%D1%82%D0%B8.ogg.mp3"
+    }
+  ],
+  "word": "произойти",
+  "lang": "Russian",
+  "lang_code": "ru",
+  "senses": [
+    {
+      "links": [
+        [
+          "take place",
+          "take place"
+        ],
+        [
+          "happen",
+          "happen"
+        ],
+        [
+          "occur",
+          "occur"
+        ]
+      ],
+      "glosses": [
+        "to take place, to happen, to occur"
+      ],
+      "id": "en-произойти-ru-verb-l39B2QV4",
+      "categories": [
+        {
+          "name": "Russian terms prefixed with про-",
+          "kind": "other",
+          "parents": [],
+          "source": "w+disamb",
+          "_dis": "44 27 29"
+        }
+      ]
+    },
+    {
+      "links": [
+        [
+          "derive",
+          "derive"
+        ],
+        [
+          "descended",
+          "descended"
+        ],
+        [
+          "descend",
+          "descend"
+        ],
+        [
+          "originate",
+          "originate"
+        ]
+      ],
+      "glosses": [
+        "to derive, to be descended, to descend, to originate"
+      ],
+      "id": "en-произойти-ru-verb-lJ724FsL",
+      "categories": [
+        {
+          "name": "Pages with 1 entry",
+          "kind": "other",
+          "parents": [],
+          "source": "w+disamb",
+          "_dis": "33 44 23"
+        },
+        {
+          "name": "Pages with entries",
+          "kind": "other",
+          "parents": [],
+          "source": "w+disamb",
+          "_dis": "16 72 12"
+        },
+        {
+          "name": "Russian entries with incorrect language header",
+          "kind": "other",
+          "parents": [],
+          "source": "w+disamb",
+          "_dis": "17 66 16"
+        }
+      ]
+    },
+    {
+      "links": [
+        [
+          "spring",
+          "spring"
+        ],
+        [
+          "arise",
+          "arise"
+        ],
+        [
+          "result",
+          "result"
+        ],
+        [
+          "take place",
+          "take place"
+        ]
+      ],
+      "glosses": [
+        "to spring, to arise, to result, to take place"
+      ],
+      "id": "en-произойти-ru-verb-YCGkAFXy"
+    }
+  ]
+}

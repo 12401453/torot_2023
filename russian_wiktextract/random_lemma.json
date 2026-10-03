@@ -1,0 +1,404 @@
+{
+  "word": "экстериорный",
+  "pos": "adj",
+  "lang_code": "ru",
+  "lang": "Русский",
+  "forms": [
+    {
+      "form": "экстерио́рный",
+      "tags": [
+        "singular",
+        "masculine",
+        "nominative"
+      ]
+    },
+    {
+      "form": "экстерио́рное",
+      "tags": [
+        "singular",
+        "neuter",
+        "nominative"
+      ]
+    },
+    {
+      "form": "экстерио́рная",
+      "tags": [
+        "singular",
+        "feminine",
+        "nominative"
+      ]
+    },
+    {
+      "form": "экстерио́рные",
+      "tags": [
+        "plural",
+        "nominative"
+      ]
+    },
+    {
+      "form": "экстерио́рного",
+      "tags": [
+        "singular",
+        "masculine",
+        "genitive"
+      ]
+    },
+    {
+      "form": "экстерио́рного",
+      "tags": [
+        "singular",
+        "neuter",
+        "genitive"
+      ]
+    },
+    {
+      "form": "экстерио́рной",
+      "tags": [
+        "singular",
+        "feminine",
+        "genitive"
+      ]
+    },
+    {
+      "form": "экстерио́рных",
+      "tags": [
+        "plural",
+        "genitive"
+      ]
+    },
+    {
+      "form": "экстерио́рному",
+      "tags": [
+        "singular",
+        "masculine",
+        "dative"
+      ]
+    },
+    {
+      "form": "экстерио́рному",
+      "tags": [
+        "singular",
+        "neuter",
+        "dative"
+      ]
+    },
+    {
+      "form": "экстерио́рной",
+      "tags": [
+        "singular",
+        "feminine",
+        "dative"
+      ]
+    },
+    {
+      "form": "экстерио́рным",
+      "tags": [
+        "plural",
+        "dative"
+      ]
+    },
+    {
+      "form": "экстерио́рного",
+      "tags": [
+        "singular",
+        "masculine",
+        "accusative",
+        "animate"
+      ]
+    },
+    {
+      "form": "экстерио́рное",
+      "tags": [
+        "singular",
+        "neuter",
+        "accusative",
+        "animate",
+        "inanimate"
+      ]
+    },
+    {
+      "form": "экстерио́рную",
+      "tags": [
+        "singular",
+        "feminine",
+        "accusative",
+        "animate",
+        "inanimate"
+      ]
+    },
+    {
+      "form": "экстерио́рных",
+      "tags": [
+        "plural",
+        "accusative",
+        "animate"
+      ]
+    },
+    {
+      "form": "экстерио́рный",
+      "tags": [
+        "singular",
+        "masculine",
+        "accusative",
+        "inanimate"
+      ]
+    },
+    {
+      "form": "экстерио́рные",
+      "tags": [
+        "plural",
+        "accusative",
+        "inanimate"
+      ]
+    },
+    {
+      "form": "экстерио́рным",
+      "tags": [
+        "singular",
+        "masculine",
+        "instrumental"
+      ]
+    },
+    {
+      "form": "экстерио́рным",
+      "tags": [
+        "singular",
+        "neuter",
+        "instrumental"
+      ]
+    },
+    {
+      "form": "экстерио́рной",
+      "tags": [
+        "singular",
+        "feminine",
+        "instrumental"
+      ]
+    },
+    {
+      "form": "экстерио́рною",
+      "tags": [
+        "singular",
+        "feminine",
+        "instrumental"
+      ]
+    },
+    {
+      "form": "экстерио́рными",
+      "tags": [
+        "plural",
+        "instrumental"
+      ]
+    },
+    {
+      "form": "экстерио́рном",
+      "tags": [
+        "singular",
+        "masculine",
+        "prepositional"
+      ]
+    },
+    {
+      "form": "экстерио́рном",
+      "tags": [
+        "singular",
+        "neuter",
+        "prepositional"
+      ]
+    },
+    {
+      "form": "экстерио́рной",
+      "tags": [
+        "singular",
+        "feminine",
+        "prepositional"
+      ]
+    },
+    {
+      "form": "экстерио́рных",
+      "tags": [
+        "plural",
+        "prepositional"
+      ]
+    },
+    {
+      "form": "экстерио́рен",
+      "tags": [
+        "singular",
+        "masculine",
+        "short-form"
+      ]
+    },
+    {
+      "form": "экстерио́рно",
+      "tags": [
+        "singular",
+        "neuter",
+        "short-form"
+      ]
+    },
+    {
+      "form": "экстерио́рна",
+      "tags": [
+        "singular",
+        "feminine",
+        "short-form"
+      ]
+    },
+    {
+      "form": "экстерио́рны",
+      "tags": [
+        "plural",
+        "short-form"
+      ]
+    }
+  ],
+  "tags": [
+    "qualitative"
+  ],
+  "antonyms": [
+    {
+      "word": "интериорный",
+      "sense_index": 1
+    }
+  ],
+  "etymology_links": [
+    [
+      "франц.",
+      "французский язык"
+    ],
+    [
+      "extériorité",
+      "extériorité#Французский"
+    ],
+    [
+      "лат.",
+      "латинский язык"
+    ],
+    [
+      "exterior",
+      "exterior#Латинский"
+    ],
+    [
+      "наружный",
+      "наружный"
+    ],
+    [
+      "внешний",
+      "внешний"
+    ],
+    [
+      "лат.",
+      "латинский язык"
+    ],
+    [
+      "exter",
+      "exter#Латинский"
+    ],
+    [
+      "вне",
+      "вне"
+    ]
+  ],
+  "etymology_texts": [
+    "Происходит от франц. extériorité «внешний характер», далее от лат. exterior «наружный, внешний», сравн. к лат. exter «находящийся вне, наружный»."
+  ],
+  "related": [
+    {
+      "word": "экстериорность",
+      "raw_tags": [
+        "Ближайшее родство",
+        "существительные"
+      ]
+    }
+  ],
+  "hyphenations": [
+    {
+      "parts": [
+        "экс",
+        "те",
+        "ри",
+        "о́р",
+        "ный"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "Русские качественные прилагательные",
+      "kind": "other",
+      "parents": [],
+      "source": "w"
+    },
+    {
+      "name": "Русские лексемы",
+      "kind": "other",
+      "parents": [],
+      "source": "w"
+    },
+    {
+      "name": "Русские прилагательные",
+      "kind": "other",
+      "parents": [],
+      "source": "w"
+    },
+    {
+      "name": "Русские прилагательные, склонение 1*a",
+      "kind": "other",
+      "parents": [],
+      "source": "w"
+    },
+    {
+      "name": "Русские слова с суффиксом -н",
+      "kind": "other",
+      "parents": [],
+      "source": "w"
+    },
+    {
+      "name": "Русские слова, тип морфемного строения R-s-f",
+      "kind": "other",
+      "parents": [],
+      "source": "w"
+    },
+    {
+      "name": "Русский язык",
+      "kind": "other",
+      "parents": [],
+      "source": "w"
+    },
+    {
+      "name": "Слова из 12 букв/ru",
+      "kind": "other",
+      "parents": [],
+      "source": "w"
+    },
+    {
+      "name": "Слова французского происхождения/ru",
+      "kind": "other",
+      "parents": [],
+      "source": "w"
+    },
+    {
+      "name": "Требуется категоризация/ru",
+      "kind": "other",
+      "parents": [],
+      "source": "w"
+    }
+  ],
+  "senses": [
+    {
+      "glosses": [
+        "книжн. внешний, наружный"
+      ],
+      "id": "ru-экстериорный-ru-adj-eSHJvr-f",
+      "categories": [
+        {
+          "name": "Книжные выражения/ru",
+          "kind": "other",
+          "parents": [],
+          "source": "w"
+        }
+      ]
+    }
+  ]
+}

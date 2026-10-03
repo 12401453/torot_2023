@@ -1,0 +1,194 @@
+{
+  "word": "впархивать",
+  "pos": "verb",
+  "lang_code": "ru",
+  "lang": "Русский",
+  "categories": [
+    "Глаголы, спряжение 1a",
+    "Нужна этимология",
+    "Русские глаголы",
+    "Русские глаголы несовершенного вида",
+    "Русские лексемы",
+    "Русские непереходные глаголы",
+    "Русские слова с приставкой в-",
+    "Русские слова с суффиксом -ива",
+    "Русские слова, тип морфемного строения pr-R-s-f",
+    "Русский язык",
+    "Слова из 10 букв/ru",
+    "Требуется категоризация/ru"
+  ],
+  "sounds": [
+    {
+      "ipa": "[ˈfparxʲɪvətʲ]"
+    }
+  ],
+  "senses": [
+    {
+      "glosses": [
+        "влетать куда-либо, порхая (о бабочках, птицах)"
+      ]
+    },
+    {
+      "glosses": [
+        "перен. входить легко, быстро"
+      ],
+      "categories": [
+        "Выражения с переносным значением/ru"
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "form": "впа́рхиваю",
+      "tags": [
+        "present",
+        "singular",
+        "first-person"
+      ]
+    },
+    {
+      "form": "впа́рхиваем",
+      "tags": [
+        "present",
+        "plural",
+        "first-person"
+      ]
+    },
+    {
+      "form": "впа́рхиваешь",
+      "tags": [
+        "present",
+        "singular",
+        "second-person"
+      ]
+    },
+    {
+      "form": "впа́рхиваете",
+      "tags": [
+        "present",
+        "plural",
+        "second-person"
+      ]
+    },
+    {
+      "form": "впа́рхивает",
+      "tags": [
+        "present",
+        "singular",
+        "third-person"
+      ]
+    },
+    {
+      "form": "впа́рхивают",
+      "tags": [
+        "present",
+        "plural",
+        "third-person"
+      ]
+    },
+    {
+      "form": "впа́рхивал",
+      "tags": [
+        "past",
+        "masculine"
+      ]
+    },
+    {
+      "form": "впа́рхивали",
+      "tags": [
+        "past",
+        "masculine",
+        "feminine",
+        "neuter"
+      ]
+    },
+    {
+      "form": "впа́рхивала",
+      "tags": [
+        "past",
+        "feminine"
+      ]
+    },
+    {
+      "form": "впа́рхивало",
+      "tags": [
+        "past",
+        "neuter"
+      ]
+    },
+    {
+      "form": "впа́рхивай",
+      "tags": [
+        "imperative",
+        "second-person"
+      ]
+    },
+    {
+      "form": "впа́рхивайте",
+      "tags": [
+        "imperative",
+        "second-person"
+      ]
+    },
+    {
+      "form": "впа́рхивающий",
+      "tags": [
+        "participle",
+        "active",
+        "present"
+      ]
+    },
+    {
+      "form": "впа́рхивавший",
+      "tags": [
+        "participle",
+        "active",
+        "past"
+      ]
+    },
+    {
+      "form": "впа́рхивая",
+      "tags": [
+        "adverbial",
+        "participle",
+        "present"
+      ]
+    },
+    {
+      "form": "впа́рхивав",
+      "tags": [
+        "adverbial",
+        "participle",
+        "past"
+      ]
+    },
+    {
+      "form": "впа́рхивавши",
+      "tags": [
+        "adverbial",
+        "participle",
+        "past"
+      ]
+    },
+    {
+      "form": "бу́ду/бу́дешь… впа́рхивать",
+      "tags": [
+        "future"
+      ]
+    }
+  ],
+  "tags": [
+    "imperfective",
+    "intransitive"
+  ],
+  "etymology_texts": [
+    "Происходит от ??"
+  ],
+  "hyphenations": [
+    {
+      "parts": [
+        "впа́рхивать"
+      ]
+    }
+  ]
+}

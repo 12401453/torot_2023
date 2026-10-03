@@ -1,0 +1,4 @@
+Num entries in eng wiktionary: 10913999
+Num entries with no lang_code property: 3
+ru entries count: 442594
+ru lemmas: 65865

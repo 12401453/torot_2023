@@ -1,0 +1,17 @@
+Set(15) {
+  'noun',
+  'intj',
+  'adj',
+  'conj',
+  'particle',
+  'prep',
+  'name',
+  'pron',
+  'verb',
+  'num',
+  'adv',
+  'onomatopeia',
+  'abbrev',
+  'phrase',
+  'suffix'
+}

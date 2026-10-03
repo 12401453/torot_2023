@@ -1,0 +1,535 @@
+{
+  "senses": [
+    {
+      "examples": [
+        {
+          "text": "Огни́ семи́ цвето́в отогна́ли ночь в не́бо, туда́, где над кры́шами му́тная, дождли́вая луна́ ходи́ла за кра́сными облака́ми.",
+          "ref": "1930, Нина Берберова [Nina Berberova], chapter VI, in Последние и первые, Paris: Jacques Povolozky & Cie; English translation from Marian Schwartz, transl., The Last and the First, London: Pushkin Press, 2021:",
+          "english": "Lamps in seven colors drove the night into the sky, where over the roofs a blurred, rainy moon passed behind red clouds.",
+          "roman": "Ogní semí cvetóv otognáli nočʹ v nébo, tudá, gde nad krýšami mútnaja, doždlívaja luná xodíla za krásnymi oblakámi.",
+          "type": "quotation",
+          "translation": "Lamps in seven colors drove the night into the sky, where over the roofs a blurred, rainy moon passed behind red clouds.",
+          "bold_text_offsets": [
+            [
+              12,
+              19
+            ]
+          ],
+          "bold_translation_offsets": [
+            [
+              15,
+              21
+            ]
+          ]
+        }
+      ],
+      "links": [
+        [
+          "color",
+          "color"
+        ]
+      ],
+      "categories": [
+        "Russian terms with quotations"
+      ],
+      "glosses": [
+        "color"
+      ],
+      "tags": [
+        "inanimate",
+        "masculine"
+      ]
+    }
+  ],
+  "pos": "noun",
+  "head_templates": [
+    {
+      "name": "ru-noun+",
+      "args": {
+        "1": "c",
+        "2": "",
+        "3": "(1)",
+        "par": "+",
+        "adj": "цветово́й"
+      },
+      "expansion": "цвет • (cvet) m inan (genitive цве́та, nominative plural цвета́, genitive plural цвето́в, relational adjective цветово́й)"
+    }
+  ],
+  "categories": [
+    "Pages with 4 entries",
+    "Pages with entries",
+    "Pages with etymon",
+    "Russian 1-syllable words",
+    "Russian doublets",
+    "Russian entries with etymon",
+    "Russian entries with incorrect language header",
+    "Russian hard-stem masculine-form accent-c nouns",
+    "Russian hard-stem masculine-form nouns",
+    "Russian inanimate nouns",
+    "Russian irregular nouns",
+    "Russian lemmas",
+    "Russian links with redundant alt parameters",
+    "Russian links with redundant wikilinks",
+    "Russian masculine nouns",
+    "Russian nouns",
+    "Russian nouns ending in a consonant with plural -а",
+    "Russian nouns with accent pattern c",
+    "Russian nouns with irregular nominative plural",
+    "Russian nouns with locative singular",
+    "Russian nouns with partitive singular",
+    "Russian terms derived from Old East Slavic",
+    "Russian terms derived from Proto-Balto-Slavic",
+    "Russian terms derived from Proto-Indo-European",
+    "Russian terms derived from Proto-Slavic",
+    "Russian terms derived from the Proto-Indo-European root *ḱweyt-",
+    "Russian terms inherited from Old East Slavic",
+    "Russian terms inherited from Proto-Balto-Slavic",
+    "Russian terms inherited from Proto-Slavic",
+    "Russian terms with IPA pronunciation",
+    "ru:Flowers",
+    "sh:Flowers"
+  ],
+  "forms": [
+    {
+      "form": "cvet",
+      "tags": [
+        "romanization"
+      ]
+    },
+    {
+      "form": "цве́та",
+      "links": [
+        [
+          "цве́та",
+          "цвета"
+        ]
+      ],
+      "tags": [
+        "genitive"
+      ]
+    },
+    {
+      "form": "цвета́",
+      "links": [
+        [
+          "цвета́",
+          "цвета"
+        ]
+      ],
+      "tags": [
+        "nominative",
+        "plural"
+      ]
+    },
+    {
+      "form": "цвето́в",
+      "links": [
+        [
+          "цвето́в",
+          "цветов"
+        ]
+      ],
+      "tags": [
+        "genitive",
+        "plural"
+      ]
+    },
+    {
+      "form": "цветово́й",
+      "links": [
+        [
+          "цветово́й",
+          "цветовой"
+        ]
+      ],
+      "tags": [
+        "adjective",
+        "relational"
+      ]
+    },
+    {
+      "form": "no-table-tags",
+      "source": "declension",
+      "tags": [
+        "table-tags"
+      ]
+    },
+    {
+      "form": "ru-noun-table",
+      "source": "declension",
+      "tags": [
+        "inflection-template"
+      ]
+    },
+    {
+      "form": "hard-stem",
+      "source": "declension",
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "form": "accent-c",
+      "source": "declension",
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "form": "цве́т",
+      "tags": [
+        "nominative",
+        "singular"
+      ],
+      "source": "declension",
+      "roman": "cvét",
+      "links": [
+        [
+          "цве́т",
+          "цвет#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "цвета́",
+      "tags": [
+        "irregular",
+        "nominative",
+        "plural"
+      ],
+      "source": "declension",
+      "roman": "cvetá",
+      "links": [
+        [
+          "цвета́",
+          "цвета#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "цве́та",
+      "tags": [
+        "genitive",
+        "singular"
+      ],
+      "source": "declension",
+      "roman": "cvéta",
+      "links": [
+        [
+          "цве́та",
+          "цвета#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "цвето́в",
+      "tags": [
+        "genitive",
+        "plural"
+      ],
+      "source": "declension",
+      "roman": "cvetóv",
+      "links": [
+        [
+          "цвето́в",
+          "цветов#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "цве́ту",
+      "tags": [
+        "dative",
+        "singular"
+      ],
+      "source": "declension",
+      "roman": "cvétu",
+      "links": [
+        [
+          "цве́ту",
+          "цвету#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "цвета́м",
+      "tags": [
+        "dative",
+        "plural"
+      ],
+      "source": "declension",
+      "roman": "cvetám",
+      "links": [
+        [
+          "цвета́м",
+          "цветам#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "цве́т",
+      "tags": [
+        "accusative",
+        "singular"
+      ],
+      "source": "declension",
+      "roman": "cvét",
+      "links": [
+        [
+          "цве́т",
+          "цвет#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "цвета́",
+      "tags": [
+        "accusative",
+        "irregular",
+        "plural"
+      ],
+      "source": "declension",
+      "roman": "cvetá",
+      "links": [
+        [
+          "цвета́",
+          "цвета#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "цве́том",
+      "tags": [
+        "instrumental",
+        "singular"
+      ],
+      "source": "declension",
+      "roman": "cvétom",
+      "links": [
+        [
+          "цве́том",
+          "цветом#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "цвета́ми",
+      "tags": [
+        "instrumental",
+        "plural"
+      ],
+      "source": "declension",
+      "roman": "cvetámi",
+      "links": [
+        [
+          "цвета́ми",
+          "цветами#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "цве́те",
+      "tags": [
+        "prepositional",
+        "singular"
+      ],
+      "source": "declension",
+      "roman": "cvéte",
+      "links": [
+        [
+          "цве́те",
+          "цвете#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "цвета́х",
+      "tags": [
+        "plural",
+        "prepositional"
+      ],
+      "source": "declension",
+      "roman": "cvetáx",
+      "links": [
+        [
+          "цвета́х",
+          "цветах#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "цве́ту",
+      "tags": [
+        "partitive",
+        "singular"
+      ],
+      "source": "declension",
+      "roman": "cvétu",
+      "links": [
+        [
+          "цве́ту",
+          "цвету#Russian"
+        ]
+      ]
+    },
+    {
+      "form": "цвѣтъ",
+      "tags": [
+        "alternative"
+      ],
+      "roman": "cvět"
+    }
+  ],
+  "derived": [
+    {
+      "roman": "cvetísto",
+      "word": "цвети́сто"
+    },
+    {
+      "roman": "cvetnój",
+      "word": "цветно́й"
+    },
+    {
+      "roman": "cvetnostʹ",
+      "word": "цветность"
+    },
+    {
+      "roman": "cvetovedenije",
+      "word": "цветоведение"
+    },
+    {
+      "roman": "cvetók",
+      "word": "цвето́к"
+    }
+  ],
+  "etymology_number": "1",
+  "etymology_text": "Inherited from Old East Slavic цвѣтъ (cvětŭ). Cognate with English white. Doublet of свет (svet).",
+  "etymology_links": [
+    [
+      "цвѣтъ",
+      "цвѣтъ#Old_East_Slavic"
+    ],
+    [
+      "white",
+      "white#English"
+    ],
+    [
+      "свет",
+      "свет#Russian"
+    ]
+  ],
+  "etymology_templates": [
+    {
+      "name": "dercat",
+      "args": {
+        "1": "ru",
+        "2": "sla-pro",
+        "3": "ine-bsl-pro",
+        "4": "ine-pro",
+        "inh": "2"
+      },
+      "expansion": ""
+    },
+    {
+      "name": "etymon",
+      "args": {
+        "1": "ru",
+        "2": ":inh",
+        "3": "orv:цвѣтъ<id:flower>",
+        "id": "colour"
+      },
+      "expansion": "[Appendix:Glossary#derived_terms|Derived]] from\", \"terms\" : [ { \"id\" : \"shine\", \"children\" : [ ], \"status\" : \"ok\", \"lang_name\" : \"Proto-Indo-European\", \"term\" : \"*ḱweyt-\", \"lang\" : \"ine-pro\" } ], \"keyword\" : \"derived\" } ], \"lang_name\" : \"Proto-Balto-Slavic\", \"term\" : \"*kwaitas\", \"status\" : \"inline\", \"lang\" : \"ine-bsl-pro\" } ], \"keyword_label\" : \"Inherited from\", \"keyword\" : \"inherited\" } ], \"status\" : \"ok\", \"lang_name\" : \"Proto-Slavic\", \"term\" : \"*květъ\", \"lang\" : \"sla-pro\" } ], \"keyword_label\" : \"Inherited from\", \"keyword\" : \"inherited\" } ], \"status\" : \"ok\", \"lang_name\" : \"Old East Slavic\", \"term\" : \"цвѣтъ\", \"lang\" : \"orv\" } ], \"keyword_label\" : \"Inherited from\", \"keyword\" : \"inherited\" } ], \"status\" : \"ok\", \"lang_name\" : \"Russian\", \"term\" : \"цвет\", \"lang\" : \"ru\" }\" data-id=\"colour\" data-lang=\"ru\" data-title=\"цвет\" id=\"Russian:_colour\">"
+    },
+    {
+      "name": "yesno",
+      "args": {
+        "1": "",
+        "2": "i",
+        "3": "I"
+      },
+      "expansion": "I"
+    },
+    {
+      "name": "glossary",
+      "args": {
+        "1": "Inherited"
+      },
+      "expansion": "Inherited"
+    },
+    {
+      "name": "inh",
+      "args": {
+        "1": "ru",
+        "2": "orv",
+        "3": "цвѣтъ",
+        "4": "",
+        "5": "",
+        "lit": "",
+        "pos": "",
+        "tr": "",
+        "ts": "",
+        "id": "",
+        "sc": "",
+        "g": "",
+        "g2": "",
+        "g3": "",
+        "nocat": "",
+        "sort": ""
+      },
+      "expansion": "Old East Slavic цвѣтъ (cvětŭ)"
+    },
+    {
+      "name": "inh+",
+      "args": {
+        "1": "ru",
+        "2": "orv",
+        "3": "цвѣтъ"
+      },
+      "expansion": "Inherited from Old East Slavic цвѣтъ (cvětŭ)"
+    },
+    {
+      "name": "lg",
+      "args": {
+        "1": "Cognate"
+      },
+      "expansion": "Cognate"
+    },
+    {
+      "name": "cog",
+      "args": {
+        "1": "en",
+        "2": "white"
+      },
+      "expansion": "English white"
+    },
+    {
+      "name": "doublet",
+      "args": {
+        "1": "ru",
+        "2": "свет"
+      },
+      "expansion": "Doublet of свет (svet)"
+    }
+  ],
+  "word": "цвет",
+  "lang": "Russian",
+  "lang_code": "ru",
+  "sounds": [
+    {
+      "ipa": "[t͡svʲet]"
+    },
+    {
+      "audio": "Ru-цвет.ogg",
+      "ogg_url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Ru-%D1%86%D0%B2%D0%B5%D1%82.ogg",
+      "mp3_url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/35/Ru-%D1%86%D0%B2%D0%B5%D1%82.ogg/Ru-%D1%86%D0%B2%D0%B5%D1%82.ogg.mp3"
+    },
+    {
+      "audio": "LL-Q7737 (rus)-Tatiana Kerbush-цвет.wav",
+      "tags": [
+        "Saint-Petersburg"
+      ],
+      "ogg_url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/37/LL-Q7737_%28rus%29-Tatiana_Kerbush-%D1%86%D0%B2%D0%B5%D1%82.wav/LL-Q7737_%28rus%29-Tatiana_Kerbush-%D1%86%D0%B2%D0%B5%D1%82.wav.ogg",
+      "mp3_url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/37/LL-Q7737_%28rus%29-Tatiana_Kerbush-%D1%86%D0%B2%D0%B5%D1%82.wav/LL-Q7737_%28rus%29-Tatiana_Kerbush-%D1%86%D0%B2%D0%B5%D1%82.wav.mp3"
+    }
+  ]
+}
