@@ -263,11 +263,11 @@ std::vector<std::uint16_t> tokeniseWordDropout(const std::vector<std::uint16_t> 
         MergeRulesMap::const_iterator best_merge = merge_rules_map.end();
         int lowest_merge_rule_position = 999999;
         for(const auto& possible_merge : possible_merges) {
-            /*if(dropout_chance_generator.roll()) {
+            if(dropout_chance_generator.roll()) {
                 //possible_merge = merge_rules_map.end();
                 continue;
             }
-            else */ if(possible_merge->second.merge_rules_position < lowest_merge_rule_position) {
+            else if(possible_merge->second.merge_rules_position < lowest_merge_rule_position) {
                 lowest_merge_rule_position =  possible_merge->second.merge_rules_position;
                 best_merge = possible_merge;
             }
@@ -323,7 +323,7 @@ void worker(decltype(std::vector<std::vector<std::uint16_t>>().begin()) start, d
     std::cout << "thread " << i + 1 << " has started\n";
     int worker_token_count = 0;
 
-    DropoutChanceGenerator dropout_chance_generator(0.0);
+    DropoutChanceGenerator dropout_chance_generator(0.1);
 
     for(auto iter = start; iter != end; ++iter) {
         tokenisePart(*iter, csv_text_oss, worker_token_count, dropout_chance_generator, merge_rules_map);

@@ -12,7 +12,7 @@
 #include <cstdint>
 #include <random>
 #include <thread>
-#include <list>
+#include <algorithm>
 
 std::unordered_map<std::string, u_int16_t> base_vocab {
     {"<pad>", 0},
@@ -116,8 +116,6 @@ typedef std::unordered_map<std::uint32_t, MergeInfo> MergeRulesMap;
 
 std::unordered_map<std::uint16_t, std::string> total_vocab_reversed = base_vocab_reversed;
 
-std::vector<std::pair<std::uint32_t, std::uint16_t>> merge_rules_vec;
-
 class DropoutChanceGenerator {
     public:
     DropoutChanceGenerator(double desired_probability=0.1) {
@@ -177,69 +175,60 @@ MergeRulesMap loadMergeRulesMap(const std::string &merge_rules_filepath, int num
     return merge_rules_map;
 }
 
-std::vector<std::vector<std::uint16_t>> numerifyWords(std::string cleaned_text_path) {
-    std::string line;
+// std::vector<std::vector<std::uint16_t>> numerifyWords(std::string cleaned_text_path) {
+//     std::string line;
+//     std::ifstream cleanedTextFile(cleaned_text_path);
+//     std::string base_char;
+//     base_char.reserve(3);
+//     base_char.clear();
+//     std::vector<std::vector<std::uint16_t>> numerifiedWords;
+//     numerifiedWords.reserve(65536);
+//     std::vector<std::uint16_t> word_vector;
+//     word_vector.reserve(8);
+//     while(std::getline(cleanedTextFile, line)) {
+//         std::string untokenised_word = "<wb>"+line;
+//         for(const auto ch : untokenised_word) {
+//             base_char += ch;
+//             if(base_vocab.contains(base_char)) {
+//                 std::uint16_t char_code = base_vocab.at(base_char);
+//                 word_vector.push_back(char_code);
+//                 base_char.clear();
+//             }
+//         }
+//         numerifiedWords.emplace_back(word_vector);
+//         word_vector.clear();
+//     }
+//     cleanedTextFile.close();
+//     return numerifiedWords;
+// }
+
+std::vector<std::string> getWordsVector(std::string cleaned_text_path) {
     std::ifstream cleanedTextFile(cleaned_text_path);
+    std::string line;
+    std::vector<std::string> words_vector;
+    words_vector.reserve(1048576);
+    while(std::getline(cleanedTextFile, line)) {
+        words_vector.push_back(line);
+    }
+    return words_vector;
+}
+
+std::vector<std::uint16_t> tokeniseStringWordDropout(const std::string &word_str, DropoutChanceGenerator &dropout_chance_generator, MergeRulesMap &merge_rules_map) {
+    std::string untokenised_word = "<wb>"+word_str;
     std::string base_char;
     base_char.reserve(3);
     base_char.clear();
-    std::vector<std::vector<std::uint16_t>> numerifiedWords;
-    numerifiedWords.reserve(65536);
-    std::vector<std::uint16_t> word_vector;
-    word_vector.reserve(8);
-    while(std::getline(cleanedTextFile, line)) {
-        std::string untokenised_word = "<wb>"+line;
-        for(const auto ch : untokenised_word) {
-            base_char += ch;
-            if(base_vocab.contains(base_char)) {
-                std::uint16_t char_code = base_vocab.at(base_char);
-                word_vector.push_back(char_code);
-                base_char.clear();
-            }
+    std::vector<std::uint16_t> word_vec;
+    word_vec.reserve(8);
+    for(const auto ch : untokenised_word) {
+        base_char += ch;
+        if(base_vocab.contains(base_char)) {
+            std::uint16_t char_code = base_vocab.at(base_char);
+            word_vec.push_back(char_code);
+            base_char.clear();
         }
-        numerifiedWords.emplace_back(word_vector);
-        word_vector.clear();
     }
-    cleanedTextFile.close();
-    return numerifiedWords;
-}
 
-std::vector<std::uint16_t> tokeniseWord(const std::vector<std::uint16_t> &source_word_vec) {
-    std::vector<std::uint16_t> word_vec = source_word_vec;
-    std::vector<std::uint16_t> merged_word_vec;
-    merged_word_vec.reserve(8);
-    for(const auto &merge_rule : merge_rules_vec) {
-        int word_vec_index_second = 1;
-        int word_vec_length = word_vec.size();
-        bool merger_happened = false;
-        while(word_vec_index_second < word_vec_length) {
-            std::uint16_t first_charcode = word_vec[word_vec_index_second - 1];
-            std::uint16_t second_charcode = word_vec[word_vec_index_second];
-            std::uint32_t merged_charcode_pair = shortIntPair(first_charcode, second_charcode);
-            
-            if(merge_rule.first == merged_charcode_pair) {
-                merged_word_vec.push_back(merge_rule.second);
-                word_vec_index_second++;
-                merger_happened = true;
-            }
-            else {
-                merged_word_vec.push_back(first_charcode);
-                merger_happened = false;
-            }
-            word_vec_index_second++;
-        }
-
-        if(!merger_happened) merged_word_vec.push_back(word_vec.back());
-        else if(word_vec_index_second == word_vec_length) merged_word_vec.push_back(word_vec.back());
-        word_vec = merged_word_vec;
-        merged_word_vec.clear();
-        if(word_vec.size() == 1) break;
-    }
-    return word_vec;
-}
-
-std::vector<std::uint16_t> tokeniseWordDropout(const std::vector<std::uint16_t> &source_word_vec, DropoutChanceGenerator &dropout_chance_generator, MergeRulesMap &merge_rules_map) {
-    std::vector<std::uint16_t> word_vec = source_word_vec;
     std::vector<uint16_t> merged_word_vec;
     merged_word_vec.reserve(8);
     
@@ -299,14 +288,96 @@ std::vector<std::uint16_t> tokeniseWordDropout(const std::vector<std::uint16_t> 
             word_vec = merged_word_vec;
             merged_word_vec.clear();
         }
+        else {
+            break;
+        }
         possible_merges.clear();
     }
+
     return word_vec;
 }
 
-void tokenisePart(const std::vector<std::uint16_t>& numerified_word, std::ostringstream& csv_text, int& worker_token_count, DropoutChanceGenerator &dropout_chance_generator, MergeRulesMap & merge_rules_map) {
+int countLines(std::string cleaned_text_path) {
+    std::ifstream cleanedTextFile(cleaned_text_path); 
+    char buffer[65536];
+    int line_count = 0;
+    while(cleanedTextFile) {
+        cleanedTextFile.read(buffer, sizeof(buffer));
+        std::streamsize bytes_read = cleanedTextFile.gcount();
+        line_count += std::count(buffer, buffer+bytes_read, '\n');
+    }
+    return line_count;
+}
+
+// std::vector<std::uint16_t> tokeniseWordDropout(const std::vector<std::uint16_t> &source_word_vec, DropoutChanceGenerator &dropout_chance_generator, MergeRulesMap &merge_rules_map) {
+//     std::vector<std::uint16_t> word_vec = source_word_vec;
+//     std::vector<uint16_t> merged_word_vec;
+//     merged_word_vec.reserve(8);
+    
+//     std::vector<MergeRulesMap::const_iterator> possible_merges;
+//     while(true){
+//         int word_vec_index_second = 1;
+//         while(word_vec_index_second < word_vec.size()) {
+//             std::uint16_t first_charcode = word_vec[word_vec_index_second - 1];
+//             std::uint16_t second_charcode = word_vec[word_vec_index_second];
+//             std::uint32_t merged_charcode_pair = shortIntPair(first_charcode, second_charcode);
+
+//             if(merge_rules_map.contains(merged_charcode_pair)) {
+//                 possible_merges.emplace_back(merge_rules_map.find(merged_charcode_pair));
+//             }
+//             ++word_vec_index_second;
+//         }
+//         if(possible_merges.empty()) {
+//             break;
+//         }
+
+//         MergeRulesMap::const_iterator best_merge = merge_rules_map.end();
+//         int lowest_merge_rule_position = 999999;
+//         for(const auto& possible_merge : possible_merges) {
+//             if(dropout_chance_generator.roll()) {
+//                 //possible_merge = merge_rules_map.end();
+//                 continue;
+//             }
+//             else if(possible_merge->second.merge_rules_position < lowest_merge_rule_position) {
+//                 lowest_merge_rule_position =  possible_merge->second.merge_rules_position;
+//                 best_merge = possible_merge;
+//             }
+//         }
+
+//         //then simply apply the best-merge
+//         if(best_merge != merge_rules_map.end()) {
+//             int word_vec_index_second = 1;
+//             bool merger_just_happened = false;
+//             while(word_vec_index_second < word_vec.size()) {
+//                 std::uint16_t first_charcode = word_vec[word_vec_index_second - 1];
+//                 std::uint16_t second_charcode = word_vec[word_vec_index_second];
+//                 std::uint32_t merged_charcode_pair = shortIntPair(first_charcode, second_charcode);
+                
+//                 if(best_merge->first == merged_charcode_pair) {
+//                     merged_word_vec.push_back(best_merge->second.merged_token_id);
+//                     word_vec_index_second++;
+//                     merger_just_happened = true;
+//                 }
+//                 else {
+//                     merged_word_vec.push_back(first_charcode);
+//                     merger_just_happened = false;
+//                 }
+//                 word_vec_index_second++;
+//             }
+
+//             if(!merger_just_happened) merged_word_vec.push_back(word_vec.back()); //we only push first_charcode to the merged_vector if no merge occurs, so if we're at the end of the word we need to add on the final character
+//             else if(word_vec_index_second == word_vec.size()) merged_word_vec.push_back(word_vec.back()); // there's a chance that this is an impossible condition
+//             word_vec = merged_word_vec;
+//             merged_word_vec.clear();
+//         }
+//         possible_merges.clear();
+//     }
+//     return word_vec;
+// }
+
+void tokenisePart(const std::string& word_str, std::ostringstream& csv_text, int& worker_token_count, DropoutChanceGenerator &dropout_chance_generator, MergeRulesMap & merge_rules_map) {
     std::ostringstream charcode_tokenised, text_tokenised;
-    for(const auto& charcode : tokeniseWordDropout(numerified_word, dropout_chance_generator, merge_rules_map)) {
+    for(const auto& charcode : tokeniseStringWordDropout(word_str, dropout_chance_generator, merge_rules_map)) {
         charcode_tokenised << charcode << ' ';
         text_tokenised << total_vocab_reversed.at(charcode) << '|';
         ++worker_token_count;
@@ -319,7 +390,7 @@ void tokenisePart(const std::vector<std::uint16_t>& numerified_word, std::ostrin
     csv_text << charcode_tokenised.str().c_str() << ',' << text_tokenised.str().c_str() << '\n';
 }
 
-void worker(decltype(std::vector<std::vector<std::uint16_t>>().begin()) start, decltype(std::vector<std::vector<std::uint16_t>>().begin()) end, std::ostringstream& csv_text_oss, int i, int& total_token_count, MergeRulesMap &merge_rules_map) {
+void worker(decltype(std::vector<std::string>().begin()) start, decltype(std::vector<std::string>().begin()) end, std::ostringstream& csv_text_oss, int i, int& total_token_count, MergeRulesMap &merge_rules_map) {
     std::cout << "thread " << i + 1 << " has started\n";
     int worker_token_count = 0;
 
@@ -357,28 +428,9 @@ int main(int argc, char** argv) {
     std::string cleaned_text_path = argv[1];
     int num_iterations = safeStrToInt(argv[2]);
 
-    // std::ifstream mergeRulesFile("merge_rules.csv");
-    // std::string line;
-    // int line_no = 0;
-    // while(std::getline(mergeRulesFile, line) && line_no < num_iterations) {
-    //     int pipe_pos = line.find('|');
-    //     int comma_pos = line.find(',');
-
-    //     std::uint16_t merge_pair_first, merge_pair_second, merged_new;
-
-    //     merge_pair_first = std::uint16_t(std::stoi(line.substr(0, pipe_pos)));
-    //     merge_pair_second = std::uint16_t(std::stoi(line.substr(pipe_pos + 1, comma_pos - pipe_pos - 1)));
-    //     merged_new = std::uint16_t(std::stoi(line.substr(comma_pos + 1))); //no second-argument in .substr() defaults to just the whole rest
-
-    //     merge_rules_vec.emplace_back(std::make_pair(shortIntPair(merge_pair_first, merge_pair_second), merged_new));
-    //     total_vocab_reversed.emplace(std::make_pair(merged_new, total_vocab_reversed.at(merge_pair_first) + total_vocab_reversed.at(merge_pair_second)));
-    //     line_no++;
-    // }
-    // std::cout << "total_vocab size after adding all the merges: " << total_vocab_reversed.size() << "\n";
-    // mergeRulesFile.close();
-
-    std::vector<std::vector<std::uint16_t>> numerifiedWords = numerifyWords(cleaned_text_path);
-    int num_words = numerifiedWords.size();
+    //std::vector<std::vector<std::uint16_t>> numerifiedWords = numerifyWords(cleaned_text_path);
+    std::vector<std::string> words_str_vector = getWordsVector(cleaned_text_path);
+    int num_words = words_str_vector.size();
 
     int num_hardware_threads = std::thread::hardware_concurrency();
     int vec_portion_size = num_words / num_hardware_threads;
@@ -387,8 +439,8 @@ int main(int argc, char** argv) {
     std::vector<std::thread> tokeniser_threads;
     std::vector<std::ostringstream> csv_text_portions;
     
-    auto start_iter = numerifiedWords.begin();
-    auto end_iter = numerifiedWords.end();
+    auto start_iter = words_str_vector.begin();
+    auto end_iter = words_str_vector.end();
 
     int total_token_count = 0;
     
