@@ -1,0 +1,38 @@
+(BERT style token-only pre-training)
+Training:
+    Words divided up by text_id not subtext
+    Tokenised with BPE-Dropout per epoch
+        => Sliding windows of 96 tokens each, stride 48, padding both to exclude part-words and to fill out last windows to 96 tokens
+        => Training-words are read off disk at start of program along with text_wordoffsets and fed as one flat batch to the tokeniser
+        => Tokeniser gives back flat std::vector<std::uint16_t> of tokens but should also generate token_wordoffsets and return that as well
+        => Python then turns the flat tokens-vector into text-id bounded 96-token windows which are given to the DataLoader to batch up
+            => Split tokens-list on text-boundaries first
+            => The start and end of whole-words in each 96-token window can be found by counting up from both the 0th and 95th position until tokens in the token_wordoffsets is found: at the beginning we pad-out all tokens preceding the first token_wordoffsets one, and at the end we
+            95th token: check 96th, if it's in token_wordoffsets, no padding
+
+
+    first_whole_word_idx = 0
+    start_word_offsets_idx = 0
+    for i in range(0, non_padding_transformer_window_size):
+        start_word_offsets_idx = sortedListFind(word_offsets, token_offset_at_window_start+i)
+        if start_word_offsets_idx != -1:
+            first_whole_word_idx = i
+            break
+
+    ##
+    if start_word_offsets_idx == -1:
+        return torch.zeros(transformer_window_length, dtype=torch.bool), -1, -1
+
+    last_whole_word_idx = non_padding_transformer_window_size - 1##how can we get the last whole-word token from within a window without knowing if it crosses over the boundary?
+    end_word_offsets_idx = 0
+    for i in range(non_padding_transformer_window_size - 1, -1, -1): #transformer_window_length overshoots well into next subtext if this window is padded
+        idx_pos_in_word_offsets = sortedListFind(word_offsets, token_offset_at_window_start+i)
+        if idx_pos_in_word_offsets != -1:
+            last_whole_word_idx = i - 1
+            end_word_offsets_idx = idx_pos_in_word_offsets - 1
+            break
+
+    ##check whether the token after the end of the window is a new word, if so take whole window
+    if sortedListFind(word_offsets, token_offset_at_window_start+non_padding_transformer_window_size) != -1 or token_offset_at_window_start+non_padding_transformer_window_size >= len(tokens_list):
+        last_whole_word_idx = non_padding_transformer_window_size - 1
+        end_word_offsets_idx += 1

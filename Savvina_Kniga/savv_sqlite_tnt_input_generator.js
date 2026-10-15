@@ -333,7 +333,7 @@ const separateWords = (line, bible_index_arr) => {
     final_array[final_array_index][2] = final_array[final_array_index][2].trimEnd();
     
     if(chapter != chapter_prev) {
-        sqlite_subtitles_text += "10|" + subtitleGenerator(book, chapter) + "\n";
+        sqlite_subtitles_text += "11|" + subtitleGenerator(book, chapter) + "\n";
         subtitle_id++;
     }
 
@@ -344,7 +344,7 @@ const separateWords = (line, bible_index_arr) => {
         const cleaned_actual_word = deepCleanChuWord(actual_word);
 
         
-        csv_text += actual_word/*.replaceAll("\uF002", "$").replaceAll("\uF102", "@")*/ + "|||" + cleaned_actual_word + "||" + sentence_no + "|" + presentation_before + "|" + presentation_after + "|10|" + subtitle_id + "|1|" + citation_part + "|" + book + "|" + chapter + "|" + verse + "|" + variant + "\n";
+        csv_text += actual_word/*.replaceAll("\uF002", "$").replaceAll("\uF102", "@")*/ + "|||" + cleaned_actual_word + "||" + sentence_no + "|" + presentation_before + "|" + presentation_after + "|11|" + subtitle_id + "|1|" + citation_part + "|" + book + "|" + chapter + "|" + verse + "|" + variant + "\n";
 
         tnt_input_text += cleaned_actual_word + "\n";
     }

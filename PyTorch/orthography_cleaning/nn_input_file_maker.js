@@ -7,6 +7,8 @@ const CsvReader = require('./csv_reader.js');
 
 const chu_input_lines = readline.createInterface({input: fs.createReadStream("chu_words_full_with_titles_untagged_autotags_added_with_assem_NEW.csv")})[Symbol.asyncIterator]();
 
+const savvina_input_lines = readline.createInterface({input: fs.createReadStream("savv_full_words.csv")})[Symbol.asyncIterator]();
+
 const pandects_of_antioch_csv_lines = readline.createInterface({input: fs.createReadStream("../random_old_bulgarian_texts_from_sofia_corpus_to_use_as_pre_training/pandects_of_antioch/pandects_of_antioch.csv")})[Symbol.asyncIterator]();
 
 const usp_sbor_lines = readline.createInterface({input: fs.createReadStream("usp_sbor_words_full_with_titles_untagged.csv")})[Symbol.asyncIterator]();
@@ -24,6 +26,7 @@ const orv_csv_reader = new CsvReader('|');
     chu_csv_reader.setHeaders(headers);
     let chu_corpus_bpe = "";
     let chu_corpus_words = "";
+    let chu_corpus_words_extra_info = "torot_word|deep_cleaned|pos|morph_tag|text_id|subtitle_id|autotagged\n";
     let total_BERT_training_words = "deep_cleaned|text_id\n";
     let bpe_training_total_BERT_corpus = "";
 
@@ -35,15 +38,43 @@ const orv_csv_reader = new CsvReader('|');
         const deep_cleaned = nn_deepClean_OCS_ы(torot_word);
         const text_id = chu_csv_reader.getField("text_id");
         current_text_id = Number(text_id);
+        
+        const subtitle_id = chu_csv_reader.getField("subtitle_id");
+        const autotagged = chu_csv_reader.getField("autotagged");
+        const morph_tag = chu_csv_reader.getField("morph_tag");
+        const pos = chu_csv_reader.getField("pos");
+
 
 
         chu_corpus_words += torot_word + "|" + deep_cleaned + "\n";
+        chu_corpus_words_extra_info += `${torot_word}|${deep_cleaned}|${pos}|${morph_tag}|${text_id}|${subtitle_id}|${autotagged}\n`;
         chu_corpus_bpe += deep_cleaned + "\n";
         total_BERT_training_words += deep_cleaned + "|" + text_id + "\n";
         bpe_training_total_BERT_corpus += deep_cleaned + "\n";
     }
     fs.writeFileSync("chu_corpus_words_bpe_training_newnorm.csv", chu_corpus_bpe);
     fs.writeFileSync("chu_corpus_words_newnorm.csv", chu_corpus_words);
+
+    current_text_id++;
+    headers = (await savvina_input_lines.next()).value;
+    chu_csv_reader.setHeaders(headers);
+    let word_separated_savvina_csv = "torot_word|deep_clean\n";
+    let savvina_deepcleaned_words = "";
+
+    for await(const line of savvina_input_lines) {
+        chu_csv_reader.setLine(line);
+        const torot_word = chu_csv_reader.getField("torot_word");
+        const deep_cleaned = nn_deepClean_OCS_ы(torot_word);
+        
+        if(deep_cleaned.trim().length > 0){
+            word_separated_savvina_csv += torot_word + "|" + deep_cleaned + "\n";
+            savvina_deepcleaned_words += deep_cleaned + "\n";
+            total_BERT_training_words += deep_cleaned + "|" + current_text_id + "\n";
+            bpe_training_total_BERT_corpus += deep_cleaned + "\n";
+        }
+    }
+    fs.writeFileSync("savvina_kniga_words.csv", word_separated_savvina_csv);
+    fs.writeFileSync("savvina_kniga_bpe_training.csv", savvina_deepcleaned_words);
 
 
 
@@ -83,15 +114,23 @@ const orv_csv_reader = new CsvReader('|');
 
         const torot_word = orv_csv_reader.getField("torot_word");
         const deep_cleaned = nn_deepClean_Russian_ы(torot_word);
+
+        const subtitle_id = orv_csv_reader.getField("subtitle_id");
+        const autotagged = orv_csv_reader.getField("autotagged");
+        const morph_tag = orv_csv_reader.getField("morph_tag");
+        const pos = orv_csv_reader.getField("pos");
         if(deep_cleaned.length > 0) {
             usp_sbor_words += torot_word + "|" + deep_cleaned + "\n";
             usp_sbor_bpe_training += deep_cleaned + "\n";
             total_BERT_training_words += deep_cleaned + "|" + current_text_id + "\n";
             bpe_training_total_BERT_corpus += deep_cleaned + "\n";
+
+            chu_corpus_words_extra_info += `${torot_word}|${deep_cleaned}|${pos}|${morph_tag}|${current_text_id}|${subtitle_id}|${autotagged}\n`;
         }
     }    
     fs.writeFileSync("usp_sbor_words.csv", usp_sbor_words);
     fs.writeFileSync("usp_sbor_bpe_training.csv", usp_sbor_bpe_training);
+    fs.writeFileSync("chu_corpus_extra_info.csv", chu_corpus_words_extra_info);
 
     current_text_id++;
     let yagichev_zlatoust_words = "torot_word|deep_cleaned\n";

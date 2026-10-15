@@ -1,4 +1,4 @@
-//compile: g++ -O3 -std=c++20 -march=native tokenise_bpe-dropout.cpp -o tokenise_bpe-dropout
+//compile: g++ -O3 -march=native -shared -std=c++20 -fPIC $(python3 -m pybind11 --includes) tokenise_bpe-dropout_python_module.cpp -o bpe_tokeniser$(python3 -m pybind11 --extension-suffix)
 
 #include <iostream>
 #include <string>
@@ -12,8 +12,10 @@
 #include <thread>
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
+#include <pybind11/numpy.h>
 
 namespace py = pybind11;
+
 
 std::unordered_map<std::string, u_int16_t> base_vocab {
     {"<pad>", 0},
@@ -204,12 +206,12 @@ class Tokeniser {
             merge_rules_map = loadMergeRulesMap(merge_rules_filepath, num_iterations);
         }
 
-        std::vector<std::vector<std::uint16_t>> tokenise(const std::vector<std::string>& words_str_vector, double dropout_probability=0.1) {
+        std::pair<std::vector<std::int64_t>, std::vector<std::uint16_t>> tokenise(const std::vector<std::string>& words_str_vector, double dropout_probability=0.1) {
             
             int num_words = words_str_vector.size();
 
             if(num_words == 0) {
-                return std::vector<std::vector<std::uint16_t>>(0);
+                return {std::vector<std::int64_t>(0), std::vector<std::uint16_t>(0)};
             }
 
             int num_hardware_threads = std::thread::hardware_concurrency();
@@ -220,25 +222,56 @@ class Tokeniser {
             auto start_iter = words_str_vector.begin();
             auto end_iter = words_str_vector.end();
 
-            std::vector<std::vector<std::uint16_t>> token_ids(num_words);
-            auto start_token_ids_iter = token_ids.begin();
+            // std::vector<std::vector<std::uint16_t>> token_ids(num_words);
+            // auto start_token_ids_iter = token_ids.begin();
+
+            std::vector<std::uint16_t> flat_token_ids;
+            flat_token_ids.reserve(num_words*2);
+
+            std::vector<std::int64_t> word_tokenoffsets(num_words);
+            auto word_tokenoffsets_iter = word_tokenoffsets.begin();
+            auto end_word_tokenoffsets_iter = word_tokenoffsets.end();
 
             if(vec_portion_size > 0){
-                for(int i = 0; i < num_hardware_threads - 1; i++) {
-                    tokeniser_threads.emplace_back(&Tokeniser::worker, this, start_iter+(vec_portion_size*i), start_iter+(vec_portion_size*(i+1)), start_token_ids_iter+(vec_portion_size*i), i, dropout_probability);
+
+                std::vector<std::vector<std::uint16_t>> flat_per_thread_token_ids(num_hardware_threads);
+                //std::vector<std::vector<std::uint16_t>> flat_per_thread_word_tokenoffsets(num_hardware_threads);
+
+                for(int i = 0; i < num_hardware_threads; i++) {
+                    flat_per_thread_token_ids[i].reserve((num_words/num_hardware_threads)*2);
+                    //flat_per_thread_word_tokenoffsets[i].reserve(num_words/num_hardware_threads);
                 }
-                tokeniser_threads.emplace_back(&Tokeniser::worker, this, start_iter+(vec_portion_size*(num_hardware_threads - 1)), end_iter, start_token_ids_iter+(vec_portion_size*(num_hardware_threads - 1)), num_hardware_threads - 1, dropout_probability);
+
+                for(int i = 0; i < num_hardware_threads - 1; i++) {
+                    tokeniser_threads.emplace_back(&Tokeniser::worker, this, start_iter+(vec_portion_size*i), start_iter+(vec_portion_size*(i+1)), /*start_token_ids_iter+(vec_portion_size*i),*/ word_tokenoffsets_iter+(vec_portion_size*i) , i, dropout_probability, std::ref(flat_per_thread_token_ids[i]));
+                }
+                tokeniser_threads.emplace_back(&Tokeniser::worker, this, start_iter+(vec_portion_size*(num_hardware_threads - 1)), end_iter, /*start_token_ids_iter+(vec_portion_size*(num_hardware_threads - 1)),*/ word_tokenoffsets_iter+(vec_portion_size*(num_hardware_threads - 1)), num_hardware_threads - 1, dropout_probability, std::ref(flat_per_thread_token_ids[num_hardware_threads - 1]));
             
                 for(auto& thread : tokeniser_threads) {
                     thread.join();
                 }
+                //for(const auto& per_thread_token_ids : flat_per_thread_token_ids) {
+                int first_thread_token_count = flat_per_thread_token_ids[0].size();
+
+                for(int i = 0 ; i < num_hardware_threads; i++){
+                    flat_token_ids.insert(flat_token_ids.end(), flat_per_thread_token_ids[i].begin(), flat_per_thread_token_ids[i].end());
+                    //use .size() of each per_thread_token_ids vec to add on the right amount to 
+                }
             }
             else {
-                worker(start_iter, end_iter, start_token_ids_iter, 0, dropout_probability);
+                
+                worker(start_iter, end_iter, /*start_token_ids_iter,*/ word_tokenoffsets_iter, 0, dropout_probability, flat_token_ids);
+            }
+            std::int64_t cumulative_token_count = 0;
+            for(std::int64_t& word_tokensize : word_tokenoffsets) {
+                std::int64_t word_tokensize_copy = word_tokensize;
+                word_tokensize = cumulative_token_count;
+                cumulative_token_count += word_tokensize_copy;
             }
 
 
-            return token_ids;
+
+            return {std::move(word_tokenoffsets), std::move(flat_token_ids)};
         }
 
     private:
@@ -328,24 +361,34 @@ class Tokeniser {
             return word_vec;
         }
 
-        void tokenisePart(const std::string& word_str, decltype(std::vector<std::vector<std::uint16_t>>().begin()) token_ids_iter, DropoutChanceGenerator &dropout_chance_generator) {
+        void tokenisePart(const std::string& word_str, /*decltype(std::vector<std::vector<std::uint16_t>>().begin()) token_ids_iter,*/ decltype(std::vector<std::int64_t>().begin()) token_offsets_iter, DropoutChanceGenerator &dropout_chance_generator, std::vector<std::uint16_t>& per_thread_token_ids_vec, int& per_thread_token_offsets) {
+            
             auto tokenised_string = tokeniseStringWord(word_str, dropout_chance_generator);
-            *token_ids_iter = tokenised_string;
+            
+            //*token_ids_iter = tokenised_string;
+
+            *token_offsets_iter = tokenised_string.size(); //will be accumulated after threads have joined
+
+            //per_thread_token_offsets += tokenised_string.size();
+
+            per_thread_token_ids_vec.insert(per_thread_token_ids_vec.end(), tokenised_string.begin(), tokenised_string.end());
         }
 
-        void worker(std::vector<std::string>::const_iterator start, std::vector<std::string>::const_iterator end, decltype(std::vector<std::vector<std::uint16_t>>().begin()) start_token_ids_iter, int i, double dropout_probability) {
+        void worker(std::vector<std::string>::const_iterator start, std::vector<std::string>::const_iterator end, /*decltype(std::vector<std::vector<std::uint16_t>>().begin()) start_token_ids_iter,*/ decltype(std::vector<std::int64_t>().begin()) start_token_offsets_iter, int i, double dropout_probability, std::vector<std::uint16_t>& per_thread_token_ids_vec) {
             //std::cout << "thread " << i + 1 << " has started\n";
         
             DropoutChanceGenerator dropout_chance_generator(dropout_probability);
-        
-            for(; start != end; ++start, ++start_token_ids_iter) {
-                tokenisePart(*start, start_token_ids_iter, dropout_chance_generator);
+            int per_thread_token_offsets = 0;
+            for(; start != end; ++start, /*++start_token_ids_iter,*/ ++start_token_offsets_iter) {
+                tokenisePart(*start, /*start_token_ids_iter,*/ start_token_offsets_iter, dropout_chance_generator, per_thread_token_ids_vec, per_thread_token_offsets);
             }
             //std::cout << "thread " << i + 1 << " has finished\n";
         }
 
         MergeRulesMap merge_rules_map;
 };
+
+
 
 
 
@@ -359,7 +402,19 @@ PYBIND11_MODULE(bpe_tokeniser, m)
         )
         .def(
             "tokenise",
-            &Tokeniser::tokenise,
+            //&Tokeniser::tokenise,
+            [](Tokeniser& self, const std::vector<std::string>& words, double dropout_probability) {
+                std::pair<std::vector<std::int64_t>, std::vector<std::uint16_t>> tokens_tuple = self.tokenise(words, dropout_probability);
+                
+                py::array_t<std::uint16_t> numpy_tokens(static_cast<py::ssize_t>(tokens_tuple.second.size()));
+                std::memcpy(numpy_tokens.mutable_data(), tokens_tuple.second.data(), tokens_tuple.second.size()*sizeof(std::uint16_t));
+
+                py::array_t<std::int64_t> numpy_wordoffsets(static_cast<py::ssize_t>(tokens_tuple.first.size()));
+                std::memcpy(numpy_wordoffsets.mutable_data(), tokens_tuple.first.data(), tokens_tuple.first.size()*sizeof(std::int64_t));
+
+                return py::make_tuple(numpy_tokens, numpy_wordoffsets);
+            },
+
             py::arg("words"),
             py::arg("dropout_probability") = 0.1
         );
