@@ -1,0 +1,9 @@
+Medial clusters ending in ь - surely irrelevant because softness here not indicated by ь
+
+End clusters ending in unpaired-palatal +  ь also irrelevant; they exist in the predicted data due to overzealous orthography considerations
+
+
+
+Look at forwards-reconstruction scripts and fix obvious errors like ü and check weird clusters
+
+2nd Monday November 11am
