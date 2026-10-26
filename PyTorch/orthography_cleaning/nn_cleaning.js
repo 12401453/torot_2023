@@ -4,6 +4,26 @@ const nn_OCS_OESl_deepClean_map = new Array(
     ["Ꙍ" , "о"],
     ["•" , ""],
 
+    ["0" , ""],
+    ["1" , ""],
+    ["2" , ""],
+    ["3" , ""],
+    ["4" , ""],
+    ["5" , ""],
+    ["6" , ""],
+    ["7" , ""],
+    ["8" , ""],
+    ["9" , ""],
+
+    ["∽", ""],
+    ["∼", ""],
+    ['⩫', ""],
+    ['̛', ""],
+
+    ["∻", ""],
+    ["◦", ""],
+    [";", ""],
+    ["^", ""],
     ['⸱' , ""],
     ["⸱" , ""],
     [',', ""],
@@ -27,13 +47,25 @@ const nn_OCS_OESl_deepClean_map = new Array(
     ['͠' , "҃"], //long curvey titlo used in yagichev_zlatoust
     ["⁖" , ""],
     ['ⷷ' , "е"],
+    ['ꚟ', 'ѥ'],
+    ['ꙻ', "ѡ"],
     ['̋' , ""],
     ['ⷺ' , "ѣ"],
     ['꙼' , ""],
     ['́' , ""],
     ['ⷹ' , "ꙋ"],
+    ['ⷥ', "з"],
+    ["ꚞ", "ф"],
+    ['ⷻ', 'ю'],
+    ['ⷼ', 'ꙗ'],
+    ['ꙺ', 'ь'],
+    ['ꙶ', 'ї'],
+    ['ꙹ', 'ы'],
     ['ꙛ' , "ѫ"],
     ['ⷾ' , "ѫ"],
+    ["ⷿ", "ѭ"],
+    ["ꙴ", "є"],
+    ["ˢ", "ѕ"],
     ['Ѻ' , "о"],
     ['ꙕ' , "ю"],
     ["k" , "к"], //only occurs in kratuk_zlatostruy kенодохиѥ so I don't know what it should be replaced with
@@ -63,6 +95,7 @@ const nn_OCS_OESl_deepClean_map = new Array(
     ["̀" , ""],
     [">" , ""],
     ["/" , ""],
+    ["\\", ""],
     ["\"" , ""],
 
 
@@ -73,9 +106,27 @@ const nn_OCS_OESl_deepClean_map = new Array(
     ["ꙩ", "о"],
     ["꠸", ""],
     ["~", ""],
+    ['⃓', ""], //some kind of weird pipe-looking thing
 
-
-
+    ['‒', ""],
+    ['̷', ""],
+    ['̶', ""],
+    ['❋', ""],
+    ['⸪', ""],
+    [' ̷', ""],
+    ['―', ""],
+    ['﹨', ""], //not a regular backslash
+    ['–', ""],
+    ['※', ""],
+    ['‹', ""],
+    ['›', ""],
+    ['×', ""],
+    ['🞤', ""],
+    ['ʾ', ""],
+    ['ʿ', ""],
+    ['˂', ""],
+    ['̾', ''],
+    ['˃', ""],
     ["͡" , ""],
     ["·" , ""],
     ["̏" , ""],
@@ -103,10 +154,12 @@ const nn_OCS_OESl_deepClean_map = new Array(
     ["҇" , ""],
     ["ꙿ" , ""],
     ["꙯" , "҃"], //this seems to be used only ever as a titlo in Supr. so I'm converting to regular titlo. If it ever turns up in new texts as a non-abbreviating diacritic then this will be bad
+    ["˜", "҃"], //this seems to be used as a titlo in manuscripts.ru's ostromirs gospel
     ["'" , ""],
     ["(" , ""],
     [")" , ""],
     ["-" , ""],
+    ["‐", ""], //weird different kind of hyphen
     ["." , ""],
     [":" , ""],
     ["=" , ""],
@@ -115,6 +168,16 @@ const nn_OCS_OESl_deepClean_map = new Array(
     ["]" , ""],
     ["{" , ""],
     ["}" , ""],
+    ["⊂", ""],
+    ['⸭', ""],
+    ['⪽', ""],
+    ['✢', ""],
+    ['́', ""],
+    ['̊', ""],
+    ['̎', ""], //seems to be some kind of combining diaresis not a quote
+    ['˅', ""],
+    ["∋", ""], //used once in msru ostromirs gospel, doesn't seem to be any e-letter
+    ["∈", ""], //used in Troickij Sbornik similar to the mirrored version above
     ["̂" , ""],
     ["Ꙋ" , "оу"],
     ["ОУ" , "оу"],
@@ -152,6 +215,8 @@ const nn_OCS_OESl_deepClean_map = new Array(
     ["ҍ" , "ѣ"],
     ["Ї" , "і"],
     ["ї" , "і"],
+    ["ı", "і"],
+    ['I', "і"],
     ["X" , "х"],
     ["x" , "х"],
     ["ѩ" , "ѧ"],
@@ -182,6 +247,8 @@ const nn_OCS_OESl_deepClean_map = new Array(
     ["Ђ" , "г"],
     ["К" , "к"],
     ["Л" , "л"],
+    ["ꙥ", "л"], //used for palatal /ĺ/
+    ["Ꙥ", "л"], //used for palatal /ĺ/
     ["М" , "м"],
     ["Н" , "н"],
     ["О" , "о"],
@@ -243,6 +310,7 @@ const nn_OCS_OESl_deepClean_map = new Array(
     ["ⱔ" , "ѧ"],
     ["Ⱉ" , "о"],
     ["Ө" , "ѳ"],
+    ["Є" , "е"],
     ["є" , "е"],
     ["ʼ" , ""],
     ["ⸯ" , ""],
