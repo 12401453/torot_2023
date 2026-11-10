@@ -11,11 +11,34 @@ const savvina_input_lines = readline.createInterface({input: fs.createReadStream
 
 const pandects_of_antioch_csv_lines = readline.createInterface({input: fs.createReadStream("../random_old_bulgarian_texts_from_sofia_corpus_to_use_as_pre_training/pandects_of_antioch/pandects_of_antioch.csv")})[Symbol.asyncIterator]();
 
-const usp_sbor_lines = readline.createInterface({input: fs.createReadStream("usp_sbor_words_full_with_titles_untagged.csv")})[Symbol.asyncIterator]();
+const torot_usp_sbor_lines = readline.createInterface({input: fs.createReadStream("usp_sbor_words_full_with_titles_untagged.csv")})[Symbol.asyncIterator]();
 
 const yagichev_zlatoust_lines = readline.createInterface({input: fs.createReadStream("yagichev_zlatoust.txt")})[Symbol.asyncIterator]();
 
 const kratuk_zlatostruy_lines = readline.createInterface({input: fs.createReadStream("word_joined_kratuk_zlatostruy.txt")})[Symbol.asyncIterator]();
+
+const archangelsk_gospel_lines = readline.createInterface({input: fs.createReadStream("../manuscript.ru_stealing/msru_archangelsk_gospel_words.csv")})[Symbol.asyncIterator]();
+
+const izbornik1073_lines = readline.createInterface({input: fs.createReadStream("../manuscript.ru_stealing/msru_izbornik1073_words.csv")})[Symbol.asyncIterator]();
+
+const izbornik1076_lines = readline.createInterface({input: fs.createReadStream("../manuscript.ru_stealing/msru_izbornik1076_words.csv")})[Symbol.asyncIterator]();
+
+const mstislavs_gospel_lines = readline.createInterface({input: fs.createReadStream("../manuscript.ru_stealing/msru_mstislavs_gospel_words.csv")})[Symbol.asyncIterator]();
+
+const ostromirs_gospel_lines = readline.createInterface({input: fs.createReadStream("../manuscript.ru_stealing/msru_ostromirs_gospel_words.csv")})[Symbol.asyncIterator]();
+
+const psaltyr_dmitrija_lines = readline.createInterface({input: fs.createReadStream("../manuscript.ru_stealing/msru_psaltyr_dmitrija_words.csv")})[Symbol.asyncIterator]();
+
+const sinajskij_paterik_lines = readline.createInterface({input: fs.createReadStream("../manuscript.ru_stealing/msru_sinajskij_paterik_words.csv")})[Symbol.asyncIterator]();
+
+const troickij_sbornik_lines = readline.createInterface({input: fs.createReadStream("../manuscript.ru_stealing/msru_troickij_sbornik_words.csv")})[Symbol.asyncIterator]();
+
+const turovsk_gospel_lines = readline.createInterface({input: fs.createReadStream("../manuscript.ru_stealing/msru_turovsk_gospel_words.csv")})[Symbol.asyncIterator]();
+
+//const msru_usp_sbor_lines = readline.createInterface({input: fs.createReadStream("../manuscript.ru_stealing/msru_uspenskij_sbornik_words.csv")})[Symbol.asyncIterator]();
+
+const msru_texts = {izb1073: izbornik1073_lines, izb1076: izbornik1076_lines, mstis: mstislavs_gospel_lines, ostr: ostromirs_gospel_lines, psal_dmitr: psaltyr_dmitrija_lines, sin_pat: sinajskij_paterik_lines, troic: troickij_sbornik_lines, turovsk: turovsk_gospel_lines/*, msru_usp: msru_usp_sbor_lines*/};
+
 
 const chu_csv_reader = new CsvReader('|');
 const orv_csv_reader = new CsvReader('|');
@@ -107,9 +130,9 @@ const orv_csv_reader = new CsvReader('|');
     let usp_sbor_words = "torot_word|deep_cleaned\n";
     let usp_sbor_bpe_training = "";
 
-    headers = (await usp_sbor_lines.next()).value;
+    headers = (await torot_usp_sbor_lines.next()).value;
     orv_csv_reader.setHeaders(headers);
-    for await(const line of usp_sbor_lines) {
+    for await(const line of torot_usp_sbor_lines) {
         orv_csv_reader.setLine(line);
 
         const torot_word = orv_csv_reader.getField("torot_word");
@@ -198,6 +221,26 @@ const orv_csv_reader = new CsvReader('|');
             
         }        
     }
+
+    current_text_id++;
+
+    for(const key in msru_texts) {
+        const text_lines = msru_texts[key];
+        let headers = (await text_lines.next()).value;
+        chu_csv_reader.setHeaders(headers);
+
+        for await(const line of text_lines) {
+
+            chu_csv_reader.setLine(line);
+
+            const deep_cleaned = chu_csv_reader.getField("deep_cleaned");
+
+            total_BERT_training_words += deep_cleaned + "|" + current_text_id + "\n";
+            bpe_training_total_BERT_corpus += deep_cleaned + "\n";
+        }
+        current_text_id++;
+    }
+
     fs.writeFileSync("kratuk_zlatostruy_words.csv", kratuk_zlatostruy_words);
     fs.writeFileSync("kratuk_zlatostruy_bpe_training.csv", kratuk_zlatostruy_bpe_training);
     fs.writeFileSync("total_BERT_corpus.csv", total_BERT_training_words);

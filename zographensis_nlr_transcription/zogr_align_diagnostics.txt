@@ -1,0 +1,6641 @@
+=== summary ===
+exact: 41508
+fuzzy: 4876
+merged_1st: 94
+merged_2nd: 94
+split: 5394
+unmatched: 229
+skipped txt tokens: 5611
+
+=== unmatched csv words (with context) ===
+csv#99: ꙇ | грѧдѫшть | на  [between txt lines 26 and 26]
+csv#100: грѧдѫшть | на | н҄ь  [between txt lines 26 and 26]
+csv#101: на | н҄ь | ꙇ  [between txt lines 26 and 26]
+csv#102: н҄ь | ꙇ | се  [between txt lines 26 and 26]
+csv#1096: бѫди | же | слово  [between txt lines 291 and 291]
+csv#1182: речено | бъіⷭ҇ | вьзлюбиши  [between txt lines 313 and 313]
+csv#1512: въ | вѣк | вѣк[омъ  [between txt lines 403 and 404]
+csv#1857: приложѧтъ | сѧ | вамъ  [between txt lines 500 and 500]
+csv#2630: себе | повелѣ | ꙇти  [between txt lines 708 and 708]
+csv#2631: повелѣ | ꙇти | на  [between txt lines 708 and 708]
+csv#2632: ꙇти | на | онъ  [between txt lines 708 and 708]
+csv#2633: на | онъ | полъ  [between txt lines 708 and 708]
+csv#2634: онъ | полъ | Ꙇ  [between txt lines 708 and 708]
+csv#3591: не | вꙑ | бо  [between txt lines 975 and 975]
+csv#3848: врази | ч҃коу | домашьн҄иі  [between txt lines 1061 and 1047]
+csv#3849: ч҃коу | домашьн҄иі | его  [between txt lines 1061 and 1047]
+csv#3850: домашьн҄иі | его | Ꙇже  [between txt lines 1061 and 1047]
+csv#5059: съ | родомь | симь  [between txt lines 1380 and 1380]
+csv#5060: родомь | симь | ꙇ  [between txt lines 1380 and 1380]
+csv#5062: ꙇ | осѫдѧтъ | ꙇ  [between txt lines 1380 and 1380]
+csv#5360: ꙇ | избѫдетъ | емоу  [between txt lines 1460 and 1460]
+csv#5361: избѫдетъ | емоу | а  [between txt lines 1460 and 1460]
+csv#5362: емоу | а | ꙇже  [between txt lines 1460 and 1460]
+csv#5363: а | ꙇже | не  [between txt lines 1460 and 1460]
+csv#6011: ꙇмъ | ис | разоумѣете  [between txt lines 1636 and 1636]
+csv#6414: оукроухъ | б҃ꙇ҃ | коша  [between txt lines 1740 and 1740]
+csv#6654: омꙑваѭтъ | бо | рѫкъ  [between txt lines 1800 and 1800]
+csv#6857: оустъ | отъ | сръдⸯца  [between txt lines 1856 and 1856]
+csv#6858: отъ | сръдⸯца | ꙇсходѧтъ  [between txt lines 1856 and 1856]
+csv#6859: сръдⸯца | ꙇсходѧтъ | ꙇ  [between txt lines 1856 and 1856]
+csv#7071: ꙇ҃злева | ис | же  [between txt lines 1914 and 1915]
+csv#7280: и҃с | рече | чьто  [between txt lines 1968 and 1969]
+csv#7695: мимоꙇдетъ | а | словеса  [between txt lines 2987 and 2988]
+csv#7950: женихоу | ꙇ | невѣстѣ  [between txt lines 3052 and 3052]
+csv#8112: же | б҃ | овомоу  [between txt lines 3098 and 3098]
+csv#8113: б҃ | овомоу | же  [between txt lines 3098 and 3098]
+csv#8114: овомоу | же | а҃  [between txt lines 3098 and 3098]
+csv#8194: г҃ь | его | добръꙇ  [between txt lines 3119 and 3122]
+csv#8195: его | добръꙇ | рабе  [between txt lines 3119 and 3122]
+csv#8196: добръꙇ | рабе | благъꙇ  [between txt lines 3119 and 3122]
+csv#8197: рабе | благъꙇ | ꙇ  [between txt lines 3119 and 3122]
+csv#8198: благъꙇ | ꙇ | вѣрънꙑ  [between txt lines 3119 and 3122]
+csv#8199: ꙇ | вѣрънꙑ | о  [between txt lines 3119 and 3122]
+csv#8200: вѣрънꙑ | о | малѣ  [between txt lines 3119 and 3122]
+csv#8201: о | малѣ | бѣ  [between txt lines 3119 and 3122]
+csv#8202: малѣ | бѣ | вѣрьнъ  [between txt lines 3119 and 3122]
+csv#8203: бѣ | вѣрьнъ | надъ  [between txt lines 3119 and 3122]
+csv#8204: вѣрьнъ | надъ | многꙑ  [between txt lines 3119 and 3122]
+csv#8205: надъ | многꙑ | тѧ  [between txt lines 3119 and 3122]
+csv#8206: многꙑ | тѧ | поставл҄ѫ  [between txt lines 3119 and 3122]
+csv#8207: тѧ | поставл҄ѫ | вьниди  [between txt lines 3119 and 3122]
+csv#11241: сѧ | ꙇ | вѣроуіте  [between txt lines 3959 and 3959]
+csv#12336: нападаахѫ | емь | хотѧште  [between txt lines 4242 and 4242]
+csv#12337: емь | хотѧште | прикоснѫти  [between txt lines 4242 and 4242]
+csv#12338: хотѧште | прикоснѫти | сѧ  [between txt lines 4242 and 4242]
+csv#12390: сътвори | б҃ꙇ | да  [between txt lines 4253 and 4253]
+csv#13290: бѣсъноумоу | ꙇ | о  [between txt lines 4482 and 4482]
+csv#13599: себѣ | ни | единого  [between txt lines 4554 and 4554]
+csv#13686: лѣтома | ꙇ҃б | ꙇ  [between txt lines 4575 and 4575]
+csv#13775: сьде | въ | насъ  [between txt lines 4594 and 4594]
+csv#14370: ꙇдѣте | [да]дите | ꙇ  [between txt lines 4748 and 4748]
+csv#14440: оукроухъ | б҃ꙇ | коша  [between txt lines 4765 and 4765]
+csv#14863: прѣдасте | ꙇ | подобьна  [between txt lines 4876 and 4876]
+csv#15487: емоу | б҃ꙇ | ꙇ  [between txt lines 5046 and 5047]
+csv#15666: с҃ноу | ч҃скоумоу | много  [between txt lines 5086 and 5087]
+csv#15818: съ | а҃ꙉлъи | с҃тъꙇми  [between txt lines 5126 and 5127]
+csv#15905: добро | естъ | намъ  [between txt lines 5148 and 5148]
+csv#16021: с҃нѣ | ч҃сцѣмь | да  [between txt lines 5177 and 5178]
+csv#16128: невѣрьнъ | доколѣ | въ  [between txt lines 5206 and 5206]
+csv#16129: доколѣ | въ | васъ  [between txt lines 5206 and 5206]
+csv#16130: въ | васъ | бѫдѫ  [between txt lines 5206 and 5206]
+csv#16131: васъ | бѫдѫ | доколѣ  [between txt lines 5206 and 5206]
+csv#18596: заповѣдиі | ꙇ | вътораѣ  [between txt lines 5847 and 5847]
+csv#19058: ѩ | ꙇ | бѫдете  [between txt lines 5978 and 5978]
+csv#19113: ꙇ | сꙙі | на  [between txt lines 5992 and 5992]
+csv#20274: вънѫтрь | въ | дворъ  [between txt lines 6290 and 6290]
+csv#20361: съвѣдѣтел҄ьствоуѭтъ | ꙇс | же  [between txt lines 6315 and 6315]
+csv#20556: г҃лете | ꙇ | вътори  [between txt lines 6361 and 6361]
+csv#21418: Ѡ | аннѣ | пророчици  [between txt lines 6602 and 6603]
+csv#21419: аннѣ | пророчици | Ѡ  [between txt lines 6602 and 6603]
+csv#21461: Ѡ | блаженъꙇхъ | Ѡ  [between txt lines 6615 and 6619]
+csv#21503: прѣображениі | и҃ухвѣ | Ѡ  [between txt lines 6631 and 6632]
+csv#21516: Ѡ | не | повелѣнѣмь  [between txt lines 6635 and 6636]
+csv#21517: не | повелѣнѣмь | послѣдовати  [between txt lines 6635 and 6636]
+csv#21518: повелѣнѣмь | послѣдовати | Ѡ  [between txt lines 6635 and 6636]
+csv#21519: послѣдовати | Ѡ | авл҄ениі  [between txt lines 6635 and 6636]
+csv#21520: Ѡ | авл҄ениі | седми  [between txt lines 6635 and 6636]
+csv#21521: авл҄ениі | седми | десѧтъ  [between txt lines 6635 and 6636]
+csv#21522: седми | десѧтъ | Ѡ  [between txt lines 6635 and 6636]
+csv#21523: десѧтъ | Ѡ | въпрошшимь  [between txt lines 6635 and 6636]
+csv#21524: Ѡ | въпрошшимь | законницѣ  [between txt lines 6635 and 6636]
+csv#21525: въпрошшимь | законницѣ | Ѡ  [between txt lines 6635 and 6636]
+csv#21527: Ѡ | въпадъшиімь | въ  [between txt lines 6636 and 6636]
+csv#21528: въпадъшиімь | въ | разбоꙇникꙑ  [between txt lines 6636 and 6636]
+csv#21529: въ | разбоꙇникꙑ | Ѡ  [between txt lines 6636 and 6636]
+csv#21829: къ | н҄емоу | а҃ꙉлъ  [between txt lines 6737 and 6737]
+csv#21830: н҄емоу | а҃ꙉлъ | г҃нь  [between txt lines 6737 and 6737]
+csv#21831: а҃ꙉлъ | г҃нь | не  [between txt lines 6737 and 6737]
+csv#22259: захаріинъ | ꙇ | цѣлова  [between txt lines 6842 and 6842]
+csv#22588: г҃лѧ | блгснъ | г҃ь  [between txt lines 6929 and 6929]
+csv#22589: блгснъ | г҃ь | б҃ъ  [between txt lines 6929 and 6929]
+csv#22590: г҃ь | б҃ъ | ꙇ҃л҄евъ  [between txt lines 6929 and 6929]
+csv#22591: б҃ъ | ꙇ҃л҄евъ | ѣко  [between txt lines 6929 and 6929]
+csv#23874: бꙑс | г҃лѧ | тꙑ  [between txt lines 7292 and 7292]
+csv#24126: о | н҄еі | ꙇ  [between txt lines 7398 and 7398]
+csv#24528: ꙇ | бѣахѫ | сѣдѧште  [between txt lines 7502 and 7502]
+csv#24529: бѣахѫ | сѣдѧште | фарисѣі  [between txt lines 7502 and 7502]
+csv#24530: сѣдѧште | фарисѣі | ꙇ  [between txt lines 7502 and 7502]
+csv#24532: ꙇ | законооучител҄е | ꙇже  [between txt lines 7502 and 7502]
+csv#25146: н҄ихъ | б҃ ꙇ҃ | ѩже  [between txt lines 7672 and 7672]
+csv#25532: сѧ | да | дадѧтъ  [between txt lines 7788 and 7789]
+csv#25683: ꙇзноситъ | л | зълое  [between txt lines 7830 and 7830]
+csv#25960: н҄имь | ꙇдѣахѫ | оученици  [between txt lines 7906 and 7906]
+csv#25961: ꙇдѣахѫ | оученици | его  [between txt lines 7906 and 7906]
+csv#25962: оученици | его | ꙇ  [between txt lines 7906 and 7906]
+csv#27074: водѣ | ꙇ | послоушаѭтъ  [between txt lines 8219 and 8219]
+csv#27691: съребра | ни | дъвою  [between txt lines 8379 and 8379]
+csv#27692: ни | дъвою | ризоу  [between txt lines 8379 and 8379]
+csv#27693: дъвою | ризоу | ꙇмѣти  [between txt lines 8379 and 8379]
+csv#27694: ризоу | ꙇмѣти | ꙇ  [between txt lines 8379 and 8379]
+csv#28184: съконьчати | сѧ | въ  [between txt lines 8512 and 8512]
+csv#28503: приемл҄етъ | приемл҄етъ | посълавъшааго  [between txt lines 8591 and 8591]
+csv#28536: нами | ꙇ | рече  [between txt lines 8603 and 8603]
+csv#29705: обрѣтаетъ | ꙇ | тлъкѫштюмоу  [between txt lines 8907 and 8907]
+csv#29821: же | ꙇ | сотона  [between txt lines 8941 and 8941]
+csv#30109: ꙇже | естъ | вь  [between txt lines 9026 and 9026]
+csv#30253: гроби | не | вѣдоми  [between txt lines 9072 and 9072]
+csv#30290: сами | ни | единѣмь  [between txt lines 9082 and 9083]
+csv#32206: ѣко | ни | единъ  [between txt lines 9638 and 9638]
+csv#32535: помететъ | храминꙑ | ꙇ  [between txt lines 9732 and 9732]
+csv#32536: храминꙑ | ꙇ | иштетъ  [between txt lines 9732 and 9732]
+csv#32537: ꙇ | иштетъ | прилежьно  [between txt lines 9732 and 9732]
+csv#33057: напиши | и҃ | потомь  [between txt lines 9873 and 9877]
+csv#33429: отътѫдоу | прѣхо | къ  [between txt lines 9982 and 9982]
+csv#34550: досадѧтъ | емоу | ꙇ  [between txt lines 10286 and 10286]
+csv#34551: емоу | ꙇ | запл҄юѭтъ  [between txt lines 10286 and 10286]
+csv#34552: ꙇ | запл҄юѭтъ | і  [between txt lines 10286 and 10286]
+csv#34801: рече | же | къ  [between txt lines 10354 and 10354]
+csv#35237: Б҃лгнъ | црь | грѧдꙙі  [between txt lines 10474 and 10474]
+csv#35356: г҃лѧ | ꙇмъ | пⸯсано  [between txt lines 10506 and 10506]
+csv#35803: г҃л҄ѭште | въскрѣшенью | не  [between txt lines 10636 and 10636]
+csv#35804: въскрѣшенью | не | бꙑти  [between txt lines 10636 and 10636]
+csv#35805: не | бꙑти | ꙇ  [between txt lines 10636 and 10636]
+csv#38078: ꙇ | хльмомъ | покрꙑѣте  [between txt lines 11281 and 11281]
+csv#38079: хльмомъ | покрꙑѣте | нꙑ  [between txt lines 11281 and 11281]
+csv#38538: с҃ноу | ч҃скоумоу | прѣданоу  [between txt lines 11411 and 11412]
+csv#38722: сиѩ | ꙇ | рече  [between txt lines 11462 and 11462]
+csv#39027: сѧ | въ | е҃рлмъ  [between txt lines 11545 and 11545]
+csv#39257: с҃нъ | сꙙи | въ  [between txt lines 11614 and 11615]
+csv#39282: еси | ꙇ | исповѣдѣ  [between txt lines 11623 and 11624]
+csv#40007: вьсѧ | ꙇзгъна | ꙇ  [between txt lines 11816 and 11816]
+csv#40262: можетъ | вьнити | вь  [between txt lines 11885 and 11885]
+csv#42441: естъ | съходѧи | съ  [between txt lines 12451 and 12451]
+csv#42653: тъкъмо | сꙙи | отъ  [between txt lines 12505 and 12506]
+csv#42656: б҃а | тъ | видѣ  [between txt lines 12506 and 12506]
+csv#42755: с҃на | ч҃скаго | ꙇ  [between txt lines 12532 and 12533]
+csv#42998: вѣровахомъ | ꙇ | познахомъ  [between txt lines 12593 and 12593]
+csv#43097: си | всѣ | твориши  [between txt lines 12619 and 12619]
+csv#43503: знамениѣ | сътворитъ | ѣже  [between txt lines 12730 and 12730]
+csv#43504: сътворитъ | ѣже | естъ  [between txt lines 12730 and 12730]
+csv#43505: ѣже | естъ | сътворилъ  [between txt lines 12730 and 12730]
+csv#43996: мое | нѣстъ | ꙇстинъно  [between txt lines 12860 and 12861]
+csv#44145: отъ | вꙑшьн҄ихъ | есмь  [between txt lines 12901 and 12901]
+csv#44146: вꙑшьн҄ихъ | есмь | вꙑ  [between txt lines 12901 and 12901]
+csv#44742: и҃с | амин | амин  [between txt lines 13056 and 13056]
+csv#44743: амин | амин | г҃лѭ  [between txt lines 13056 and 13056]
+csv#44744: амин | г҃лѭ | вамъ  [between txt lines 13056 and 13056]
+csv#44745: г҃лѭ | вамъ | прѣжде  [between txt lines 13056 and 13056]
+csv#45348: рече | ꙇ | къто  [between txt lines 13207 and 13207]
+csv#46047: сътвори | ни | едьного  [between txt lines 13388 and 13389]
+csv#47381: нъ | народа | ради  [between txt lines 13732 and 13732]
+csv#47435: с҃ноу | ч҃скоуемоу | къто  [between txt lines 13747 and 13747]
+csv#47544: обратѧтъ | сѧ | ꙇ  [between txt lines 13776 and 13776]
+csv#47689: вѣмь | ѣко | заповѣдь  [between txt lines 13814 and 13815]
+csv#48462: ꙇ | о҃ць | въ  [between txt lines 14009 and 14010]
+csv#48694: л҄юбитъ | мѧ | слово  [between txt lines 14063 and 14064]
+csv#48699: ꙇ | о҃ць | моі  [between txt lines 14064 and 14065]
+csv#48758: миръ | оставл҄ѣѭ | вамъ  [between txt lines 14082 and 14082]
+csv#48759: оставл҄ѣѭ | вамъ | миръ  [between txt lines 14082 and 14082]
+csv#48760: вамъ | миръ | моі  [between txt lines 14082 and 14082]
+csv#49326: да | вьсѣкъ | ꙇже  [between txt lines 14222 and 14223]
+csv#49328: ꙇже | оубиетъ | вꙑ  [between txt lines 14223 and 14225]
+csv#49329: оубиетъ | вꙑ | мьнитъ  [between txt lines 14223 and 14225]
+csv#49330: вꙑ | мьнитъ | си  [between txt lines 14223 and 14225]
+csv#49332: си | слоужьбѫ | приносити  [between txt lines 14225 and 14225]
+csv#49333: слоужьбѫ | приносити | б҃ви  [between txt lines 14225 and 14225]
+csv#49339: вамъ | ѣко | не  [between txt lines 14230 and 14230]
+csv#49341: не | познашѧ | о҃ца  [between txt lines 14230 and 14231]
+csv#49342: познашѧ | о҃ца | ни  [between txt lines 14230 and 14231]
+csv#49350: да | егда | придетъ  [between txt lines 14235 and 14235]
+csv#49351: егда | придетъ | година  [between txt lines 14235 and 14235]
+csv#49352: придетъ | година | поминаете  [between txt lines 14235 and 14235]
+csv#49353: година | поминаете | си  [between txt lines 14235 and 14235]
+csv#49354: поминаете | си | ко  [between txt lines 14235 and 14235]
+csv#49357: азъ | рѣхъ | вамъ  [between txt lines 14235 and 14236]
+csv#49359: вамъ | сихъ | же  [between txt lines 14236 and 14237]
+csv#49364: не | рѣхъ | ѣко  [between txt lines 14240 and 14242]
+csv#49373: къ | посълавъшюемоу | мѧ  [between txt lines 14248 and 14257]
+csv#49376: ꙇ | никтоже | отъ  [between txt lines 14257 and 14257]
+csv#49444: ꙇ | кⸯ | томоу  [between txt lines 14242 and 14242]
+csv#49592: хотѣахѫ | і | въпрашати  [between txt lines 14274 and 14275]
+csv#49793: миръ | пакꙑ | оставл҄ѣѭ  [between txt lines 14323 and 14323]
+csv#49794: пакꙑ | оставл҄ѣѭ | вьсь  [between txt lines 14323 and 14323]
+csv#49795: оставл҄ѣѭ | вьсь | миръ  [between txt lines 14323 and 14323]
+csv#49796: вьсь | миръ | ꙇ  [between txt lines 14323 and 14323]
+csv#50433: грѣѩ | сѧ | Архиереі  [between txt lines 14474 and 14475]
+csv#50931: пропьни | пропьни | г҃ла  [between txt lines 14595 and 14595]
+csv#51161: же | ꙇ | титьлъ  [between txt lines 14654 and 14654]
+csv#51263: ꙇ | о | матизмъ  [between txt lines 14680 and 14680]
+csv#51974: пакꙑ | въторицеѭ | симоне  [between txt lines 14861 and 14874]
+csv#51975: въторицеѭ | симоне | ꙇонинъ  [between txt lines 14861 and 14874]
+csv#51976: симоне | ꙇонинъ | л҄юбиши  [between txt lines 14861 and 14874]
+csv#51977: ꙇонинъ | л҄юбиши | ли  [between txt lines 14861 and 14874]
+csv#51978: л҄юбиши | ли | мѧ  [between txt lines 14861 and 14874]
+csv#51986: вѣси | ѣко | л҄юбл҄ѭ  [between txt lines 14881 and 14881]
+csv#51987: ѣко | л҄юбл҄ѭ | тѧ  [between txt lines 14881 and 14881]
+csv#51990: г҃ла | емоу | паси  [between txt lines 14884 and 14884]
+csv#51991: емоу | паси | овьцѧ  [between txt lines 14884 and 14884]
+csv#51992: паси | овьцѧ | моѩ  [between txt lines 14884 and 14884]
+csv#51996: емоу | третици | Симоне  [between txt lines 14885 and 14885]
+csv#51998: Симоне | ꙇонинъ | л҄юбиши  [between txt lines 14886 and 14886]
+csv#51999: ꙇонинъ | л҄юбиши | ли  [between txt lines 14886 and 14886]
+csv#52002: мѧ | оскръбѣ | петръ  [between txt lines 14886 and 14886]
+csv#52007: емоу | третици | л҄юбиши  [between txt lines 14890 and 14891]
+csv#52008: третици | л҄юбиши | ли  [between txt lines 14890 and 14891]
+csv#52010: ли | мѧ | ꙇ  [between txt lines 14891 and 14893]
+csv#52015: г҃и | вьсе | тꙑ  [between txt lines 14893 and 14894]
+csv#52017: тꙑ | вѣси | тꙑ  [between txt lines 14894 and 14899]
+csv#52019: тꙑ | вѣси | ѣко  [between txt lines 14899 and 14874]
+
+=== skipped txt tokens ===
+line 93 tok 3: конец.
+line 171 tok 5: зачало.
+line 309 tok 6: зачало.
+line 313 tok 4: быстъ.
+line 341 tok 3: конец
+line 341 tok 4: зачала.
+line 404 tok 4: зачало:
+line 414 tok 1: 16
+line 500 tok 4: конец.
+line 504 tok 3: зачало.
+line 536 tok 4: конец
+line 603 tok 1: зачало.
+line 686 tok 5: конец.
+line 742 tok 3: конец
+line 742 tok 4: зачала
+line 987 tok 6: конец
+line 999 tok 7: господь
+line 1003 tok 8: зачало
+line 1027 tok 3: конец
+line 1027 tok 4: зачала.
+line 1046 tok 2: свою.
+line 1046 tok 5: Иже
+line 1054 tok 1: не
+line 1054 tok 2: грядетъ.
+line 1204 tok 3: конец.
+line 1356 tok 5: конец.
+line 1440 tok 5: не
+line 1513 tok 1: да
+line 1636 tok 6: Иисусъ.
+line 1715 tok 5: зачало.
+line 1740 tok 2: 12
+line 1747 tok 2: конец.
+line 1841 tok 4: [не]
+line 1851 tok 1: ма
+line 1914 tok 5: конец
+line 1915 tok 3: Иисусъ
+line 2017 tok 1: нъ
+line 2017 tok 2: на
+line 2017 tok 3: небесехъ:
+line 2017 tok 4: Тогда
+line 2017 tok 5: запрети
+line 2017 tok 6: учени
+line 2018 tok 1: комъ
+line 2018 tok 2: Своимъ.
+line 2018 tok 3: да
+line 2018 tok 4: никомуже
+line 2018 tok 5: рекютъ
+line 2019 tok 1: еко
+line 2019 tok 2: Тъ
+line 2019 tok 3: естъ
+line 2019 tok 4: Иисусъ
+line 2019 tok 5: Христосъ.
+line 2019 tok 8: отъ
+line 2019 tok 9: тола
+line 2019 tok 10: начятъ
+line 2019 tok 11: съ
+line 2020 tok 1: казати
+line 2020 tok 2: ученикомъ
+line 2020 tok 3: Своимъ:
+line 2020 tok 4: еко
+line 2020 tok 5: по
+line 2021 tok 1: добаетъ
+line 2021 tok 2: Ему.
+line 2021 tok 3: ити
+line 2021 tok 4: в
+line 2021 tok 5: Иерусалимъ.
+line 2021 tok 6: и
+line 2021 tok 7: мъ
+line 2022 tok 1: ного
+line 2022 tok 2: пострадати
+line 2022 tok 3: от
+line 2022 tok 4: старецъ.
+line 2022 tok 5: и
+line 2023 tok 1: архиерей
+line 2023 tok 2: и
+line 2023 tok 3: книжъникъ
+line 2023 tok 4: и
+line 2023 tok 5: убиену
+line 2024 tok 1: быти
+line 2024 tok 2: и
+line 2024 tok 3: третий
+line 2024 tok 4: днъ
+line 2024 tok 5: въстати.
+line 2025 tok 3: и
+line 2025 tok 4: поемъ
+line 2025 tok 5: И
+line 2025 tok 6: Петръ
+line 2025 tok 7: начатъ
+line 2025 tok 8: прерица
+line 2026 tok 1: ти
+line 2026 tok 2: Ему
+line 2026 tok 3: глаголя.
+line 2026 tok 4: милосердъ
+line 2026 tok 5: Ты
+line 2026 tok 6: Господи
+line 2026 tok 7: не
+line 2027 tok 1: иматъ
+line 2027 tok 2: быти
+line 2027 tok 3: Тебе
+line 2027 tok 4: се.
+line 2027 tok 7: Онъ
+line 2027 tok 8: же
+line 2027 tok 9: обра
+line 2028 tok 1: щъ
+line 2028 tok 2: ся
+line 2028 tok 3: рече
+line 2028 tok 4: Петрови.
+line 2028 tok 5: иди
+line 2028 tok 6: за
+line 2028 tok 7: Мною
+line 2029 tok 1: сотоно
+line 2029 tok 2: съблазнъ
+line 2029 tok 3: Ми
+line 2029 tok 4: еси.
+line 2029 tok 5: еко
+line 2029 tok 6: не
+line 2029 tok 7: мы
+line 2030 tok 1: слиши
+line 2030 tok 2: еже
+line 2030 tok 3: сутъ
+line 2030 tok 4: Божие
+line 2030 tok 5: нъ
+line 2030 tok 6: человеческа.
+line 2031 tok 3: Тогда
+line 2031 tok 4: Иисусъ
+line 2031 tok 5: рече
+line 2031 tok 6: ученикомъ
+line 2031 tok 7: своимъ.
+line 2032 tok 1: иже
+line 2032 tok 2: хоштетъ
+line 2032 tok 3: по
+line 2032 tok 4: Мне
+line 2032 tok 5: ити
+line 2032 tok 6: да
+line 2032 tok 7: отъвръ
+line 2033 tok 1: жетъ
+line 2033 tok 2: ся
+line 2033 tok 3: себе
+line 2033 tok 4: и
+line 2033 tok 5: възъметъ
+line 2033 tok 6: кръстъ
+line 2034 tok 1: свой
+line 2034 tok 2: и
+line 2034 tok 3: въ
+line 2034 tok 4: следъ
+line 2034 tok 5: Мене
+line 2034 tok 6: грядетъ.
+line 2035 tok 3: иже
+line 2035 tok 4: бо
+line 2035 tok 5: аще
+line 2035 tok 6: хощетъ
+line 2035 tok 7: душю
+line 2035 tok 8: свою
+line 2035 tok 9: съпа
+line 2036 tok 1: сти
+line 2036 tok 2: погубитъ
+line 2036 tok 3: ю.
+line 2036 tok 4: а
+line 2036 tok 5: иже
+line 2036 tok 6: погубитъ
+line 2037 tok 1: душю
+line 2037 tok 2: свою
+line 2037 tok 3: Мене
+line 2037 tok 4: раде
+line 2037 tok 5: обрящетъ
+line 2037 tok 6: ю.
+line 2037 tok 7: ка
+line 2038 tok 3: е
+line 2038 tok 4: бо
+line 2038 tok 5: полъза
+line 2038 tok 6: естъ
+line 2038 tok 7: человеку
+line 2038 tok 8: аще
+line 2038 tok 9: въсъ
+line 2038 tok 10: ми
+line 2039 tok 1: ръ
+line 2039 tok 2: приобрящетъ
+line 2039 tok 3: а
+line 2039 tok 4: душю
+line 2039 tok 5: свою
+line 2039 tok 6: отъще
+line 2040 tok 1: титъ.
+line 2040 tok 2: ли
+line 2040 tok 3: что
+line 2040 tok 4: дастъ
+line 2040 tok 5: человекъ
+line 2040 tok 6: изъменю
+line 2044 tok 1: за
+line 2044 tok 2: душю
+line 2044 tok 3: свою.
+line 2044 tok 6: прити
+line 2044 tok 7: бо
+line 2044 tok 8: иматъ
+line 2044 tok 9: Сынъ
+line 2045 tok 1: Человеческы
+line 2045 tok 2: въ
+line 2045 tok 3: славе
+line 2045 tok 4: Отца
+line 2045 tok 5: Своего
+line 2045 tok 6: съ
+line 2045 tok 7: ангелы
+line 2046 tok 1: Своими
+line 2046 tok 2: и
+line 2046 tok 3: тогда
+line 2046 tok 4: въздастъ
+line 2046 tok 5: кому
+line 2047 tok 1: ждо
+line 2047 tok 2: по
+line 2047 tok 3: деанию
+line 2047 tok 4: его.
+line 2047 tok 7: Аминъ
+line 2047 tok 8: глаголю
+line 2047 tok 9: ва
+line 2048 tok 1: мъ
+line 2048 tok 2: сутъ
+line 2048 tok 3: етери
+line 2048 tok 4: от
+line 2048 tok 5: съде
+line 2048 tok 6: стоящихъ
+line 2049 tok 1: иже
+line 2049 tok 2: не
+line 2049 tok 3: имутъ
+line 2049 tok 4: въкусити
+line 2049 tok 5: съмръти
+line 2050 tok 1: дондеже
+line 2050 tok 2: видятъ
+line 2050 tok 3: Сына
+line 2050 tok 4: Человеческаго
+line 2050 tok 5: гряду
+line 2051 tok 1: ща
+line 2051 tok 2: въ
+line 2051 tok 3: Царствии
+line 2051 tok 4: Своемъ.
+line 2051 tok 7: и
+line 2051 tok 8: быстъ
+line 2052 tok 1: по
+line 2052 tok 2: шести
+line 2052 tok 3: дънъ.
+line 2052 tok 4: Поятъ
+line 2052 tok 5: Иисусъ
+line 2052 tok 6: Петра
+line 2053 tok 1: и
+line 2053 tok 2: Екова
+line 2053 tok 3: и
+line 2053 tok 4: Иоана.
+line 2053 tok 5: брата
+line 2053 tok 6: ему
+line 2053 tok 7: и
+line 2053 tok 8: въ
+line 2054 tok 1: зведе
+line 2054 tok 2: я
+line 2054 tok 3: на
+line 2054 tok 4: горю
+line 2054 tok 5: высокю
+line 2054 tok 6: едины.
+line 2054 tok 9: и
+line 2055 tok 1: преобрази
+line 2055 tok 2: ся
+line 2055 tok 3: предъ
+line 2055 tok 4: ними.
+line 2055 tok 5: и
+line 2055 tok 6: про
+line 2056 tok 1: свете
+line 2056 tok 2: ся
+line 2056 tok 3: лице
+line 2056 tok 4: Его
+line 2056 tok 5: еко
+line 2056 tok 6: и
+line 2056 tok 7: слънъце
+line 2057 tok 1: а
+line 2057 tok 2: ризы
+line 2057 tok 3: Его
+line 2057 tok 4: бышя
+line 2057 tok 5: белы
+line 2057 tok 6: еко
+line 2057 tok 7: све
+line 2058 tok 1: тъ.
+line 2058 tok 4: и
+line 2058 tok 5: се
+line 2058 tok 6: евисте
+line 2058 tok 7: ся
+line 2058 tok 8: имъ
+line 2058 tok 9: Моси
+line 2058 tok 10: и
+line 2058 tok 11: И
+line 2059 tok 1: лие
+line 2059 tok 2: съ
+line 2059 tok 3: нимъ
+line 2059 tok 4: глаголуща.
+line 2059 tok 7: отвещавъ
+line 2059 tok 8: же
+line 2060 tok 1: Петръ
+line 2060 tok 2: рече
+line 2060 tok 3: къ
+line 2060 tok 4: Иисусови
+line 2060 tok 5: Господи
+line 2060 tok 6: добро
+line 2060 tok 7: естъ
+line 2061 tok 1: намъ
+line 2061 tok 2: съде
+line 2061 tok 3: быти.
+line 2061 tok 4: аще
+line 2061 tok 5: хощеши
+line 2062 tok 1: да
+line 2062 tok 2: створимъ
+line 2062 tok 3: зде
+line 2062 tok 4: три
+line 2062 tok 5: кровы.
+line 2062 tok 6: Те
+line 2063 tok 1: бе
+line 2063 tok 2: единъ
+line 2063 tok 3: и
+line 2063 tok 4: Моси
+line 2063 tok 5: единъ
+line 2063 tok 6: Илии
+line 2063 tok 7: еди
+line 2064 tok 1: нъ.
+line 2064 tok 4: Еще
+line 2064 tok 5: же
+line 2064 tok 6: ему
+line 2064 tok 7: глаголущу.
+line 2064 tok 8: се
+line 2064 tok 9: обла
+line 2065 tok 1: къ
+line 2065 tok 2: светлъ
+line 2065 tok 3: осие
+line 2065 tok 4: я.
+line 2065 tok 5: и
+line 2065 tok 6: се
+line 2065 tok 7: гласъ
+line 2065 tok 8: и
+line 2066 tok 1: з
+line 2066 tok 2: облака
+line 2066 tok 3: глаголя
+line 2066 tok 4: Съ
+line 2066 tok 5: естъ
+line 2066 tok 6: Сынъ
+line 2066 tok 7: Мой
+line 2066 tok 8: въ
+line 2067 tok 1: злюбены.
+line 2067 tok 2: о
+line 2067 tok 3: Немъже
+line 2067 tok 4: благово
+line 2071 tok 1: въси
+line 2071 tok 2: зело.
+line 2071 tok 5: пришъдъшемъ
+line 2071 tok 6: же
+line 2071 tok 7: имъ
+line 2071 tok 8: въ
+line 2072 tok 1: Каперънаумъ
+line 2072 tok 2: приступишя
+line 2072 tok 3: приемя
+line 2073 tok 1: щеи
+line 2073 tok 2: дидрагъмы
+line 2073 tok 3: къ
+line 2073 tok 4: Петрови.
+line 2073 tok 5: и
+line 2073 tok 6: решя
+line 2074 tok 1: Учителъ
+line 2074 tok 2: вашъ
+line 2074 tok 3: не
+line 2074 tok 4: даетъ
+line 2074 tok 5: ли
+line 2074 tok 6: дидрагъ
+line 2075 tok 1: мъ
+line 2075 tok 4: рече
+line 2075 tok 5: ей.
+line 2075 tok 6: И
+line 2075 tok 7: егда
+line 2075 tok 8: въниде
+line 2075 tok 9: въ
+line 2075 tok 10: домъ
+line 2076 tok 1: вари
+line 2076 tok 2: Иисусъ
+line 2076 tok 3: глаголя.
+line 2076 tok 4: что
+line 2076 tok 5: ти
+line 2076 tok 6: ся
+line 2076 tok 7: мни
+line 2076 tok 8: Симоне
+line 2077 tok 1: царе
+line 2077 tok 2: земъстии
+line 2077 tok 3: от
+line 2077 tok 4: кыхъ
+line 2077 tok 5: приемютъ
+line 2078 tok 1: дани
+line 2078 tok 2: ли
+line 2078 tok 3: кинъсъ.
+line 2078 tok 4: от
+line 2078 tok 5: сыновъ
+line 2078 tok 6: ли
+line 2078 tok 7: своихъ
+line 2079 tok 1: ли
+line 2079 tok 2: от
+line 2079 tok 3: туждихъ.
+line 2079 tok 6: рече
+line 2079 tok 7: Петръ
+line 2079 tok 8: отъ
+line 2079 tok 9: тужди
+line 2080 tok 1: ихъ.
+line 2080 tok 2: рече
+line 2080 tok 3: ему
+line 2080 tok 4: Иисусъ
+line 2080 tok 5: убо
+line 2080 tok 6: свободъни
+line 2081 tok 1: сютъ
+line 2081 tok 2: сынове.
+line 2081 tok 5: нъ
+line 2081 tok 6: да
+line 2081 tok 7: не
+line 2081 tok 8: съблазни
+line 2082 tok 1: мъ
+line 2082 tok 2: ихъ.
+line 2082 tok 3: шъдъ
+line 2082 tok 4: въ
+line 2082 tok 5: море
+line 2082 tok 6: въвръзи
+line 2083 tok 1: юдицу.
+line 2083 tok 2: и
+line 2083 tok 3: юже
+line 2083 tok 4: имеши
+line 2083 tok 5: прежде
+line 2083 tok 6: ры
+line 2084 tok 1: бу
+line 2084 tok 2: възъми
+line 2084 tok 3: и
+line 2084 tok 4: отвръзъ
+line 2084 tok 5: уста
+line 2084 tok 6: ей.
+line 2084 tok 7: о
+line 2085 tok 1: брящеши
+line 2085 tok 2: статиръ.
+line 2085 tok 3: възъмъ
+line 2085 tok 4: да
+line 2086 tok 1: ждъ
+line 2086 tok 2: имъ
+line 2086 tok 3: за
+line 2086 tok 4: Мя
+line 2086 tok 5: и
+line 2086 tok 6: за
+line 2086 tok 7: ся.
+line 2086 tok 10: Въ
+line 2086 tok 11: тъ
+line 2087 tok 1: часъ
+line 2087 tok 2: приступишя
+line 2087 tok 3: ученици
+line 2087 tok 4: къ
+line 2087 tok 5: И
+line 2088 tok 1: исусови
+line 2088 tok 2: глаголюще.
+line 2088 tok 3: къто
+line 2088 tok 4: убо
+line 2088 tok 5: болий
+line 2088 tok 6: естъ
+line 2089 tok 1: въ
+line 2089 tok 2: Царствии
+line 2089 tok 3: небесцемъ.
+line 2089 tok 6: и
+line 2089 tok 7: призъва
+line 2090 tok 1: въ
+line 2090 tok 2: Иисусъ
+line 2090 tok 3: отрочя
+line 2090 tok 4: постави
+line 2090 tok 5: е
+line 2090 tok 6: по
+line 2090 tok 7: среде
+line 2090 tok 8: их(ъ)
+line 2091 tok 3: и
+line 2091 tok 4: рече
+line 2091 tok 5: амин
+line 2091 tok 6: глаголю
+line 2091 tok 7: вамъ
+line 2091 tok 8: аще
+line 2091 tok 9: не
+line 2091 tok 10: обрати
+line 2092 tok 1: те
+line 2092 tok 2: ся
+line 2092 tok 3: и
+line 2092 tok 4: будете
+line 2092 tok 5: дети
+line 2092 tok 6: не
+line 2092 tok 7: имате
+line 2092 tok 8: въ
+line 2093 tok 1: нити
+line 2093 tok 2: въ
+line 2093 tok 3: Царствие
+line 2093 tok 4: небеское.
+line 2093 tok 7: Иже
+line 2093 tok 8: бо
+line 2093 tok 9: ся
+line 2094 tok 1: съмеритъ
+line 2094 tok 2: еко
+line 2094 tok 3: отрочя
+line 2094 tok 4: се.
+line 2094 tok 5: тъ
+line 2094 tok 6: естъ
+line 2094 tok 7: бо
+line 2095 tok 1: лий
+line 2095 tok 2: въ
+line 2095 tok 3: Царствии
+line 2095 tok 4: небесцемъ.
+line 2095 tok 7: и
+line 2095 tok 8: иже
+line 2095 tok 9: ко
+line 2096 tok 1: лижде
+line 2096 tok 2: приеметъ
+line 2096 tok 3: отрочя
+line 2096 tok 4: таково
+line 2096 tok 5: едино
+line 2100 tok 1: въ
+line 2100 tok 2: имя
+line 2100 tok 3: Мое
+line 2100 tok 4: Мене
+line 2100 tok 5: приеметъ.
+line 2100 tok 8: А
+line 2100 tok 9: иже
+line 2100 tok 10: аще
+line 2101 tok 1: сканъдалисаетъ
+line 2101 tok 2: единого
+line 2101 tok 3: от
+line 2101 tok 4: малых(ъ)
+line 2102 tok 1: сихъ
+line 2102 tok 2: веруущиихъ
+line 2102 tok 3: въ
+line 2102 tok 4: Мя.
+line 2102 tok 5: унее
+line 2102 tok 6: ему
+line 2102 tok 7: е
+line 2103 tok 1: стъ
+line 2103 tok 2: да
+line 2103 tok 3: обесятъ
+line 2103 tok 4: жръновъ
+line 2103 tok 5: на
+line 2103 tok 6: выи
+line 2103 tok 7: его
+line 2104 tok 1: оселъскы.
+line 2104 tok 2: и
+line 2104 tok 3: потопятъ
+line 2104 tok 4: и
+line 2104 tok 5: въ
+line 2104 tok 6: пучине
+line 2105 tok 1: морстей.
+line 2105 tok 4: Горе
+line 2105 tok 5: въсему
+line 2105 tok 6: миру
+line 2105 tok 7: от
+line 2105 tok 8: ска
+line 2106 tok 1: нъдалъ.
+line 2106 tok 2: неволе
+line 2106 tok 3: бо
+line 2106 tok 4: естъ
+line 2106 tok 5: прити
+line 2106 tok 6: сканъ
+line 2107 tok 1: даломъ.
+line 2107 tok 2: обаче
+line 2107 tok 3: горе
+line 2107 tok 4: человеку
+line 2107 tok 5: тому
+line 2107 tok 6: имъ
+line 2108 tok 1: же
+line 2108 tok 2: скандалъ
+line 2108 tok 3: приходитъ.(Мф.
+line 2108 tok 6: Аще
+line 2108 tok 7: ли
+line 2108 tok 8: ру
+line 2109 tok 1: ка
+line 2109 tok 2: твое
+line 2109 tok 3: ли
+line 2109 tok 4: нога
+line 2109 tok 5: твое
+line 2109 tok 6: съблажнеетъ
+line 2110 tok 1: тя.
+line 2110 tok 2: отсеци
+line 2110 tok 3: и
+line 2110 tok 4: отверъзи
+line 2110 tok 5: от
+line 2110 tok 6: себе.
+line 2110 tok 7: добрее
+line 2111 tok 1: ти
+line 2111 tok 2: естъ
+line 2111 tok 3: вънити
+line 2111 tok 4: въ
+line 2111 tok 5: животъ
+line 2111 tok 6: хрому
+line 2112 tok 1: ли
+line 2112 tok 2: бедъну
+line 2112 tok 3: неже
+line 2112 tok 4: обе
+line 2112 tok 5: рюце
+line 2112 tok 6: и
+line 2112 tok 7: нозе
+line 2112 tok 8: и
+line 2113 tok 1: мущю
+line 2113 tok 2: въвръдену
+line 2113 tok 3: быти
+line 2113 tok 4: въ
+line 2113 tok 5: огнъ
+line 2114 tok 1: вечъной.
+line 2114 tok 4: И
+line 2114 tok 5: аще
+line 2114 tok 6: око
+line 2114 tok 7: твое
+line 2114 tok 8: съблажнее
+line 2115 tok 1: тъ
+line 2115 tok 2: тя
+line 2115 tok 3: изъми
+line 2115 tok 4: е
+line 2115 tok 5: и
+line 2115 tok 6: връзи
+line 2115 tok 7: отъ
+line 2115 tok 8: себе.
+line 2116 tok 1: добрее
+line 2116 tok 2: ти
+line 2116 tok 3: естъ
+line 2116 tok 4: съ
+line 2116 tok 5: единемъ
+line 2116 tok 6: окомь
+line 2117 tok 1: вънити
+line 2117 tok 2: въ
+line 2117 tok 3: животъ.
+line 2117 tok 4: неже
+line 2117 tok 5: дъве
+line 2117 tok 6: о
+line 2118 tok 1: чи
+line 2118 tok 2: имющю.
+line 2118 tok 3: въвръжену
+line 2118 tok 4: быти
+line 2119 tok 1: въ
+line 2119 tok 2: геену
+line 2119 tok 3: огнъную.
+line 2119 tok 6: Блюдете
+line 2119 tok 7: ся
+line 2120 tok 1: и
+line 2120 tok 2: не
+line 2120 tok 3: радите.
+line 2120 tok 4: о
+line 2120 tok 5: единомъ
+line 2120 tok 6: от
+line 2120 tok 7: малы
+line 2121 tok 1: хъ
+line 2121 tok 2: сихъ.
+line 2121 tok 3: глаголу
+line 2121 tok 4: бо
+line 2121 tok 5: вамъ
+line 2121 tok 6: еко
+line 2121 tok 7: ангели
+line 2122 tok 1: ихъ
+line 2122 tok 2: на
+line 2122 tok 3: небесехъ.
+line 2122 tok 4: выну
+line 2122 tok 5: видятъ
+line 2123 tok 1: лице
+line 2123 tok 2: Отца
+line 2123 tok 3: Моего
+line 2123 tok 4: небескаго.
+line 2123 tok 5: приде
+line 2123 tok 6: бо
+line 2124 tok 1: Сынъ
+line 2124 tok 2: Человеческы
+line 2124 tok 3: възискатъ
+line 2124 tok 4: и
+line 2124 tok 5: съпастъ
+line 2125 tok 1: погыбъшаго.
+line 2125 tok 4: что
+line 2125 tok 5: ся
+line 2125 tok 6: мънитъ
+line 2125 tok 7: ва
+line 2129 tok 1: мъ.
+line 2129 tok 2: Аште
+line 2129 tok 3: будетъ
+line 2129 tok 4: етеру
+line 2129 tok 5: .100.
+line 2129 tok 6: о
+line 2130 tok 1: вецъ
+line 2130 tok 2: и
+line 2130 tok 3: заблудитъ
+line 2130 tok 4: едина
+line 2131 tok 1: отъ
+line 2131 tok 2: нихъ.
+line 2131 tok 3: не
+line 2131 tok 4: оставитъ
+line 2131 tok 5: ли
+line 2132 tok 1: девяти
+line 2132 tok 2: десятъ
+line 2132 tok 3: и
+line 2132 tok 4: девяти
+line 2132 tok 5: на
+line 2132 tok 6: го
+line 2133 tok 1: рахъ
+line 2133 tok 3: и
+line 2133 tok 4: шедъ
+line 2133 tok 5: иштетъ
+line 2133 tok 6: заблу
+line 2134 tok 1: ждъшяя.
+line 2134 tok 4: и
+line 2134 tok 5: аште
+line 2134 tok 6: будетъ
+line 2134 tok 7: обре
+line 2135 tok 1: сти
+line 2135 tok 2: у.
+line 2135 tok 3: аминъ
+line 2135 tok 4: глаголу
+line 2135 tok 5: вамъ
+line 2135 tok 6: еко
+line 2135 tok 7: ра
+line 2136 tok 1: дуетъ
+line 2136 tok 2: ся
+line 2136 tok 3: о
+line 2136 tok 4: ней
+line 2136 tok 5: паче
+line 2136 tok 6: неже
+line 2136 tok 7: о
+line 2136 tok 8: девя
+line 2137 tok 1: ти
+line 2137 tok 2: десятъ
+line 2137 tok 3: и
+line 2137 tok 4: девяти
+line 2137 tok 5: не
+line 2137 tok 6: заблу
+line 2138 tok 1: ждышихъ.
+line 2138 tok 4: тако
+line 2138 tok 5: нестъ
+line 2138 tok 6: воле
+line 2139 tok 1: предъ
+line 2139 tok 2: Отцемъ
+line 2139 tok 3: вашимъ
+line 2139 tok 4: небескы
+line 2140 tok 1: мъ.
+line 2140 tok 2: да
+line 2140 tok 3: погыбнетъ
+line 2140 tok 4: единъ
+line 2140 tok 5: отъ
+line 2141 tok 1: малыхъ
+line 2141 tok 2: сихъ.
+line 2141 tok 5: Аще
+line 2141 tok 6: же
+line 2141 tok 7: съ
+line 2142 tok 1: грешитъ
+line 2142 tok 2: къ
+line 2142 tok 3: тебе
+line 2142 tok 4: братръ
+line 2143 tok 1: твой.
+line 2143 tok 2: иди
+line 2143 tok 3: обличи
+line 2143 tok 4: и
+line 2143 tok 5: междю
+line 2144 tok 1: собою
+line 2144 tok 2: и
+line 2144 tok 3: темъ
+line 2144 tok 4: единемъ.
+line 2144 tok 5: А
+line 2145 tok 1: ште
+line 2145 tok 2: тебе
+line 2145 tok 3: послушаетъ
+line 2145 tok 4: прио
+line 2146 tok 1: бряштеши
+line 2146 tok 2: братра
+line 2146 tok 3: твоего.
+line 2147 tok 3: аште
+line 2147 tok 4: ли
+line 2147 tok 5: тебе
+line 2147 tok 6: не
+line 2147 tok 7: послушаетъ.
+line 2148 tok 1: поими
+line 2148 tok 2: съ
+line 2148 tok 3: собоу
+line 2148 tok 4: пакы
+line 2148 tok 5: еди
+line 2149 tok 1: ного
+line 2149 tok 2: ли
+line 2149 tok 3: дъва.
+line 2149 tok 4: да
+line 2149 tok 5: въ
+line 2149 tok 6: устехъ
+line 2150 tok 1: дъвою
+line 2150 tok 2: ли
+line 2150 tok 3: трехъ
+line 2150 tok 4: съведете
+line 2151 tok 1: лъ
+line 2151 tok 2: станетъ
+line 2151 tok 3: въсекъ
+line 2151 tok 4: глаго
+line 2152 tok 1: лъ.
+line 2152 tok 4: аште
+line 2152 tok 5: же
+line 2152 tok 6: не
+line 2152 tok 7: послушаетъ
+line 2156 tok 1: ихъ.
+line 2156 tok 2: ръци
+line 2156 tok 3: цръкъви.
+line 2156 tok 4: аште
+line 2156 tok 5: же
+line 2156 tok 6: и
+line 2156 tok 7: от
+line 2157 tok 1: цръкъви
+line 2157 tok 2: не
+line 2157 tok 3: радити
+line 2157 tok 4: начънетъ
+line 2158 tok 1: да
+line 2158 tok 2: будетъ
+line 2158 tok 3: ти
+line 2158 tok 4: еко
+line 2158 tok 5: язы
+line 2159 tok 1: чъникъ
+line 2159 tok 2: и
+line 2159 tok 3: мытаръ:
+line 2159 tok 6: а
+line 2160 tok 1: минъ
+line 2160 tok 2: бо
+line 2160 tok 3: глаголю
+line 2160 tok 4: вам:
+line 2161 tok 1: елико
+line 2161 tok 2: аште
+line 2161 tok 3: съвя
+line 2162 tok 1: жете
+line 2162 tok 2: на
+line 2162 tok 3: земи:
+line 2163 tok 1: будетъ
+line 2163 tok 2: съ
+line 2164 tok 1: вязано
+line 2164 tok 2: на
+line 2165 tok 1: небесехъ
+line 2166 tok 1: и
+line 2166 tok 2: елико
+line 2167 tok 1: аште
+line 2167 tok 2: ра
+line 2168 tok 1: здре
+line 2169 tok 1: шите
+line 2170 tok 1: на
+line 2170 tok 2: зе
+line 2171 tok 1: ми:
+line 2172 tok 1: буде
+line 2173 tok 1: тъ
+line 2173 tok 2: ра
+line 2174 tok 1: здре
+line 2175 tok 1: шено
+line 2179 tok 1: на
+line 2179 tok 2: небеси.
+line 2179 tok 5: пакы
+line 2179 tok 6: амин
+line 2179 tok 7: глаголу
+line 2179 tok 8: вамъ
+line 2179 tok 9: еко
+line 2179 tok 10: аще
+line 2180 tok 1: дъва
+line 2180 tok 2: отъ
+line 2180 tok 3: васъ
+line 2180 tok 4: съвещаете
+line 2180 tok 5: на
+line 2180 tok 6: земи
+line 2180 tok 7: о
+line 2180 tok 8: въсе
+line 2181 tok 1: кои
+line 2181 tok 2: вещи
+line 2181 tok 3: еуже
+line 2181 tok 4: колижде
+line 2181 tok 5: просите
+line 2181 tok 6: будетъ
+line 2181 tok 7: и
+line 2182 tok 1: ма
+line 2182 tok 2: отъ
+line 2182 tok 3: Отца
+line 2182 tok 4: Моего
+line 2182 tok 5: иже
+line 2182 tok 6: естъ
+line 2182 tok 7: на
+line 2182 tok 8: небесехъ
+line 2183 tok 3: идеже
+line 2183 tok 4: бо
+line 2183 tok 5: есте
+line 2183 tok 6: дъва
+line 2183 tok 7: ли
+line 2183 tok 8: трие
+line 2183 tok 9: събрани
+line 2183 tok 10: въ
+line 2183 tok 11: и
+line 2184 tok 1: мя
+line 2184 tok 2: Мое
+line 2184 tok 3: ту
+line 2184 tok 4: есмъ
+line 2184 tok 5: по
+line 2184 tok 6: среде
+line 2184 tok 7: ихъ.(Мф.
+line 2184 tok 9: Тогда
+line 2185 tok 1: приступъ
+line 2185 tok 2: къ
+line 2185 tok 3: Нему
+line 2185 tok 4: Петръ
+line 2185 tok 5: рече.
+line 2185 tok 6: Господи
+line 2185 tok 7: колъ
+line 2186 tok 1: кратъ
+line 2186 tok 2: съгрешитъ
+line 2186 tok 3: въ
+line 2186 tok 4: мя
+line 2186 tok 5: братръ
+line 2186 tok 6: мой.
+line 2187 tok 1: и
+line 2187 tok 2: отпущу
+line 2187 tok 3: ему
+line 2187 tok 4: до
+line 2187 tok 5: седъмъ
+line 2187 tok 6: кратъ
+line 2187 tok 7: ли
+line 2188 tok 3: глагола
+line 2188 tok 4: ему
+line 2188 tok 5: Иисусъ
+line 2188 tok 6: не
+line 2188 tok 7: глаголу
+line 2188 tok 8: тебе
+line 2188 tok 9: до
+line 2188 tok 10: седмъ
+line 2188 tok 11: кра
+line 2189 tok 1: ты
+line 2189 tok 2: нъ
+line 2189 tok 3: до
+line 2189 tok 4: седъмъ
+line 2189 tok 5: десятъ
+line 2189 tok 6: кратъ
+line 2189 tok 7: седъ
+line 2190 tok 1: мицею.
+line 2190 tok 4: Сего
+line 2190 tok 5: ради
+line 2190 tok 6: уподобило
+line 2190 tok 7: ся
+line 2190 tok 8: е
+line 2191 tok 1: стъ
+line 2191 tok 2: Царъствие
+line 2191 tok 3: небесъкое
+line 2191 tok 4: человеку
+line 2191 tok 5: цару
+line 2191 tok 6: иже
+line 2191 tok 7: въ
+line 2192 tok 1: схоте
+line 2192 tok 2: стязати
+line 2192 tok 3: ся
+line 2192 tok 4: о
+line 2192 tok 5: словеси
+line 2192 tok 6: съ
+line 2192 tok 7: рабы
+line 2193 tok 1: своими.
+line 2193 tok 4: начънъшю
+line 2193 tok 5: же
+line 2193 tok 6: ему
+line 2193 tok 7: сътяза
+line 2194 tok 1: тис
+line 2194 tok 2: я
+line 2194 tok 3: о
+line 2194 tok 4: слове(си)
+line 2194 tok 5: привеся
+line 2194 tok 6: ему
+line 2194 tok 7: длъ
+line 2195 tok 1: жъникъ
+line 2195 tok 2: единъ
+line 2195 tok 3: тъме
+line 2195 tok 4: таланътъ.
+line 2195 tok 7: не
+line 2196 tok 1: имущу
+line 2196 tok 2: же
+line 2196 tok 3: ему
+line 2196 tok 4: въздати
+line 2196 tok 5: повеле
+line 2196 tok 6: господъ
+line 2197 tok 1: его
+line 2197 tok 2: да
+line 2197 tok 3: продадятъ
+line 2197 tok 4: и.
+line 2197 tok 5: жену
+line 2197 tok 6: его
+line 2197 tok 7: и
+line 2197 tok 8: чя
+line 2198 tok 1: да.
+line 2198 tok 2: и
+line 2198 tok 3: все
+line 2198 tok 4: елико
+line 2198 tok 5: имеаше.
+line 2198 tok 6: и
+line 2198 tok 7: отъдати
+line 2198 tok 10: и
+line 2199 tok 1: падъ
+line 2199 tok 2: убо
+line 2199 tok 3: работъ
+line 2199 tok 4: кланеаше
+line 2199 tok 5: ся
+line 2199 tok 6: ему
+line 2199 tok 7: глаголя.
+line 2200 tok 1: господи
+line 2200 tok 2: потеръпи
+line 2200 tok 3: на
+line 2200 tok 4: мъне
+line 2200 tok 5: и
+line 2200 tok 6: въсе
+line 2200 tok 7: ти
+line 2200 tok 8: въздамъ
+line 2201 tok 3: милосръдовавъ
+line 2201 tok 4: же
+line 2201 tok 5: господъ
+line 2201 tok 6: раба
+line 2201 tok 7: того
+line 2201 tok 8: пу
+line 2205 tok 1: сти
+line 2205 tok 2: и
+line 2205 tok 3: и
+line 2205 tok 4: длъгъ
+line 2205 tok 5: отъпусти
+line 2205 tok 6: ему.
+line 2205 tok 9: ишъ
+line 2206 tok 1: дъ
+line 2206 tok 2: же
+line 2206 tok 3: рабъ
+line 2206 tok 4: тъ
+line 2206 tok 5: обреете
+line 2206 tok 6: единого
+line 2206 tok 7: отъ
+line 2206 tok 8: кле
+line 2207 tok 1: вретъ
+line 2207 tok 2: своихъ
+line 2207 tok 3: иже
+line 2207 tok 4: бе
+line 2207 tok 5: длъжънъ
+line 2207 tok 6: е
+line 2208 tok 1: му
+line 2208 tok 2: 100
+line 2208 tok 3: пенязъ.
+line 2208 tok 4: и
+line 2208 tok 5: имъ
+line 2208 tok 6: давеаше
+line 2208 tok 7: и
+line 2208 tok 8: глаголя.
+line 2209 tok 1: въздаждъ
+line 2209 tok 2: ми
+line 2209 tok 3: имъже
+line 2209 tok 4: ми
+line 2209 tok 5: еси
+line 2209 tok 6: длъ
+line 2210 tok 1: жънъ.
+line 2210 tok 4: падъ
+line 2210 tok 5: же
+line 2210 tok 6: клевретъ
+line 2210 tok 7: его
+line 2210 tok 8: моле
+line 2211 tok 1: ше
+line 2211 tok 2: и
+line 2211 tok 3: глаголя.
+line 2211 tok 4: потръпи
+line 2211 tok 5: на
+line 2211 tok 6: мъне
+line 2211 tok 7: и
+line 2211 tok 8: въсе
+line 2211 tok 9: въ
+line 2212 tok 1: здамъ
+line 2212 tok 2: ти.
+line 2212 tok 5: онъ
+line 2212 tok 6: же
+line 2212 tok 7: не
+line 2212 tok 8: хотеаше
+line 2212 tok 9: нъ
+line 2212 tok 10: шедъ
+line 2213 tok 1: въсади
+line 2213 tok 2: и
+line 2213 tok 3: въ
+line 2213 tok 4: тъмъницу.
+line 2213 tok 5: дондеже
+line 2214 tok 1: въздастъ
+line 2214 tok 2: въсъ
+line 2214 tok 3: длъгъ.
+line 2214 tok 6: видевъ
+line 2215 tok 1: ше
+line 2215 tok 2: же
+line 2215 tok 3: клеврети
+line 2215 tok 4: его
+line 2215 tok 5: бывъшаа
+line 2215 tok 6: съжа
+line 2216 tok 1: лишя
+line 2216 tok 2: си
+line 2216 tok 3: зело.
+line 2216 tok 4: и
+line 2216 tok 5: пришъдъше
+line 2216 tok 6: съказашя
+line 2217 tok 1: въсе
+line 2217 tok 2: бывъшаа.
+line 2217 tok 5: тогда
+line 2217 tok 6: призъвавъ
+line 2217 tok 7: и
+line 2218 tok 1: господъ
+line 2218 tok 2: его
+line 2218 tok 3: глагола
+line 2218 tok 4: ему
+line 2218 tok 5: рабе
+line 2218 tok 6: лукавы
+line 2218 tok 7: въсъ
+line 2218 tok 8: дъ
+line 2219 tok 1: лъгъ
+line 2219 tok 2: отъпустихъ
+line 2219 tok 3: ти
+line 2219 tok 4: по
+line 2219 tok 5: неже
+line 2219 tok 6: умо
+line 2220 tok 1: ли
+line 2220 tok 2: мя
+line 2220 tok 5: не
+line 2220 tok 6: подобааше
+line 2220 tok 8: и)
+line 2220 tok 9: тебе
+line 2220 tok 10: помило
+line 2221 tok 1: вати
+line 2221 tok 2: клеврета
+line 2221 tok 3: твоего
+line 2221 tok 4: еко
+line 2221 tok 5: и
+line 2221 tok 6: азъ
+line 2221 tok 7: тя
+line 2222 tok 1: помиловахъ.
+line 2222 tok 4: и
+line 2222 tok 5: прогневавъ
+line 2222 tok 6: су
+line 2223 tok 1: господъ
+line 2223 tok 2: его
+line 2223 tok 3: предастъ
+line 2223 tok 4: и
+line 2223 tok 5: мучителемъ
+line 2224 tok 1: дондеже
+line 2224 tok 2: въздастъ
+line 2224 tok 3: въсъ
+line 2224 tok 4: длъгъ
+line 2225 tok 1: свой.
+line 2225 tok 4: тако
+line 2225 tok 5: и
+line 2225 tok 6: Отецъ
+line 2225 tok 7: небескы
+line 2225 tok 8: сътво
+line 2226 tok 1: ритъ
+line 2226 tok 2: вамъ
+line 2226 tok 3: аще
+line 2226 tok 4: не
+line 2226 tok 5: отъпуштаете
+line 2226 tok 6: кому
+line 2227 tok 1: жде
+line 2227 tok 2: братру
+line 2227 tok 3: своему
+line 2227 tok 4: отъ
+line 2227 tok 5: сръдъцъ
+line 2227 tok 6: ва
+line 2231 tok 1: шихъ
+line 2231 tok 2: прегрешениихъ.
+line 2231 tok 5: И
+line 2231 tok 6: быстъ
+line 2231 tok 7: егъ
+line 2232 tok 1: да
+line 2232 tok 2: сконъче
+line 2232 tok 3: Иисусъ
+line 2232 tok 4: словеса
+line 2232 tok 5: си
+line 2232 tok 6: преиде
+line 2233 tok 1: отъ
+line 2233 tok 2: Галилея
+line 2233 tok 3: и
+line 2233 tok 4: приде
+line 2233 tok 5: въ
+line 2233 tok 6: преде
+line 2234 tok 1: лы
+line 2234 tok 2: Июдейскы
+line 2234 tok 3: об
+line 2234 tok 4: онъ
+line 2234 tok 5: полъ
+line 2234 tok 6: Иоръ
+line 2235 tok 1: дана.
+line 2235 tok 4: и
+line 2235 tok 5: по
+line 2235 tok 6: Немъ
+line 2235 tok 7: идю
+line 2235 tok 8: народи
+line 2235 tok 9: мъно
+line 2236 tok 1: зи
+line 2236 tok 2: и
+line 2236 tok 3: исцели
+line 2236 tok 4: я
+line 2236 tok 5: ту.
+line 2236 tok 8: И
+line 2236 tok 9: приступи
+line 2237 tok 1: шя
+line 2237 tok 2: къ
+line 2237 tok 3: Нему
+line 2237 tok 4: фарисеи
+line 2237 tok 5: искушауще
+line 2237 tok 6: и
+line 2238 tok 1: глаголюще
+line 2238 tok 2: аште
+line 2238 tok 3: достоитъ
+line 2238 tok 4: человеку
+line 2238 tok 5: пу
+line 2239 tok 1: стити
+line 2239 tok 2: жену
+line 2239 tok 3: свою.
+line 2239 tok 6: Онъ
+line 2239 tok 7: же
+line 2239 tok 8: отве
+line 2240 tok 1: штавъ
+line 2240 tok 2: рече
+line 2240 tok 3: имъ
+line 2240 tok 4: несте
+line 2240 tok 5: ли
+line 2240 tok 6: чъли
+line 2241 tok 1: еко
+line 2241 tok 2: створи
+line 2241 tok 3: искони
+line 2241 tok 4: мюжъскъ
+line 2241 tok 5: по
+line 2242 tok 1: лъ
+line 2242 tok 2: и
+line 2242 tok 3: женъскъ
+line 2242 tok 4: створилъ
+line 2242 tok 5: е
+line 2242 tok 6: естъ
+line 2243 tok 3: и
+line 2243 tok 4: рече
+line 2243 tok 5: сего
+line 2243 tok 6: ради
+line 2243 tok 7: оставитъ
+line 2243 tok 8: человекъ
+line 2244 tok 1: отца
+line 2244 tok 2: своего
+line 2244 tok 3: и
+line 2244 tok 4: матеръ
+line 2244 tok 5: и
+line 2244 tok 6: прилепитъ
+line 2245 tok 1: ся
+line 2245 tok 2: жене
+line 2245 tok 3: своей.
+line 2245 tok 4: и
+line 2245 tok 5: бюдете
+line 2245 tok 6: оба
+line 2245 tok 7: въ
+line 2246 tok 1: плътъ
+line 2246 tok 2: едину
+line 2246 tok 5: темъ
+line 2246 tok 6: же
+line 2246 tok 7: уже
+line 2246 tok 8: не
+line 2247 tok 1: сте
+line 2247 tok 2: дъва
+line 2247 tok 3: нъ
+line 2247 tok 4: плътъ
+line 2247 tok 5: едина.
+line 2247 tok 6: еже
+line 2248 tok 1: убо
+line 2248 tok 2: Богъ
+line 2248 tok 3: съчета
+line 2248 tok 4: человекъ
+line 2248 tok 5: да
+line 2248 tok 6: не
+line 2248 tok 7: разлу
+line 2249 tok 1: чаетъ.
+line 2249 tok 4: глаголашя
+line 2249 tok 5: Ему
+line 2249 tok 6: чъто
+line 2249 tok 7: убо
+line 2249 tok 8: Мо
+line 2250 tok 1: иси
+line 2250 tok 2: заповеда
+line 2250 tok 3: дати
+line 2250 tok 4: кънигы
+line 2250 tok 5: ра
+line 2251 tok 1: спустъныя
+line 2251 tok 2: и
+line 2251 tok 3: отъпустити
+line 2251 tok 4: у.
+line 2252 tok 3: глагола
+line 2252 tok 4: имъ
+line 2252 tok 5: еко
+line 2252 tok 6: Мосии
+line 2252 tok 7: по
+line 2252 tok 8: жесто
+line 2253 tok 1: сръдию
+line 2253 tok 2: вашему
+line 2253 tok 3: повеле
+line 2253 tok 4: вамъ
+line 2257 tok 1: пустити
+line 2257 tok 2: жены
+line 2257 tok 3: вашя.
+line 2257 tok 4: искони
+line 2257 tok 5: же
+line 2257 tok 6: не
+line 2258 tok 1: быстъ
+line 2258 tok 2: тако.
+line 2258 tok 5: глаголю
+line 2258 tok 6: же
+line 2258 tok 7: вамъ
+line 2258 tok 8: иже
+line 2258 tok 9: а
+line 2259 tok 1: ще
+line 2259 tok 2: отъпуститъ
+line 2259 tok 3: женю
+line 2259 tok 4: свою
+line 2259 tok 5: разъ
+line 2260 tok 1: ве
+line 2260 tok 2: словесе
+line 2260 tok 3: любодеаннаго.
+line 2260 tok 4: твори
+line 2261 tok 1: тъ
+line 2261 tok 2: ю
+line 2261 tok 3: прелюбы
+line 2261 tok 4: творити.
+line 2261 tok 5: и
+line 2261 tok 6: женяй
+line 2262 tok 1: ся
+line 2262 tok 2: подьпегою
+line 2262 tok 3: прелюбы
+line 2262 tok 4: творитъ
+line 2263 tok 3: глаголашя
+line 2263 tok 4: Ему
+line 2263 tok 5: ученици
+line 2263 tok 6: Его
+line 2263 tok 7: аще
+line 2263 tok 8: тако
+line 2264 tok 1: естъ
+line 2264 tok 2: вина
+line 2264 tok 3: человеку
+line 2264 tok 4: съ
+line 2264 tok 5: женою.
+line 2264 tok 6: унее
+line 2264 tok 7: естъ
+line 2265 tok 1: не
+line 2265 tok 2: женити
+line 2265 tok 3: ся.
+line 2265 tok 6: Онъ
+line 2265 tok 7: же
+line 2265 tok 8: рече
+line 2265 tok 9: имъ.
+line 2265 tok 10: не
+line 2266 tok 1: въси
+line 2266 tok 2: въместятъ
+line 2266 tok 3: свловесе
+line 2266 tok 4: се
+line 2267 tok 1: го
+line 2267 tok 2: нъ
+line 2267 tok 3: имъже
+line 2267 tok 4: дано
+line 2267 tok 5: естъ.
+line 2267 tok 8: сютъ
+line 2268 tok 1: бо
+line 2268 tok 2: каженици
+line 2268 tok 3: иже
+line 2268 tok 4: ичрева
+line 2268 tok 5: матеръ
+line 2269 tok 1: не
+line 2269 tok 2: родишя
+line 2269 tok 3: ся
+line 2269 tok 4: тако.
+line 2269 tok 5: и
+line 2269 tok 6: сютъ
+line 2269 tok 7: каже
+line 2270 tok 1: ници
+line 2270 tok 2: яже
+line 2270 tok 3: исказишя
+line 2270 tok 4: человеци.
+line 2270 tok 5: и
+line 2270 tok 6: сутъ
+line 2271 tok 1: каженици
+line 2271 tok 2: иже
+line 2271 tok 3: исказишя
+line 2271 tok 4: ся
+line 2271 tok 5: сами
+line 2272 tok 1: Царствие
+line 2272 tok 2: ради
+line 2272 tok 3: небескаго.
+line 2272 tok 4: мо
+line 2273 tok 1: гюй
+line 2273 tok 2: въместити
+line 2273 tok 3: да
+line 2273 tok 4: въместитъ
+line 2274 tok 3: Тогда
+line 2274 tok 4: привеся
+line 2274 tok 5: къ
+line 2274 tok 6: Нему
+line 2274 tok 7: дети
+line 2274 tok 8: да
+line 2275 tok 1: рюце
+line 2275 tok 2: възложитъ
+line 2275 tok 3: на
+line 2275 tok 4: ня
+line 2275 tok 5: и
+line 2275 tok 6: помоли
+line 2276 tok 1: тъ
+line 2276 tok 2: ся.
+line 2276 tok 3: ученици
+line 2276 tok 4: же
+line 2276 tok 5: запретишя
+line 2276 tok 6: и
+line 2277 tok 1: мъ.
+line 2277 tok 4: Иисусъ
+line 2277 tok 5: же
+line 2277 tok 6: рече
+line 2277 tok 7: имъ
+line 2277 tok 8: останете
+line 2278 tok 1: дети
+line 2278 tok 2: и
+line 2278 tok 3: не
+line 2278 tok 4: браните
+line 2278 tok 5: имъ
+line 2278 tok 6: прити
+line 2278 tok 7: къ
+line 2279 tok 1: Мъне.
+line 2279 tok 2: таковыхъ
+line 2279 tok 3: бо
+line 2279 tok 4: естъ
+line 2279 tok 5: Царъ
+line 2283 tok 1: ствие
+line 2283 tok 2: небеское.
+line 2283 tok 5: и
+line 2283 tok 6: възложъ
+line 2283 tok 7: на
+line 2284 tok 1: ня
+line 2284 tok 2: рюце
+line 2284 tok 3: отиде
+line 2284 tok 4: отъ
+line 2284 tok 5: тюде.
+line 2284 tok 8: и
+line 2284 tok 9: се
+line 2284 tok 10: е
+line 2285 tok 1: динъ
+line 2285 tok 2: пристюпъ
+line 2285 tok 3: рече
+line 2285 tok 4: Ему.
+line 2285 tok 5: Учи
+line 2286 tok 1: телю
+line 2286 tok 2: благы
+line 2286 tok 3: чъто
+line 2286 tok 4: благо
+line 2286 tok 5: съ
+line 2287 tok 1: твору
+line 2287 tok 2: да
+line 2287 tok 3: имамъ
+line 2287 tok 4: животъ
+line 2287 tok 5: вечъ
+line 2288 tok 1: ны.
+line 2288 tok 4: Онъ
+line 2288 tok 5: же
+line 2288 tok 6: рече
+line 2288 tok 7: ему.
+line 2288 tok 8: чъто
+line 2288 tok 9: Мя
+line 2288 tok 10: тво
+line 2289 tok 1: риши
+line 2289 tok 2: блага.
+line 2289 tok 3: никтоже
+line 2289 tok 4: естъ
+line 2289 tok 5: бла
+line 2290 tok 1: гъ
+line 2290 tok 2: тъкъмо
+line 2290 tok 3: единъ
+line 2290 tok 4: Богъ.
+line 2290 tok 5: аще
+line 2290 tok 6: ли
+line 2290 tok 7: хо
+line 2291 tok 1: щеши
+line 2291 tok 2: въ
+line 2291 tok 3: животъ
+line 2291 tok 4: вънити
+line 2291 tok 5: съблю
+line 2292 tok 1: ди
+line 2292 tok 2: заповеди
+line 2292 tok 5: глагола
+line 2292 tok 6: ему
+line 2292 tok 7: кыя.
+line 2292 tok 8: Иисусъ
+line 2293 tok 1: же
+line 2293 tok 2: рече
+line 2293 tok 3: ему.
+line 2293 tok 4: еже
+line 2293 tok 5: не
+line 2293 tok 6: убиеши
+line 2293 tok 7: не
+line 2293 tok 8: пре
+line 2294 tok 1: любы
+line 2294 tok 2: твориши.
+line 2294 tok 3: не
+line 2294 tok 4: украдеши.
+line 2294 tok 5: не
+line 2295 tok 1: лъжесъведетелъ
+line 2295 tok 2: бюдеши.
+line 2295 tok 5: чъ
+line 2296 tok 1: ти
+line 2296 tok 2: отца
+line 2296 tok 3: и
+line 2296 tok 4: матеръ
+line 2296 tok 5: и
+line 2296 tok 6: възлюбиши
+line 2296 tok 7: искръ
+line 2297 tok 1: неаго
+line 2297 tok 2: своего
+line 2297 tok 3: еко
+line 2297 tok 4: самъ
+line 2297 tok 5: ся.
+line 2297 tok 8: глагола
+line 2297 tok 9: Е
+line 2298 tok 1: му
+line 2298 tok 2: юноша.
+line 2298 tok 3: въсе
+line 2298 tok 4: си
+line 2298 tok 5: съхранихъ
+line 2298 tok 6: о
+line 2299 tok 1: тъ
+line 2299 tok 2: юности
+line 2299 tok 3: моея.
+line 2299 tok 4: чесо
+line 2299 tok 5: есмъ
+line 2299 tok 6: е
+line 2300 tok 1: ще
+line 2300 tok 2: не
+line 2300 tok 3: доконъчалъ.
+line 2300 tok 6: рече
+line 2300 tok 7: ему
+line 2300 tok 8: Иисусъ.
+line 2301 tok 1: аще
+line 2301 tok 2: хощеши
+line 2301 tok 3: съвръшенъ
+line 2301 tok 4: быти.
+line 2301 tok 5: и
+line 2302 tok 1: ди
+line 2302 tok 2: продаждъ
+line 2302 tok 3: твое
+line 2302 tok 4: имение
+line 2302 tok 5: и
+line 2302 tok 6: даждъ
+line 2303 tok 1: нищиимъ.
+line 2303 tok 2: и
+line 2303 tok 3: имети
+line 2303 tok 4: имаши
+line 2303 tok 5: скро
+line 2304 tok 1: вище
+line 2304 tok 2: на
+line 2304 tok 3: небеси.
+line 2304 tok 4: и
+line 2304 tok 5: приди
+line 2304 tok 6: въ
+line 2304 tok 7: следъ
+line 2304 tok 8: Ме
+line 2305 tok 1: не.
+line 2305 tok 4: слышавъ
+line 2305 tok 5: же
+line 2305 tok 6: юноша
+line 2305 tok 7: слово
+line 2305 tok 8: оти
+line 2309 tok 1: де
+line 2309 tok 2: скръбя
+line 2309 tok 3: бе
+line 2309 tok 4: бо
+line 2309 tok 5: имея
+line 2309 tok 6: сътяжание
+line 2309 tok 7: мъ
+line 2310 tok 1: нога.
+line 2310 tok 4: Иисусъ
+line 2310 tok 5: же
+line 2310 tok 6: рече
+line 2310 tok 7: къ
+line 2310 tok 8: ученикомъ
+line 2310 tok 9: сво
+line 2311 tok 1: имъ.
+line 2311 tok 2: аминъ
+line 2311 tok 3: глаголю
+line 2311 tok 4: вамъ
+line 2311 tok 5: еко
+line 2311 tok 6: неу
+line 2312 tok 1: добъ
+line 2312 tok 2: вънидетъ
+line 2312 tok 3: богатъ
+line 2312 tok 4: в
+line 2312 tok 5: Царъ
+line 2313 tok 1: ствие
+line 2313 tok 2: небеское.
+line 2313 tok 5: пакы
+line 2313 tok 6: глаголю
+line 2313 tok 7: вамъ
+line 2314 tok 1: еко
+line 2314 tok 2: удобее
+line 2314 tok 3: естъ
+line 2314 tok 4: велъбуду
+line 2314 tok 5: сквозе
+line 2315 tok 1: уши
+line 2315 tok 2: иглине
+line 2315 tok 3: пройти.
+line 2315 tok 4: неже
+line 2315 tok 5: богату
+line 2316 tok 1: въ
+line 2316 tok 2: Царствие
+line 2316 tok 3: Божие
+line 2316 tok 4: вънити.
+line 2316 tok 7: Слы
+line 2317 tok 1: шавъше
+line 2317 tok 2: же
+line 2317 tok 3: ученици
+line 2317 tok 4: дивлеахю
+line 2318 tok 1: ся
+line 2318 tok 2: зело
+line 2318 tok 3: глаголюще
+line 2318 tok 4: кто
+line 2318 tok 5: убо
+line 2318 tok 6: можетъ
+line 2319 tok 1: спасенъ
+line 2319 tok 2: быти.
+line 2319 tok 5: възъревъ
+line 2319 tok 6: же
+line 2319 tok 7: Иисусъ
+line 2320 tok 1: рече
+line 2320 tok 2: имъ.
+line 2320 tok 3: отъ
+line 2320 tok 4: человекъ
+line 2320 tok 5: се
+line 2320 tok 6: невъзъмож
+line 2321 tok 1: но
+line 2321 tok 2: естъ
+line 2321 tok 3: а
+line 2321 tok 4: отъ
+line 2321 tok 5: Бога
+line 2321 tok 6: въсе
+line 2321 tok 7: възможъна
+line 2322 tok 1: сютъ.
+line 2322 tok 4: Тогда
+line 2322 tok 5: отъвещавъ
+line 2322 tok 6: Петръ
+line 2323 tok 1: рече
+line 2323 tok 2: Ему.
+line 2323 tok 3: се
+line 2323 tok 4: мы
+line 2323 tok 5: оставихомъ
+line 2324 tok 1: вьсе.
+line 2324 tok 2: и
+line 2324 tok 3: въ
+line 2324 tok 4: следъ
+line 2324 tok 5: Тебе
+line 2324 tok 6: идохомъ.
+line 2325 tok 1: что
+line 2325 tok 2: убо
+line 2325 tok 3: бюдетъ
+line 2325 tok 4: намъ.
+line 2325 tok 7: Иисусъ
+line 2325 tok 8: же
+line 2325 tok 9: ре
+line 2326 tok 1: че
+line 2326 tok 2: имъ.
+line 2326 tok 3: амин.
+line 2326 tok 4: глаголю
+line 2326 tok 5: вамъ
+line 2326 tok 6: еко
+line 2326 tok 7: вы
+line 2327 tok 1: шъдъшеи
+line 2327 tok 2: по
+line 2327 tok 3: Мъне.
+line 2327 tok 4: въ
+line 2327 tok 5: пакыбы
+line 2328 tok 1: тии
+line 2328 tok 2: егда
+line 2328 tok 3: сядетъ
+line 2328 tok 4: Сынъ
+line 2328 tok 5: Человечъскы
+line 2329 tok 1: на
+line 2329 tok 2: престоле
+line 2329 tok 3: славы
+line 2329 tok 4: Своея.
+line 2329 tok 5: ся
+line 2330 tok 1: дете
+line 2330 tok 2: и
+line 2330 tok 3: вы
+line 2330 tok 4: на
+line 2330 tok 5: дъвою
+line 2330 tok 6: на
+line 2330 tok 7: десяте
+line 2331 tok 1: престолу.
+line 2331 tok 2: сюдяще
+line 2331 tok 3: обема
+line 2331 tok 4: на
+line 2335 tok 1: десяте
+line 2335 tok 2: коленома
+line 2335 tok 3: Израилевама.
+line 2335 tok 6: И
+line 2336 tok 1: въсекъ
+line 2336 tok 2: иже
+line 2336 tok 3: оставитъ
+line 2336 tok 4: братрию
+line 2337 tok 1: ли
+line 2337 tok 2: сестры
+line 2337 tok 3: ли
+line 2337 tok 4: отца
+line 2337 tok 5: ли
+line 2337 tok 6: матеръ.
+line 2337 tok 7: или
+line 2338 tok 1: женю
+line 2338 tok 2: или
+line 2338 tok 3: дети.
+line 2338 tok 4: или
+line 2338 tok 5: села
+line 2338 tok 6: или
+line 2338 tok 7: хра
+line 2339 tok 1: мы.
+line 2339 tok 2: имене
+line 2339 tok 3: Моего
+line 2339 tok 4: ради
+line 2339 tok 5: сътори
+line 2340 tok 1: цею
+line 2340 tok 2: прииметъ.
+line 2340 tok 3: и
+line 2340 tok 4: животъ
+line 2340 tok 5: ве
+line 2341 tok 1: чьны
+line 2341 tok 2: наследитъ.
+line 2341 tok 5: мнози
+line 2341 tok 6: же
+line 2342 tok 1: бюдютъ
+line 2342 tok 2: пръвии
+line 2342 tok 3: последънии.
+line 2343 tok 1: и
+line 2343 tok 2: последънии
+line 2343 tok 3: пръвии.
+line 2343 tok 6: Подобъ
+line 2344 tok 1: но
+line 2344 tok 2: естъ
+line 2344 tok 3: Царствие
+line 2344 tok 4: небеское
+line 2344 tok 5: человеку
+line 2344 tok 6: до
+line 2345 tok 1: мовиту.
+line 2345 tok 2: иже
+line 2345 tok 3: изиде
+line 2345 tok 4: купно
+line 2345 tok 5: утро
+line 2346 tok 1: наяти
+line 2346 tok 2: делателя
+line 2346 tok 3: въ
+line 2346 tok 4: виноградъ
+line 2347 tok 1: свой.
+line 2347 tok 4: съвещавъ
+line 2347 tok 5: же
+line 2347 tok 6: съ
+line 2347 tok 7: делате
+line 2348 tok 1: ли
+line 2348 tok 2: по
+line 2348 tok 3: пенязу
+line 2348 tok 4: на
+line 2348 tok 5: дънъ.
+line 2348 tok 6: после
+line 2348 tok 7: я
+line 2348 tok 8: въ
+line 2349 tok 1: виноградъ
+line 2349 tok 2: свой.
+line 2349 tok 5: и
+line 2349 tok 6: ишъдъ
+line 2349 tok 7: въ
+line 2349 tok 8: тре
+line 2350 tok 1: тию
+line 2350 tok 2: годину
+line 2350 tok 3: виде
+line 2350 tok 4: ины
+line 2350 tok 5: на
+line 2350 tok 6: тръ
+line 2351 tok 1: жищихъ
+line 2351 tok 2: стоящя
+line 2351 tok 3: праздъны.
+line 2351 tok 6: и
+line 2351 tok 7: те
+line 2352 tok 1: мъ
+line 2352 tok 2: рече
+line 2352 tok 3: идете
+line 2352 tok 4: и
+line 2352 tok 5: вы
+line 2352 tok 6: в
+line 2352 tok 7: виногра
+line 2353 tok 1: дъ
+line 2353 tok 2: мой.
+line 2353 tok 3: и
+line 2353 tok 4: еже
+line 2353 tok 5: бюдетъ
+line 2353 tok 6: правъда
+line 2354 tok 1: дамъ
+line 2354 tok 2: вамъ
+line 2354 tok 5: они
+line 2354 tok 6: же
+line 2354 tok 7: идю.
+line 2354 tok 8: пакы
+line 2355 tok 1: же
+line 2355 tok 2: ишъдъ
+line 2355 tok 3: в
+line 2355 tok 4: шестюу
+line 2355 tok 5: и
+line 2355 tok 6: девятю
+line 2356 tok 1: годиню.
+line 2356 tok 2: створи
+line 2356 tok 3: такожде.
+line 2356 tok 6: въ
+line 2356 tok 7: еди
+line 2357 tok 1: ню
+line 2357 tok 2: же
+line 2357 tok 3: на
+line 2357 tok 4: десяте
+line 2357 tok 5: годиню
+line 2357 tok 6: ишъдъ
+line 2357 tok 7: о
+line 2358 tok 1: брете
+line 2358 tok 2: другыя
+line 2358 tok 3: стоящя
+line 2358 tok 4: праздны
+line 2362 tok 1: и
+line 2362 tok 2: глагола
+line 2362 tok 3: имъ.
+line 2362 tok 4: чо
+line 2362 tok 5: зде
+line 2362 tok 6: стоите
+line 2362 tok 7: пра
+line 2363 tok 1: здъни
+line 2363 tok 2: въсъ
+line 2363 tok 3: дънъ.
+line 2363 tok 6: Глаголашя
+line 2363 tok 7: ему.
+line 2363 tok 8: еко
+line 2364 tok 1: никтоже
+line 2364 tok 2: насъ
+line 2364 tok 3: не
+line 2364 tok 4: наятъ.
+line 2364 tok 5: глагола
+line 2364 tok 6: имъ.
+line 2364 tok 7: и
+line 2365 tok 1: дете
+line 2365 tok 2: и
+line 2365 tok 3: вы
+line 2365 tok 4: въ
+line 2365 tok 5: виноградъ
+line 2365 tok 6: мой
+line 2365 tok 7: и
+line 2366 tok 1: еже
+line 2366 tok 2: бюдетъ
+line 2366 tok 3: правъда
+line 2366 tok 4: прииме
+line 2367 tok 1: те.
+line 2367 tok 4: вечеру
+line 2367 tok 5: же
+line 2367 tok 6: бывъшу
+line 2367 tok 7: глагола
+line 2367 tok 8: господъ
+line 2368 tok 1: винограда
+line 2368 tok 2: приставънику
+line 2368 tok 3: съ
+line 2369 tok 1: воему.
+line 2369 tok 2: призови
+line 2369 tok 3: делателя
+line 2369 tok 4: и
+line 2370 tok 1: даждъ
+line 2370 tok 2: имъ
+line 2370 tok 3: мъздю.
+line 2370 tok 4: начънъ
+line 2371 tok 1: отъ
+line 2371 tok 2: последънихъ
+line 2371 tok 3: до
+line 2371 tok 4: пръвы
+line 2372 tok 1: хъ.
+line 2372 tok 4: и
+line 2372 tok 5: пришедъше
+line 2372 tok 6: иже
+line 2372 tok 7: въ
+line 2372 tok 8: единю
+line 2373 tok 1: на
+line 2373 tok 2: десяте
+line 2373 tok 3: годиню
+line 2373 tok 4: прияся
+line 2373 tok 5: по
+line 2373 tok 6: пе
+line 2374 tok 1: нязю.
+line 2374 tok 4: пришъдъше
+line 2374 tok 5: же
+line 2374 tok 6: пръвии
+line 2374 tok 7: мъ
+line 2375 tok 1: неахю
+line 2375 tok 2: ся
+line 2375 tok 3: еко
+line 2375 tok 4: вяще
+line 2375 tok 5: приимютъ.
+line 2376 tok 1: и
+line 2376 tok 2: прияся
+line 2376 tok 3: и
+line 2376 tok 4: ти
+line 2376 tok 5: по
+line 2376 tok 6: пенязу.
+line 2376 tok 9: приемъ
+line 2377 tok 1: ше
+line 2377 tok 2: же
+line 2377 tok 3: ръптаахю
+line 2377 tok 4: на
+line 2377 tok 5: господина
+line 2377 tok 8: глаголюще.
+line 2377 tok 9: ка
+line 2378 tok 1: ко
+line 2378 tok 2: си
+line 2378 tok 3: последънии
+line 2378 tok 4: единъ
+line 2378 tok 5: часъ
+line 2379 tok 1: створишя.
+line 2379 tok 2: и
+line 2379 tok 3: равьныа
+line 2379 tok 4: намъ
+line 2379 tok 5: ство
+line 2380 tok 1: рилъ
+line 2380 tok 2: еси.
+line 2380 tok 3: понесъшиимъ
+line 2380 tok 4: тяготю
+line 2381 tok 1: дне
+line 2381 tok 2: и
+line 2381 tok 3: вара.
+line 2381 tok 6: онъ
+line 2381 tok 7: же
+line 2381 tok 8: отъвещавъ
+line 2381 tok 9: ре
+line 2382 tok 1: че
+line 2382 tok 2: единому
+line 2382 tok 3: ихъ
+line 2382 tok 4: друже
+line 2382 tok 5: не
+line 2382 tok 6: обиждю
+line 2383 tok 1: тебе.
+line 2383 tok 2: не
+line 2383 tok 3: по
+line 2383 tok 4: пенязу
+line 2383 tok 5: ли
+line 2383 tok 6: съвещахъ
+line 2383 tok 7: съ
+line 2384 tok 1: тобою.
+line 2384 tok 4: възъми
+line 2384 tok 5: свое
+line 2384 tok 6: и
+line 2384 tok 7: иди.
+line 2384 tok 8: хоштю
+line 2385 tok 1: же
+line 2385 tok 2: сему
+line 2385 tok 3: последънему
+line 2385 tok 4: дати
+line 2385 tok 5: еко
+line 2386 tok 1: и
+line 2386 tok 2: тебе.
+line 2386 tok 5: или
+line 2386 tok 6: нестъ
+line 2386 tok 7: мъне
+line 2386 tok 8: летъ
+line 2386 tok 9: съ
+line 2390 tok 1: творити
+line 2390 tok 2: еже
+line 2390 tok 3: хощю
+line 2390 tok 4: въ
+line 2390 tok 5: своихъ
+line 2390 tok 6: ми
+line 2391 tok 1: аще
+line 2391 tok 2: око
+line 2391 tok 3: твое
+line 2391 tok 4: люкаво
+line 2391 tok 5: естъ
+line 2391 tok 6: еко
+line 2391 tok 7: азъ
+line 2391 tok 8: бла
+line 2392 tok 1: гъ
+line 2392 tok 2: есмъ.
+line 2392 tok 4: 20:16)тако
+line 2392 tok 5: бюдютъ
+line 2392 tok 6: посъ
+line 2393 tok 1: ледъни
+line 2393 tok 2: пръви
+line 2393 tok 4: и
+line 2393 tok 5: пръви
+line 2393 tok 6: после
+line 2394 tok 1: дънии.
+line 2394 tok 2: мънози
+line 2394 tok 3: бо
+line 2394 tok 4: сютъ
+line 2394 tok 5: зъвани.
+line 2395 tok 1: мало
+line 2395 tok 2: же
+line 2395 tok 3: избраныхъ
+line 2395 tok 7: И
+line 2395 tok 8: въ
+line 2396 tok 1: сходя
+line 2396 tok 2: Иисусъ
+line 2396 tok 3: въ
+line 2396 tok 4: Ерусалимъ
+line 2396 tok 5: поятъ
+line 2396 tok 6: оба
+line 2397 tok 1: на
+line 2397 tok 2: десяте
+line 2397 tok 3: ученка
+line 2397 tok 4: едины
+line 2397 tok 5: на
+line 2397 tok 6: пю
+line 2398 tok 1: ти.
+line 2398 tok 2: и
+line 2398 tok 3: рече
+line 2398 tok 4: имъ
+line 2398 tok 7: се
+line 2398 tok 8: въсходимъ
+line 2398 tok 9: въ
+line 2399 tok 1: Иерусалимъ.
+line 2399 tok 2: и
+line 2399 tok 3: Сынъ
+line 2399 tok 4: Человеческъ.
+line 2399 tok 5: преда
+line 2400 tok 1: нъ
+line 2400 tok 2: бюдетъ
+line 2400 tok 3: архиереомъ
+line 2400 tok 4: и
+line 2400 tok 5: къни
+line 2401 tok 1: жъникомъ
+line 2401 tok 2: и
+line 2401 tok 3: осуюдятъ
+line 2401 tok 4: И
+line 2401 tok 5: на
+line 2401 tok 6: съ
+line 2402 tok 1: мрътъ.
+line 2402 tok 4: и
+line 2402 tok 5: предадутъ
+line 2402 tok 6: И
+line 2402 tok 7: языко
+line 2403 tok 1: мъ
+line 2403 tok 2: на
+line 2403 tok 3: порюгание
+line 2403 tok 4: и
+line 2403 tok 5: тепение
+line 2403 tok 6: и
+line 2403 tok 7: про
+line 2404 tok 1: пятие.
+line 2404 tok 2: и
+line 2404 tok 3: .3.
+line 2404 tok 4: денъ
+line 2404 tok 5: въскръснетъ.
+line 2405 tok 3: Тогда
+line 2405 tok 4: пристюпи
+line 2405 tok 5: къ
+line 2405 tok 6: Нему
+line 2405 tok 7: мати
+line 2405 tok 8: сыну
+line 2406 tok 1: Зеведеову.
+line 2406 tok 2: съ
+line 2406 tok 3: сынама
+line 2406 tok 4: своима
+line 2407 tok 1: кланеющи
+line 2407 tok 2: ся
+line 2407 tok 3: и
+line 2407 tok 4: просящи
+line 2407 tok 5: нечесо
+line 2407 tok 6: от
+line 2408 tok 1: Него.
+line 2408 tok 4: Онъ
+line 2408 tok 5: же
+line 2408 tok 6: рече
+line 2408 tok 7: ей
+line 2408 tok 8: что
+line 2408 tok 9: хощеши.
+line 2408 tok 10: глагола
+line 2409 tok 1: Ему
+line 2409 tok 2: ръци
+line 2409 tok 3: да
+line 2409 tok 4: сядете
+line 2409 tok 5: сие
+line 2409 tok 6: оба
+line 2409 tok 7: сына
+line 2410 tok 1: мое
+line 2410 tok 2: единъ
+line 2410 tok 3: о
+line 2410 tok 4: деснюу
+line 2410 tok 5: Тебе
+line 2410 tok 6: и
+line 2410 tok 7: дру
+line 2411 tok 1: гы
+line 2411 tok 2: о
+line 2411 tok 3: шую
+line 2411 tok 4: Тебе
+line 2411 tok 5: въ
+line 2411 tok 6: Царствии
+line 2411 tok 7: Твое
+line 2412 tok 1: мъ.
+line 2412 tok 4: отъвещавъ
+line 2412 tok 5: же
+line 2412 tok 6: Иисусъ
+line 2412 tok 7: рече.
+line 2412 tok 8: не
+line 2416 tok 1: веста
+line 2416 tok 2: ся
+line 2416 tok 3: чесо
+line 2416 tok 4: просяща.
+line 2416 tok 5: може
+line 2417 tok 1: та
+line 2417 tok 2: ли
+line 2417 tok 3: чашю
+line 2417 tok 4: пити
+line 2417 tok 5: юже
+line 2417 tok 6: Азъ
+line 2417 tok 7: пию
+line 2418 tok 1: ли
+line 2418 tok 2: кръщение
+line 2418 tok 3: еже
+line 2418 tok 4: Азъ
+line 2418 tok 5: кръщаю
+line 2419 tok 1: ся.
+line 2419 tok 2: кръстити
+line 2419 tok 3: ся.
+line 2419 tok 4: глаголасте
+line 2419 tok 5: е
+line 2420 tok 1: му
+line 2420 tok 2: можеве.
+line 2420 tok 5: и
+line 2420 tok 6: глагола
+line 2420 tok 7: има
+line 2420 tok 8: чашю
+line 2421 tok 1: Мою
+line 2421 tok 2: испиета
+line 2421 tok 3: убо.
+line 2421 tok 4: и
+line 2421 tok 5: кръщение
+line 2422 tok 1: мъ
+line 2422 tok 2: имъже
+line 2422 tok 3: Азъ
+line 2422 tok 4: кръщю
+line 2422 tok 5: ся
+line 2422 tok 6: кръ
+line 2423 tok 1: стита
+line 2423 tok 2: ся.
+line 2423 tok 3: еже
+line 2423 tok 4: сести
+line 2423 tok 5: о
+line 2423 tok 6: десню
+line 2424 tok 1: мене
+line 2424 tok 2: и
+line 2424 tok 3: о
+line 2424 tok 4: шюю.
+line 2424 tok 5: нестъ
+line 2424 tok 6: Мъне
+line 2424 tok 7: се
+line 2425 tok 1: го
+line 2425 tok 2: дати.
+line 2425 tok 3: нъ
+line 2425 tok 4: имъже
+line 2425 tok 5: уготова
+line 2426 tok 1: но
+line 2426 tok 2: естъ
+line 2426 tok 3: отъ
+line 2426 tok 4: Отца
+line 2426 tok 5: Моего.
+line 2426 tok 8: И
+line 2426 tok 9: слы
+line 2427 tok 1: шавъше
+line 2427 tok 2: десятии.
+line 2427 tok 3: негодова
+line 2428 tok 1: шя
+line 2428 tok 2: о
+line 2428 tok 3: обою
+line 2428 tok 4: братру.
+line 2428 tok 7: Иисусъ
+line 2428 tok 8: же
+line 2428 tok 9: при
+line 2429 tok 1: зъвавъ
+line 2429 tok 2: я
+line 2429 tok 3: рече.
+line 2429 tok 4: весте
+line 2429 tok 5: еко
+line 2430 tok 1: кънязи
+line 2430 tok 2: языкъ
+line 2430 tok 3: устоятъ
+line 2431 tok 1: имъ
+line 2431 tok 2: и
+line 2431 tok 3: велиции
+line 2431 tok 4: обладаю
+line 2432 tok 1: тъ
+line 2432 tok 2: ими.
+line 2432 tok 5: не
+line 2432 tok 6: тако
+line 2432 tok 7: будетъ
+line 2432 tok 8: въ
+line 2433 tok 1: васъ.
+line 2433 tok 2: нъ
+line 2433 tok 3: иже
+line 2433 tok 4: хощет
+line 2433 tok 5: васъ
+line 2434 tok 1: вящей
+line 2434 tok 2: быти.
+line 2434 tok 3: да
+line 2434 tok 4: бюдетъ
+line 2435 tok 1: вашъ
+line 2435 tok 2: слуга.
+line 2435 tok 5: и
+line 2435 tok 6: иже
+line 2435 tok 7: аще
+line 2435 tok 8: хоще
+line 2436 tok 1: тъ
+line 2436 tok 2: въ
+line 2436 tok 3: васъ
+line 2436 tok 4: быти
+line 2436 tok 5: предний
+line 2437 tok 1: да
+line 2437 tok 2: бюдетъ
+line 2437 tok 3: вашъ
+line 2437 tok 4: рабъ.
+line 2437 tok 7: Еко
+line 2438 tok 1: же
+line 2438 tok 2: Сынъ
+line 2438 tok 3: Человеческы.
+line 2438 tok 4: не
+line 2438 tok 5: приде
+line 2442 tok 1: да
+line 2442 tok 2: послужятъ
+line 2442 tok 3: Ему
+line 2442 tok 4: нъ
+line 2442 tok 5: по
+line 2443 tok 1: служити
+line 2443 tok 2: и
+line 2443 tok 3: дати
+line 2443 tok 4: душю
+line 2443 tok 5: Сво
+line 2444 tok 1: ю
+line 2444 tok 2: избавение
+line 2444 tok 3: за
+line 2444 tok 4: многы.
+line 2445 tok 3: И
+line 2445 tok 4: исходящу
+line 2445 tok 5: Ему
+line 2445 tok 6: отъ
+line 2445 tok 7: Ерихъ
+line 2445 tok 8: и
+line 2446 tok 1: по
+line 2446 tok 2: Немъ
+line 2446 tok 3: идю
+line 2446 tok 4: народи
+line 2446 tok 5: мнози
+line 2447 tok 3: и
+line 2447 tok 4: се
+line 2447 tok 5: дъва
+line 2447 tok 6: слепъца
+line 2447 tok 7: седеста
+line 2448 tok 1: при
+line 2448 tok 2: пюти.
+line 2448 tok 3: слышавъша
+line 2448 tok 4: еко
+line 2449 tok 1: Иисусъ
+line 2449 tok 2: мимо
+line 2449 tok 3: ходитъ
+line 2449 tok 4: възъва
+line 2450 tok 1: ста
+line 2450 tok 2: глаголюща
+line 2450 tok 3: помилуй
+line 2450 tok 4: ны
+line 2450 tok 5: Сыну
+line 2451 tok 1: Давидовъ.
+line 2451 tok 4: народъ
+line 2451 tok 5: же
+line 2451 tok 6: запрети
+line 2451 tok 7: има
+line 2452 tok 1: да
+line 2452 tok 2: умлъчита.
+line 2452 tok 3: Она
+line 2452 tok 4: же
+line 2452 tok 5: паче
+line 2452 tok 6: въ
+line 2453 tok 1: зъваста
+line 2453 tok 2: глаголюща.
+line 2453 tok 3: помилуй
+line 2453 tok 4: ны
+line 2454 tok 1: Господи
+line 2454 tok 2: Сыну
+line 2454 tok 3: Давидовъ.
+line 2454 tok 6: И
+line 2454 tok 7: ставъ
+line 2454 tok 8: Иисусъ
+line 2454 tok 9: въ
+line 2455 tok 1: згласи
+line 2455 tok 2: е
+line 2455 tok 3: и
+line 2455 tok 4: рече
+line 2455 tok 5: что
+line 2455 tok 6: хощета
+line 2455 tok 7: да
+line 2455 tok 8: съ
+line 2456 tok 1: творю
+line 2456 tok 2: вама.
+line 2456 tok 5: глаголаста
+line 2456 tok 6: Ему.
+line 2456 tok 7: Господи
+line 2456 tok 8: да
+line 2456 tok 9: о
+line 2457 tok 1: твръзете
+line 2457 tok 2: ся
+line 2457 tok 3: наю
+line 2457 tok 4: очи.
+line 2457 tok 7: милосръдо
+line 2458 tok 1: вавъ
+line 2458 tok 2: же
+line 2458 tok 3: Иисусъ
+line 2458 tok 4: прикосну
+line 2458 tok 5: ся
+line 2458 tok 6: очию
+line 2458 tok 7: и
+line 2459 tok 1: ма.
+line 2459 tok 2: и
+line 2459 tok 3: абие
+line 2459 tok 4: прозресте
+line 2459 tok 5: има
+line 2459 tok 6: очи
+line 2459 tok 7: и
+line 2460 tok 1: по
+line 2460 tok 2: Немъ
+line 2460 tok 3: идоста.
+line 2461 tok 3: И
+line 2461 tok 4: егда
+line 2461 tok 5: приближи
+line 2461 tok 6: ся
+line 2461 tok 7: Иисусъ
+line 2461 tok 8: въ
+line 2461 tok 9: Ерусалимъ.
+line 2461 tok 10: и
+line 2462 tok 1: приде
+line 2462 tok 2: въ
+line 2462 tok 3: Витъфагию
+line 2462 tok 4: къ
+line 2462 tok 5: горе
+line 2462 tok 6: Е
+line 2463 tok 1: леонъсцей.
+line 2463 tok 2: тогда
+line 2463 tok 3: после
+line 2463 tok 4: дъва
+line 2463 tok 5: у
+line 2464 tok 1: ченика
+line 2464 tok 4: глаголя
+line 2464 tok 5: има.
+line 2464 tok 6: идета
+line 2464 tok 7: въ
+line 2464 tok 8: весъ
+line 2465 tok 1: еже
+line 2465 tok 2: естъ
+line 2465 tok 3: премо
+line 2465 tok 4: вама.
+line 2465 tok 5: и
+line 2465 tok 6: абие
+line 2465 tok 7: обря
+line 2466 tok 1: щета
+line 2466 tok 2: осля
+line 2466 tok 3: привязано
+line 2466 tok 4: и
+line 2466 tok 5: жребя
+line 2466 tok 6: с
+line 2466 tok 7: ни
+line 2470 tok 1: мъ.
+line 2470 tok 2: и
+line 2470 tok 3: отрешъша
+line 2470 tok 4: приведета
+line 2470 tok 5: Ми
+line 2470 tok 6: е.
+line 2470 tok 9: и
+line 2470 tok 10: а
+line 2471 tok 1: ще
+line 2471 tok 2: речетъ
+line 2471 tok 3: кто
+line 2471 tok 4: вама
+line 2471 tok 5: что
+line 2471 tok 6: речета
+line 2471 tok 7: еко
+line 2471 tok 8: Господъ
+line 2472 tok 1: требуетъ
+line 2472 tok 2: ею.
+line 2472 tok 3: и
+line 2472 tok 4: абие
+line 2472 tok 5: же
+line 2472 tok 6: посълетъ
+line 2472 tok 7: е.
+line 2473 tok 3: се
+line 2473 tok 4: же
+line 2473 tok 5: все
+line 2473 tok 6: быстъ
+line 2473 tok 7: да
+line 2473 tok 8: събюдетъ
+line 2473 tok 9: ся
+line 2474 tok 1: реченое
+line 2474 tok 2: пророкомъ
+line 2474 tok 3: глаголющемъ.
+line 2474 tok 6: ръцете
+line 2475 tok 1: дъщери
+line 2475 tok 2: Сионове.
+line 2475 tok 3: се
+line 2475 tok 4: царъ
+line 2475 tok 5: твой
+line 2475 tok 6: грядетъ
+line 2476 tok 1: тебе
+line 2476 tok 2: кротъкъ.
+line 2476 tok 3: и
+line 2476 tok 4: въседе
+line 2476 tok 5: на
+line 2476 tok 6: осля
+line 2476 tok 7: и
+line 2476 tok 8: жре
+line 2477 tok 1: бя
+line 2477 tok 2: сына
+line 2477 tok 3: еремнича.
+line 2477 tok 6: Шъдъша
+line 2477 tok 7: же
+line 2477 tok 8: ученика
+line 2478 tok 1: и
+line 2478 tok 2: створъша
+line 2478 tok 3: екоже
+line 2478 tok 4: повеле
+line 2478 tok 5: има
+line 2478 tok 6: Иисусъ
+line 2478 tok 9: при
+line 2479 tok 1: весте
+line 2479 tok 2: осля
+line 2479 tok 3: и
+line 2479 tok 4: жребя.
+line 2479 tok 5: и
+line 2479 tok 6: възложишя
+line 2480 tok 1: връху
+line 2480 tok 2: ею
+line 2480 tok 3: ризы
+line 2480 tok 4: своя.
+line 2480 tok 5: и
+line 2480 tok 6: въседе
+line 2481 tok 1: връху
+line 2481 tok 2: ихъ.(Мф.
+line 2481 tok 4: мъножеишии
+line 2481 tok 5: же
+line 2481 tok 6: народи
+line 2482 tok 1: постълашя
+line 2482 tok 2: ризы
+line 2482 tok 3: своя
+line 2482 tok 4: на
+line 2482 tok 5: пути.
+line 2482 tok 8: на
+line 2483 tok 1: роди
+line 2483 tok 2: же
+line 2483 tok 3: ходящеи
+line 2483 tok 4: предъ
+line 2483 tok 5: Нимъ.
+line 2483 tok 6: и
+line 2483 tok 7: въ
+line 2483 tok 8: сле
+line 2484 tok 1: дъ
+line 2484 tok 2: зъваахю
+line 2484 tok 3: и
+line 2484 tok 4: глаголющее.
+line 2484 tok 5: осана
+line 2484 tok 6: Сыну
+line 2485 tok 1: Давидову.
+line 2485 tok 2: благословенъ
+line 2485 tok 3: гряды
+line 2485 tok 4: въ
+line 2485 tok 5: имя
+line 2485 tok 6: Господне.
+line 2486 tok 1: осана
+line 2486 tok 2: въ
+line 2486 tok 3: вышънихъ.
+line 2486 tok 6: и
+line 2486 tok 7: въшъдъшю
+line 2487 tok 1: Ему
+line 2487 tok 2: въ
+line 2487 tok 3: Иерусалимъ.
+line 2487 tok 4: потрясе
+line 2487 tok 5: ся
+line 2487 tok 6: въсъ
+line 2487 tok 7: гра
+line 2488 tok 1: дъ
+line 2488 tok 2: глаголя
+line 2488 tok 3: кто
+line 2488 tok 4: Съ
+line 2488 tok 5: естъ.
+line 2488 tok 8: народи
+line 2488 tok 9: же
+line 2488 tok 10: глагола
+line 2489 tok 1: хю
+line 2489 tok 2: еко
+line 2489 tok 3: Съ
+line 2489 tok 4: естъ
+line 2489 tok 5: Иисусъ
+line 2489 tok 6: пророкъ
+line 2489 tok 7: иже
+line 2489 tok 8: отъ
+line 2489 tok 9: Назарее
+line 2490 tok 1: та
+line 2490 tok 2: Галилейскаго.
+line 2490 tok 5: И
+line 2490 tok 6: въниде
+line 2490 tok 7: Иисусъ
+line 2490 tok 8: въ
+line 2491 tok 1: цръкъвъ
+line 2491 tok 2: Божию.
+line 2491 tok 3: и
+line 2491 tok 4: изгъна
+line 2491 tok 5: вся
+line 2491 tok 6: прода
+line 2492 tok 1: ющяя.
+line 2492 tok 2: и
+line 2492 tok 3: купуущяя
+line 2492 tok 4: въ
+line 2492 tok 5: церкъви.
+line 2492 tok 6: и
+line 2492 tok 7: дъ
+line 2493 tok 1: скы
+line 2493 tok 2: тръжъникъ
+line 2493 tok 3: испровръже.
+line 2493 tok 4: и
+line 2493 tok 5: седа
+line 2494 tok 1: лища
+line 2494 tok 2: продаущихъ
+line 2494 tok 3: голюби:
+line 2494 tok 4: и
+line 2494 tok 5: глагола
+line 2494 tok 6: и
+line 2498 tok 1: мъ
+line 2498 tok 2: писано
+line 2498 tok 3: естъ
+line 2498 tok 4: храмъ
+line 2498 tok 5: Мой
+line 2498 tok 6: храмъ
+line 2499 tok 1: молитве
+line 2499 tok 2: наречетъ
+line 2499 tok 3: ся.
+line 2499 tok 4: вы
+line 2499 tok 5: же
+line 2499 tok 6: ство
+line 2500 tok 1: ристе
+line 2500 tok 2: и
+line 2500 tok 3: врътъпъ
+line 2500 tok 4: разбойникомъ.
+line 2501 tok 3: И
+line 2501 tok 4: пристюпишя
+line 2501 tok 5: к
+line 2501 tok 6: Нему
+line 2501 tok 7: хроми
+line 2501 tok 8: и
+line 2501 tok 9: слепи.
+line 2502 tok 1: въ
+line 2502 tok 2: цръкъви
+line 2502 tok 3: истели
+line 2502 tok 4: я.
+line 2502 tok 7: Видевъше
+line 2502 tok 8: же
+line 2503 tok 1: архиереи
+line 2503 tok 2: и
+line 2503 tok 3: книжъници
+line 2503 tok 4: чудеса
+line 2503 tok 5: еже
+line 2503 tok 6: съ
+line 2504 tok 1: твори.
+line 2504 tok 2: и
+line 2504 tok 3: отрокы
+line 2504 tok 4: зовющя
+line 2504 tok 5: въ
+line 2504 tok 6: цркви
+line 2505 tok 1: и
+line 2505 tok 2: глаголющя
+line 2505 tok 3: осана
+line 2505 tok 4: Сыну
+line 2505 tok 5: Давидову
+line 2505 tok 6: негодова
+line 2506 tok 1: шя
+line 2506 tok 4: и
+line 2506 tok 5: решя
+line 2506 tok 6: Ему.
+line 2506 tok 7: слышиши
+line 2506 tok 8: ли
+line 2506 tok 9: что
+line 2506 tok 10: си
+line 2507 tok 1: глаголютъ.
+line 2507 tok 2: Иисусъ
+line 2507 tok 3: же
+line 2507 tok 4: рече
+line 2507 tok 5: имъ.
+line 2507 tok 6: еко
+line 2507 tok 7: из
+line 2507 tok 8: устъ
+line 2508 tok 1: младенечъ
+line 2508 tok 2: и
+line 2508 tok 3: съсющеихъ
+line 2508 tok 4: съвръши
+line 2509 tok 1: лъ
+line 2509 tok 2: еси
+line 2509 tok 3: хвалю.
+line 2509 tok 6: и
+line 2509 tok 7: оставъ
+line 2509 tok 8: я
+line 2509 tok 9: изиде
+line 2509 tok 10: въ
+line 2510 tok 1: нъ
+line 2510 tok 2: из
+line 2510 tok 3: града
+line 2510 tok 4: въ
+line 2510 tok 5: Вифания.
+line 2510 tok 6: и
+line 2510 tok 7: удвори
+line 2511 tok 1: ся
+line 2511 tok 2: ту.
+line 2511 tok 5: Утро
+line 2511 tok 6: же
+line 2511 tok 7: възвращая
+line 2511 tok 8: ся
+line 2511 tok 9: въ
+line 2512 tok 1: градъ
+line 2512 tok 2: взълака.
+line 2512 tok 5: и
+line 2512 tok 6: узревъ
+line 2512 tok 7: смоко
+line 2513 tok 1: въницю
+line 2513 tok 2: единю
+line 2513 tok 3: при
+line 2513 tok 4: пюти
+line 2513 tok 5: приде
+line 2513 tok 6: к
+line 2513 tok 7: не
+line 2514 tok 1: й
+line 2514 tok 2: и
+line 2514 tok 3: ничесоже
+line 2514 tok 4: не
+line 2514 tok 5: обреете
+line 2514 tok 6: на
+line 2514 tok 7: ней.
+line 2514 tok 8: тъкъ
+line 2515 tok 1: мо
+line 2515 tok 2: листвие
+line 2515 tok 3: едино
+line 2515 tok 4: и
+line 2515 tok 5: глагола
+line 2515 tok 6: ей.
+line 2515 tok 7: да
+line 2515 tok 8: нико
+line 2516 tok 1: лиже.
+line 2516 tok 2: отъ
+line 2516 tok 3: тебе
+line 2516 tok 4: плода
+line 2516 tok 5: не
+line 2516 tok 6: бюдетъ.
+line 2517 tok 1: въ
+line 2517 tok 2: векы.
+line 2517 tok 3: и
+line 2517 tok 4: усъше
+line 2517 tok 5: абие
+line 2517 tok 6: смоко
+line 2518 tok 1: въница.
+line 2518 tok 4: и
+line 2518 tok 5: видевъше
+line 2518 tok 6: учении
+line 2519 tok 1: ци
+line 2519 tok 2: дивишя
+line 2519 tok 3: ся
+line 2519 tok 4: глаголющее
+line 2519 tok 5: како
+line 2519 tok 6: абие
+line 2523 tok 1: усъше
+line 2523 tok 2: смоковъница.
+line 2523 tok 5: отъвеща
+line 2524 tok 1: въ
+line 2524 tok 2: же
+line 2524 tok 3: Иисусъ
+line 2524 tok 4: рече
+line 2524 tok 5: имъ.
+line 2524 tok 6: аминъ
+line 2524 tok 7: глаголю
+line 2525 tok 1: вамъ
+line 2525 tok 2: аще
+line 2525 tok 3: имате
+line 2525 tok 4: верю
+line 2525 tok 5: и
+line 2525 tok 6: не
+line 2525 tok 7: усю
+line 2526 tok 1: мните
+line 2526 tok 2: ся.
+line 2526 tok 3: не
+line 2526 tok 4: тъкъма
+line 2526 tok 5: смоко
+line 2527 tok 1: въничъское
+line 2527 tok 2: створите.
+line 2527 tok 3: нъ
+line 2527 tok 4: аще
+line 2527 tok 5: и
+line 2528 tok 1: горе
+line 2528 tok 2: сей
+line 2528 tok 3: речете
+line 2528 tok 4: двигни
+line 2528 tok 5: ся
+line 2528 tok 6: и
+line 2528 tok 7: връ
+line 2529 tok 1: зи
+line 2529 tok 2: ся
+line 2529 tok 3: въ
+line 2529 tok 4: море
+line 2529 tok 5: бюдетъ.
+line 2529 tok 8: и
+line 2529 tok 9: всего
+line 2530 tok 1: егоже
+line 2530 tok 2: въспросите
+line 2530 tok 3: въ
+line 2530 tok 4: молитве
+line 2530 tok 5: ве
+line 2531 tok 1: рующе
+line 2531 tok 2: примете.
+line 2531 tok 5: И
+line 2531 tok 6: пришъдъ
+line 2532 tok 1: шу
+line 2532 tok 2: Ему
+line 2532 tok 3: въ
+line 2532 tok 4: церковъ.
+line 2532 tok 5: пристюпи
+line 2533 tok 1: шя
+line 2533 tok 2: къ
+line 2533 tok 3: Нему
+line 2533 tok 4: учящу
+line 2533 tok 5: архиереи
+line 2533 tok 6: и
+line 2533 tok 7: ста
+line 2534 tok 1: ръци
+line 2534 tok 2: людъсции
+line 2534 tok 3: глаголющее
+line 2534 tok 4: коею
+line 2535 tok 1: властию
+line 2535 tok 2: си
+line 2535 tok 3: твориши.
+line 2535 tok 4: и
+line 2535 tok 5: кто
+line 2535 tok 6: Ти
+line 2535 tok 7: да
+line 2536 tok 1: стъ
+line 2536 tok 2: областъ
+line 2536 tok 3: сию.
+line 2536 tok 6: отъвещавъ
+line 2537 tok 1: же
+line 2537 tok 2: Иисусъ
+line 2537 tok 3: рече
+line 2537 tok 4: имъ.
+line 2537 tok 5: въпрошю
+line 2537 tok 6: вы
+line 2538 tok 1: и
+line 2538 tok 2: Азъ
+line 2538 tok 3: единого
+line 2538 tok 4: словесе
+line 2538 tok 5: еже
+line 2538 tok 6: аще
+line 2538 tok 7: ре
+line 2539 tok 1: чете
+line 2539 tok 2: Мне
+line 2539 tok 3: и
+line 2539 tok 4: Азъ
+line 2539 tok 5: вам
+line 2539 tok 6: рекю
+line 2539 tok 7: кое
+line 2540 tok 1: ю
+line 2540 tok 2: властию
+line 2540 tok 3: си
+line 2540 tok 4: творю.
+line 2540 tok 7: Кръщение
+line 2541 tok 1: Иоаново
+line 2541 tok 2: отъ
+line 2541 tok 3: кюде
+line 2541 tok 4: бе
+line 2541 tok 5: съ
+line 2541 tok 6: небесе
+line 2541 tok 7: ли
+line 2542 tok 1: или
+line 2542 tok 2: отъ
+line 2542 tok 3: человекъ.
+line 2542 tok 4: они
+line 2542 tok 5: же
+line 2542 tok 6: помы
+line 2543 tok 1: шлеахю
+line 2543 tok 2: в
+line 2543 tok 3: себе
+line 2543 tok 4: глаголюще
+line 2544 tok 3: аще
+line 2544 tok 4: речемъ
+line 2544 tok 5: съ
+line 2544 tok 6: небесе.
+line 2544 tok 7: рече
+line 2548 tok 1: тъ
+line 2548 tok 2: намъ
+line 2548 tok 3: по
+line 2548 tok 4: что
+line 2548 tok 5: убо
+line 2548 tok 6: не
+line 2548 tok 7: ясте
+line 2549 tok 1: веры.
+line 2549 tok 2: аще
+line 2549 tok 3: ли
+line 2549 tok 4: речемъ
+line 2549 tok 5: от
+line 2549 tok 6: человекъ
+line 2550 tok 1: боимъ
+line 2550 tok 2: ся
+line 2550 tok 3: народа
+line 2550 tok 4: въси
+line 2550 tok 5: бо
+line 2550 tok 6: еко
+line 2551 tok 1: пророка
+line 2551 tok 2: имютъ
+line 2551 tok 3: Иоана.
+line 2551 tok 6: и
+line 2551 tok 7: отъве
+line 2552 tok 1: щавъше.
+line 2552 tok 2: решя
+line 2552 tok 3: не
+line 2552 tok 4: вемъ.
+line 2552 tok 5: ре
+line 2553 tok 1: че
+line 2553 tok 2: бо
+line 2553 tok 3: имъ
+line 2553 tok 4: и
+line 2553 tok 5: Тъ.
+line 2553 tok 6: ни
+line 2553 tok 7: Азъ
+line 2553 tok 8: глаголю
+line 2553 tok 9: вамъ
+line 2554 tok 1: коею
+line 2554 tok 2: областию
+line 2554 tok 3: си
+line 2554 tok 4: твору.
+line 2554 tok 7: Что
+line 2555 tok 1: же
+line 2555 tok 2: ся
+line 2555 tok 3: мънитъ
+line 2555 tok 4: вамъ.
+line 2555 tok 5: человек
+line 2555 tok 6: ете
+line 2556 tok 1: ръ
+line 2556 tok 2: имеше
+line 2556 tok 3: чяде
+line 2556 tok 4: дъве.
+line 2556 tok 5: и
+line 2556 tok 6: пришъ
+line 2557 tok 1: дъ
+line 2557 tok 2: пръвому
+line 2557 tok 3: рече.
+line 2557 tok 4: чядо
+line 2557 tok 5: иди
+line 2557 tok 6: дъ
+line 2558 tok 1: нъсъ
+line 2558 tok 2: делай
+line 2558 tok 3: въ
+line 2558 tok 4: винограде
+line 2558 tok 5: мое
+line 2559 tok 1: мъ
+line 2559 tok 4: онъ
+line 2559 tok 5: же
+line 2559 tok 6: отъвещавъ
+line 2559 tok 7: рече
+line 2559 tok 8: не
+line 2560 tok 1: хощу.
+line 2560 tok 2: последъ
+line 2560 tok 3: же
+line 2560 tok 4: раскаевъ
+line 2560 tok 5: ся
+line 2561 tok 1: иде.
+line 2561 tok 4: приступивъ
+line 2561 tok 5: къ
+line 2561 tok 6: друго
+line 2562 tok 1: му
+line 2562 tok 2: рече
+line 2562 tok 3: такожде.
+line 2562 tok 4: онъ
+line 2562 tok 5: же
+line 2562 tok 6: отъве
+line 2563 tok 1: щавъ
+line 2563 tok 2: рече
+line 2563 tok 3: азъ
+line 2563 tok 4: иду
+line 2563 tok 5: господи
+line 2563 tok 6: и
+line 2563 tok 7: не
+line 2563 tok 8: иде.
+line 2564 tok 3: кой
+line 2564 tok 4: от
+line 2564 tok 5: обою
+line 2564 tok 6: створи
+line 2564 tok 7: волю
+line 2564 tok 8: отчю.
+line 2565 tok 1: Глаголашя
+line 2565 tok 2: Ему
+line 2565 tok 3: пръвы
+line 2565 tok 4: глагола
+line 2565 tok 5: имъ
+line 2566 tok 1: Иисусъ
+line 2566 tok 2: аминъ
+line 2566 tok 3: глаголу
+line 2566 tok 4: вамъ.
+line 2566 tok 5: еко
+line 2567 tok 1: мытаре
+line 2567 tok 2: и
+line 2567 tok 3: любодейця
+line 2567 tok 4: вареу
+line 2568 tok 1: тъ
+line 2568 tok 2: вы
+line 2568 tok 3: въ
+line 2568 tok 4: Царствие
+line 2568 tok 5: Божие.
+line 2568 tok 8: при
+line 2569 tok 1: де
+line 2569 tok 2: бо
+line 2569 tok 3: къ
+line 2569 tok 4: вамъ
+line 2569 tok 5: Иоанъ
+line 2569 tok 6: Кръстите
+line 2570 tok 1: лъ
+line 2570 tok 2: путемъ
+line 2570 tok 3: праведъномъ
+line 2570 tok 4: и
+line 2571 tok 1: не
+line 2571 tok 2: ясте
+line 2571 tok 3: ему
+line 2571 tok 4: веры.
+line 2571 tok 5: мытаре
+line 2572 tok 1: же
+line 2572 tok 2: и
+line 2572 tok 3: любодейця
+line 2572 tok 4: яся
+line 2572 tok 5: ему
+line 2572 tok 6: веру.
+line 2576 tok 1: вы
+line 2576 tok 2: же
+line 2576 tok 3: видевъшеи
+line 2576 tok 4: не
+line 2576 tok 5: раскае
+line 2577 tok 1: сте
+line 2577 tok 2: ся
+line 2577 tok 3: последъ
+line 2577 tok 4: яти
+line 2577 tok 5: ему
+line 2577 tok 6: веры.
+line 2578 tok 3: иню
+line 2578 tok 4: притчю
+line 2578 tok 5: слышите.
+line 2579 tok 1: Человекъ
+line 2579 tok 2: етеръ
+line 2579 tok 3: бе
+line 2579 tok 4: домовитъ
+line 2579 tok 5: иже
+line 2580 tok 1: насади
+line 2580 tok 2: виноградъ
+line 2580 tok 3: и
+line 2580 tok 4: оплотомъ
+line 2580 tok 5: и
+line 2581 tok 1: огради
+line 2581 tok 2: и
+line 2581 tok 3: скопа
+line 2581 tok 4: въ
+line 2581 tok 5: немъ
+line 2581 tok 6: точило
+line 2582 tok 1: и
+line 2582 tok 2: създа
+line 2582 tok 3: стлъпъ
+line 2582 tok 4: и
+line 2582 tok 5: въдастъ
+line 2582 tok 6: и
+line 2583 tok 1: делателемъ
+line 2583 tok 2: и
+line 2583 tok 3: отиде.
+line 2583 tok 6: егда
+line 2583 tok 7: же
+line 2584 tok 1: приближиши
+line 2584 tok 2: ся
+line 2584 tok 3: время
+line 2584 tok 4: плодомъ.
+line 2585 tok 1: посъла
+line 2585 tok 2: рабы
+line 2585 tok 3: своя
+line 2585 tok 4: къ
+line 2585 tok 5: делателе
+line 2586 tok 1: мъ
+line 2586 tok 2: прияти
+line 2586 tok 3: плоды
+line 2586 tok 4: его.
+line 2586 tok 7: и
+line 2586 tok 8: имъше
+line 2587 tok 1: делателе
+line 2587 tok 2: рабы
+line 2587 tok 3: его
+line 2587 tok 4: ового
+line 2587 tok 5: бишя
+line 2588 tok 1: ового
+line 2588 tok 2: же
+line 2588 tok 3: убишя.
+line 2588 tok 4: ового
+line 2588 tok 5: же
+line 2588 tok 6: камение
+line 2589 tok 1: мъ
+line 2589 tok 2: побишя.
+line 2589 tok 5: пакы
+line 2589 tok 6: посъла
+line 2589 tok 7: и
+line 2590 tok 1: нъя
+line 2590 tok 2: рабы
+line 2590 tok 3: мъножеишя
+line 2590 tok 4: пръвы
+line 2591 tok 1: хъ
+line 2591 tok 2: и
+line 2591 tok 3: створишя
+line 2591 tok 4: имъ
+line 2591 tok 5: такожде.
+line 2591 tok 8: по
+line 2592 tok 1: следъ
+line 2592 tok 2: же
+line 2592 tok 3: посъла
+line 2592 tok 4: къ
+line 2592 tok 5: нимъ
+line 2592 tok 6: сынъ
+line 2593 tok 1: свой
+line 2593 tok 2: глаголя.
+line 2593 tok 3: усрамеютъ
+line 2593 tok 4: ся
+line 2593 tok 5: сына
+line 2593 tok 6: мо
+line 2594 tok 1: его.
+line 2594 tok 4: делателе
+line 2594 tok 5: же
+line 2594 tok 6: ти
+line 2594 tok 7: узревъше
+line 2595 tok 1: сына
+line 2595 tok 2: решя
+line 2595 tok 3: в
+line 2595 tok 4: себе.
+line 2595 tok 5: сь
+line 2595 tok 6: естъ
+line 2595 tok 7: насле
+line 2596 tok 1: дъникъ
+line 2596 tok 2: придете
+line 2596 tok 3: убиемъ
+line 2596 tok 4: и.
+line 2597 tok 1: и
+line 2597 tok 2: удръжимъ
+line 2597 tok 3: достоение
+line 2597 tok 4: его.
+line 2597 tok 7: и
+line 2598 tok 1: имъше
+line 2598 tok 2: извеся
+line 2598 tok 3: и
+line 2598 tok 4: вънъ
+line 2598 tok 5: из
+line 2598 tok 6: ви
+line 2599 tok 1: нограда
+line 2599 tok 2: и
+line 2599 tok 3: убишя
+line 2599 tok 4: и.
+line 2599 tok 7: егда
+line 2599 tok 8: же
+line 2599 tok 9: приде
+line 2600 tok 1: тъ
+line 2600 tok 2: господинъ
+line 2600 tok 3: винограда
+line 2600 tok 4: что
+line 2600 tok 5: сътвори
+line 2604 tok 1: тъ
+line 2604 tok 2: делателемъ
+line 2604 tok 3: темъ.
+line 2604 tok 6: глаголашя
+line 2605 tok 1: Ему.
+line 2605 tok 2: зълыя
+line 2605 tok 3: зъле
+line 2605 tok 4: погубитъ
+line 2606 tok 1: и
+line 2606 tok 2: виноградъ
+line 2606 tok 3: предастъ
+line 2606 tok 4: инемъ
+line 2606 tok 5: де
+line 2607 tok 1: лателемъ.
+line 2607 tok 2: иже
+line 2607 tok 3: въздадятъ
+line 2607 tok 4: ему
+line 2608 tok 2: въ
+line 2608 tok 3: времена
+line 2608 tok 4: свое.(Мф.
+line 2608 tok 7: глагола
+line 2608 tok 8: имъ
+line 2609 tok 2: н)есте
+line 2609 tok 3: ли
+line 2609 tok 4: чъли
+line 2609 tok 5: николиже
+line 2609 tok 6: въ
+line 2609 tok 7: кни
+line 2610 tok 2: каменъ
+line 2610 tok 3: егоже
+line 2610 tok 4: невреду
+line 2610 tok 5: створи
+line 2611 tok 2: зиждющеи
+line 2611 tok 3: съ
+line 2611 tok 4: быстъ
+line 2611 tok 5: въ
+line 2611 tok 6: главю
+line 2612 tok 1: юглю.
+line 2612 tok 2: отъ
+line 2612 tok 3: Господа
+line 2612 tok 4: быстъ
+line 2612 tok 5: и
+line 2612 tok 6: естъ
+line 2612 tok 7: дивъ
+line 2613 tok 1: на
+line 2613 tok 2: въ
+line 2613 tok 3: очию
+line 2613 tok 4: нашею.
+line 2613 tok 7: Сего
+line 2613 tok 8: ради
+line 2613 tok 9: глаголю
+line 2614 tok 1: вамъ
+line 2614 tok 2: еко
+line 2614 tok 3: отыметъ
+line 2614 tok 4: ся
+line 2614 tok 5: отъ
+line 2614 tok 6: васъ
+line 2615 tok 1: Царствие
+line 2615 tok 2: Божие.
+line 2615 tok 3: и
+line 2615 tok 4: дастъ
+line 2615 tok 5: ся
+line 2615 tok 6: языку
+line 2616 tok 2: плодъ
+line 2616 tok 3: его.
+line 2616 tok 6: и
+line 2616 tok 7: пады
+line 2616 tok 8: на
+line 2616 tok 9: ка
+line 2617 tok 2: семъ
+line 2617 tok 3: скрушитъ
+line 2617 tok 4: ся.
+line 2617 tok 5: а
+line 2617 tok 6: на
+line 2617 tok 7: немъ
+line 2618 tok 1: же
+line 2618 tok 2: падетъ
+line 2618 tok 3: сътретъ
+line 2618 tok 4: и.
+line 2618 tok 7: И
+line 2618 tok 8: слышавъ
+line 2619 tok 1: ше
+line 2619 tok 2: архиереи
+line 2619 tok 3: и
+line 2619 tok 4: фарисеи
+line 2619 tok 5: притъчя
+line 2619 tok 6: Его
+line 2620 tok 1: разумешя
+line 2620 tok 2: еко
+line 2620 tok 3: о
+line 2620 tok 4: нихъ
+line 2620 tok 5: глаголаше.
+line 2620 tok 8: и
+line 2620 tok 9: искюще
+line 2621 tok 2: и
+line 2621 tok 3: убоешя
+line 2621 tok 4: ся
+line 2621 tok 5: народъ
+line 2621 tok 6: по
+line 2621 tok 7: неже
+line 2621 tok 8: и
+line 2621 tok 9: еко
+line 2622 tok 1: пророка
+line 2622 tok 2: имеахю.
+line 2622 tok 5: и
+line 2622 tok 6: отъвещавъ
+line 2622 tok 7: Иисусъ
+line 2622 tok 8: па
+line 2623 tok 1: кы
+line 2623 tok 2: рече
+line 2623 tok 3: имъ
+line 2623 tok 4: въ
+line 2623 tok 5: притъчахъ
+line 2623 tok 6: глаголя.
+line 2624 tok 3: уподоби
+line 2624 tok 4: ся
+line 2624 tok 5: Царствие
+line 2624 tok 6: небесъское
+line 2624 tok 7: человеку
+line 2625 tok 1: цару.
+line 2625 tok 2: иже
+line 2625 tok 3: сътвори
+line 2625 tok 4: бракъ
+line 2625 tok 5: сыну
+line 2625 tok 6: своему
+line 2626 tok 3: и
+line 2626 tok 4: посъла
+line 2626 tok 5: рабы
+line 2626 tok 6: своя
+line 2626 tok 7: призъвати
+line 2626 tok 8: зъ
+line 2627 tok 1: ваныя
+line 2627 tok 2: на
+line 2627 tok 3: бракы
+line 2627 tok 4: и
+line 2627 tok 5: не
+line 2627 tok 6: хотеахю
+line 2627 tok 7: при
+line 2628 tok 1: ти.
+line 2628 tok 4: пакы
+line 2628 tok 5: посъла
+line 2628 tok 6: ины
+line 2628 tok 7: рабы
+line 2628 tok 8: глаголя.
+line 2632 tok 1: ръцете
+line 2632 tok 2: зъванымъ.
+line 2632 tok 3: се
+line 2632 tok 4: обедъ
+line 2632 tok 5: мо
+line 2633 tok 1: и
+line 2633 tok 2: уготовахъ
+line 2633 tok 3: и
+line 2633 tok 4: юнъци
+line 2633 tok 5: мои
+line 2633 tok 6: и
+line 2633 tok 7: упи
+line 2634 tok 1: тенаа
+line 2634 tok 2: исколена
+line 2634 tok 3: и
+line 2634 tok 4: въсе
+line 2634 tok 5: готова.
+line 2634 tok 6: при
+line 2635 tok 1: дете
+line 2635 tok 2: на
+line 2635 tok 3: бракы.
+line 2635 tok 6: они
+line 2635 tok 7: же
+line 2635 tok 8: не
+line 2635 tok 9: рождъше
+line 2635 tok 10: о
+line 2636 tok 1: тидю
+line 2636 tok 2: овъ
+line 2636 tok 3: на
+line 2636 tok 4: село
+line 2636 tok 5: свое
+line 2636 tok 6: овъ
+line 2636 tok 7: же
+line 2636 tok 8: на
+line 2636 tok 9: ку
+line 2637 tok 1: плю
+line 2637 tok 2: свою.
+line 2637 tok 5: а
+line 2637 tok 6: прочи
+line 2637 tok 7: имъше
+line 2637 tok 8: рабы
+line 2637 tok 9: е
+line 2638 tok 1: го
+line 2638 tok 2: досадишя
+line 2638 tok 3: имъ
+line 2638 tok 4: и
+line 2638 tok 5: избишя.
+line 2638 tok 8: и
+line 2638 tok 9: слы
+line 2639 tok 1: шавъ
+line 2639 tok 2: царъ
+line 2639 tok 3: тъ
+line 2639 tok 4: разъгнева
+line 2639 tok 5: ся
+line 2639 tok 6: и
+line 2639 tok 7: посъ
+line 2640 tok 1: лавъ
+line 2640 tok 2: воя
+line 2640 tok 3: своя
+line 2640 tok 4: погуби
+line 2640 tok 5: убиця
+line 2640 tok 6: тыя
+line 2641 tok 1: и
+line 2641 tok 2: градъ
+line 2641 tok 3: ихъ
+line 2641 tok 4: зажеже.
+line 2641 tok 7: тогда
+line 2641 tok 8: глагола
+line 2642 tok 1: рабомъ
+line 2642 tok 2: своимъ.
+line 2642 tok 3: бракъ
+line 2642 tok 4: убо
+line 2642 tok 5: гото
+line 2643 tok 1: въ
+line 2643 tok 2: естъ
+line 2643 tok 3: а
+line 2643 tok 4: зъвании
+line 2643 tok 5: не
+line 2643 tok 6: бешя
+line 2643 tok 7: досто
+line 2644 tok 1: йни.
+line 2644 tok 4: идете
+line 2644 tok 5: убо
+line 2644 tok 6: на
+line 2644 tok 7: исходищя
+line 2644 tok 8: пу
+line 2645 tok 1: тий
+line 2645 tok 2: и
+line 2645 tok 3: елико
+line 2645 tok 4: аще
+line 2645 tok 5: обрящете
+line 2645 tok 6: призо
+line 2646 tok 1: вите
+line 2646 tok 2: на
+line 2646 tok 3: бракы.
+line 2646 tok 6: и
+line 2646 tok 7: ошъдъше
+line 2646 tok 8: раби
+line 2647 tok 1: ти
+line 2647 tok 2: на
+line 2647 tok 3: пути
+line 2647 tok 4: събрашя
+line 2647 tok 5: въся
+line 2647 tok 6: яже
+line 2647 tok 7: обре
+line 2648 tok 1: тю
+line 2648 tok 2: зълыя
+line 2648 tok 3: же
+line 2648 tok 4: и
+line 2648 tok 5: добры.
+line 2648 tok 6: и
+line 2648 tok 7: исплъ
+line 2649 tok 1: ни
+line 2649 tok 2: ся
+line 2649 tok 3: бракъ
+line 2649 tok 4: възлежящихъ.
+line 2649 tok 7: въ
+line 2650 tok 1: шъдъ
+line 2650 tok 2: же
+line 2650 tok 3: царъ
+line 2650 tok 4: видетъ
+line 2650 tok 5: възлежя
+line 2651 tok 1: щихъ.
+line 2651 tok 2: виде
+line 2651 tok 3: ту
+line 2651 tok 4: человека
+line 2651 tok 5: не
+line 2651 tok 6: облъчена
+line 2651 tok 7: въ
+line 2652 tok 1: одение
+line 2652 tok 2: брачъно.
+line 2652 tok 5: и
+line 2652 tok 6: глагола
+line 2652 tok 7: ему
+line 2652 tok 8: друже
+line 2653 tok 1: како
+line 2653 tok 2: въниде
+line 2653 tok 3: семо
+line 2653 tok 4: не
+line 2653 tok 5: имы
+line 2653 tok 6: оде
+line 2654 tok 1: ние
+line 2654 tok 2: брачъна.
+line 2654 tok 3: онъ
+line 2654 tok 4: умлъче.
+line 2654 tok 7: то
+line 2655 tok 1: гда
+line 2655 tok 2: рече
+line 2655 tok 3: слугамъ
+line 2655 tok 4: царъ
+line 2655 tok 5: съвязавъ
+line 2656 tok 1: ше
+line 2656 tok 2: ему
+line 2656 tok 3: рюце
+line 2656 tok 4: и
+line 2656 tok 5: нозе
+line 2656 tok 6: възъмете
+line 2656 tok 7: и
+line 2660 tok 1: и
+line 2660 tok 2: въвръзете
+line 2660 tok 3: и
+line 2660 tok 4: въ
+line 2660 tok 5: тъму
+line 2660 tok 6: кромешъ
+line 2661 tok 1: нюу.
+line 2661 tok 2: ту
+line 2661 tok 3: бюдетъ
+line 2661 tok 4: плачъ
+line 2661 tok 5: и
+line 2661 tok 6: скръже
+line 2662 tok 1: тъ
+line 2662 tok 2: зюбомъ.
+line 2662 tok 5: мнози
+line 2662 tok 6: бо
+line 2662 tok 7: сютъ
+line 2662 tok 8: зъ
+line 2663 tok 1: вани
+line 2663 tok 2: мало
+line 2663 tok 3: же
+line 2663 tok 4: избраныхъ.
+line 2664 tok 3: тогда
+line 2664 tok 4: шедъше
+line 2664 tok 5: фарисеи
+line 2664 tok 6: съветъ
+line 2665 tok 1: створишя
+line 2665 tok 2: на
+line 2665 tok 3: Нъ
+line 2665 tok 4: да
+line 2665 tok 5: и
+line 2665 tok 6: облъстятъ
+line 2666 tok 1: словомъ.
+line 2666 tok 4: и
+line 2666 tok 5: посылаютъ
+line 2666 tok 6: къ
+line 2666 tok 7: Немю
+line 2667 tok 1: ученикы
+line 2667 tok 2: своя
+line 2667 tok 3: съ
+line 2667 tok 4: иродиены
+line 2667 tok 5: глаголю
+line 2668 tok 1: ще.
+line 2668 tok 2: Учителю
+line 2668 tok 3: вемъ
+line 2668 tok 4: еко
+line 2668 tok 5: истиненъ
+line 2668 tok 6: е
+line 2669 tok 1: си
+line 2669 tok 2: и
+line 2669 tok 3: пути
+line 2669 tok 4: Божию
+line 2669 tok 5: въ
+line 2669 tok 6: истиню
+line 2669 tok 7: учиши.
+line 2669 tok 8: и
+line 2670 tok 1: не
+line 2670 tok 2: родиши
+line 2670 tok 3: ни
+line 2670 tok 4: о
+line 2670 tok 5: комъже.
+line 2670 tok 6: не
+line 2670 tok 7: зриши
+line 2670 tok 8: бо
+line 2670 tok 9: на
+line 2671 tok 1: лице
+line 2671 tok 2: человекомъ
+line 2671 tok 5: ръци
+line 2671 tok 6: убо
+line 2671 tok 7: намъ
+line 2672 tok 1: что
+line 2672 tok 2: Ти
+line 2672 tok 3: ся
+line 2672 tok 4: мънитъ.
+line 2672 tok 5: достоино
+line 2672 tok 6: ли
+line 2672 tok 7: е
+line 2673 tok 1: стъ
+line 2673 tok 2: дати
+line 2673 tok 3: кинъсъ
+line 2673 tok 4: кесареви
+line 2673 tok 5: или
+line 2673 tok 6: ни.
+line 2674 tok 3: разумевъ
+line 2674 tok 4: же
+line 2674 tok 5: Иисусъ
+line 2674 tok 6: лукавъство
+line 2674 tok 7: и
+line 2675 tok 1: хъ
+line 2675 tok 2: рече.
+line 2675 tok 3: что
+line 2675 tok 4: Мя
+line 2675 tok 5: окушаете
+line 2675 tok 6: ипокрити.
+line 2676 tok 3: покажите
+line 2676 tok 4: Ми
+line 2676 tok 5: скълязъ
+line 2676 tok 6: кинъсъны.
+line 2677 tok 1: они
+line 2677 tok 2: же
+line 2677 tok 3: принеся
+line 2677 tok 4: Еми
+line 2677 tok 5: пенязъ
+line 2677 tok 8: Онъ
+line 2677 tok 9: же
+line 2678 tok 1: глагола
+line 2678 tok 2: имъ
+line 2678 tok 3: чий
+line 2678 tok 4: естъ
+line 2678 tok 5: образъ
+line 2678 tok 6: съ
+line 2678 tok 7: и
+line 2678 tok 8: на
+line 2679 tok 1: псание.
+line 2679 tok 4: глаголашя
+line 2679 tok 5: Ему
+line 2679 tok 6: кесаровъ.
+line 2679 tok 7: то
+line 2680 tok 1: гда
+line 2680 tok 2: глагола
+line 2680 tok 3: имъ
+line 2680 tok 4: въздадите
+line 2680 tok 5: убо
+line 2680 tok 6: кеса
+line 2681 tok 1: роваа
+line 2681 tok 2: кесареви
+line 2681 tok 3: и
+line 2681 tok 4: Божие
+line 2681 tok 5: Богу.
+line 2681 tok 8: и
+line 2681 tok 9: слыша
+line 2682 tok 1: въше
+line 2682 tok 2: же
+line 2682 tok 3: дивишя
+line 2682 tok 4: ся.
+line 2682 tok 5: и
+line 2682 tok 6: оставъше
+line 2682 tok 7: и
+line 2682 tok 8: отиду.
+line 2683 tok 3: Въ
+line 2683 tok 4: тъ
+line 2683 tok 5: дънъ
+line 2683 tok 6: пристюпишя
+line 2683 tok 7: к
+line 2683 tok 8: Нему
+line 2683 tok 9: са
+line 2684 tok 1: дукеи
+line 2684 tok 2: глаголюще
+line 2684 tok 3: не
+line 2684 tok 4: быти
+line 2684 tok 5: въскрешению
+line 2688 tok 1: и
+line 2688 tok 2: въпросишя
+line 2688 tok 3: И
+line 2688 tok 6: глаголюще
+line 2688 tok 7: Учителю
+line 2688 tok 8: Моиси
+line 2689 tok 1: рече
+line 2689 tok 2: аще
+line 2689 tok 3: кто
+line 2689 tok 4: умретъ
+line 2689 tok 5: не
+line 2689 tok 6: имы
+line 2689 tok 7: чадъ
+line 2689 tok 8: да
+line 2690 tok 1: поиметъ
+line 2690 tok 2: братръ
+line 2690 tok 3: его
+line 2690 tok 4: женю
+line 2690 tok 5: его.
+line 2690 tok 6: и
+line 2690 tok 7: въск..
+line 2691 tok 1: ситъ
+line 2691 tok 2: семя
+line 2691 tok 3: братру
+line 2691 tok 4: своему.
+line 2691 tok 7: Бе
+line 2691 tok 8: же
+line 2691 tok 9: въ
+line 2692 tok 1: насъ
+line 2692 tok 2: 7
+line 2692 tok 3: братрия.
+line 2692 tok 4: и
+line 2692 tok 5: пръвы
+line 2692 tok 6: оженъ
+line 2692 tok 7: ся
+line 2693 tok 1: умретъ.
+line 2693 tok 2: и
+line 2693 tok 3: не
+line 2693 tok 4: имы
+line 2693 tok 5: семене
+line 2693 tok 6: остави
+line 2694 tok 1: женю
+line 2694 tok 2: свою
+line 2694 tok 3: братру
+line 2694 tok 4: своему.(Мф.
+line 2694 tok 7: такожде
+line 2695 tok 1: и
+line 2695 tok 2: въторы
+line 2695 tok 3: и
+line 2695 tok 4: третий.
+line 2695 tok 5: и
+line 2695 tok 6: до
+line 2695 tok 7: седъмаго:
+line 2696 tok 3: последъ
+line 2696 tok 4: же
+line 2696 tok 5: въсехъ
+line 2696 tok 6: умретъ
+line 2696 tok 7: и
+line 2696 tok 8: жена
+line 2697 tok 3: въ
+line 2697 tok 4: въскрешении
+line 2697 tok 5: убо
+line 2697 tok 6: котораго
+line 2697 tok 7: ихъ
+line 2697 tok 8: бю
+line 2698 tok 1: детъ
+line 2698 tok 2: жена.
+line 2698 tok 3: въси
+line 2698 tok 4: бо
+line 2698 tok 5: имешя
+line 2698 tok 6: ю
+line 2698 tok 7: седъмъ
+line 2699 tok 3: отвещавъ
+line 2699 tok 4: же
+line 2699 tok 5: Иисусъ
+line 2699 tok 6: рече
+line 2699 tok 7: имъ
+line 2699 tok 8: блюдите
+line 2700 tok 1: не
+line 2700 tok 2: ведюще
+line 2700 tok 3: книгъ
+line 2700 tok 4: ни
+line 2700 tok 5: силы
+line 2700 tok 6: Божия
+line 2701 tok 3: въ
+line 2701 tok 4: въскрешении
+line 2701 tok 5: бо
+line 2701 tok 6: ни
+line 2701 tok 7: женятъ
+line 2701 tok 8: ся
+line 2701 tok 9: ни
+line 2701 tok 10: по
+line 2702 tok 1: сагаютъ
+line 2702 tok 2: нъ
+line 2702 tok 3: еко
+line 2702 tok 4: ангели
+line 2702 tok 5: на
+line 2702 tok 6: небесехъ
+line 2702 tok 7: сю
+line 2703 tok 1: тъ.
+line 2703 tok 4: о
+line 2703 tok 5: въскрешении
+line 2703 tok 6: же
+line 2703 tok 7: мрътвыхъ
+line 2703 tok 8: не
+line 2704 tok 1: сте
+line 2704 tok 2: ли
+line 2704 tok 3: чъли
+line 2704 tok 4: реченаго
+line 2704 tok 5: вамъ
+line 2704 tok 6: Богомъ
+line 2704 tok 7: глаголю
+line 2705 tok 1: щемъ.
+line 2705 tok 4: Азъ
+line 2705 tok 5: есмъ
+line 2705 tok 6: Богъ
+line 2705 tok 7: Авраамлъ
+line 2705 tok 8: и
+line 2705 tok 9: Богъ
+line 2706 tok 1: Исаковъ.
+line 2706 tok 2: и
+line 2706 tok 3: Богъ
+line 2706 tok 4: Иековъ
+line 2706 tok 5: нестъ
+line 2706 tok 6: Богъ
+line 2707 tok 1: мрътвыхъ
+line 2707 tok 2: нъ
+line 2707 tok 3: живыхъ.
+line 2707 tok 6: и
+line 2707 tok 7: слыша
+line 2708 tok 1: въше
+line 2708 tok 2: народи
+line 2708 tok 3: дивеахю
+line 2708 tok 4: ся
+line 2708 tok 5: о
+line 2708 tok 6: учении
+line 2708 tok 7: Его
+line 2709 tok 3: Фарисеи
+line 2709 tok 4: же
+line 2709 tok 5: слышавъше
+line 2709 tok 6: еко
+line 2709 tok 7: срами
+line 2710 tok 1: садукея
+line 2710 tok 2: събрашя
+line 2710 tok 3: ся
+line 2710 tok 4: въ
+line 2710 tok 5: купе
+line 2710 tok 8: и
+line 2710 tok 9: въ
+line 2711 tok 1: проси
+line 2711 tok 2: и
+line 2711 tok 3: единъ
+line 2711 tok 4: от
+line 2711 tok 5: нихъ
+line 2711 tok 6: законоучи
+line 2712 tok 1: телъ
+line 2712 tok 2: искушая
+line 2712 tok 3: И
+line 2712 tok 4: и
+line 2712 tok 5: глаголя
+line 2712 tok 8: Учителю
+line 2712 tok 9: кае
+line 2716 tok 1: заповедъ
+line 2716 tok 2: болъши
+line 2716 tok 3: въ
+line 2716 tok 4: законе.
+line 2717 tok 3: Иисусъ
+line 2717 tok 4: же
+line 2717 tok 5: рече
+line 2717 tok 6: ему.
+line 2717 tok 7: възлюби
+line 2717 tok 8: Господе
+line 2717 tok 9: Бога
+line 2718 tok 1: твоего
+line 2718 tok 2: въсемъ
+line 2718 tok 3: сръдъцемъ
+line 2718 tok 4: тво
+line 2719 tok 1: имъ.
+line 2719 tok 2: и
+line 2719 tok 3: въсею
+line 2719 tok 4: душею
+line 2719 tok 5: твоею.
+line 2719 tok 6: и
+line 2719 tok 7: всею
+line 2720 tok 1: мыслию
+line 2720 tok 2: твоею.
+line 2720 tok 5: се
+line 2720 tok 6: естъ
+line 2720 tok 7: пръва
+line 2721 tok 1: е
+line 2721 tok 2: и
+line 2721 tok 3: болъшие
+line 2721 tok 4: заповедъ.
+line 2721 tok 7: въторае
+line 2722 tok 1: же
+line 2722 tok 2: подобъна
+line 2722 tok 3: ей.
+line 2722 tok 4: възлюбиши
+line 2722 tok 5: искръ
+line 2723 tok 1: него
+line 2723 tok 2: своего
+line 2723 tok 3: еко
+line 2723 tok 4: самъ
+line 2723 tok 5: ся.
+line 2723 tok 8: въ
+line 2723 tok 9: сею
+line 2723 tok 10: о
+line 2724 tok 1: бою
+line 2724 tok 2: заповедию
+line 2724 tok 3: въсъ
+line 2724 tok 4: законъ
+line 2724 tok 5: и
+line 2725 tok 1: пророци
+line 2725 tok 2: висятъ.
+line 2725 tok 5: Събраномъ
+line 2725 tok 6: же
+line 2726 tok 1: фарисеомъ
+line 2726 tok 2: въпроси
+line 2726 tok 3: я
+line 2726 tok 4: Иисусъ
+line 2726 tok 7: глаголя
+line 2726 tok 8: чъ
+line 2727 tok 1: то
+line 2727 tok 2: ся
+line 2727 tok 3: вамъ
+line 2727 tok 4: мнитъ
+line 2727 tok 5: о
+line 2727 tok 6: Христе
+line 2727 tok 7: чий
+line 2727 tok 8: естъ
+line 2728 tok 1: Сынъ
+line 2728 tok 2: глаголашя
+line 2728 tok 3: Ему.
+line 2728 tok 4: Давидовъ.
+line 2728 tok 7: глагола
+line 2728 tok 8: имъ
+line 2729 tok 1: како
+line 2729 tok 2: убо
+line 2729 tok 3: Давидъ
+line 2729 tok 4: Духомъ
+line 2729 tok 5: Господе
+line 2729 tok 6: нари
+line 2730 tok 1: цаетъ
+line 2730 tok 2: како
+line 2730 tok 3: ему
+line 2730 tok 4: естъ
+line 2730 tok 5: Сынъ.
+line 2730 tok 8: и
+line 2730 tok 9: никъ
+line 2731 tok 1: тоже
+line 2731 tok 2: не
+line 2731 tok 3: можаашетъ
+line 2731 tok 4: Ему
+line 2731 tok 5: отъве
+line 2732 tok 1: щати
+line 2732 tok 2: словесе.
+line 2732 tok 3: ни
+line 2732 tok 4: съме
+line 2732 tok 5: къто
+line 2732 tok 6: от
+line 2732 tok 7: дъ
+line 2733 tok 1: не
+line 2733 tok 2: того
+line 2733 tok 3: въпросити
+line 2733 tok 4: Его
+line 2733 tok 5: къ
+line 2733 tok 6: тому.
+line 2734 tok 1: Тогда
+line 2734 tok 2: Иисусъ
+line 2734 tok 3: глагола
+line 2734 tok 4: къ
+line 2734 tok 5: народомъ
+line 2734 tok 6: и
+line 2734 tok 7: учени
+line 2735 tok 1: комъ
+line 2735 tok 2: Своимъ
+line 2735 tok 5: глаголя.
+line 2735 tok 6: на
+line 2735 tok 7: Моисеове
+line 2736 tok 1: седалищи
+line 2736 tok 2: седю
+line 2736 tok 3: кънижъници
+line 2736 tok 4: и
+line 2736 tok 5: фа
+line 2737 tok 1: рисеи.
+line 2737 tok 4: въсе
+line 2737 tok 5: убо
+line 2737 tok 6: елико
+line 2737 tok 7: аще
+line 2737 tok 8: рекутъ
+line 2741 tok 1: вамъ
+line 2741 tok 2: блюсти
+line 2741 tok 3: съблюдайте
+line 2741 tok 4: и
+line 2742 tok 1: творите
+line 2742 tok 2: по
+line 2742 tok 3: деломъ
+line 2742 tok 4: же
+line 2742 tok 5: ихъ
+line 2742 tok 6: не
+line 2743 tok 1: творите.
+line 2743 tok 2: глаголютъ
+line 2743 tok 3: бо
+line 2743 tok 4: и
+line 2743 tok 5: не
+line 2743 tok 6: творя
+line 2744 tok 1: тъ
+line 2744 tok 4: съвязаютъ
+line 2744 tok 5: же
+line 2744 tok 6: бремена
+line 2745 tok 1: тяжъка
+line 2745 tok 2: и
+line 2745 tok 3: не
+line 2745 tok 4: удобъ
+line 2745 tok 5: носима
+line 2745 tok 6: и
+line 2746 tok 1: въскладаютъ
+line 2746 tok 2: на
+line 2746 tok 3: плеща
+line 2746 tok 4: человеческа
+line 2747 tok 1: а
+line 2747 tok 2: пръстомъ
+line 2747 tok 3: своимъ
+line 2747 tok 4: не
+line 2747 tok 5: хотя
+line 2748 tok 1: тъ
+line 2748 tok 2: двигнюти
+line 2748 tok 3: ихъ.
+line 2748 tok 6: Все
+line 2748 tok 7: же
+line 2749 tok 1: дела
+line 2749 tok 2: свое
+line 2749 tok 3: творятъ.
+line 2749 tok 4: да
+line 2749 tok 5: ви
+line 2750 tok 1: дими
+line 2750 tok 2: бюдютъ
+line 2750 tok 3: человекы.
+line 2750 tok 4: раши
+line 2751 tok 1: реютъ
+line 2751 tok 2: же
+line 2751 tok 3: хранилища
+line 2751 tok 4: свое.
+line 2751 tok 5: и
+line 2752 tok 1: величаютъ
+line 2752 tok 2: подъметы
+line 2752 tok 3: въ
+line 2753 tok 1: скрилие
+line 2753 tok 2: ризъ
+line 2753 tok 3: своихъ.
+line 2753 tok 6: любя
+line 2754 tok 1: тъ
+line 2754 tok 2: же
+line 2754 tok 3: преждевъзлегание
+line 2754 tok 4: на
+line 2754 tok 5: ве
+line 2755 tok 1: черехъ.
+line 2755 tok 2: и
+line 2755 tok 3: преждеседание
+line 2755 tok 4: на
+line 2755 tok 5: съ
+line 2756 tok 1: нъмищихъ.
+line 2756 tok 4: и
+line 2756 tok 5: целование
+line 2756 tok 6: на
+line 2756 tok 7: тръ
+line 2757 tok 1: жищихъ.
+line 2757 tok 2: и
+line 2757 tok 3: нарицаютъ
+line 2757 tok 4: ся
+line 2757 tok 5: отъ
+line 2758 tok 1: человекъ
+line 2758 tok 2: равви.
+line 2758 tok 3: единъ
+line 2758 tok 4: бо
+line 2758 tok 5: естъ
+line 2758 tok 6: ва
+line 2759 tok 1: шъ
+line 2759 tok 2: Учителъ
+line 2759 tok 3: Христосъ.
+line 2759 tok 4: въси
+line 2759 tok 5: же
+line 2759 tok 6: вы
+line 2760 tok 1: братрие
+line 2760 tok 2: есте.
+line 2760 tok 5: и
+line 2760 tok 6: отца
+line 2760 tok 7: не
+line 2760 tok 8: нарицае
+line 2761 tok 1: те
+line 2761 tok 2: себе
+line 2761 tok 3: на
+line 2761 tok 4: земи.
+line 2761 tok 5: единъ
+line 2761 tok 6: бо
+line 2761 tok 7: естъ
+line 2762 tok 1: вашъ
+line 2762 tok 2: Отецъ
+line 2762 tok 3: иже
+line 2762 tok 4: естъ
+line 2762 tok 5: на
+line 2762 tok 6: небесехъ
+line 2763 tok 3: ни
+line 2763 tok 4: нарицаете
+line 2763 tok 5: ся
+line 2763 tok 6: наставъници.
+line 2764 tok 1: еко
+line 2764 tok 2: Наставъникъ
+line 2764 tok 3: единъ
+line 2764 tok 4: вашъ
+line 2765 tok 1: естъ
+line 2765 tok 2: Христосъ.
+line 2765 tok 5: а
+line 2765 tok 6: боли
+line 2765 tok 7: васъ
+line 2765 tok 8: да
+line 2765 tok 9: будетъ
+line 2769 tok 1: вамъ
+line 2769 tok 2: слуга.
+line 2769 tok 5: а
+line 2769 tok 6: иже
+line 2769 tok 7: възнесе
+line 2770 tok 1: тъ
+line 2770 tok 2: ся
+line 2770 tok 3: съмеритъ
+line 2770 tok 4: ся.
+line 2770 tok 5: и
+line 2770 tok 6: съме
+line 2771 tok 1: реяй
+line 2771 tok 2: ся
+line 2771 tok 3: възнесетъ
+line 2771 tok 4: ся.
+line 2771 tok 7: Горе
+line 2772 tok 1: вамъ
+line 2772 tok 2: кънигъчия
+line 2772 tok 3: и
+line 2772 tok 4: фарисеи
+line 2773 tok 1: и
+line 2773 tok 2: упокрити
+line 2773 tok 3: еко
+line 2773 tok 4: сънедаете
+line 2773 tok 5: до
+line 2774 tok 1: мы
+line 2774 tok 2: въдовицъ
+line 2774 tok 3: и
+line 2774 tok 4: виною
+line 2774 tok 5: да
+line 2775 tok 1: лече
+line 2775 tok 2: молитвю
+line 2775 tok 3: творяще.
+line 2775 tok 4: сего
+line 2775 tok 5: ради
+line 2776 tok 1: приимете
+line 2776 tok 2: лише
+line 2776 tok 3: осюждение.
+line 2777 tok 3: Горе
+line 2777 tok 4: вамъ
+line 2777 tok 5: кънигъчия
+line 2777 tok 6: и
+line 2777 tok 7: фари
+line 2778 tok 1: сеи.
+line 2778 tok 2: и
+line 2778 tok 3: лицемери.
+line 2778 tok 4: еко
+line 2778 tok 5: затва
+line 2779 tok 1: реете
+line 2779 tok 2: Царствие
+line 2779 tok 3: Божие
+line 2779 tok 4: предъ
+line 2779 tok 5: человекы
+line 2780 tok 1: вы
+line 2780 tok 2: бо
+line 2780 tok 3: не
+line 2780 tok 4: въходите.
+line 2780 tok 5: ни
+line 2780 tok 6: въхо
+line 2781 tok 1: дящихъ
+line 2781 tok 2: оставеете
+line 2781 tok 3: вънити.
+line 2782 tok 3: Горе
+line 2782 tok 4: вамъ
+line 2782 tok 5: кънигъчия
+line 2782 tok 6: и
+line 2782 tok 7: фарисеи
+line 2783 tok 1: и
+line 2783 tok 2: ипокрити.
+line 2783 tok 3: еко
+line 2783 tok 4: преходите
+line 2783 tok 5: мо
+line 2784 tok 1: ре
+line 2784 tok 2: и
+line 2784 tok 3: сушю.
+line 2784 tok 4: створити
+line 2784 tok 5: единого
+line 2785 tok 1: пришълъца
+line 2785 tok 2: и
+line 2785 tok 3: егда
+line 2785 tok 4: бюдетъ
+line 2786 tok 1: створите
+line 2786 tok 2: и
+line 2786 tok 3: сына
+line 2786 tok 4: геене
+line 2786 tok 5: сугубе
+line 2787 tok 1: йша
+line 2787 tok 2: васъ.
+line 2787 tok 5: Горе
+line 2787 tok 6: вамъ
+line 2787 tok 7: вождие
+line 2788 tok 1: слепии.
+line 2788 tok 2: глаголюще
+line 2788 tok 3: иже
+line 2788 tok 4: клънетъ
+line 2789 tok 1: ся
+line 2789 tok 2: цръкъвию
+line 2789 tok 3: ничътоже
+line 2789 tok 4: естъ.
+line 2790 tok 1: а
+line 2790 tok 2: иже
+line 2790 tok 3: клънетъ
+line 2790 tok 4: ся
+line 2790 tok 5: златомъ
+line 2791 tok 1: церкъвънымъ
+line 2791 tok 2: длъжънъ
+line 2791 tok 3: естъ
+line 2792 tok 3: буи
+line 2792 tok 4: и
+line 2792 tok 5: слепии.
+line 2792 tok 6: кто
+line 2792 tok 7: болии
+line 2792 tok 8: естъ
+line 2793 tok 1: злато
+line 2793 tok 2: ли
+line 2793 tok 3: или
+line 2793 tok 4: церквы
+line 2793 tok 5: свящающие
+line 2797 tok 1: злато.
+line 2797 tok 4: и
+line 2797 tok 5: иже
+line 2797 tok 6: аще
+line 2797 tok 7: клънетъ
+line 2797 tok 8: ся
+line 2797 tok 9: о
+line 2798 tok 1: лътаремъ
+line 2798 tok 2: ничтоже
+line 2798 tok 3: естъ.
+line 2798 tok 4: а
+line 2798 tok 5: иже
+line 2799 tok 1: клънетъ
+line 2799 tok 2: ся
+line 2799 tok 3: даромъ
+line 2799 tok 4: иже
+line 2799 tok 5: естъ
+line 2799 tok 6: връ
+line 2800 tok 1: ху
+line 2800 tok 2: его
+line 2800 tok 3: длъжънъ
+line 2800 tok 4: естъ.
+line 2800 tok 7: буи
+line 2800 tok 8: и
+line 2800 tok 9: сле
+line 2801 tok 1: пи
+line 2801 tok 2: что
+line 2801 tok 3: боле
+line 2801 tok 4: естъ
+line 2801 tok 5: даръ
+line 2801 tok 6: ли
+line 2801 tok 7: или
+line 2801 tok 8: олта
+line 2802 tok 1: ръ
+line 2802 tok 2: свяштаяй
+line 2802 tok 3: даръ.
+line 2802 tok 6: клъны
+line 2802 tok 7: ся
+line 2802 tok 8: олта
+line 2803 tok 1: ремъ
+line 2803 tok 2: клънетъ
+line 2803 tok 3: ся
+line 2803 tok 4: имъ
+line 2803 tok 5: и
+line 2803 tok 6: сющими
+line 2804 tok 1: връху
+line 2804 tok 2: его.
+line 2804 tok 5: И
+line 2804 tok 6: клъны
+line 2804 tok 7: ся
+line 2804 tok 8: церковию
+line 2805 tok 1: клънетъ
+line 2805 tok 2: ся
+line 2805 tok 3: ею
+line 2805 tok 4: и
+line 2805 tok 5: живющимъ
+line 2805 tok 6: въ
+line 2805 tok 7: ней.
+line 2806 tok 3: И
+line 2806 tok 4: клъны
+line 2806 tok 5: ся
+line 2806 tok 6: небесемъ
+line 2806 tok 7: клънетъ
+line 2806 tok 8: ся
+line 2807 tok 1: престоломъ
+line 2807 tok 2: Божиемъ
+line 2807 tok 3: и
+line 2807 tok 4: Седящи
+line 2808 tok 1: имъ
+line 2808 tok 2: на
+line 2808 tok 3: немъ.
+line 2808 tok 6: Горе
+line 2808 tok 7: вамъ
+line 2808 tok 8: къни
+line 2809 tok 1: гъчия
+line 2809 tok 2: и
+line 2809 tok 3: фарисеи.
+line 2809 tok 4: и
+line 2809 tok 5: лицемери.
+line 2810 tok 1: еко
+line 2810 tok 2: отъдесятъствуете
+line 2810 tok 3: мятю
+line 2810 tok 4: и
+line 2811 tok 1: копръ.
+line 2811 tok 2: и
+line 2811 tok 3: киминъ
+line 2811 tok 4: и
+line 2811 tok 5: остависте
+line 2811 tok 6: тя
+line 2812 tok 1: жъшае
+line 2812 tok 2: закона.
+line 2812 tok 3: сюдъ
+line 2812 tok 4: и
+line 2812 tok 5: милостъ
+line 2813 tok 1: и
+line 2813 tok 2: верю.
+line 2813 tok 3: си
+line 2813 tok 4: же
+line 2813 tok 5: подобааше
+line 2813 tok 6: створи
+line 2814 tok 1: ти
+line 2814 tok 2: и
+line 2814 tok 3: техъ
+line 2814 tok 4: не
+line 2814 tok 5: оставити.
+line 2814 tok 8: Вождие
+line 2815 tok 1: слепии
+line 2815 tok 2: оцеждающеи
+line 2815 tok 3: мъшиця
+line 2816 tok 1: а
+line 2816 tok 2: велъбюды
+line 2816 tok 3: поглъщающе.
+line 2817 tok 3: Горе
+line 2817 tok 4: вамъ
+line 2817 tok 5: книжъници
+line 2817 tok 6: и
+line 2817 tok 7: ипокрити
+line 2818 tok 1: еко
+line 2818 tok 2: очиштаете
+line 2818 tok 3: вънештънее
+line 2818 tok 4: стъ
+line 2819 tok 1: клъници
+line 2819 tok 2: и
+line 2819 tok 3: паропсиде.
+line 2819 tok 4: ютръюду
+line 2820 tok 1: же
+line 2820 tok 2: плъни
+line 2820 tok 3: сютъ
+line 2820 tok 4: хыштение
+line 2820 tok 5: и
+line 2820 tok 6: не
+line 2821 tok 1: чистоты.
+line 2825 tok 3: Фарисею
+line 2825 tok 4: слепе
+line 2825 tok 5: очисти
+line 2825 tok 6: пре
+line 2826 tok 1: жде
+line 2826 tok 2: вънютрънее
+line 2826 tok 3: стъклъници
+line 2827 tok 1: и
+line 2827 tok 2: паропсиде.
+line 2827 tok 3: да
+line 2827 tok 4: бюдетъ
+line 2827 tok 5: и
+line 2827 tok 6: въне
+line 2828 tok 1: шънее
+line 2828 tok 2: има
+line 2828 tok 3: чисто.(Мф.
+line 2828 tok 6: Горе
+line 2828 tok 7: вамъ
+line 2828 tok 8: къ
+line 2829 tok 1: нигъчия
+line 2829 tok 2: и
+line 2829 tok 3: фарисеи
+line 2829 tok 4: и
+line 2829 tok 5: ипокрити
+line 2829 tok 6: е
+line 2830 tok 1: ко
+line 2830 tok 2: подобите
+line 2830 tok 3: ся
+line 2830 tok 4: гробомъ
+line 2830 tok 5: повапне
+line 2831 tok 1: номъ
+line 2831 tok 2: иже
+line 2831 tok 3: вънеюду
+line 2831 tok 4: убо
+line 2831 tok 5: сютъ
+line 2831 tok 6: кра
+line 2832 tok 1: съни.
+line 2832 tok 2: вънютръюду
+line 2832 tok 3: же
+line 2832 tok 4: плъни
+line 2832 tok 5: сю
+line 2833 tok 1: тъ
+line 2833 tok 2: костей
+line 2833 tok 3: мрътвыхъ
+line 2833 tok 4: и
+line 2833 tok 5: въсекоя
+line 2834 tok 1: нечистоты.
+line 2834 tok 4: тако
+line 2834 tok 5: и
+line 2834 tok 6: вы
+line 2834 tok 7: внеюду
+line 2835 tok 1: евеете
+line 2835 tok 2: ся
+line 2835 tok 3: человекомъ
+line 2835 tok 4: правъдъни.
+line 2835 tok 5: въ
+line 2836 tok 1: нютръюду
+line 2836 tok 2: же
+line 2836 tok 3: есте
+line 2836 tok 4: плъни
+line 2836 tok 5: лице
+line 2837 tok 1: меръствие
+line 2837 tok 2: и
+line 2837 tok 3: безаконие.
+line 2837 tok 6: Горе
+line 2837 tok 7: ва
+line 2838 tok 1: мъ
+line 2838 tok 2: кънигъчия
+line 2838 tok 3: и
+line 2838 tok 4: фарисеи
+line 2838 tok 5: и
+line 2838 tok 6: упо
+line 2839 tok 1: крити.
+line 2839 tok 2: еко
+line 2839 tok 3: зиждете
+line 2839 tok 4: гробы
+line 2839 tok 5: пророчъ
+line 2840 tok 1: скыя.
+line 2840 tok 2: и
+line 2840 tok 3: красите
+line 2840 tok 4: ракы
+line 2840 tok 5: правъдъ
+line 2841 tok 1: ныхъ.
+line 2841 tok 4: и
+line 2841 tok 5: глаголете
+line 2841 tok 6: аще
+line 2841 tok 7: бимъ
+line 2841 tok 8: были
+line 2842 tok 1: въ
+line 2842 tok 2: дни
+line 2842 tok 3: отецъ
+line 2842 tok 4: нашихъ
+line 2842 tok 5: не
+line 2842 tok 6: бимъ
+line 2842 tok 7: обе
+line 2843 tok 1: щъници
+line 2843 tok 2: имъ
+line 2843 tok 3: были
+line 2843 tok 4: въ
+line 2843 tok 5: кръви
+line 2847 tok 1: и
+line 2847 tok 2: бивъшихъ
+line 2847 tok 3: пророкы.
+line 2847 tok 6: вы
+line 2847 tok 7: исплъни
+line 2848 tok 1: те
+line 2848 tok 2: мерю
+line 2848 tok 3: отецъ
+line 2848 tok 4: вашиъ.
+line 2848 tok 7: Змия
+line 2848 tok 8: ищя
+line 2849 tok 1: дие
+line 2849 tok 2: ехидънова.
+line 2849 tok 3: како
+line 2849 tok 4: убежите
+line 2849 tok 5: отъ
+line 2850 tok 1: сюда
+line 2850 tok 2: геонъскаго.
+line 2850 tok 5: Сего
+line 2850 tok 6: ради
+line 2850 tok 7: Азъ
+line 2851 tok 1: сълю
+line 2851 tok 2: къ
+line 2851 tok 3: вамъ
+line 2851 tok 4: пророкы
+line 2851 tok 5: и
+line 2851 tok 6: премюдр…
+line 2852 tok 1: кънигъчия.
+line 2852 tok 2: и
+line 2852 tok 3: отъ
+line 2852 tok 4: нихъ
+line 2852 tok 5: убиете
+line 2852 tok 6: и
+line 2852 tok 7: про
+line 2853 tok 1: пънете.
+line 2853 tok 2: и
+line 2853 tok 3: отъ
+line 2853 tok 4: нихъ
+line 2853 tok 5: утепете
+line 2853 tok 6: на
+line 2853 tok 7: сънъ
+line 2854 tok 1: мищихъ
+line 2854 tok 2: вашихъ.
+line 2854 tok 3: и
+line 2854 tok 4: ижденете
+line 2854 tok 5: отъ
+line 2855 tok 1: града
+line 2855 tok 2: в
+line 2855 tok 3: градъ.
+line 2855 tok 6: да
+line 2855 tok 7: придетъ
+line 2855 tok 8: на
+line 2855 tok 9: вы
+line 2856 tok 1: въсека
+line 2856 tok 2: кръвъ
+line 2856 tok 3: праведника
+line 2856 tok 4: проли
+line 2857 tok 1: ваема
+line 2857 tok 2: на
+line 2857 tok 3: земю
+line 2857 tok 4: отъ
+line 2857 tok 5: крове
+line 2857 tok 6: Авела
+line 2858 tok 1: праведънаго
+line 2858 tok 2: до
+line 2858 tok 3: кръве
+line 2858 tok 4: Захария
+line 2858 tok 5: сына
+line 2859 tok 1: Варахиина.
+line 2859 tok 2: егоже
+line 2859 tok 3: убисте
+line 2859 tok 4: междю
+line 2860 tok 1: церковию
+line 2860 tok 2: и
+line 2860 tok 3: олтаремъ.
+line 2860 tok 6: аминъ
+line 2860 tok 7: глаголю
+line 2861 tok 1: вамъ
+line 2861 tok 2: придютъ
+line 2861 tok 3: въсе
+line 2861 tok 4: си
+line 2861 tok 5: на
+line 2861 tok 6: родъ
+line 2862 tok 1: съ.
+line 2862 tok 4: Иерусалимъ
+line 2862 tok 5: Иерусалиме
+line 2862 tok 6: избивъшие
+line 2863 tok 1: пророкы
+line 2863 tok 2: и
+line 2863 tok 3: камениемъ
+line 2863 tok 4: побиваю
+line 2864 tok 1: щи
+line 2864 tok 2: посланыя
+line 2864 tok 3: к
+line 2864 tok 4: тебе
+line 2864 tok 5: колъ
+line 2864 tok 6: краты
+line 2865 tok 1: въсхотехъ
+line 2865 tok 2: събрати
+line 2865 tok 3: чяда
+line 2865 tok 4: твое
+line 2865 tok 5: е
+line 2866 tok 1: коже
+line 2866 tok 2: събираетъ
+line 2866 tok 3: кокошъ
+line 2866 tok 4: птенъця
+line 2867 tok 1: своя
+line 2867 tok 2: подъ
+line 2867 tok 3: криле
+line 2867 tok 4: и
+line 2867 tok 5: не
+line 2867 tok 6: въсхотесте
+line 2868 tok 3: и
+line 2868 tok 4: се
+line 2868 tok 5: оставеетъ
+line 2868 tok 6: ся
+line 2868 tok 7: вамъ
+line 2868 tok 8: домъ
+line 2868 tok 9: ва..
+line 2872 tok 4: гряды
+line 2872 tok 5: въ
+line 2872 tok 6: имя
+line 2872 tok 7: Господне.
+line 2872 tok 10: И
+line 2872 tok 11: ишъдъ
+line 2872 tok 12: Ии
+line 2873 tok 1: сусъ
+line 2873 tok 2: изъ
+line 2873 tok 3: церкве
+line 2873 tok 4: идеаше
+line 2873 tok 5: и
+line 2873 tok 6: при
+line 2874 tok 1: стюпишя
+line 2874 tok 2: ученици
+line 2874 tok 3: Его
+line 2874 tok 4: показати
+line 2874 tok 5: Е
+line 2875 tok 1: му
+line 2875 tok 2: зъдание
+line 2875 tok 3: црковънае.
+line 2875 tok 6: Онъ
+line 2875 tok 7: же
+line 2875 tok 8: отъ
+line 2876 tok 1: вещавъ
+line 2876 tok 2: рече
+line 2876 tok 3: имъ
+line 2876 tok 4: не
+line 2876 tok 5: видите
+line 2876 tok 6: ли
+line 2876 tok 7: въ
+line 2877 tok 2: сихъ.
+line 2877 tok 3: аминъ
+line 2877 tok 4: глаголю
+line 2877 tok 5: вамъ.
+line 2877 tok 6: не
+line 2877 tok 7: и
+line 2878 tok 1: матъ
+line 2878 tok 2: остати
+line 2878 tok 3: зде
+line 2878 tok 4: каменъ
+line 2878 tok 5: на
+line 2878 tok 6: каме
+line 2879 tok 1: не
+line 2879 tok 2: еже
+line 2879 tok 3: не
+line 2879 tok 4: разоритъ
+line 2879 tok 5: ся.
+line 2879 tok 8: Седящу
+line 2880 tok 1: же
+line 2880 tok 2: Ему
+line 2880 tok 3: не
+line 2880 tok 4: горе
+line 2880 tok 5: Елеонъсте
+line 2880 tok 6: пристю
+line 2881 tok 1: пишя
+line 2881 tok 2: къ
+line 2881 tok 3: Нему
+line 2881 tok 4: ученици
+line 2881 tok 5: едини
+line 2881 tok 6: глаголю
+line 2882 tok 1: ще
+line 2882 tok 2: повеждъ
+line 2882 tok 3: намъ
+line 2882 tok 4: когда
+line 2882 tok 5: си
+line 2882 tok 6: бю
+line 2883 tok 1: дутъ
+line 2883 tok 2: м
+line 2883 tok 3: что
+line 2883 tok 4: естъ
+line 2883 tok 5: знамение
+line 2883 tok 6: Твое
+line 2884 tok 1: го
+line 2884 tok 2: пришествие
+line 2884 tok 3: и
+line 2884 tok 4: кончина
+line 2884 tok 5: века
+line 2884 tok 8: и
+line 2884 tok 9: о
+line 2885 tok 1: тъвещавъ
+line 2885 tok 2: Иисусъ
+line 2885 tok 3: рече
+line 2885 tok 4: имъ
+line 2885 tok 5: блю
+line 2886 tok 1: дете
+line 2886 tok 2: ся
+line 2886 tok 3: да
+line 2886 tok 4: никтоже
+line 2886 tok 5: васъ
+line 2886 tok 6: не
+line 2886 tok 7: прель
+line 2887 tok 1: ститъ.
+line 2887 tok 4: мнози
+line 2887 tok 5: бо
+line 2887 tok 6: придютъ
+line 2887 tok 7: въ
+line 2887 tok 8: и
+line 2888 tok 1: мя
+line 2888 tok 2: Мое
+line 2888 tok 3: глаголюще.
+line 2888 tok 4: азъ
+line 2888 tok 5: есмъ
+line 2888 tok 6: Христосъ
+line 2888 tok 7: и
+line 2889 tok 1: многы
+line 2889 tok 2: прелъстятъ.
+line 2889 tok 5: услы
+line 2890 tok 1: шати
+line 2890 tok 2: же
+line 2890 tok 3: имате
+line 2890 tok 4: брани.
+line 2890 tok 5: и
+line 2890 tok 6: слыша
+line 2891 tok 1: ниа
+line 2891 tok 2: брани
+line 2891 tok 3: видите
+line 2891 tok 4: не
+line 2891 tok 5: ужасайте
+line 2891 tok 6: ся
+line 2892 tok 1: подобаетъ
+line 2892 tok 2: бо
+line 2892 tok 3: всемъ
+line 2892 tok 4: симъ
+line 2892 tok 5: бы
+line 2893 tok 1: ти
+line 2893 tok 2: нъ
+line 2893 tok 3: не
+line 2893 tok 4: тогда
+line 2893 tok 5: естъ
+line 2893 tok 6: кончина.
+line 2893 tok 9: вь
+line 2894 tok 1: станетъ
+line 2894 tok 2: бо
+line 2894 tok 3: языкъ
+line 2894 tok 4: на
+line 2894 tok 5: языкъ.
+line 2898 tok 1: и
+line 2898 tok 2: царъство
+line 2898 tok 3: на
+line 2898 tok 4: царъство.
+line 2898 tok 5: и
+line 2898 tok 6: бюд(у)тъ
+line 2898 tok 7: гла
+line 2899 tok 1: ди
+line 2899 tok 2: и
+line 2899 tok 3: пагубы
+line 2899 tok 4: и
+line 2899 tok 5: трюси
+line 2899 tok 6: по
+line 2899 tok 7: места
+line 2899 tok 10: все
+line 2900 tok 1: жи
+line 2900 tok 2: си
+line 2900 tok 3: начало
+line 2900 tok 4: болезни.
+line 2900 tok 7: Тогда
+line 2900 tok 8: преда
+line 2901 tok 1: дятъ
+line 2901 tok 2: вы
+line 2901 tok 3: на
+line 2901 tok 4: скръбъ
+line 2901 tok 5: и
+line 2901 tok 6: убиютъ
+line 2901 tok 7: вы.
+line 2902 tok 1: и
+line 2902 tok 2: бюдете
+line 2902 tok 3: ненавидими
+line 2902 tok 4: всеми
+line 2902 tok 5: язы
+line 2903 tok 1: кы
+line 2903 tok 2: имене
+line 2903 tok 3: Моего
+line 2903 tok 4: ради.
+line 2903 tok 7: И
+line 2903 tok 8: тогда
+line 2903 tok 9: съ
+line 2904 tok 1: блазнятъ
+line 2904 tok 2: ся
+line 2904 tok 3: мнози
+line 2904 tok 4: и
+line 2904 tok 5: другъ
+line 2904 tok 6: друга
+line 2905 tok 1: предастъ.
+line 2905 tok 2: и
+line 2905 tok 3: възненавидитъ
+line 2905 tok 4: другъ
+line 2906 tok 1: друга.
+line 2906 tok 4: и
+line 2906 tok 5: мнози
+line 2906 tok 6: лъжи
+line 2906 tok 7: пророци
+line 2906 tok 8: въстанютъ
+line 2907 tok 1: и
+line 2907 tok 2: прелъстятъ
+line 2907 tok 3: многы.
+line 2907 tok 6: и
+line 2907 tok 7: за
+line 2907 tok 8: умножен(ие)
+line 2908 tok 1: безаконие
+line 2908 tok 2: исякнетъ
+line 2908 tok 3: любы
+line 2908 tok 4: многъ(ихъ).
+line 2909 tok 3: претръпевы
+line 2909 tok 4: же
+line 2909 tok 5: до
+line 2909 tok 6: конца
+line 2909 tok 7: спасетъ
+line 2909 tok 8: ся
+line 2910 tok 3: и
+line 2910 tok 4: проповестъ
+line 2910 tok 5: ся
+line 2910 tok 6: се
+line 2910 tok 7: Евангелие
+line 2910 tok 8: Царствие
+line 2911 tok 2: всей
+line 2911 tok 3: вселеней
+line 2911 tok 4: въ
+line 2911 tok 5: сведетелъство
+line 2911 tok 6: все
+line 2912 tok 1: мъ
+line 2912 tok 2: языкомъ.
+line 2912 tok 3: и
+line 2912 tok 4: тогда
+line 2912 tok 5: придетъ
+line 2912 tok 6: кончина.
+line 2913 tok 3: егда
+line 2913 tok 4: же
+line 2913 tok 5: узрите
+line 2913 tok 6: мръзостъ
+line 2913 tok 7: запусте(ние)
+line 2914 tok 1: реченюю
+line 2914 tok 2: Данилемъ
+line 2914 tok 3: пророкомъ
+line 2914 tok 4: стоящю
+line 2914 tok 5: на
+line 2915 tok 1: месте
+line 2915 tok 2: святе.
+line 2915 tok 3: иже
+line 2915 tok 4: чтетъ
+line 2915 tok 5: да
+line 2915 tok 6: разумевае
+line 2916 tok 1: тъ.
+line 2916 tok 4: Тогда
+line 2916 tok 5: сющеи
+line 2916 tok 6: въ
+line 2916 tok 7: Июдеи
+line 2916 tok 8: да
+line 2916 tok 9: бегаютъ
+line 2917 tok 1: на
+line 2917 tok 2: горы.
+line 2917 tok 5: и
+line 2917 tok 6: иже
+line 2917 tok 7: на
+line 2917 tok 8: крове
+line 2917 tok 9: да
+line 2917 tok 10: не
+line 2917 tok 11: сълазитъ
+line 2917 tok 12: въ
+line 2918 tok 1: зяти
+line 2918 tok 2: еже
+line 2918 tok 3: естъ
+line 2918 tok 4: въ
+line 2918 tok 5: храме
+line 2918 tok 6: его.
+line 2918 tok 9: и
+line 2918 tok 10: иже
+line 2918 tok 11: на
+line 2918 tok 12: се
+line 2919 tok 1: ле
+line 2919 tok 2: такожде
+line 2919 tok 3: да
+line 2919 tok 4: не
+line 2919 tok 5: възъвратитъ
+line 2919 tok 6: ся
+line 2919 tok 7: въ
+line 2920 tok 1: спятъ
+line 2920 tok 2: възяти
+line 2920 tok 3: ризы
+line 2920 tok 4: своя:
+line 2921 tok 3: Горе
+line 2921 tok 4: же
+line 2921 tok 5: непраздънымъ
+line 2921 tok 6: и
+line 2921 tok 7: доящии
+line 2922 tok 1: мъ
+line 2922 tok 2: въ
+line 2922 tok 3: тыя
+line 2922 tok 4: дъни.
+line 2922 tok 7: Молите
+line 2922 tok 8: же
+line 2923 tok 1: ся
+line 2923 tok 2: да
+line 2923 tok 3: не
+line 2923 tok 4: бюдетъ
+line 2923 tok 5: бество
+line 2923 tok 6: ваше.
+line 2924 tok 1: зиме
+line 2924 tok 2: ни
+line 2924 tok 3: въ
+line 2924 tok 4: сю
+line 2988 tok 1: тъ.
+line 2988 tok 5: ми
+line 3049 tok 1: зачало.
+line 3075 tok 5: не
+line 3093 tok 3: конец.
+line 3097 tok 3: дастъ
+line 3097 tok 6: ово
+line 3098 tok 1: му
+line 3098 tok 2: же
+line 3098 tok 3: 2.
+line 3119 tok 7: его.
+line 3119 tok 8: до
+line 3120 tok 1: бры
+line 3120 tok 2: рабе
+line 3120 tok 3: благы.
+line 3120 tok 4: и
+line 3120 tok 5: веръ
+line 3121 tok 1: ны.
+line 3121 tok 2: о
+line 3121 tok 3: мале
+line 3121 tok 4: бе
+line 3121 tok 5: верьнъ.
+line 3121 tok 6: надъ
+line 3122 tok 1: многы
+line 3122 tok 2: тя
+line 3122 tok 3: поставлу.
+line 3392 tok 1: тъ
+line 3410 tok 1: ти
+line 3553 tok 4: конец.
+line 3585 tok 4: .
+line 3685 tok 2: конец.
+line 3700 tok 6: Мимо
+line 3768 tok 4: конец.
+line 3817 tok 2: конец.
+line 3901 tok 3: ЕВАНГЕЛИЕ
+line 3901 tok 4: ОТЪ
+line 3902 tok 1: МАРЪКА:
+line 4196 tok 2: и
+line 4249 tok 2: еко
+line 4253 tok 2: .12.
+line 4279 tok 1: Иерусалима
+line 4512 tok 2: 12.
+line 4575 tok 4: 12.
+line 4763 tok 7: и
+line 4765 tok 3: 12
+line 4795 tok 6: из
+line 4969 tok 7: пре
+line 4990 tok 1: ду
+line 5046 tok 4: .12.
+line 5086 tok 4: Человеческу
+line 5087 tok 1: му.
+line 5126 tok 6: ангелы
+line 5177 tok 7: Человечесце
+line 5178 tok 1: мь.
+line 5411 tok 3: лъже
+line 5537 tok 5: конец:
+line 5637 tok 7: ми
+line 5847 tok 3: 12:31)и
+line 5992 tok 5: сяй
+line 6315 tok 4: Иисусъ
+line 6443 tok 1: штю.
+line 6479 tok 5: конец:
+line 6522 tok 3: зачало.
+line 6543 tok 5: конец.
+line 6579 tok 6: конец:
+line 6631 tok 3: Иисусъ
+line 6631 tok 4: Христове.
+line 6700 tok 6: и
+line 6738 tok 1: му
+line 6738 tok 2: ангелъ
+line 6738 tok 3: Господень.
+line 6738 tok 4: не
+line 6921 tok 4: глаголи
+line 6973 tok 3: конец.
+line 7138 tok 1: 12
+line 7203 tok 5: о
+line 7292 tok 2: глаголя.
+line 7292 tok 3: Ты
+line 7297 tok 4: Маттатиевъ.
+line 7298 tok 5: Мосовъ.
+line 7299 tok 6: Наумовъ.
+line 7300 tok 6: Салатилевъ.
+line 7301 tok 6: Нириевъ.
+line 7302 tok 6: Мельхиевъ.
+line 7303 tok 3: Иосифовъ.
+line 7303 tok 6: Аддъдиевъ.
+line 7307 tok 3: Косамовъ.
+line 7307 tok 6: Нахоровъ.
+line 7308 tok 3: Елмодановъ.
+line 7308 tok 5: 3:35)Сероховъ.
+line 7309 tok 3: Ировъ.
+line 7309 tok 6: Рагавовъ.
+line 7310 tok 3: Иосиовъ.
+line 7310 tok 6: Мат’татовъ.
+line 7311 tok 3: Елизеровъ
+line 7311 tok 6: Левгиинъ.
+line 7312 tok 3: Иерамовъ.
+line 7312 tok 6: Семеоновъ
+line 7313 tok 3: Еслимовъ.
+line 7313 tok 6: Июдовъ.
+line 7314 tok 3: Наангеовъ.
+line 7314 tok 6: Иосифовъ.
+line 7315 tok 3: Маатовъ.
+line 7315 tok 6: Иоананеовъ.
+line 7316 tok 3: Мататиевъ.
+line 7316 tok 6: Елиекимовъ.
+line 7317 tok 3: Семеиновъ.
+line 7317 tok 6: Мелеанновъ.
+line 7318 tok 5: 3:31)Маинановъ.
+line 7319 tok 3: Июдинъ.
+line 7319 tok 6: Маттатаевъ
+line 7320 tok 3: Иоанаевъ.
+line 7320 tok 6: Натановъ.
+line 7321 tok 3: Рисиевъ.
+line 7321 tok 5: 3:31)Давыдовъ.
+line 7322 tok 3: Зоровавелевъ.
+line 7322 tok 6: Иесеовъ.
+line 7323 tok 3: Есромовъ.
+line 7323 tok 6: Овидовъ.
+line 7324 tok 3: Фаресовъ.
+line 7324 tok 6: Воозовъ.
+line 7325 tok 3: Июдовъ.
+line 7325 tok 6: Салмоновъ.
+line 7326 tok 3: Иекововъ.
+line 7326 tok 6: Наасоновъ.
+line 7327 tok 2: 3:34)Исааковъ
+line 7327 tok 5: Аминадавовъ.
+line 7328 tok 2: 3:34)Авраамовъ.
+line 7328 tok 5: Арамовъ.
+line 7329 tok 3: Тарань.
+line 7329 tok 6: Иоарамовъ.
+line 7333 tok 3: Фалековъ.
+line 7333 tok 6: Еноховъ.
+line 7334 tok 3: Еверовъ.
+line 7334 tok 6: Иаредовъ.
+line 7335 tok 3: Салань.
+line 7335 tok 6: Малелеилевъ.
+line 7336 tok 3: Каинановъ.
+line 7336 tok 6: Каинановъ.
+line 7337 tok 3: Арфаксадовъ.
+line 7337 tok 5: 3:37)Еносовъ.
+line 7338 tok 3: Симовъ.
+line 7338 tok 5: 3:37)Сифовъ.
+line 7339 tok 3: Ноевъ.
+line 7339 tok 5: 3:37)Адамовъ.
+line 7340 tok 3: Ламеховъ.
+line 7340 tok 6: Божий:
+line 7341 tok 3: Матусаль.
+line 7349 tok 1: последь
+line 7391 tok 2: конец.
+line 7398 tok 5: ней(Лк.
+line 7672 tok 4: 12.
+line 7912 tok 4: и
+line 7912 tok 5: видевъ
+line 8051 tok 1: ю
+line 8163 tok 1: тъ.
+line 8382 tok 1: ду
+line 8395 tok 5: не
+line 8590 tok 6: прие
+line 8591 tok 1: млетъ.
+line 8599 tok 6: не
+line 8733 tok 4: Господи.
+line 8734 tok 1: и
+line 8734 tok 2: беси
+line 8734 tok 3: повинуютъ
+line 8734 tok 4: ся
+line 8734 tok 5: намъ
+line 8807 tok 2: идее.
+line 8890 tok 7: из
+line 8982 tok 5: конец
+line 9022 tok 4: по
+line 9367 tok 6: о
+line 9436 tok 4: отъ
+line 9521 tok 1: же
+line 9958 tok 4: из
+line 10140 tok 6: въ
+line 10298 tok 6: мимо
+line 10361 tok 3: ..
+line 10362 tok 1: ..
+line 10631 tok 3: ..
+line 10851 tok 7: ми
+line 11352 tok 5: из
+line 11358 tok 4: конец.
+line 11395 tok 5: не
+line 11411 tok 4: Человеческу
+line 11412 tok 1: му.
+line 11435 tok 2: конец.
+line 11462 tok 5: же
+line 11615 tok 1: сяй
+line 11655 tok 5: конец:
+line 11817 tok 1: згна
+line 11886 tok 1: нити
+line 12065 tok 3: конец.
+line 12409 tok 2: юште
+line 12452 tok 1: ходяй
+line 12505 tok 5: сяй
+line 12532 tok 5: Человеческа
+line 12533 tok 1: го.
+line 12698 tok 4: не
+line 12698 tok 5: судите
+line 12699 tok 1: на
+line 12699 tok 2: лица.
+line 12699 tok 3: нъ
+line 12699 tok 4: правьдьны
+line 12700 tok 1: судъ
+line 12700 tok 2: судите.
+line 12790 tok 7: на
+line 12902 tok 1: шьнихъ
+line 12902 tok 2: есмь.вы
+line 12984 tok 6: конец.
+line 13062 tok 4: конец.
+line 13062 tok 5: зачало.
+line 13188 tok 1: ду
+line 13214 tok 1: й
+line 13216 tok 5: конец.
+line 13268 tok 4: конец.
+line 13283 tok 4: не
+line 13380 tok 3: конец.
+line 13552 tok 6: конец.
+line 13728 tok 3: и
+line 13747 tok 3: Человеческому.
+line 14043 tok 5: ..
+line 14222 tok 3: поминаете
+line 14222 tok 4: си.
+line 14223 tok 1: Еко
+line 14223 tok 2: Азъ
+line 14223 tok 3: рехъ
+line 14223 tok 4: вамъ.
+line 14224 tok 1: вамъ
+line 14224 tok 2: ис
+line 14224 tok 3: пръва
+line 14224 tok 4: не
+line 14224 tok 5: рехъ.
+line 14224 tok 6: еко
+line 14225 tok 3: бехъ.
+line 14225 tok 5: ныне
+line 14225 tok 6: же
+line 14226 tok 2: къ
+line 14226 tok 3: Посълавъшюему
+line 14230 tok 2: никтоже
+line 14349 tok 2: и
+line 14402 tok 3: зачало.
+line 14407 tok 3: конец.
+line 14510 tok 5: зачало.
+line 14594 tok 3: про
+line 14595 tok 1: пьни.
+line 14646 tok 3: конец.
+line 14682 tok 4: зачало.
+line 14731 tok 6: конец.
+line 14757 tok 2: конец.
+line 14851 tok 4: и
+line 14861 tok 6: въ
+line 14862 tok 1: торицею.
+line 14862 tok 2: Симоне
+line 14862 tok 3: Ионинъ
+line 14863 tok 1: любиши
+line 14863 tok 2: ли
+line 14863 tok 3: Мя.глагола
+line 14863 tok 4: ему.
+line 14864 tok 1: ей
+line 14864 tok 2: Господи.
+line 14864 tok 3: Ты
+line 14864 tok 4: веси
+line 14864 tok 5: еко
+line 14864 tok 6: люблю
+line 14865 tok 1: Тя.
+line 14865 tok 2: глагола
+line 14865 tok 3: ему
+line 14865 tok 4: паси
+line 14865 tok 5: овьця
+line 14865 tok 6: Моя.
+line 14865 tok 8: глагола
+line 14866 tok 1: ему
+line 14866 tok 2: третици.
+line 14866 tok 3: Симоне
+line 14866 tok 4: Ио
+line 14867 tok 1: нинъ
+line 14867 tok 2: любиши
+line 14867 tok 3: ли
+line 14867 tok 4: Мя.
+line 14867 tok 5: оскръ
+line 14868 tok 1: бе
+line 14868 tok 2: Петръ.
+line 14868 tok 3: еко
+line 14868 tok 4: рече
+line 14868 tok 5: ему
+line 14868 tok 6: тре
+line 14869 tok 1: тици.
+line 14869 tok 2: любиши
+line 14869 tok 3: ли
+line 14869 tok 4: Мя.
+line 14869 tok 5: и
+line 14869 tok 6: глагола
+line 14873 tok 1: Ему.
+line 14873 tok 2: Господи.
+line 14873 tok 3: вьсе
+line 14873 tok 4: Ты
+line 14873 tok 5: веси.
+line 14874 tok 1: Ты
+line 14874 tok 2: веси
+line 14983 tok 1: МЕСЯЧНИК
+line 14983 tok 2: БОГОМ
+line 14983 tok 3: ПОЧИНАЕМ
+line 14983 tok 4: МЕСЯЦ
+line 14983 tok 5: себтябрь
+line 14983 tok 6: рекомы
+line 14983 tok 7: руен.
+line 14984 tok 1: Иматьдний
+line 14984 tok 2: 30.
+line 14984 tok 3: День
+line 14984 tok 4: имать
+line 14984 tok 5: чесов
+line 14984 tok 6: 12.
+line 14984 tok 7: а
+line 14984 tok 8: нощь
+line 14984 tok 9: 12.
+line 14985 tok 2: сентября)
+line 14985 tok 3: Начяток
+line 14985 tok 4: индикту.
+line 14985 tok 5: рекше
+line 14985 tok 6: новому
+line 14985 tok 7: лету.
+line 14985 tok 8: и
+line 14985 tok 9: преподобнаго
+line 14985 tok 10: отца
+line 14985 tok 11: Семеона
+line 14985 tok 12: Стльпника.
+line 14985 tok 13: Евангелие
+line 14985 tok 14: новому
+line 14985 tok 15: лету
+line 14985 tok 16: ищи
+line 14985 tok 17: въ
+line 14985 tok 18: четверток
+line 14985 tok 19: 1
+line 14985 tok 20: недели
+line 14985 tok 21: от
+line 14985 tok 22: Луки.
+line 14985 tok 23: а
+line 14985 tok 24: святому
+line 14985 tok 26: 2
+line 14985 tok 27: недели
+line 14985 tok 28: от
+line 14985 tok 29: Луки.
+line 14986 tok 2: сентября)
+line 14986 tok 3: Страстъ
+line 14986 tok 4: святого
+line 14986 tok 5: мученика
+line 14986 tok 6: Маманта.
+line 14986 tok 7: Евангелие
+line 14986 tok 8: ищи
+line 14986 tok 9: в
+line 14986 tok 10: понедельник
+line 14986 tok 11: 7
+line 14986 tok 12: недели
+line 14986 tok 13: по
+line 14986 tok 14: Пасхе
+line 14986 tok 15: от
+line 14986 tok 16: полу.
+line 14987 tok 2: сентября)
+line 14987 tok 3: СвященномученикаАнфима.
+line 14987 tok 4: Евангелие
+line 14987 tok 5: Иоанна
+line 14987 tok 6: глава
+line 14987 tok 7: 89.
+line 14987 tok 8: Рече
+line 14987 tok 9: Азъесмь
+line 14987 tok 10: дверь.
+line 14987 tok 11: Конец:
+line 14987 tok 12: И
+line 14987 tok 13: пажити
+line 14988 tok 2: Священномученика
+line 14988 tok 3: Вавилы.
+line 14988 tok 4: Евангелие
+line 14988 tok 5: ищи
+line 14988 tok 6: субота<…>отъ
+line 14988 tok 7: Луки.
+line 14991 tok 2: сентября)
+line 14991 tok 3: Святого
+line 14991 tok 4: пророка
+line 14991 tok 5: Захария.
+line 14991 tok 6: Евангелие
+line 14991 tok 7: среда
+line 14991 tok 8: 11
+line 14991 tok 9: от
+line 14991 tok 10: Матфея.
+line 14992 tok 2: сентября)
+line 14992 tok 3: Чюдо
+line 14992 tok 4: архистратига
+line 14992 tok 5: Михаила
+line 14992 tok 6: в
+line 14992 tok 7: Хонех.
+line 14992 tok 8: Евангелие
+line 14992 tok 9: 116
+line 14992 tok 10: от
+line 14992 tok 11: Луки.
+line 14992 tok 12: В
+line 14992 tok 13: тъ
+line 14992 tok 14: же
+line 14992 tok 15: день
+line 14992 tok 16: мученика
+line 14992 tok 17: Евдоксия.
+line 14992 tok 18: Среда
+line 14992 tok 19: 16
+line 14992 tok 20: от
+line 14992 tok 21: Луки.
+line 14993 tok 2: сентября)
+line 14993 tok 3: Святого
+line 14993 tok 4: мученика
+line 14993 tok 5: Созонта.
+line 14993 tok 6: Евангелие
+line 14993 tok 7: субота
+line 14993 tok 8: 3
+line 14993 tok 9: недели
+line 14993 tok 10: по
+line 14993 tok 11: Пасхе.
+line 14993 tok 12: Рождъство
+line 14993 tok 13: Святы
+line 14993 tok 14: Богородиця.
+line 14993 tok 15: Наутро.
+line 14993 tok 16: Евангелие
+line 14993 tok 17: от
+line 14993 tok 18: Луки
+line 14993 tok 19: глава
+line 14993 tok 20: 3.
+line 14993 tok 21: В
+line 14993 tok 22: оно
+line 14993 tok 23: въставши
+line 14993 tok 24: Мария.
+line 14993 tok 25: Конец:
+line 14993 tok 26: Въ
+line 14993 tok 27: дом
+line 14993 tok 28: Свой.
+line 14993 tok 29: На
+line 14993 tok 30: литургии
+line 14993 tok 31: от
+line 14993 tok 32: Луки
+line 14993 tok 33: 122.
+line 14993 tok 34: В
+line 14993 tok 35: оно
+line 14993 tok 36: въниде
+line 14993 tok 37: Иисус
+line 14993 tok 38: въ<…>
+line 14994 tok 2: сентября)
+line 14994 tok 3: Святую
+line 14994 tok 4: праведнику
+line 14994 tok 5: Акима
+line 14994 tok 6: и
+line 14994 tok 7: Анны.
+line 14994 tok 8: От
+line 14994 tok 9: Луки
+line 14994 tok 10: субота
+line 14994 tok 11: 6.
+line 14995 tok 2: сентября)
+line 14995 tok 3: Поклонение
+line 14995 tok 4: честному
+line 14995 tok 5: древу.
+line 14995 tok 6: От
+line 14995 tok 7: Иоанна
+line 14995 tok 8: понедельник
+line 14995 tok 9: 6
+line 14995 tok 10: недели.
+line 14995 tok 11: В
+line 14995 tok 12: тъ
+line 14995 tok 13: же
+line 14995 tok 14: день
+line 14995 tok 15: святых
+line 14995 tok 16: мучениц
+line 14995 tok 17: Минодоры
+line 14995 tok 18: Митродоры
+line 14995 tok 19: Мифодоры.
+line 14995 tok 20: Субота
+line 14995 tok 21: 17
+line 14995 tok 22: Матфея.
+line 14996 tok 2: сентября)
+line 14996 tok 3: Поклонение
+line 14996 tok 4: честному
+line 14996 tok 5: древу.
+line 14996 tok 6: От
+line 14996 tok 7: Иоанна
+line 14996 tok 8: пяток
+line 14996 tok 9: 4
+line 14996 tok 10: недели
+line 14996 tok 11: по
+line 14996 tok 12: Пасхе.
+line 14996 tok 13: Втъ
+line 14996 tok 14: же
+line 14996 tok 15: день
+line 14996 tok 16: преподобныя
+line 14996 tok 17: Феодоры.
+line 14996 tok 18: От
+line 14996 tok 19: Иоанна
+line 14996 tok 20: глава
+line 14996 tok 21: 86.
+line 14996 tok 22: В
+line 14996 tok 23: оно
+line 14996 tok 24: приведошу
+line 14996 tok 25: к
+line 14996 tok 26: Иисусу
+line 14996 tok 27: книжници
+line 14996 tok 28: фарисеие
+line 14996 tok 29: жену.
+line 14996 tok 30: Конец:
+line 14996 tok 31: Ктому
+line 14996 tok 32: не
+line 14996 tok 33: съгреши.
+line 14997 tok 2: сентября).
+line 14997 tok 3: Поклонение
+line 14997 tok 4: честному
+line 14997 tok 5: древу.
+line 14997 tok 6: Иоанна
+line 14997 tok 7: 6
+line 14997 tok 8: неделя
+line 14997 tok 9: по
+line 14997 tok 10: Пасхе.
+line 14997 tok 11: В
+line 14997 tok 12: тъ
+line 14997 tok 13: же
+line 14997 tok 14: день
+line 14997 tok 15: священномученика
+line 14997 tok 16: Автонома.
+line 14997 tok 17: От
+line 14997 tok 18: Иоанна
+line 14997 tok 19: ищи
+line 14997 tok 20: субота
+line 14997 tok 21: 3
+line 14997 tok 22: по
+line 14997 tok 23: Пасхе.
+line 14998 tok 2: сентября)
+line 14998 tok 3: Поклонение
+line 14998 tok 4: честному
+line 14998 tok 5: древу.
+line 14998 tok 6: От
+line 14998 tok 7: Иоанна
+line 14998 tok 8: вторник
+line 14998 tok 9: 6
+line 14998 tok 10: недели
+line 14998 tok 11: по
+line 14998 tok 12: Пасхе
+line 14998 tok 13: от
+line 14998 tok 14: полу.
+line 14998 tok 15: В
+line 14998 tok 16: тъ
+line 14998 tok 17: же
+line 14998 tok 18: день
+line 14998 tok 19: священие
+line 14998 tok 20: церкви
+line 14998 tok 21: Святого
+line 14998 tok 22: Въскресения
+line 14998 tok 23: въ
+line 14998 tok 24: Ерусалиме.
+line 14998 tok 25: Евангелие
+line 14998 tok 26: в
+line 14998 tok 27: пяток
+line 14998 tok 28: 5
+line 14998 tok 29: недели
+line 14998 tok 30: по
+line 14998 tok 31: Пасхе
+line 14998 tok 32: от
+line 14998 tok 33: полу.
+line 14998 tok 34: Святых
+line 14998 tok 35: мученик
+line 14998 tok 36: Макровия
+line 14998 tok 37: и
+line 14998 tok 38: Годрияна.
+line 14998 tok 39: Субота
+line 14998 tok 40: пред
+line 14998 tok 41: Въздвижением
+line 14998 tok 42: честнаго
+line 14998 tok 43: креста.
+line 14998 tok 44: От
+line 14998 tok 45: Матфея
+line 14998 tok 46: субота
+line 14998 tok 47: 7
+line 15001 tok 1: недели
+line 15001 tok 2: пред
+line 15001 tok 3: Въздвижением.
+line 15001 tok 4: От
+line 15001 tok 5: Иоанна
+line 15001 tok 6: глава
+line 15001 tok 7: 24.
+line 15001 tok 8: Рече
+line 15001 tok 9: Господь
+line 15001 tok 10: никтоже
+line 15001 tok 11: възл.
+line 15001 tok 12: Конец:
+line 15001 tok 13: Ну
+line 15001 tok 14: спасу
+line 15001 tok 15: миръ.
+line 15002 tok 2: сентября)
+line 15002 tok 3: Въздвижение
+line 15002 tok 4: честнаго
+line 15002 tok 5: и
+line 15002 tok 6: животворящаго
+line 15002 tok 7: креста.
+line 15002 tok 8: От
+line 15002 tok 9: Иоанна
+line 15002 tok 10: глава
+line 15002 tok 11: 150.
+line 15002 tok 12: Рече
+line 15002 tok 13: Отче
+line 15002 tok 14: прослави
+line 15002 tok 15: имя
+line 15002 tok 16: да
+line 15002 tok 17: сынове
+line 15002 tok 18: свету
+line 15002 tok 19: будете.
+line 15002 tok 20: А
+line 15002 tok 21: си
+line 15002 tok 22: на
+line 15002 tok 23: литургии.
+line 15002 tok 24: От
+line 15002 tok 25: Иоанна
+line 15002 tok 26: глава
+line 15002 tok 27: 188.
+line 15002 tok 28: В
+line 15002 tok 29: оно
+line 15002 tok 30: съвет
+line 15002 tok 31: сътвор.
+line 15002 tok 32: до:
+line 15002 tok 33: Не
+line 15002 tok 34: обретая
+line 15002 tok 35: в
+line 15002 tok 36: Нем
+line 15002 tok 37: вины.
+line 15002 tok 38: Прелези
+line 15002 tok 39: на
+line 15002 tok 40: главу
+line 15002 tok 41: 190
+line 15002 tok 42: чти
+line 15002 tok 43: пакы:
+line 15002 tok 44: Глагола
+line 15002 tok 45: Иисуови
+line 15002 tok 46: откуду
+line 15002 tok 47: еси.
+line 15002 tok 48: до:
+line 15002 tok 49: Аще
+line 15002 tok 50: не
+line 15002 tok 51: би
+line 15002 tok 52: ти
+line 15002 tok 53: дано
+line 15002 tok 54: съвыше.
+line 15002 tok 55: пакы
+line 15002 tok 56: преступи
+line 15002 tok 57: на
+line 15002 tok 58: главу
+line 15002 tok 59: 192.
+line 15002 tok 60: Пилат
+line 15002 tok 61: же
+line 15002 tok 62: убо
+line 15002 tok 63: слышав.
+line 15002 tok 64: до:
+line 15002 tok 65: Еврейскы
+line 15002 tok 66: и
+line 15002 tok 67: елинскы
+line 15002 tok 68: римъскы.
+line 15002 tok 69: преступив
+line 15002 tok 70: главу
+line 15002 tok 71: 202.
+line 15002 tok 72: Стоаху
+line 15002 tok 73: же
+line 15002 tok 74: при
+line 15002 tok 75: кресте.
+line 15002 tok 76: до:
+line 15002 tok 77: Съвръшися
+line 15002 tok 78: о
+line 15002 tok 79: Немъ.
+line 15002 tok 80: пакы
+line 15002 tok 81: преступив
+line 15002 tok 82: главу
+line 15002 tok 83: 204.
+line 15002 tok 84: И
+line 15002 tok 85: преклонъ
+line 15002 tok 86: главу.
+line 15002 tok 87: Конец:
+line 15002 tok 88: Истинно
+line 15002 tok 89: есть.
+line 15002 tok 90: Субота
+line 15002 tok 91: по
+line 15002 tok 92: Въздвижени
+line 15002 tok 93: ищи
+line 15002 tok 94: от
+line 15002 tok 95: Иоанна
+line 15002 tok 96: вторник
+line 15002 tok 97: в
+line 15002 tok 98: неделю
+line 15002 tok 99: по
+line 15002 tok 100: Пасхе.
+line 15002 tok 101: Неделя
+line 15002 tok 102: по
+line 15002 tok 103: Въздвижени.
+line 15002 tok 104: Марка
+line 15002 tok 105: неделя
+line 15002 tok 106: 3
+line 15002 tok 107: по
+line 15002 tok 108: Пасхе.
+line 15003 tok 2: сентября)
+line 15003 tok 3: Святого
+line 15003 tok 4: мученика
+line 15003 tok 5: Никиты.
+line 15003 tok 6: От
+line 15003 tok 7: Иоанна
+line 15003 tok 8: субота
+line 15003 tok 9: 3
+line 15003 tok 10: по
+line 15003 tok 11: Пасхе.
+line 15004 tok 2: сентября)
+line 15004 tok 3: Святыямучениця
+line 15004 tok 4: Ефимия.
+line 15004 tok 5: От
+line 15004 tok 6: Лукы
+line 15004 tok 7: понедельник
+line 15004 tok 8: 4.
+line 15005 tok 2: сентября)
+line 15005 tok 3: Святых
+line 15005 tok 4: мучениц
+line 15005 tok 5: Веры
+line 15005 tok 6: и
+line 15005 tok 7: Надежду
+line 15005 tok 8: и
+line 15005 tok 9: Любве
+line 15005 tok 10: матере
+line 15005 tok 11: их
+line 15005 tok 12: София.
+line 15005 tok 13: От
+line 15005 tok 14: Матфея
+line 15005 tok 15: субота
+line 15005 tok 16: 17.
+line 15006 tok 2: сентября)
+line 15006 tok 3: Священномученика
+line 15006 tok 4: Евмения.
+line 15006 tok 5: Евангелие
+line 15006 tok 6: 3
+line 15006 tok 7: недели
+line 15006 tok 8: по
+line 15006 tok 9: Пасхе.
+line 15007 tok 2: сентября)
+line 15007 tok 3: Святого
+line 15007 tok 4: мученика
+line 15007 tok 5: Трофима
+line 15007 tok 6: и
+line 15007 tok 7: дружины
+line 15007 tok 8: его.
+line 15007 tok 9: Евангелие
+line 15007 tok 10: от
+line 15007 tok 11: Матфея
+line 15007 tok 12: пяток
+line 15007 tok 13: 3
+line 15007 tok 14: недели.
+line 15008 tok 2: сентября)
+line 15008 tok 3: Святого
+line 15008 tok 4: мученика
+line 15008 tok 5: Евстафия
+line 15008 tok 6: иже
+line 15008 tok 7: с
+line 15008 tok 8: ним.
+line 15008 tok 9: От
+line 15008 tok 10: Луки
+line 15008 tok 11: в
+line 15008 tok 12: вторник
+line 15008 tok 13: 12
+line 15008 tok 14: недели.
+line 15011 tok 2: сентября)
+line 15011 tok 3: Святого
+line 15011 tok 4: апостола
+line 15011 tok 5: Кондрата.
+line 15011 tok 6: Матфея
+line 15011 tok 7: глава
+line 15011 tok 8: 79.
+line 15011 tok 9: В
+line 15011 tok 10: оно
+line 15011 tok 11: призва
+line 15011 tok 12: Иисус.
+line 15011 tok 13: В
+line 15011 tok 14: тъ
+line 15011 tok 15: же
+line 15011 tok 16: день
+line 15011 tok 17: святого
+line 15011 tok 18: пророка
+line 15011 tok 19: Ионы.
+line 15011 tok 20: От
+line 15011 tok 21: Луки
+line 15011 tok 22: понедельник
+line 15011 tok 23: 7
+line 15011 tok 24: недели.
+line 15012 tok 2: сентября)
+line 15012 tok 3: Святого
+line 15012 tok 4: священномученика
+line 15012 tok 5: Фокы.
+line 15012 tok 6: Евангелие
+line 15012 tok 7: от
+line 15012 tok 8: Луки
+line 15012 tok 9: пяток
+line 15012 tok 10: 5.
+line 15013 tok 2: сентября)
+line 15013 tok 3: Зачатие
+line 15013 tok 4: Иоанна
+line 15013 tok 5: Крестителе.
+line 15013 tok 6: От
+line 15013 tok 7: Луки
+line 15013 tok 8: глава
+line 15013 tok 9: 1.
+line 15013 tok 10: Понеже
+line 15013 tok 11: мнози.
+line 15013 tok 12: Конец:
+line 15013 tok 13: Поношение
+line 15013 tok 14: мое
+line 15013 tok 15: в
+line 15013 tok 16: человецех.
+line 15014 tok 2: сентября)
+line 15014 tok 3: Святыя
+line 15014 tok 4: первомучениця
+line 15014 tok 5: Феклы.
+line 15014 tok 6: Матфея
+line 15014 tok 7: субота
+line 15014 tok 8: 7.
+line 15015 tok 2: сентября)
+line 15015 tok 3: Преподобныя
+line 15015 tok 4: Ефросиния.
+line 15015 tok 5: Матфея
+line 15015 tok 6: 1
+line 15015 tok 7: неделя
+line 15015 tok 8: по
+line 15015 tok 9: Пасхе.
+line 15016 tok 2: сентября)
+line 15016 tok 3: Преставление
+line 15016 tok 4: святого
+line 15016 tok 5: Иоанна
+line 15016 tok 6: Богословъца.
+line 15016 tok 7: Иоанна
+line 15016 tok 8: Евангелие
+line 15016 tok 9: 11
+line 15016 tok 10: въскресно.
+line 15017 tok 2: сентября)
+line 15017 tok 3: Святого
+line 15017 tok 4: мученика
+line 15017 tok 5: Калистрата
+line 15017 tok 6: иже
+line 15017 tok 7: с
+line 15017 tok 8: ним.
+line 15017 tok 9: Иоанна
+line 15017 tok 10: Луки
+line 15017 tok 11: в
+line 15017 tok 12: вторник
+line 15017 tok 13: 12
+line 15017 tok 14: недели.
+line 15018 tok 2: сентября)
+line 15018 tok 3: Преподобнаго
+line 15018 tok 4: Харитона.
+line 15018 tok 5: Евангелие
+line 15018 tok 6: Матфея
+line 15018 tok 7: четверток
+line 15018 tok 8: 4
+line 15018 tok 9: недели.
+line 15019 tok 2: сентября)
+line 15019 tok 3: Преподобнагоо
+line 15019 tok 4: Кирияка.
+line 15019 tok 5: Марка
+line 15019 tok 6: 3
+line 15019 tok 7: недели
+line 15019 tok 8: по
+line 15019 tok 9: Пасхе.
+line 15020 tok 2: сентября)
+line 15020 tok 3: Священно
+line 15020 tok 4: Глигория
+line 15020 tok 5: Ярменскаго.
+line 15020 tok 6: Евангелие
+line 15020 tok 7: Матфея
+line 15020 tok 8: 11
+line 15020 tok 9: недели
+line 15020 tok 10: в
+line 15020 tok 11: пяток
+line 15020 tok 12: от
+line 15020 tok 13: полу
+line 15020 tok 14: 264.
+line 15021 tok 1: МЕСЯЦ
+line 15021 tok 2: ОХТЯБР
+line 15021 tok 3: РЕКОМЫ
+line 15021 tok 4: ЛИстопад.
+line 15022 tok 1: Имать
+line 15022 tok 2: дне
+line 15022 tok 3: 31.
+line 15022 tok 4: День
+line 15022 tok 5: имать
+line 15022 tok 6: часов
+line 15022 tok 7: 11.
+line 15022 tok 8: а
+line 15022 tok 9: нощ
+line 15022 tok 10: 13.
+line 15023 tok 2: октября)
+line 15023 tok 3: Святого
+line 15023 tok 4: Анания
+line 15023 tok 5: апостола.
+line 15023 tok 6: Евангелие
+line 15023 tok 7: от
+line 15023 tok 8: Лукисубота
+line 15023 tok 9: 7.
+line 15024 tok 2: октября)
+line 15024 tok 3: Священномученика
+line 15024 tok 4: Киприана
+line 15024 tok 5: и
+line 15024 tok 6: Устины.
+line 15024 tok 7: Луки
+line 15024 tok 8: среда
+line 15024 tok 9: 9
+line 15024 tok 10: недели
+line 15025 tok 2: октября)
+line 15025 tok 3: Священномученика
+line 15025 tok 4: Дионисия.
+line 15025 tok 5: Евангелие
+line 15025 tok 6: Матфея
+line 15025 tok 7: пяток
+line 15025 tok 8: 6
+line 15025 tok 9: недели.
+line 15026 tok 2: октября)
+line 15026 tok 3: Святого
+line 15026 tok 4: Ерофеа.
+line 15026 tok 5: Евангелие
+line 15026 tok 6: от
+line 15026 tok 7: Луки
+line 15026 tok 8: в
+line 15026 tok 9: вторник
+line 15026 tok 10: 12
+line 15026 tok 11: недели.
+line 15027 tok 2: октября)
+line 15027 tok 3: Святыямучениця
+line 15027 tok 4: Харитины.
+line 15027 tok 5: Луки
+line 15027 tok 6: неделя
+line 15027 tok 7: 10.
+
+=== costly fuzzy matches (cost >= 3) ===
+csv#318: 'гл҃ѭштем??' <-> 'глаголюштем..' (line 81) cost 4
+csv#355: 'гл҃ати' <-> 'глаголати.' (line 91) cost 4
+csv#396: 'чк҃омъ' <-> 'человекомъ' (line 102) cost 5
+csv#540: 'цр҃со' <-> 'Царство' (line 141) cost 3
+csv#706: 'нбх҃ъ' <-> 'небесехъ.' (line 186) cost 4
+csv#757: 'цр҃си' <-> 'Царствии' (line 198) cost 4
+csv#758: 'нб҃сцѣмь' <-> 'небеснемь.' (line 198) cost 3
+csv#769: 'цр҃си' <-> 'Царствии' (line 200) cost 4
+csv#770: 'нб҃сцѣмь' <-> 'небеснемь.' (line 200) cost 3
+csv#788: 'цр҃со' <-> 'Царство' (line 204) cost 3
+csv#1270: 'нб҃с(къ)' <-> 'небескый' (line 340) cost 4
+csv#1377: 'ч҃комъ' <-> 'человекомъ.' (line 370) cost 5
+csv#1418: 'г҃лѣте' <-> 'глаголете.' (line 379) cost 4
+csv#1427: 'г҃лани' <-> 'глаголани' (line 381) cost 4
+csv#1471: 'н҃си' <-> 'небеси' (line 394) cost 3
+csv#1518: 'ч҃комъ' <-> 'человекомъ' (line 406) cost 5
+csv#1547: 'ч҃комъ' <-> 'человекомъ' (line 418) cost 5
+csv#1821: 'г҃л҄ѭште' <-> 'глаголюште.' (line 492) cost 4
+csv#2034: 'н҃бхъ' <-> 'небесехъ.' (line 549) cost 4
+csv#2170: 'г҃лѧи' <-> 'глаголяи' (line 585) cost 4
+csv#2186: 'н҃бсхъ' <-> 'небесехъ.' (line 589) cost 3
+csv#2522: 'ц҃рси' <-> 'Царствии' (line 678) cost 4
+csv#2615: 'г҃л҄ѭштемь' <-> 'глаголюштемь.' (line 704) cost 4
+csv#2726: 'г҃лѭште' <-> 'глаголюште.' (line 733) cost 4
+csv#2752: 'г҃лѭште' <-> 'глаголюште.' (line 740) cost 4
+csv#2790: 'г҃л҄ѭшта' <-> 'глаголюшта.' (line 753) cost 4
+csv#2796: 'и҃се' <-> 'Иисусе.' (line 754) cost 3
+csv#2820: 'г҃л҄ѭште' <-> 'глаголюште.' (line 760) cost 4
+csv#2874: 'и҃сви' <-> 'Иисусови.' (line 775) cost 4
+csv#2991: 'ч҃комъ' <-> 'человекомъ.' (line 807) cost 5
+csv#3029: 'и҃сомь' <-> 'Иисусомь.' (line 817) cost 3
+csv#3037: 'г҃лаахѫ' <-> 'глаголааху' (line 819) cost 4
+csv#3127: 'и҃сви' <-> 'Иисусови.' (line 841) cost 4
+csv#3135: 'г҃л҄ѭшта' <-> 'глаголюшта.' (line 843) cost 4
+csv#3140: 'д҃авъ' <-> 'Давидовъ.' (line 844) cost 4
+csv#3160: 'г҃ласте' <-> 'глаголасте' (line 849) cost 4
+csv#3212: 'п҃рогла' <-> 'проглагола' (line 863) cost 4
+csv#3218: 'г҃лѭште' <-> 'глаголюште.' (line 864) cost 4
+csv#3227: 'г҃лахѫ' <-> 'глаголаху.' (line 866) cost 4
+csv#3247: 'ц҃рсиѣ' <-> 'Царствие.' (line 871) cost 3
+csv#3322: 'а҃полома' <-> 'апостолома.' (line 896) cost 3
+csv#3386: 'ꙇ҃лева' <-> 'Израилева.' (line 917) cost 4
+csv#3390: 'г҃лѭште' <-> 'глаголюште.' (line 918) cost 4
+csv#3394: 'ц҃рсие' <-> 'Царствие' (line 919) cost 3
+csv#3580: 'в҃ъзгл҄ете' <-> 'възглаголете.' (line 973) cost 4
+csv#3589: 'г҃лете' <-> 'глаголете.' (line 975) cost 4
+csv#3594: 'г҃лѭштеі' <-> 'глаголюштеи.' (line 976) cost 4
+csv#3652: 'ꙇ҃левъ' <-> 'Израилевъ.' (line 992) cost 4
+csv#3796: 'н҃бхъ' <-> 'небесехъ.' (line 1031) cost 4
+csv#3815: 'н҃бсхъ' <-> 'небесехъ.' (line 1039) cost 3
+csv#3839: 'м҃рь' <-> 'матерь' (line 1044) cost 3
+csv#4024: 'г҃лати' <-> 'глаголати' (line 1101) cost 4
+csv#4053: 'ц҃рихъ' <-> 'царскихъ' (line 1109) cost 3
+csv#4102: 'ц҃рсѣ' <-> 'Царстве' (line 1123) cost 3
+csv#4113: 'ц҃рсо' <-> 'Царство' (line 1126) cost 3
+csv#4159: 'г҃л҄ѭтъ' <-> 'глаголютъ.' (line 1141) cost 4
+csv#4178: 'г҃лѭт' <-> 'глаголют' (line 1145) cost 4
+csv#4188: 'г҃л҄ѭтъ' <-> 'глаголютъ' (line 1147) cost 4
+csv#4509: 'неповинъ[нъ]ꙇхъ' <-> 'неповинихъ.' (line 1234) cost 3
+csv#4535: 'гл҄ѭште' <-> 'глаголюште.' (line 1239) cost 4
+csv#4640: 'г҃л҄ѭштемь' <-> 'глаголюштемь.' (line 1265) cost 4
+csv#4711: 'г҃лаше' <-> 'глаголаше' (line 1285) cost 4
+csv#4719: 'г҃л҄ѭште' <-> 'глаголюште.' (line 1287) cost 4
+csv#4724: 'д҃авъ' <-> 'Давидовъ.' (line 1288) cost 4
+csv#4776: 'ц҃рсо' <-> 'царство' (line 1303) cost 3
+csv#4807: 'ц҃рсие' <-> 'Царствие' (line 1310) cost 3
+csv#4855: 'ч҃комъ' <-> 'человекомъ.' (line 1325) cost 5
+csv#4864: 'ч҃комъ' <-> 'человекомъ.' (line 1327) cost 5
+csv#4928: 'г҃л҄ѭтъ' <-> 'глаголютъ.' (line 1342) cost 4
+csv#4980: 'г҃л҄ѭште' <-> 'глаголюште.' (line 1359) cost 4
+csv#5149: 'г҃лати' <-> 'глаголати' (line 1406) cost 4
+csv#5164: 'г҃лати' <-> 'глаголати' (line 1409) cost 4
+csv#5172: 'г҃л҄ѭштоумоу' <-> 'глаголюштуму.' (line 1411) cost 4
+csv#5206: 'н҃бсхъ' <-> 'небесехъ.' (line 1418) cost 3
+csv#5336: 'г҃леши' <-> 'глаголеши' (line 1454) cost 4
+csv#5394: 'г҃л҄ѭштее' <-> 'глаголюштее.' (line 1468) cost 4
+csv#5593: 'ч҃комъ' <-> 'человекомъ.' (line 1523) cost 5
+csv#5702: 'ц҃рсо' <-> 'Царство' (line 1550) cost 3
+csv#5742: 'ц҃рсо' <-> 'Царство' (line 1561) cost 3
+csv#5767: 'г҃лаше' <-> 'глаголаше' (line 1568) cost 4
+csv#5800: 'гл҄ѭште' <-> 'глаголюште.' (line 1579) cost 4
+csv#5869: 'ц҃рсиѣ' <-> 'Царствие' (line 1596) cost 3
+csv#6016: 'г҃лашѧ' <-> 'глаголашя' (line 1637) cost 4
+csv#6068: 'г҃лахѫ' <-> 'глаголаху.' (line 1650) cost 4
+csv#6186: 'г҃лаше' <-> 'глаголаше' (line 1681) cost 4
+csv#6287: 'ꙇ҃сви' <-> 'Иисусови.' (line 1707) cost 4
+csv#6361: 'г҃лашѧ' <-> 'глаголашя' (line 1725) cost 4
+csv#6394: 'б҃лгви' <-> 'благослови.' (line 1735) cost 5
+csv#6542: 'и҃сви' <-> 'Иисусови.' (line 1771) cost 4
+csv#6587: 'г҃лѭште' <-> 'глаголюште.' (line 1780) cost 4
+csv#6636: 'ꙇ҃сви' <-> 'Иисусови.' (line 1795) cost 4
+csv#6644: 'г҃л҄ѭште' <-> 'глаголюште.' (line 1797) cost 4
+csv#6681: 'м҃рь' <-> 'матерь.' (line 1806) cost 3
+csv#6687: 'м҃рь' <-> 'матерь.' (line 1811) cost 3
+csv#6693: 'г҃лете' <-> 'глаголете.' (line 1812) cost 4
+csv#6699: 'м҃ри' <-> 'матери' (line 1813) cost 3
+csv#6713: 'м҃ре' <-> 'матере' (line 1816) cost 3
+csv#6907: 'г҃лѭшти' <-> 'глаголюшти.' (line 1872) cost 4
+csv#6912: 'д҃авъ' <-> 'Давидовъ.' (line 1873) cost 4
+csv#6930: 'г҃л҄ѭште' <-> 'глаголюште.' (line 1877) cost 4
+csv#7048: 'и҃свама' <-> 'Иисусовама.' (line 1906) cost 4
+csv#7058: 'г҃л҄ѭштѧ' <-> 'глаголюштя.' (line 1908) cost 4
+csv#7070: 'ꙇ҃злева' <-> 'Израилева.' (line 1914) cost 3
+csv#7106: 'г҃лашѧ' <-> 'глаголашя' (line 1921) cost 4
+csv#7208: 'г҃лете' <-> 'глаголете.' (line 1949) cost 4
+csv#7212: 'н҃бо' <-> 'небо.(Мф.' (line 1950) cost 3
+csv#7225: 'н҃си' <-> 'небеси' (line 1953) cost 3
+csv#7272: 'г҃л҄ѭште' <-> 'глаголюште.' (line 1967) cost 4
+csv#7358: 'г҃л҄ѭтъ' <-> 'глаголютъ' (line 1988) cost 4
+csv#7388: 'г҃лете' <-> 'глаголете' (line 1996) cost 4
+csv#7423: 'н҃бхъ' <-> 'небесехъ' (line 2004) cost 4
+csv#7620: 'н҃скъꙇхъ' <-> 'небескыхъ.' (line 2966) cost 3
+csv#7642: 'н҃съ' <-> 'небесъ.' (line 2972) cost 3
+csv#7939: 'ц҃рсие' <-> 'Царствие' (line 3049) cost 3
+csv#7940: 'н҃ское' <-> 'небеское.' (line 3049) cost 3
+csv#8028: 'г҃л҄ѭштѧ' <-> 'глаголюштя.' (line 3075) cost 4
+csv#8065: 'г҃л҄ѭштѧ' <-> 'глаголюштя.' (line 3087) cost 4
+csv#8435: 'ц҃рсие' <-> 'Царствие.' (line 3188) cost 3
+csv#8583: 'г҃л҄ѭште' <-> 'глаголюште.' (line 3227) cost 4
+csv#8674: 'и҃са' <-> 'Иисуса.' (line 3254) cost 3
+csv#8682: 'г҃лахѫ' <-> 'глаголаху' (line 3256) cost 4
+csv#8694: 'И҃су' <-> 'Иисусу' (line 3258) cost 3
+csv#8721: 'г҃л҄ѭште' <-> 'глаголюште.' (line 3269) cost 4
+csv#8793: 'п҃ть' <-> 'память' (line 3285) cost 3
+csv#8839: 'и҃су' <-> 'Иисусу.' (line 3300) cost 3
+csv#8840: 'г҃л҄ѭште' <-> 'глаголюште' (line 3300) cost 4
+csv#8910: 'г҃лати' <-> 'глаголати' (line 3319) cost 4
+csv#9042: 'ц҃рси' <-> 'Царствии' (line 3351) cost 4
+csv#9329: 'г҃л҄ѭштю' <-> 'глаголюштю' (line 3428) cost 4
+csv#9370: 'ꙇ҃сви' <-> 'Иисусови.' (line 3437) cost 4
+csv#9383: 'и҃са' <-> 'Иисуса.' (line 3441) cost 3
+csv#9393: 'ꙇ҃сомь' <-> 'Иисусомь.' (line 3443) cost 3
+csv#9503: 'и҃са' <-> 'Иисуса' (line 3474) cost 3
+csv#9543: 'ꙇ҃са' <-> 'Иисуса.' (line 3484) cost 3
+csv#9597: 'б҃мь' <-> 'Богомь' (line 3502) cost 3
+csv#9619: 'ч҃скааго' <-> 'Человеческааго' (line 3507) cost 7
+csv#9671: 'г҃л҄ѭште' <-> 'глаголюште.' (line 3521) cost 4
+csv#9691: 'г҃лѭшти' <-> 'глаголюшти.' (line 3528) cost 4
+csv#9696: 'ꙇ҃сомь' <-> 'Иисусомь' (line 3529) cost 3
+csv#9708: 'г҃леши' <-> 'глаголеши.' (line 3531) cost 4
+csv#9726: 'ꙇ҃сомь' <-> 'Иисусомь' (line 3534) cost 3
+csv#9778: 'ꙇ҃свъ' <-> 'Иисусовъ.' (line 3545) cost 4
+csv#9810: 'ꙇ҃са' <-> 'Иисуса.' (line 3556) cost 3
+csv#9904: 'г҃лѭштемь' <-> 'глаголюштемь.' (line 3584) cost 4
+csv#9915: 'ꙇ҃левъ' <-> 'Израилевъ.' (line 3587) cost 4
+csv#9944: 'г҃леши' <-> 'глаголеши.' (line 3593) cost 4
+csv#9948: 'г҃лахѫ' <-> 'глаголаху' (line 3594) cost 4
+csv#10014: 'ꙇ҃са' <-> 'Иисуса.' (line 3616) cost 3
+csv#10058: 'и҃са' <-> 'Иисуса' (line 3631) cost 3
+csv#10081: 'ꙇ҃са' <-> 'Иисуса' (line 3637) cost 3
+csv#10084: 'г҃лашѧ' <-> 'глаголашя' (line 3638) cost 4
+csv#10147: 'ꙇ҃са' <-> 'Иисуса' (line 3658) cost 3
+csv#10159: 'ꙇ҃са' <-> 'Иисуса' (line 3661) cost 3
+csv#10198: 'г҃л҄ѭште' <-> 'глаголюште.' (line 3671) cost 4
+csv#10314: 'г҃лѭште' <-> 'глаголюште.' (line 3703) cost 4
+csv#10344: 'г҃лаахѫ' <-> 'глаголааху.' (line 3713) cost 4
+csv#10429: 'г҃лахѫ' <-> 'глаголаху.' (line 3736) cost 4
+csv#10452: 'г҃лахѫ' <-> 'глаголаху.' (line 3741) cost 4
+csv#10535: 'и҃са' <-> 'Иисуса.' (line 3765) cost 3
+csv#10542: 'г҃л҄ѭште' <-> 'глаголюште.' (line 3767) cost 4
+csv#10559: 'ꙇ҃сѣ' <-> 'Иисусе.' (line 3771) cost 3
+csv#10595: 'ꙇ҃са' <-> 'Иисуса.' (line 3779) cost 3
+csv#10602: 'ꙇ҃сва' <-> 'Иисусова.' (line 3781) cost 4
+csv#10607: 'ꙇ҃сво' <-> 'Иисусово' (line 3782) cost 4
+csv#10659: 'г҃л҄ѭште' <-> 'глаголюште.' (line 3797) cost 4
+csv#10791: 'ꙇ҃са' <-> 'Иисуса.' (line 3833) cost 3
+csv#11086: 'и҃лмѣне' <-> 'Иерусалимене.' (line 3921) cost 6
+csv#11227: 'ц҃рсиѣ' <-> 'Царствие' (line 3956) cost 3
+csv#11278: 'ч҃комъ' <-> 'человекомъ.' (line 3968) cost 5
+csv#11364: 'и҃се' <-> 'Иисусе.' (line 3989) cost 3
+csv#11409: 'г҃л҄ѭште' <-> 'глаголюште.' (line 4001) cost 4
+csv#11513: 'г҃лати' <-> 'глаголати' (line 4029) cost 4
+csv#11545: 'г҃лашѧ' <-> 'глаголашя' (line 4035) cost 4
+csv#11776: 'г҃летъ' <-> 'глаголетъ' (line 4094) cost 4
+csv#11917: 'и҃смь' <-> 'Иисусомь.' (line 4134) cost 4
+csv#11940: 'г҃лаахѫ' <-> 'глаголааху' (line 4139) cost 4
+csv#12112: 'г҃лахѫ' <-> 'глаголаху' (line 4186) cost 4
+csv#12124: 'г҃лааше' <-> 'глаголааше' (line 4189) cost 4
+csv#12162: 'г҃лааше' <-> 'глаголааше' (line 4198) cost 4
+csv#12204: 'в҃ъзглѭтъ' <-> 'възглаголютъ.' (line 4209) cost 4
+csv#12355: 'г҃л҄ѭште' <-> 'глаголюште.' (line 4246) cost 4
+csv#12478: 'г҃лаахѫ' <-> 'глаголааху' (line 4276) cost 4
+csv#12504: 'г҃лааше' <-> 'глаголааше' (line 4286) cost 4
+csv#12513: 'ц҃рсо' <-> 'царство' (line 4288) cost 3
+csv#12578: 'с҃номъ' <-> 'сыновомъ' (line 4303) cost 3
+csv#12742: 'г҃лааше' <-> 'глаголааше' (line 4346) cost 4
+csv#12785: 'г҃лааше' <-> 'глаголааше' (line 4356) cost 4
+csv#12822: 'г҃лааше' <-> 'глаголааше.' (line 4368) cost 4
+csv#12825: 'ц҃рсие' <-> 'Царствие' (line 4368) cost 3
+csv#12876: 'г҃лааше' <-> 'глаголааше.' (line 4379) cost 4
+csv#12879: 'ц҃рсие' <-> 'Царствие' (line 4380) cost 3
+csv#12936: 'г҃лааше' <-> 'глаголааше' (line 4397) cost 4
+csv#12998: 'г҃лаахѫ' <-> 'глаголааху' (line 4410) cost 4
+csv#13137: 'ꙇ҃са' <-> 'Иисуса' (line 4447) cost 3
+csv#13153: 'і҃се' <-> 'Иисусе.' (line 4450) cost 3
+csv#13159: 'б҃мь' <-> 'Богомь.' (line 4451) cost 3
+csv#13163: 'г҃лааше' <-> 'глаголааше' (line 4452) cost 4
+csv#13212: 'г҃л҄ѭште' <-> 'глаголюште.' (line 4462) cost 4
+csv#13269: 'і҃сви' <-> 'Иисусови.' (line 4476) cost 4
+csv#13454: 'ꙇ҃сѣ' <-> 'Иисусе.' (line 4520) cost 3
+csv#13464: 'г҃лааше' <-> 'глаголааше' (line 4522) cost 4
+csv#13502: 'г҃лааше' <-> 'глаголааше.' (line 4530) cost 4
+csv#13568: 'г҃л҄ѭштю' <-> 'глаголюштю' (line 4547) cost 4
+csv#13573: 'г҃лѭште' <-> 'глаголюште.' (line 4548) cost 4
+csv#13585: 'г҃лемое' <-> 'глаголемое.' (line 4551) cost 4
+csv#13650: 'м҃рь' <-> 'матерь.' (line 4565) cost 3
+csv#13712: 'о҃чство' <-> 'отечество' (line 4581) cost 3
+csv#13735: 'г҃лѭште' <-> 'глаголюште.' (line 4586) cost 4
+csv#13782: 'глааше' <-> 'Глаголааше' (line 4599) cost 4
+csv#13878: 'г҃лааше' <-> 'глаголааше' (line 4619) cost 4
+csv#13947: 'ꙇ҃свъ' <-> 'Иисусовъ.' (line 4641) cost 4
+csv#13954: 'г҃лааше' <-> 'глаголааше.' (line 4642) cost 4
+csv#13971: 'г҃лаахѫ' <-> 'глаголааху' (line 4646) cost 4
+csv#13977: 'г҃лаахѫ' <-> 'глаголааху' (line 4650) cost 4
+csv#14021: 'глааше' <-> 'Глаголааше' (line 4660) cost 4
+csv#14122: 'ц҃рсиѣ' <-> 'царствие' (line 4688) cost 3
+csv#14129: 'м҃ри' <-> 'матери' (line 4689) cost 3
+csv#14202: 'м҃ри' <-> 'матери' (line 4709) cost 3
+csv#14221: 'а҃поли' <-> 'апостоли' (line 4713) cost 3
+csv#14223: 'і҃су' <-> 'Иисусу.' (line 4713) cost 3
+csv#14313: 'г҃лашѧ' <-> 'глаголашя' (line 4735) cost 4
+csv#14349: 'г҃лашѧ' <-> 'глаголашя' (line 4743) cost 4
+csv#14373: 'г҃лашѧ' <-> 'глаголашя.' (line 4749) cost 4
+csv#14794: 'г҃лашѧ' <-> 'глаголашя' (line 4860) cost 4
+csv#14812: 'м҃рь' <-> 'матерь' (line 4864) cost 3
+csv#14819: 'м҃рь' <-> 'матерь.' (line 4866) cost 3
+csv#14825: 'г҃лете' <-> 'глаголете.' (line 4867) cost 4
+csv#14831: 'м҃ри' <-> 'матери.' (line 4868) cost 3
+csv#14854: 'м҃ри' <-> 'матери' (line 4873) cost 3
+csv#14954: 'г҃лааше' <-> 'глаголааше' (line 4902) cost 4
+csv#15183: 'г҃лааше' <-> 'глаголааше' (line 4965) cost 4
+csv#15214: 'г҃лати' <-> 'глаголати.' (line 4973) cost 4
+csv#15321: 'б҃гвивъ' <-> 'благословивъ' (line 5001) cost 6
+csv#15372: 'н҃се' <-> 'небесе.' (line 5017) cost 3
+csv#15438: 'г҃лѭште' <-> 'глаголюште.' (line 5032) cost 4
+csv#15485: 'г҃лашѧ' <-> 'глаголашя' (line 5046) cost 4
+csv#15552: 'г҃лааше' <-> 'глаголааше' (line 5060) cost 4
+csv#15615: 'г҃лете' <-> 'глаголете' (line 5076) cost 4
+csv#15640: 'г҃лете' <-> 'глаголете' (line 5082) cost 4
+csv#15656: 'г҃л҄ѭтъ' <-> 'глаголютъ' (line 5085) cost 4
+csv#15690: 'г҃лааше' <-> 'глаголааше.' (line 5096) cost 4
+csv#15821: 'г҃лааше' <-> 'глаголааше' (line 5127) cost 4
+csv#15838: 'ц҃рсие' <-> 'Царствие' (line 5132) cost 3
+csv#15895: 'г҃л҄ѭшта' <-> 'глаголюшта' (line 5146) cost 4
+csv#15897: 'ꙇ҃смь' <-> 'Иисусомь.' (line 5146) cost 4
+csv#15902: 'и҃сви' <-> 'Иисусови.' (line 5147) cost 4
+csv#15925: 'глет' <-> 'глаголет.' (line 5152) cost 4
+csv#15956: 'ꙇ҃са' <-> 'Иисуса' (line 5160) cost 3
+csv#15995: 'г҃л҄ѭште' <-> 'глаголюште.' (line 5173) cost 4
+csv#15997: 'г҃лѭтъ' <-> 'глаголютъ' (line 5173) cost 4
+csv#16215: 'г҃лааше' <-> 'глаголааше.' (line 5226) cost 4
+csv#16264: 'г҃лаахѫ' <-> 'глаголааху' (line 5236) cost 4
+csv#16324: 'г҃лааше' <-> 'глаголааше' (line 5251) cost 4
+csv#16624: 'ц҃рсие' <-> 'Царствие' (line 5329) cost 3
+csv#16762: 'м҃рь' <-> 'матерь.' (line 5365) cost 3
+csv#16872: 'ц҃рсьѣ' <-> 'Царсьтвие' (line 5393) cost 4
+csv#16916: 'г҃леши' <-> 'глаголеши' (line 5407) cost 4
+csv#16940: 'м҃рь' <-> 'матерь.' (line 5413) cost 3
+csv#16980: 'н҃бсхъ' <-> 'небесехъ' (line 5423) cost 3
+csv#17013: 'ц҃рсо' <-> 'Царство' (line 5434) cost 3
+csv#17037: 'ц҃рсие' <-> 'Царствие' (line 5440) cost 3
+csv#17050: 'ц҃рсие' <-> 'Царствие' (line 5444) cost 3
+csv#17058: 'г҃лѭште' <-> 'глаголюште' (line 5446) cost 4
+csv#17087: 'г҃лати' <-> 'глаголати' (line 5455) cost 4
+csv#17117: 'м҃рь' <-> 'матерь.' (line 5462) cost 3
+csv#17127: 'е҃вꙉлиѣ' <-> 'Евангелие.' (line 5464) cost 3
+csv#17143: 'м҃рь' <-> 'матерь.' (line 5467) cost 3
+csv#17192: 'г҃лати' <-> 'глаголати.' (line 5481) cost 4
+csv#17243: 'с҃на' <-> 'сынова' (line 5493) cost 3
+csv#17245: 'г҃л҄ѭшта' <-> 'глаголюшта' (line 5493) cost 4
+csv#17452: 'д҃авъ' <-> 'Давидовъ.' (line 5545) cost 4
+csv#17453: 'и҃се' <-> 'Иисусе.' (line 5545) cost 3
+csv#17467: 'д҃авъ' <-> 'Давидовъ' (line 5549) cost 4
+csv#17480: 'г҃л҄ѭште' <-> 'глаголюште' (line 5552) cost 4
+csv#17494: 'ꙇ҃суви' <-> 'Иисусови.' (line 5559) cost 3
+csv#17527: 'ꙇ҃сѣ' <-> 'Иисусе' (line 5565) cost 3
+csv#17617: 'г҃лаахѫ' <-> 'глаголааху' (line 5588) cost 4
+csv#17637: 'ꙇ҃сви' <-> 'Иисусови.' (line 5593) cost 4
+csv#17672: 'г҃л҄ѭште' <-> 'глаголюште.' (line 5600) cost 4
+csv#17679: 'б҃гсвно' <-> 'благословено' (line 5602) cost 6
+csv#17681: 'ц҃рсье' <-> 'Царствье.' (line 5603) cost 3
+csv#17909: 'г҃л҄етъ' <-> 'глаголетъ.' (line 5668) cost 4
+csv#17983: 'г҃лашѧ' <-> 'глаголашя' (line 5685) cost 4
+csv#18034: 'г҃л҄ѭште' <-> 'глаголюште.' (line 5700) cost 4
+csv#18063: 'г҃лашѧ' <-> 'глаголашя' (line 5706) cost 4
+csv#18064: 'и҃сви' <-> 'Иисусови' (line 5706) cost 4
+csv#18074: 'г҃л҄ѭ' <-> 'глагою' (line 5708) cost 3
+csv#18084: 'г҃лати' <-> 'глаголати.' (line 5711) cost 4
+csv#18281: 'г҃лашѧ' <-> 'глаголашя' (line 5762) cost 4
+csv#18299: 'ч҃комъ' <-> 'человекомъ.' (line 5769) cost 5
+csv#18364: 'б҃ви' <-> 'Богови.' (line 5783) cost 3
+csv#18376: 'г҃л҄ѭтъ' <-> 'глаголютъ' (line 5786) cost 4
+csv#18383: 'г҃л҄ѭште' <-> 'глаголюште.' (line 5788) cost 4
+csv#18497: 'н҃бсхъ' <-> 'небесехъ.' (line 5820) cost 3
+csv#18667: 'ц҃рсьѣ' <-> 'Царствье' (line 5864) cost 3
+csv#18680: 'г҃лааше' <-> 'глаголааше.' (line 5867) cost 4
+csv#18685: 'г҃л҄ѭтъ' <-> 'глаголютъ' (line 5871) cost 4
+csv#18733: 'г҃лааше' <-> 'глаголааше' (line 5882) cost 4
+csv#18912: 'г҃лати' <-> 'глаголати' (line 5937) cost 4
+csv#18927: 'г҃л҄ѭште' <-> 'глаголюште.' (line 5941) cost 4
+csv#18957: 'ц҃рсо' <-> 'царство' (line 5951) cost 3
+csv#18959: 'ц҃рсо' <-> 'царство.' (line 5951) cost 3
+csv#19032: 'г҃л҄ите' <-> 'глаголите.' (line 5969) cost 4
+csv#19247: 'н҃бхъ' <-> 'небесехъ.' (line 6027) cost 4
+csv#19254: 'ч҃скаего' <-> 'Человеческаего' (line 6029) cost 7
+csv#19439: 'г҃лаахѫ' <-> 'глаголааху' (line 6073) cost 4
+csv#19483: 'г҃лѭште' <-> 'глаголюште.' (line 6087) cost 4
+csv#19568: 'г҃лано' <-> 'глаголано' (line 6109) cost 4
+csv#19571: 'п҃ть' <-> 'память' (line 6109) cost 3
+csv#19658: 'г҃летъ' <-> 'глаголетъ.' (line 6133) cost 4
+csv#19726: 'г҃лати' <-> 'глаолати' (line 6149) cost 3
+csv#19790: 'б҃лгсвешть' <-> 'благословешть' (line 6165) cost 4
+csv#19844: 'ц҃рсьи' <-> 'Царствьи' (line 6177) cost 3
+csv#19923: 'г҃лааше' <-> 'глаголааше' (line 6196) cost 4
+csv#19939: 'г҃лаахѫ' <-> 'глаголааху.' (line 6200) cost 4
+csv#20112: 'г҃л҄ѭштю' <-> 'глаголюштю.' (line 6247) cost 4
+csv#20250: 'и҃са' <-> 'Иисуса' (line 6282) cost 3
+csv#20294: 'ꙇ҃са' <-> 'Иисуса.' (line 6294) cost 3
+csv#20319: 'г҃л҄ѭште' <-> 'глаголюште.' (line 6301) cost 4
+csv#20350: 'ꙇ҃са' <-> 'Иисуса' (line 6309) cost 3
+csv#20379: 'б҃лгвенааго' <-> 'Благословенааго.' (line 6319) cost 5
+csv#20436: 'г҃лати' <-> 'глаголати' (line 6333) cost 4
+csv#20477: 'ꙇ҃смь' <-> 'Иисусомь' (line 6345) cost 4
+csv#20490: 'г҃леши' <-> 'глаголеши.' (line 6347) cost 4
+csv#20506: 'г҃лати' <-> 'глаголати' (line 6351) cost 4
+csv#20525: 'г҃лаахѫ' <-> 'глаголааху' (line 6355) cost 4
+csv#20555: 'г҃лете' <-> 'глаголете.' (line 6361) cost 4
+csv#20601: 'ꙇ҃са' <-> 'Иисуса' (line 6375) cost 3
+csv#20622: 'г҃леши' <-> 'глаголеши.' (line 6379) cost 4
+csv#20624: 'г҃лаахѫ' <-> 'глаголааху' (line 6380) cost 4
+csv#20730: 'г҃лете' <-> 'глаголете' (line 6411) cost 4
+csv#20764: 'и҃са' <-> 'Иисуса' (line 6422) cost 3
+csv#20923: 'г҃летъ' <-> 'глаголетъ.' (line 6462) cost 4
+csv#20961: 'г҃лаахѫ' <-> 'глаголааху.' (line 6475) cost 4
+csv#20971: 'ꙇ҃левъ' <-> 'Израилевъ.' (line 6477) cost 4
+csv#21029: 'г҃лаахѫ' <-> 'глаголааху.' (line 6495) cost 4
+csv#21127: 'е҃рлмъ' <-> 'Ерусалимъ.' (line 6521) cost 4
+csv#21150: 'ц҃рсиѣ' <-> 'Царствие' (line 6527) cost 3
+csv#21160: 'ꙇ҃сва' <-> 'Иисусова.' (line 6529) cost 4
+csv#21289: 'ꙇ҃са' <-> 'Иисуса' (line 6565) cost 3
+csv#21509: 'м҃цѧ' <-> 'месяця.' (line 6633) cost 3
+csv#21551: 'и҃са' <-> 'Иисуса:' (line 6645) cost 3
+csv#21587: 'ꙇ҃сви' <-> 'Иисусови' (line 6658) cost 4
+csv#21639: 'ц҃рсье' <-> 'царствие:' (line 6677) cost 4
+csv#21747: 'б҃мь' <-> 'Богомь.' (line 6716) cost 3
+csv#21754: 'г҃ніхъ' <-> 'Господнихъ.' (line 6718) cost 5
+csv#21782: 'б҃мь' <-> 'Богомь.' (line 6724) cost 3
+csv#21870: 'б҃мь' <-> 'Богомь.' (line 6746) cost 3
+csv#21888: 'м҃ре' <-> 'матере' (line 6749) cost 3
+csv#21893: 'ꙇ҃л҄евъ' <-> 'Израилевъ.' (line 6751) cost 4
+csv#21952: 'б҃мь' <-> 'Богомь.' (line 6767) cost 3
+csv#21956: 'г҃лати' <-> 'глаголати' (line 6768) cost 4
+csv#22025: 'м҃ць' <-> 'месяць' (line 6783) cost 3
+csv#22045: 'м҃ць' <-> 'месяць.' (line 6790) cost 3
+csv#22067: 'д҃ава' <-> 'Давидова.' (line 6796) cost 4
+csv#22083: 'б҃лгсв҄ена' <-> 'благословена' (line 6799) cost 4
+csv#22211: 'м҃ць' <-> 'месяць' (line 6828) cost 3
+csv#22288: 'б҃лгвна' <-> 'благословена' (line 6850) cost 6
+csv#22293: 'б҃лгсвенъ' <-> 'благословенъ' (line 6851) cost 4
+csv#22332: 'г҃ланꙑмъ' <-> 'глаголанымъ' (line 6861) cost 4
+csv#22431: 'м҃цѧ' <-> 'месяця' (line 6887) cost 3
+csv#22538: 'г҃лааше' <-> 'глаголааше.' (line 6914) cost 4
+csv#22539: 'б҃гсвстѧ' <-> 'благовестя' (line 6914) cost 4
+csv#22565: 'г҃л҄ѭште' <-> 'глаголюште.' (line 6924) cost 4
+csv#22606: 'д҃авѣ' <-> 'Давидове.' (line 6933) cost 4
+csv#22612: 'с҃тъꙇх' <-> 'святыхъ.' (line 6934) cost 3
+csv#22635: 'с҃тоі' <-> 'святой' (line 6944) cost 3
+csv#22677: 'г҃немь' <-> 'Господнемь' (line 6954) cost 5
+csv#22773: 'д҃авъ' <-> 'Давидовъ.' (line 6984) cost 4
+csv#22784: 'д҃ава' <-> 'Давидова.' (line 6987) cost 4
+csv#22884: 'д҃авѣ' <-> 'Давидове.' (line 7012) cost 4
+csv#22906: 'г҃лѭштихъ' <-> 'глаголюштихъ.' (line 7022) cost 4
+csv#22916: 'ч҃цѣхъ' <-> 'человецехъ' (line 7024) cost 5
+csv#22967: 'г҃ланѣмь' <-> 'глаголанемь.' (line 7036) cost 4
+csv#23006: 'г҃лано' <-> 'глаголано' (line 7049) cost 4
+csv#23095: 'ꙇ҃левꙑ' <-> 'Израилевы.' (line 7074) cost 4
+csv#23126: 'ꙇ҃са' <-> 'Иисуса.' (line 7081) cost 3
+csv#23142: 'б҃лгви' <-> 'благослови' (line 7084) cost 5
+csv#23178: 'ꙇ҃илѣ' <-> 'Израиле.' (line 7094) cost 3
+csv#23188: 'г҃лемъꙇхъ' <-> 'глаголемыхъ' (line 7095) cost 4
+csv#23283: 'г҃лааше' <-> 'глаголааше' (line 7121) cost 4
+csv#23638: 'г҃лати' <-> 'глаголати' (line 7224) cost 4
+csv#23680: 'г҃лѭште' <-> 'глаголюште.' (line 7237) cost 4
+csv#23686: 'г҃лааше' <-> 'глаголааше' (line 7239) cost 4
+csv#23729: 'г҃л҄ѭште' <-> 'глаголюште.' (line 7249) cost 4
+csv#23872: 'н҃се' <-> 'небесе' (line 7291) cost 3
+csv#23898: 'ꙇлеіевъ' <-> '3:23)Илеиевъ.' (line 7298) cost 3
+csv#24039: 'ꙇ҃се' <-> 'Иисусе' (line 7375) cost 3
+csv#24084: 'г҃л҄ѭште' <-> 'глаголюште.' (line 7387) cost 4
+csv#24170: 'г҃л҄ѭште' <-> 'глаголюште.' (line 7413) cost 4
+csv#24182: 'г҃лати' <-> 'глаголати.' (line 7415) cost 4
+csv#24364: 'ꙇ҃свама' <-> 'Иисусовама' (line 7465) cost 4
+csv#24438: 'ꙇ҃са' <-> 'Иисуса' (line 7481) cost 3
+csv#24473: 'г҃лати' <-> 'глаголати.' (line 7491) cost 4
+csv#24488: 'очиште]нье' <-> 'ште)нье' (line 7495) cost 3
+csv#24588: 'ꙇ҃са' <-> 'Иисуса.' (line 7517) cost 3
+csv#24595: 'ч҃лче' <-> 'человече' (line 7518) cost 4
+csv#24702: 'г҃лѭште' <-> 'глаголюште.' (line 7549) cost 4
+csv#24762: 'г҃лѭште' <-> 'глаголюште' (line 7567) cost 4
+csv#24847: 'г҃лааше' <-> 'глаголааше' (line 7591) cost 4
+csv#24921: 'г҃летъ' <-> 'глаголетъ' (line 7609) cost 4
+csv#25109: 'г҃лаахѫ' <-> 'глаголааху' (line 7661) cost 4
+csv#25117: 'ꙇ҃сви' <-> 'Иисусови.' (line 7663) cost 4
+csv#25253: 'г҃лааше' <-> 'глаголааше.' (line 7702) cost 4
+csv#25368: 'б҃гсвите' <-> 'благословите' (line 7737) cost 5
+csv#25689: 'г҃лѭтъ' <-> 'глаголютъ' (line 7832) cost 4
+csv#25801: 'ꙇ҃са' <-> 'Иисуса.' (line 7862) cost 3
+csv#25817: 'ꙇ҃сви' <-> 'Иисусови.' (line 7865) cost 4
+csv#26024: 'г҃лати' <-> 'глаголати.' (line 7918) cost 4
+csv#26032: 'г҃лѭште' <-> 'глаголюште.' (line 7920) cost 4
+csv#26077: 'ꙇ҃сви' <-> 'Иисусови' (line 7932) cost 4
+csv#26250: 'ц҃рси' <-> 'Царствии' (line 7983) cost 4
+csv#26324: 'г҃лете' <-> 'глаголете' (line 8006) cost 4
+csv#26334: 'г҃лете' <-> 'глаголете.' (line 8008) cost 4
+csv#26583: 'г҃лати' <-> 'глаголати' (line 8078) cost 4
+csv#26618: 'ц҃рсье' <-> 'Царствие' (line 8089) cost 4
+csv#26674: 'г҃лааше' <-> 'глаголааше' (line 8104) cost 4
+csv#26745: 'г҃л҄ѭште' <-> 'глаголюште.' (line 8123) cost 4
+csv#26759: 'ц҃рсьѣ' <-> 'Царсьтвие' (line 8127) cost 4
+csv#26955: 'г҃лѭште' <-> 'глаголюште.' (line 8184) cost 4
+csv#27031: 'г҃л҄ѭште' <-> 'глаголюште.' (line 8205) cost 4
+csv#27061: 'г҃лѭште' <-> 'глаголюште' (line 8217) cost 4
+csv#27121: 'ꙇ҃са' <-> 'Иисуса.' (line 8230) cost 3
+csv#27134: 'ꙇ҃се' <-> 'Иисусе' (line 8233) cost 3
+csv#27260: 'ꙇ҃сви' <-> 'Иисусови.' (line 8269) cost 4
+csv#27274: 'ꙇ҃своу' <-> 'Иисусову.' (line 8272) cost 4
+csv#27380: 'ꙇ҃своу' <-> 'Иисусову.' (line 8300) cost 4
+csv#27472: 'г҃леши' <-> 'глаголеши' (line 8324) cost 4
+csv#27534: 'г҃лѭштю' <-> 'глаголюштю.' (line 8337) cost 4
+csv#27742: 'г҃лемо' <-> 'глаголемо' (line 8396) cost 4
+csv#27789: 'а҃поли' <-> 'апостоли.' (line 8407) cost 3
+csv#27814: 'г҃лааше' <-> 'глаголааше' (line 8414) cost 4
+csv#27987: 'г҃лете' <-> 'глаголете' (line 8460) cost 4
+csv#28002: 'г҃лати' <-> 'глаголати.' (line 8464) cost 4
+csv#28027: 'г҃лааше' <-> 'глаголааше' (line 8474) cost 4
+csv#28167: 'г҃л҄ѭшта' <-> 'глаголюшта.' (line 8508) cost 4
+csv#28177: 'г҃лааше' <-> 'глаголааше' (line 8510) cost 4
+csv#28218: 'ꙇ҃сви' <-> 'Иисусови.' (line 8519) cost 4
+csv#28240: 'г҃лааше' <-> 'глаголааше.' (line 8527) cost 4
+csv#28244: 'г҃лѭштю' <-> 'глаголюштю.' (line 8528) cost 4
+csv#28718: 'ц҃рсие' <-> 'Царствие' (line 8646) cost 3
+csv#28753: 'ц҃рси' <-> 'Царствии' (line 8656) cost 4
+csv#28779: 'Г҃лааше' <-> 'Глаголааше' (line 8662) cost 4
+csv#28829: 'г҃лите' <-> 'глаголите.' (line 8673) cost 4
+csv#28895: 'г҃лите' <-> 'глаголите' (line 8692) cost 4
+csv#28901: 'ц҃рсие' <-> 'Царствие' (line 8693) cost 3
+csv#28937: 'ц҃рсие' <-> 'Царствие' (line 8703) cost 3
+csv#28993: 'н҃се' <-> 'небесе' (line 8719) cost 3
+csv#29032: 'г҃лѭште' <-> 'глаголюште.' (line 8733) cost 4
+csv#29050: 'н҃се' <-> 'небесе' (line 8737) cost 3
+csv#29091: 'н҃схъ' <-> 'небесехъ.' (line 8746) cost 4
+csv#29266: 'ꙇ҃сви' <-> 'Иисусови.' (line 8792) cost 4
+csv#29444: 'ꙇ҃своу' <-> 'Иисусову.' (line 8841) cost 4
+csv#29538: 'г҃лите' <-> 'глаголите.' (line 8866) cost 4
+csv#29544: 'н҃сехъ' <-> 'небесехъ.' (line 8867) cost 3
+csv#29552: 'ц҃рсие' <-> 'Царствие' (line 8869) cost 3
+csv#29560: 'н҃се' <-> 'небесе.' (line 8870) cost 3
+csv#29774: 'п҃рогла' <-> 'проглагола' (line 8926) cost 4
+csv#29807: 'ц҃рсие' <-> 'царствие.' (line 8935) cost 3
+csv#29830: 'ц҃рсье' <-> 'царствье' (line 8943) cost 3
+csv#29833: 'г҃лете' <-> 'глаголете.' (line 8943) cost 4
+csv#29850: 'ц҃рсье' <-> 'царствье' (line 8947) cost 3
+csv#29911: 'г҃летъ' <-> 'глаголетъ.' (line 8962) cost 4
+csv#29947: 'г҃лааше' <-> 'глаголааше' (line 8975) cost 4
+csv#29984: 'г҃лати' <-> 'глаголати.' (line 8984) cost 4
+csv#30137: 'г҃лааше' <-> 'глаголааше.' (line 9034) cost 4
+csv#30344: 'а҃полꙑ' <-> 'апостолы.' (line 9100) cost 3
+csv#30426: 'в҃ъзглѭтъ' <-> 'възглаголютъ.' (line 9128) cost 4
+csv#30438: 'г҃лати' <-> 'глаголати' (line 9132) cost 4
+csv#30537: 'б҃мь' <-> 'Богомь.' (line 9161) cost 3
+csv#30634: 'г҃лати' <-> 'глаголати.' (line 9189) cost 4
+csv#30922: 'ц҃рсьѣ' <-> 'Царствье' (line 9268) cost 3
+csv#30941: 'ц҃рсье' <-> 'Царствье.' (line 9272) cost 3
+csv#30956: 'н҃схъ' <-> 'небесехъ.' (line 9280) cost 4
+csv#30987: 'ч҃комъ' <-> 'человекомъ.' (line 9289) cost 5
+csv#31085: 'г҃леши' <-> 'глаголеши.' (line 9316) cost 4
+csv#31300: 'Г҃лааше' <-> 'Глаголааше' (line 9376) cost 4
+csv#31322: 'г҃лете' <-> 'глаголете' (line 9384) cost 4
+csv#31469: 'Г҃лааше' <-> 'Глаголааше' (line 9426) cost 4
+csv#31608: 'г҃лааше' <-> 'глаголааше' (line 9467) cost 4
+csv#31700: 'ц҃рсье' <-> 'Царствье' (line 9494) cost 3
+csv#31737: 'ц҃рсье' <-> 'Царствье' (line 9503) cost 3
+csv#31810: 'г҃лѭште' <-> 'глаголюште.' (line 9525) cost 4
+csv#31826: 'г҃лати' <-> 'глаголати' (line 9529) cost 4
+csv#31995: 'Г҃лааше' <-> 'Глаголааше' (line 9579) cost 4
+csv#32308: 'г҃лѭште' <-> 'глаголюште.' (line 9666) cost 4
+csv#32422: 'г҃лѭште' <-> 'глаголюште.' (line 9701) cost 4
+csv#32502: 'н҃се' <-> 'небесе.' (line 9724) cost 3
+csv#32547: 'г҃лѭшти' <-> 'глаголюшти.' (line 9736) cost 4
+csv#32946: 'г҃лааше' <-> 'глаголааше' (line 9841) cost 4
+csv#33034: 'г҃лааше' <-> 'глаголааше' (line 9868) cost 4
+csv#33220: 'ч҃цѣхъ' <-> 'человецехъ' (line 9921) cost 5
+csv#33224: 'б҃мь' <-> 'Богомь' (line 9922) cost 3
+csv#33578: 'а҃поли' <-> 'апостоли' (line 10021) cost 3
+csv#33593: 'г҃лали' <-> 'глаголали' (line 10025) cost 4
+csv#33665: 'г҃літе' <-> 'глаголите' (line 10046) cost 4
+csv#33703: 'г҃лѭште' <-> 'глаголюште.' (line 10059) cost 4
+csv#33704: 'ꙇ҃се' <-> 'Иисусе' (line 10059) cost 3
+csv#33789: 'ц҃рсье' <-> 'Царствье' (line 10080) cost 3
+csv#33797: 'ц҃рсье' <-> 'Царствье' (line 10081) cost 3
+csv#33809: 'ц҃рсье' <-> 'Царствье' (line 10087) cost 3
+csv#33826: 'ч҃скааго' <-> 'Человеческааго' (line 10092) cost 7
+csv#33849: 'п҃одънскꙑѩ' <-> 'подънебескыя.' (line 10097) cost 3
+csv#33851: 'п҃одънскѫѭ' <-> 'подънебескую.' (line 10098) cost 3
+csv#34028: 'г҃лашѧ' <-> 'глаголашя' (line 10146) cost 4
+csv#34084: 'г҃лѭшти' <-> 'глаголюшти.' (line 10157) cost 4
+csv#34135: 'г҃летъ' <-> 'глаголетъ.' (line 10171) cost 4
+csv#34316: 'ц҃рсье' <-> 'Царствие' (line 10222) cost 4
+csv#34325: 'ц҃рсиѣ' <-> 'Царствие' (line 10224) cost 3
+csv#34352: 'г҃леши' <-> 'глаголеши' (line 10231) cost 4
+csv#34407: 'н҃бсхъ' <-> 'небесехъ.' (line 10248) cost 3
+csv#34434: 'ц҃рсо' <-> 'Царство' (line 10254) cost 3
+csv#34448: 'ц҃рсье' <-> 'Царствье' (line 10258) cost 3
+csv#34457: 'с҃пнъ' <-> 'спасенъ' (line 10260) cost 3
+csv#34504: 'ц҃рсьѣ' <-> 'Царствье' (line 10274) cost 3
+csv#34578: 'г҃лемꙑхъ' <-> 'глаголемыхъ.' (line 10294) cost 4
+csv#34612: 'ꙇ҃се' <-> 'Иисусе' (line 10303) cost 3
+csv#34614: 'д҃авъ' <-> 'Давидовъ.' (line 10304) cost 4
+csv#34630: 'д҃авъ' <-> 'Давидовъ' (line 10308) cost 4
+csv#34685: 'б҃ви' <-> 'Богови.' (line 10323) cost 3
+csv#34709: 'ꙇ҃са' <-> 'Иисуса.' (line 10329) cost 3
+csv#34729: 'ꙇ҃са' <-> 'Иисуса.' (line 10334) cost 3
+csv#34772: 'г҃лѭште' <-> 'глаголюште.' (line 10347) cost 4
+csv#34807: 'с҃пние' <-> 'спасение' (line 10355) cost 3
+csv#34842: 'ц҃рсье' <-> 'Царствье' (line 10364) cost 3
+csv#34858: 'ц҃рсие' <-> 'царствие.' (line 10371) cost 3
+csv#34890: 'г҃лѭште' <-> 'глаголюште.' (line 10379) cost 4
+csv#34904: 'ц҃рсье' <-> 'царствье.' (line 10383) cost 3
+csv#35176: 'г҃дье' <-> 'господье' (line 10456) cost 4
+csv#35194: 'ꙇ҃сви' <-> 'Иисусови.' (line 10459) cost 4
+csv#35202: 'ꙇ҃са' <-> 'Иисуса.' (line 10461) cost 3
+csv#35235: 'г҃лѭште' <-> 'глаголюште.' (line 10474) cost 4
+csv#35245: 'н҃бсхъ' <-> 'небесехъ.' (line 10476) cost 3
+csv#35423: 'г҃лѭште' <-> 'глаголюште' (line 10527) cost 4
+csv#35456: 'н҃се' <-> 'небесе' (line 10535) cost 3
+csv#35467: 'г҃лѭште' <-> 'глаголюште.' (line 10537) cost 4
+csv#35472: 'н҃се' <-> 'небесе.' (line 10538) cost 3
+csv#35522: 'г҃лати' <-> 'глаголати' (line 10554) cost 4
+csv#35605: 'г҃лѭште' <-> 'глаголюште.' (line 10580) cost 4
+csv#35730: 'г҃леши' <-> 'глаголеши.' (line 10615) cost 4
+csv#35781: 'б҃ви' <-> 'Богови.' (line 10630) cost 3
+csv#35979: 'г҃лѭтъ' <-> 'глаголютъ' (line 10686) cost 4
+csv#35984: 'д҃ава' <-> 'Давидова.' (line 10687) cost 4
+csv#35988: 'г҃летъ' <-> 'глаголетъ.' (line 10688) cost 4
+csv#36097: 'б҃ви' <-> 'Богови.' (line 10723) cost 3
+csv#36109: 'г҃лѭштемъ' <-> 'глаголюштемъ' (line 10726) cost 4
+csv#36140: 'г҃лѭште' <-> 'глаголюште.' (line 10736) cost 4
+csv#36169: 'г҃лѭште' <-> 'глаголюште.' (line 10743) cost 4
+csv#36200: 'г҃лааше' <-> 'глаголааше' (line 10751) cost 4
+csv#36208: 'ц҃рсо' <-> 'царство.' (line 10753) cost 3
+csv#36210: 'ц҃рсо' <-> 'царство.' (line 10753) cost 3
+csv#36427: 'ч҃комъ' <-> 'человекомъ' (line 10823) cost 5
+csv#36500: 'ц҃рсие' <-> 'Царствие' (line 10847) cost 3
+csv#36723: 'г҃летъ' <-> 'глаголетъ' (line 10910) cost 4
+csv#36762: 'а҃пола' <-> 'апостола' (line 10923) cost 3
+csv#36795: 'ц҃рси' <-> 'Царствии' (line 10931) cost 4
+csv#36820: 'ц҃рсие' <-> 'Царствие' (line 10937) cost 3
+csv#36978: 'Ц҃рсо' <-> 'Царство' (line 10982) cost 3
+csv#36987: 'ц҃рси' <-> 'Царствии' (line 10984) cost 4
+csv#36998: 'ꙇ҃лвама' <-> 'Израилевама.' (line 10987) cost 5
+csv#37025: 'нꙑ]н҄ѣ когда' <-> 'когда' (line 10996) cost 4
+csv#37277: 'ꙇ҃сви' <-> 'Иисусови' (line 11059) cost 4
+csv#37483: 'г҃леши' <-> 'глаголеши.' (line 11113) cost 4
+csv#37487: 'г҃лѭштю' <-> 'глаголюштю' (line 11114) cost 4
+csv#37543: 'г҃лѭште' <-> 'глаголюште.' (line 11129) cost 4
+csv#37553: 'глаахѫ' <-> 'глаголааху' (line 11132) cost 4
+csv#37574: 'г҃лѭште' <-> 'глаголюште.' (line 11136) cost 4
+csv#37617: 'г҃лете' <-> 'глаголете' (line 11145) cost 4
+csv#37647: 'г҃лѭште' <-> 'глаголюште.' (line 11156) cost 4
+csv#37679: 'г҃леши' <-> 'глаголеши.' (line 11165) cost 4
+csv#37699: 'г҃лѭште' <-> 'глаголюште.' (line 11170) cost 4
+csv#37735: 'ꙇ҃лмѣхъ' <-> 'Иерусалимехъ' (line 11183) cost 6
+csv#37742: 'ꙇ҃са' <-> 'Иисуса.' (line 11185) cost 3
+csv#37901: 'г҃лѭште' <-> 'глаголюште.' (line 11231) cost 4
+csv#37927: 'ꙇ҃са' <-> 'Иисуса.' (line 11238) cost 3
+csv#37990: 'ꙇ҃са' <-> 'Иисуса' (line 11258) cost 3
+csv#38010: 'ꙇ҃сѣ' <-> 'Иисусе.' (line 11263) cost 3
+csv#38125: 'г҃лааше' <-> 'глаголааше.' (line 11291) cost 4
+csv#38148: 'г҃лѭште' <-> 'глаголюште' (line 11297) cost 4
+csv#38176: 'г҃лѭште' <-> 'глаголюште.' (line 11306) cost 4
+csv#38253: 'г҃лааше' <-> 'глаголааше' (line 11325) cost 4
+csv#38254: 'ꙇ҃сви' <-> 'Иисусови.' (line 11325) cost 4
+csv#38261: 'ц҃рси' <-> 'Царствии' (line 11330) cost 4
+csv#38390: 'ц҃рсиѣ' <-> 'Царствие' (line 11366) cost 3
+csv#38398: 'ꙇ҃сво' <-> 'Иисусово.' (line 11368) cost 4
+csv#38486: 'ꙇ҃са' <-> 'Иисуса.' (line 11394) cost 3
+csv#38585: 'г҃лаахѫ' <-> 'глаголааху' (line 11424) cost 4
+csv#38587: 'а҃поломъ' <-> 'апостоломъ' (line 11424) cost 3
+csv#38732: 'ꙇ҃сѣ' <-> 'Иисусе' (line 11464) cost 3
+csv#38743: 'б҃мь' <-> 'Богомь' (line 11469) cost 3
+csv#38801: 'г҃лѭштѧ' <-> 'глаголюштя.' (line 11482) cost 4
+csv#38842: 'г҃лашѧ' <-> 'глаголашя' (line 11496) cost 4
+csv#38889: 'г҃лѭшта' <-> 'глаголюшта.' (line 11507) cost 4
+csv#38905: 'г҃лахъ' <-> 'глаголахъ' (line 11514) cost 4
+csv#38987: 'е҃лмсцѣ' <-> 'Ерусалимсце.' (line 11533) cost 5
+csv#39004: 'б҃лагви' <-> 'благослови' (line 11540) cost 4
+csv#39028: 'е҃рлмъ' <-> 'Ерусалимъ.' (line 11545) cost 4
+csv#39082: 'ч҃комъ' <-> 'человекомъ.' (line 11564) cost 5
+csv#39318: 'г҃леши' <-> 'глаголеши' (line 11631) cost 4
+csv#39411: 'ꙇ҃са' <-> 'Иисуса' (line 11657) cost 3
+csv#39451: 'ꙇ҃л҄еви' <-> 'Израилеви.' (line 11665) cost 4
+csv#39528: 'ꙇ҃са' <-> 'Иисуса' (line 11687) cost 3
+csv#39543: 'ꙇ҃сѣ' <-> 'Иисусе' (line 11690) cost 3
+csv#39565: 'г҃летъ' <-> 'глаголетъ' (line 11698) cost 4
+csv#39628: 'ꙇ҃сви' <-> 'Иисусови.' (line 11713) cost 4
+csv#39691: 'ꙇ҃са' <-> 'Иисуса' (line 11730) cost 3
+csv#39767: 'ꙇ҃левъ' <-> 'Израилевъ.' (line 11754) cost 4
+csv#39804: 'ч҃скааго' <-> 'Человеческааго.' (line 11763) cost 7
+csv#39817: 'ꙇ҃сва' <-> 'Иисусова' (line 11766) cost 4
+csv#39833: 'ꙇ҃сва' <-> 'Иисусова' (line 11769) cost 4
+csv#40092: 'г҃лааше' <-> 'глаголааше' (line 11841) cost 4
+csv#40119: 'і҃ꙇлмѣхъ' <-> 'Иерусалимехъ.' (line 11847) cost 6
+csv#40222: 'ц҃рсиѣ' <-> 'Царствие' (line 11873) cost 3
+csv#40326: 'ꙇ҃левъ' <-> 'Израилевъ.' (line 11900) cost 4
+csv#40339: 'г҃лемъ' <-> 'глаголемъ.' (line 11902) cost 4
+csv#40661: 'г҃лете' <-> 'глаголете.' (line 11985) cost 4
+csv#40664: 'е҃рмѣхъ' <-> 'Ерусалимехъ' (line 11986) cost 5
+csv#40687: 'е҃рлмѣхъ' <-> 'Ерусалимехъ.' (line 11990) cost 4
+csv#40749: 'г҃лааше' <-> 'глаголааше.' (line 12005) cost 4
+csv#40758: 'г҃леши' <-> 'глаголеши' (line 12010) cost 4
+csv#40772: 'ч҃комъ' <-> 'человекомъ.' (line 12012) cost 5
+csv#40802: 'г҃лѭште' <-> 'глаголюште.' (line 12019) cost 4
+csv#40818: 'г҃лахѫ' <-> 'глаголаху' (line 12022) cost 4
+csv#40846: 'г҃лете' <-> 'глаголете.' (line 12028) cost 4
+csv#41020: 'е҃рмѣхъ' <-> 'Ерусалимехъ.' (line 12073) cost 5
+csv#41325: 'г҃лахѫ' <-> 'глаголаху' (line 12150) cost 4
+csv#41458: 'г҃лаше' <-> 'глаголаше' (line 12182) cost 4
+csv#41923: 'г҃ломъ' <-> 'глаголомъ' (line 12304) cost 4
+csv#41987: 'г҃лаше' <-> 'глаголаше' (line 12323) cost 4
+csv#42114: 'г҃лахѫ' <-> 'глаголаху.' (line 12358) cost 4
+csv#42192: 'ꙇ҃са' <-> 'Иисуса' (line 12378) cost 3
+csv#42302: 'и҃са' <-> 'Иисуса.' (line 12409) cost 3
+csv#42427: 'н҃се' <-> 'небесе.' (line 12445) cost 3
+csv#42511: 'н҃се' <-> 'небесе.' (line 12467) cost 3
+csv#42575: 'н҃се' <-> 'небесе.' (line 12484) cost 3
+csv#42577: 'г҃лахѫ' <-> 'глаголаху.' (line 12484) cost 4
+csv#42596: 'н҃се' <-> 'небесе' (line 12488) cost 3
+csv#42636: 'б҃мь' <-> 'Богомь.' (line 12498) cost 3
+csv#42831: 'н҃се' <-> 'небесе.' (line 12550) cost 3
+csv#42937: 'г҃лааше' <-> 'глаголааше' (line 12580) cost 4
+csv#43024: 'Г҃лааше' <-> 'Глаголааше' (line 12599) cost 4
+csv#43187: 'г҃лахѫ' <-> 'глаголаху.' (line 12644) cost 4
+csv#43206: 'г҃лахѫ' <-> 'глаголаху' (line 12648) cost 4
+csv#43214: 'г҃лаше' <-> 'глаголаше' (line 12650) cost 4
+csv#43235: 'г҃л҄ѭште' <-> 'глаголюште.' (line 12659) cost 4
+csv#43382: 'г҃лахѫ' <-> 'глаголаху' (line 12700) cost 4
+csv#43386: 'ꙇ҃илмлѣнъ' <-> 'иерусалимленъ.' (line 12701) cost 6
+csv#43399: 'г҃летъ' <-> 'глаголетъ.' (line 12704) cost 4
+csv#43404: 'г҃лѭтъ' <-> 'глаголютъ.' (line 12705) cost 4
+csv#43495: 'г҃лахѫ' <-> 'глаголаху.' (line 12728) cost 4
+csv#43644: 'г҃лахѫ' <-> 'глаголаху' (line 12768) cost 4
+csv#43652: 'г҃лахѫ' <-> 'глаголаху' (line 12770) cost 4
+csv#43658: 'г҃лахѫ' <-> 'глаголаху.' (line 12771) cost 4
+csv#43671: 'д҃ава' <-> 'Давидова.' (line 12774) cost 4
+csv#43792: 'Ꙇ҃ис' <-> 'Иисусъ' (line 12805) cost 3
+csv#43827: 'г҃лашѧ' <-> 'глаголашя' (line 12816) cost 4
+csv#43848: 'г҃леши' <-> 'глаголеши.' (line 12821) cost 4
+csv#43860: 'г҃лати' <-> 'глаголати.' (line 12824) cost 4
+csv#44060: 'г҃лахѫ' <-> 'глаголаху' (line 12880) cost 4
+csv#44127: 'г҃лахѫ' <-> 'глаголаху' (line 12897) cost 4
+csv#44135: 'г҃летъ' <-> 'глаголетъ.' (line 12899) cost 4
+csv#44175: 'г҃лаахѫ' <-> 'глаголааху' (line 12909) cost 4
+csv#44188: 'г҃лѭ' <-> 'глголю' (line 12911) cost 3
+csv#44194: 'г҃лати' <-> 'глаголати.' (line 12913) cost 4
+csv#44218: 'г҃лааше' <-> 'глаголааше' (line 12921) cost 4
+csv#44264: 'г҃лѭштю' <-> 'глаголюштю' (line 12931) cost 4
+csv#44270: 'Г҃лаше' <-> 'Глаголаше' (line 12933) cost 4
+csv#44309: 'г҃леши' <-> 'глаголеши.' (line 12947) cost 4
+csv#44410: 'г҃лахъ' <-> 'глаголахъ' (line 12974) cost 4
+csv#44490: 'ч҃кооубица' <-> 'человекоубица' (line 12992) cost 5
+csv#44504: 'г҃летъ' <-> 'глаголетъ' (line 12998) cost 4
+csv#44508: 'г҃летъ' <-> 'глаголетъ.' (line 12999) cost 4
+csv#44629: 'г҃леши' <-> 'глаголеши.' (line 13029) cost 4
+csv#44677: 'г҃лете' <-> 'глаголете' (line 13040) cost 4
+csv#44787: 'г҃лѭште' <-> 'глаголюште.' (line 13065) cost 4
+csv#44886: 'г҃лахѫ' <-> 'глаголаху.' (line 13091) cost 4
+csv#44895: 'г҃лахѫ' <-> 'глаголаху' (line 13092) cost 4
+csv#44901: 'г҃лахѫ' <-> 'глаголаху' (line 13093) cost 4
+csv#44907: 'г҃лаше' <-> 'глаголаше' (line 13095) cost 4
+csv#44997: 'г҃лахѫ' <-> 'глаголаху' (line 13117) cost 4
+csv#45012: 'г҃лаахѫ' <-> 'глаголааху.' (line 13120) cost 4
+csv#45025: 'г҃лашѧ' <-> 'глаголашя' (line 13124) cost 4
+csv#45030: 'г҃леши' <-> 'глаголеши' (line 13125) cost 4
+csv#45063: 'г҃л҄ѭште' <-> 'глаголюште.' (line 13135) cost 4
+csv#45071: 'г҃лета' <-> 'глаголета.' (line 13137) cost 4
+csv#45428: 'г҃лете' <-> 'глаголете.' (line 13228) cost 4
+csv#45518: 'г҃лашѧ' <-> 'глаголашя' (line 13254) cost 4
+csv#45725: 'г҃лахѫ' <-> 'глаголаху' (line 13309) cost 4
+csv#45739: 'г҃лахѫ' <-> 'глаголаху.' (line 13312) cost 4
+csv#45757: 'ꙇ҃лмѣхъ' <-> 'Иерусалимехъ.' (line 13316) cost 6
+csv#45774: 'г҃лахѫ' <-> 'глаголаху' (line 13323) cost 4
+csv#45907: 'г҃лѭште' <-> 'глаголюште.' (line 13355) cost 4
+csv#45964: 'г҃лете' <-> 'глагоете' (line 13367) cost 3
+csv#46040: 'г҃лаахѫ' <-> 'глаголааху.' (line 13387) cost 4
+csv#46099: 'г҃лѭшти' <-> 'глаголюшти.' (line 13403) cost 4
+csv#46246: 'г҃летъ' <-> 'глаголетъ.' (line 13438) cost 4
+csv#46339: 'і҃су' <-> 'Иисусу.' (line 13460) cost 3
+csv#46490: 'г҃лѭште' <-> 'глаголюште.' (line 13495) cost 4
+csv#46512: 'г҃лѭшти' <-> 'глаголюшти' (line 13500) cost 4
+csv#46559: 'г҃лахѫ' <-> 'глаголаху' (line 13512) cost 4
+csv#46732: 'г҃лаахѫ' <-> 'глаголааху' (line 13557) cost 4
+csv#46878: 'и҃са' <-> 'Иисуса.' (line 13596) cost 3
+csv#46880: 'г҃лахѫ' <-> 'глаголаху' (line 13596) cost 4
+csv#46958: 'ꙇ҃свѣ' <-> 'Иисусове.' (line 13618) cost 4
+csv#47054: 'и҃са' <-> 'Иисуса' (line 13640) cost 3
+csv#47082: 'ꙇ҃са' <-> 'Иисуса.' (line 13650) cost 3
+csv#47108: 'г҃лѭште' <-> 'глаголюште.' (line 13657) cost 4
+csv#47231: 'г҃лѭште' <-> 'глаголюште.' (line 13690) cost 4
+csv#47234: 'ꙇ҃са' <-> 'Иисуса' (line 13691) cost 3
+csv#47246: 'г҃ласте' <-> 'глаголасте' (line 13694) cost 4
+csv#47247: 'ꙇ҃сви' <-> 'Иисусови.' (line 13694) cost 4
+csv#47362: 'г҃лаахѫ' <-> 'глаголаахе' (line 13728) cost 5
+csv#47366: 'г҃лахѫ' <-> 'глаголаху' (line 13729) cost 4
+csv#47409: 'г҃лааше' <-> 'глаголааше' (line 13740) cost 4
+csv#47477: 'с҃ни' <-> 'сынови' (line 13759) cost 3
+csv#47661: 'г҃лахъ' <-> 'глаголахъ' (line 13808) cost 4
+csv#47673: 'г҃лаахъ' <-> 'глаголаахъ.' (line 13811) cost 4
+csv#47918: 'г҃лете' <-> 'глаголете' (line 13873) cost 4
+csv#47959: 'а҃полъ' <-> 'апостолъ' (line 13882) cost 3
+csv#48065: 'ꙇ҃свѣ' <-> 'Иисусове.' (line 13910) cost 4
+csv#48081: 'г҃летъ' <-> 'глаголетъ.' (line 13917) cost 4
+csv#48087: 'ꙇ҃свꙑ' <-> 'Иисусовы.' (line 13918) cost 4
+csv#48144: 'г҃летъ' <-> 'глаголетъ' (line 13932) cost 4
+csv#48450: 'г҃леши' <-> 'глаголеши' (line 14008) cost 4
+csv#48731: 'г҃лахъ' <-> 'глаголахъ' (line 14073) cost 4
+csv#48894: 'г҃лахъ' <-> 'глаголахъ' (line 14113) cost 4
+csv#49032: 'г҃лахъ' <-> 'глаголахъ' (line 14147) cost 4
+csv#49223: 'г҃лалъ' <-> 'глаголалъ' (line 14196) cost 4
+csv#49312: 'г҃лахъ' <-> 'глаголахъ' (line 14219) cost 4
+csv#49347: 'г҃лахъ' <-> 'глаголахъ' (line 14232) cost 4
+csv#49387: 'г҃лахъ' <-> 'глаголахъ' (line 14232) cost 4
+csv#49461: 'г҃лати' <-> 'глаголати' (line 14246) cost 4
+csv#49483: 'г҃лати' <-> 'глаголати' (line 14251) cost 4
+csv#49489: 'г҃лати' <-> 'глаголати' (line 14252) cost 4
+csv#49553: 'г҃летъ' <-> 'глаголетъ' (line 14268) cost 4
+csv#49573: 'г҃лаахѫ' <-> 'глаголааху' (line 14271) cost 4
+csv#49580: 'г҃летъ' <-> 'глаголетъ' (line 14272) cost 4
+csv#49586: 'г҃лет[ъ' <-> 'глаголетъ.' (line 14273) cost 4
+csv#49733: 'г҃лахъ' <-> 'глаголахъ' (line 14312) cost 4
+csv#49801: 'г҃лашѧ' <-> 'глаголашя' (line 14324) cost 4
+csv#49809: 'г҃леши' <-> 'глаголеши.' (line 14326) cost 4
+csv#49815: 'г҃леши' <-> 'глаголеши.' (line 14328) cost 4
+csv#49867: 'г҃лахъ' <-> 'глаголахъ' (line 14341) cost 4
+csv#49976: 'ч҃комъ' <-> 'человекомъ.' (line 14368) cost 5
+csv#50205: 'ꙇ҃са' <-> 'Иисуса' (line 14421) cost 3
+csv#50242: 'ꙇ҃са' <-> 'Иисуса' (line 14428) cost 3
+csv#50322: 'и҃са' <-> 'Иисуса.' (line 14447) cost 3
+csv#50356: 'ꙇ҃сѣ' <-> 'Иисусе' (line 14455) cost 3
+csv#50373: 'ꙇ҃сомь' <-> 'Иисусомь.' (line 14459) cost 3
+csv#50437: 'ꙇ҃са' <-> 'Иисуса' (line 14475) cost 3
+csv#50452: 'г҃лахъ' <-> 'глаголахъ' (line 14478) cost 4
+csv#50471: 'г҃лахъ' <-> 'глаголахъ' (line 14482) cost 4
+csv#50479: 'г҃лахъ' <-> 'глаголахъ' (line 14485) cost 4
+csv#50497: 'ꙇ҃са' <-> 'Иисуса.' (line 14489) cost 3
+csv#50508: 'г҃лахъ' <-> 'глаголахъ' (line 14492) cost 4
+csv#50582: 'ꙇ҃са' <-> 'Иисуса' (line 14511) cost 3
+csv#50661: 'ꙇ҃св[о' <-> 'Иисусово' (line 14529) cost 4
+csv#50679: 'ꙇ҃са' <-> 'Иисуса' (line 14534) cost 3
+csv#50696: 'г҃леши' <-> 'глаголеши.' (line 14537) cost 4
+csv#50721: 'ц҃рсо' <-> 'Царство' (line 14542) cost 3
+csv#50733: 'ц҃рсо' <-> 'Царство' (line 14545) cost 3
+csv#50748: 'ц҃рсо' <-> 'Царство' (line 14548) cost 3
+csv#50764: 'г҃леши' <-> 'глаголеши' (line 14554) cost 4
+csv#50838: 'г҃л҄ѭште' <-> 'глаголюште.' (line 14571) cost 4
+csv#50851: 'ꙇ҃са' <-> 'Иисуса.' (line 14574) cost 3
+csv#50929: 'г҃лѭште' <-> 'глаголюште.' (line 14594) cost 4
+csv#50980: 'ꙇ҃сви' <-> 'Иисусови.' (line 14609) cost 4
+csv#50985: 'ꙇ҃сви' <-> 'Иисусови.' (line 14610) cost 4
+csv#51002: 'г҃леши' <-> 'глаголеши.' (line 14614) cost 4
+csv#51069: 'ꙇ҃са' <-> 'Иисуса.' (line 14630) cost 3
+csv#51141: 'г҃летъ' <-> 'глаголетъ' (line 14650) cost 4
+csv#51158: 'ꙇ҃са' <-> 'Иисуса.' (line 14653) cost 3
+csv#51190: 'ꙇ҃са' <-> 'Иисуса.' (line 14663) cost 3
+csv#51198: 'г҃лаахѫ' <-> 'глаголааху' (line 14665) cost 4
+csv#51216: 'ꙇ҃са' <-> 'Иисуса.' (line 14670) cost 3
+csv#51277: 'ꙇ҃свѣ' <-> 'Иисусове.' (line 14683) cost 4
+csv#51405: 'ꙇ҃са' <-> 'Иисуса' (line 14718) cost 3
+csv#51441: 'г҃летъ' <-> 'глаголетъ.' (line 14725) cost 4
+csv#51464: 'г҃лѭтъ' <-> 'глаголютъ.' (line 14730) cost 4
+csv#51482: 'ꙇ҃свъ' <-> 'Иисусовъ.' (line 14734) cost 4
+csv#51491: 'ꙇ҃сво' <-> 'Иисусово.' (line 14736) cost 4
+csv#51500: 'ꙇ҃сво' <-> 'Иисусово.' (line 14738) cost 4
+csv#51507: 'ꙇ҃сви' <-> 'Иисусови' (line 14743) cost 4
+csv#51522: 'ꙇ҃сво' <-> 'Иисусово.' (line 14746) cost 4
+csv#51567: 'ꙇ҃са' <-> 'Иисуса.' (line 14757) cost 3
+csv#51737: 'г҃лашѧ' <-> 'глаголашя' (line 14802) cost 4
+csv#52105: 'ꙇ҃сви' <-> 'Иисусови.' (line 14892) cost 4
