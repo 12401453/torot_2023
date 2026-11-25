@@ -35,9 +35,9 @@ const troickij_sbornik_lines = readline.createInterface({input: fs.createReadStr
 
 const turovsk_gospel_lines = readline.createInterface({input: fs.createReadStream("../manuscript.ru_stealing/msru_turovsk_gospel_words.csv")})[Symbol.asyncIterator]();
 
-//const msru_usp_sbor_lines = readline.createInterface({input: fs.createReadStream("../manuscript.ru_stealing/msru_uspenskij_sbornik_words.csv")})[Symbol.asyncIterator]();
+const msru_usp_sbor_lines = readline.createInterface({input: fs.createReadStream("../manuscript.ru_stealing/msru_uspenskij_sbornik_words.csv")})[Symbol.asyncIterator]();
 
-const msru_texts = {izb1073: izbornik1073_lines, izb1076: izbornik1076_lines, mstis: mstislavs_gospel_lines, ostr: ostromirs_gospel_lines, psal_dmitr: psaltyr_dmitrija_lines, sin_pat: sinajskij_paterik_lines, troic: troickij_sbornik_lines, turovsk: turovsk_gospel_lines/*, msru_usp: msru_usp_sbor_lines*/};
+const msru_texts = {izb1073: izbornik1073_lines, izb1076: izbornik1076_lines, mstis: mstislavs_gospel_lines, ostr: ostromirs_gospel_lines, psal_dmitr: psaltyr_dmitrija_lines, sin_pat: sinajskij_paterik_lines, troic: troickij_sbornik_lines, turovsk: turovsk_gospel_lines, archang: archangelsk_gospel_lines, msru_usp: msru_usp_sbor_lines};
 
 
 const chu_csv_reader = new CsvReader('|');
@@ -126,9 +126,12 @@ const orv_csv_reader = new CsvReader('|');
     fs.writeFileSync("pandects_of_antioch_words.csv", word_separated_pandects_of_antioch_csv);
     fs.writeFileSync("pandects_of_antioch_bpe_training.csv", pandects_of_antioch_deepcleaned_words);
     
-    current_text_id++;
-    let usp_sbor_words = "torot_word|deep_cleaned\n";
-    let usp_sbor_bpe_training = "";
+
+    /*AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
+    /*EXCLUDE TOROT's PARTS OF USP SBOR FROM THE BERT PRETRAINING DATA BUT STILL ADD ITS TAGGING DATA TO OUR chu_corpus_words_with_extra_info.csv FILE*/
+    //current_text_id++;
+    //let usp_sbor_words = "torot_word|deep_cleaned\n";
+    //let usp_sbor_bpe_training = "";
 
     headers = (await torot_usp_sbor_lines.next()).value;
     orv_csv_reader.setHeaders(headers);
@@ -143,17 +146,18 @@ const orv_csv_reader = new CsvReader('|');
         const morph_tag = orv_csv_reader.getField("morph_tag");
         const pos = orv_csv_reader.getField("pos");
         if(deep_cleaned.length > 0) {
-            usp_sbor_words += torot_word + "|" + deep_cleaned + "\n";
-            usp_sbor_bpe_training += deep_cleaned + "\n";
-            total_BERT_training_words += deep_cleaned + "|" + current_text_id + "\n";
-            bpe_training_total_BERT_corpus += deep_cleaned + "\n";
+            //usp_sbor_words += torot_word + "|" + deep_cleaned + "\n";
+            //usp_sbor_bpe_training += deep_cleaned + "\n";
+            //total_BERT_training_words += deep_cleaned + "|" + current_text_id + "\n";
+            //bpe_training_total_BERT_corpus += deep_cleaned + "\n";
 
             chu_corpus_words_extra_info += `${torot_word}|${deep_cleaned}|${pos}|${morph_tag}|${current_text_id}|${subtitle_id}|${autotagged}\n`;
         }
     }    
-    fs.writeFileSync("usp_sbor_words.csv", usp_sbor_words);
-    fs.writeFileSync("usp_sbor_bpe_training.csv", usp_sbor_bpe_training);
+    //fs.writeFileSync("usp_sbor_words.csv", usp_sbor_words);
+    //fs.writeFileSync("usp_sbor_bpe_training.csv", usp_sbor_bpe_training);
     fs.writeFileSync("chu_corpus_extra_info.csv", chu_corpus_words_extra_info);
+    /*AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
 
     current_text_id++;
     let yagichev_zlatoust_words = "torot_word|deep_cleaned\n";
