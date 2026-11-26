@@ -225,6 +225,8 @@ const orv_csv_reader = new CsvReader('|');
             
         }        
     }
+    fs.writeFileSync("kratuk_zlatostruy_words.csv", kratuk_zlatostruy_words);
+    fs.writeFileSync("kratuk_zlatostruy_bpe_training.csv", kratuk_zlatostruy_bpe_training);
 
     current_text_id++;
 
@@ -245,8 +247,7 @@ const orv_csv_reader = new CsvReader('|');
         current_text_id++;
     }
 
-    fs.writeFileSync("kratuk_zlatostruy_words.csv", kratuk_zlatostruy_words);
-    fs.writeFileSync("kratuk_zlatostruy_bpe_training.csv", kratuk_zlatostruy_bpe_training);
+    
     fs.writeFileSync("total_BERT_corpus.csv", total_BERT_training_words);
     fs.writeFileSync("bpe_training_total_BERT_corpus.csv", bpe_training_total_BERT_corpus);
     
