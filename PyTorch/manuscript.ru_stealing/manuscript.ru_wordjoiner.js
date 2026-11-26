@@ -2,7 +2,7 @@
 
 const fs = require('node:fs');
 const readline = require('readline');
-const {nn_deepClean_OCS_ы, nn_deepClean_Russian_ы} = require('../../torot_2023/PyTorch/orthography_cleaning/nn_cleaning.js');
+const {nn_deepClean_OCS_ы, nn_deepClean_Russian_ы} = require('../PyTorch/orthography_cleaning/nn_cleaning.js');
 
 
 if(process.argv.length < 3) {

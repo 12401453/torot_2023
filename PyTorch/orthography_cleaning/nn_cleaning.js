@@ -179,6 +179,7 @@ const nn_OCS_OESl_deepClean_map = new Array(
     ["∋", ""], //used once in msru ostromirs gospel, doesn't seem to be any e-letter
     ["∈", ""], //used in Troickij Sbornik similar to the mirrored version above
     ["̂" , ""],
+    ["ı", "ꙇ"], //some weird <i> in I think msru psal_dmitrija
     ["Ꙋ" , "оу"],
     ["ОУ" , "оу"],
     ["о҄у" , "оу"],
@@ -342,6 +343,62 @@ const nn_OCS_OESl_deepClean_map = new Array(
     [" " , ""], //get rid of token-internal whitespace
 );
 
+const allowedBaseCharSet = new Set(
+    ["ш",
+    "ѭ",
+    "ѳ",
+    "ъ",
+    "ю",
+    "ч",
+    "х",
+    "н",
+    "е",
+    "о",
+    "к",
+    "м",
+    "ж",
+    "і",
+    "а",
+    "в",
+    "з",
+    "ф",
+    "р",
+    "҂",
+    "с",
+    "ѧ",
+    "ь",
+    "ц",
+    "ѯ",
+    "г",
+    "ⱖ",
+    "ѫ",
+    "б",
+    "т",
+    "ѣ",
+    "д",
+    "у",
+    "л",
+    "п",
+    "ҁ", //think it's a numeral so kinda need it
+    "ꙗ",
+    "щ",
+    "҃"] //titlo
+);
+
+const replaceUnkChars = (deep_cleaned_word) => {
+
+    let unked_word = "";
+    for(const char of deep_cleaned_word) {
+        if(allowedBaseCharSet.has(char)) {
+            unked_word += char;
+        }
+        else {
+            unked_word += "<unk>";
+        }
+    }
+    return unked_word;
+};
+
 const nn_deepClean_OCS_ы = (raw_word) => {
 
     let cleaned_word = raw_word
@@ -368,4 +425,4 @@ const nn_deepClean_Russian_ы = (raw_word) => {
 
 };
 
-module.exports = {nn_deepClean_OCS_ы, nn_deepClean_Russian_ы};
+module.exports = {nn_deepClean_OCS_ы, nn_deepClean_Russian_ы, replaceUnkChars};

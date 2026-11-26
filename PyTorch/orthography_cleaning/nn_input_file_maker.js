@@ -2,7 +2,7 @@
 
 const fs = require('node:fs');
 const readline = require('readline');
-const {nn_deepClean_OCS_ы, nn_deepClean_Russian_ы} = require('./nn_cleaning.js');
+const {nn_deepClean_OCS_ы, nn_deepClean_Russian_ы, replaceUnkChars} = require('./nn_cleaning.js');
 const CsvReader = require('./csv_reader.js');
 
 const chu_input_lines = readline.createInterface({input: fs.createReadStream("chu_words_full_with_titles_untagged_autotags_added_with_assem_NEW.csv")})[Symbol.asyncIterator]();
@@ -73,7 +73,7 @@ const orv_csv_reader = new CsvReader('|');
         chu_corpus_words_extra_info += `${torot_word}|${deep_cleaned}|${pos}|${morph_tag}|${text_id}|${subtitle_id}|${autotagged}\n`;
         chu_corpus_bpe += deep_cleaned + "\n";
         total_BERT_training_words += deep_cleaned + "|" + text_id + "\n";
-        bpe_training_total_BERT_corpus += deep_cleaned + "\n";
+        bpe_training_total_BERT_corpus += replaceUnkChars(deep_cleaned) + "\n";
     }
     fs.writeFileSync("chu_corpus_words_bpe_training_newnorm.csv", chu_corpus_bpe);
     fs.writeFileSync("chu_corpus_words_newnorm.csv", chu_corpus_words);
@@ -93,7 +93,7 @@ const orv_csv_reader = new CsvReader('|');
             word_separated_savvina_csv += torot_word + "|" + deep_cleaned + "\n";
             savvina_deepcleaned_words += deep_cleaned + "\n";
             total_BERT_training_words += deep_cleaned + "|" + current_text_id + "\n";
-            bpe_training_total_BERT_corpus += deep_cleaned + "\n";
+            bpe_training_total_BERT_corpus += replaceUnkChars(deep_cleaned) + "\n";
         }
     }
     fs.writeFileSync("savvina_kniga_words.csv", word_separated_savvina_csv);
@@ -119,7 +119,7 @@ const orv_csv_reader = new CsvReader('|');
                 word_separated_pandects_of_antioch_csv += word + "|" + deep_cleaned + "\n";
                 pandects_of_antioch_deepcleaned_words += deep_cleaned + "\n";
                 total_BERT_training_words += deep_cleaned + "|" + current_text_id + "\n";
-                bpe_training_total_BERT_corpus += deep_cleaned + "\n";
+                bpe_training_total_BERT_corpus += replaceUnkChars(deep_cleaned) + "\n";
             }
         }    
     }
@@ -183,7 +183,7 @@ const orv_csv_reader = new CsvReader('|');
                 yagichev_zlatoust_bpe_training += deep_cleaned_rejoined_word.replaceAll("|", "") + "\n";
 
                 total_BERT_training_words += deep_cleaned_rejoined_word.replaceAll("|", "") + "|" + current_text_id + "\n";
-                bpe_training_total_BERT_corpus += deep_cleaned_rejoined_word.replaceAll("|", "") + "\n";
+                bpe_training_total_BERT_corpus += replaceUnkChars(deep_cleaned_rejoined_word.replaceAll("|", "")) + "\n";
 
                 prev_halfword = "";
             }
@@ -196,7 +196,7 @@ const orv_csv_reader = new CsvReader('|');
                     yagichev_zlatoust_words += word.replaceAll("|", "") + "|" + deep_cleaned_word.replaceAll("|", "") + "\n";
                     yagichev_zlatoust_bpe_training += deep_cleaned_word.replaceAll("|", "") + "\n";
                     total_BERT_training_words += deep_cleaned_word.replaceAll("|", "") + "|" + current_text_id + "\n";
-                    bpe_training_total_BERT_corpus += deep_cleaned_word.replaceAll("|", "") + "\n";
+                    bpe_training_total_BERT_corpus += replaceUnkChars(deep_cleaned_word.replaceAll("|", "")) + "\n";
                     prev_halfword = "";
                 }
             }
@@ -219,7 +219,7 @@ const orv_csv_reader = new CsvReader('|');
                 kratuk_zlatostruy_words += word + "|" + deep_cleaned_word + "\n";
                 kratuk_zlatostruy_bpe_training += deep_cleaned_word + "\n";
                 total_BERT_training_words += deep_cleaned_word + "|" + current_text_id + "\n";
-                bpe_training_total_BERT_corpus += deep_cleaned_word + "\n";
+                bpe_training_total_BERT_corpus += replaceUnkChars(deep_cleaned_word) + "\n";
             }
             
             
@@ -240,7 +240,7 @@ const orv_csv_reader = new CsvReader('|');
             const deep_cleaned = chu_csv_reader.getField("deep_cleaned");
 
             total_BERT_training_words += deep_cleaned + "|" + current_text_id + "\n";
-            bpe_training_total_BERT_corpus += deep_cleaned + "\n";
+            bpe_training_total_BERT_corpus += replaceUnkChars(deep_cleaned) + "\n";
         }
         current_text_id++;
     }
